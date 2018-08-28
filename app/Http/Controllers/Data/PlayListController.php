@@ -213,7 +213,7 @@ class PlayListController extends Controller
                 
                 $return_array = array(
                     "Success" => false,
-                    "Desc"  => ("ERROR : ".$responseData['error']['status'].
+                    "Desc"  => ("ERROR Y : ".$responseData['error']['status'].
                     "</br>DESCRIPTION : ".$responseData['error']['message'])
                 );
 
@@ -342,7 +342,7 @@ class PlayListController extends Controller
             }
 
 
-
+            return view ('playlist')->with(Session::get('ResponseData'));
             /*echo "<pre>";
             print_r(session::get('TrackFeatures'));
             print_r(Session::get('ArtistGenres'));
