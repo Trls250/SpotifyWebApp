@@ -21,5 +21,6 @@ Route::get('/postAuth', 'Auth\SpotifyAuthController@postAuthCode');
 
 
 
-Route::get('/playlist/{todo}', 'PlayListController@userFunWrapper');
+Route::get('/playlist/{todo}', 'PlayListController@FunWrapper');
 Route::get('/playlist/get/{items}/{page}', 'PlayListController@getPlaylist')->name('GetPlaylist');
+Route::get('/users/{todo}', 'Data\UserDataController@FunWrapper');

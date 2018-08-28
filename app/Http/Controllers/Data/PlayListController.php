@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\Tokens;
 use Illuminate\Http\Request;
 use Session;
 
@@ -11,9 +12,9 @@ use Session;
 
 class PlayListController extends Controller
 {
-    
-    
-    public function userFunWrapper(Request $request)
+
+
+    public function FunWrapper(Request $request)
     {
         $todo = $request->todo;
 
@@ -213,10 +214,12 @@ class PlayListController extends Controller
                 
                 $return_array = array(
                     "Success" => false,
-                    "Desc"  => ("ERROR Y : ".$responseData['error']['status'].
+                    "Desc"  => ("ERROR : ".$responseData['error']['status'].
                     "</br>DESCRIPTION : ".$responseData['error']['message'])
                 );
 
+                if($responseData['error']['status'] == '401')
+                print_r("TRUE");
                  return $return_array;
              }
              else
@@ -246,7 +249,12 @@ class PlayListController extends Controller
 
 
     /**
-     * 
+     * This function gets playlist information from spotify server after 
+     * receiving ID from URL parameters.
+     * Function complexity: Iteratively pings Spotify Servers if 
+     * hit by the url, saves old instances, whenever records are 
+     * more than 100, and request record is 100+, it pings spotify again
+     * and merges new and old data
      */
     public function getPlayList(Request $request)
     {
