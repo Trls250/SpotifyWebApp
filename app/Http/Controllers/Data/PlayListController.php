@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Traits\Tokens;
+use App\Traits\CURL;
+use App\Playlist;
 use Illuminate\Http\Request;
 use Session;
 
@@ -13,27 +15,18 @@ use Session;
 class PlayListController extends Controller
 {
 
+    use Tokens{
+        Tokens::refreshToken as myRefreshToken;
+    }
 
-    public function FunWrapper(Request $request)
-    {
-        $todo = $request->todo;
-
-        switch($todo)
-        {
-            case "add":
-                return $this->addPlaylist($request);
-            case "getAll":
-                return $this->getAllPlaylists();
-        }
-
-
-        return "Invalid URL Pattern";
+    use CURL{
+        CURL::curl as myCurlTrait;
+        Curl::downloadImage as myDownload;
     }
 
 
-
     /**
-     * 
+     *
      */
 
     public function getAllPlaylists()
@@ -43,6 +36,17 @@ class PlayListController extends Controller
 
        // $curl_data = json_decode($curl_return['ResponseData'], true);
 
+       foreach($curl_return['ResponseData']['items'] as $key => $playlist)
+       {
+           if(Playlist::where('id', '=', $playlist['id'])->exists())
+           {
+                $curl_return['ResponseData']['items'][$key]['db'] = true;
+           }
+           else
+           {
+                $curl_return['ResponseData']['items'][$key]['db'] = false;
+           }
+       }
 
        if($curl_return['Success'] == false)
             return $curl_return['Desc'];
@@ -52,7 +56,7 @@ class PlayListController extends Controller
 
 
     /**
-     * 
+     *
      */
 
     public function addPlaylist(Request $request)
@@ -66,40 +70,40 @@ class PlayListController extends Controller
                 "Success" => false,
                 "Desc"  => "CAN NOT OBTAIN PLAYLIST ID FROM URL"
             );
-            
-            return $return_array;                                 
+
+            return $return_array;
         }
 
 
         else
         {
             // Grab vairiables from request
-            $playlist_id = $request->input('url');
+            $playlist_id = $request->url;
 
             //TODO: CHECK ISSET HERE
 
-            // Grab variables from sessions
+            // Grab variables from Sessions
 
 
             if(Session::has('user_info'))
             {
-                $user_info = Session::get('user_info');
+                $user_info = Session::get('UserInfo');
                 $user_id = $user_info['id'];
             }
             else
             {
                 $return_array = array(
                     "Success" => false,
-                    "Desc"  => "CAN NOT READ SESSION INSTANCE : USER PROFILE INFO"
+                    "Desc"  => "CAN NOT READ Session INSTANCE : USER PROFILE INFO"
                 );
-                
-                return $return_array;
-            }    
 
-            
+                return $return_array;
+            }
+
+
 
             /*
-            * CURL Request PUT Data 
+            * CURL Request PUT Data
             */
 
             $url = "https://api.spotify.com/v1/users/".$user_id."/playlists/".$playlist_id."/followers";
@@ -115,350 +119,493 @@ class PlayListController extends Controller
             return $curl_return;
 
 
-           
+
         }
     }
 
-
     /**
-     * 
-     */
-
-    private function myCurl($url, $body, $method, $header)
-    {
-
-        if(Session::has('access_token'))
-        {
-            $access_token = Session::get('access_token');
-        }
-        else
-        {
-            $return_array = array(
-                "Success" => false,
-                "Desc"  => "CAN NOT READ SESSION INSTANCE : ACCESS_TOKEN"
-            );
-            
-            return $return_array;
-        }
-
-            /*
-            * CURL REQUEST BUILDING 
-            */
-
-            $curl_api_user = curl_init();
-
-            if($header)
-                curl_setopt($curl_api_user, CURLOPT_HEADER, 1);
-
-            curl_setopt($curl_api_user, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-
-            if($body == null)
-            {
-                curl_setopt_array($curl_api_user, array(
-                    CURLOPT_URL => $url,
-                    CURLOPT_CUSTOMREQUEST => $method,
-                    CURLOPT_RETURNTRANSFER => TRUE,
-                    CURLOPT_HTTPHEADER => array(
-                        'Accept: application/json',
-                        'Content-Type: application/json',
-                        'Authorization: Bearer '.$access_token),
-                    ));
-            }
-            else
-            {
-                curl_setopt_array($curl_api_user, array(
-                    CURLOPT_URL => $url,
-                    CURLOPT_CUSTOMREQUEST => $method,
-                    CURLOPT_RETURNTRANSFER => TRUE,
-                    CURLOPT_POSTFIELDS => http_build_query($body),
-                    CURLOPT_HTTPHEADER => array(
-                        'Accept: application/json',
-                        'Content-Type: application/json',
-                        'Authorization: Bearer '.$access_token),
-                    ));
-            }
-
-            
-
-            /*
-            * CURL REQUEST SEND AND RECEIVE RESPONSE
-            */
-
-            $raw_data = curl_exec($curl_api_user);
-            $responseData = json_decode($raw_data, TRUE);
-            $responseError = curl_error($curl_api_user);
-            
-            /*
-            *  Close CURL 
-            */
-
-            curl_close($curl_api_user);
-
-
-
-             // Check for any CURL errors
-
-             if($responseError!="")
-             {
-
-                $return_array = array(
-                    "Success" => false,
-                    "Desc"  => "CURL ERROR: " .$responseError
-                );
-
-                return $return_array;                                                             
-             }
- 
-             if (isset($responseData['error']))
-             {
-                
-                $return_array = array(
-                    "Success" => false,
-                    "Desc"  => ("ERROR : ".$responseData['error']['status'].
-                    "</br>DESCRIPTION : ".$responseData['error']['message'])
-                );
-
-                if($responseData['error']['status'] == '401')
-                print_r("TRUE");
-                 return $return_array;
-             }
-             else
-             {
-                 
-
-                 if($header)
-                 {
-                    $data = explode("\n",$raw_data);
-                    $header = $data[0];
-
-                    $return_array = array(
-                        "Success" => true,
-                        "Header"    => $header,
-                        "ResponseData" => $responseData,
-                    );
-                }
-                else
-                    $return_array = array(
-                        "Success" => true,
-                        "ResponseData" => $responseData,
-                        "ResponseError" => $responseError
-                    );
-                 return $return_array;
-             }
-    }
-
-
-    /**
-     * This function gets playlist information from spotify server after 
+     * This function gets playlist information from spotify server after
      * receiving ID from URL parameters.
-     * Function complexity: Iteratively pings Spotify Servers if 
-     * hit by the url, saves old instances, whenever records are 
+     * Function complexity: Iteratively pings Spotify Servers if
+     * hit by the url, saves old instances, whenever records are
      * more than 100, and request record is 100+, it pings spotify again
      * and merges new and old data
      */
-    public function getPlayList(Request $request)
-    {
 
-        $validatedData = $request->validate([
-            'id' => 'required'
+    public function getPlayListDetails(Request $request)
+    {
+        $request->validate([
+            'items' => 'bail|required',
+            'page' => 'required',
         ]);
 
-        if(!$request->has('id'))
+
+        $playlist = Playlist::find($request->id);
+        $items = $request->input('items');
+        $page = $request->input('page');
+        $high = $items * $page;
+        $offset = ($page - 1)*$items;
+        $total = $playlist->total_tracks;
+        $remainder = $total%$items;
+
+        if($remainder)
         {
-            $return_array = array(
-                "Success" => false,
-                "Desc"  => "MISSING PLAY LIST ID IN URL"
-            );
-            
-            return $return_array;                                 
+            $total = $total/$items;
+            $total = ($total + 1) * $items;
         }
-        else if ($request->input('id') == '')
+
+
+        if($high > $total )
         {
-            $return_array = array(
-                "Success" => false,
-                "Desc"  => "EMPTY PLAY LIST ID IN URL"
-            );
-            
-            return $return_array;  
+            return "No further records, invalid page index";
+        }
+        else
+        {
+
+            $url = 'https://api.spotify.com/v1/playlists/'.$request->id.'/tracks?offset='.$offset.'&limit='.$items;
+            $return = $this->getPlayListInner($url, false);
+
+            if($return['Success']==false)
+            {
+                if($return['Code'] == "exp_session")
+                    return view('/')->withErrors([$return['Desc']]);
+
+                return $return;
+            }
+            else
+            {
+
+            }
+
+        }
+
+        return view ('playlist_details')->with(['ResponseData' => $return]);
+
+
+
+    }
+
+    public function insertPlaylist(Request $request)
+    {
+        //the following function calculates all data, and inserts into DB so this function is just a wrapper
+        return $this->calculateEveryRecord($request);
+    }
+
+    public function calculateEveryRecord(Request $request)
+    {
+
+        if(Playlist::where('id', '=', $request->id)->exists())
+        {
+            $playlist = Playlist::find($request->id);
         }
 
         else
         {
+            $playlist = new Playlist;
 
-            // a boolean flag to pass all the checks if the data stored in sessions is valid
-
-            
-            $getFromApiOriginal = false;
-
-            $fields = 'tracks.next%2Ctracks.total%2Cdescription%2Cfollowers.total%2Cimages%2Cname%2Cowner.display_name%2Cowner.id%2Cid%2Cname';
-            $field_inner ='%2Ctracks.items.track.id%2Ctracks.items.track.name%2Ctracks.items.track.popularity%2Ctracks.items.track.duration_ms%2Ctracks.items.track.artists.id%2Ctracks.items.track.artists.name';
+        }
 
 
-            $items = $request->items;
-            $page = $request->page;
-            $high = $items * $page;
-            $low = $high - $page;
 
-            if(Session::has('ResponseData'))
-            {
-                if(Session::get('ResponseData')['id'] == $request->input('id'))
-                {
-                    if($high > Session::get('CurrentRecords'))
-                    {
+        $limit = 100;
 
-                        if($high >= Session::get('TotalRecords'))
-                        {
-                            return "No further records, invalid page index";
-                        }
-                        
-                        $url = Session::get('ResponseData')['tracks']['next'];//.'&fields='.$fields.$field_inner;
-                        $this->getPlayListInner($url, true);
-                    }
-                    else
-                    {
-                        $getFromApiOriginal = false;
-                    }
-                }
-                else
-                {
-                    if($page!=1)
-                        return redirect('/playlist/get/25/1?id='.$request->input('id'));
+        $iterations = 1;
+        $current_iteration = 0;
+        $offset = 0;
+        $return = null;
 
-                    $getFromApiOriginal = true;
-                }
 
-            }
+        while($current_iteration < $iterations)
+        {
+
+            if($current_iteration  == 0)
+                $url = 'https://api.spotify.com/v1/playlists/'.$request->id;
             else
+                $url = 'https://api.spotify.com/v1/playlists/'.$request->id.'/tracks?offset='.$offset.'&limit='.$limit;
+
+            $return = $this->getPlayListInner($url, true, $current_iteration, $return);
+
+            if($return['Success']==false)
             {
-                $getFromApiOriginal = true;
+                if($return['Code'] == "exp_session")
+                    return view('relogin')->withErrors([$return['Desc']]);
+
+                return $return;                                                                         //error page goes here
             }
 
-            if ($getFromApiOriginal)
+            if($current_iteration == 0)
             {
-                print_r("Getting value from spotify");
-                $playlist_id = $request->input('id');
-                $url = 'https://api.spotify.com/v1/playlists/'.$playlist_id;//.'?fields='.$fields.$field_inner;
-
-                //For the very first iteration
-
-                Session::put([
-                    'CurrentRecords' => 0
-                ]);
-
-                $this->getPlayListInner($url, false);
-                
+                $iterations = ceil($return['ResponseData']['tracks']['total']/$limit);
             }
 
+            $offset+=$limit;
+            $current_iteration++;
+        }
 
-            return view ('playlist')->with(Session::get('ResponseData'));
-            /*echo "<pre>";
-            print_r(session::get('TrackFeatures'));
-            print_r(Session::get('ArtistGenres'));
-            print_r(Session::get('ResponseData'));
-            print_r('Total '. Session::get('CurrentRecords'));
-            print_r(Session::get('ResponseData')['total']);
-            echo "</pre>";*/
+        $repeatedArtist = $this->findMostRepeatedArtist($return['ArtistGenres']);
+        $averagedValues = $this->findAveragedTrackFeatures($return['TrackFeatures'], $return['ResponseData']['tracks']);
+
+        $playlist->id = $return['ResponseData']['id'];
+        $playlist->title = $return['ResponseData']['name'];
+        $playlist->repeated_artist = $repeatedArtist['RepeatedArtist']['name'];
+        $playlist->repeated_artist_id = $repeatedArtist['RepeatedArtist']['id'];
+        $playlist->creator_name = $return['ResponseData']['owner']['display_name'];
+        $playlist->creator_id = $return['ResponseData']['owner']['id'];
+        $playlist->rating = 0;
+        $playlist->followers = $return['ResponseData']['followers']['total'];
+        $playlist->danceability = $averagedValues['Danceability'];
+        $playlist->popularity = $averagedValues['Popularity'];
+        $playlist->energy = $averagedValues['Energy'];
+        $playlist->valence = $averagedValues['Valence'];
+        $playlist->total_tracks = $return['TotalRecords'];
+        $playlist->calculated_tracks = null;
+
+        $playlist->save();
+
+        /*
+
+        $this->findMostRepeatedArtist($return['ArtistGenres']);
+        $this->findAveragedTrackFeatures($return['TrackFeatures'], $return['ResponseData']);
+
+        /*echo"<pre>";
+        print_r($return['TrackFeatures']);
+        exit();
+        $playlist = Playlist::find($request->id);
+        $playlist
+        $playlist->repeated_artist = $return['RepeatedArtist']['name'];
+        $playlist->repeated_artist_id = $return['RepeatedArtist']['id'];
+        $playlist->danceability = $return['Danceability'];
+        $playlist->popularity = $return['Popularity'];
+        $playlist->energy = $return['Energy'];
+        $playlist->valence = $return['Valence'];
+        $playlist->calculated_tracks = true;
+        $playlist->save();*/
+
+        return (['Success' => true]);
+    }
+
+
+
+    public function getPlayList(Request $request)
+    {
+        $playlist_id = $request->id;
+
+        if(Playlist::where('id', '=', $request->id)->exists())
+        {
+
+            $playlist = Playlist::find($request->id);
+            return view('playlist')->with([
+                'Playlist' => $playlist
+            ]);
 
 
         }
+        else
+        {
+
+            return view('playlist')->withErrors('This playlist doesn\'t exist in our system. Please add it first.');
+
+        }
+
+        /*$repeatedArtist = $this->findMostRepeatedArtist($return['ArtistGenres']);
+        $averagedValues = $this->findAveragedTrackFeatures($return['TrackFeatures'], $return['ResponseData']['tracks']);
+
+        $playlist->id = $return['ResponseData']['id'];
+        $playlist->title = $return['ResponseData']['name'];
+        $playlist->repeated_artist = $repeatedArtist['RepeatedArtist']['name'];
+        $playlist->repeated_artist_id = $repeatedArtist['RepeatedArtist']['id'];
+        $playlist->creator_name = $return['ResponseData']['owner']['display_name'];
+        $playlist->creator_id = $return['ResponseData']['owner']['id'];
+        $playlist->rating = 0;
+        $playlist->followers = $return['ResponseData']['followers']['total'];
+        $playlist->danceability = $averagedValues['Danceability'];
+        $playlist->popularity = $averagedValues['Popularity'];
+        $playlist->energy = $averagedValues['Energy'];
+        $playlist->valence = $averagedValues['Valence'];
+        $playlist->total_tracks = $return['TotalRecords'];
+        $playlist->calculated_tracks = null;
+
+        $playlist->save();
+
+
+
+        return view('playlist')->with([
+            'ResponseData' => $return['ResponseData'],
+            'RepeatedArtist' => $repeatedArtist,
+            'Averages' => $averagedValues]);*/
+    }
+
+    /**
+     *
+     */
+
+    private function getPlayListInner($url, $commulative, $iteration = 0, $data = null)
+    {
+
+        $curl_return = $this->myCurl($url, null, 'GET', False);
+        if($curl_return['Success'] == false)
+            return $curl_return;
+        else
+        {
+            $TrackFeatures = $this->getTrackAttributes($curl_return['ResponseData']);
+
+            if($TrackFeatures['Success'] == false)
+                return $TrackFeatures;
+            else
+            {
+                $ArtistGenres = $this->getArtistGenres($curl_return['ResponseData']);
+
+                if($ArtistGenres['Success'] == false)
+                    return $ArtistGenres;
+                else
+                {
+
+                    if(!isset($curl_return['ResponseData']['tracks']))
+                    {
+
+                        if($commulative && $iteration > 0)
+                        {
+
+                            $tempMain = $data['ResponseData'];
+                            $tempTracks = array_merge($data['ResponseData']['tracks']['items'], $curl_return['ResponseData']['items']);
+                            $tempMain['tracks'] = $tempTracks;
+                            $tempFeatures = array_merge($data['TrackFeatures'], $TrackFeatures['audio_features']);
+                            $tempArtists = array_merge($data['ArtistGenres'], $ArtistGenres);
+
+
+
+                            $return = [
+                                'Success'   => true,
+                                'ResponseData'  => $tempMain,
+                                'TrackFeatures' => $tempFeatures,
+                                'ArtistGenres'  => $tempArtists,
+                                'NextURL'   => $curl_return['ResponseData']['next']
+                            ];
+                            return $return;
+                        }
+
+                        else
+                        {
+
+                            $total_tracks = 0;
+
+                            if(isset($curl_return['ResponseData']['tracks']))
+                            {
+                                $total_tracks = $curl_return['ResponseData']['tracks']['total'];
+                            }
+                            $return = [
+                                'Success'   => true,
+                                'TrackFeatures' => $TrackFeatures['audio_features'],
+                                'ResponseData'  => $curl_return['ResponseData'],
+                                'ArtistGenres'  => $ArtistGenres,
+                                'TotalRecords'  => $total_tracks,
+                            ];
+
+                            return $return;
+
+                        }
+
+                    }
+                    else
+                    {
+
+                        $total_tracks = 0;
+
+                        if(isset($curl_return['ResponseData']['tracks']))
+                        {
+                            $total_tracks = $curl_return['ResponseData']['tracks']['total'];
+                        }
+
+                        $return = [
+                            'Success'   => true,
+                            'TrackFeatures' => $TrackFeatures['audio_features'],
+                            'ResponseData'  => $curl_return['ResponseData'],
+                            'ArtistGenres'  => $ArtistGenres,
+                            'TotalRecords'  => $total_tracks,
+                        ];
+
+                        return $return;
+                    }
+
+
+                }
+            }
+        }
+
 
     }
 
 
-    /**
-     * 
-     */
+    public function cmp($a, $b)
+    {
+        return strcmp($a['name'], $b['name']);
+    }
 
-    private function getPlayListInner($url, $append)
+
+    public function mostFrequent( $arr, $n)
     {
 
-        $curl_return = $this->myCurl($url, null, 'GET', False);
-
-        if($curl_return['Success'] == false)
-            return $curl_return['Desc'];
-        else
+        // Sort the array
+        usort($arr, array($this,'cmp'));
+        // find the max frequency
+        // using linear traversal
+        $max_count = 1;
+        $res = $arr[0];
+        $curr_count = 1;
+        for ($i = 1; $i < $n; $i++)
         {
-            $TrackFeatures = $this->getTrackAttributes($curl_return['ResponseData'], $append);
-
-            if($TrackFeatures['Success'] == false)
-                return $TrackFeatures['Desc'];
+            if ($arr[$i]['name'] == $arr[$i - 1]['name'])
+                $curr_count++;
             else
             {
-                $ArtistGenres = $this->getArtistGenres($curl_return['ResponseData'], $append);
-                if($ArtistGenres['Success'] == false)
-                    return $ArtistGenres['Desc'];
-                else
+                if ($curr_count > $max_count)
                 {
-
-                    if($append)
-                    {
-                        $tempMain = Session::get('ResponseData');
-                        $tempTracks = array_merge($tempMain['tracks']['items'], $curl_return['ResponseData']['items']);
-                        $tempMain['tracks'] = $tempTracks;
-                        $tempFeatures = array_merge(Session::get('TrackFeatures'), $TrackFeatures['audio_features']);
-                        $tempArtists = array_merge(Session::get('ArtistGenres'), $ArtistGenres);
-
-                        Session::put([
-                            'ResponseData'  => $tempMain,
-                            'TrackFeatures' => $tempFeatures,
-                            'ArtistGenres'  => $tempArtists,
-                            'CurrentRecords' => Session::get('CurrentRecords')+count($curl_return['ResponseData']['items'])
-                        ]);
-
-
-                    }
-                    else
-                        Session::put([
-                            'TrackFeatures' => $TrackFeatures['audio_features'],
-                            'ResponseData'  => $curl_return['ResponseData'],
-                            'ArtistGenres'  => $ArtistGenres,
-                            'CurrentRecords' => Session::get('CurrentRecords')+count($curl_return['ResponseData']['tracks']['items']),
-                            'TotalRecords'  => $curl_return['ResponseData']['tracks']['total']
-                        ]);
-
+                    $max_count = $curr_count;
+                    $res = $arr[$i - 1];
                 }
+                $curr_count = 1;
             }
         }
-        
-        
+
+        // If last element
+        // is most frequent
+        if ($curr_count > $max_count)
+        {
+            $max_count = $curr_count;
+            $res = $arr[$n - 1];
+        }
+
+
+
+
+        return $res;
+    }
+
+    public function findMostRepeatedArtist($artists)
+    {
+
+
+        if(count($artists) > 2)
+        {
+            $return = $this->mostFrequent($artists, count($artists));
+
+            if($return == '1')
+            {
+                $return = $artists[0];
+            }
+        }
+
+        else
+        {
+
+            $return = $artists[0];
+
+        }
+
+        $return = [
+            'Success'   => true,
+            'RepeatedArtist' => $return
+                ];
+
+        return $return;
+    }
+
+
+    public function findAveragedTrackFeatures($tracks, $main)
+    {
+        $danceability = 0;
+        $energy = 0;
+        $popularity = 0;
+        $valence = 0;
+
+        if(!isset($tracks['audio_features']))
+        {
+            $count = count($tracks);
+            foreach($tracks as $track)
+            {
+                $danceability+=$track['danceability'];
+                $energy+=$track['energy'];
+                $valence+=$track['valence'];
+            }
+
+            if(!isset($main['tracks']))
+                foreach($main['items'] as $playlist)
+                {
+                    $popularity+=$playlist['track']['popularity'];
+                }
+            else
+                foreach($main['tracks']['items'] as $playlist)
+                {
+                    $popularity+=$playlist['track']['popularity'];
+                }
+        }
+        else
+        {
+            $count = count($tracks['audio_features']);
+            foreach($tracks['audio_features'] as $track)
+            {
+                $danceability+=$track['danceability'];
+                $energy+=$track['energy'];
+                $valence+=$track['valence'];
+            }
+
+            foreach($main['tracks']['items'] as $playlist)
+            {
+                $popularity+=$playlist['track']['popularity'];
+            }
+        }
+
+
+
+
+
+
+
+        $return = [
+            'Success'   => true,
+            'Danceability' => $danceability/$count,
+            'Energy'    => $energy/$count,
+            'Popularity'   => ($popularity/$count)/100,
+            'Valence'   => $valence/$count
+        ];
+
+        return $return;
     }
 
     /**
      * Limit and offset query parameters on spotify api are broken.
      * A common issue that is found over internet right now.
      * Solution implemented: As maximum ids requested to Spotify API
-     * are 50, and Playlist's minimum record received is 100, 
+     * are 50, and Playlist's minimum record received is 100,
      * I am dividing received records into two dynamic equal chunks.
      */
 
-    private function getTrackAttributes($playlist, $append)
+    private function getTrackAttributes($playlist)
     {
         $track_ids = "";
         $toAppend = "";
 
-
-        if($append)
-         {   
+        if(isset($playlist['tracks']))
+        {
+            foreach($playlist['tracks']['items'] as $track)
+            {
+                $track_ids = $track_ids.$toAppend;
+                $track_ids = $track_ids.$track['track']['id'];
+                $toAppend = '%2C';
+            }
+        }
+        else
+        {
             foreach($playlist['items'] as $track)
             {
-        
                 $track_ids = $track_ids.$toAppend;
                 $track_ids = $track_ids.$track['track']['id'];
                 $toAppend = '%2C';
 
             }
         }
-        else
-            foreach($playlist['tracks']['items'] as $track)
-            {
-        
-                $track_ids = $track_ids.$toAppend;
-                $track_ids = $track_ids.$track['track']['id'];
-                $toAppend = '%2C';
 
-            }
 
-        
         $url =  "https://api.spotify.com/v1/audio-features?ids=".$track_ids;
 
         $curl_return = $this->myCurl($url, null, 'GET', false);
@@ -476,11 +623,12 @@ class PlayListController extends Controller
 
 
     /**
-     * 
+     *
      */
 
-    private function getArtistGenres($playlist, $append)
+    private function getArtistGenres($playlist)
     {
+
 
         $ArtistGenres = array();
         $artist_ids = "";
@@ -489,29 +637,104 @@ class PlayListController extends Controller
         $start = 0;
         $limit = 50;
 
-        if($append)
+        if(!isset($playlist['tracks']))
             $count_records = count($playlist['items']);
         else
             $count_records = count($playlist['tracks']['items']);
 
-        $iterations = ceil($count_records/($limit+1));
+
+        $counter = 0;
+
+        for($i=0;   $i<$count_records;  )
+        {
+            if(!isset($playlist['tracks']))
+                $artist_count = count($playlist['items'][$i]['track']['artists']);
+            else
+                $artist_count = count($playlist['tracks']['items'][$i]['track']['artists']);
+
+
+            while($i<$count_records && $counter + $artist_count< $limit)
+            {
+
+                if(!isset($playlist['tracks']))
+                    $temp = $playlist['items'][$i]['track']['artists'];
+                else
+                    $temp = $playlist['tracks']['items'][$i]['track']['artists'];
+
+
+                foreach($temp as $artist)
+                {
+                    $artist_ids = $artist_ids.$toAppend;
+                    $artist_ids = $artist_ids.$artist['id'];
+                    $toAppend = '%2C';
+                }
+
+                $counter += $artist_count;
+                $i++;
+
+                if($i<$count_records)
+                    if(!isset($playlist['tracks']))
+                        $artist_count = count($playlist['items'][$i]['track']['artists']);
+                    else
+                        $artist_count = count($playlist['tracks']['items'][$i]['track']['artists']);
+            }
+
+            $url = 'https://api.spotify.com/v1/artists?ids='.$artist_ids;
+
+
+            $curl_return = $this->myCurl($url, null, 'GET', false);
+
+            if($curl_return['Success'] == false)
+            {
+
+                return $curl_return;
+            }
+
+            else
+            {
+                $ArtistGenres = array_merge($ArtistGenres, $curl_return['ResponseData']['artists']);
+            }
+
+
+            $artist_ids = '';
+            $toAppend = '';
+            $counter = 0;
+
+        }
+
+
+        /*$iterations = ceil($count_records/($limit+1));
 
         for($i = 0; $i < $iterations; $i++)
         {
 
-            if($append)
+            if(!isset($playlist['tracks']))
                 foreach(array_slice($playlist['items'], $start, $limit) as $track)
                 {
-                    $artist_ids = $artist_ids.$toAppend;
-                    $artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
-                    $toAppend = '%2C';
+                    foreach($track['track']['artists'] as $temp)
+                    {
+
+                        $artist_ids = $artist_ids.$toAppend;
+                        $artist_ids = $artist_ids.$temp['id'];
+                        $toAppend = '%2C';
+                        //$artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
+
+                    }
                 }
             else
                 foreach(array_slice($playlist['tracks']['items'], $start, $limit) as $track)
                 {
-                    $artist_ids = $artist_ids.$toAppend;
-                    $artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
-                    $toAppend = '%2C';
+                   // $artist_ids = $artist_ids.$toAppend;
+
+                    foreach($track['track']['artists'] as $temp)
+                    {
+
+                        $artist_ids = $artist_ids.$toAppend;
+                        $artist_ids = $artist_ids.$temp['id'];
+                        $toAppend = '%2C';
+                        //$artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
+
+                    }
                 }
 
             $url = 'https://api.spotify.com/v1/artists?ids='.$artist_ids;
@@ -533,10 +756,23 @@ class PlayListController extends Controller
             $limit = $limit + $limit;
             $toAppend = '';
 
-        }
-        
+        }*/
+
+
+
+
         $ArtistGenres['Success'] = true;
         return $ArtistGenres;
-        
+
+    }
+
+    /**
+     *
+     */
+
+    private function myCurl($url, $body, $method, $header)
+    {
+
+        return $this->myCurlTrait($url, $body, $method, $header);
     }
 }

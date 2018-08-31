@@ -1,79 +1,59 @@
+<!doctype html>
 <html>
+    <head>
 
-<head>
-
-<style>
-        table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        }
-
-        td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        }
-
-        tr:nth-child(even) {
-        background-color: #dddddd;
-        }
-</style>
+        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 
 
+        <script>
 
-</head>
+            function playlistDetails(id)
+            {
+
+                location.replace('<?php echo url('/') ?>/playlist/details/'+id+'?items=25&page=1');
+            }
+            function refresh(id)
+            {
+                location.replace('<?php echo url('/') ?>/playlist/get/'+id);
+
+            }
+
+        </script>
+
+
+    </head>
 
 
 
-<body>
+    <body>
 
-        
-
-        <iframe src='https://open.spotify.com/embed/user/{{$owner['id']}}/playlist/{{$id}}' width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-        <H1>Playlist Information</H1>
-
-        <table>
-                <tr>
-                        <th>Name</th>
-                        <td>{{$name}}</td>
-                </tr>
-                <tr>
-                        <th>Description</th>
-                        <td>{{$description}}</td>
-                </tr>
-                <tr>
-                        <th>Playlist Creator</th>
-                        <td>{{$owner['display_name']}}</td>
-                </tr>
-                <tr>
-                        <th>Playlist ID</th>
-                        <td>{{$owner['id']}}</td>
-                </tr>
-                <tr>
-                        <th>Followers</th>
-                        <td>{{$followers['total']}}</td>
-                </tr>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
 
 
-        </table>
+        @else
+
+        <!-- <button class='btn btn-primary' onclick='refresh("{{$Playlist['id']}}")'>refresh</button> -->
+        <button class='btn btn-primary' onclick='playlistDetails("{{$Playlist['id']}}")'>details</button>
+
+
+        <iframe src="https://open.spotify.com/embed/user/{{$Playlist['creator_id']}}/playlist/{{$Playlist['id']}}" width="600" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 
 
-        <H1>Tracks Information</H1>
+        {!! Form::open(['url' => '/comment/add/'.$Playlist['id'], 'method' => 'POST']) !!}
+        {{Form::label('Your Comment', 'comment')}}
+        {{Form::textarea('comment', '', ['class' => 'ckeditor', 'placeholder' => 'Enter your comment...'])}}
+        {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
+        {!! Form::close() !!}
 
-</body>
+        @endif
 
-
-
-<script>
-
-        $.ajax({
-                url:''
-        })
-
-</script>
-
-
-<html>
+    </body>
+</html>

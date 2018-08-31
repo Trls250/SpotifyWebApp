@@ -17,7 +17,7 @@ trait UserData {
         else
             return ('Error: Can not read session instance');
         /*
-        * CURL REQUEST BUILDING 
+        * CURL REQUEST BUILDING
         */
 
         $curl_api_user = curl_init();
@@ -66,23 +66,32 @@ trait UserData {
 
         if($responseError!="")
         {
-            return "CURL ERROR: " .$responseError;                                   //TODO -> Append failure code here in case of CURL error
+            $return_array = array(
+                "Success" => false,
+                "Code"  => "exp_session",
+                "Desc"  => "ERROR : ".$responseError
+            );
+            return $return_array;                             //TODO -> Append failure code here in case of CURL error
         }
 
         if (isset($responseData['error']))
         {
-            return ("ERROR : ".$responseData['error']['status'].
-                    "</br>DESCRIPTION : ".$responseData['error']['message']);
+            $return_array = array(
+                "Success" => false,
+                "Code"  => $responseData['error']['status'],
+                "Desc"  => $responseData['error']['message']
+            );
+            return $return_array;
         }
         else
         {
             if($id == 'me')
-                Session::put('user_info', $responseData);
+                Session::put('UserInfo', $responseData);
 
             $responseData['Success'] = true;
             return $responseData;
         }
-    
+
     }
 }
 

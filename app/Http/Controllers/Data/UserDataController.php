@@ -11,36 +11,16 @@ class UserDataController extends Controller
     use UserData {
         UserData::getUserProfile as myGetUserProfile;
     }
-    
-    public function FunWrapper(Request $request)
+
+    public function getCurrentUser(Request $request)
     {
-        $todo = $request->todo;
 
-        switch($todo)
-        {
-            case "get":
-                return $this->getUserProfile($request);
-        }
+        return $this->myGetUserProfile(session::get('UserInfo')['id']);
 
-
-        return "Invalid URL Pattern";
     }
-
-
-    public function getUserProfile(Request $request)
+    public function getUser(Request $request)
     {
+        return $this->myGetUserProfile($request->id);
 
-        if(!$request->has('id'))
-        {
-            $return_array = array(
-                "Success" => false,
-                "Desc"  => "CAN NOT OBTAIN USER ID FROM URL"
-            );
-            
-            return $return_array;                                 
-        }
-        else 
-            return ($this->myGetUserProfile($request->input('id')));
-        
     }
 }

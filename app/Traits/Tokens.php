@@ -8,7 +8,7 @@ trait Tokens
 {
     protected $client_id = 'eb8ca431d8e64b51b50f47d49a2efa11';
     protected $client_secret = '0bc65f040408414aa202b8ed0a45be37';
-    protected $redirect_uri = 'http://localhost:8000/postAuth';
+    protected $redirect_uri = 'http://localhost:8000/auth/postAuth';
 
     private $state = 'ABCDEF';                                              //TODO -> randomize state check
 
@@ -40,15 +40,14 @@ trait Tokens
             }
             else
             {
-            
+
                 /*
-                *       GET ACCESS TOKEN NOW    *
+                * GET ACCESS TOKEN NOW    *
 
                 * CURL REQUEST POST DATA
                 * SECOND REQUEST IN AUTHORIZATION PHASE
                 * SENDING AUTHORIZATION CODE TO EXCHANGE ACCESS AND REFRESH TOKENS
                 */
-
 
                 $postData = array(
                     'grant_type'    => "authorization_code",
@@ -58,10 +57,8 @@ trait Tokens
                     'client_secret' => $this->client_secret
                 );
 
-
-
                 /*
-                * CURL REQUEST BUILDING 
+                * CURL REQUEST BUILDING
                 */
 
 
@@ -88,12 +85,14 @@ trait Tokens
                 * Close CURL
                 */
 
-                
-
-
                 if($responseError!="")
                 {
-                    return "CURL ERROR: " .$responseError;                                   //TODO -> Append failure code here in case of CURL error
+                    $return_array = array(
+                        "Success" => false,
+                        "Code"  => "error_curl",
+                        "Desc"  => "ERROR : ".$responseError
+                    );
+                    return $return_array;                                    //TODO -> Append failure code here in case of CURL error
                 }
 
                 if (isset($responseData['error']))
@@ -101,12 +100,20 @@ trait Tokens
                     if ($responseData['error'] == 'invalid_grant')
                         return "Authorization code expired or used";
                     else
-                        return "Unkown Error Occured, Possibly: Access Token Request Failed";
+                        {
+                            $return_array = array(
+                                "Success" => false,
+                                "Code"  => $responseData['error']['status'],
+                                "Desc"  => $responseData['error']['message']
+                            );
+
+                            return $return_array;
+                        }
                 }
 
                 else
                 {
-         
+
                     Session::put([
                         'access_token'  => $responseData['access_token'],
                         'refresh_token' => $responseData['refresh_token'],
@@ -115,10 +122,107 @@ trait Tokens
 
                     return true;
                 }
-                
-            }          
-            
+
+            }
+
         }
+    }
+
+
+    public function refreshToken()
+    {
+
+        if(!session::has('refresh_token'))
+        {
+            $return_array = array(
+                "Success" => false,
+                "Code"  => "exp_session",
+            );
+
+            return $return_array;
+        }
+
+        $postData = array(
+            'grant_type'    => "refresh_token",
+            'refresh_token'  => session::get('refresh_token'),
+            'client_id'     => $this->client_id,
+            'client_secret' => $this->client_secret
+        );
+
+        /*
+        * CURL REQUEST BUILDING
+        */
+
+        $curl_api_token = curl_init();
+        curl_setopt_array($curl_api_token, array(
+            CURLOPT_URL => "https://accounts.spotify.com/api/token",
+            CURLOPT_POST => TRUE,
+            CURLOPT_RETURNTRANSFER => TRUE,
+            CURLOPT_HTTPHEADER => array('Content-Type: application/x-www-form-urlencoded'),
+            CURLOPT_POSTFIELDS => http_build_query($postData),
+        ));
+
+
+        /*
+        * CURL REQUEST SEND AND RECEIVE RESPONSE
+        */
+
+
+        $responseData = curl_exec($curl_api_token);
+        $responseError = curl_error($curl_api_token);
+
+        curl_close($curl_api_token);
+        /*
+        * Close CURL
+        */
+        $responseData = json_decode($responseData, TRUE);
+
+        if($responseError!="")
+        {
+            $return_array = array(
+                "Success" => false,
+                "Code"  => "error_curl",
+                "Desc"  => "ERROR : ".$responseError
+            );
+            return $return_array;                                     //TODO -> Append failure code here in case of CURL error
+        }
+
+        if (isset($responseData['error']))
+        {
+            if ($responseData['error'] == 'invalid_grant')
+            {
+                $return_array = array(
+                    "Success" => false,
+                    "Code"  => "exp_session",
+                    "Desc"  => $responseData['error']['message']
+                );
+
+                return $return_array;
+            }
+            else
+            {
+                $return_array = array(
+                    "Success" => false,
+                    "Code"  => $responseData['error']['status'],
+                    "Desc"  => $responseData['error']['message']
+                );
+
+                return $return_array;
+            }
+        }
+
+        else
+        {
+
+            Session::put([
+                'access_token'  => $responseData['access_token'],
+                'expires_in'    => $responseData['expires_in']
+            ]);
+
+            return (['Success' => true]);
+        }
+
+
     }
 }
 
