@@ -9,7 +9,7 @@
 
             function relogin()
             {
-                location.replace('<?php echo URL::to('/authCode') ?>');
+                location.replace('<?php echo URL::to('/auth/getCode') ?>');
             }
 
         </script>

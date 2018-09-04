@@ -10,7 +10,7 @@
             function playlistDetails(id)
             {
 
-                location.replace('<?php echo url('/') ?>/playlist/details/'+id+'?items=25&page=1');
+                location.replace('<?php echo url('/') ?>/playlist/details/'+id);
             }
             function refresh(id)
             {
@@ -50,6 +50,13 @@
         {!! Form::open(['url' => '/comment/add/'.$Playlist['id'], 'method' => 'POST']) !!}
         {{Form::label('Your Comment', 'comment')}}
         {{Form::textarea('comment', '', ['class' => 'ckeditor', 'placeholder' => 'Enter your comment...'])}}
+        {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
+        {!! Form::close() !!}
+
+
+        {!! Form::open(['url' => '/rate/insert/'.$Playlist['id'], 'method' => 'POST']) !!}
+        {{Form::label('Your rate', 'rate')}}
+        {{Form::number('rate', '', ['placeholder' => 'Enter your rate...'])}}
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
         {!! Form::close() !!}
 

@@ -4,14 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
-{
+class Comment extends Model {
+
     protected $connection = 'mysql';
     protected $table = 'playlist_comments';
     public $timestamps = true;
 
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $comment = new Comment;
 
         $comment->playlist_id = $request->playlist_id;
@@ -21,12 +20,9 @@ class Comment extends Model
         $comment->user_url = $request->user_url;
         $comment->created_at = $request->created_at;
         $comment->updated_at = $request->updated_at;
-
     }
 
-
-    public function playlist()
-    {
+    public function playlist() {
         return $this->belongsTo('App\playlist');
     }
 

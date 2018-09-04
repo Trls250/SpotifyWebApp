@@ -4,16 +4,15 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePlaylistComments extends Migration
-{
+class CreateTablePlaylistComments extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('playlist_comments', function(Blueprint $table){
+    public function up() {
+        Schema::create('playlist_comments', function(Blueprint $table) {
 
             $table->increments('id');
             $table->string('playlist_id', 30);
@@ -22,8 +21,7 @@ class CreateTablePlaylistComments extends Migration
             $table->text('comment');
             $table->string('user_url', 255);
             $table->timestamps();
-            $table->foreign('playlist_id')->references('id')->on('playlists');
-
+            $table->foreign('playlist_id')->references('id')->on('playlists')->onDelete('cascade');
         });
     }
 
@@ -32,8 +30,8 @@ class CreateTablePlaylistComments extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('playlist_comments');
     }
+
 }

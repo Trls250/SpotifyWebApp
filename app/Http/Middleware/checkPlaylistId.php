@@ -5,8 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use App\Playlist;
 
-class checkPlaylistId
-{
+class checkPlaylistId {
+
     /**
      * Handle an incoming request.
      *
@@ -14,15 +14,14 @@ class checkPlaylistId
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
+    public function handle($request, Closure $next) {
 
-        if(!Playlist::where('id', '=', $request->id)->exists())
-        {
+        if (!Playlist::where('id', '=', $request->id)->exists()) {
             return redirect('/')->withErrors("This playlist is not in our system, please add it using Add Playlist using Spotify URI first");
         }
 
 
         return $next($request);
     }
+
 }

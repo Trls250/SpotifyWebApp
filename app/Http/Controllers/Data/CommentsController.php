@@ -4,20 +4,16 @@ namespace App\Http\Controllers\Data;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Session;
-
-use App\Playlist;
+use session;
+//use App\Playlist;
 use App\Comment;
 
-class CommentsController extends Controller
-{
+class CommentsController extends Controller {
 
-
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
 
         $validatedData = $request->validate([
-                'comment' => 'required',
+            'comment' => 'required',
         ]);
 
 
@@ -34,8 +30,7 @@ class CommentsController extends Controller
         return $comment;
     }
 
-    public function get(Request $request)
-    {
+    public function get(Request $request) {
         $validatedData = $request->validate([
             'page' => 'required',
         ]);
