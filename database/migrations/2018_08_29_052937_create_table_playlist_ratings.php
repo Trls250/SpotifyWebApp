@@ -12,7 +12,7 @@ class CreateTablePlaylistRatings extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('Playlist_ratings', function(Blueprint $table) {
+        Schema::create('playlist_ratings', function(Blueprint $table) {
 
             $table->increments('id');
             $table->string('playlist_id', 30);

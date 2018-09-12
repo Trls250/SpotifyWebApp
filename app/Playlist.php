@@ -8,7 +8,6 @@ class Playlist extends Model {
 
     protected $connection = 'mysql';
     protected $table = 'playlists';
-    public $timestamps = false;
     public $incrementing = false;
 
     public function store(Request $request) {

@@ -168,13 +168,6 @@ class PlayListController extends Controller {
 
     public function refreshCalculateEveryRecord(Request $request) {
 
-        if (Playlist::where('id', '=', $request->id)->exists()) {
-            $playlist = Playlist::find($request->id);
-        } else {
-            $playlist = new Playlist;
-        }
-
-
 
         $limit = 100;
 
@@ -210,9 +203,15 @@ class PlayListController extends Controller {
 
 
 
-        $imageToInsert = $this->findAndGetCover(($return['ResponseData']['images']), $return['ResponseData']['id']);
+        $imageToInsert = findAndGetCover(($return['ResponseData']['images']), 'playlists/'.$return['ResponseData']['id'].'.jpg');
         $repeatedArtist = $this->findMostRepeatedArtist($return['ResponseData']);
         $averagedValues = $this->findAveragedTrackFeatures($return['TrackFeatures'], $return['ResponseData']['tracks']);
+
+        if (Playlist::where('id', '=', $request->id)->exists()) {
+            $playlist = Playlist::find($request->id);
+        } else {
+            $playlist = new Playlist();
+        }
 
         $playlist->id = $return['ResponseData']['id'];
         $playlist->title = $return['ResponseData']['name'];
@@ -230,7 +229,6 @@ class PlayListController extends Controller {
         $playlist->total_tracks = $return['TotalRecords'];
         $playlist->calculated_tracks = true;
         $playlist->cover = $imageToInsert['Success'];
-
         $playlist->save();
 
         /*
@@ -255,16 +253,6 @@ class PlayListController extends Controller {
         return (['Success' => true]);
     }
 
-    public function findAndGetCover($images, $playlist_id) {
-        $images_count = count($images);
-
-        if ($images_count > 0) {
-            return downloadImage($images[0]['url'], 'playlists/'.$playlist_id.'.jpg');
-        } else {
-            return (['Success' => false]);
-        }
-    }
-
 
 
     public function getPlayList(Request $request) {
@@ -274,7 +262,7 @@ class PlayListController extends Controller {
         if (Playlist::where('id', '=', $playlist_id)->exists()) {
 
             $playlist = Playlist::find($request->id);
-
+            $playlist["timeNow"] = $this->timeago($playlist['created_at']);
             if($uri == "playlist/get/".$request->id){
 
                 return view('playlist')->with([
@@ -283,6 +271,9 @@ class PlayListController extends Controller {
                 ]);
             }
             else{
+                /*echo "<pre>";
+                print_r($playlist);
+                exit();*/
                 return view('playlistinfo')->with([
                     'Playlist' => $playlist]);
             }
@@ -657,30 +648,24 @@ class PlayListController extends Controller {
           if(!isset($playlist['tracks']))
           foreach(array_slice($playlist['items'], $start, $limit) as $track)
           {
-          foreach($track['track']['artists'] as $temp)
-          {
 
           $artist_ids = $artist_ids.$toAppend;
-          $artist_ids = $artist_ids.$temp['id'];
+          $artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
           $toAppend = '%2C';
           //$artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
 
-          }
           }
           else
           foreach(array_slice($playlist['tracks']['items'], $start, $limit) as $track)
           {
           // $artist_ids = $artist_ids.$toAppend;
 
-          foreach($track['track']['artists'] as $temp)
-          {
-
           $artist_ids = $artist_ids.$toAppend;
-          $artist_ids = $artist_ids.$temp['id'];
+          $artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
           $toAppend = '%2C';
           //$artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
 
-          }
+
           }
 
           $url = 'https://api.spotify.com/v1/artists?ids='.$artist_ids;
@@ -714,4 +699,27 @@ class PlayListController extends Controller {
     /**
      *
      */
+
+    function timeago($ptime) {
+
+        $difference = time() - strtotime($ptime);
+        if ($difference) {
+            $periods = array("second", "minute", "hour", "day", "week", "month", "years", "decade");
+            $lengths = array("60", "60", "24", "7", "4.35", "12", "10");
+            for ($j = 0; $difference >= $lengths[$j]; $j++)
+                $difference /= $lengths[$j];
+
+            $difference = round($difference);
+            if ($difference != 1)
+                $periods[$j] .= "s";
+
+            $text = "$difference $periods[$j] ago";
+
+
+            return $text;
+        }else {
+            return ' Just Now';
+        }
+    }
+
 }

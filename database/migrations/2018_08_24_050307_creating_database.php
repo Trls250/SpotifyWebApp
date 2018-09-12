@@ -12,7 +12,8 @@ class CreatingDatabase extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('Playlists', function(Blueprint $table) {
+        Schema::create('playlists', function(Blueprint $table) {
+
             $table->string('id', 30)->primary();
             $table->string('title', 255);
             $table->string('repeated_artist', 255);
@@ -29,6 +30,8 @@ class CreatingDatabase extends Migration {
             $table->unsignedInteger('total_tracks')->nullable();
             $table->unsignedInteger('calculated_tracks')->nullable();
             $table->boolean('cover')->default(false);
+            $table->unsignedInteger('rating_count')->default(0);
+            $table->timestamps();
         });
     }
 

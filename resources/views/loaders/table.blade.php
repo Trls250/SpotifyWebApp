@@ -7,7 +7,13 @@
 
         <td data-header="Artists">
         @for($j=0; $j<count($Response['ResponseData']['items'][$i]['track']['artists']); $j++)
+
+            @if(count($Response['ResponseData']['items'][$i]['track']['artists']) == 0)
+                {{ 'N/A' }}
+            @endif
+
             {{ $Response['ResponseData']['items'][$i]['track']['artists'][$j]['name'] }}
+
             @if($j<count($Response['ResponseData']['items'][$i]['track']['artists']) -1)
                 {{ ',' }}
             @endif
@@ -16,8 +22,17 @@
         </td>
 
         <td data-header="Genre">
-            @for($j=0; $j<count($Response['ArtistGenres'][$i]['genres']); $j++)
+            @for($j=0; $j<count($Response['ArtistGenres'][$i]['genres']) && $j<3; $j++)
+
+            @if(count($Response['ArtistGenres'][$i]['genres']) == 0)
+                {{ 'N/A' }}
+            @endif
+
             {{ $Response['ArtistGenres'][$i]['genres'][$j] }}
+
+            @if($j<count($Response['ArtistGenres'][$i]['genres']) -1)
+                {{','}}
+            @endif
             @endfor
         </td>
 

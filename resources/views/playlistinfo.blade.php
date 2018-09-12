@@ -1,77 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+@include('includes/header')
 
-    <head>
-      <title>Spotify</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href= {{ URL::asset('css/bootstrap.css') }}>
-      <link rel="stylesheet" href= {{ URL::asset('pagination/mricode.pagination.css') }}>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-     <link rel="stylesheet" href= {{ URL::asset('css/style.css') }}>
-    </head>
-    <body>
-        <header class="main-header">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-2 col-sm-4 col-xs-4">
-                <div class="logo">
-                  <img src="{{ URL::asset('images/logo.png') }}"/>
-                </div>
-              </div>
-              <div class="col-md-5 hidden-sm hidden-xs">
-                <div class="mobile-search">
-                    <button class="btn search-btns">
-                      <img src="{{ URL::asset('images/search.png') }}">
-                    </button>
-                  <!-- <form>
-                    <input type="text" name="" class="serch-icons" placeholder="Search for a spotify albums...">
-                  </form> -->
-                </div>
-                <div class="search">
-                  <form>
-                    <input type="text" name="" class="serch-icons" placeholder="Search for a spotify albums...">
-                  </form>
-                </div>
-
-              </div>
-              <div class="col-md-5 col-sm-8 col-xs-8">
-                <div class="addplay-lists">
-                  <div class="profile-nav">
-                            <a href="#" class="profile-nav-top">
-                                <figure style="background-image: url({{ URL::asset('images/profile.png') }})"></figure>
-                                <span>{{ session::get('UserInfo')['display_name'] }}</span>
-                                <i class="fa fa-sort-down"></i>
-                            </a>
-                            <ul class="profile-navi">
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="#">Logout</a></li>
-                            </ul>
-                        </div>
-                </div>
-              </div>
-            </div>
-            <div class=" mobile-row">
-              <div class="menu-icons" id="menu-icons">
-                <span class="sr-onlys"></span>
-                <span class="sr-onlys"></span>
-                <span class="sr-onlys"></span>
-                <span class="close-icons"></span>
-              </div>
-              <div class="playlists-rows">
-                <button class="play-btn">
-                    Add Playlist
-                </button>
-                <button class="btn search-btns">
-                    <img src={{ URL::asset('images/search.png') }}>
-                </button>
-                <form class="search-form">
-                  <input type="text" name="" class="serch-icons" placeholder="Search for a spotify albums...">
-                </form>
-              </div>
-
-          </div>
-        </header>
         <section class="main-wrapper">
           <div class="container-fluid">
             <div class="sidebar">
@@ -91,11 +19,11 @@
               <div class="row">
                 <div class="listsrow">
                   <div class="post-row clearfix">
-                      <div class="post-width post-image"  style="background-image: url({{ URL::asset('images/playlists2.png') }});">
+                      <div class="post-width post-image"  style="background-image: url({{ URL::asset('playlists/'.$Playlist['id'].'.jpg') }});">
                       </div>
                       <div class="contentwidth">
                         <div class="postscontent">
-                          <h2>Superorganism <sub>(2014)</sub></h2>
+                          <h2>{{ $Playlist['title'] }} <sub>({{ $Playlist['timeNow'] }})</sub></h2>
                           <!--<button class="follow-btn">Follow</button>-->
                           <p><img src= {{ URL::asset('images/refresh-icon.png') }}>  Refresh </p>
                         </div>
@@ -112,19 +40,19 @@
                           <ul>
                             <li>
                               Popularity<br/>
-                              <span>0.8</span>
+                              <span>{{ $Playlist['popularity'] }}</span>
                             </li>
                             <li>
                               Danceability<br/>
-                              <span>0.46</span>
+                              <span>{{ $Playlist['danceability'] }}</span>
                             </li>
                             <li>
                               Energy<br/>
-                              <span>0.22</span>
+                              <span>{{ $Playlist['energy'] }}</span>
                             </li>
                             <li>
                               Valence<br/>
-                              <span>0.5</span>
+                              <span>{{ $Playlist['valence'] }}</span>
                             </li>
                           </ul>
                         </div>
@@ -174,12 +102,13 @@
                                         </tr>
                                     </thead>
                                     <tbody id="to_replace">
-                                            <div class="loader" style="display: none;">
-                                                <img src = "{{ URL::asset('/images/loading.gif') }}"/>
-                                            </div>
+
                                     </tbody>
                                 </table>
                             </div>
+                    </div>
+                    <div class="loader">
+                        <img src = "{{ URL::asset('/images/loading.gif') }}"/>
                     </div>
               </div>
 
@@ -193,11 +122,14 @@
         <script src="{{ URL::asset('js/bootstrap.js') }}"></script>1
 
         <script type="text/javascript">
+
+            var pageSizeGlobal = 25;
+
           $(document).ready(function () {
 
             $("#pagination-demo").pagination({
                 pageIndex: 0,
-                pageSize: 25,
+                pageSize: pageSizeGlobal,
                 total: {{ $Playlist['total_tracks'] }},
                 pageBtnCount: 9,
                 showFirstLastBtn: true,
@@ -218,7 +150,6 @@
               });
 
 
-
             $('.search-btns').on('click', function() {
                 $('.search-form').toggle("slow");
             });
@@ -234,6 +165,25 @@
             });
 
         });
+
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "get",
+                url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items=25&page=1',
+                success: function (data) {
+                    $(".loader").fadeOut();
+                    $('#to_replace').html(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
+
+        });
+
+
+        //end ready function
 
         $("#pagination-demo").on("pageClicked", function (event, data) {
             $(".loader").fadeIn();

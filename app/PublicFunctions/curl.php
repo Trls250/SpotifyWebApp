@@ -167,3 +167,12 @@ function downloadImage($image_url, $image_file) {
 
 
 
+function findAndGetCover($images, $file_loc) {
+    $images_count = count($images);
+    if ($images_count > 0) {
+        return downloadImage($images[0]['url'], $file_loc);
+    } else {
+        return (['Success' => false]);
+    }
+}
+

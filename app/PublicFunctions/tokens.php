@@ -288,9 +288,13 @@ function getUserProfile($id) {
         return $return_array;
     } else {
         if ($id == 'me')
+        {
+            findAndGetCover($responseData['images'], 'users/'.$responseData['id'].'.jpg');
             Session::put('UserInfo', $responseData);
-
+        }
         $responseData['Success'] = true;
         return $responseData;
     }
 }
+
+
