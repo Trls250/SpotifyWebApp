@@ -696,6 +696,36 @@ class PlayListController extends Controller {
         return $ArtistGenres;
     }
 
+    public function openPlaylist(Request $request){
+        
+        // echo '<pre>';
+        // print_r(session::get('UserInfo')['id']);
+        // exit;
+        $playlist_id = $request->id;
+        $uri = $request->path();
+        if (Playlist::where('id', '=', $playlist_id)->exists()) {
+
+            $playlist = Playlist::find($request->id);
+            
+            $playlist["timeNow"] = $this->timeago($playlist['created_at']);
+            $data = [];
+            $data["Playlist"] = $playlist;
+            $data["user"] = session::get('UserInfo');
+
+            $data["comments"] = $this->getComments();
+
+            if($uri == "playlist/get/".$request->id){
+                $data['Rate']  = (new PlaylistRatingsController)->get($request->id, session::get('UserInfo')['id']);
+            }
+            
+            return view('openplaylists')->with($data);
+        } else {
+
+            return view('home')->withErrors('This playlist doesn\'t exist in our system. Please add it first.');
+        }
+        // return view('openplaylists');
+    }  
+
     /**
      *
      */
@@ -720,6 +750,44 @@ class PlayListController extends Controller {
         }else {
             return ' Just Now';
         }
+    }
+
+    function getComments(){
+
+        $comments = [];
+        
+        $comments[] = [
+            'userName' => 'Harry Potter',
+            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
+            'text' => 'This is a comment',
+            'time' => '5 hours ago'
+        ];
+        $comments[] = [
+            'userName' => 'Harry Potter',
+            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
+            'text' => 'This is a comment',
+            'time' => '5 hours ago'
+        ];
+        $comments[] = [
+            'userName' => 'Harry Potter',
+            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
+            'text' => 'This is a comment',
+            'time' => '5 hours ago'
+        ];
+        $comments[] = [
+            'userName' => 'Harry Potter',
+            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
+            'text' => 'This is a comment',
+            'time' => '5 hours ago'
+        ];
+        $comments[] = [
+            'userName' => 'Harry Potter',
+            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
+            'text' => 'This is a comment',
+            'time' => '5 hours ago'
+        ];
+
+        return $comments;
     }
 
 }
