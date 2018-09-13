@@ -6,6 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href= {{ URL::asset('css/bootstrap.css') }}>
+        <link rel="stylesheet" href= {{ URL::asset('css/nice-select.css') }}>
       <link rel="stylesheet" href= {{ URL::asset('pagination/mricode.pagination.css') }}>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
      <link rel="stylesheet" href= {{ URL::asset('css/style.css') }}>
@@ -29,9 +30,9 @@
                   </form> -->
                 </div>
                 <div class="search">
-                  <form>
-                    <input type="text" name="" class="serch-icons" placeholder="Search for a spotify albums...">
-                  </form>
+                    {{ Form::open(array('url' => 'search', 'method' => 'get')) }}
+                        <input type="text" name="queryString" class="serch-icons" placeholder="Search for a spotify albums...">
+                    {{ Form::close() }}
                 </div>
 
               </div>

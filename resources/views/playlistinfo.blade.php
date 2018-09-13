@@ -17,6 +17,9 @@
             </div>
             <div class="content-container" id ="all_info_container">
               <div class="row">
+                  <div class="detail-page">
+
+
                 <div class="listsrow" id="playlist_thump">
                   <div class="post-row clearfix">
                       @if(file_exists('playlists/'.$Playlist["id"].'.jpg'))
@@ -89,6 +92,7 @@
                   </div>
                   <h3 class="infor">Playlist Information</h3>
                 </div>
+                  </div>
               </div>
 
               <div class ="row">
@@ -132,7 +136,7 @@
 
         <script src= "{{ URL::asset('js/jquery.js') }}"></script>
         <script src="{{ URL::asset('pagination/mricode.pagination.js') }}"></script>
-        <script src="{{ URL::asset('js/bootstrap.js') }}"></script>1
+        <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
 
         <script type="text/javascript">
 
@@ -183,8 +187,9 @@
                   url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items=25&page=1',
                   success: function (data) {
                       $(".loader").fadeOut();
+                      console.log(data);
                       if(data.status == "404"){
-                          $("#tracks_table").replaceWith("Sorry, currently there is no playlist in our system.")
+                          $("#tracks_table").replaceWith("Sorry, currently there is no track in this playlist.")
                       }
                       else {
                           $('#to_replace').html(data);
@@ -199,7 +204,7 @@
 
         $("#refresh_playlist").on("click", function () {
             // show main loader here
-            $("#playlist_thump").replaceWith(" <img src = '{{ URL::asset('/images/loading.gif') }}'/> ");
+            $("#all_info_container").html("<div class='loader'> <img class= 'center-block loader-img' src = '{{ URL::asset('/images/loading.gif') }}'/> </div>");
             $.ajax({
                 type: "get",
                 url: "{{ url('playlist/calculate/'.$Playlist['id'])}}",

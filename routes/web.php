@@ -31,18 +31,20 @@ Route::get('auth/postAuth', 'Auth\SpotifyAuthController@myPostAuthCode');
 Route::get('auth/setExpire/{token}', 'Auth\SpotifyAuthController@setExpire');
 
 
-Route::get('playlist/open-playlist/{id}','PlayListController@openPlaylist');
+
 
 Route::group(['middleware' => 'checkAuth'], function () {
 
+    Route::get('search', 'Data\SearchController@getSearchResults');
     Route::get('wall', 'PlayListController@getWall');
     Route::get('playlist/getAll', 'PlayListController@getAllPlaylists');
-    Route::get('playlist/getWall', 'PlayListController@getWall');
+    Route::view('playlist/getWall', 'wall');
     Route::get('playlist/getWallRecords', 'PlayListController@getWallRecords');
     Route::get('playlist/add/{url}', 'PlayListController@addPlaylist');
     Route::get('playlist/insert/{id}', 'PlayListController@insertPlaylist');
 
     Route::group(['middleware' => 'checkPlaylistId'], function () {
+        Route::get('playlist/open-playlist/{id}','PlayListController@openPlaylist');
         Route::get('playlist/get/{id}', 'PlayListController@getPlayList');
         Route::get('playlist/calculate/{id}', 'PlayListController@refresh');
         Route::get('playlist/details/{id}', 'PlayListController@getPlaylist');

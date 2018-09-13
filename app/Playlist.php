@@ -23,6 +23,11 @@ class Playlist extends Model {
         $playlist->creator_id = $request->creator_id;
         $playlist->rating = $request->rating;
         $playlist->followers = $request->followers;
+        $playlist->instrumentalness = $request->instrumentalness;
+        $playlist->liveness = $request->liveness;
+        $playlist->loudness = $request->loudness;
+        $playlist->speechiness = $request->speechiness;
+        $playlist->tempo = $request->tempo;
         $playlist->danceability = $request->danceability;
         $playlist->popularity = $request->popularity;
         $playlist->energy = $request->energy;
@@ -40,5 +45,16 @@ class Playlist extends Model {
 
     public function rate() {
         return $this->hasMany('App\PlaylistRating');
+    }
+
+    public static function getAll($offset, $items) {
+        $playlists = Playlist::skip($offset)->take($items)->get();
+        return ($playlists);
+    }
+
+    public static function searchLike($str, $offset, $items) {
+
+        $playlists = Playlist::where('title', 'like', '%'.$str.'%')->skip($offset)->take($items)->get();
+        return ($playlists);
     }
 }

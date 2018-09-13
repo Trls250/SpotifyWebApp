@@ -1,4 +1,5 @@
 
+@if($Status == "200")
 @foreach($Playlists as $playlist)
     <div class="row">
         <div class="post-row clearfix">
@@ -63,3 +64,4 @@
         </div>
     </div>
 @endforeach
+    @endif

@@ -14,10 +14,10 @@
                 </li> 
               </ul>
             </div>
-            <div class="content-container" id="wall_records" data-placement="10">
+            <div class="content-container">
               <div class="row">
                 <div class="col-md-12">
-                  <h3 class="title">Wall</h3>
+                  <h3 id ="title_replace" class="title">Wall</h3>
                 </div>
               </div>
 
@@ -62,8 +62,9 @@
                   url: "{{ url('playlist/getWallRecords')}}"+'?offset='+$offset+'&items='+$items,
                   success: function (data) {
                       $(".loader").fadeOut();
+                      console.log("data"+data);
                       if(data.status == "404"){
-                          $("#wall_records").replaceWith("You need to add atleast one track to this playlist first for track details.");
+                          $("#title_replace").html("Sorry, currently there is no playlist in our system.");
                       }
                       else {
                           $('#wall_records').append(data);

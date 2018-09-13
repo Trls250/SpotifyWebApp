@@ -24,6 +24,11 @@ class CreatingDatabase extends Migration {
             $table->unsignedDecimal('rating')->nullable();
             $table->unsignedInteger('followers')->nullable();
             $table->unsignedDecimal('popularity')->nullable();
+            $table->unsignedDecimal('instrumentalness')->nullable();
+            $table->unsignedDecimal('liveness')->nullable();
+            $table->decimal('loudness')->nullable();
+            $table->unsignedDecimal('speechiness')->nullable();
+            $table->unsignedDecimal('tempo')->nullable();
             $table->unsignedDecimal('danceability')->nullable();
             $table->unsignedDecimal('energy')->nullable();
             $table->unsignedDecimal('valence')->nullable();

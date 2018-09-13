@@ -44,10 +44,6 @@ class PlayListController extends Controller {
     }
 
 
-    public function getWall()
-    {
-        return view('wall');
-    }
     public function getWallRecords(Request $request)
     {
 
@@ -62,7 +58,7 @@ class PlayListController extends Controller {
 
         if(isset($request['items']))
         {
-            $offset = $request['items'];
+            $limit = $request['items'];
 
         }
 
@@ -74,15 +70,15 @@ class PlayListController extends Controller {
         }
 
 
-        if($offset>=Playlist::count())
+        $playlists = Playlist::getAll($offset, $limit);
+
+        if($playlists->count() == 0)
         {
             return view('loaders.wall')->with([
                 'Success'=>false,
                 'Status'=>"204",
                 'Message'=>"No further records"]);
         }
-
-        $playlists = Playlist::skip($offset)->take($limit)->get();
 
         return view('loaders.wall')->with([
             'Success'=>true,
@@ -263,6 +259,11 @@ class PlayListController extends Controller {
         $playlist->creator_name = $return['ResponseData']['owner']['display_name'];
         $playlist->creator_id = $return['ResponseData']['owner']['id'];
         $playlist->rating = 0;
+        $playlist->instrumentalness = $averagedValues['Instrumentalness'];
+        $playlist->liveness = $averagedValues['Liveness'];
+        $playlist->Loudness = $averagedValues['Loudness'];
+        $playlist->speechiness = $averagedValues['Speechiness'];
+        $playlist->tempo = $averagedValues['Tempo'];
         $playlist->followers = $return['ResponseData']['followers']['total'];
         $playlist->danceability = $averagedValues['Danceability'];
         $playlist->popularity = $averagedValues['Popularity'];
@@ -538,6 +539,11 @@ class PlayListController extends Controller {
         $energy = 0;
         $popularity = 0;
         $valence = 0;
+        $speechiness= 0;
+        $tempo= 0;
+        $instrumentalness= 0;
+        $liveness= 0;
+        $loudness= 0;
 
         if (!isset($tracks['audio_features'])) {
             $count = count($tracks);
@@ -545,6 +551,11 @@ class PlayListController extends Controller {
                 $danceability+=$track['danceability'];
                 $energy+=$track['energy'];
                 $valence+=$track['valence'];
+                $speechiness+=$track['speechiness'];
+                $tempo+=$track['tempo']/100;
+                $instrumentalness+=$track['instrumentalness'];
+                $liveness+=$track['liveness'];
+                $loudness+=($track['loudness'])/100;
             }
 
             if (!isset($main['tracks']))
@@ -560,6 +571,11 @@ class PlayListController extends Controller {
                 $danceability+=$track['danceability'];
                 $energy+=$track['energy'];
                 $valence+=$track['valence'];
+                $speechiness+=$track['speechiness'];
+                $tempo+=$track['tempo'];
+                $instrumentalness+=$track['instrumentalness'];
+                $liveness+=$track['liveness'];
+                $loudness+=$track['loudness'];
             }
 
             foreach ($main['tracks']['items'] as $playlist) {
@@ -568,17 +584,17 @@ class PlayListController extends Controller {
         }
 
 
-
-
-
-
-
         $return = [
             'Success' => true,
             'Danceability' => $danceability / $count,
             'Energy' => $energy / $count,
             'Popularity' => ($popularity / $count) / 100,
-            'Valence' => $valence / $count
+            'Valence' => $valence / $count,
+            'Speechiness' => $speechiness/$count,
+            'Tempo' => $tempo/$count,
+            'Instrumentalness' => $instrumentalness/$count,
+            'Liveness' => $liveness/$count,
+            'Loudness' => -1 * $loudness/$count
         ];
 
         return $return;

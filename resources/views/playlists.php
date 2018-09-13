@@ -88,7 +88,268 @@
             <div class="content-container">
               <div class="row">
                 <div class="col-md-12">
-                  <h3 class="title">Playlists</h3>
+                    <div class="playlists-items">
+                        <ul class="clearfix">
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists4.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <button class="play-follow">Add</button>
+                                            <!-- <button class="play-follow play-unfollow">Select</button> -->
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Mali is...</h4>
+                                        <p>20 Tracks</p>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists3.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists4.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Infinite life !</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists1.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists4.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Mali is...</h4>
+                                        <p>20 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists3.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists3.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <button class="play-follow">Select</button>
+                                            <!-- <button class="play-follow play-unfollow">Unfollow</button> -->
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists1.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <button class="play-follow">Add</button>
+                                            <!-- <button class="play-follow play-unfollow">Unfollow</button> -->
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Mali is...</h4>
+                                        <p>20 Tracks</p>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists3.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists4.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Infinite life !</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists1.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists4.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Mali is...</h4>
+                                        <p>20 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists3.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists3.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists3.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="play-box">
+                                    <div class="playlayer">
+                                        <div class="play-img" style="background-image: url('images/playlists3.png');">
+                                        </div>
+                                        <div class="follow">
+                                            <!-- <button class="play-follow">Add</button> -->
+                                            <button class="play-follow play-unfollow">Select</button>
+                                        </div>
+                                    </div>
+                                    <div class="play-content">
+                                        <h4>Without Words</h4>
+                                        <p>12 Tracks</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>  <h3 class="title">Playlists</h3>
                 </div>
               </div>
               <div class="playlists-items">
