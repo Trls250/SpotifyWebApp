@@ -30,6 +30,7 @@ class Playlist extends Model {
         $playlist->total_tracks = $request->total_tracks;
         $playlist->calculated_tracks = $request->calculated_tracks;
         $playlist->cover = $request->image;
+        $playlist->rating_count = null;
         $playlist->save();
     }
 

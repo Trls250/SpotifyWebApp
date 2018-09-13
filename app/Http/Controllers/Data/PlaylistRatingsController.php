@@ -29,6 +29,7 @@ class PlaylistRatingsController extends Controller
             $rating = new PlaylistRating;
             $rating->playlist_id = $request->id;
             $rating->user_id = session::get('UserInfo')['id'];
+            $this->incrementPlaylistCounter($request->id);
         }
 
         else
@@ -74,4 +75,14 @@ class PlaylistRatingsController extends Controller
         return $rate;
     }
 
+    /**
+     * convert to a trigger
+     */
+
+    private function incrementPlaylistCounter($id)
+    {
+        $playlist = Playlist::where(['id' => $id])->first();
+        $playlist->rating_count = $playlist->rating_count +1;
+        $playlist->save();
+    }
 }

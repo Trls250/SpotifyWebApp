@@ -15,10 +15,10 @@ use Illuminate\Http\Request;
 //TODO -> randomize state check
 
 function getBaseUrl() {
-    // output: /myproject/index.php
+    // output: /myproject/wall.blade.php
     $currentPath = $_SERVER['PHP_SELF'];
 
-    // output: Array ( [dirname] => /myproject [basename] => index.php [extension] => php [filename] => index )
+    // output: Array ( [dirname] => /myproject [basename] => wall.blade.php [extension] => php [filename] => index )
     $pathInfo = pathinfo($currentPath);
 
     // output: localhost

@@ -15,29 +15,39 @@
                 </li>
               </ul>
             </div>
-            <div class="content-container">
+            <div class="content-container" id ="all_info_container">
               <div class="row">
-                <div class="listsrow">
+                <div class="listsrow" id="playlist_thump">
                   <div class="post-row clearfix">
-                      <div class="post-width post-image"  style="background-image: url({{ URL::asset('playlists/'.$Playlist['id'].'.jpg') }});">
-                      </div>
+                      @if(file_exists('playlists/'.$Playlist["id"].'.jpg'))
+                          <div class="post-width post-image"  style="background-image: url({{ URL::asset('playlists/'.$Playlist['id'].'.jpg') }});">
+                          </div>
+                      @else
+                          <div class="post-width post-image"  style="background-image: url({{ URL::asset('images/default_playlist.jpg') }});">
+                          </div>
+                      @endif
+
                       <div class="contentwidth">
                         <div class="postscontent">
                           <h2>{{ $Playlist['title'] }} <sub>({{ $Playlist['timeNow'] }})</sub></h2>
                           <!--<button class="follow-btn">Follow</button>-->
-                          <p><img src= {{ URL::asset('images/refresh-icon.png') }}>  Refresh </p>
+                          <p id="refresh_playlist"><img  src= {{ URL::asset('images/refresh-icon.png') }}>  Refresh </p>
                         </div>
-                        <p class="followers"><span>87</span> Followers</p>
+                        <p class="followers"><span>{{$Playlist['followers']}}</span> Followers</p>
                         <div class="rating">
-                          <img src= {{ URL::asset('images/filstar.png') }}>
-                          <img src= {{ URL::asset('images/filstar.png') }}>
-                          <img src= {{ URL::asset('images/filstar.png') }}>
-                          <img src= {{ URL::asset('images/filstar.png') }}>
-                          <img src= {{ URL::asset('images/empty-star.png') }}>
-                          <span>(230 Rate it)</span>
+
+                            @for($i=0; $i<ceil($Playlist['rating']); $i++)
+                                <img src= {{ URL::asset('images/filstar.png') }}>
+                            @endfor
+                            @for($i=0; $i<5 - ceil($Playlist['rating']); $i++)
+                                    <img src= {{ URL::asset('images/empty-star.png') }}>
+                                @endfor
+
+
+                          <span>({{$Playlist['rating_count']}} Rated it)</span>
                         </div>
                         <div class="popular-lists">
-                          <ul>
+                            <ul>
                             <li>
                               Popularity<br/>
                               <span>{{ $Playlist['popularity'] }}</span>
@@ -57,20 +67,22 @@
                           </ul>
                         </div>
                         <div class="tags">
-                          <ul>
+                          <!--<ul>
                             <li>
                               GENRES
                             </li>
                             <li>Rock</li>
                             <li>Jazz</li>
                             <li>Pop</li>
-                          </ul>
+                          </ul>-->
+                            <p>Most Repeated Artist:</p>
+                            <span>{{$Playlist['repeated_artist']}}</span>
                         </div>
                         <div class="taglists">
-                          <div class="playimage" style="background-image: url('{{ URL::asset('images/profile.png') }}')"></div>
+                          <!--<div class="playimage" style="background-image: url('{{ URL::asset('images/profile.png') }}')"></div>-->
                           <div class="playname">
                             <p>Playlist By:</p>
-                            <h3>Maurice Morgan</h3>
+                            <span>{{$Playlist['creator_name']}}</span>
                           </div>
                         </div>
                       </div>
@@ -80,7 +92,7 @@
               </div>
 
               <div class ="row">
-                    <div class="info-table">
+                    <div class="info-table" id="tracks_table">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -116,6 +128,7 @@
                   <div id="pagination-demo" class="m-pagination"></div>
               </div>
         </section>
+
 
         <script src= "{{ URL::asset('js/jquery.js') }}"></script>
         <script src="{{ URL::asset('pagination/mricode.pagination.js') }}"></script>
@@ -164,24 +177,42 @@
                 $(this).next('.profile-navi').slideToggle();
             });
 
+
+              $.ajax({
+                  type: "get",
+                  url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items=25&page=1',
+                  success: function (data) {
+                      $(".loader").fadeOut();
+                      if(data.status == "404"){
+                          $("#tracks_table").replaceWith("Sorry, currently there is no playlist in our system.")
+                      }
+                      else {
+                          $('#to_replace').html(data);
+                      }
+                  },
+                  error: function(XMLHttpRequest, textStatus, errorThrown) {
+                      alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                  }
+              });
+
         });
 
-
-        $(document).ready(function () {
+        $("#refresh_playlist").on("click", function () {
+            // show main loader here
+            $("#playlist_thump").replaceWith(" <img src = '{{ URL::asset('/images/loading.gif') }}'/> ");
             $.ajax({
                 type: "get",
-                url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items=25&page=1',
+                url: "{{ url('playlist/calculate/'.$Playlist['id'])}}",
                 success: function (data) {
-                    $(".loader").fadeOut();
-                    $('#to_replace').html(data);
+
+                       window.location = "{{URL::to('playlist/calculate/'.$Playlist['id'])}}"
+
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     alert("Status: " + textStatus); alert("Error: " + errorThrown);
                 }
-            });
-
+            })
         });
-
 
         //end ready function
 
