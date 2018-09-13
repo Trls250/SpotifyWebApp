@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Data;
 
-use App\Traits\UserData;
+// use App\Traits\UserData;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class UserDataController extends Controller {
 
-    use UserData {
-        UserData::getUserProfile as myGetUserProfile;
-    }
+    // use UserData {
+    //     UserData::getUserProfile as myGetUserProfile;
+    // }
 
     public function getCurrentUser(Request $request) {
 
@@ -20,5 +20,4 @@ class UserDataController extends Controller {
     public function getUser(Request $request) {
         return $this->myGetUserProfile($request->id);
     }
-
 }

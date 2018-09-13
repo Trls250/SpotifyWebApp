@@ -20,15 +20,18 @@ Route::get('/', function () {
 
 
 Route::get('/test', 'PlayListController@test');
+Route::post('comment/test', 'Data\CommentsController@test');
 
-
+/*
+TODO: Assign middlewares here
+*/
 
 Route::get('auth/getCode', 'Auth\SpotifyAuthController@myAuthCode');
 Route::get('auth/postAuth', 'Auth\SpotifyAuthController@myPostAuthCode');
 Route::get('auth/setExpire/{token}', 'Auth\SpotifyAuthController@setExpire');
 
 
-
+Route::get('playlist/open-playlist/{id}','PlayListController@openPlaylist');
 
 Route::group(['middleware' => 'checkAuth'], function () {
 
@@ -51,8 +54,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('users/me', 'Data\UserDataController@getCurrentUser');
     Route::get('users/get{id}', 'Data\UserDataController@getUser');
 
-
-
     Route::post('comment/add/{id}', 'Data\CommentsController@store');
 
 });
+

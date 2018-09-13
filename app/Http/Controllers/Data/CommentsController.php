@@ -11,11 +11,10 @@ use App\Comment;
 class CommentsController extends Controller {
 
     public function store(Request $request) {
-
+        
         $validatedData = $request->validate([
             'comment' => 'required',
         ]);
-
 
         $comment = new Comment;
         $comment->playlist_id = $request->id;
@@ -26,7 +25,6 @@ class CommentsController extends Controller {
 
         $comment->save();
 
-
         return $comment;
     }
 
@@ -36,4 +34,10 @@ class CommentsController extends Controller {
         ]);
     }
 
+    public function test(Request $request){
+        echo '<pre>';
+        print_r($request);
+        exit;
+        return;
+    }
 }
