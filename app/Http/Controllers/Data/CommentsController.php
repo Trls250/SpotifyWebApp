@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Data;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use session;
-//use App\Playlist;
+use Session;
+use App\Playlist;
 use App\Comment;
 
 class CommentsController extends Controller {
@@ -26,6 +26,28 @@ class CommentsController extends Controller {
         $comment->save();
 
         return $comment;
+    }
+
+    /* ADDED BY FARZAM */
+    public function addComment(Request $request){
+         $validatedData = $request->validate([
+            'comment' => 'required',
+            'rating'  => 'required'
+        ]);
+
+        $playlist = Playlist::find($request->id);
+        if(empty($playlist)){
+
+        }   
+
+        /* Add New Comment. */
+        $playlist->AddNewComment($request->input());
+
+        /* IF rating is provided, Add or Update the record of rating for User. */
+        $playlist->AddOrUpdateRating($request->input());
+        
+
+        return "success";
     }
 
     public function get(Request $request) {

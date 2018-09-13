@@ -57,3 +57,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
 
 });
 
+Route::group(['middleware' => ['web']], function(){
+    Route::post('comment/add-new', 'Data\CommentsController@addComment');
+});
+

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Playlist;
 
 class PlaylistRating extends Model
 {
@@ -23,5 +24,4 @@ class PlaylistRating extends Model
     public function playlist() {
         return $this->belongsTo('App\playlist');
     }
-
 }
