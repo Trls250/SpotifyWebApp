@@ -40,7 +40,11 @@
                 <div class="addplay-lists">
                   <div class="profile-nav">
                             <a href="#" class="profile-nav-top">
-                                <figure style="background-image: url({{ URL::asset('users/'. session::get('UserInfo')['id'].'.jpg') }})"></figure>
+                                @if(file_exists('users/'. session::get('UserInfo')['id'].'.jpg'))
+                                    <figure style="background-image: url({{ URL::asset('users/'. session::get('UserInfo')['id'].'.jpg') }})"></figure>
+                                @else
+                                    <figure style="background-image: url({{ URL::asset('images/default_user.png') }})"></figure>
+                                @endif
                                 <span>{{ session::get('UserInfo')['display_name'] }}</span>
                                 <i class="fa fa-sort-down"></i>
                             </a>
@@ -73,3 +77,5 @@
 
           </div>
         </header>
+    </body>
+</html>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Data\PlaylistRatingsController;
 use App\Playlist;
 use App\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Session;
 
 /**
@@ -46,9 +47,47 @@ class PlayListController extends Controller {
 
     public function getWall()
     {
-        $playlists = \DB::table('playlists')->simplePaginate(15);
+        return view('wall');
+    }
+    public function getWallRecords(Request $request)
+    {
 
-        return view('wall')->with('playlists', $playlists);
+        $offset = 0;
+        $limit = 2;
+
+        if(isset($request['offset']))
+        {
+           $offset = $request['offset'];
+
+        }
+
+        if(isset($request['items']))
+        {
+            $offset = $request['items'];
+
+        }
+
+        if(Playlist::count() == 0){
+            return view('loaders.wall')->with([
+                'Success'=>false,
+                'Status'=>"404",
+                'Message'=>"No records"]);
+        }
+
+
+        if($offset>=Playlist::count())
+        {
+            return view('loaders.wall')->with([
+                'Success'=>false,
+                'Status'=>"204",
+                'Message'=>"No further records"]);
+        }
+
+        $playlists = Playlist::skip($offset)->take($limit)->get();
+
+        return view('loaders.wall')->with([
+            'Success'=>true,
+            'Playlists'=> $playlists]);
     }
 
     /**
@@ -140,7 +179,10 @@ class PlayListController extends Controller {
 
 
         if ($high > $total) {
-            return "No further records, invalid page index";
+            return ([
+                "Success"=>false,
+                "status" => "404",
+            "message" => "No further records, invalid page index"]);
         } else {
 
             $url = 'https://api.spotify.com/v1/playlists/' . $request->id . '/tracks?offset=' . $offset . '&limit=' . $items;
@@ -255,6 +297,18 @@ class PlayListController extends Controller {
     }
 
 
+    public function refresh(Request $request) {
+
+        if($this->refreshCalculateEveryRecord($request)['Success'] == true) {
+            return ($this->getPlayList($request));
+        }
+
+        else {
+
+            return ("an error occured in refresh@PlayListController");
+        }
+
+    }
 
     public function getPlayList(Request $request) {
         $playlist_id = $request->id;
