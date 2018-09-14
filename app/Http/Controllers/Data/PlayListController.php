@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\PlaylistRating;
 use App\Http\Controllers\Data\PlaylistRatingsController;
 use App\Playlist;
+use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -19,27 +20,62 @@ class PlayListController extends Controller {
      */
 
 
-    public function getAllPlaylists() {
-        $url = "https://api.spotify.com/v1/me/playlists";
+    public function getAllPlaylistsRecords(Request $request) {
+
+        $offset = 0;
+        $limit = 2;
+
+        if(isset($request['offset']))
+        {
+            $offset = $request['offset'];
+
+        }
+
+        if(isset($request['items']))
+        {
+            $limit = $request['items'];
+
+        }
+
+
+        $url = "https://api.spotify.com/v1/me/playlists?limit=".$limit."&offset=".$offset;
         $curl_return = goCurl($url, null, "GET", FALSE);
 
         if ($curl_return['Success'] == false) {
-            return view('relogin')->withErrors('Whoa! We face a problem automatically re-signing in you again.');
+            return view('errors.500')->withErrors($curl_return['Desc']);
         } else {
             // $curl_data = json_decode($curl_return['ResponseData'], true);
 
-            foreach ($curl_return['ResponseData']['items'] as $key => $playlist) {
-                if (Playlist::where('id', '=', $playlist['id'])->exists()) {
-                    $curl_return['ResponseData']['items'][$key]['db'] = true;
-                } else {
-                    $curl_return['ResponseData']['items'][$key]['db'] = false;
-                }
+            if(count($curl_return['ResponseData']['items']) == 0 && $offset == 0)
+            {
+                return ([
+                    'Success'=>false,
+                    'Status'=>"404",
+                    'Message'=>"No records"]);
             }
 
-            if ($curl_return['Success'] == false)
-                return $curl_return['Desc'];
+
+            else if(count($curl_return['ResponseData']['items']) == 0 && $offset > 0)
+            {
+                return ([
+                    'Success'=>false,
+                    'Status'=>"204",
+                    'Message'=>"No further records"]);
+            }
+
             else
-                return view('home')->with($curl_return['ResponseData']);
+            {
+                foreach ($curl_return['ResponseData']['items'] as $key => $playlist) {
+                    if (Playlist::where('id', '=', $playlist['id'])->exists()) {
+                        $curl_return['ResponseData']['items'][$key]['db'] = true;
+                    } else {
+                        $curl_return['ResponseData']['items'][$key]['db'] = false;
+                    }
+                }
+
+                return view('loaders.user_playlists')->with('Playlists', $curl_return['ResponseData']['items']);
+            }
+
         }
     }
 
@@ -63,7 +99,7 @@ class PlayListController extends Controller {
         }
 
         if(Playlist::count() == 0){
-            return view('loaders.wall')->with([
+            return ([
                 'Success'=>false,
                 'Status'=>"404",
                 'Message'=>"No records"]);
@@ -74,13 +110,14 @@ class PlayListController extends Controller {
 
         if($playlists->count() == 0)
         {
-            return view('loaders.wall')->with([
+            return ([
                 'Success'=>false,
                 'Status'=>"204",
                 'Message'=>"No further records"]);
         }
 
         return view('loaders.wall')->with([
+            'Status' => "200",
             'Success'=>true,
             'Playlists'=> $playlists]);
     }
@@ -176,8 +213,8 @@ class PlayListController extends Controller {
         if ($high > $total) {
             return ([
                 "Success"=>false,
-                "status" => "404",
-            "message" => "No further records, invalid page index"]);
+                "Status" => "404",
+            "Message" => "No further records, invalid page index"]);
         } else {
 
             $url = 'https://api.spotify.com/v1/playlists/' . $request->id . '/tracks?offset=' . $offset . '&limit=' . $items;
@@ -768,26 +805,21 @@ class PlayListController extends Controller {
 
     public function openPlaylist(Request $request){
         
-        // echo '<pre>';
-        // print_r(session::get('UserInfo')['id']);
-        // exit;
         $playlist_id = $request->id;
         $uri = $request->path();
         if (Playlist::where('id', '=', $playlist_id)->exists()) {
 
             $playlist = Playlist::find($request->id);
             
+            $playlist->calculateRating();
+
             $playlist["timeNow"] = $this->timeago($playlist['created_at']);
             $data = [];
             $data["Playlist"] = $playlist;
             $data["user"] = session::get('UserInfo');
 
-            $data["comments"] = $this->getComments();
+            $data["comments"] = $playlist->getComments();
 
-            if($uri == "playlist/get/".$request->id){
-                $data['Rate']  = (new PlaylistRatingsController)->get($request->id, session::get('UserInfo')['id']);
-            }
-            
             return view('openplaylists')->with($data);
         } else {
 
@@ -820,44 +852,6 @@ class PlayListController extends Controller {
         }else {
             return ' Just Now';
         }
-    }
-
-    function getComments(){
-
-        $comments = [];
-        
-        $comments[] = [
-            'userName' => 'Harry Potter',
-            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
-            'text' => 'This is a comment',
-            'time' => '5 hours ago'
-        ];
-        $comments[] = [
-            'userName' => 'Harry Potter',
-            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
-            'text' => 'This is a comment',
-            'time' => '5 hours ago'
-        ];
-        $comments[] = [
-            'userName' => 'Harry Potter',
-            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
-            'text' => 'This is a comment',
-            'time' => '5 hours ago'
-        ];
-        $comments[] = [
-            'userName' => 'Harry Potter',
-            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
-            'text' => 'This is a comment',
-            'time' => '5 hours ago'
-        ];
-        $comments[] = [
-            'userName' => 'Harry Potter',
-            'userProfileImage' => 'https://cdn.dribbble.com/users/238469/screenshots/1134399/color-picker-ui-_psd_.png',
-            'text' => 'This is a comment',
-            'time' => '5 hours ago'
-        ];
-
-        return $comments;
     }
 
 }

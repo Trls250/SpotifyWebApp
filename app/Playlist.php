@@ -3,6 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\PlaylistRating;
+use App\Comment;
+use Session;
 
 class Playlist extends Model {
 
@@ -56,5 +59,7 @@ class Playlist extends Model {
 
         $playlists = Playlist::where('title', 'like', '%'.$str.'%')->skip($offset)->take($items)->get();
         return ($playlists);
+
+
     }
 }

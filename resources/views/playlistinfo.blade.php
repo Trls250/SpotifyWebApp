@@ -2,19 +2,12 @@
 
         <section class="main-wrapper">
           <div class="container-fluid">
-            <div class="sidebar">
-              <ul class="sidebar-lists">
-                <li class="active">
-                  <a href="#">Wall</a>
-                </li>
-                <li>
-                  <a href="#">Playlists</a>
-                </li>
-                <li>
-                  <a href="#">Playlists</a>
-                </li>
-              </ul>
-            </div>
+
+              @include('includes/sidebar')
+
+              <div id="fullpage_loader">
+                  <img  class= 'center-block loader-img' src = "{{ URL::asset('/images/loading.gif') }}"/>
+              </div>
             <div class="content-container" id ="all_info_container">
               <div class="row">
                   <div class="detail-page">
@@ -144,6 +137,8 @@
 
           $(document).ready(function () {
 
+              $('#fullpage_loader').hide();
+
             $("#pagination-demo").pagination({
                 pageIndex: 0,
                 pageSize: pageSizeGlobal,
@@ -187,8 +182,7 @@
                   url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items=25&page=1',
                   success: function (data) {
                       $(".loader").fadeOut();
-                      console.log(data);
-                      if(data.status == "404"){
+                      if(data.Status == "404"){
                           $("#tracks_table").replaceWith("Sorry, currently there is no track in this playlist.")
                       }
                       else {
@@ -204,7 +198,10 @@
 
         $("#refresh_playlist").on("click", function () {
             // show main loader here
-            $("#all_info_container").html("<div class='loader'> <img class= 'center-block loader-img' src = '{{ URL::asset('/images/loading.gif') }}'/> </div>");
+
+            $('#all_info_container').fadeOut();
+            $('#fullpage_loader').fadeIn();
+            //$("#all_info_container").html("<div class='loader'> <img class= 'center-block loader-img' src = '{{ URL::asset('/images/loading.gif') }}'/> </div>");
             $.ajax({
                 type: "get",
                 url: "{{ url('playlist/calculate/'.$Playlist['id'])}}",

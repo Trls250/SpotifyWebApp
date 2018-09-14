@@ -9,6 +9,7 @@
         <link rel="stylesheet" href= {{ URL::asset('css/nice-select.css') }}>
       <link rel="stylesheet" href= {{ URL::asset('pagination/mricode.pagination.css') }}>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
      <link rel="stylesheet" href= {{ URL::asset('css/style.css') }}>
     </head>
     <body>
@@ -75,6 +76,7 @@
                 </form>
               </div>
 
+          </div>
           </div>
         </header>
     </body>

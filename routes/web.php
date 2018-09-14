@@ -37,7 +37,8 @@ Route::group(['middleware' => 'checkAuth'], function () {
 
     Route::get('search', 'Data\SearchController@getSearchResults');
     Route::get('wall', 'PlayListController@getWall');
-    Route::get('playlist/getAll', 'PlayListController@getAllPlaylists');
+    Route::view('playlist/getAll', 'playlists');
+    Route::get('playlist/getAllRecords', 'PlayListController@getAllPlaylistsRecords');
     Route::view('playlist/getWall', 'wall');
     Route::get('playlist/getWallRecords', 'PlayListController@getWallRecords');
     Route::get('playlist/add/{url}', 'PlayListController@addPlaylist');
@@ -58,5 +59,9 @@ Route::group(['middleware' => 'checkAuth'], function () {
 
     Route::post('comment/add/{id}', 'Data\CommentsController@store');
 
+});
+
+Route::group(['middleware' => ['web']], function(){
+    Route::post('comment/add-new', 'Data\CommentsController@addComment');
 });
 
