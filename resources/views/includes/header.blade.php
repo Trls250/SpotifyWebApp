@@ -96,8 +96,8 @@
                 <div class="modal-body">
                     <div class="playform">
                         <form>
-                            <input type="text" class="search-playlists" placeholder="Paste spotify playlist URL">
-                            <button class="btn btn-playlists"><img src={{URL::asset('images/plus-icon.png')}}>  Add Playlist</button>
+                            <input type="text" class="search-playlists new-playlist-input" placeholder="Paste spotify playlist URL">
+                            <button class="btn btn-playlists add-new-playlist"><img src={{URL::asset('images/plus-icon.png')}}>  Add Playlist</button>
                         </form>
                     </div>
                 </div>
