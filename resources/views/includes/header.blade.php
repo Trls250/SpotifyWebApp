@@ -39,6 +39,9 @@
               </div>
               <div class="col-md-5 col-sm-8 col-xs-8">
                 <div class="addplay-lists">
+                    <button class="play-btn dektop-play-btn" data-toggle="modal" data-target="#playlists">
+                        Add Playlist
+                    </button>
                   <div class="profile-nav">
                             <a href="#" class="profile-nav-top">
                                 @if(file_exists('users/'. session::get('UserInfo')['id'].'.jpg'))
@@ -80,4 +83,26 @@
           </div>
         </header>
     </body>
+
+    <div id="playlists" class="modal fade large-modal " role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content playmodal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><img src={{URL::asset('images/close-icon.png')}}></button>
+                    <h4 class="modal-title">Add Playlist</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="playform">
+                        <form>
+                            <input type="text" class="search-playlists" placeholder="Paste spotify playlist URL">
+                            <button class="btn btn-playlists"><img src={{URL::asset('images/plus-icon.png')}}>  Add Playlist</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </html>
