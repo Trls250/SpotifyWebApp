@@ -84,10 +84,6 @@
                   }
               });
           }
-
-
         </script>
-
-@include('includes/footer')
     </body>
 </html>
