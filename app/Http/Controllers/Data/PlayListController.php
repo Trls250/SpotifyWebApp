@@ -238,7 +238,12 @@ class PlayListController extends Controller {
 
     public function insertPlaylist(Request $request) {
         //the following function calculates all data, and inserts into DB so this function is just a wrapper
-        return $this->refreshCalculateEveryRecord($request);
+        if($this->refreshCalculateEveryRecord($request)["Success"]){
+            return redirect('playlist/open-playlist/'.$request->id);
+        }else{
+            return view('errors.500');
+        }
+        // return $this->refreshCalculateEveryRecord($request);
     }
 
     public function refreshCalculateEveryRecord(Request $request) {
@@ -817,6 +822,11 @@ class PlayListController extends Controller {
             $data = [];
             $data["Playlist"] = $playlist;
             $data["user"] = session::get('UserInfo');
+            if(file_exists('users/'. session::get('UserInfo')['id'].'.jpg')){
+                $data["user"]['profileImage'] = '/users/'. session::get('UserInfo')['id'].'.jpg';
+            }else{
+                $data["user"]['profileImage'] = '/images/default_user.png';
+            }
 
             $data["comments"] = $playlist->getComments();
 

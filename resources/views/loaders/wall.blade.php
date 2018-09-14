@@ -11,7 +11,7 @@
 
             <div class="contentwidth">
                 <div class="postscontent">
-                    <h2>{{ $playlist->title }}</h2>
+                    <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->id); ?>"><h2>{{ $playlist->title }}</h2></a>
                     <!--<button class="follow-btn">Follow</button>-->
                 </div>
                 <p class="followers"><span>{{$playlist->followers}}</span> Followers</p>

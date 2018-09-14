@@ -157,7 +157,9 @@ class Playlist extends Model {
             }
         }
 
-        $rate /= count($this->rate);
+        if(count($this->rate) > 0){
+            $rate /= count($this->rate);
+        }
 
         return $rate;
     }
