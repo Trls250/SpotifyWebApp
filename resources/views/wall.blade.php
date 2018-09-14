@@ -13,6 +13,7 @@
 
             </div>
           </div>
+            <div class = "page_end_div"></div>
         </section>
         <script src= "{{ URL::asset('js/jquery.js') }}"></script>
         <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
@@ -46,6 +47,28 @@
                       alert("hi");
                   }
               });
+
+              $(window).scroll(function() {
+                  var pos = $(window).scrollTop() + $(window).height();
+                  console.log($(".page-end-div").offset().top + " - " + pos);
+                  if($('.page-end-div').length != 0){
+
+                      if(pos >= $(".page-end-div").offset().top){
+                          if(flag){
+
+                              flag = false;
+
+                              console.log("here");
+                              //getAllRecords(offset, items);
+                              offset += items;
+                          }
+                      }else{
+                          flag = true;
+                      }
+                  }
+              });
+
+
           });
 
           function getRecords($offset, $items) {

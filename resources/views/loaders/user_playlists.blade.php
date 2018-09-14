@@ -11,9 +11,9 @@
 
             <div class="follow">
                 @if($playlist['db'] == false)
-                    <button class="play-follow">Add</button>
+                    <button class="play-follow" onclick="window.location='{{url('playlist/insert/'.$playlist['id'])}}'">Add</button>
                 @else
-                    <button class="play-follow play-unfollow">Select</button>
+                    <button class="play-follow play-unfollow" onclick="window.location='{{url('playlist/get/'.$playlist['id'])}}'">Select</button>
                 @endif
             <!-- <button class="play-follow play-unfollow">Select</button> -->
             </div>
