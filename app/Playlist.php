@@ -58,9 +58,65 @@ class Playlist extends Model {
     public static function searchLike($str, $offset, $items) {
 
         $playlists = Playlist::where('title', 'like', '%'.$str.'%')->skip($offset)->take($items)->get();
+        $playlists = Self::removeDecimalFromFilters($playlists);
         return ($playlists);
 
 
+    }
+
+    public static function removeDecimalFromFilters($playlists){
+
+        if(!empty($playlists)){
+            foreach ($playlists as $key => $value) {
+                $playlists[$key]["instrumentalness"] *= 100;
+                $playlists[$key]["liveness"] *= 100;
+                $playlists[$key]["loudness"] *= 100;
+                $playlists[$key]["speechiness"] *= 100;
+                $playlists[$key]["tempo"] *= 100;
+                $playlists[$key]["popularity"] *= 100;
+                $playlists[$key]["danceability"] *= 100;
+                $playlists[$key]["energy"] *= 100;
+                $playlists[$key]["valence"] *= 100;
+
+                if($playlists[$key]["instrumentalness"] > 100){
+                    $playlists[$key]["instrumentalness"] = 100;
+                }
+
+                if($playlists[$key]["liveness"] > 100){
+                    $playlists[$key]["liveness"] = 100;
+                }
+
+                if($playlists[$key]["loudness"] > 100){
+                    $playlists[$key]["loudness"] = 100;
+                }
+
+                if($playlists[$key]["speechiness"] > 100){
+                    $playlists[$key]["speechiness"] = 100;
+                }
+
+                if($playlists[$key]["tempo"] > 100){
+                    $playlists[$key]["tempo"] = 100;
+                }
+
+                if($playlists[$key]["popularity"] > 100){
+                    $playlists[$key]["popularity"] = 100;
+                }
+
+                if($playlists[$key]["danceability"] > 100){
+                    $playlists[$key]["danceability"] = 100;
+                }
+
+                if($playlists[$key]["energy"] > 100){
+                    $playlists[$key]["energy"] = 100;
+                }
+
+                if($playlists[$key]["valence"] > 100){
+                    $playlists[$key]["valence"] = 100;
+                }
+            }
+        }
+
+        return $playlists;
     }
 
     public function AddOrUpdateRating($data){

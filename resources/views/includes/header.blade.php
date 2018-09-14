@@ -32,7 +32,7 @@
                 </div>
                 <div class="search">
                     {{ Form::open(array('url' => 'search', 'method' => 'get')) }}
-                        <input type="text" name="queryString" class="serch-icons" placeholder="Search for a spotify albums...">
+                        <input value="{{ isset($queryString)?$queryString:'' }}" type="text" name="queryString" class="serch-icons" placeholder="Search for a spotify albums...">
                     {{ Form::close() }}
                 </div>
 
@@ -54,7 +54,7 @@
                             </a>
                             <ul class="profile-navi">
                                 <li><a href="#">Profile</a></li>
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="{{ url('logout') }}">Logout</a></li>
                             </ul>
                         </div>
                 </div>

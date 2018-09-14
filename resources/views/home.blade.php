@@ -1,58 +1,49 @@
-<html>
 
-<head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Spotify</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">     
+     <style type="text/css">
 
-    <script>
-
-        function playlistDetails(id)
-        {
-            location.replace('<?php echo url('/') ?>/playlist/get/'+id);
-        }
-
-    </script>
-
-</head>
-
-<body>
-
-    @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+     </style>
+    </head>
+    <body>
+      <header class="main-login-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 log-column">
+              <div class="logo">
+                <img src="{{ URL::asset('images/logo.png') }}"/> 
+                <h1 class="main-title">  <span>|</span> The Unfollower</h1>
+              </div>
             </div>
-    @endif
-
-    <a href='<?php echo url('auth/getCode') ?>' class="btn btn-primary" id="auth" >Verify Spotify!</a>
-
-    {!! Form::open(['url' => '/playlist/add', 'method' => 'get']) !!}
-        {{Form::label('title', 'playlist_id')}}
-        {{Form::text('url', '', ['class' => 'form-control', 'placeholder' => 'Your id'])}}
-        {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
-    {!! Form::close() !!}
-
-    <a href='<?php echo url('/') ?>/playlist/getAll' class="btn btn-primary"  >Your Playlists</a>
-
-
-    @isset($href)
-
-        @foreach ($items as $item)
-            <p id='name'>{{$item['name']}}</p>
-
-            @if ($item['db'] == false)
-                <a class='btn btn-default' href='<?php echo url('playlist/insert/'.$item['id']) ?>'>Add!</a>
-            @else
-                <a class='btn btn-default' href='<?php echo url('playlist/get/'.$item['id']) ?>'>Select</a>
-            @endif
-
-            <p>Tracks: {{$item['tracks']['total']}}</p>
-        @endforeach
-
-    @endisset
-</body>
-
+          </div>
+      </header>
+      <section class="login-banner jumbotron">
+        <div class="container">
+          <div class="cus-row">
+              <div id="jumbo-dialog" class="text-center">
+                <h1 id="ttitle">The Unfollower</h1>
+                <p id="ttext">
+                    This app will make it easy for you to unfollow large numbers of
+                    playlists.
+                </p>
+                <p>  Login with your Spotify account to get started</p>
+                <a href="<?php echo url('auth/getCode') ?>" class="btn btn-primary green-btn" >Login with Spotify</a>
+              </div>
+          </div>
+        </div>
+      </section>
+      <script src="{{ URL::asset('js/jquery.js') }}"></script>
+      <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
+      <script type="text/javascript">
+        var heig = $( window ).height() - 94;
+        $('.login-banner').css( "height",heig );
+      </script>
+    </body>
 </html>
-
-

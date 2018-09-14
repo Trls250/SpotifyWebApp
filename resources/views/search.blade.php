@@ -73,55 +73,55 @@
                   <div class="range1">
                     <label>Instrumentalness - <output> 0 </output></label>
                     <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-instrumentalness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div>  
                   </div>
                   <div class="range1">
                     <label>Livenss  - <output> 0 </output></label>
                     <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-liveness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div>  
                   </div>
                   <div class="range1">
                     <label>Loudness - <output> 0 </output></label>
                     <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-loudness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div> 
                   </div>
                   <div class="range1">
                     <label>Speechiness - <output> 0 </output></label>
                     <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-speechiness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div>
                   </div>
                   <div class="range1">
-                    <label>Temp  - <output> 0 </output></label>
+                    <label>Tempo  - <output> 0 </output></label>
                     <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-tempo" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div>
                   </div>
                   <div class="range1">
                     <label>Popularity - <output> 0 </output></label>
                     <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-popularity" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div>
                   </div>
                   <div class="range1">
                     <label>Danceability - <output> 0 </output></label>
                     <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-danceability" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div>
                   </div>
                   <div class="range1">
                     <label>Energy - <output> 0 </output></label>
                     <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-energy" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div>
                   </div>
                   <div class="range1">
                     <label>Valence  - <output> 0 </output></label>
                     <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-valence" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div>
                   </div>
                   <div class="range1">
@@ -139,29 +139,39 @@
                 </div>
               </div>
               <div class="playlists-items">
-                <ul class="clearfix">
+                <ul class="clearfix playlist-holder">
 
                   @foreach($Playlists as $playlist)
-                  <li>
-                    <div class="play-box">
-                      <div class="">
-                        @if(file_exists('playlists/'.$playlist["id"].'.jpg'))
-                          <div class="play-img"  style="background-image: url({{ URL::asset('playlists/'.$playlist['id'].'.jpg') }});">
+                    <li class="playlist-filter" 
+                          data-instrumentalness="{{ $playlist['instrumentalness'] }}" 
+                          data-liveness="{{ $playlist['liveness'] }}" 
+                          data-loudness="{{ $playlist['loudness'] }}" 
+                          data-speechiness="{{ $playlist['speechiness'] }}" 
+                          data-tempo="{{ $playlist['tempo'] }}" 
+                          data-popularity="{{ $playlist['popularity'] }}" 
+                          data-danceability="{{ $playlist['danceability'] }}" 
+                          data-energy="{{ $playlist['energy'] }}" 
+                          data-valence="{{ $playlist['valence'] }}"
+                    >
+                  
+                      <div class="play-box">
+                          <div class="">
+                              @if(file_exists('playlists/'.$playlist["id"].'.jpg'))
+                                <div class="play-img"  style="background-image: url({{ URL::asset('playlists/'.$playlist['id'].'.jpg') }});">
+                                </div>
+                              @else
+                                  <div class="play-img"  style="background-image: url({{ URL::asset('images/default_playlist.jpg') }});">
+                                  </div>
+                              @endif
                           </div>
-                        @else
-                          <div class="play-img"  style="background-image: url({{ URL::asset('images/default_playlist.jpg') }});">
+                          <div class="play-content">
+                              <h4>{{$playlist->title}}</h4>
+                              <p>{{$playlist->total_tracks}} Tracks</p>
                           </div>
-                        @endif
-                        </div>
-                      </div>
-                      <div class="play-content">
-                          <h4>{{$playlist->title}}</h4>
-                          <p>{{$playlist->total_tracks}} Tracks</p>
-                      </div>
                       
-                    </div>
-                  </li>
-                    @endforeach
+                      </div>
+                    </li>
+                  @endforeach
                 </ul>
               </div>
             </div>
@@ -199,7 +209,7 @@
             $(function() {
               // var output = document.querySelectorAll('output')[0];
               $(document).on('input', 'input[type="range"]', function(e) {
-                    console.log($(this).prev());
+                    // console.log($(this).prev());
                     $(this).parents('.range1').find('label output').html(e.currentTarget.value);
                     // output.innerHTML = e.currentTarget.value;
               });
@@ -235,10 +245,81 @@
                   e.preventDefault();
                   $('#advanced').toggle();
                   flagAdvanced = !flagAdvanced;
+                  if(!flagAdvanced){
+                      $("#filter-instrumentalness").val('0');
+                      $("#filter-liveness").val('0');
+                      $("#filter-loudness").val('0');
+                      $("#filter-speechiness").val('0');
+                      $("#filter-tempo").val('0');
+                      $("#filter-popularity").val('0');
+                      $("#filter-danceability").val('0');
+                      $("#filter-energy").val('0');
+                      $("#filter-valence").val('0');
+                      $(".range1 output").html('0');
+                      $(".playlist-holder li").show();
+                  }
               });
           });
           $(document).ready(function() {
             $('select').niceSelect(); 
+          });
+
+          $(document).on('input', '.filter-input', function(){
+              $(".playlist-holder li").hide();
+
+              var instrumentalness = $("#filter-instrumentalness").val();
+              var liveness         = $("#filter-liveness").val();
+              var loudness         = $("#filter-loudness").val();
+              var speechiness      = $("#filter-speechiness").val();
+              var tempo            = $("#filter-tempo").val();
+              var popularity       = $("#filter-popularity").val();
+              var danceability     = $("#filter-danceability").val();
+              var energy           = $("#filter-energy").val();
+              var valence          = $("#filter-valence").val();
+              
+              var filter_selectors = "";
+
+              if(instrumentalness != 0){
+                  filter_selectors += "[data-instrumentalness=\""+instrumentalness+"\"]";                  
+              }
+
+              if(liveness != 0){
+                  filter_selectors += "[data-liveness=\""+liveness+"\"]";                  
+              }
+
+              if(loudness != 0){
+                  filter_selectors += "[data-loudness=\""+loudness+"\"]";                  
+              }
+
+              if(speechiness != 0){
+                  filter_selectors += "[data-speechiness=\""+speechiness+"\"]";                  
+              }
+
+              if(tempo != 0){
+                  filter_selectors += "[data-tempo=\""+tempo+"\"]";                  
+              }
+
+              if(popularity != 0){
+                  filter_selectors += "[data-popularity=\""+popularity+"\"]";                  
+              }
+
+              if(danceability != 0){ 
+                  filter_selectors += "[data-danceability=\""+danceability+"\"]";                  
+              }
+
+              if(energy != 0){
+                  filter_selectors += "[data-energy=\""+energy+"\"]";                  
+              }
+
+              if(valence != 0){
+                  filter_selectors += "[data-valence=\""+valence+"\"]";                  
+              }
+
+              if(filter_selectors == ""){
+                  $(".playlist-holder li").show();
+              }else{
+                  $(".playlist-holder li"+filter_selectors).show();
+              }
           });
         </script>
     </body>

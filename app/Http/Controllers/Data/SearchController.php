@@ -13,8 +13,10 @@ class SearchController extends Controller
     {
         if(isset($request->queryString))
             return view('search')->with([
-                'Success'=>true,
-                'Playlists'=> Playlist::searchLike($request->queryString, 0, 4)] );
+                'Success'  => true,
+                'Playlists'=> Playlist::searchLike($request->queryString, 0, 4) ,
+                'queryString' => $request->queryString
+            ]);
         else
             return view('search')->withErrors("Search query empty, can not match any records with empty query.");
 
