@@ -14,9 +14,9 @@
                   @endif
                   <div class="headingrow">
                     <h3><?php echo $Playlist['title'] ?></h3>
-                    <p><img src="<?php echo URL::asset('images/refresh-icon.png'); ?>"/>  Refresh Playlist</p>
+                    <!-- <p ><img src="<?php echo URL::asset('images/refresh-icon.png'); ?>"/>  Refresh Playlist</p> -->
                   </div>
-                  <p class="years">2014</p>
+                  <!-- <p class="years">2014</p> -->
                   <div class="rating">
                     <?php for($i = 0; $i < 5 ; $i++){ ?>
                         <?php if($i < (int)$Playlist['rating']){ ?>
@@ -28,17 +28,18 @@
                     <span>(<?php echo $Playlist['rating_count'] ?> Rate it)</span>
                   </div>
                   <div class="rewviewscontent">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor.</p>
+                  <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor.</p> -->
                   </div>
                   <div class="follow-lists">
-                    <button class="play-follow recalcalc">ReCalculate</button>
+                    <!-- <button class="play-follow recalcalc">ReCalculate</button> -->
                     <a href="{{ URL::to('playlist/details/'.$Playlist['id']) }}" class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('images/play-arrow.png'); ?>"/> Playlist Info</a>
                   </div>
                 </div>
                 <div class="open-play-column2 comment-box">
                   <div class="iframe">
-                    <img src="<?php echo URL::asset('images/iframe.png'); ?>" style="width: 100%;" />
-                    <h3><?php echo count($comments); ?> Comments</h3>
+                    <!-- <img src="<?php echo URL::asset('images/iframe.png'); ?>" style="width: 100%;" /> -->
+                    <iframe src="https://open.spotify.com/embed/user/{{$Playlist['creator_id']}}/playlist/{{$Playlist['id']}}" width="600" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <h3>{{count($comments)}} Comments</h3>
                   </div>
                   <?php foreach($comments as $comment){ ?>
                       <div class="commentsbox">
@@ -164,6 +165,26 @@
                     });
                 });
           });
+
+          $("#refresh_playlist").on("click", function () {
+            // show main loader here
+
+            $('#all_info_container').fadeOut();
+            $('#fullpage_loader').fadeIn();
+            //$("#all_info_container").html("<div class='loader'> <img class= 'center-block loader-img' src = '{{ URL::asset('/images/loading.gif') }}'/> </div>");
+            $.ajax({
+                type: "get",
+                url: "{{ url('playlist/calculate/'.$Playlist['id'])}}",
+                success: function (data) {
+
+                       window.location = "{{URL::to('playlist/calculate/'.$Playlist['id'])}}"
+
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            })
+        });
 
           function getSuccessAlertBox(msg){
               var success =    `

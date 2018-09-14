@@ -238,7 +238,12 @@ class PlayListController extends Controller {
 
     public function insertPlaylist(Request $request) {
         //the following function calculates all data, and inserts into DB so this function is just a wrapper
-        return $this->refreshCalculateEveryRecord($request);
+        if($this->refreshCalculateEveryRecord($request)["Success"]){
+            return redirect('playlist/open-playlist/'.$request->id);
+        }else{
+            return view('errors.500');
+        }
+        // return $this->refreshCalculateEveryRecord($request);
     }
 
     public function refreshCalculateEveryRecord(Request $request) {

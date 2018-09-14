@@ -50,7 +50,6 @@
 
               $(window).scroll(function() {
                   var pos = $(window).scrollTop() + $(window).height();
-                  console.log($(".page-end-div").offset().top + " - " + pos);
                   if($('.page-end-div').length != 0){
 
                       if(pos >= $(".page-end-div").offset().top){
