@@ -21,6 +21,7 @@ class CommentsController extends Controller {
         $comment->user_id = session::get('UserInfo')['id'];
         $comment->user_name = session::get('UserInfo')['display_name'];
         $comment->comment = $request->comment;
+        $comment->track_id = $request->input("suggest-track");
         $comment->user_url = session::get('UserInfo')['external_urls']['spotify'];
 
         $comment->save();
