@@ -1,23 +1,17 @@
 @include('includes/header')
         <section class="main-wrapper">
           <div class="container-fluid">
-            <div class="sidebar">
-              <ul class="sidebar-lists">
-                <li>
-                  <a href="#">Wall</a>
-                </li>
-                <li class="active">
-                  <a href="#">Playlists</a>
-                </li>
-                <li>
-                  <a href="#">My Playlists</a>
-                </li> 
-              </ul>
-            </div>
+            
+            @include('includes/sidebar')
+            
             <div class="content-container">
               <div class="open-play">
                 <div class="open-play-column1">
-                  <div class="playimages" style="background-image: url('<?php echo URL::asset('images/open-.png'); ?>')"></div>
+                  @if(file_exists('playlists/'.$Playlist['id'].'.jpg'))
+                      <div class="playimages" style="background-image: url('<?php echo URL::asset('playlists/'.$Playlist['id'].'.jpg'); ?>')"></div>
+                  @else
+                        <div class="playimages" style="background-image: url('<?php echo URL::asset('images/default_playlist.jpg'); ?>')"></div>
+                  @endif
                   <div class="headingrow">
                     <h3><?php echo $Playlist['title'] ?></h3>
                     <p><img src="<?php echo URL::asset('images/refresh-icon.png'); ?>"/>  Refresh Playlist</p>
@@ -38,7 +32,7 @@
                   </div>
                   <div class="follow-lists">
                     <button class="play-follow recalcalc">ReCalculate</button>
-                    <button class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('images/play-arrow.png'); ?>"/> Playlist Info</button>
+                    <a href="{{ URL::to('playlist/details/'.$Playlist['id']) }}" class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('images/play-arrow.png'); ?>"/> Playlist Info</a>
                   </div>
                 </div>
                 <div class="open-play-column2 comment-box">
@@ -143,8 +137,8 @@
                             
                             $(".rate-comment-box").before(`
                                 <div class="commentsbox">
-                                    <div class="commentimages" style="background-image: url('<?php echo $comment['userProfileImage']; ?>'"></div>
-                                    <h4><?php echo $comment['userName']; ?></h4>
+                                    <div class="commentimages" style="background-image: url('<?php echo $user['profileImage']; ?>'"></div>
+                                    <h4><?php echo $user['display_name']; ?></h4>
                                     <p>`+$(".comment-text").val()+`</p>
                                     <p class="time"> <img src="<?php echo URL::asset('images/time.png'); ?>"Just now</p>
                                 </div>`);

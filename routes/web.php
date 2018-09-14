@@ -53,7 +53,6 @@ Route::group(['middleware' => 'checkAuth'], function () {
         Route::post('rate/insert/{id}', 'Data\PlaylistRatingsController@insert');
     });
 
-
     Route::get('users/me', 'Data\UserDataController@getCurrentUser');
     Route::get('users/get{id}', 'Data\UserDataController@getUser');
 

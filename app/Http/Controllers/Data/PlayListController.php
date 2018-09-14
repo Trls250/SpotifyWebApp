@@ -817,6 +817,11 @@ class PlayListController extends Controller {
             $data = [];
             $data["Playlist"] = $playlist;
             $data["user"] = session::get('UserInfo');
+            if(file_exists('users/'. session::get('UserInfo')['id'].'.jpg')){
+                $data["user"]['profileImage'] = '/users/'. session::get('UserInfo')['id'].'.jpg';
+            }else{
+                $data["user"]['profileImage'] = '/images/default_user.png';
+            }
 
             $data["comments"] = $playlist->getComments();
 
