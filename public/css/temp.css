@@ -260,6 +260,11 @@ ul {
 .profile-navi li:last-child {
     border-bottom: none;
 }
+.detail-page{
+    -webkit-box-shadow: 5px 5px 20px -11px rgba(47, 46, 46);
+    -moz-box-shadow: 5px 5px 20px -11px rgba(47, 46, 46);
+    box-shadow: 5px 5px 20px -11px rgba(47, 46, 46);
+}
 .post-row {
     background-color: #fafafa;
     border-radius: 15px;
@@ -269,6 +274,9 @@ ul {
     -webkit-box-shadow: 5px 5px 20px -11px rgba(47, 46, 46);
     -moz-box-shadow: 5px 5px 20px -11px rgba(47, 46, 46);
     box-shadow: 5px 5px 20px -11px rgba(47, 46, 46);
+}
+.detail-page .post-image {
+    border-radius: 15px;
 }
 .post-image {
     width: 100%;
@@ -958,11 +966,13 @@ ul {
 .open-play-column1 .playimages {
     border-radius: 0;
 }
+.detail-page .post-row {
+    box-shadow: unset;
+}
 .loader-img{
     margin-top: 200px;
 }
 /********** Media Query *******/
-
 @media  (min-width: 1900px){
     .headingrow h3{
         font-size: 15px;
