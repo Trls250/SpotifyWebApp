@@ -1,4 +1,3 @@
-
 @foreach($Playlists as $playlist)
     <div class="row">
         <div class="post-row clearfix">

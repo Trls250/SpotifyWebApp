@@ -17,6 +17,7 @@ class CreateTablePlaylistComments extends Migration {
             $table->increments('id');
             $table->string('playlist_id', 30);
             $table->string('user_id', 30);
+            $table->string('track_id', 30);
             $table->string('user_name', 30);
             $table->text('comment');
             $table->string('user_url', 255);
