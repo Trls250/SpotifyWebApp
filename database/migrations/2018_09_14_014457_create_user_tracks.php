@@ -13,7 +13,7 @@ class CreateUserTracks extends Migration
      */
     public function up()
     {
-        Schema::create('user_tracks', function (Blueprint $table) {
+        Schema::create('track_user', function (Blueprint $table) {
             $table->string('user_id', 30);
             $table->string('track_id', 30);
             $table->primary(['user_id', 'track_id']);

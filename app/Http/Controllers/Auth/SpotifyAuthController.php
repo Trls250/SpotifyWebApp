@@ -37,15 +37,16 @@ class SpotifyAuthController extends Controller {
 
         if (postAuthCode($request) == true) {
             if (getUserProfile('me')['Success'] == true) {
-                return redirect()->route('home');
+                return redirect()->route('user/update');
             } else {
                 return view('home')->withErrors('Unable to log in right now.');
             }
         }
     }
 
+    //for testing purposes
     public function setExpire(Request $request) {
-        Session::put('access_token', $request->token);
+        Session::flush();
     }
 
 }

@@ -13,7 +13,7 @@ class CreateUserGenres extends Migration
      */
     public function up()
     {
-        Schema::create('user_genres', function (Blueprint $table) {
+        Schema::create('genre_user', function (Blueprint $table) {
             $table->string('user_id', 30);
             $table->integer('genre_id', false, 10);
             $table->primary(['user_id', 'genre_id']);

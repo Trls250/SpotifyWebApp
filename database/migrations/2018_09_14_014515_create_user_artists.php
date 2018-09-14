@@ -13,7 +13,7 @@ class CreateUserArtists extends Migration
      */
     public function up()
     {
-        Schema::create('user_artists', function (Blueprint $table) {
+        Schema::create('artist_user', function (Blueprint $table) {
             $table->string('user_id', 30);
             $table->string('artist_id', 30);
             $table->primary(['user_id', 'artist_id']);
