@@ -53,7 +53,7 @@
                                 <i class="fa fa-sort-down"></i>
                             </a>
                             <ul class="profile-navi">
-                                <li><a href="#">Profile</a></li>
+                                <!-- <li><a href="#">Profile</a></li> -->
                                 <li><a href="{{ url('logout') }}">Logout</a></li>
                             </ul>
                         </div>
