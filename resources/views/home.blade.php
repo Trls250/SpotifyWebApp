@@ -19,7 +19,7 @@
             <div class="col-md-12 log-column">
               <div class="logo">
                 <img src="{{ URL::asset('images/logo.png') }}"/> 
-                <h1 class="main-title">  <span>|</span> The Unfollower</h1>
+                <h1 class="main-title">  <span>|</span> Spotify</h1>
               </div>
             </div>
           </div>
@@ -28,10 +28,9 @@
         <div class="container">
           <div class="cus-row">
               <div id="jumbo-dialog" class="text-center">
-                <h1 id="ttitle">The Unfollower</h1>
+                <h1 id="ttitle">Spotify</h1>
                 <p id="ttext">
-                    This app will make it easy for you to unfollow large numbers of
-                    playlists.
+                    .
                 </p>
                 <p>  Login with your Spotify account to get started</p>
                 <a href="<?php echo url('auth/getCode') ?>" class="btn btn-primary green-btn" >Login with Spotify</a>
