@@ -73,7 +73,8 @@ class PlayListController extends Controller {
                     }
                 }
 
-                return view('loaders.user_playlists')->with('Playlists', $curl_return['ResponseData']['items']);
+                return view('loaders.user_playlists')->with('Playlists', $curl_return['ResponseData']['items'])
+                ->with('get_all_page','get_all_page');
             }
 
         }
