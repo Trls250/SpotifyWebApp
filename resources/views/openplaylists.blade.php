@@ -149,6 +149,7 @@
                             setInterval(function(){
                                 $(".success-msg").hide(1000);
                             }, 5000);
+                            location.reload();
                         },
                         error: function(XMLHttpRequest, textStatus, errorThrown) { 
                            
