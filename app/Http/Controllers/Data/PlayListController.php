@@ -816,7 +816,8 @@ class PlayListController extends Controller {
 
             $playlist = Playlist::find($request->id);
             
-            $playlist->calculateRating();
+            $playlist->rating = $playlist->calculateRating();
+            $playlist->save();
 
             $playlist["timeNow"] = $this->timeago($playlist['created_at']);
             $data = [];
