@@ -11,14 +11,15 @@ class SearchController extends Controller
 
     public function getSearchResults(Request $request)
     {
-        if(isset($request->queryString))
+
+        if(isset($request->queryString) && $request->queryString != '')
             return view('search')->with([
                 'Success'  => true,
                 'Playlists'=> Playlist::searchLike($request->queryString, 0, 4) ,
                 'queryString' => $request->queryString
             ]);
         else
-            return view('search')->withErrors("Search query empty, can not match any records with empty query.");
+            return view('errors.custom')->withErrors("Search query empty, can not match any records with empty query.");
 
     }
 }

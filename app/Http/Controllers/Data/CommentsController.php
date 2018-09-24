@@ -31,6 +31,7 @@ class CommentsController extends Controller {
 
     /* ADDED BY FARZAM */
     public function addComment(Request $request){
+
          $validatedData = $request->validate([
             'comment' => 'required',
             'rating'  => 'required'

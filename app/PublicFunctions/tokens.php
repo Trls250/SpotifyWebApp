@@ -7,7 +7,7 @@
  */
 define("client_id", 'eb8ca431d8e64b51b50f47d49a2efa11');
 define('client_secret', '0bc65f040408414aa202b8ed0a45be37');
-define('redirect_uri', getBaseUrl() . 'postAuth');
+define('redirect_uri', getBaseUrl() . 'auth/postAuth');
 define('state', 'ABCDEF');
 
 use Illuminate\Http\Request;

@@ -5,9 +5,9 @@
       <title>Spotify</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
+      <link rel="stylesheet" href="{{ URL::asset('public/css/bootstrap.css') }}">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">     
+     <link rel="stylesheet" href="{{ URL::asset('public/css/style.css') }}">
      <style type="text/css">
 
      </style>
@@ -18,7 +18,7 @@
           <div class="row">
             <div class="col-md-12 log-column">
               <div class="logo">
-                <img src="{{ URL::asset('images/logo.png') }}"/> 
+                <img src="{{ URL::asset('public/images/logo.png') }}"/>
                 <h1 class="main-title">  <span>|</span> Spotify</h1>
               </div>
             </div>
@@ -38,8 +38,8 @@
           </div>
         </div>
       </section>
-      <script src="{{ URL::asset('js/jquery.js') }}"></script>
-      <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
+      <script src="{{ URL::asset('public/js/jquery.js') }}"></script>
+      <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
       <script type="text/javascript">
         var heig = $( window ).height() - 94;
         $('.login-banner').css( "height",heig );

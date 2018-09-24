@@ -5,8 +5,8 @@
 
               @include('includes/sidebar')
 
-              <div id="fullpage_loader">
-                  <img  class= 'center-block loader-img' src = "{{ URL::asset('/images/loading.gif') }}"/>
+              <div id="fullpage_loader" class = "loader">
+                  <img  class= 'center-block loader-img' src = "{{ URL::asset('public//images/loading.gif') }}"/>
               </div>
             <div class="content-container" id ="all_info_container">
               <div class="row">
@@ -16,10 +16,10 @@
                 <div class="listsrow" id="playlist_thump">
                   <div class="post-row clearfix">
                       @if(file_exists('playlists/'.$Playlist["id"].'.jpg'))
-                          <div class="post-width post-image"  style="background-image: url({{ URL::asset('playlists/'.$Playlist['id'].'.jpg') }});">
+                          <div class="post-width post-image"  style="background-image: url({{ URL::asset('public/playlists/'.$Playlist['id'].'.jpg') }});">
                           </div>
                       @else
-                          <div class="post-width post-image"  style="background-image: url({{ URL::asset('images/default_playlist.jpg') }});">
+                          <div class="post-width post-image"  style="background-image: url({{ URL::asset('public/images/default_playlist.jpg') }});">
                           </div>
                       @endif
 
@@ -27,16 +27,16 @@
                         <div class="postscontent">
                           <h2>{{ $Playlist['title'] }} <sub>({{ $Playlist['timeNow'] }})</sub></h2>
                           <!--<button class="follow-btn">Follow</button>-->
-                          <p id="refresh_playlist"><img  src= {{ URL::asset('images/refresh-icon.png') }}>  Refresh </p>
+                          <p id="refresh_playlist"><img  src= {{ URL::asset('public/images/refresh-icon.png') }}>  Refresh </p>
                         </div>
                         <p class="followers"><span>{{$Playlist['followers']}}</span> Followers</p>
                         <div class="rating">
 
                             @for($i=0; $i<ceil($Playlist['rating']); $i++)
-                                <img src= {{ URL::asset('images/filstar.png') }}>
+                                <img src= {{ URL::asset('public/images/filstar.png') }}>
                             @endfor
                             @for($i=0; $i<5 - ceil($Playlist['rating']); $i++)
-                                    <img src= {{ URL::asset('images/empty-star.png') }}>
+                                    <img src= {{ URL::asset('public/images/empty-star.png') }}>
                                 @endfor
 
 
@@ -75,7 +75,7 @@
                             <span>{{$Playlist['repeated_artist']}}</span>
                         </div>
                         <div class="taglists">
-                          <!--<div class="playimage" style="background-image: url('{{ URL::asset('images/profile.png') }}')"></div>-->
+                          <!--<div class="playimage" style="background-image: url('{{ URL::asset('public/images/profile.png') }}')"></div>-->
                           <div class="playname">
                             <p>Playlist By:</p>
                             <span>{{$Playlist['creator_name']}}</span>
@@ -98,16 +98,15 @@
                                             <th>Tracks</th>
                                             <th>Artists</th>
                                             <th>Genre</th>
-                                            <th>Year</th>
                                             <th>Popularity</th>
                                             <th>Danceability</th>
                                             <th>Energy</th>
-                                            <th>Rock</th>
+                                            <th>Valence</th>
                                             <th>Instrumentalness</th>
                                             <th>Livenss</th>
                                             <th>Loudness</th>
                                             <th>Speechiness</th>
-                                            <th>Temp</th>
+                                            <th>Tempo</th>
                                         </tr>
                                     </thead>
                                     <tbody id="to_replace">
@@ -116,8 +115,8 @@
                                 </table>
                             </div>
                     </div>
-                    <div class="loader">
-                        <img src = "{{ URL::asset('/images/loading.gif') }}"/>
+                    <div class="loader" id ="loaderChota">
+                        <img src = "{{ URL::asset('public//images/loading.gif') }}"/>
                     </div>
               </div>
 
@@ -127,9 +126,9 @@
         </section>
 
 
-        <script src= "{{ URL::asset('js/jquery.js') }}"></script>
-        <script src="{{ URL::asset('pagination/mricode.pagination.js') }}"></script>
-        <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
+        <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
+        <script src="{{ URL::asset('public/pagination/mricode.pagination.js') }}"></script>
+        <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
 
         <script type="text/javascript">
 
@@ -181,7 +180,7 @@
                   type: "get",
                   url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items=25&page=1',
                   success: function (data) {
-                      $(".loader").fadeOut();
+                      $("#loaderChota").fadeOut();
                       if(data.Status == "404"){
                           $("#tracks_table").replaceWith("Sorry, currently there is no track in this playlist.")
                       }
@@ -190,7 +189,7 @@
                       }
                   },
                   error: function(XMLHttpRequest, textStatus, errorThrown) {
-                      alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                      console.log("Status: " + textStatus); alert("Error: " + errorThrown);
                   }
               });
 
@@ -201,7 +200,7 @@
 
             $('#all_info_container').fadeOut();
             $('#fullpage_loader').fadeIn();
-            //$("#all_info_container").html("<div class='loader'> <img class= 'center-block loader-img' src = '{{ URL::asset('/images/loading.gif') }}'/> </div>");
+            //$("#all_info_container").html("<div class='loader'> <img class= 'center-block loader-img' src = '{{ URL::asset('public//images/loading.gif') }}'/> </div>");
             $.ajax({
                 type: "get",
                 url: "{{ url('playlist/calculate/'.$Playlist['id'])}}",
@@ -211,7 +210,7 @@
 
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                    console.log("Status: " + textStatus); alert("Error: " + errorThrown);
                 }
             })
         });
@@ -228,7 +227,7 @@
                     $('#to_replace').html(data);
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                    console.log("Status: " + textStatus); alert("Error: " + errorThrown);
                 }
             })
         });

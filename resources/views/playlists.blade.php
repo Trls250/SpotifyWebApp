@@ -14,7 +14,7 @@
                             </div>
                         </ul>
                         <div class="loader page-end-div">
-                            <img  class= 'center-block loader-img' src = "{{ URL::asset('/images/loading.gif') }}"/>
+                            <img  class= 'center-block loader-img' src = "{{ URL::asset('public/images/loading.gif') }}"/>
                         </div>
                     </div>
                 </div>
@@ -23,8 +23,8 @@
           </div>
         </section>
         <!-- <div class="page-end-div"></div> -->
-        <script src= "{{ URL::asset('js/jquery.js') }}"></script>
-        <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
+        <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
+        <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
         <script type="text/javascript">
           var offset = 0;
           var items  = 8;
@@ -80,7 +80,7 @@
                       }
                   },
                   error: function(XMLHttpRequest, textStatus, errorThrown) {
-                      alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                      console.log("Status: " + textStatus); alert("Error: " + errorThrown);
                   }
               });
           }

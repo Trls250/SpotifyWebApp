@@ -1,15 +1,14 @@
 
-
     @for($i=0; $i<count($Response['ResponseData']['items']); $i++)
     <tr>
-        <td data-header="#">{{ $Offset + $i}}</td>
+        <td data-header="#">{{ $Offset + $i + 1}}</td>
         <td data-header="Tracks">{{ $Response['ResponseData']['items'][$i]['track']['name'] }}</td>
 
         <td data-header="Artists">
         @for($j=0; $j<count($Response['ResponseData']['items'][$i]['track']['artists']); $j++)
 
             @if(count($Response['ResponseData']['items'][$i]['track']['artists']) == 0)
-                {{ 'N/A' }}
+                {{ '---' }}
             @endif
 
             {{ $Response['ResponseData']['items'][$i]['track']['artists'][$j]['name'] }}
@@ -25,7 +24,7 @@
             @for($j=0; $j<count($Response['ArtistGenres'][$i]['genres']) && $j<3; $j++)
 
             @if(count($Response['ArtistGenres'][$i]['genres']) == 0)
-                {{ 'N/A' }}
+                {{ '---' }}
             @endif
 
             {{ $Response['ArtistGenres'][$i]['genres'][$j] }}
@@ -36,15 +35,14 @@
             @endfor
         </td>
 
-        <td data-header="Year">2005</td>
-        <td data-header="Popularity">0.1</td>
-        <td data-header="Rock">0.3</td>
-        <td data-header="Danceability">0.3</td>
-        <td data-header="Energy">0.9</td>
-        <td data-header="Instrumentalness ">0.8</td>
-        <td data-header="Livenss">0.1</td>
-        <td data-header="Loudness">0.3</td>
-        <td data-header="Speechiness">0.9</td>
-        <td data-header="Temp">0.5</td>
+        <td data-header="Popularity">{{$Response['ResponseData']['items'][$i]['track']['popularity']}}</td>
+        <td data-header="Valence">{{$Response['TrackFeatures'][$i]['valence']}}</td>
+        <td data-header="Danceability">{{$Response['TrackFeatures'][$i]['danceability']}}</td>
+        <td data-header="Energy">{{$Response['TrackFeatures'][$i]['energy']}}</td>
+        <td data-header="Instrumentalness ">{{$Response['TrackFeatures'][$i]['instrumentalness']}}</td>
+        <td data-header="Liveness">{{$Response['TrackFeatures'][$i]['liveness']}}</td>
+        <td data-header="Loudness">{{$Response['TrackFeatures'][$i]['loudness']}}</td>
+        <td data-header="Speechiness">{{$Response['TrackFeatures'][$i]['speechiness']}}</td>
+        <td data-header="Tempo">{{$Response['TrackFeatures'][$i]['tempo']}}</td>
     </tr>
     @endfor

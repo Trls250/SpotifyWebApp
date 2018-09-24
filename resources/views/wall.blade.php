@@ -15,8 +15,8 @@
           </div>
             <div class = "page_end_div"></div>
         </section>
-        <script src= "{{ URL::asset('js/jquery.js') }}"></script>
-        <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
+        <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
+        <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
         <script type="text/javascript">
             var offset = 0;
             var items = 2;

@@ -1022,6 +1022,9 @@ ul {
 .open-play-column1 .playimages {
     border-radius: 0;
 }
+.loader{
+    text-align: center;
+}
 .loader-img{
     margin-top: 200px;
 }

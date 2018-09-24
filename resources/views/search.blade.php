@@ -1,19 +1,7 @@
 @include('includes/header')
         <section class="main-wrapper">
           <div class="container-fluid">
-            <div class="sidebar">
-              <ul class="sidebar-lists">
-                <li>
-                  <a href="#">Wall</a>
-                </li>
-                <li class="active">
-                  <a href="#">Playlists</a>
-                </li>
-                <li>
-                  <a href="#">My Playlists</a>
-                </li> 
-              </ul>
-            </div>
+            @include('includes/sidebar')
             <div class="searchbar">
               <div class="content-container">
                 <div class="selectrow">
@@ -157,10 +145,10 @@
                       <div class="play-box">
                           <div class="">
                               @if(file_exists('playlists/'.$playlist["id"].'.jpg'))
-                                <div class="play-img"  style="background-image: url({{ URL::asset('playlists/'.$playlist['id'].'.jpg') }});">
+                                <div class="play-img"  style="background-image: url({{ URL::asset('public/playlists/'.$playlist['id'].'.jpg') }});">
                                 </div>
                               @else
-                                  <div class="play-img"  style="background-image: url({{ URL::asset('images/default_playlist.jpg') }});">
+                                  <div class="play-img"  style="background-image: url({{ URL::asset('public/images/default_playlist.jpg') }});">
                                   </div>
                               @endif
                           </div>
@@ -177,9 +165,9 @@
             </div>
           </div>
         </section>
-        <script src= "{{ URL::asset('js/jquery.js') }}"></script>
-        <script src="{{ URL::asset('js/jquery.nice-select.js') }}"></script>
-        <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
+        <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
+        <script src="{{ URL::asset('public/js/jquery.nice-select.js') }}"></script>
+        <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
         <script type="text/javascript">

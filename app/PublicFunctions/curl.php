@@ -84,6 +84,7 @@ function goCurl($url, $body, $method, $header) {
 
         $return_array = array(
             "Success" => false,
+            "Code" => "error_api",
             "Desc" => "CURL ERROR: " . $responseError
         );
 
@@ -136,7 +137,7 @@ function goCurl($url, $body, $method, $header) {
 
 function downloadImage($image_url, $image_file) {
 
-    $fp = fopen($image_file, 'w+');              // open file handle
+    $fp = fopen('public/'.$image_file, 'w+');              // open file handle
 
     $curl = curl_init($image_url);
     // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // enable if you want
@@ -156,6 +157,7 @@ function downloadImage($image_url, $image_file) {
 
         $return_array = array(
             "Success" => false,
+            "Code" => "500",
             "Desc" => "CURL ERROR: " . $responseError
         );
 

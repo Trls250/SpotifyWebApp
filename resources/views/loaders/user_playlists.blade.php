@@ -6,7 +6,7 @@
             @if (count($playlist['images'])>0)
                 <div class="play-img" style="background-image: url('{{$playlist['images'][0]['url']}}');"></div>
             @else
-                <div class="play-img"  style="background-image: url({{ URL::asset('images/default_playlist.jpg') }});">
+                <div class="play-img"  style="background-image: url({{ URL::asset('public/images/default_playlist.jpg') }});">
             @endif
 
             <div class="follow">

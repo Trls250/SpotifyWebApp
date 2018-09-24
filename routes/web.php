@@ -57,7 +57,6 @@ Route::group(['middleware' => 'checkAuth'], function () {
 
     Route::get('users/me', 'Data\UserDataController@getCurrentUser');
     Route::get('users/get{id}', 'Data\UserDataController@getUser');
-
     Route::post('comment/add/{id}', 'Data\CommentsController@store');
 
 });

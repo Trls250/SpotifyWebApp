@@ -5,12 +5,12 @@
       <title>Spotify</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href= {{ URL::asset('css/bootstrap.css') }}>
-        <link rel="stylesheet" href= {{ URL::asset('css/nice-select.css') }}>
-      <link rel="stylesheet" href= {{ URL::asset('pagination/mricode.pagination.css') }}>
+      <link rel="stylesheet" href= {{ URL::asset('public/css/bootstrap.css') }}>
+        <link rel="stylesheet" href= {{ URL::asset('public/css/nice-select.css') }}>
+      <link rel="stylesheet" href= {{ URL::asset('public/pagination/mricode.pagination.css') }}>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-     <link rel="stylesheet" href= {{ URL::asset('css/style.css') }}>
+     <link rel="stylesheet" href= {{ URL::asset('public/css/style.css') }}>
     </head>
     <body>
         <header class="main-header">
@@ -18,13 +18,13 @@
             <div class="row">
               <div class="col-md-2 col-sm-4 col-xs-4">
                 <div class="logo">
-                  <img src="{{ URL::asset('images/logo.png') }}"/>
+                  <img src="{{ URL::asset('public/images/logo.png') }}"/>
                 </div>
               </div>
               <div class="col-md-5 hidden-sm hidden-xs">
                 <div class="mobile-search">
                     <button class="btn search-btns">
-                      <img src="{{ URL::asset('images/search.png') }}">
+                      <img src="{{ URL::asset('public/images/search.png') }}">
                     </button>
                   <!-- <form>
                     <input type="text" name="" class="serch-icons" placeholder="Search for a spotify albums...">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="search">
                     {{ Form::open(array('url' => 'search', 'method' => 'get')) }}
-                        <input value="{{ isset($queryString)?$queryString:'' }}" type="text" name="queryString" class="serch-icons" placeholder="Search for a spotify albums...">
+                        <input pattern=".{1,}"   required title="1 characters minimum" value="{{ isset($queryString)?$queryString:'' }}" type="text" name="queryString" class="serch-icons" placeholder="Search for a spotify albums...">
                     {{ Form::close() }}
                 </div>
 
@@ -44,10 +44,10 @@
                     </button>
                   <div class="profile-nav">
                             <a href="#" class="profile-nav-top">
-                                @if(file_exists('users/'. session::get('UserInfo')['id'].'.jpg'))
-                                    <figure style="background-image: url({{ URL::asset('users/'. session::get('UserInfo')['id'].'.jpg') }})"></figure>
+                                @if(file_exists('public/users/'. session::get('UserInfo')['id'].'.jpg'))
+                                    <figure style="background-image: url({{ URL::asset('public/users/'. session::get('UserInfo')['id'].'.jpg') }})"></figure>
                                 @else
-                                    <figure style="background-image: url({{ URL::asset('images/default_user.png') }})"></figure>
+                                    <figure style="background-image: url({{ URL::asset('public/images/default_user.png') }})"></figure>
                                 @endif
                                 <span>{{ session::get('UserInfo')['display_name'] }}</span>
                                 <i class="fa fa-sort-down"></i>
@@ -72,10 +72,10 @@
                     Add Playlist
                 </button>
                 <button class="btn search-btns">
-                    <img src={{ URL::asset('images/search.png') }}>
+                    <img src={{ URL::asset('public/images/search.png') }}>
                 </button>
                 <form class="search-form">
-                  <input type="text" name="" class="serch-icons" placeholder="Search for a spotify albums...">
+                  <input pattern=".{3,}"   required title="3 characters minimum" type="text" name="" class="serch-icons" placeholder="Search for spotify albums...">
                 </form>
               </div>
 
@@ -90,14 +90,14 @@
             <!-- Modal content-->
             <div class="modal-content playmodal">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><img src={{URL::asset('images/close-icon.png')}}></button>
+                    <button type="button" class="close" data-dismiss="modal"><img src={{URL::asset('public/images/close-icon.png')}}></button>
                     <h4 class="modal-title">Add Playlist</h4>
                 </div>
                 <div class="modal-body">
                     <div class="playform">
                         <form>
                             <input type="text" class="search-playlists new-playlist-input" placeholder="Paste spotify playlist URL">
-                            <button class="btn btn-playlists add-new-playlist"><img src={{URL::asset('images/plus-icon.png')}}>  Add Playlist</button>
+                            <button class="btn btn-playlists add-new-playlist"><img src={{URL::asset('public/images/plus-icon.png')}}>  Add Playlist</button>
                         </form>
                     </div>
                 </div>

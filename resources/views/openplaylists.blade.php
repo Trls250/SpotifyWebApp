@@ -7,22 +7,22 @@
             <div class="content-container">
               <div class="open-play">
                 <div class="open-play-column1">
-                  @if(file_exists('playlists/'.$Playlist['id'].'.jpg'))
-                      <div class="playimages" style="background-image: url('<?php echo URL::asset('playlists/'.$Playlist['id'].'.jpg'); ?>')"></div>
+                  @if(file_exists('public/playlists/'.$Playlist['id'].'.jpg'))
+                      <div class="playimages" style="background-image: url('<?php echo URL::asset('public/playlists/'.$Playlist['id'].'.jpg'); ?>')"></div>
                   @else
-                        <div class="playimages" style="background-image: url('<?php echo URL::asset('images/default_playlist.jpg'); ?>')"></div>
+                        <div class="playimages" style="background-image: url('<?php echo URL::asset('public/images/default_playlist.jpg'); ?>')"></div>
                   @endif
                   <div class="headingrow">
                     <h3><?php echo $Playlist['title'] ?></h3>
-                    <!-- <p ><img src="<?php echo URL::asset('images/refresh-icon.png'); ?>"/>  Refresh Playlist</p> -->
+                    <!-- <p ><img src="<?php echo URL::asset('public/images/refresh-icon.png'); ?>"/>  Refresh Playlist</p> -->
                   </div>
                   <!-- <p class="years">2014</p> -->
                   <div class="rating">
                     <?php for($i = 0; $i < 5 ; $i++){ ?>
                         <?php if($i < (int)$Playlist['rating']){ ?>
-                            <img src="<?php echo URL::asset('images/filstar.png'); ?>">
+                            <img src="<?php echo URL::asset('public/images/filstar.png'); ?>">
                         <?php }else{ ?>
-                            <img src="<?php echo URL::asset('images/empty-star.png'); ?>">
+                            <img src="<?php echo URL::asset('public/images/empty-star.png'); ?>">
                         <?php } ?>
                     <?php } ?>
                     <span>(<?php echo $Playlist['rating_count'] ?> Rate it)</span>
@@ -32,12 +32,12 @@
                   </div>
                   <div class="follow-lists">
                     <!-- <button class="play-follow recalcalc">ReCalculate</button> -->
-                    <a href="{{ URL::to('playlist/details/'.$Playlist['id']) }}" class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('images/play-arrow.png'); ?>"/> Playlist Info</a>
+                    <a href="{{ URL::to('playlist/details/'.$Playlist['id']) }}" class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('public/images/play-arrow.png'); ?>"/> Playlist Info</a>
                   </div>
                 </div>
                 <div class="open-play-column2 comment-box">
                   <div class="iframe">
-                    <!-- <img src="<?php echo URL::asset('images/iframe.png'); ?>" style="width: 100%;" /> -->
+                    <!-- <img src="<?php echo URL::asset('public/images/iframe.png'); ?>" style="width: 100%;" /> -->
                     <iframe src="https://open.spotify.com/embed/user/{{$Playlist['creator_id']}}/playlist/{{$Playlist['id']}}" width="600" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     <h3>{{count($comments)}} Comments</h3>
                   </div>
@@ -46,17 +46,17 @@
                           <div class="commentimages" style="background-image: url('<?php echo $comment['userProfileImage']; ?>'"></div>
                           <h4><?php echo $comment['userName']; ?></h4>
                           <p><?php echo $comment['text']; ?></p>
-                          <p class="time"> <img src="<?php echo URL::asset('images/time.png'); ?>"><?php echo $comment['time']; ?></p>
+                          <p class="time"> <img src="<?php echo URL::asset('public/images/time.png'); ?>"><?php echo $comment['time']; ?></p>
                       </div>
                   <?php } ?>
                   <div class="ratecomment rate-comment-box">
-                    <h4>Rate & comment</h4>
+                    <h4>Rate & Comment</h4>
                     <div class="rating rateYo error-rating">
-                     <!--  <a href=""><img src="<?php echo URL::asset('images/filstar.png'); ?>"></a>
-                      <a href=""><img src="<?php echo URL::asset('images/filstar.png'); ?>"></a>
-                      <a href=""><img src="<?php echo URL::asset('images/filstar.png'); ?>"></a>
-                      <a href=""><img src="<?php echo URL::asset('images/filstar.png'); ?>"></a>
-                      <a href=""><img src="<?php echo URL::asset('images/empty-star.png'); ?>"></a> -->
+                     <!--  <a href=""><img src="<?php echo URL::asset('public/images/filstar.png'); ?>"></a>
+                      <a href=""><img src="<?php echo URL::asset('public/images/filstar.png'); ?>"></a>
+                      <a href=""><img src="<?php echo URL::asset('public/images/filstar.png'); ?>"></a>
+                      <a href=""><img src="<?php echo URL::asset('public/images/filstar.png'); ?>"></a>
+                      <a href=""><img src="<?php echo URL::asset('public/images/empty-star.png'); ?>"></a> -->
                       <span>Like it</span>
                     </div>
                     <div class="commentmsg">
@@ -69,7 +69,7 @@
                         <div class="form-group">
                           <input id="suggest-track" type="text" class="suggesttrack" name="suggest-track" placeholder="Suggest Track (paste Spotify track ID here) ">
                         </div>
-                        <button class="btn btn-submit submit-comment">Submit <img src="<?php echo URL::asset('images/arrow.png'); ?>" /></button>
+                        <button class="btn btn-submit submit-comment">Submit <img src="<?php echo URL::asset('public/images/arrow.png'); ?>" /></button>
                       </form>
                     </div>
                   </div>
@@ -78,8 +78,8 @@
             </div>
           </div>
         </section>
-        <script src="{{ URL::asset('js/jquery.js') }}"></script>
-        <script src="{{ URL::asset('js/bootstrap.js') }} "></script>
+        <script src="{{ URL::asset('public/js/jquery.js') }}"></script>
+        <script src="{{ URL::asset('public/js/bootstrap.js') }} "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
         <script type="text/javascript">
           $(document).ready(function () {
@@ -98,7 +98,7 @@
                 });
 
                 $(function () {
- 
+
                 $(".rateYo").rateYo({
                       rating: 0,
                       fullStar: true,
@@ -129,19 +129,19 @@
                         rating : $("#rating").val(),
                         suggest_track : $("#suggest-track").val()
                     };
-                    
+
                     $.ajax({
                         url: "<?php echo URL::to('comment/add-new'); ?>",
                         type: "post",
                         data : data,
                         success: function(data){
-                            
+
                             $(".rate-comment-box").before(`
                                 <div class="commentsbox">
                                     <div class="commentimages" style="background-image: url('<?php echo $user['profileImage']; ?>'"></div>
                                     <h4><?php echo $user['display_name']; ?></h4>
                                     <p>`+$(".comment-text").val()+`</p>
-                                    <p class="time"> <img src="<?php echo URL::asset('images/time.png'); ?>"Just now</p>
+                                    <p class="time"> <img src="<?php echo URL::asset('public/images/time.png'); ?>"Just now</p>
                                 </div>`);
                             $(".comment-text").val('');
                             $("#suggest-track").val('');
@@ -149,20 +149,20 @@
                             setInterval(function(){
                                 $(".success-msg").hide(1000);
                             }, 5000);
-                            location.reload();
+//                            location.reload();
                         },
-                        error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                           
+                        error: function(XMLHttpRequest, textStatus, errorThrown) {
+
                             var errors = XMLHttpRequest.responseJSON;
                             for(x in errors.errors){
-                                $(".error-"+x).css("border-color","red").css('color','red').after('<p class="comment-errors-msg" style="color:red;"> '+x+' is required</p>');
+                                $(".error-"+x).after('<p class="comment-errors-msg" style="color:red;"> '+x+' is required</p>');
                                 console.log(".error-"+x);
                             }
                             // console.log(textStatus);
                             // console.log("errorThrown");
                             // console.log(errorThrown);
-                            // alert("Status: " + textStatus); alert("Error: " + errorThrown); 
-                        }  
+                            // alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                        }
                     });
                 });
           });
@@ -172,7 +172,7 @@
 
             $('#all_info_container').fadeOut();
             $('#fullpage_loader').fadeIn();
-            //$("#all_info_container").html("<div class='loader'> <img class= 'center-block loader-img' src = '{{ URL::asset('/images/loading.gif') }}'/> </div>");
+            //$("#all_info_container").html("<div class='loader'> <img class= 'center-block loader-img' src = '{{ URL::asset('public//images/loading.gif') }}'/> </div>");
             $.ajax({
                 type: "get",
                 url: "{{ url('playlist/calculate/'.$Playlist['id'])}}",
@@ -182,7 +182,7 @@
 
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                   console.log("Status: " + textStatus); alert("Error: " + errorThrown);
                 }
             })
         });
