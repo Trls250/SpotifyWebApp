@@ -67,7 +67,7 @@
                         <textarea class="msgbox comment-text error-comment comment-fields" placeholder="Write comment"></textarea>
                         </div>
                         <div class="form-group">
-                          <input id="suggest-track" type="text" class="suggesttrack" name="suggest-track" placeholder="Suggest Track (paste Spotify track ID here) ">
+                          <input id="suggest-track" type="text" class="suggesttrack" name="suggest-track" placeholder="Suggest Track (paste Spotify track URI here) ">
                         </div>
                         <button class="btn btn-submit submit-comment">Submit <img src="<?php echo URL::asset('public/images/arrow.png'); ?>" /></button>
                       </form>

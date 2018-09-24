@@ -30,6 +30,6 @@ class CreateUserGenres extends Migration
      */
     public function down()
     {
-        Schema::drop('user_genres');
+        Schema::drop('genre_user');
     }
 }

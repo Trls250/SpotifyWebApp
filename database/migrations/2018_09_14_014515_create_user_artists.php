@@ -30,6 +30,6 @@ class CreateUserArtists extends Migration
      */
     public function down()
     {
-        Schema::drop('user_artists');
+        Schema::drop('artist_user');
     }
 }

@@ -30,6 +30,6 @@ class CreateUserTracks extends Migration
      */
     public function down()
     {
-        Schema::drop('user_tracks');
+        Schema::drop('track_user');
     }
 }

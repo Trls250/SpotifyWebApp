@@ -11,7 +11,7 @@
 
             <div class="follow">
                 @if($playlist['db'] == false)
-                    <button class="play-follow" onclick="window.location='{{url('playlist/insert/'.$playlist['id'])}}'">Add</button>
+                    <button class="play-follow" onclick='addPlaylist("{{$playlist['id']}}")'>Add</button>
                 @else
                     <button class="play-follow play-unfollow" onclick="window.location='{{url('playlist/open-playlist/'.$playlist['id'])}}'">Select</button>
                 @endif
@@ -27,3 +27,62 @@
     </div>
 </li>
 @endforeach
+
+
+<script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
+<script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
+
+<script>
+
+
+    function addPlaylist(id){
+        $('#playlist_records').fadeOut();
+        $('#main_loader').fadeIn();
+        $('.loader').fadeIn();
+        $('.loader-img').fadeIn();
+        $("#title_to_replace").replaceWith( "<h3 class='title'>Importing playlist.....</html>");
+        this.add(id);
+    }
+
+
+    function add(id) {
+
+        $('#main_loader').fadeIn();
+                        $.ajax({
+                            type: "get",
+                            url: "{{url('playlist/insertSimple/')}}" + '/' + id,
+                            success: function (data) {
+
+                                if (data['Success'] == true) {
+                                    window.location = ('{{url('playlist/open-playlist/')}}' + '/' + data['id']);
+                                    $('#main_loader').fadeOut();
+                                    $('.loader').fadeOut();
+                                    $('.loader-img').fadeOut();
+                                    $('#playlist_records').fadeIn();
+                                }
+                                else {
+
+                                    $('#main_loader').fadeOut();
+                                    $('.loader').fadeOut();
+                                    $('.loader-img').fadeOut();
+                                    $('#playlist_records').fadeIn();
+                                    $("#title_to_replace").replaceWith( "<h3 class='title'>There was an error adding last playlist to our system.....try again :(</thml>");
+                                }
+                            },
+
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                console.log("Status: " + textStatus);
+                                $('#main_loader').fadeOut();
+                                $('.loader').fadeOut();
+                                $('.loader-img').fadeOut();
+                                $('#playlist_records').fadeIn();
+                                $("#title_to_replace").replaceWith("<h3 class='title'> There was an error adding last playlist to our system.....try again :(</h3>");
+
+                            },
+                        });
+
+
+
+    }
+
+</script>

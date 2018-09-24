@@ -68,7 +68,7 @@
                 <span class="close-icons"></span>
               </div>
               <div class="playlists-rows">
-                <button class="play-btn">
+                <button class="play-btn" id ="btn_add">
                     Add Playlist
                 </button>
                 <button class="btn search-btns">
@@ -91,13 +91,16 @@
             <div class="modal-content playmodal">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><img src={{URL::asset('public/images/close-icon.png')}}></button>
-                    <h4 class="modal-title">Add Playlist</h4>
+                    <h4 class="modal-title" id ="modal_title">Add Playlist</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="playform">
-                        <form>
-                            <input type="text" class="search-playlists new-playlist-input" placeholder="Paste spotify playlist URL">
-                            <button class="btn btn-playlists add-new-playlist"><img src={{URL::asset('public/images/plus-icon.png')}}>  Add Playlist</button>
+                    <div class="loader" id ="loaderChota">
+                        <img src = "{{ URL::asset('public//images/loading.gif') }}"/>
+                    </div>
+                    <div class="playform" id = "playform">
+                        <form class="search-form">
+                            <input  pattern=".{15,}" required title="15 characters minimum" type="text" id="url" class="search-playlists new-playlist-input" placeholder="Paste spotify playlist URL">
+                            <button class="btn btn-playlists add-new-playlist" id="btn_add_playlist"><img src={{URL::asset('public/images/plus-icon.png')}}>  Add Playlist</button>
                         </form>
                     </div>
                 </div>
@@ -105,4 +108,75 @@
 
         </div>
     </div>
+
+    <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
+    <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $('#url').val("");
+            $('#loaderChota').hide();
+
+        });
+
+        $('#btn_add').on('click', function(e){
+
+            $('#modal_title').html("Add Playlist URI");
+            $('#url').val("");
+
+        });
+        $('#btn_add_playlist').on('click', function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "get",
+                url: "{{url('playlist/add')}}" + "/"+ $('#url').val(),
+                success: function(data){
+
+                    if(data['Success'] == true) {
+                        $('#loaderChota').fadeIn();
+                        $('#playform').fadeOut();
+                        $('#modal_title').html("Playlist found.....adding to system");
+
+
+                        $.ajax({
+                            type: "get",
+                            url: "{{url('playlist/insertSimple/')}}" +'/' + data['id'],
+                            success: function (data) {
+
+                                if (data['Success'] == true) {
+                                    window.location = ('{{url('playlist/open-playlist/')}}' +'/' + data['id']);
+                                }
+                                else {
+
+                                    $('#loaderChota').fadeOut();
+                                    $('#playform').fadeIn();
+                                }
+                            },
+
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                $('#modal_title').html("There was an error in importing playlist");
+                                console.log("Status: " + textStatus);
+                                $('#loaderChota').fadeOut();
+                                $('#playform').fadeIn();
+                            },
+                        });
+
+                    }
+                    else if(data['Success'] == false)
+                        $('#modal_title').html("Playlist not found......:(");
+
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    $('#modal_title').html("Playlist not found");
+                    console.log("Status: " + textStatus); alert("Error: " + errorThrown);
+                    $('#loaderChota').fadeOut();
+                    $('#playform').fadeIn();
+                }
+            });
+
+        });
+
+    </script>
 </html>

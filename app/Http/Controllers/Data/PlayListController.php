@@ -129,8 +129,7 @@ class PlayListController extends Controller {
     public function addPlaylist(Request $request) {
 
         //Check if URL of a Playlist is received
-
-        if (!$request->has('url')) {
+        if (!isset($request->url)) {
             $return_array = array(
                 "Success" => false,
                 "Desc" => "CAN NOT OBTAIN PLAYLIST ID FROM URL"
@@ -145,7 +144,7 @@ class PlayListController extends Controller {
             // Grab variables from Sessions
 
 
-            if (Session::has('user_info')) {
+            if (session::has('UserInfo')) {
                 $user_info = Session::get('UserInfo');
                 $user_id = $user_info['id'];
             } else {
@@ -159,11 +158,13 @@ class PlayListController extends Controller {
 
 
 
+            $exploded = explode(':',$request->url);
+
+
             /*
              * CURL Request PUT Data
              */
-
-            $url = "https://api.spotify.com/v1/users/" . $user_id . "/playlists/" . $playlist_id . "/followers";
+            $url = "https://api.spotify.com/v1/playlists/" . end($exploded) . "/followers";
 
             $body = array(
                 "public" => false
@@ -172,8 +173,15 @@ class PlayListController extends Controller {
 
 
             $curl_return = goCurl($url, $body, "PUT", TRUE);
-
-            return $curl_return;
+            if(strpos($curl_return['Header'],'200') == false)
+                return ([
+                    'Success' => false
+                ]);
+            else
+                return ([
+                    'Success' => true,
+                    'id' => end($exploded)
+                ]);
         }
     }
 
@@ -336,7 +344,9 @@ class PlayListController extends Controller {
           $playlist->calculated_tracks = true;
           $playlist->save(); */
 
-        return (['Success' => true]);
+        return ([
+            'Success' => true,
+            'id' => $return['ResponseData']['id']]);
     }
 
 

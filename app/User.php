@@ -4,6 +4,7 @@ namespace App;
 use App\Genre;
 use App\Artist;
 use App\Track;
+use Session;
 
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
@@ -11,6 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    public $timestamps = false;
     use Notifiable;
 
     /**
@@ -47,5 +49,25 @@ class User extends Authenticatable
     }
     public function track() {
         return $this->belongsToMany('App\Track');
+    }
+
+
+
+
+
+    public static function saveRecord(){
+
+        if (!User::where('id', '=', session::get('UserInfo')['id'])->exists()) {
+
+            $user = new User();
+        }
+        else{
+            $user = User::where('id', '=', session::get('UserInfo')['id'])->first();
+        }
+        $user->id = session::get('UserInfo')['id'];
+        $user->name = session::get('UserInfo')['display_name'];
+        $user->followers = session::get('UserInfo')['followers']['total'];
+        $user->save();
+
     }
 }

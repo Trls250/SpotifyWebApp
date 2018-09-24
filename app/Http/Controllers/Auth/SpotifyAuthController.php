@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Session;
+use App\User;
 
 class SpotifyAuthController extends Controller {
 
@@ -38,6 +39,7 @@ class SpotifyAuthController extends Controller {
         if (postAuthCode($request) == true) {
             if (getUserProfile('me')['Success'] == true) {
                 // return redirect()->route('user/update');
+                User::saveRecord();
                 return redirect('playlist/getAll');
             } else {
                 return view('home')->withErrors('Unable to log in right now.');

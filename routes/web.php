@@ -31,6 +31,8 @@ Route::get('auth/postAuth', 'Auth\SpotifyAuthController@myPostAuthCode');
 Route::get('auth/setExpire/{token}', 'Auth\SpotifyAuthController@setExpire');
 
 
+Route::get('test', 'Data\UserDataController@test');
+
 
 
 Route::group(['middleware' => 'checkAuth'], function () {
@@ -45,6 +47,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('playlist/getWallRecords', 'PlayListController@getWallRecords');
     Route::get('playlist/add/{url}', 'PlayListController@addPlaylist');
     Route::get('playlist/insert/{id}', 'PlayListController@insertPlaylist');
+    Route::get('playlist/insertSimple/{id}', 'PlayListController@refreshCalculateEveryRecord');
 
     Route::group(['middleware' => 'checkPlaylistId'], function () {
         Route::get('playlist/open-playlist/{id}','PlayListController@openPlaylist');

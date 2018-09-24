@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Data;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Genre;
 
 class UserDataController extends Controller {
 
@@ -13,23 +14,7 @@ class UserDataController extends Controller {
     //     UserData::getUserProfile as myGetUserProfile;
     // }
 
-    public function update(){
 
-        if (!Playlist::where('id', '=', session::get('UserInfo')['id'])->exists()) {
-
-            $user = new User();
-        }
-        else{
-            $user = Playlist::where('id', '=', session::get('UserInfo')['id'])->get();
-        }
-
-        $user->name = session::get('UserInfo')['display_name'];
-        $user->followers = session::get('UserInfo')['followers'];
-        $user->save();
-
-        return view('playlists');
-
-    }
     public function getCurrentUser(Request $request) {
 
         return $this->myGetUserProfile(session::get('UserInfo')['id']);
@@ -37,5 +22,9 @@ class UserDataController extends Controller {
 
     public function getUser(Request $request) {
         return $this->myGetUserProfile($request->id);
+    }
+
+    public function test(Request $request) {
+        Genre::insertGenres();
     }
 }
