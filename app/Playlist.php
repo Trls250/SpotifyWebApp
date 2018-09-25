@@ -22,6 +22,7 @@ class Playlist extends Model {
         $playlist->repeated_artist = $request->repeated_artist;
         $playlist->repeated_times = $request->repeated_times;
         $playlist->repeated_artist_id = $request->repeated_artist_id;
+        $playlist->added_by_name = $request->added_by_name;
         $playlist->creator_name = $request->creator_name;
         $playlist->creator_id = $request->creator_id;
         $playlist->rating = $request->rating;
@@ -145,19 +146,29 @@ class Playlist extends Model {
     } 
 
     public function AddNewComment($data){
+
+        $suggest_track = null;
+        if(isset($data['suggest_track'])){
+
+            $exploded = explode(':',$data['suggest_track']);
+            $suggest_track = end($exploded);
+        }
+
         $comment = new Comment;
         $comment->playlist_id = $this->id;
         $comment->user_id = session::get('UserInfo')['id'];
         $comment->user_name = session::get('UserInfo')['display_name'];
         $comment->comment = $data['comment'];
         $comment->user_url = session::get('UserInfo')['external_urls']['spotify'];
+        $comment->track_id = $suggest_track;
 
         $comment->save();
     }
 
-    public function getComments(){
+    public static function getComments($id, $start, $limit){
 
-        $commentRecords = Comment::where(['playlist_id' => $this->id])->get();
+
+        $commentRecords = Comment::where(['playlist_id' => $id])->orderBy('updated_at', 'desc')->skip($start)->take($limit)->get();
         $comments = []; 
 
         if(!empty($commentRecords)){
@@ -171,7 +182,10 @@ class Playlist extends Model {
                 }
 
                 $comments[] = [
+                    'id'                => $comment->id,
+                    'user_id'                => $comment->user_id,
                     'userName'          => $comment->user_name,
+                    'track_id'          => $comment->track_id,
                     'userProfileImage'  => $image,
                     'text'              => $comment->comment,
                     'time'              =>  Self::timeago($comment->created_at)
@@ -204,6 +218,12 @@ class Playlist extends Model {
         }
     }
 
+    public function getRating($user_id) {
+        return ( PlaylistRating::where([
+            'playlist_id' => $this->id,
+            'user_id' => $user_id
+        ])->first());
+    }
     public function calculateRating(){
         $ratings = $this->rate;
         $rate  = 0;

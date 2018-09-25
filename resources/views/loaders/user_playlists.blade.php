@@ -37,10 +37,9 @@
 
     function addPlaylist(id){
         $('#playlist_records').fadeOut();
-        $('#main_loader').fadeIn();
-        $('.loader').fadeIn();
-        $('.loader-img').fadeIn();
-        $("#title_to_replace").replaceWith( "<h3 class='title'>Importing playlist.....</html>");
+        $(".msg").hide();
+        $("#main_loader").fadeIn();
+        $("#title_to_replace").replaceWith( "<h3 class='title'>Loading playlist.....</html>");
         this.add(id);
     }
 
@@ -54,17 +53,16 @@
                             success: function (data) {
 
                                 if (data['Success'] == true) {
+                                    $("#title_to_replace").replaceWith( "<h3 class='title'>Almost Done.....</html>");
                                     window.location = ('{{url('playlist/open-playlist/')}}' + '/' + data['id']);
-                                    $('#main_loader').fadeOut();
-                                    $('.loader').fadeOut();
-                                    $('.loader-img').fadeOut();
-                                    $('#playlist_records').fadeIn();
+                                    $(".msg").fadeIn();
+                                    $("#main_loader").fadeOut();
                                 }
                                 else {
 
-                                    $('#main_loader').fadeOut();
-                                    $('.loader').fadeOut();
-                                    $('.loader-img').fadeOut();
+                                    console.log(data);
+                                    $(".msg").fadeIn();
+                                    $("#main_loader").fadeOut();
                                     $('#playlist_records').fadeIn();
                                     $("#title_to_replace").replaceWith( "<h3 class='title'>There was an error adding last playlist to our system.....try again :(</thml>");
                                 }
@@ -72,9 +70,7 @@
 
                             error: function (XMLHttpRequest, textStatus, errorThrown) {
                                 console.log("Status: " + textStatus);
-                                $('#main_loader').fadeOut();
-                                $('.loader').fadeOut();
-                                $('.loader-img').fadeOut();
+                                $('#main_loader2').fadeOut();
                                 $('#playlist_records').fadeIn();
                                 $("#title_to_replace").replaceWith("<h3 class='title'> There was an error adding last playlist to our system.....try again :(</h3>");
 

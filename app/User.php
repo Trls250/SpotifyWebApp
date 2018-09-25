@@ -53,8 +53,6 @@ class User extends Authenticatable
 
 
 
-
-
     public static function saveRecord(){
 
         if (!User::where('id', '=', session::get('UserInfo')['id'])->exists()) {

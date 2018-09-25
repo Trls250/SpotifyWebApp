@@ -305,6 +305,7 @@ class PlayListController extends Controller {
         $playlist->id = $return['ResponseData']['id'];
         $playlist->title = $return['ResponseData']['name'];
         $playlist->added_by = session::get('UserInfo')['id'];
+        $playlist->added_by_name = session::get('UserInfo')['display_name'];
         $playlist->repeated_artist = $repeatedArtist['RepeatedArtist']['name'];
         $playlist->repeated_artist_id = $repeatedArtist['RepeatedArtist']['id'];
         $playlist->creator_name = $return['ResponseData']['owner']['display_name'];
@@ -840,7 +841,8 @@ class PlayListController extends Controller {
                 $data["user"]['profileImage'] = '/images/default_user.png';
             }
 
-            $data["comments"] = $playlist->getComments();
+            $data["tots_comments"] = Playlist::find($playlist['id'])->comment()->count();
+            $data["user_rating"] = $playlist->getRating(session::get('UserInfo')['id']);
 
             return view('openplaylists')->with($data);
         } else {

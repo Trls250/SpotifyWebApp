@@ -37,6 +37,10 @@ Route::get('test', 'Data\UserDataController@test');
 
 Route::group(['middleware' => 'checkAuth'], function () {
 
+    Route::group(['middleware' => ['web']], function(){
+        Route::post('comment/add-new', 'Data\CommentsController@addComment');
+    });
+
     Route::get('user/update', 'Data\UserDataController@update');
     Route::get('logout', "Auth\SpotifyAuthController@setExpire");
     Route::get('search', 'Data\SearchController@getSearchResults');
@@ -56,15 +60,15 @@ Route::group(['middleware' => 'checkAuth'], function () {
         Route::get('playlist/details/{id}', 'PlayListController@getPlaylist');
         Route::get('playlist/table/{id}', 'PlayListController@getPlaylistDetails');
         Route::post('rate/insert/{id}', 'Data\PlaylistRatingsController@insert');
+        Route::get('playlist/comments/{id}', 'Data\CommentsController@getComments');
     });
 
     Route::get('users/me', 'Data\UserDataController@getCurrentUser');
     Route::get('users/get{id}', 'Data\UserDataController@getUser');
     Route::post('comment/add/{id}', 'Data\CommentsController@store');
+//    Route::delete('comment/delete/{id}', 'Data\CommentsController@delete');
 
 });
 
-Route::group(['middleware' => ['web']], function(){
-    Route::post('comment/add-new', 'Data\CommentsController@addComment');
-});
+
 

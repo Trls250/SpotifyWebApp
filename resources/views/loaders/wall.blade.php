@@ -1,7 +1,7 @@
 @foreach($Playlists as $playlist)
     <div class="row">
         <div class="post-row clearfix">
-            @if(file_exists('playlists/'.$playlist->id.'.jpg'))
+            @if(file_exists('public/playlists/'.$playlist->id.'.jpg'))
                 <div class="post-width post-image"  style="background-image: url({{ URL::asset('public/playlists/'.$playlist->id.'.jpg') }});">
                 </div>
             @else

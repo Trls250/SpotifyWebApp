@@ -20,6 +20,7 @@ class Comment extends Model {
         $comment->user_url = $request->user_url;
         $comment->created_at = $request->created_at;
         $comment->updated_at = $request->updated_at;
+        $comment->track_id = $request->track_id;
     }
 
     public function playlist() {

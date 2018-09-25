@@ -1,4 +1,7 @@
 @include('includes/header')
+<!-- provide the csrf token -->
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
         <section class="main-wrapper">
           <div class="container-fluid">
             
@@ -39,26 +42,27 @@
                   <div class="iframe">
                     <!-- <img src="<?php echo URL::asset('public/images/iframe.png'); ?>" style="width: 100%;" /> -->
                     <iframe src="https://open.spotify.com/embed/user/{{$Playlist['creator_id']}}/playlist/{{$Playlist['id']}}" width="600" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    <h3>{{count($comments)}} Comments</h3>
+                    <h3>{{$tots_comments}} Comments</h3>
                   </div>
-                  <?php foreach($comments as $comment){ ?>
-                      <div class="commentsbox">
-                          <div class="commentimages" style="background-image: url('<?php echo $comment['userProfileImage']; ?>'"></div>
-                          <h4><?php echo $comment['userName']; ?></h4>
-                          <p><?php echo $comment['text']; ?></p>
-                          <p class="time"> <img src="<?php echo URL::asset('public/images/time.png'); ?>"><?php echo $comment['time']; ?></p>
-                      </div>
-                  <?php } ?>
+                    <div id="comments">
+
+                    </div>
+                    <button class="play-btn dektop-play-btn loader" onclick="getComments()" id ="more_comments" >
+                        Load More
+                    </button>
+
                   <div class="ratecomment rate-comment-box">
                     <h4>Rate & Comment</h4>
-                    <div class="rating rateYo error-rating">
-                     <!--  <a href=""><img src="<?php echo URL::asset('public/images/filstar.png'); ?>"></a>
-                      <a href=""><img src="<?php echo URL::asset('public/images/filstar.png'); ?>"></a>
-                      <a href=""><img src="<?php echo URL::asset('public/images/filstar.png'); ?>"></a>
-                      <a href=""><img src="<?php echo URL::asset('public/images/filstar.png'); ?>"></a>
-                      <a href=""><img src="<?php echo URL::asset('public/images/empty-star.png'); ?>"></a> -->
-                      <span>Like it</span>
+                    <div class="rating error-rating">
+                        <?php for($i = 0; $i < 5 ; $i++){ ?>
+                        <?php if($i < (int)$user_rating['rating']){ ?>
+                        <img class="rate_input" id = {{$i}} src="<?php echo URL::asset('public/images/filstar.png'); ?>">
+                        <?php }else{ ?>
+                        <img class="rate_input" id = {{$i}} src="<?php echo URL::asset('public/images/empty-star.png'); ?>">
+                        <?php } ?>
+                        <?php } ?>
                     </div>
+
                     <div class="commentmsg">
                       <form>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
@@ -69,6 +73,7 @@
                         <div class="form-group">
                           <input id="suggest-track" type="text" class="suggesttrack" name="suggest-track" placeholder="Suggest Track (paste Spotify track URI here) ">
                         </div>
+
                         <button class="btn btn-submit submit-comment">Submit <img src="<?php echo URL::asset('public/images/arrow.png'); ?>" /></button>
                       </form>
                     </div>
@@ -82,7 +87,18 @@
         <script src="{{ URL::asset('public/js/bootstrap.js') }} "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
         <script type="text/javascript">
+
+
+            var comments_start = 0;
+            var comments_limit = 10;
+            var total_comments = parseInt({{$tots_comments}});
+
           $(document).ready(function () {
+
+                if(comments_limit>=total_comments){
+                    $("#more_comments").hide();
+                }
+
                 $('.search-btns').on('click', function() {
                   $('.search-form').toggle("slow");
                 });
@@ -96,6 +112,9 @@
                 $('.profile-nav-top').click(function () {
                     $(this).next('.profile-navi').slideToggle();
                 });
+
+
+                getComments();
 
                 $(function () {
 
@@ -114,19 +133,73 @@
                   });
                 });
 
+                $(".rate_input").on('click', function(e) {
+
+                    var ele = $(this);
+                    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+                    var current = parseInt(e.target.id);
+                    for(let i = 0; i<5; i++){
+                        if(i<=current){
+                            $("#"+ i).attr('src',"<?php echo URL::asset('public/images/filstar.png'); ?>");
+                        }
+                        else {
+                            $("#"+ i).attr('src',"<?php echo URL::asset('public/images/empty-star.png'); ?>");
+                        }
+                    }
+
+                    $.ajax({
+
+                        url: "{{url('rate/insert')}}" + "/" + "{{$Playlist['id']}}",
+                        type: "POST",
+                        data: {_token: CSRF_TOKEN, rate: parseInt(e.target.id) + 1},
+                        dataType: 'JSON',
+
+                        success: function (data) {
+
+
+
+                            if(data['Success']) {
+                                $(ele).after(getSuccessAlertBox("Your rating has been saved :)"));
+                                //console.log(data);
+                            }
+                            else
+                                $(ele).after(getSuccessAlertBox("There was an error saving your rating :("));
+
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                            var errors = XMLHttpRequest.responseJSON;
+                            for (x in errors.errors) {
+                                $(".error-" + x).after('<p class="comment-errors-msg" style="color:red;"> ' + x + ' is required</p>');
+                                console.log(".error-" + x);
+                            }
+                            // console.log(textStatus);
+                            // console.log("errorThrown");
+                            // console.log(errorThrown);
+                            // alert("Status: " + textStatus); alert("Error: " + errorThrown);
+
+
+                            $(ele).after(getSuccessAlertBox("There was an error saving your rating :("));
+                        }
+
+                    });
+
+                });
+
                 $(document).on("click", ".submit-comment", function(e){
                     e.preventDefault();
                     // alert('clicked');
                     $(".comment-errors-msg").remove();
                     $(".comment-fields").css('border-color','#c8c8c8').css("color",'#b7b7b7');
-
+                    var temp = $("#suggest-track").val();
+                    temp = temp.split(":");
+                    temp = temp[temp.length - 1];
                     var ele = $(this);
 
                     var data = {
                         id : "<?php echo $Playlist['id'] ?>",
                         comment : $(".comment-text").val(),
                         _token : "{{ csrf_token() }}",
-                        rating : $("#rating").val(),
                         suggest_track : $("#suggest-track").val()
                     };
 
@@ -135,14 +208,23 @@
                         type: "post",
                         data : data,
                         success: function(data){
-
-                            $(".rate-comment-box").before(`
+                            var html = `
                                 <div class="commentsbox">
-                                    <div class="commentimages" style="background-image: url('<?php echo $user['profileImage']; ?>'"></div>
+                                    @if(file_exists('public/users/'.$user['id'].'.jpg'))
+                                    <div class="commentimages" style="background-image: url({{ URL::asset('public/users/'.$user['id'].'.jpg') }})"></div>
+                                     @else
+                                    <div class="commentimages" style="background-image: url({{ URL::asset('public/users/default.jpg') }})"></div>
+                                    @endif
                                     <h4><?php echo $user['display_name']; ?></h4>
-                                    <p>`+$(".comment-text").val()+`</p>
-                                    <p class="time"> <img src="<?php echo URL::asset('public/images/time.png'); ?>"Just now</p>
-                                </div>`);
+                                    <p>`+$(".comment-text").val()+`</p>`;
+
+                                    if(temp.length > 10){
+                                        html += `<iframe src='https://embed.spotify.com/?uri=spotify:track:`+temp+`' height="80px" frameborder='0' allowtransparency='true'></iframe>`;
+                                    }
+
+                                    html += `<p class="time"> <img src="<?php echo URL::asset('public/images/time.png'); ?>"Just now</p>
+                                </div>`;
+                            $(".rate-comment-box").before(html);
                             $(".comment-text").val('');
                             $("#suggest-track").val('');
                             $(ele).after(getSuccessAlertBox('Comment added successfully.'));
@@ -167,7 +249,31 @@
                 });
           });
 
-          $("#refresh_playlist").on("click", function () {
+
+            function getComments(){
+
+                $.ajax({
+                    type: "get",
+                    url: "{{ url('playlist/comments/'.$Playlist['id'].'?start=')}}" + comments_start +"&limit=" + comments_limit,
+                    success: function (data) {
+
+                        $("#comments").append(data);
+
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown, data) {
+                        console.log("Status: " + textStatus);
+                        console.log(data);
+                    }
+                });
+
+                comments_start += comments_limit;
+                if(comments_start>=total_comments){
+                    $("#more_comments").hide();
+                }
+            }
+
+
+            $("#refresh_playlist").on("click", function () {
             // show main loader here
 
             $('#all_info_container').fadeOut();
@@ -187,6 +293,44 @@
             })
         });
 
+
+            $(".delete_button_comment").on('click', function (e) {
+
+                var ele = $(this);
+               $.ajax({
+
+                   type: "delete",
+                   url: "{{url('comment/delete')}}" + "/" + e.target.id,
+                   success: function (data) {
+
+                       if(data['Success']) {
+                           $(ele).hide();
+                           $(ele).after(getSuccessAlertBox("Your comment was deleted :)"));
+                           //console.log(data);
+                       }
+                       else
+                           $(ele).after(getSuccessAlertBox("There was an error deleting your comment :("));
+
+                   },
+                   error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                       var errors = XMLHttpRequest.responseJSON;
+                       for (x in errors.errors) {
+                           $(".error-" + x).after('<p class="comment-errors-msg" style="color:red;"> ' + x + ' is required</p>');
+                           console.log(".error-" + x);
+                       }
+                       // console.log(textStatus);
+                       // console.log("errorThrown");
+                       // console.log(errorThrown);
+                       // alert("Status: " + textStatus); alert("Error: " + errorThrown);
+
+
+                       $(ele).after(getSuccessAlertBox("There was an error deleting your comment :("));
+                   }
+
+               });
+
+            });
           function getSuccessAlertBox(msg){
               var success =    `
                           <div class="alert alert-success alert-dismissible success-msg" style="text-align: left;position: fixed;bottom: 20%;right: 5%;width: 30%;">

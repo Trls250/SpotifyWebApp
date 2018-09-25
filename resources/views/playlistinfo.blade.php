@@ -182,6 +182,7 @@
                   success: function (data) {
                       $("#loaderChota").fadeOut();
                       if(data.Status == "404"){
+                          $(".loader").hide();
                           $("#tracks_table").replaceWith("Sorry, currently there is no track in this playlist.")
                       }
                       else {

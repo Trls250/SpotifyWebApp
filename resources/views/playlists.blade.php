@@ -14,8 +14,10 @@
                             </div>
                         </ul>
                         <div class="loader page-end-div">
+                            <div class="msg"></div>
                             <img  id = "main_loader" class= 'center-block loader-img' src = "{{ URL::asset('public/images/loading.gif') }}"/>
                         </div>
+
                     </div>
                 </div>
               </div>
@@ -26,6 +28,7 @@
         <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
         <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
         <script type="text/javascript">
+            $("#adding").hide();
           var offset = 0;
           var items  = 8;
           var flag   = true;
@@ -74,7 +77,8 @@
                           $("#title_to_replace").replaceWith("Sorry, currently there is no playlist in your library.")
                       }else if(data.Status == "204"){
                           flag = false;
-                          $(".page-end-div").html("No more playlists.");
+                          $(".msg").html("No more playlists.");
+                          $("#main_loader").hide();
                       }else {
                           $('.playlist_records').append(data);
                       }

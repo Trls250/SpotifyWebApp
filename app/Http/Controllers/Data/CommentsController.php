@@ -33,14 +33,14 @@ class CommentsController extends Controller {
     public function addComment(Request $request){
 
          $validatedData = $request->validate([
-            'comment' => 'required',
-            'rating'  => 'required'
+            'comment' => 'required'
         ]);
 
         $playlist = Playlist::find($request->id);
         if(empty($playlist)){
 
         }   
+
 
         /* Add New Comment. */
         $playlist->AddNewComment($request->input());
@@ -52,11 +52,19 @@ class CommentsController extends Controller {
         return "success";
     }
 
-    public function get(Request $request) {
+    public function getComments(Request $request) {
         $validatedData = $request->validate([
-            'page' => 'required',
+            'start' => 'required',
+            'limit' => 'required'
         ]);
+
+
+        return view('loaders.comment')->with([
+            "comments" => Playlist::getComments($request->id, $request->start, $request->limit)]);
+
     }
+
+
 
     public function test(Request $request){
         echo '<pre>';

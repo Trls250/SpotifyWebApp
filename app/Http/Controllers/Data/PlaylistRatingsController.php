@@ -56,7 +56,8 @@ class PlaylistRatingsController extends Controller
 
 
         return ([
-            'Success' => true
+            'Success' => true,
+            'Rate' => $request->rate
         ]);
 
     }

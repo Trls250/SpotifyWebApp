@@ -8,7 +8,7 @@
     color: #bbbbbb;
 }
 ::-moz-placeholder {
-    color: #bbbbbb;
+    color: #FFFFF;
 }
 :-ms-input-placeholder {
     color: #bbbbbb;
@@ -868,7 +868,7 @@ ul {
     align-items: center;
     color: #888888;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 12px;
     margin-bottom: 20px;
 }
 .range1 label output{

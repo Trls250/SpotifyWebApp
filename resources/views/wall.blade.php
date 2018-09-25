@@ -4,22 +4,27 @@
 
               @include('includes/sidebar')
 
+
             <div id ="wall_records" class="content-container">
               <div class="row">
                 <div class="col-md-12">
                   <h3 id ="title_replace" class="title">Wall</h3>
                 </div>
               </div>
-
             </div>
           </div>
-            <div class = "page_end_div"></div>
+            <div class="loader page_end_div">
+                <img  id = "main_loader" class= 'center-block loader-img' src = "{{ URL::asset('public/images/loading.gif') }}"/>
+            </div>
         </section>
         <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
         <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
         <script type="text/javascript">
+
+            $("#main_loader").fadeIn();
             var offset = 0;
-            var items = 2;
+            var items = 5;
+            var flag   = true;
           $(document).ready(function () {
                 $('.search-btns').on('click', function() {
                   $('.search-form').toggle("slow");
@@ -37,48 +42,39 @@
 
                 getRecords(offset,items);
 
-              $(".main-wrapper").scroll(function(e){
-
-                  if (processing)
-                      return false;
-
-                  if ($(".main-wrapper").scrollTop() >= ($("#wall_records").height() - $(".main-wrapper").height())*0.7){
-                      processing = true;
-                      alert("hi");
-                  }
-              });
-
-              $(window).scroll(function() {
-                  var pos = $(window).scrollTop() + $(window).height();
-                  if($('.page-end-div').length != 0){
-
-                      if(pos >= $(".page-end-div").offset().top){
-                          if(flag){
-
-                              flag = false;
-
-                              console.log("here");
-                              //getAllRecords(offset, items);
-                              offset += items;
-                          }
-                      }else{
-                          flag = true;
-                      }
-                  }
-              });
-
 
           });
 
+            $(window).scroll(function() {
+                var pos = $(window).scrollTop() + $(window).height();
+                if($('.page_end_div').length != 0){
+                    if(flag){
+                         if (pos  - $(".page_end_div").offset().top <=0.30)
+                        {
+                            getRecords(offset, items);
+                            console.log();
+                        }
+                    }
+                }
+            });
+
           function getRecords($offset, $items) {
+
+              $("#main_loader").fadeIn();
               $.ajax({
                   type: "get",
                   url: "{{ url('playlist/getWallRecords')}}"+'?offset='+$offset+'&items='+$items,
                   success: function (data) {
-                      $(".loader").fadeOut();
-                      console.log(data.Status);
+                      $("#main_loader").fadeOut();
                       if(data.Status == "404"){
-                          $("#title_replace").html("Sorry, currently there is no playlist in our system.");
+                          $(".page_end_div").html("Sorry, no playlists found.");
+                          flag = false;
+
+                      }
+                      else if (data.Status == "204") {
+                          $(".page_end_div").html("No further records");
+                          flag = false;
+
                       }
                       else {
                           $('#wall_records').append(data);
@@ -89,6 +85,8 @@
                       alert("Status: " + textStatus); alert("Error: " + errorThrown);
                   }
               });
+
+              offset+=items;
           }
         </script>
     </body>
