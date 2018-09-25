@@ -74,6 +74,7 @@
                       
                       // $(".loader").fadeOut();
                       if(data.Status == "404"){
+                          $("#main_loader").hide();
                           $("#title_to_replace").replaceWith("Sorry, currently there is no playlist in your library.")
                       }else if(data.Status == "204"){
                           flag = false;

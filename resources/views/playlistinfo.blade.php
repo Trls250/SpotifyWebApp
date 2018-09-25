@@ -181,8 +181,9 @@
                   url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items=25&page=1',
                   success: function (data) {
                       $("#loaderChota").fadeOut();
+                      $(".loader").hide();
                       if(data.Status == "404"){
-                          $(".loader").hide();
+
                           $("#tracks_table").replaceWith("Sorry, currently there is no track in this playlist.")
                       }
                       else {
@@ -225,6 +226,7 @@
                 url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items='+data.pageSize+'&page='+(data.pageIndex +1),
                 success: function (data) {
                     $(".loader").fadeOut();
+                    $(".loader").hide();
                     $('#to_replace').html(data);
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {

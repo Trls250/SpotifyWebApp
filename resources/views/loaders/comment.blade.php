@@ -1,12 +1,11 @@
 <?php foreach($comments as $comment){ ?>
 <div class="commentsbox">
-    @if(file_exists('public/users/'.$comment['user_id'].'.jpg'))
+    @if(file_exists('public/users/'. $comment['id'].'.jpg') == true)
         <div class="commentimages" style="background-image: url({{ URL::asset('public/users/'.$comment['user_id'].'.jpg') }})"></div>
     @else
-        <div class="commentimages" style="background-image: url({{ URL::asset('public/users/default.jpg') }})"></div>
+        <div class="commentimages" style="background-image: url({{ URL::asset('public/images/default_user.png') }})"></div>
 
     @endif
-    <div class="commentimages" style="background-image: url('<?php echo ('public/'.$comment['user_id']); ?>"></div>
     <h4><?php echo $comment['userName']; ?></h4>
     <p><?php echo $comment['text']; ?></p>
 

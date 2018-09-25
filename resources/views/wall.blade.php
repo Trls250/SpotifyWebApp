@@ -14,7 +14,7 @@
             </div>
           </div>
             <div class="loader page_end_div">
-                <img  id = "main_loader" class= 'center-block loader-img' src = "{{ URL::asset('public/images/loading.gif') }}"/>
+                <img  id = "main_loader" class="center-block loader-img" src = "{{ URL::asset('public/images/loading.gif') }}"/>
             </div>
         </section>
         <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
@@ -82,7 +82,7 @@
                   },
 
                   error: function(XMLHttpRequest, textStatus, errorThrown) {
-                      alert("Status: " + textStatus); alert("Error: " + errorThrown);
+
                   }
               });
 
