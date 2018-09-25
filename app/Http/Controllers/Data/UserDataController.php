@@ -19,9 +19,7 @@ class UserDataController extends Controller {
     public function getCurrentUser(Request $request) {
 
         $user = User::find(session::get('UserInfo')['id']);
-        $genre_user = User::where([
-            'user_id' => $user->id
-        ])->get();
+
         $track_user = User::find(session::get('UserInfo')['id'])->track();
         $artist_user = User::find(session::get('UserInfo')['id'])->artist();
         return ([
@@ -29,7 +27,7 @@ class UserDataController extends Controller {
             'UserInfo' => $user,
             'TrackInfo' => $track_user,
             'ArtistInfo' => $artist_user,
-            'GenreInfo' => $genre_user
+            'GenreInfo' => $user->genre
         ]);
     }
 
