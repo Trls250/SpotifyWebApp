@@ -53,7 +53,7 @@
 
                   <div class="ratecomment rate-comment-box">
                     <h4>Rate & Comment</h4>
-                    <div class="rating error-rating">
+                    <div class="rating ">
                         <?php for($i = 0; $i < 5 ; $i++){ ?>
                         <?php if($i < (int)$user_rating['rating']){ ?>
                         <img class="rate_input" id = {{$i}} src="<?php echo URL::asset('public/images/filstar.png'); ?>">
@@ -68,12 +68,13 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                         <input type="hidden" id="rating" value="" >
                         <div class="form-group">
-                        <textarea class="msgbox comment-text error-comment comment-fields" placeholder="Write comment"></textarea>
+                        <textarea class="msgbox comment-text  comment-fields" placeholder="Write comment"></textarea>
                         </div>
                         <div class="form-group">
                           <input id="suggest-track" type="text" class="suggesttrack" name="suggest-track" placeholder="Suggest Track (paste Spotify track URI here) ">
                         </div>
 
+                          <div class="error"></div>
                         <button class="btn btn-submit submit-comment">Submit <img src="<?php echo URL::asset('public/images/arrow.png'); ?>" /></button>
                       </form>
                     </div>
@@ -92,6 +93,7 @@
             var comments_start = 0;
             var comments_limit = 10;
             var total_comments = parseInt({{$tots_comments}});
+            var error_flag = false;
 
           $(document).ready(function () {
 
@@ -170,8 +172,13 @@
 
                             var errors = XMLHttpRequest.responseJSON;
                             for (x in errors.errors) {
-                                $(".error-" + x).after('<p class="comment-errors-msg" style="color:red;"> ' + x + ' is required</p>');
-                                console.log(".error-" + x);
+                                if(!error_flag)
+                                {
+                                    error_flag = true;
+                                    $(".error").html('<p class="comment-errors-msg" style="color:red;"> ' + x + ' is required</p>');
+
+                                }
+                                console.log("error" + x);
                             }
                             // console.log(textStatus);
                             // console.log("errorThrown");
@@ -241,8 +248,9 @@
 
                             var errors = XMLHttpRequest.responseJSON;
                             for(x in errors.errors){
-                                $(".error-"+x).after('<p class="comment-errors-msg" style="color:red;"> '+x+' is required</p>');
-                                console.log(".error-"+x);
+                                $(".error").html('<p class="comment-errors-msg" style="color:red;"> '+x+' is required</p>');
+                                break;
+                                console.log(".error");
                             }
                             // console.log(textStatus);
                             // console.log("errorThrown");
@@ -320,8 +328,8 @@
 
                        var errors = XMLHttpRequest.responseJSON;
                        for (x in errors.errors) {
-                           $(".error-" + x).after('<p class="comment-errors-msg" style="color:red;"> ' + x + ' is required</p>');
-                           console.log(".error-" + x);
+                           $(".error" ).html('<p class="comment-errors-msg" style="color:red;"> ' + x + ' is required</p>');
+
                        }
                        // console.log(textStatus);
                        // console.log("errorThrown");
