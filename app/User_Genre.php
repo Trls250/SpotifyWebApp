@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class User_Genre extends Model
 {
+    public $timestamps = false;
+    protected $table = "genre_user";
     public function store(Request $request) {
 
         $user_genre = new User_Genre();

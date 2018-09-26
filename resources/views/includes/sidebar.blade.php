@@ -6,5 +6,8 @@
         <li class="{{ Request::is('playlist/getAll') ? 'active' : '' }}">
             <a href='{{url('/playlist/getAll')}}'>My Library</a>
         </li>
+        <li class="{{ Request::is('users/me') ? 'active' : '' }}">
+            <a href='{{url('users/me')}}'>My Profile</a>
+        </li>
     </ul>
 </div>

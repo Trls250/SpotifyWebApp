@@ -47,9 +47,15 @@
                         </li>
                     </ul>
                 </div>
-                <div class="tags">
-                    <p>Most Repeated Artist:</p>
-                    <span>{{$playlist->repeated_artist}}</span>
+                <div class="tags tags-cus-row">
+                    <div class="tags-cus-col">
+                        <p>Most Repeated Artist:</p>
+                        <span>{{$playlist->repeated_artist}}</span>
+                    </div>
+                    <div class="tags-cus-col">
+                        <p>Added By:</p>
+                        <span><a href="{{url('users').'/'.$playlist->added_by}}">{{$playlist->added_by_name}}</a></span>
+                    </div>
                 </div>
                 <div class="taglists">
                 <!--<div class="playimage" style="background-image: url('{{ URL::asset('public/images/profile.png') }}')"></div>-->

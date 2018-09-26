@@ -46,7 +46,6 @@ class CommentsController extends Controller {
         $playlist->AddNewComment($request->input());
 
         /* IF rating is provided, Add or Update the record of rating for User. */
-        $playlist->AddOrUpdateRating($request->input());
         
 
         return "success";

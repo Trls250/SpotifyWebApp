@@ -215,7 +215,11 @@
                                      @else
                                     <div class="commentimages" style="background-image: url({{ URL::asset('public/users/default.jpg') }})"></div>
                                     @endif
+                                            @if(session::get('UserInfo')['id'] == $user['id'])
+                                    <h4>Me</h4>
+                                    @else
                                     <h4><?php echo $user['display_name']; ?></h4>
+                                        @endif
                                     <p>`+$(".comment-text").val()+`</p>`;
 
                                     if(temp.length > 10){

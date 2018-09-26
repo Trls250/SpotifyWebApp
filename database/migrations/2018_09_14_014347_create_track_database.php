@@ -17,7 +17,7 @@ class CreateTrackDatabase extends Migration
 
             $table->string('id', 30);
             $table->string('name', 30);
-            $table->string('preview', 30);
+            $table->string('preview', 30)->nullable();
             $table->primary('id');
 
 

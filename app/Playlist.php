@@ -12,7 +12,7 @@ class Playlist extends Model {
     protected $connection = 'mysql';
     protected $table = 'playlists';
     public $incrementing = false;
-
+    protected $casts = ['id' => 'string'];
     public function store(Request $request) {
         $playlist = new Playlist;
 

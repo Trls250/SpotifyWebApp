@@ -1,12 +1,17 @@
 <?php foreach($comments as $comment){ ?>
 <div class="commentsbox">
-    @if(file_exists('public/users/'. $comment['id'].'.jpg') == true)
+    @if(file_exists('public/users/'. $comment['user_id'].'.jpg') == true)
         <div class="commentimages" style="background-image: url({{ URL::asset('public/users/'.$comment['user_id'].'.jpg') }})"></div>
     @else
         <div class="commentimages" style="background-image: url({{ URL::asset('public/images/default_user.png') }})"></div>
 
     @endif
+
+    @if(session::get('UserInfo')['id'] == $comment['user_id'])
+            <h4>Me</h4>
+        @else
     <h4><?php echo $comment['userName']; ?></h4>
+        @endif
     <p><?php echo $comment['text']; ?></p>
 
 

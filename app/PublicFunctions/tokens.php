@@ -34,7 +34,7 @@ function getBaseUrl() {
 function authCode() {
 
     $response_type = 'code';
-    $scope = 'user-read-private%20user-read-email%20playlist-modify-private%20user-read-playback-state%20playlist-read-private%20streaming%20playlist-modify-public%20user-modify-playback-state%20user-read-currently-playing%20playlist-read-collaborative';
+    $scope = 'playlist-read-collaborative%20user-read-private%20user-read-email%20playlist-modify-private%20user-read-playback-state%20playlist-read-private%20streaming%20playlist-modify-public%20user-modify-playback-state%20user-read-currently-playing%20playlist-read-collaborative';
 
     return redirect('https://accounts.spotify.com/authorize/?client_id=' . client_id . '&response_type=' . $response_type . '&redirect_uri=' . redirect_uri . '&scope=' . $scope . '&state=' . state);
 }

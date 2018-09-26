@@ -170,7 +170,7 @@
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     $('#modal_title').html("Playlist not found");
-                    console.log("Status: " + textStatus); alert("Error: " + errorThrown);
+                    console.log("Status: " + textStatus);
                     $('#loaderChota').fadeOut();
                     $('#playform').fadeIn();
                 }

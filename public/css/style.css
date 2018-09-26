@@ -1028,6 +1028,41 @@ ul {
 .loader-img{
     margin-top: 200px;
 }
+.head-ul-fav-row {
+    display: flex;
+    justify-content: space-between;
+    /*text-align: center;*/
+}
+.head-ul-fav-col {
+    width: 32%;
+}
+.head-ul-fav-col span {
+    color: #0aaa43;
+    font-size: 14px;
+    font-family: robotocondensed-bold;
+    padding: 20px 20px;
+    font-weight: 800;
+    display: block;
+}
+.head-ul-fav-col ul li {
+    padding: 20px 20px;
+    font-size: 14px;
+    color: #222222;
+    background: #fff;
+}
+.head-ul-fav-col .play-btn {
+    margin: 10px auto;
+    background-position: center;
+    padding: 15px;
+    display: block;
+}
+.tags-cus-row {
+    display: flex;
+    justify-content: space-between;
+}
+.tags-cus-col {
+    width: 49%;
+}
 /********** Media Query *******/
 
 @media  (min-width: 1900px){

@@ -12,6 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    protected $casts = ['id' => 'string'];
     public $timestamps = false;
     use Notifiable;
 

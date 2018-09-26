@@ -23,7 +23,7 @@ class PlayListController extends Controller {
     public function getAllPlaylistsRecords(Request $request) {
 
         $offset = 0;
-        $limit = 2;
+        $limit = 10;
 
         if(isset($request['offset']))
         {
@@ -79,6 +79,73 @@ class PlayListController extends Controller {
 
         }
     }
+
+    public function getAllPlaylistsRecordsforUser(Request $request) {
+
+        $offset = 0;
+        $limit = 10;
+
+        if(isset($request['offset']))
+        {
+            $offset = $request['offset'];
+
+        }
+
+        if(isset($request['items']))
+        {
+            $limit = $request['items'];
+
+        }
+
+        if(!isset($request['id']))
+        {
+            return (['Success' => false,
+                'Status' => "404"]);
+        }
+
+
+        $url = "https://api.spotify.com/v1/users/".$request['id']."/playlists?limit=".$limit."&offset=".$offset;
+        $curl_return = goCurl($url, null, "GET", FALSE);
+
+        if ($curl_return['Success'] == false) {
+            return view('errors.500')->withErrors($curl_return['Desc']);
+        } else {
+            // $curl_data = json_decode($curl_return['ResponseData'], true);
+
+            if(count($curl_return['ResponseData']['items']) == 0 && $offset == 0)
+            {
+                return ([
+                    'Success'=>false,
+                    'Status'=>"404",
+                    'Message'=>"No records"]);
+            }
+
+
+            else if(count($curl_return['ResponseData']['items']) == 0 && $offset > 0)
+            {
+                return ([
+                    'Success'=>false,
+                    'Status'=>"204",
+                    'Message'=>"No further records"]);
+            }
+
+            else
+            {
+                foreach ($curl_return['ResponseData']['items'] as $key => $playlist) {
+                    if (Playlist::where('id', '=', $playlist['id'])->exists()) {
+                        $curl_return['ResponseData']['items'][$key]['db'] = true;
+                    } else {
+                        $curl_return['ResponseData']['items'][$key]['db'] = false;
+                    }
+                }
+
+                return view('loaders.user_playlists_user')->with('Playlists', $curl_return['ResponseData']['items'])
+                    ->with('get_all_page','get_all_page');
+            }
+
+        }
+    }
+
 
 
     public function getWallRecords(Request $request)

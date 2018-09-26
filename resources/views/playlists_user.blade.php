@@ -1,19 +1,16 @@
-@include('includes/header')
+
         <section class="main-wrapper">
           <div class="container-fluid">
-
-              @include('includes/sidebar')
-
             <div class="content-container">
               <div class="row">
                 <div class="col-md-12">
                     <div class="playlists-items">
-                        <h3 id="title_to_replace" class="title">Playlists</h3>
+                        <h3 id="title_to_replace" class="title">Public Playlists</h3>
                         <ul id = "playlist_records" class="clearfix">
                             <div class="playlist_records">
                             </div>
                         </ul>
-                        <div class="loader page-end-div">
+                        <div class="page-end-div">
                             <div class="msg"></div>
                             <img  id = "main_loader" class= 'center-block loader-img' src = "{{ URL::asset('public/images/loading.gif') }}"/>
                         </div>
@@ -28,9 +25,10 @@
         <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
         <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
         <script type="text/javascript">
-            $("#adding").hide();
+            $(".loader").fadeIn();
+            $("#main_loader").fadeIn();
           var offset = 0;
-          var items  = 8;
+          var items  = 10;
           var flag   = true;
           var temp = true;
 
@@ -68,10 +66,11 @@
           });
 
           function getAllRecords(offset, items){
-              temp =false;
+              temp = false;
+              {{--console.log("{{ url('playlist/user/getAllRecords')}}"+"?id="+"{{$id}}"+"?offset="+offset+"&items="+items);--}}
               $.ajax({
                   type: "get",
-                  url: "{{ url('playlist/getAllRecords')}}"+'?offset='+offset+'&items='+items,
+                  url: "{{ url('playlist/user/getAllRecords')}}"+"?id="+"{{$id}}"+"&offset="+offset+"&items="+items,
                   success: function (data) {
                       
                       // $(".loader").fadeOut();
@@ -90,9 +89,10 @@
                       console.log("Status: " + textStatus);
                   }
               });
-
-              temp =true;
+              temp = true;
           }
         </script>
     </body>
 </html>
+
+

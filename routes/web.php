@@ -31,7 +31,7 @@ Route::get('auth/setExpire/{token}', 'Auth\SpotifyAuthController@setExpire');
 
 
 
-
+Route::get('test', 'Data\UserDataController@test');
 
 Route::group(['middleware' => 'checkAuth'], function () {
 
@@ -43,11 +43,15 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('wall', 'PlayListController@getWall');
     Route::view('playlist/getAll', 'playlists');
     Route::get('playlist/getAllRecords', 'PlayListController@getAllPlaylistsRecords');
+    Route::get('playlist/user/getAllRecords', 'PlayListController@getAllPlaylistsRecordsforUser');
     Route::view('playlist/getWall', 'wall');
     Route::get('playlist/getWallRecords', 'PlayListController@getWallRecords');
     Route::get('playlist/add/{url}', 'PlayListController@addPlaylist');
     Route::get('playlist/insert/{id}', 'PlayListController@insertPlaylist');
     Route::get('playlist/insertSimple/{id}', 'PlayListController@refreshCalculateEveryRecord');
+    Route::get('user/addArtist', 'Data\UserDataController@addArtist');
+    Route::get('user/addTrack', 'Data\UserDataController@addTrack');
+    Route::get('user/addGenre', 'Data\UserDataController@addGenre');
 
     Route::group(['middleware' => 'checkPlaylistId'], function () {
         Route::get('playlist/open-playlist/{id}','PlayListController@openPlaylist');
@@ -59,8 +63,12 @@ Route::group(['middleware' => 'checkAuth'], function () {
         Route::get('playlist/comments/{id}', 'Data\CommentsController@getComments');
     });
 
+    Route::get('users/me/profile', function () {
+
+        return view('profile');
+    });
     Route::get('users/me', 'Data\UserDataController@getCurrentUser');
-    Route::get('users/get{id}', 'Data\UserDataController@getUser');
+    Route::get('users/get', 'Data\UserDataController@getUser');
     Route::post('comment/add/{id}', 'Data\CommentsController@store');
 //    Route::delete('comment/delete/{id}', 'Data\CommentsController@delete');
 

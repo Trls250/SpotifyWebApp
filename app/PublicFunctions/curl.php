@@ -63,13 +63,13 @@ function goCurl($url, $body, $method, $header) {
 
 
 
+
     /*
      * CURL REQUEST SEND AND RECEIVE RESPONSE
      */
     $raw_data = curl_exec($curl);
     $responseData = json_decode($raw_data, TRUE);
     $responseError = curl_error($curl);
-
     /*
      *  Close CURL
      */
