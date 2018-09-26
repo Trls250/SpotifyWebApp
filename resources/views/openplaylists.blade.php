@@ -42,8 +42,9 @@
                   <div class="iframe">
                     <!-- <img src="<?php echo URL::asset('public/images/iframe.png'); ?>" style="width: 100%;" /> -->
                     <iframe src="https://open.spotify.com/embed/user/{{$Playlist['creator_id']}}/playlist/{{$Playlist['id']}}" width="600" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    <h3>{{$tots_comments}} Comments</h3>
+                    <h3 id="comment_count">{{$tots_comments}} Comments</h3>
                   </div>
+                    <div id="new_comments"></div>
                     <div id="comments">
 
                     </div>
@@ -94,6 +95,7 @@
             var comments_limit = 10;
             var total_comments = parseInt({{$tots_comments}});
             var error_flag = false;
+            var total = parseInt({{$tots_comments}});
 
           $(document).ready(function () {
 
@@ -215,12 +217,19 @@
                         type: "post",
                         data : data,
                         success: function(data){
+
+
+                            total_comments = total_comments + 1;
+                            console.log(total_comments);
+                            $("#comment_count").html("<h3>"+total_comments + " Comments </h3>");
+
+
                             var html = `
                                 <div class="commentsbox">
                                     @if(file_exists('public/users/'.$user['id'].'.jpg'))
                                     <div class="commentimages" style="background-image: url({{ URL::asset('public/users/'.$user['id'].'.jpg') }})"></div>
                                      @else
-                                    <div class="commentimages" style="background-image: url({{ URL::asset('public/users/default.jpg') }})"></div>
+                                    <div class="commentimages" style="background-image: url({{ URL::asset('public/images/default_user.png') }})"></div>
                                     @endif
                                             @if(session::get('UserInfo')['id'] == $user['id'])
                                     <h4>Me</h4>
@@ -235,7 +244,7 @@
 
                                     html += `<p class="time"> <img src="<?php echo URL::asset('public/images/time.png'); ?>"Just now</p>
                                 </div>`;
-                            $(".rate-comment-box").before(html);
+                            $("#new_comments").after(html);
                             $(".comment-text").val('');
                             $("#suggest-track").val('');
                             $(ele).after(getSuccessAlertBox('Comment added successfully.'));
