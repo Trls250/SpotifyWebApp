@@ -54,7 +54,7 @@
                     </div>
                     <div class="tags-cus-col">
                         <p>Added By:</p>
-                        <span><a href="{{url('users').'/'.$playlist->added_by}}">{{$playlist->added_by_name}}</a></span>
+                        <span><a href="{{url('users/get?id=').$playlist->added_by}}">{{$playlist->added_by_name}}</a></span>
                     </div>
                 </div>
                 <div class="taglists">
