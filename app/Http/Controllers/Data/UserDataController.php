@@ -34,7 +34,10 @@ class UserDataController extends Controller {
             $temp += $playlist_rating;
         }
 
-        $temp = $temp/ count($playlist_ratings);
+        if($temp != 0)
+            $temp = $temp/ count($playlist_ratings);
+        else
+            $temp = 0;
         $Genres = Genre::all();
 
         return view('profile')->with([
