@@ -36,7 +36,7 @@
 
                 <div class="info-table">
                     <div class="table-responsive">
-                        <h3  class="title">User Favourites</h3>
+                        <h3  class="title">User FavoURLtes</h3>
                         <div class="head-ul-fav-row">
                             <div class="head-ul-fav-col">
                                 <span>Most Played Tracks</span>
@@ -96,7 +96,7 @@
             <div class="modal-body">
                 <div class="playform" id = "playform">
                     <form class="search-form">
-                        <input  pattern=".{15,}" required title="15 characters minimum" type="text" id="artist_url" class="search-playlists new-playlist-input" placeholder="Paste spotify artist URI">
+                        <input  pattern=".{15,}" required title="15 characters minimum" type="text" id="artist_url" class="search-playlists new-playlist-input" placeholder="Paste spotify artist URL">
                         <button class="btn btn-playlists add-new-playlist" id="btn_add_artist"><img src={{URL::asset('public/images/plus-icon.png')}}>  Add artist</button>
                     </form>
                 </div>
@@ -149,7 +149,7 @@
             <div class="modal-body">
                 <div class="playform" id = "playform">
                     <form class="search-form">
-                        <input  pattern=".{15,}" required title="15 characters minimum" type="text" id="track_url" class="search-playlists new-playlist-input" placeholder="Paste spotify track URI">
+                        <input  pattern=".{15,}" required title="15 characters minimum" type="text" id="track_url" class="search-playlists new-playlist-input" placeholder="Paste spotify track URL">
                         <button class="btn btn-playlists add-new-playlist" id="btn_add_track"><img src={{URL::asset('public/images/plus-icon.png')}}>  Add Track</button>
                     </form>
                 </div>

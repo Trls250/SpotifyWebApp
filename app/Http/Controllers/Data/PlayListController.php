@@ -225,7 +225,7 @@ class PlayListController extends Controller {
 
 
 
-            $exploded = explode(':',$request->url);
+            $exploded = explode('/',$request->url);
 
 
             /*

@@ -138,7 +138,7 @@ class UserDataController extends Controller {
 
     public function addArtist(Request $request) {
         $artist = $request->artist_id;
-        $artist = explode(':', $artist);
+        $artist = explode('/', $artist);
         $artist = end($artist);
 
 
@@ -206,7 +206,7 @@ class UserDataController extends Controller {
 
     public function addTrack(Request $request) {
         $track = $request->track_id;
-        $track = explode(':', $track);
+        $track = explode('/', $track);
         $track = end($track);
 
 

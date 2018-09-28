@@ -16,7 +16,7 @@ class CreateTrackDatabase extends Migration
         Schema::create('tracks', function (Blueprint $table) {
 
             $table->string('id', 30);
-            $table->string('name', 30);
+            $table->string('name', 255);
             $table->string('preview', 30)->nullable();
             $table->primary('id');
 
