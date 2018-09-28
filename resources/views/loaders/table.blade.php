@@ -21,6 +21,7 @@
         </td>
 
         <td data-header="Genre">
+            @if(isset($Response['ArtistGenres'][$i]['genres']))
             @for($j=0; $j<count($Response['ArtistGenres'][$i]['genres']) && $j<3; $j++)
 
             @if(count($Response['ArtistGenres'][$i]['genres']) == 0)
@@ -33,16 +34,69 @@
                 {{','}}
             @endif
             @endfor
+            @else
+            {{ '--- '}}
+            @endif
         </td>
 
+        @if(isset($Response['ResponseData']['items'][$i]['track']['popularity']))
         <td data-header="Popularity">{{$Response['ResponseData']['items'][$i]['track']['popularity']}}</td>
+        @else
+        <td data-header="Popularity">---</td>
+        @endif
+
+        @if(isset($Response['TrackFeatures'][$i]['valence']))
         <td data-header="Valence">{{$Response['TrackFeatures'][$i]['valence']}}</td>
-        <td data-header="Danceability">{{$Response['TrackFeatures'][$i]['danceability']}}</td>
-        <td data-header="Energy">{{$Response['TrackFeatures'][$i]['energy']}}</td>
-        <td data-header="Instrumentalness ">{{$Response['TrackFeatures'][$i]['instrumentalness']}}</td>
-        <td data-header="Liveness">{{$Response['TrackFeatures'][$i]['liveness']}}</td>
-        <td data-header="Loudness">{{$Response['TrackFeatures'][$i]['loudness']}}</td>
+        @else
+        <td data-header="Valence">---</td>
+        @endif
+
+
+
+        @if(isset($Response['TrackFeatures'][$i]['danceability']))
+        <td data-header="danceability">{{$Response['TrackFeatures'][$i]['danceability']}}</td>
+        @else
+        <td data-header="danceability">---</td>
+        @endif
+
+
+         @if(isset($Response['TrackFeatures'][$i]['energy']))
+        <td data-header="energy">{{$Response['TrackFeatures'][$i]['energy']}}</td>
+        @else
+        <td data-header="energy">---</td>
+        @endif
+
+
+         @if(isset($Response['TrackFeatures'][$i]['instrumentalness']))
+        <td data-header="instrumentalness">{{$Response['TrackFeatures'][$i]['instrumentalness']}}</td>
+        @else
+        <td data-header="instrumentalness">---</td>
+        @endif
+
+        @if(isset($Response['TrackFeatures'][$i]['liveness']))
+        <td data-header="liveness">{{$Response['TrackFeatures'][$i]['liveness']}}</td>
+        @else
+        <td data-header="liveness">---</td>
+        @endif
+
+         @if(isset($Response['TrackFeatures'][$i]['loudness']))
+        <td data-header="loudness">{{$Response['TrackFeatures'][$i]['loudness']}}</td>
+        @else
+        <td data-header="loudness">---</td>
+        @endif
+
+        @if(isset($Response['TrackFeatures'][$i]['speechiness']))
         <td data-header="Speechiness">{{$Response['TrackFeatures'][$i]['speechiness']}}</td>
+        @else
+        <td data-header="Speechiness">---</td>
+        @endif
+
+
+        @if(isset($Response['TrackFeatures'][$i]['tempo']))
         <td data-header="Tempo">{{$Response['TrackFeatures'][$i]['tempo']}}</td>
+        @else
+        <td data-header="Tempo">---</td>
+        @endif
+
     </tr>
     @endfor

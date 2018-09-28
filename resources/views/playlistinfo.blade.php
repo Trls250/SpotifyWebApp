@@ -5,9 +5,11 @@
 
               @include('includes/sidebar')
 
-              <div id="fullpage_loader" class = "loader">
+
+            <div id="fullpage_loader">
                   <img  class= 'center-block loader-img' src = "{{ URL::asset('public//images/loading.gif') }}"/>
-              </div>
+            </div>
+              
             <div class="content-container" id ="all_info_container">
               <div class="row">
                   <div class="detail-page">
@@ -86,8 +88,10 @@
                   <h3 class="infor">Playlist Information</h3>
                 </div>
                   </div>
+                  
               </div>
 
+                
               <div class ="row">
                     <div class="info-table" id="tracks_table">
                             <div class="table-responsive">
@@ -115,7 +119,7 @@
                                 </table>
                             </div>
                     </div>
-                    <div class="loader" id ="loaderChota">
+                    <div  id ="loaderChota" class="loader">
                         <img src = "{{ URL::asset('public//images/loading.gif') }}"/>
                     </div>
               </div>
@@ -137,6 +141,7 @@
           $(document).ready(function () {
 
               $('#fullpage_loader').hide();
+              $("#loaderChota").hide();
 
             $("#pagination-demo").pagination({
                 pageIndex: 0,
@@ -176,12 +181,14 @@
             });
 
 
+                $("#loaderChota").fadeIn();
               $.ajax({
+                  
                   type: "get",
                   url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items=25&page=1',
                   success: function (data) {
-                      $("#loaderChota").fadeOut();
-                      $(".loader").hide();
+                    $("#loaderChota").hide();
+                    $(".loader").hide();
                       if(data.Status == "404"){
 
                           $("#tracks_table").replaceWith("Sorry, currently there is no track in this playlist.")
@@ -200,8 +207,10 @@
         $("#refresh_playlist").on("click", function () {
             // show main loader here
 
-            $('#all_info_container').fadeOut();
+            $('#all_info_container').hide();
             $('#fullpage_loader').fadeIn();
+            $('.loader').fadeIn();
+            $('#loader_chota').hide();
             //$("#all_info_container").html("<div class='loader'> <img class= 'center-block loader-img' src = '{{ URL::asset('public//images/loading.gif') }}'/> </div>");
             $.ajax({
                 type: "get",
@@ -220,13 +229,15 @@
         //end ready function
 
         $("#pagination-demo").on("pageClicked", function (event, data) {
-            $(".loader").fadeIn();
+            $("#loader_chota").fadeIn();
+            $('.loader').fadeIn();
+            $('#main_loader').fadeIn();
             $.ajax({
                 type: "get",
                 url: "{{ url('playlist/table/'.$Playlist['id'])}}"+'?items='+data.pageSize+'&page='+(data.pageIndex +1),
                 success: function (data) {
+                    $("#loader_chota").fadeOut();
                     $(".loader").fadeOut();
-                    $(".loader").hide();
                     $('#to_replace').html(data);
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {

@@ -39,7 +39,7 @@
                         <h3  class="title">User Favourites</h3>
                         <div class="head-ul-fav-row">
                             <div class="head-ul-fav-col">
-                                <span>Top Tracks</span>
+                                <span>Most Played Tracks</span>
                         <ul>
                             @foreach($TrackInfo as $track)
                             <li>{{$track->name}}</li>
@@ -50,7 +50,7 @@
                                     @endif
                         </div>
                             <div class="head-ul-fav-col">
-                                <span>Top Artists</span>
+                                <span>Most Played Artists</span>
                         <ul>
                             @foreach($ArtistInfo as $artist)
                                 <li>{{$artist->name}}</li>
@@ -62,7 +62,7 @@
 
                             </div>
                                 <div class="head-ul-fav-col">
-                                    <span>Top Genres</span>
+                                    <span>Most Played Genres</span>
                         <ul>
                             @foreach($GenreInfo as $genre)
                                 <li>{{$genre->name}}</li>

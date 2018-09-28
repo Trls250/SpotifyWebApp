@@ -498,7 +498,7 @@ class PlayListController extends Controller {
             $TrackFeatures = $this->getTrackAttributes($curl_return['ResponseData']);
 
             if ($TrackFeatures['Success'] == false)
-                return $TrackFeatures;
+                return ("$TrackFeatures");
             else {
                     if (!isset($curl_return['ResponseData']['tracks'])) {
                         if ($commulative && $iteration > 0) {
@@ -524,7 +524,10 @@ class PlayListController extends Controller {
                             $ArtistGenres = $this->getArtistGenres($curl_return['ResponseData']);
 
                             if ($ArtistGenres['Success'] == false)
-                                return $ArtistGenres;
+                                return ([
+                                    'Success' => false,
+                                    'Code' => "error_artists"
+                                ]);
                             else {
                                 $total_tracks = 0;
                                 if (isset($curl_return['ResponseData']['tracks'])) {
@@ -841,7 +844,10 @@ class PlayListController extends Controller {
           {
 
           $artist_ids = $artist_ids.$toAppend;
+          if(isset($track['track']['artists'][0]['id']))
           $artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
+          else
+          $artist_ids = $artist_ids."123";
           $toAppend = '%2C';
           //$artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
 
@@ -852,16 +858,21 @@ class PlayListController extends Controller {
           // $artist_ids = $artist_ids.$toAppend;
 
           $artist_ids = $artist_ids.$toAppend;
+          if(isset($track['track']['artists'][0]['id']))
           $artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
+          else
+          $artist_ids = $artist_ids."123";
           $toAppend = '%2C';
           //$artist_ids = $artist_ids.$track['track']['artists'][0]['id'];
 
 
           }
 
+          
           $url = 'https://api.spotify.com/v1/artists?ids='.$artist_ids;
-
           $curl_return = goCurl($url, null, 'GET', false);
+
+        
 
           if($curl_return['Success'] == false)
           {

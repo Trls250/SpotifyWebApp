@@ -13,7 +13,6 @@ ini_set('max_execution_time', 300);
 
 function goCurl($url, $body, $method, $header) {
 
-
     if (Session::has('access_token')) {
         $access_token = Session::get('access_token');
     } else {
@@ -60,9 +59,6 @@ function goCurl($url, $body, $method, $header) {
                 'Authorization: Bearer ' . $access_token),
         ));
     }
-
-
-
 
     /*
      * CURL REQUEST SEND AND RECEIVE RESPONSE
