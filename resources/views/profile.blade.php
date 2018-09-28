@@ -149,7 +149,7 @@
             <div class="modal-body">
                 <div class="playform" id = "playform">
                     <form class="search-form">
-                        <input  pattern=".{15,}" required title="15 characters minimum" type="text" id="track_url" class="search-playlists new-playlist-input" placeholder="Paste spotify playlist URL">
+                        <input  pattern=".{15,}" required title="15 characters minimum" type="text" id="track_url" class="search-playlists new-playlist-input" placeholder="Paste spotify track URI">
                         <button class="btn btn-playlists add-new-playlist" id="btn_add_track"><img src={{URL::asset('public/images/plus-icon.png')}}>  Add Track</button>
                     </form>
                 </div>
