@@ -55,6 +55,7 @@
                             </a>
                             <ul class="profile-navi">
                                 <!-- <li><a href="#">Profile</a></li> -->
+                                <li><a href="{{ url('users/me') }}">My Profile</a></li>
                                 <li><a href="{{ url('logout') }}">Logout</a></li>
                             </ul>
                         </div>

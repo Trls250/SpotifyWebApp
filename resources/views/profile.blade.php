@@ -17,7 +17,7 @@
                                 <h2>{{ $UserInfo->name }}</h2>
                                 {{--<button class="follow-btn">Follow</button>--}}
                             </div>
-                            <p class="followers"><span>{{ $UserInfo->followers }}</span> Followers</p>
+                            <!-- <p class="followers"><span>{{ $UserInfo->followers }}</span> Followers</p> -->
                             <div class="rating error-rating">
                                 <?php for($i = 0; $i < 5 ; $i++){ ?>
                                 <?php if($i < (int)$AvgRating){ ?>
