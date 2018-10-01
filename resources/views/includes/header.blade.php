@@ -7,6 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href= {{ URL::asset('public/css/bootstrap.css') }}>
         <link rel="stylesheet" href= {{ URL::asset('public/css/nice-select.css') }}>
+        <link rel="shortcut icon" type="image/png" href="<?php echo asset('public/images/favicon.png'); ?>"/>
       <link rel="stylesheet" href= {{ URL::asset('public/pagination/mricode.pagination.css') }}>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
@@ -111,6 +112,7 @@
 
     <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
     <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('public/js/custom.js') }}"></script>
 
     <script>
 

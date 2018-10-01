@@ -371,7 +371,7 @@ ul {
 .postscontent h2 {
     margin: 0;
     color: #1a1a1a;
-    font-size: 30px;
+    font-size: 20px;
     font-family: roboto-bold;
 }
 .postscontent h2 sub{
@@ -382,11 +382,11 @@ ul {
 .followers{
     font-family: roboto-regular;
     color: #888888;
-    font-size: 20px;
+    font-size: 15px;
 }
 .followers span{
     color: #1ed760;
-    font-size: 20px;
+    font-size: 15px;
     font-family: roboto-black;
 }
 .rating span{
@@ -401,8 +401,11 @@ ul {
     padding: 0;
     list-style: none;
     display: inline-block;
-    padding-top: 25px;
+    padding-top: 15px;
     margin:0 -15px;
+}
+.popular-lists ul li:nth-child(5n):before{
+    display: none;
 }
 .popular-lists ul li {
     color: #1ed760;
@@ -440,11 +443,11 @@ ul {
     display: inline-block;
 }
 .tags {
-    margin-top: 30px;
+    margin-top: 10px;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 0px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 .tags ul li:first-child {
     background-color: transparent;
@@ -497,7 +500,7 @@ ul {
 .playlists-items ul li {
     width: calc(100% / 4);
     float: left;
-    min-height:390px;
+    min-height:auto;
     text-align: center;
 }
 .playlists-items ul li .play-box{
@@ -862,7 +865,7 @@ ul {
 .rangeslider__handle:after{
     width: 12px;
     height: 12px;
-    background-color:#1ed760;
+    background-color:#1ed760!important;
 }
 .rangeslider--horizontal{
     height: 7px;
@@ -1070,6 +1073,27 @@ ul {
 .iframe iframe {
     width: 100%;
 }
+.play-content {
+    width: 315px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+    word-break: break-word;
+}
+.submit-comment:hover {
+    color: #fff;
+}
+.user-rows .post-image {
+    width: 23.px;
+    height: 320px;
+    background-size: 100%;
+    width: 385px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
 /********** Media Query *******/
 
 @media  (min-width: 1900px){
@@ -1081,6 +1105,15 @@ ul {
     }
 }
 @media (max-width: 1600px){
+    .popular-lists ul li:nth-child(5n):before{
+        display: block;
+    }
+    .popular-lists ul li:nth-child(4n):before{
+        display: none;
+    }
+    .play-content{
+        width: 200px;
+    }
     .selectrow form .form-group{
         width: 23%;
     }
@@ -1138,6 +1171,15 @@ ul {
 @media  (max-width: 1279px){
 }
 @media (max-width: 1151px){
+     .popular-lists ul li:nth-child(4n):before{
+        display: block;
+    }
+    .popular-lists ul li:nth-child(3n):before{
+        display: none;
+    }
+    .play-content {
+        width: 140px;
+    }
     .post-width {
         width: 70%;
     }
@@ -1377,8 +1419,27 @@ ul {
         padding-left: 0;
         text-align: center;
     }
+    .user-rows .post-image{
+        height: 170px;
+        width: 170px;
+    }
 }
 @media  (max-width: 767px){
+    .user-rows .post-image {
+        height: 135px;
+        width: 135px;
+    }
+    .head-ul-fav-row{
+        flex-direction: column;
+    }
+    .head-ul-fav-col {
+        width: 100%;
+        text-align: center;
+    }
+    .user-rows .post-image{
+        height: 190px;
+        width: 190px;
+    }
     .value-container{
         width: 94%;
     }
@@ -1461,6 +1522,9 @@ ul {
     }
 }
 @media (max-width: 639px){
+    .play-content {
+        width: 100px;
+    }
     .recalcalc {
         margin-bottom: 10px;
     }
