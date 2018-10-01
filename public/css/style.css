@@ -24,7 +24,7 @@ button:focus,.serch-icons:focus{
 }
 .btn:focus, .btn:active {
     box-shadow: unset;
-    outline: none;
+    outline: none!Important;
 }
 input,
 select {
@@ -312,6 +312,7 @@ ul {
     padding: 0;
     width: 220px;
     z-index: 9999;
+    display: none;
 }
 .profile-navi li a{
     color: #fff;
@@ -399,15 +400,18 @@ ul {
 .popular-lists ul {
     padding: 0;
     list-style: none;
-    display: inline-flex;
+    display: inline-block;
     padding-top: 25px;
+    margin:0 -15px;
 }
 .popular-lists ul li {
     color: #1ed760;
-    font-size: 15px;
+    font-size: 11px;
     text-transform: uppercase;
-    padding: 0 60px;
+    padding: 10px 20px;
     position: relative;
+    width: calc(100% /5 );
+    float: left;
 }
 .popular-lists ul li:before {
     content: " ";
@@ -421,15 +425,15 @@ ul {
 .popular-lists ul li:last-child:before{
     display: none;
 }
-.popular-lists ul li:first-child{
+/*.popular-lists ul li:first-child{
     padding-left: 0;
-}
+}*/
 .popular-lists ul li:last-child{
     border-right: none;
 }
 .popular-lists ul li span{
     color: #1a1a1a;
-    font-size: 30px;
+    font-size: 18px;
     font-family: roboto-bold;
 }
 .tags ul li {
@@ -1063,6 +1067,9 @@ ul {
 .tags-cus-col {
     width: 49%;
 }
+.iframe iframe {
+    width: 100%;
+}
 /********** Media Query *******/
 
 @media  (min-width: 1900px){
@@ -1094,14 +1101,17 @@ ul {
     .serch-icons{
         width: 100%;
     }
-    .popular-lists ul li{
+    /*.popular-lists ul li{
         padding:0 40px;
-    }
+    }*/
     .msgbox{
         width: 100%;
     }
     .range1{
         width: 25%;
+    }
+    .popular-lists ul li{
+        width: calc(100% /4 );
     }
 }
 @media (max-width: 1365px){
@@ -1188,8 +1198,9 @@ ul {
         width: 235px;
     }
     .popular-lists ul li {
-        padding: 0 13px;
+        padding: 20px 15px;
         font-size: 11px;
+        width: calc(100% /3 );
     }
     .popular-lists ul li span{
         font-size: 16px;
@@ -1208,6 +1219,11 @@ ul {
 
 }
 @media (max-width: 991px){
+    .large-modal .search-form {
+        display: block;
+        position: unset;
+        width: 100%;
+    }
     .modal-content.playmodal{
         margin-right: 20px;
         margin-left: 20px;
@@ -1452,10 +1468,13 @@ ul {
         margin-bottom: 10px;
     }
     .popular-lists ul li{
-        font-size: 10px;
+        font-size: 8px;
     }
     .popular-lists ul li span{
-        font-size: 12px;
+        font-size: 10px;
+    }
+    .popular-lists ul li:nth-child(3n):before{
+        display:  none;
     }
     .range1 label{
         font-size: 12px;
@@ -1489,7 +1508,7 @@ ul {
         height: 280px;
     }
     .popular-lists ul li {
-        padding: 0 10px;
+        padding: 10px 10px;
     }
     .postscontent{
         flex-direction: column;

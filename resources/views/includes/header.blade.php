@@ -68,7 +68,7 @@
                 <span class="close-icons"></span>
               </div>
               <div class="playlists-rows">
-                <button class="play-btn" id ="btn_add">
+                <button class="play-btn" id ="btn_add" data-toggle="modal" data-target="#playlists">
                     Add Playlist
                 </button>
                 <button class="btn search-btns">
