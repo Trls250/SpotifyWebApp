@@ -56,14 +56,27 @@ class Playlist extends Model {
         return ($playlists);
     }
 
-    public static function searchLike($str, $offset, $items) {
+    public static function searchLike($str = null, $offset, $items) {
 
+        if($str != null) {
         $playlists = Playlist::where('title', 'like', '%'.$str.'%')->skip($offset)->take($items)->get();
        // $playlists = Self::removeDecimalFromFilters($playlists);
         return ($playlists);
+        }
+        else {
+            $playlists = Playlist::where('title', 'like', '%%')->skip($offset)->take($items)->get();
+       // $playlists = Self::removeDecimalFromFilters($playlists);
+        return ($playlists);
+        }
 
 
     }
+
+
+        
+
+
+    
 
     public static function removeDecimalFromFilters($playlists){
 

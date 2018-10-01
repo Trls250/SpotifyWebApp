@@ -33,7 +33,7 @@
                 </div>
                 <div class="search">
                     {{ Form::open(array('url' => 'search', 'method' => 'get')) }}
-                        <input pattern=".{1,}"   required title="1 characters minimum" value="{{ isset($queryString)?$queryString:'' }}" type="text" name="queryString" class="serch-icons" placeholder="Search for a spotify albums...">
+                        <input  value="{{ isset($queryString)?$queryString:'' }}" type="text" name="queryString" class="serch-icons" placeholder="Search for a spotify albums...">
                     {{ Form::close() }}
                 </div>
 
@@ -74,10 +74,13 @@
                     Add Playlist
                 </button>
                 <button class="btn search-btns">
+                
                     <img src={{ URL::asset('public/images/search.png') }}>
                 </button>
                 <form class="search-form">
-                  <input pattern=".{3,}"   required title="3 characters minimum" type="text" name="" class="serch-icons" placeholder="Search for spotify albums...">
+                {{ Form::open(array('url' => 'search', 'method' => 'get')) }}
+                  <input type="text" name="" class="serch-icons" placeholder="Search for spotify albums...">
+                  {{ Form::close() }}
                 </form>
               </div>
 

@@ -131,7 +131,6 @@
 
 
                   @foreach($Playlists as $playlist)
-                  {{ $playlist['popularity'] }}
                     <li class="playlist-filter" 
                           data-instrumentalness="{{ $playlist['instrumentalness'] }}" 
                           data-liveness="{{ $playlist['liveness'] }}" 
