@@ -254,7 +254,7 @@
           });
 
           $(document).on('input', '.filter-input', function(){
-              $(".playlist-holder li").hide();
+              $(".playlist-holder li").fadeOut();
 
               var instrumentalness = $("#filter-instrumentalness").val();
               var liveness         = $("#filter-liveness").val();
@@ -307,7 +307,7 @@
               if(filter_selectors == ""){
                   $(".playlist-holder li").show();
               }else{
-                  $(".playlist-holder li"+filter_selectors).show();
+                  $(".playlist-holder li"+filter_selectors).fadeIn();
               }
           });
         </script>
