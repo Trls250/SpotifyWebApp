@@ -174,7 +174,7 @@
                                     }
                                 }
 
-                                temp = temp + "<span>(<?php echo $Playlist['rating_count'] ?> Rate it)</span>";
+                                temp = temp + "<span>"+data['Count']+" Rate it"+"</span>";
 
                                 $("#show_rating").html(temp);
 

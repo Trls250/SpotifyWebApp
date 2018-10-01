@@ -5,6 +5,7 @@
       <title>Spotify</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" type="image/png" href="<?php echo asset('public/images/favicon.png'); ?>"/>
       <link rel="stylesheet" href="{{ URL::asset('public/css/bootstrap.css') }}">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
      <link rel="stylesheet" href="{{ URL::asset('public/css/style.css') }}">
@@ -29,9 +30,6 @@
           <div class="cus-row">
               <div id="jumbo-dialog" class="text-center">
                 <h1 id="ttitle">Spotify</h1>
-                <p id="ttext">
-                    .
-                </p>
                 <p>  Login with your Spotify account to get started</p>
                 <a href="<?php echo url('auth/getCode') ?>" class="btn btn-primary green-btn" >Login with Spotify</a>
               </div>
