@@ -1102,6 +1102,7 @@ ul {
     border-radius: 50px;
     padding: 10px 30px;
     font-weight: 700;
+    cursor: pointer;
 }
 .post-row.info-post-rows {
     box-shadow: unset;

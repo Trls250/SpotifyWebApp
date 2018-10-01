@@ -129,6 +129,7 @@
               <div class="playlists-items">
                 <ul class="clearfix playlist-holder">
 
+
                   @foreach($Playlists as $playlist)
                     <li class="playlist-filter" 
                           data-instrumentalness="{{ $playlist['instrumentalness'] }}" 
