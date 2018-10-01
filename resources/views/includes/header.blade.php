@@ -19,7 +19,7 @@
             <div class="row">
               <div class="col-md-2 col-sm-4 col-xs-4">
                 <div class="logo">
-                  <img src="{{ URL::asset('public/images/logo.png') }}"/>
+                  <a href="{{url('/')}}"><img src="{{ URL::asset('public/images/logo.png') }}"/></a>
                 </div>
               </div>
               <div class="col-md-5 hidden-sm hidden-xs">
@@ -134,7 +134,7 @@
             e.preventDefault();
             $.ajax({
                 type: "get",
-                url: "{{url('playlist/add')}}" + "/"+ $('#url').val(),
+                url: "{{url('playlist/add?url=')}}" + $('#url').val(),
                 success: function(data){
 
                     if(data['Success'] == true) {
