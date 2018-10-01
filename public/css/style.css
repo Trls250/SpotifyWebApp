@@ -610,6 +610,9 @@ ul {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
+.filter:focus {
+    color: #000;
+}
 .open-play {
     margin-top: 30px;
     display: flex;
@@ -1538,6 +1541,13 @@ ul {
     }
 }
 @media (max-width: 639px){
+    .postscontent h2 {
+        font-size: 18px;
+        margin-bottom: 13px;
+    }
+    .postscontent{
+        width: 100%;
+    }
     .play-content {
         width: 100px;
     }
