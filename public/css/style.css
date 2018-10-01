@@ -25,6 +25,7 @@ button:focus,.serch-icons:focus{
 .btn:focus, .btn:active {
     box-shadow: unset;
     outline: none!Important;
+    color: #fff;
 }
 input,
 select {
@@ -1093,7 +1094,21 @@ ul {
     margin: 0 auto;
     display: block;
 }
-
+.refres-btn{
+    background-color: transparent;
+    color: #1ed760;
+    font-size: 17px;
+    border: 1px solid #1ed760;
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-weight: 700;
+}
+.post-row.info-post-rows {
+    box-shadow: unset;
+}
+.btn-submit:hover {
+    color: #fff;
+}
 /********** Media Query *******/
 
 @media  (min-width: 1900px){

@@ -11,6 +11,7 @@
       <link rel="stylesheet" href= {{ URL::asset('public/pagination/mricode.pagination.css') }}>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.css" rel="stylesheet" />
      <link rel="stylesheet" href= {{ URL::asset('public/css/style.css') }}>
     </head>
     <body>

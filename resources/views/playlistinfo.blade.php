@@ -16,7 +16,7 @@
 
 
                 <div class="listsrow" id="playlist_thump">
-                  <div class="post-row clearfix">
+                  <div class="post-row clearfix info-post-rows">
                       @if(file_exists('playlists/'.$Playlist["id"].'.jpg'))
                           <div class="post-width post-image"  style="background-image: url({{ URL::asset('public/playlists/'.$Playlist['id'].'.jpg') }});">
                           </div>
@@ -29,7 +29,7 @@
                         <div class="postscontent">
                           <h2>{{ $Playlist['title'] }} <sub>({{ $Playlist['timeNow'] }})</sub></h2>
                           <!--<button class="follow-btn">Follow</button>-->
-                          <p id="refresh_playlist"><img  src= {{ URL::asset('public/images/refresh-icon.png') }}>  Refresh </p>
+                          <p id="refresh_playlist" class="refres-btn"><img  src= {{ URL::asset('public/images/refresh-icon.png') }}>  Refresh </p>
                         </div>
                         <p class="followers"><span>{{$Playlist['followers']}}</span> Followers</p>
                         <div class="rating">
