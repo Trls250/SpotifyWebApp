@@ -32,6 +32,7 @@ class CreatingDatabase extends Migration {
             $table->unsignedInteger('tempo')->nullable();
             $table->unsignedInteger('danceability')->nullable();
             $table->unsignedInteger('energy')->nullable();
+            $table->unsignedInteger('acousticness')->nullable();
             $table->unsignedInteger('valence')->nullable();
             $table->unsignedInteger('total_tracks')->nullable();
             $table->unsignedInteger('calculated_tracks')->nullable();

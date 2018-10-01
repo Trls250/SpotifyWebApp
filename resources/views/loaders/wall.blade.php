@@ -69,6 +69,10 @@
                             BPM<br/>
                             <span>{{ number_format($playlist->tempo,0)}}%</span>
                         </li>
+                        <li>
+                            Acousticeness<br/>
+                            <span>{{ number_format($playlist->acousticness,0)}}%</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="tags tags-cus-row">
