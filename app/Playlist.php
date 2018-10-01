@@ -163,7 +163,7 @@ class Playlist extends Model {
         $suggest_track = null;
         if(isset($data['suggest_track'])){
 
-            $exploded = explode(':',$data['suggest_track']);
+            $exploded = explode('/',$data['suggest_track']);
             $suggest_track = end($exploded);
         }
 

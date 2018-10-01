@@ -216,7 +216,7 @@
                     $(".comment-errors-msg").remove();
                     $(".comment-fields").css('border-color','#c8c8c8').css("color",'#b7b7b7');
                     var temp = $("#suggest-track").val();
-                    temp = temp.split(":");
+                    temp = temp.split("/");
                     temp = temp[temp.length - 1];
                     var ele = $(this);
 
@@ -235,7 +235,6 @@
 
 
                             total_comments = total_comments + 1;
-                            console.log(total_comments);
                             $("#comment_count").html("<h3>"+total_comments + " Comments </h3>");
 
 
