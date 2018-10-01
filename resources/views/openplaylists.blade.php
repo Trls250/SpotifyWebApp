@@ -174,7 +174,7 @@
                                     }
                                 }
 
-                                temp = temp + "<span>"+data['Count']+" Rate it"+"</span>";
+                                temp = temp + "<span>"+data['Count']+" (Rate it)"+"</span>";
 
                                 $("#show_rating").html(temp);
 

@@ -377,7 +377,6 @@ class PlayListController extends Controller {
         $playlist->repeated_artist_id = $repeatedArtist['RepeatedArtist']['id'];
         $playlist->creator_name = $return['ResponseData']['owner']['display_name'];
         $playlist->creator_id = $return['ResponseData']['owner']['id'];
-        $playlist->rating = 0;
         $playlist->instrumentalness = $averagedValues['Instrumentalness'];
         $playlist->liveness = $averagedValues['Liveness'];
         $playlist->Loudness = $averagedValues['Loudness'];
