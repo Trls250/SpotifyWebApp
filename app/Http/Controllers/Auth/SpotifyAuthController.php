@@ -40,11 +40,21 @@ class SpotifyAuthController extends Controller {
             if (getUserProfile('me')['Success'] == true) {
                 // return redirect()->route('user/update');
                 User::saveRecord();
-                return redirect('playlist/getAll');
+                return redirect('playlist/getWall');
             } else {
                 return view('home')->withErrors('Unable to log in right now.');
             }
         }
+    }
+
+    public function checkRedirect() {
+
+        if(session()->has('UserInfo')){
+            return redirect('playlist/getWall');
+        } else {
+            return view ('home');
+        }
+
     }
 
     //for testing purposes

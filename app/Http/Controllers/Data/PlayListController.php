@@ -676,10 +676,10 @@ class PlayListController extends Controller {
                 $energy+=$track['energy'];
                 $valence+=$track['valence'];
                 $speechiness+=$track['speechiness'];
-                $tempo+=$track['tempo']/100;
+                $tempo+=$track['tempo'];
                 $instrumentalness+=$track['instrumentalness'];
                 $liveness+=$track['liveness'];
-                $loudness+=($track['loudness'])/100;
+                $loudness-=($track['loudness']);
             }
 
             if (!isset($main['tracks']))
@@ -699,7 +699,7 @@ class PlayListController extends Controller {
                 $tempo+=$track['tempo'];
                 $instrumentalness+=$track['instrumentalness'];
                 $liveness+=$track['liveness'];
-                $loudness+=$track['loudness'];
+                $loudness-=$track['loudness'];
             }
 
             foreach ($main['tracks']['items'] as $playlist) {
@@ -707,18 +707,37 @@ class PlayListController extends Controller {
             }
         }
 
+        if($danceability<0)
+            $danceability = 0;
+        if($energy<0)
+            $energy = 0;
+        if($popularity<0)
+            $energy = 0;
+        if($valence<0)
+            $valence = 0;
+        if($speechiness<0)
+            $speechiness = 0;
+        if($loudness<0)
+            $loudness = 0;
+        if($instrumentalness<0)
+            $instrumentalness = 0;
+        if($liveness<0)
+            $liveness = 0;
+        if($tempo<0)
+            $tempo = 0;
 
+        
         $return = [
             'Success' => true,
-            'Danceability' => $danceability / $count,
-            'Energy' => $energy / $count,
-            'Popularity' => ($popularity / $count) / 100,
-            'Valence' => $valence / $count,
-            'Speechiness' => $speechiness/$count,
-            'Tempo' => $tempo/$count,
-            'Instrumentalness' => $instrumentalness/$count,
-            'Liveness' => $liveness/$count,
-            'Loudness' => -1 * $loudness/$count
+            'Danceability' => round(($danceability / $count)*100),
+            'Energy' => round(($energy / $count)*100),
+            'Popularity' => round(($popularity / $count)),
+            'Valence' => round(($valence / $count)*100),
+            'Speechiness' => round(($speechiness/$count)*100),
+            'Tempo' => round((($tempo/$count)/200)*100),
+            'Instrumentalness' => round(($instrumentalness/$count)*1000),
+            'Liveness' => round(($liveness/$count)*100),
+            'Loudness' =>  round(($loudness/$count)),
         ];
 
         return $return;

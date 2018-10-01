@@ -83,7 +83,7 @@
                     </div>
                   </div>
                   <div class="range1">
-                    <label>Tempo  - <output> 0 </output></label>
+                    <label>BPM  - <output> 0 </output></label>
                     <div class="value-container">
                       <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-tempo" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
                     </div>
@@ -144,7 +144,7 @@
                   
                       <div class="play-box">
                           <div class="">
-                              @if(file_exists('playlists/'.$playlist["id"].'.jpg'))
+                              @if(file_exists('public/playlists/'.$playlist["id"].'.jpg'))
                                 <div class="play-img"  style="background-image: url({{ URL::asset('public/playlists/'.$playlist['id'].'.jpg') }});">
                                 </div>
                               @else
@@ -153,7 +153,7 @@
                               @endif
                           </div>
                           <div class="play-content">
-                              <h4>{{$playlist->title}}</h4>
+                              <h4><a href="{{url('playlist/open-playlist/'.$playlist->id)}}">{{$playlist->title}}</a></h4>
                               <p>{{$playlist->total_tracks}} Tracks</p>
                           </div>
                       

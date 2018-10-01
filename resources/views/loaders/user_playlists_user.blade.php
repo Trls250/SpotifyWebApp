@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="play-content">
-            <h4>{{$playlist['name']}}</h4>
+            <h4><a href="{{$playlist['external_urls']['spotify']}}">{{$playlist['name']}}</a></h4>
             <p>{{$playlist['tracks']['total']}} Tracks</p>
         </div>
 

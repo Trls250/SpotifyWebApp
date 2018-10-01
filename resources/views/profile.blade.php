@@ -36,7 +36,7 @@
 
                 <div class="info-table">
                     <div class="table-responsive">
-                        <h3  class="title">User FavoURLtes</h3>
+                        <h3  class="title">User Favourites</h3>
                         <div class="head-ul-fav-row">
                             <div class="head-ul-fav-col">
                                 <span>Most Played Tracks</span>

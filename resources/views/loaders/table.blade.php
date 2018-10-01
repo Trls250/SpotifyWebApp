@@ -93,10 +93,25 @@
 
 
         @if(isset($Response['TrackFeatures'][$i]['tempo']))
-        <td data-header="Tempo">{{$Response['TrackFeatures'][$i]['tempo']}}</td>
+        <td data-header="BPM">{{$Response['TrackFeatures'][$i]['tempo']}}</td>
         @else
-        <td data-header="Tempo">---</td>
+        <td data-header="BPM">---</td>
         @endif
+
+        @if(isset($Response['TrackFeatures'][$i]['acousticness']))
+        <td data-header="Acousticeness">{{($Response['TrackFeatures'][$i]['acousticness'])}}</td>
+        @else
+        <td data-header="acousticness">---</td>
+        @endif
+
+        @if(isset($Response['TrackFeatures'][$i]['duration_ms']))
+        <td data-header="Length">{{($Response['TrackFeatures'][$i]['duration_ms'])/1000}}</td>
+        @else
+        <td data-header="Length">---</td>
+        @endif
+
+
+        
 
     </tr>
     @endfor

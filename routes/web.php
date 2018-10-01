@@ -14,9 +14,7 @@ use App\Http\Middleware\checkPlaylistId;
   |
  */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', 'Auth\SpotifyAuthController@checkRedirect');
 
 
 
