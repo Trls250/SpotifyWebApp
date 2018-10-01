@@ -17,7 +17,7 @@
 
                 <div class="listsrow" id="playlist_thump">
                   <div class="post-row clearfix">
-                      @if(file_exists('playlists/'.$Playlist["id"].'.jpg'))
+                      @if(file_exists('public/playlists/'.$Playlist["id"].'.jpg'))
                           <div class="post-width post-image"  style="background-image: url({{ URL::asset('public/playlists/'.$Playlist['id'].'.jpg') }});">
                           </div>
                       @else

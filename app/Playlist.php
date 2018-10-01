@@ -59,7 +59,7 @@ class Playlist extends Model {
     public static function searchLike($str, $offset, $items) {
 
         $playlists = Playlist::where('title', 'like', '%'.$str.'%')->skip($offset)->take($items)->get();
-        $playlists = Self::removeDecimalFromFilters($playlists);
+       // $playlists = Self::removeDecimalFromFilters($playlists);
         return ($playlists);
 
 

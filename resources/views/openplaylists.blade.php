@@ -20,7 +20,7 @@
                     <!-- <p ><img src="<?php echo URL::asset('public/images/refresh-icon.png'); ?>"/>  Refresh Playlist</p> -->
                   </div>
                   <!-- <p class="years">2014</p> -->
-                  <div class="rating">
+                  <div class="rating" id="show_rating">
                     <?php for($i = 0; $i < 5 ; $i++){ ?>
                         <?php if($i < (int)$Playlist['rating']){ ?>
                             <img src="<?php echo URL::asset('public/images/filstar.png'); ?>">
@@ -160,9 +160,24 @@
 
                         success: function (data) {
 
-
-
                             if(data['Success']) {
+
+
+                                var temp = "";
+                                for (let i=0; i<5; i++)
+                                {
+                                    if (i<data['Updated']) {
+                                        temp = temp + `<img src="<?php echo URL::asset('public/images/filstar.png'); ?>">`;
+                                    }
+                                    else {
+                                        temp = temp + `<img src="<?php echo URL::asset('public/images/empty-star.png'); ?>">`;
+                                    }
+                                }
+
+                                temp = temp + "<span>(<?php echo $Playlist['rating_count'] ?> Rate it)</span>";
+
+                                $("#show_rating").html(temp);
+
                                 $(ele).after(getSuccessAlertBox("Your rating has been saved :)"));
                                 //console.log(data);
                             }

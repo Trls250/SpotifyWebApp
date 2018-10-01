@@ -55,9 +55,11 @@ class PlaylistRatingsController extends Controller
         $playlist->save();
 
 
+
         return ([
             'Success' => true,
-            'Rate' => $request->rate
+            'Rate' => $request->rate,
+            'Updated' => $to_update
         ]);
 
     }

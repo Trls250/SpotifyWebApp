@@ -129,7 +129,9 @@
               <div class="playlists-items">
                 <ul class="clearfix playlist-holder">
 
+
                   @foreach($Playlists as $playlist)
+                  {{ $playlist['popularity'] }}
                     <li class="playlist-filter" 
                           data-instrumentalness="{{ $playlist['instrumentalness'] }}" 
                           data-liveness="{{ $playlist['liveness'] }}" 
