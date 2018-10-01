@@ -4,7 +4,7 @@
         @include('includes/sidebar')
         <div class="content-container">
             <div class="row">
-                <div class="listsrow">
+                <div class="listsrow user-rows">
                     <div class="post-row clearfix">
                         @if(file_exists('public/users/'.$UserInfo['id'].'.jpg'))
                             <figure class="post-width post-image"  style="background-image: url({{ URL::asset('public/users/'. $UserInfo['id'].'.jpg') }})"></figure>
@@ -226,10 +226,10 @@
             });
             $(this).toggleClass("open");
         });
-        $('.profile-navi').hide();
-        $('.profile-nav-top').click(function () {
-            $(this).next('.profile-navi').slideToggle();
-        });
+        // $('.profile-navi').hide();
+        // $('.profile-nav-top').click(function () {
+        //     $(this).next('.profile-navi').slideToggle();
+        // });
     });
 
 

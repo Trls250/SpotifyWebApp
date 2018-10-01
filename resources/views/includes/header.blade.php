@@ -111,6 +111,7 @@
 
     <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
     <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('public/js/custom.js') }}"></script>
 
     <script>
 

@@ -201,10 +201,10 @@
                 });
                 $(this).toggleClass("open");
             });
-            $('.profile-navi').hide();
-            $('.profile-nav-top').click(function () {
-                $(this).next('.profile-navi').slideToggle();
-            });
+            // $('.profile-navi').hide();
+            // $('.profile-nav-top').click(function () {
+            //     $(this).next('.profile-navi').slideToggle();
+            // });
 
 
                 $("#loaderChota").fadeIn();
