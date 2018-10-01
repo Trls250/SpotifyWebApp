@@ -339,7 +339,7 @@ ul {
 .post-image {
     width: 100%;
     padding: 0;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom-left-radius: 15px;
@@ -603,7 +603,7 @@ ul {
     height: 394px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     -webkit-box-shadow: 5px 5px 36px -11px rgba(47, 46, 46);
     -moz-box-shadow: 5px 5px 36px -11px rgba(47, 46, 46);
     box-shadow: 5px 5px 36px -11px rgba(47, 46, 46);
