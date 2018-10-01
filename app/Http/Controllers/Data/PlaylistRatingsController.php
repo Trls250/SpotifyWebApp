@@ -59,7 +59,8 @@ class PlaylistRatingsController extends Controller
         return ([
             'Success' => true,
             'Rate' => $request->rate,
-            'Updated' => $to_update
+            'Updated' => $to_update,
+            'Count' => $total_count
         ]);
 
     }

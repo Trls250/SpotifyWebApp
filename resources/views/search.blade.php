@@ -113,8 +113,11 @@
                     </div>
                   </div>
                   <div class="range1">
-                    
-                  </div>  
+                    <label>Acousticness  - <output> 0 </output></label>
+                    <div class="value-container">
+                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-acousticness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
+                    </div>
+                  </div> 
                 </div>
               </div>
             </div>
@@ -141,6 +144,7 @@
                           data-danceability="{{ $playlist['danceability'] }}" 
                           data-energy="{{ $playlist['energy'] }}" 
                           data-valence="{{ $playlist['valence'] }}"
+                          data-acousticness="{{$playlist['acousticness']}}"
                     >
                   
                       <div class="play-box">
@@ -244,6 +248,7 @@
                       $("#filter-danceability").val('0');
                       $("#filter-energy").val('0');
                       $("#filter-valence").val('0');
+                      $("#filter-acousticness").val('0');
                       $(".range1 output").html('0');
                       $(".playlist-holder li").show();
                   }
@@ -254,7 +259,7 @@
           });
 
           $(document).on('input', '.filter-input', function(){
-              $(".playlist-holder li").hide();
+              $(".playlist-holder li").fadeOut();
 
               var instrumentalness = $("#filter-instrumentalness").val();
               var liveness         = $("#filter-liveness").val();
@@ -265,6 +270,7 @@
               var danceability     = $("#filter-danceability").val();
               var energy           = $("#filter-energy").val();
               var valence          = $("#filter-valence").val();
+              var acousticness     = $("#filter-acousticness").val();
               
               var filter_selectors = "";
 
@@ -303,11 +309,15 @@
               if(valence != 0){
                   filter_selectors += "[data-valence=\""+valence+"\"]";                  
               }
+              
+              if(acousticness != 0){
+                filter_selectors  += "[data-acousticness=\""+acousticness+"\"]";
+              }
 
               if(filter_selectors == ""){
                   $(".playlist-holder li").show();
               }else{
-                  $(".playlist-holder li"+filter_selectors).show();
+                  $(".playlist-holder li"+filter_selectors).fadeIn();
               }
           });
         </script>

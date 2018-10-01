@@ -377,7 +377,6 @@ class PlayListController extends Controller {
         $playlist->repeated_artist_id = $repeatedArtist['RepeatedArtist']['id'];
         $playlist->creator_name = $return['ResponseData']['owner']['display_name'];
         $playlist->creator_id = $return['ResponseData']['owner']['id'];
-        $playlist->rating = 0;
         $playlist->instrumentalness = $averagedValues['Instrumentalness'];
         $playlist->liveness = $averagedValues['Liveness'];
         $playlist->Loudness = $averagedValues['Loudness'];
@@ -390,6 +389,7 @@ class PlayListController extends Controller {
         $playlist->valence = $averagedValues['Valence'];
         $playlist->total_tracks = $return['TotalRecords'];
         $playlist->calculated_tracks = true;
+        $playlist->acousticness = $averagedValues['acousticness'];
         $playlist->cover = $imageToInsert['Success'];
         $playlist->save();
 
@@ -668,6 +668,7 @@ class PlayListController extends Controller {
         $instrumentalness= 0;
         $liveness= 0;
         $loudness= 0;
+        $acousticness = 0;
 
         if (!isset($tracks['audio_features'])) {
             $count = count($tracks);
@@ -680,6 +681,7 @@ class PlayListController extends Controller {
                 $instrumentalness+=$track['instrumentalness'];
                 $liveness+=$track['liveness'];
                 $loudness-=($track['loudness']);
+                $acousticness +=$track['acousticness'];
             }
 
             if (!isset($main['tracks']))
@@ -697,6 +699,7 @@ class PlayListController extends Controller {
                 $valence+=$track['valence'];
                 $speechiness+=$track['speechiness'];
                 $tempo+=$track['tempo'];
+                $acousticness +=$track['acousticness'];
                 $instrumentalness+=$track['instrumentalness'];
                 $liveness+=$track['liveness'];
                 $loudness-=$track['loudness'];
@@ -725,6 +728,8 @@ class PlayListController extends Controller {
             $liveness = 0;
         if($tempo<0)
             $tempo = 0;
+        if($acousticness<0)
+            $acousticness = 0;
 
         
         $return = [
@@ -738,6 +743,7 @@ class PlayListController extends Controller {
             'Instrumentalness' => round(($instrumentalness/$count)*1000),
             'Liveness' => round(($liveness/$count)*100),
             'Loudness' =>  round(($loudness/$count)),
+            'acousticness' => round(($acousticness/$count)*100)
         ];
 
         return $return;
