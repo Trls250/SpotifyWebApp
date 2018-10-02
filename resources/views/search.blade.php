@@ -169,14 +169,11 @@
                   @endforeach
 
                 </div>
-                <button class="play-btn dektop-play-btn loader" onclick="getResults()" id ="more_results" >
-                    Load More
-                </button>
-
-
-                  
                 </ul>
               </div>
+              <button class="play-btn dektop-play-btn loader" style="display:block;margin:0 auto;" onclick="getResults()" id ="more_results" >
+                    Load More
+                </button>
             </div>
           </div>
         </section>
