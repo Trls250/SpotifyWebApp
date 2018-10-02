@@ -126,7 +126,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <h3 class="title">Search results from Spotify Me</h3>
-                  <p class="found-items">{{$Playlists->count()}} Playlists found</p>
+                  <p class="found-items">{{$Total}} Playlists found</p>
                 </div>
               </div>
               <div class="playlists-items">
