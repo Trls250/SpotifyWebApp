@@ -38,6 +38,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('user/update', 'Data\UserDataController@update');
     Route::get('logout', "Auth\SpotifyAuthController@setExpire");
     Route::get('search', 'Data\SearchController@getSearchResults');
+    Route::get('searchSimple', 'Data\SearchController@getSearchResultsSimple');
     Route::get('wall', 'PlayListController@getWall');
     Route::view('playlist/getAll', 'playlists');
     Route::get('playlist/getAllRecords', 'PlayListController@getAllPlaylistsRecords');

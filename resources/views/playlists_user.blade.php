@@ -33,19 +33,7 @@
           var temp = true;
 
           $(document).ready(function () {
-                $('.search-btns').on('click', function() {
-                  $('.search-form').toggle("slow");
-                });
-                $(".menu-icons").on('click', function() {
-                  $(".sidebar").animate({
-                    width: "toggle"
-                  });
-                  $(this).toggleClass("open");
-                });
-                // $('.profile-navi').hide();
-                // $('.profile-nav-top').click(function () {
-                //     $(this).next('.profile-navi').slideToggle();
-                // });
+
 
                 getAllRecords(offset, items);
                 offset += items;

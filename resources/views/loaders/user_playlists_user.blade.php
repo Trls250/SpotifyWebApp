@@ -11,7 +11,9 @@
 
             <div class="follow">
                 @if($playlist['db'] == false)
-                    {{--<button class="play-follow" onclick='addPlaylist("{{$playlist['id']}}")'>Add</button>--}}
+                    <button class="play-follow" onclick='addPlaylist("{{$playlist['id']}}")'>Add</button>
+                    </br>
+                    <button class="play-follow" onClick = "window.open('{{$playlist['external_urls']['spotify']}}', '_blank')">Open in Spotify</button>
                 @else
                     <button class="play-follow play-unfollow" onclick="window.location='{{url('playlist/open-playlist/'.$playlist['id'])}}'">Select</button>
                 @endif
@@ -29,8 +31,7 @@
 @endforeach
 
 
-<script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
-<script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
+
 
 <script>
 

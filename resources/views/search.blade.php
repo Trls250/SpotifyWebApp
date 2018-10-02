@@ -133,6 +133,8 @@
                 <ul class="clearfix playlist-holder">
 
 
+                <div id="search_results">
+
                   @foreach($Playlists as $playlist)
                     <li class="playlist-filter" 
                           data-instrumentalness="{{ $playlist['instrumentalness'] }}" 
@@ -165,6 +167,14 @@
                       </div>
                     </li>
                   @endforeach
+
+                </div>
+                <button class="play-btn dektop-play-btn loader" onclick="getResults()" id ="more_results" >
+                    Load More
+                </button>
+
+
+                  
                 </ul>
               </div>
             </div>
@@ -176,7 +186,47 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
         <script type="text/javascript">
+            var results_start = 10;
+            var results_limit = 10;
+            var total_results = {{$Total}}
+
+
+
+           if (results_start>=total_results)
+                $("#more_results").hide();
+
+            var temp = "{{$queryString}}";
+    
+            if (temp == "")
+              var url = "{{ url('searchSimple?start=')}}" + results_start + "&limit=" + results_limit +"&queryString=";
+            else
+              var url = "{{ url('searchSimple?queryString=')}}'"+ "{{$queryString}}" +"'&start = " + results_start + "&limit=" + results_limit;
+            function getResults(){
+
+              $.ajax({
+                  type: "get",
+                  url: url,
+                  success: function (data) {
+
+                      var temp = 
+                      $("#search_results").append(data);
+
+                  },
+                  error: function(XMLHttpRequest, textStatus, errorThrown, data) {
+                      console.log("Status: " + textStatus);
+                      console.log(data);
+                  }
+              });
+
+              results_start += results_limit;
+              if(results_start>=results_limit){
+                  $("#more_results").hide();
+              }
+              }
+
+
           $(document).ready(function () {
+
 
               $('#advanced').hide();
                 $('.search-btns').on('click', function() {
@@ -195,7 +245,15 @@
 
 
           });
+
+
+
+
+
         </script>
+
+
+
         <script type="text/javascript">
           var flagAdvanced = false;
           $(document).ready(function () {
