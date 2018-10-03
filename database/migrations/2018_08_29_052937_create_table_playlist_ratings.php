@@ -15,8 +15,8 @@ class CreateTablePlaylistRatings extends Migration {
         Schema::create('playlist_ratings', function(Blueprint $table) {
 
             $table->increments('id');
-            $table->string('playlist_id', 30);
-            $table->string('user_id', 30);
+            $table->string('playlist_id', 60);
+            $table->string('user_id', 60);
             $table->unique(['playlist_id', 'user_id']);
             $table->unsignedInteger('rating');
             $table->foreign('playlist_id')->references('id')->on('playlists')->onDelete('cascade');

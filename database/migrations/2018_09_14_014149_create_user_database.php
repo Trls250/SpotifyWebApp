@@ -15,8 +15,8 @@ class CreateUserDatabase extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
 
-           $table->string('id', 30);
-           $table->string('name', 30)->nullable();
+           $table->string('id', 60);
+           $table->string('name', 60)->nullable();
            $table->unsignedInteger('followers');
            $table->primary('id');
 

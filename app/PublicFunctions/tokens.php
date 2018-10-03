@@ -11,6 +11,7 @@ define('redirect_uri', getBaseUrl() . 'auth/postAuth');
 define('state', 'ABCDEF');
 
 use Illuminate\Http\Request;
+use App\User;
 
 //TODO -> randomize state check
 

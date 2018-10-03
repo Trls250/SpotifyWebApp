@@ -15,8 +15,8 @@ class CreateArtistDatabse extends Migration
     {
         Schema::create('artists', function (Blueprint $table) {
 
-            $table->string('id', 30);
-            $table->string('name', 30)->nullable();
+            $table->string('id', 60);
+            $table->string('name', 60)->nullable();
             $table->unsignedInteger('followers');
             $table->unsignedDecimal('popularity');
             $table->primary('id');

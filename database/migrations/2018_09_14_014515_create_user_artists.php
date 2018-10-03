@@ -14,8 +14,8 @@ class CreateUserArtists extends Migration
     public function up()
     {
         Schema::create('artist_user', function (Blueprint $table) {
-            $table->string('user_id', 30);
-            $table->string('artist_id', 30);
+            $table->string('user_id', 60);
+            $table->string('artist_id', 60);
             $table->primary(['user_id', 'artist_id']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('artist_id')->references('id')->on('artists')->onDelete('cascade');

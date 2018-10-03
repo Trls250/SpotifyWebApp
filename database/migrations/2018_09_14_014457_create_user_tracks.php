@@ -14,8 +14,8 @@ class CreateUserTracks extends Migration
     public function up()
     {
         Schema::create('track_user', function (Blueprint $table) {
-            $table->string('user_id', 30);
-            $table->string('track_id', 30);
+            $table->string('user_id', 60);
+            $table->string('track_id', 60);
             $table->primary(['user_id', 'track_id']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('track_id')->references('id')->on('tracks')->onDelete('cascade');
