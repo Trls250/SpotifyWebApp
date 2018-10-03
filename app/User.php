@@ -64,7 +64,7 @@ class User extends Authenticatable
             $user = User::where('id', '=', session::get('UserInfo')['id'])->first();
         }
         $user->id = session::get('UserInfo')['id'];
-        $user->name = session::get('UserInfo')['display_name'];
+        $user->name = null;
         $user->followers = session::get('UserInfo')['followers']['total'];
         $user->save();
 

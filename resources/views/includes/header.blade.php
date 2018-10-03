@@ -51,7 +51,11 @@
                                 @else
                                     <figure style="background-image: url({{ URL::asset('public/images/default_user.png') }})"></figure>
                                 @endif
-                                <span>{{ session::get('UserInfo')['display_name'] }}</span>
+                                @if(isset(session::get('UserInfo')['display_name'] ))
+                                    <span>{{ session::get('UserInfo')['display_name'] }}</span>
+                                @else
+                                    <span>{{ session::get('UserInfo')['id'] }}</span>
+                                @endif
                                 <i class="fa fa-sort-down"></i>
                             </a>
                             <ul class="profile-navi">

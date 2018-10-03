@@ -82,14 +82,22 @@
                     </div>
                     <div class="tags-cus-col">
                         <p>Added By:</p>
-                        <span><a href="{{url('users/get?id=').$playlist->added_by}}">{{$playlist->added_by_name}}</a></span>
+                        @if(isset($playlist->added_by_name))
+                            <span><a href="{{url('users/get?id=').$playlist->added_by}}">{{$playlist->added_by_name}}</a></span>
+                        @else
+                            <span><a href="{{url('users/get?id=').$playlist->added_by}}">{{$playlist->added_by}}</a></span>
+                        @endif
                     </div>
                 </div>
                 <div class="taglists">
                 <!--<div class="playimage" style="background-image: url('{{ URL::asset('public/images/profile.png') }}')"></div>-->
                     <div class="playname">
                         <p>Playlist By:</p>
-                        <span>{{$playlist->creator_name}}</span>
+                        @if(isset($playlist->creator_name))
+                            <span>{{$playlist->creator_name}}</span>
+                        @else
+                            <span>{{$playlist->creator_id}}</span>
+                        @endif
                     </div>
                 </div>
             </div>
