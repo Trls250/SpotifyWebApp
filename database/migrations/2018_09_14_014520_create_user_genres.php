@@ -14,7 +14,7 @@ class CreateUserGenres extends Migration
     public function up()
     {
         Schema::create('genre_user', function (Blueprint $table) {
-            $table->string('user_id', 30);
+            $table->string('user_id', 60);
             $table->integer('genre_id', false, 10);
             $table->primary(['user_id', 'genre_id']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

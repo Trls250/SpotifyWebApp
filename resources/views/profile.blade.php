@@ -42,7 +42,11 @@
                                 <span>Favorite Tracks</span>
                         <ul>
                             @foreach($TrackInfo as $track)
+                            @if(isset($track->name))
                             <li>{{$track->name}}</li>
+                            @else
+                            <li>{{$track->id}}</li>
+                            @endif
                                 @endforeach
                         </ul>
                                 @if(session::get('UserInfo')['id'] == $UserInfo->id)
@@ -53,7 +57,11 @@
                                 <span>Favorite Artists</span>
                         <ul>
                             @foreach($ArtistInfo as $artist)
-                                <li>{{$artist->name}}</li>
+                            @if(isset($artist->name))
+                            <li>{{$artist->name}}</li>
+                            @else
+                            <li>{{$artist->id}}</li>
+                            @endif
                             @endforeach
                         </ul>
                                 @if(session::get('UserInfo')['id'] == $UserInfo->id)
