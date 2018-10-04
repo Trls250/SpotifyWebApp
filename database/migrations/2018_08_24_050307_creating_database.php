@@ -19,7 +19,7 @@ class CreatingDatabase extends Migration {
             $table->string('repeated_artist', 255);
             $table->string('repeated_artist_id', 60);
             $table->string('added_by', 60);
-            $table->string('added_by_name', 255);
+            $table->string('added_by_name', 255)->nullable();
             $table->string('creator_name', 255)->nullable();
             $table->string('creator_id', 60);
             $table->unsignedInteger('rating')->nullable();

@@ -760,6 +760,8 @@ class PlayListController extends Controller {
         $track_ids = "";
         $toAppend = "";
 
+        
+
         if (isset($playlist['tracks'])) {
             foreach ($playlist['tracks']['items'] as $track) {
                 $track_ids = $track_ids . $toAppend;
