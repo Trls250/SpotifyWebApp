@@ -18,7 +18,11 @@
                   <div class="headingrow">
                     <h3><?php echo $Playlist['title'] ?></h3>
                     <!-- <p ><img src="<?php echo URL::asset('public/images/refresh-icon.png'); ?>"/>  Refresh Playlist</p> -->
+                    
                   </div>
+                  <p>
+                      Lorem Ipsum Duumy Text Lorem Ipsum Duumy Text Lorem Ipsum Duumy TextLorem Ipsum Duumy text vLorem Ipsum Duumy Text Lorem Ipsum Duumy Text Lorem Ipsum Duumy Text Lorem Ipsum Duumy Text 
+                    </p>
                   <!-- <p class="years">2014</p> -->
                   <div class="rating" id="show_rating">
                     <?php for($i = 0; $i < 5 ; $i++){ ?>
@@ -30,13 +34,26 @@
                     <?php } ?>
                     <span>(<?php echo $Playlist['rating_count'] ?> Rate it)</span>
                   </div>
-                  <div class="rewviewscontent">
-                  <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor.</p> -->
-                  </div>
+                 <!--  <div class="rewviewscontent">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor.</p>
+                  </div> -->
                   <div class="follow-lists">
                     <!-- <button class="play-follow recalcalc">ReCalculate</button> -->
+                    <div class="playlists-info-btns">
                     <a href="{{ URL::to('playlist/details/'.$Playlist['id']) }}" class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('public/images/play-arrow.png'); ?>"/> Playlist Info</a>
+                    </div>
+
                   </div>
+                  <div class="selec2-playlist">
+                    <label>Tagged</label>
+                    <select multiple id="e1" style="width:300px">
+                        <option value="AL">Alabama</option>
+                        <option value="Am">Amalapuram</option>
+                        <option value="An">Anakapalli</option>
+                        <option value="Ak">Akkayapalem</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                    </div>
                 </div>
                 <div class="open-play-column2 comment-box">
                   <div class="iframe">
@@ -88,9 +105,12 @@
         <script src="{{ URL::asset('public/js/jquery.js') }}"></script>
         <script src="{{ URL::asset('public/js/bootstrap.js') }} "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.min.js"></script>
         <script type="text/javascript">
 
-
+            $("#e1").select2({
+               placeholder: 'Tagged'
+            });
             var comments_start = 0;
             var comments_limit = 10;
             var total_comments = parseInt({{$tots_comments}});

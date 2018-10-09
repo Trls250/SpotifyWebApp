@@ -1121,6 +1121,18 @@ ul {
 .btn-submit:hover {
     color: #fff;
 }
+.playlists-info-btns {
+    margin: 20px 0;
+}
+.select2-container-multi .select2-choices{
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+.selec2-playlist label {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
 /********** Media Query *******/
 
 @media  (min-width: 1900px){

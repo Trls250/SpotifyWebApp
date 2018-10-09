@@ -9,5 +9,8 @@
         <li class="{{ Request::is('users/me') ? 'active' : '' }}">
             <a href='{{url('users/me')}}'>My Profile</a>
         </li>
+        <li class="{{ Request::is('user/tagged') ? 'active' : '' }}">
+            <a href='{{url('user/tagged')}}'>Tagged Playlists</a>
+        </li>
     </ul>
 </div>

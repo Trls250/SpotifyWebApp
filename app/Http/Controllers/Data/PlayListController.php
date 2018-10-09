@@ -19,7 +19,13 @@ class PlayListController extends Controller {
      *
      */
 
+    public function getTaggedPlaylists() {
 
+        
+
+        return view('taggedplaylists');
+    }
+    
     public function getAllPlaylistsRecords(Request $request) {
 
         $offset = 0;

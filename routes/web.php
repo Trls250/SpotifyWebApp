@@ -51,6 +51,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('user/addArtist', 'Data\UserDataController@addArtist');
     Route::get('user/addTrack', 'Data\UserDataController@addTrack');
     Route::get('user/addGenre', 'Data\UserDataController@addGenre');
+    Route::get('user/tagged', 'PlayListController@getTaggedPlaylists');
 
     Route::group(['middleware' => 'checkPlaylistId'], function () {
         Route::get('playlist/open-playlist/{id}','PlayListController@openPlaylist');
