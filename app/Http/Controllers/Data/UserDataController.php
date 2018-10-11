@@ -22,6 +22,10 @@ class UserDataController extends Controller {
     //     UserData::getUserProfile as myGetUserProfile;
     // }
 
+    public function getUserMatch(Request $request){
+        $results = User::searchLike($request['q'], $request['id']);
+        return json_encode(['results' => $results] );
+    }
 
     public function getCurrentUser(Request $request) {
 

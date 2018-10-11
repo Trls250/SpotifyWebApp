@@ -6,6 +6,7 @@ use App\PlaylistRating;
 use App\Http\Controllers\Data\PlaylistRatingsController;
 use App\Playlist;
 use App\Comment;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -19,11 +20,98 @@ class PlayListController extends Controller {
      *
      */
 
-    public function getTaggedPlaylists() {
+    public function getTaggedPlaylists(Request $request) {
 
-        
+        $offset = 0;
+        $limit = 10;
 
-        return view('taggedplaylists');
+        if(isset($request['offset']))
+        {
+           $offset = $request['offset'];
+
+        }
+
+        if(isset($request['items']))
+        {
+            $limit = $request['items'];
+
+        }
+
+        $playlists = Playlist::getTaggedPlaylists(session::get('UserInfo')['id'], $offset, $limit);
+
+        if(Playlist::count() == 0){
+            return ([
+                'Success'=>false,
+                'Status'=>"404",
+                'Message'=>"No records"]);
+        }
+
+
+
+    
+        if(count($playlists) == 0)
+        {
+            return ([
+                'Success'=>false,
+                'Status'=>"204",
+                'Message'=>"No further records"]);
+        }
+
+        return view('loaders.tagged-wall')->with([
+            'Status' => "200",
+            'Success'=>true,
+            'Playlists'=> $playlists]);
+    }
+
+    public function tagUser(Request $request){
+
+
+
+        if(!isset($request->data)){
+
+            return ([
+                'Success' => false,
+                'Error' => 'user_id empty or user to tag not found'
+            ]);
+        }else {
+
+
+            foreach ($request->input('data') as $x) {
+
+                if(User::where('id', '=', $x)->exists())
+                {
+                    $user = User::find($x);
+
+                    if (!$user->playlist->contains($request->id)){
+
+                        try {
+                            $user = $user->playlist()->attach($request->id);
+                        }catch (\Exception $e) {
+                            return ([
+                                'Success' => false,
+                                'Error' => $e->getMessage()
+                            ]);
+                        }
+                            
+                    }
+
+                    
+                }
+            }
+
+            
+            $users = User::findMany($request->input('data'));
+
+            return ([
+                        'Success' => true,
+                        'Data' => "User tagged",
+                        'Users' => $users
+                    ]);
+
+            
+        }
+
+
     }
     
     public function getAllPlaylistsRecords(Request $request) {
@@ -937,31 +1025,55 @@ class PlayListController extends Controller {
         $uri = $request->path();
         if (Playlist::where('id', '=', $playlist_id)->exists()) {
 
-            $playlist = Playlist::find($request->id);
+            $data = Playlist::findPlaylistWithTaggedUsers($request->id);
             
-            $playlist->rating = $playlist->calculateRating();
-            $playlist->save();
+            $data['Playlist']->rating = $data['Playlist']->calculateRating();
+            $data['Playlist']->save();
 
-            $playlist["timeNow"] = $this->timeago($playlist['created_at']);
-            $data = [];
-            $data["Playlist"] = $playlist;
-            $data["user"] = session::get('UserInfo');
+            $data['Playlist']["timeNow"] = $this->timeago($data['Playlist']['created_at']);
+            $data_to_send = [];
+            $data_to_send["Playlist"] = $data['Playlist'];
+            $data_to_send["user"] = session::get('UserInfo');
+            $data_to_send["Users"] = $data['Users'];
             if(file_exists('users/'. session::get('UserInfo')['id'].'.jpg')){
-                $data["user"]['profileImage'] = '/users/'. session::get('UserInfo')['id'].'.jpg';
+                $data_to_send["user"]['profileImage'] = '/users/'. session::get('UserInfo')['id'].'.jpg';
             }else{
-                $data["user"]['profileImage'] = '/images/default_user.png';
+                $data_to_send["user"]['profileImage'] = '/images/default_user.png';
             }
 
-            $data["tots_comments"] = Playlist::find($playlist['id'])->comment()->count();
-            $data["user_rating"] = $playlist->getRating(session::get('UserInfo')['id']);
+            $data_to_send["tots_comments"] = Playlist::find($data['Playlist']['id'])->comment()->count();
+            $data_to_send["user_rating"] = $data['Playlist']->getRating(session::get('UserInfo')['id']);
 
-            return view('openplaylists')->with($data);
+            return view('openplaylists')->with($data_to_send);
         } else {
 
             return view('home')->withErrors('This playlist doesn\'t exist in our system. Please add it first.');
         }
         // return view('openplaylists');
-    }  
+    } 
+    
+    public function openTaggedPlaylist(Request $request){
+        
+        $playlist_id = $request->id;
+        $result = Playlist::setTagViewed($playlist_id, session::get('UserInfo')['id']);
+        if($result['Success']) {
+            
+            return ($this->openPlaylist($request));
+            
+        }else{
+            
+            return view('errors.500')->withErrors($result['Error']);
+            
+        }
+        
+  
+    }
+    
+    public function deductTag(){
+        
+        Playlist::isNewTag(session::get('UserInfo')['id']);
+        return (session::get('Tagged'));
+    }
 
     /**
      *

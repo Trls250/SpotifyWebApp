@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href= {{ URL::asset('public/css/bootstrap.css') }}>
         <link rel="stylesheet" href= {{ URL::asset('public/css/nice-select.css') }}>
-        <link rel="stylesheet" href= https://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.css>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
         <link rel="shortcut icon" type="image/png" href="<?php echo asset('public/images/spoti-musics-favicon.png'); ?>"/>
       <link rel="stylesheet" href= {{ URL::asset('public/pagination/mricode.pagination.css') }}>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">

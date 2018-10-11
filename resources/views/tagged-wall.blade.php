@@ -8,7 +8,8 @@
             <div id ="wall_records" class="content-container">
               <div class="row">
                 <div class="col-md-12">
-                  <h3 id ="title_replace" class="title">Wall</h3>
+                  <h3 id ="title_replace" class="title">Playlists People Tagged You In...</h3>
+                </br>
                 </div>
 
               </div>
@@ -29,7 +30,10 @@
         <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
         <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
         <script type="text/javascript">
-
+            
+            
+           
+    
             $("#main_loader").fadeIn();
             var offset = 0;
             var items = 5;
@@ -54,14 +58,14 @@
 
 
           });
+          
+            
 
             $(window).scroll(function() {
                 var pos = $(window).scrollTop() + $(window).height();
-                console.log(pos);
-                console.log($(".page_end_div").offset().top);
                 if($('.page_end_div').length != 0){
                     if(flag && temp){
-                         if (pos  - $(".page_end_div").offset().top < 0)
+                         if (pos  > $(".page_end_div").offset().top)
                         {
                             getRecords(offset, items);
                             console.log("flag:" + flag);
@@ -77,9 +81,8 @@
               $("#main_loader").fadeIn();
               $.ajax({
                   type: "get",
-                  url: "{{ url('playlist/getWallRecords')}}"+'?offset='+offset+'&items='+items,
+                  url: "{{ url('playlist/getTaggedWallRecords')}}"+'?offset='+offset+'&items='+items,
                   success: function (data) {
-                      console.log(data);
                       $("#main_loader").fadeOut();
                       if(data.Status == "404"){
                           $(".page_end_div").html("Sorry, no playlists found.");

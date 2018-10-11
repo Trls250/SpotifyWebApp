@@ -7,12 +7,15 @@ use App\Track;
 use Session;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class User extends Authenticatable
 {
     protected $casts = ['id' => 'string'];
+    protected $table = "users";
     public $timestamps = false;
     use Notifiable;
 
@@ -50,6 +53,26 @@ class User extends Authenticatable
     }
     public function track() {
         return $this->belongsToMany('App\Track');
+    }
+    public function playlist() {
+        return $this->belongsToMany('App\Playlist');
+    }
+
+    public static function searchLike($str, $id) {
+
+
+      $query = "select * from (SELECT *, IF(id is not NULL, users.id, '') as text FROM `users` where (name is Null or name = '') and id like '%".$str."%' UNION ALL select *, IF(id is not NULL, users.name, '') as text from users where name like '%".$str."%') A where A.id not in (SELECT user_id from playlist_user where playlist_id = '".$id."')";
+
+       // $query = "select A.id, A.name, A.followers from (SELECT *, IF(id is not NULL, users.id, '') as text FROM `users` where (name is Null or name = '') and id like '%".$str."%' UNION ALL select *, IF(id is not NULL, users.name, '') as text from users where name like '%".$str."%') A inner join playlist_user B where playlist_id = '%".$id."%' and A.id != B.user_id";
+       
+       $users_temp = DB::select($query);
+
+
+
+
+       return $users_temp;
+
+
     }
 
 

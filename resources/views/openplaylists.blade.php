@@ -23,6 +23,8 @@
                   <p>
                       Lorem Ipsum Duumy Text Lorem Ipsum Duumy Text Lorem Ipsum Duumy TextLorem Ipsum Duumy text vLorem Ipsum Duumy Text Lorem Ipsum Duumy Text Lorem Ipsum Duumy Text Lorem Ipsum Duumy Text 
                     </p>
+
+
                   <!-- <p class="years">2014</p> -->
                   <div class="rating" id="show_rating">
                     <?php for($i = 0; $i < 5 ; $i++){ ?>
@@ -34,9 +36,6 @@
                     <?php } ?>
                     <span>(<?php echo $Playlist['rating_count'] ?> Rate it)</span>
                   </div>
-                 <!--  <div class="rewviewscontent">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor.</p>
-                  </div> -->
                   <div class="follow-lists">
                     <!-- <button class="play-follow recalcalc">ReCalculate</button> -->
                     <div class="playlists-info-btns">
@@ -44,16 +43,42 @@
                     </div>
 
                   </div>
+                 <!--  <div class="rewviewscontent">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor.</p>
+                  </div> -->
+                  
+                  <div class="select-layer">
                   <div class="selec2-playlist">
-                    <label>Tagged</label>
-                    <select multiple id="e1" style="width:300px">
-                        <option value="AL">Alabama</option>
-                        <option value="Am">Amalapuram</option>
-                        <option value="An">Anakapalli</option>
-                        <option value="Ak">Akkayapalem</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
+                    <label>Tag Users</label>
+                    
+                    <div class="tags-user">
+                        <ul id='append_tags'>
+                            @foreach($Users as $userX)
+                            
+                            <li>
+                                @if($userX->name != null && $userX->name != '')
+                                <a href="{{ url('users/get').'?id='.$userX->id}}">{{$userX->name}}</a>
+                                @else
+                                <a href="#">{{$userX->id}}</a>
+                                @endif
+                            </li>
+                            
+                            @endforeach
+              
+                        </ul>
                     </div>
+                    
+                    
+                    <select id="e1" name="select" class="js-data-example-ajax"></select>
+                    <!-- <select class="itemName form-control" id="e1" style="width:500px" name="itemName"></select> -->
+                    <!-- <select id="e1" name="select" class="select2">
+                            <option value="" selected disabled>Please Select Above Field</option>
+                    </select> -->
+                    </div>
+                     
+                    <button class="btn btn-submit go-btn">Go! </button>
+                    </div>
+
                 </div>
                 <div class="open-play-column2 comment-box">
                   <div class="iframe">
@@ -102,15 +127,151 @@
             </div>
           </div>
         </section>
+
         <script src="{{ URL::asset('public/js/jquery.js') }}"></script>
         <script src="{{ URL::asset('public/js/bootstrap.js') }} "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script type="text/javascript">
 
-            $("#e1").select2({
-               placeholder: 'Tagged'
+
+            $(".go-btn").fadeOut()
+
+            $('#e1').on("change", function(e) { 
+               if($("#e1").val() == null)
+                    $(".go-btn").fadeOut()
+                else 
+                    $(".go-btn").fadeIn()
             });
+
+            $('.go-btn').on('click', function() {
+
+                var data_to_send = $("#e1").val();
+                var id_to_send = "{{$Playlist['id']}}";
+
+                $('.go-btn').fadeOut();
+
+                 $.ajax({
+                  type: "post",
+                  data: { _token: "{{ csrf_token() }}", data: data_to_send, id : id_to_send },
+                  url: "{{ url('playlist/tag')}}" + "/{{$Playlist['id']}}" ,
+                  success: function (data) {
+                      
+                    console.log(data);
+                    $("#e1").val('').trigger('change');
+                    $(".go-btn").fadeOut();
+                    
+                    var to_append = "";
+
+                    for(x in data.Users){
+                        if(data.Users[x].name =='' || data.Users[x].name == null || data.Users[x].name == undefined){
+                            to_append = to_append + `<li>
+                                <a href="{{ url('users/get')}}"`+'?id='+data.Users[x].id+`>`+data.Users[x].id+`</a>
+                            </li>`;
+                        }else {
+                             to_append = to_append + `<li>
+                                <a href="{{ url('users/get')}}"`+'?id='+data.Users[x].id+`>`+data.Users[x].name+`</a>
+                            </li>`;
+                            
+                        }
+                    }
+                    
+                    $("#append_tags").append(to_append);
+                  },
+                  error: function(XMLHttpRequest, textStatus, errorThrown) {
+                      console.log("Status: " + textStatus);
+                  }
+              });
+
+
+   
+            });
+            console.log("{{$Playlist['id']}}");
+            $( "#e1" ).select2({    
+                placeholder: 'Type to tag someone...',    
+                ajax: {
+                    url: '{{url("users/getUserMatch?id=")}}' + "{{$Playlist['id']}}" + "&q=",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            q: params.term// search term
+                        };
+                    },
+                    processResults: function (data) {
+                        console.log(data);
+                        // parse the results into the format expected by Select2.
+                        // since we are using custom formatting functions we do not need to
+                        // alter the remote JSON data
+                        return {
+                            
+                            results: data.results
+                        };
+                    },
+                    cache: true
+                },
+                minimumInputLength: 2,
+                multiple: true
+            });
+
+
+            // $('#e1').select2({
+            //  placeholder: 'Select Users',
+            //   ajax: {
+            //     url: '{{url("users/getUserMatch")}}',
+            //     dataType: 'json',
+            //     data : function(params) {
+            //         return {
+            //             id: params.id,
+            //             name: params.text
+            //         };
+            //     },
+            //     results: function (data) {
+            //         return {
+            //             results: $.map(data, function (item) {
+            //                 return {
+            //                     text: item.text,
+            //                     id: item.id
+            //                 }
+            //             })
+            //         };
+            //     } // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+            //   }
+            // });
+
+            // $("#e1").select2({
+            //    placeholder: 'Tagged'
+            // });
+
+            // $('#e1').select2({
+            //     placeholder: 'Select for tag',
+            //     ajax: {
+            //       url: '/ajax/auto-select2',
+            //       dataType: 'json',
+            //       delay: 250,
+            //       processResults: function (data) {
+            //         return {
+            //           results: data
+            //         };
+            //       },
+            //       cache: true
+            //     }
+            //   });
+
+            // $("#e1").select2({
+            //     placeholder: 'Select an item',
+            //     ajax: {
+            //           url: "{{url('/getUserMatch')}}",
+            //           dataType: 'json',
+            //           delay: 250,
+            //           processResults: function (data) {
+            //             return {
+            //               results: data
+            //             };
+            //           },
+            //           cache: true
+            //         }
+            //   });
             var comments_start = 0;
             var comments_limit = 10;
             var total_comments = parseInt({{$tots_comments}});
@@ -118,7 +279,8 @@
             var total = parseInt({{$tots_comments}});
 
           $(document).ready(function () {
-
+              
+    
                 if(comments_limit>=total_comments){
                     $("#more_comments").hide();
                 }

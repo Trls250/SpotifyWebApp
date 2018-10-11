@@ -1,6 +1,10 @@
 @foreach($Playlists as $playlist)
     <div class="row">
+        @if($playlist->is_viewed == 0)
+        <div class="post-row clearfix active-notifaction">
+        @else
         <div class="post-row clearfix">
+        @endif
             @if(file_exists('public/playlists/'.$playlist->id.'.jpg'))
                 <div class="post-width post-image"  style="background-image: url({{ URL::asset('public/playlists/'.$playlist->id.'.jpg') }});">
                 </div>
@@ -11,7 +15,7 @@
 
             <div class="contentwidth">
                 <div class="postscontent">
-                    <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->id); ?>"><h2>{{ $playlist->title }}</h2></a>
+                    <a id ="temp" href="<?php echo URL::to('/playlist/open-tagged-playlist/'.$playlist->id); ?>"><h2 onclick="temp()" >{{ $playlist->title }}</h2></a>
                     <!--<button class="follow-btn">Follow</button>-->
                 </div>
                 <p class="followers"><span>{{$playlist->followers}}</span> Followers</p>
@@ -112,3 +116,4 @@
         </div>
     </div>
 @endforeach
+

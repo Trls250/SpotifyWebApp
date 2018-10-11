@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\PlaylistRating;
+use Illuminate\Support\Facades\DB;
 use App\Comment;
 use Session;
 
@@ -15,7 +16,6 @@ class Playlist extends Model {
     protected $casts = ['id' => 'string'];
     public function store(Request $request) {
         $playlist = new Playlist;
-
         $playlist->id = $request->id;
         $playlist->title = $request->title;
         $playlist->added_by = $request->added_by;
@@ -54,6 +54,60 @@ class Playlist extends Model {
     public static function getAll($offset, $items) {
         $playlists = Playlist::skip($offset)->take($items)->get();
         return ($playlists);
+    }
+
+    public function user(){
+        return $this->belongsToMany('App\User');
+    }
+
+    public static function isNewTag($user_id){
+        $query = "select * from playlist_user where user_id = '".$user_id."' and is_viewed = 0";
+        $count = DB::select($query);
+
+        $count = count($count);
+
+        if($count)
+        {
+            session::put('Tagged', $count);
+            return true;
+        }
+        else
+        {
+            session::put('Tagged', 0);
+            return false;
+        }
+
+    }
+    
+    
+    public static function setTagViewed($playlist_id, $user_id) {
+        
+        //Playlist::isNewTag($user_id);
+        
+        try{
+            $query = "update playlist_user set is_viewed = 1 where playlist_id = '".$playlist_id."' and user_id = '".$user_id."'";
+            $result = DB::select($query);
+        }catch(\Illuminate\Database\QueryException $ex){
+            return ([
+                'Success' => false,
+                'Error' => $ex->getMessage()
+            ]);
+        }
+        
+        return ([
+            'Success' => true
+        ]);
+        
+       
+    }
+
+    public static function getTaggedPlaylists($user_id, $offset, $limit){
+
+        $query = "select A.*, B.is_viewed from playlists A INNER JOIN (select * from playlist_user where user_id = '".$user_id."') B on A.id = B.playlist_id ORDER BY B.is_viewed  limit ".$limit." offset ".$offset."";
+        $playlists = DB::select($query);
+
+        return $playlists;
+
     }
 
     public static function searchLike($str = null, $start, $limit) {
@@ -166,6 +220,31 @@ class Playlist extends Model {
             $this->save();
         }
     } 
+    
+    
+    public static function findPlaylistWithTaggedUsers($id) {
+        
+        try{
+            $playlist = Playlist::find($id);
+            $query = "select B.id, B.name from playlist_user A join users B on A.user_id = B.id where playlist_id = '".$id."'";
+            $users = DB::select($query);
+        }catch(\Illuminate\Database\QueryException $ex){
+            return ([
+                'Success' => false,
+                'Error' => $ex->getMessage()
+            ]);
+        }
+        
+        return ([
+            'Success' => true,
+            'Playlist' => $playlist,
+            'Users' => $users
+        ]);
+        
+       
+        
+        
+    }
 
     public function AddNewComment($data){
 
