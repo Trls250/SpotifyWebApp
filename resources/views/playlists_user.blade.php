@@ -10,16 +10,17 @@
                             <div class="playlist_records">
                             </div>
                         </ul>
-                        <div class="page-end-div">
-                            <div class="msg"></div>
-                            <img  id = "main_loader" class= 'center-block loader-img' src = "{{ URL::asset('public/images/loading.gif') }}"/>
-                        </div>
+                        
 
                     </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="page-end-div">
+                            <div class="msg"></div>
+                            <img  id = "main_loader" class= 'center-block loader-img' src = "{{ URL::asset('public/images/loading.gif') }}"/>
+                        </div>
         </section>
         <!-- <div class="page-end-div"></div> -->
         <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
@@ -28,7 +29,7 @@
             $(".loader").fadeIn();
             $("#main_loader").fadeIn();
           var offset = 0;
-          var items  = 10;
+          var items  = 50;
           var flag   = true;
           var temp = true;
 
@@ -45,7 +46,7 @@
               var pos = $(window).scrollTop() + $(window).height();
               if($('.page-end-div').length != 0){
                   if(flag && temp){
-                      if(pos >= $(".page-end-div").offset().top){
+                      if(pos >= $(".page-end-div").offset().top - 0.5){
                               getAllRecords(offset, items);
                               offset += items;
                       }

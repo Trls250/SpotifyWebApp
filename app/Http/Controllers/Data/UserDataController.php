@@ -58,14 +58,11 @@ class UserDataController extends Controller {
 
     public function getUser(Request $request) {
 
-        $request->validate([
-            'id' => 'required',
-        ]);
 
 
         if(!User::where('id', '=', $request->id)->exists()){
 
-            return view('errors.404');
+            return view('errors.404-user')->with('user_id', $request->id);
         }
 
 

@@ -36,7 +36,7 @@
     
             $("#main_loader").fadeIn();
             var offset = 0;
-            var items = 5;
+            var items = 100;
             var flag   = true;
             var temp = true;
           $(document).ready(function () {

@@ -52,7 +52,7 @@ class Playlist extends Model {
     }
 
     public static function getAll($offset, $items) {
-        $playlists = Playlist::skip($offset)->take($items)->get();
+        $playlists = Playlist::orderBy('updated_at', 'desc')->skip($offset)->take($items)->get();
         return ($playlists);
     }
 
@@ -103,7 +103,7 @@ class Playlist extends Model {
 
     public static function getTaggedPlaylists($user_id, $offset, $limit){
 
-        $query = "select A.*, B.is_viewed from playlists A INNER JOIN (select * from playlist_user where user_id = '".$user_id."') B on A.id = B.playlist_id ORDER BY B.is_viewed  limit ".$limit." offset ".$offset."";
+        $query = "select A.*, B.is_viewed, B.tagged_by_user_id, B.tagged_by_user_name from playlists A INNER JOIN (select * from playlist_user where user_id = '".$user_id."') B on A.id = B.playlist_id ORDER BY B.is_viewed  limit ".$limit." offset ".$offset."";
         $playlists = DB::select($query);
 
         return $playlists;
@@ -115,8 +115,11 @@ class Playlist extends Model {
         
 
         if($str != null) {
-        $playlists = Playlist::where('title', 'like', '%'.$str.'%')->skip($start)->take($limit)->get();
-        $total = Playlist::where('title', 'like', '%'.$str.'%')->count();
+
+            $query = "select A.* from playlists A where title like '%".$str."%' or repeated_artist like '%".$str."%' or repeated_genre like '%".$str."%' limit ".$limit." offset ".$start."";
+            $playlists = DB::select($query);
+            $total = count($playlists);
+
 
        // $playlists = Self::removeDecimalFromFilters($playlists);
        return([

@@ -41,8 +41,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('logout', "Auth\SpotifyAuthController@setExpire");
     Route::get('search', 'Data\SearchController@getSearchResults');
     Route::get('searchSimple', 'Data\SearchController@getSearchResultsSimple');
-    Route::view('getTaggedWall', 'tagged-wall');
-    
+    Route::view('playlist/getTaggedWall', 'tagged-wall');
     Route::view('playlist/getAll', 'playlists');
     Route::get('playlist/getAllRecords', 'PlayListController@getAllPlaylistsRecords');
     Route::get('playlist/user/getAllRecords', 'PlayListController@getAllPlaylistsRecordsforUser');
@@ -71,16 +70,22 @@ Route::group(['middleware' => 'checkAuth'], function () {
         
     });
 
+    Route::get('users/getUserMatch', 'Data\UserDataController@getUserMatch');
+    Route::get('users/me', 'Data\UserDataController@getCurrentUser');
+    Route::get('users/get/{id}', 'Data\UserDataController@getUser');
+
+    Route::post('comment/add/{id}', 'Data\CommentsController@store');
+
     Route::get('users/me/profile', function () {
 
         return view('profile');
     });
-    Route::get('users/getUserMatch', 'Data\UserDataController@getUserMatch');
-    Route::get('users/me', 'Data\UserDataController@getCurrentUser');
-    Route::get('users/get', 'Data\UserDataController@getUser');
 
 
-    Route::post('comment/add/{id}', 'Data\CommentsController@store');
+    
+
+
+    
 //    Route::delete('comment/delete/{id}', 'Data\CommentsController@delete');
 
 });

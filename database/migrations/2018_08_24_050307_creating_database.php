@@ -16,8 +16,8 @@ class CreatingDatabase extends Migration {
 
             $table->string('id', 60)->primary();
             $table->string('title', 255);
-            $table->string('repeated_artist', 255);
-            $table->string('repeated_artist_id', 60);
+            $table->string('repeated_artist', 355)->nullable();
+            $table->string('repeated_genre', 355)->nullable();
             $table->string('added_by', 60);
             $table->string('added_by_name', 255)->nullable();
             $table->string('creator_name', 255)->nullable();

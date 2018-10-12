@@ -2,125 +2,7 @@
         <section class="main-wrapper">
           <div class="container-fluid">
             @include('includes/sidebar')
-            <div class="searchbar">
-              <div class="content-container">
-                <div class="selectrow">
-                  <form>
-                    {{--<div class="form-group">--}}
-                      {{--<div class="box">--}}
-                        {{--<select>--}}
-                          {{--<option value="type1">Type1</option>--}}
-                          {{--<option value="type2">Type2</option>--}}
-                        {{--</select>--}}
-                      {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="form-group">--}}
-                      {{--<div class="box">--}}
-                        {{--<select>--}}
-                          {{--<option value="market">Market</option>--}}
-                          {{--<option value="us">US</option>--}}
-                          {{--<option value="mexician" >Mexician</option>--}}
-                          {{--<option value="russian">Russian</option>--}}
-                          {{--<option value="east">East</option>--}}
-                          {{--<option value="west">West</option>--}}
-                        {{--</select>--}}
-                      {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="form-group">--}}
-                      {{--<div class="box">--}}
-                        {{--<select>--}}
-                          {{--<option value="genres">Genres</option>--}}
-                          {{--<option value="genres2">Genres2</option>--}}
-                        {{--</select>--}}
-                      {{--</div>--}}
-                    {{--</div>--}}
-                   {{--<!--  <div class="form-group">--}}
-                      {{--<select  id="search1" class="selectlists"  multiple="multiple">     --}}
-                        {{--<option>Type1</option>--}}
-                        {{--<option>Type2</option>--}}
-                        {{--<option>Usman</option>--}}
-                      {{--</select> --}}
-                    {{--</div>--}}
-                    {{--<div class="form-group">--}}
-                      {{--<select  id="search2" class="selectlists"  multiple="multiple">     --}}
-                        {{--<option>Type1</option>--}}
-                        {{--<option>Type2</option>--}}
-                        {{--<option>Usman</option>--}}
-                      {{--</select> --}}
-                    {{--</div> -->--}}
-                    {{--<div >--}}
-                      <button id='toggleAdvanced' class="btn play-follow playlists filter"> <i class="fas fa-filter"></i> Advance Filter</button>
-                    </div>
-                  </form>
-                 </div> 
-              </div>
-            </div>
-            <div id = 'advanced' class="rangesliders">
-              <div class="content-container">
-                <div class="range-row clearfix">
-                  <div class="range1">
-                    <label>Instrumentalness - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-instrumentalness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div>  
-                  </div>
-                  <div class="range1">
-                    <label>Livenss  - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-liveness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div>  
-                  </div>
-                  <div class="range1">
-                    <label>Loudness - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-loudness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div> 
-                  </div>
-                  <div class="range1">
-                    <label>Speechiness - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-speechiness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div>
-                  </div>
-                  <div class="range1">
-                    <label>BPM  - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-tempo" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div>
-                  </div>
-                  <div class="range1">
-                    <label>Popularity - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-popularity" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div>
-                  </div>
-                  <div class="range1">
-                    <label>Danceability - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-danceability" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div>
-                  </div>
-                  <div class="range1">
-                    <label>Energy - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-energy" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div>
-                  </div>
-                  <div class="range1">
-                    <label>Valence  - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-valence" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div>
-                  </div>
-                  <div class="range1">
-                    <label>Acousticness  - <output> 0 </output></label>
-                    <div class="value-container">
-                      <span class="contentvalue leftvalue">0</span><input class="filter-input" id="filter-acousticness" type="range" value="0" step="1" min="0" max="100"><span class="contentvalue rightvalue">100</span>
-                    </div>
-                  </div> 
-                </div>
-              </div>
-            </div>
+            @include('includes/search-menu')
             
             <div class="content-container">
               <div class="row">
@@ -137,22 +19,22 @@
 
                   @foreach($Playlists as $playlist)
                     <li class="playlist-filter" 
-                          data-instrumentalness="{{ $playlist['instrumentalness'] }}" 
-                          data-liveness="{{ $playlist['liveness'] }}" 
-                          data-loudness="{{ $playlist['loudness'] }}" 
-                          data-speechiness="{{ $playlist['speechiness'] }}" 
-                          data-tempo="{{ $playlist['tempo'] }}" 
-                          data-popularity="{{ $playlist['popularity'] }}" 
-                          data-danceability="{{ $playlist['danceability'] }}" 
-                          data-energy="{{ $playlist['energy'] }}" 
-                          data-valence="{{ $playlist['valence'] }}"
-                          data-acousticness="{{$playlist['acousticness']}}"
+                          data-instrumentalness="{{ $playlist->instrumentalness }}" 
+                          data-liveness="{{ $playlist->liveness }}" 
+                          data-loudness="{{ $playlist->loudness }}" 
+                          data-speechiness="{{ $playlist->speechiness }}" 
+                          data-tempo="{{ $playlist->tempo }}" 
+                          data-popularity="{{ $playlist->popularity }}" 
+                          data-danceability="{{ $playlist->danceability }}" 
+                          data-energy="{{ $playlist->energy }}" 
+                          data-valence="{{ $playlist->valence }}"
+                          data-acousticness="{{$playlist->acousticness}}"
                     >
                   
                       <div class="play-box">
                           <div class="">
-                              @if(file_exists('public/playlists/'.$playlist["id"].'.jpg'))
-                                <div class="play-img"  style="background-image: url({{ URL::asset('public/playlists/'.$playlist['id'].'.jpg') }});">
+                              @if(file_exists('public/playlists/'.$playlist->id.'.jpg'))
+                                <div class="play-img"  style="background-image: url({{ URL::asset('public/playlists/'.$playlist->id.'.jpg') }});">
                                 </div>
                               @else
                                   <div class="play-img"  style="background-image: url({{ URL::asset('public/images/default_playlist.jpg') }});">
@@ -178,15 +60,15 @@
           </div>
         </section>
         <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
-        <script src="{{ URL::asset('public/js/jquery.nice-select.js') }}"></script>
         <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
+        <script src="{{ URL::asset('public/js/jquery.nice-select.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
         <script type="text/javascript">
-            var results_start = 10;
-            var results_limit = 10;
-            var total_results = {{$Total}}
-
+            var results_start = 100;
+            var results_limit = 100;
+            var total_results = {{$Total}};
+            var global_filters = "";
 
 
            if (results_start>=total_results)
@@ -204,9 +86,15 @@
                   type: "get",
                   url: url,
                   success: function (data) {
-
-                      var temp = 
                       $("#search_results").append(data);
+                      if(global_filters == ''){
+                            $(".playlist-holder li").fadeIn();
+                            $(".search_message").fadeOut();
+                      }else{
+                            $(".playlist-holder li").fadeOut();
+                            $(".playlist-holder li"+global_filters).fadeOut();
+                            $(".search_message").fadeIn();
+                      }
 
                   },
                   error: function(XMLHttpRequest, textStatus, errorThrown, data) {
@@ -223,8 +111,6 @@
 
 
           $(document).ready(function () {
-
-
               $('#advanced').hide();
                 $('.search-btns').on('click', function() {
                   $('.search-form').toggle("slow");
@@ -242,10 +128,6 @@
 
 
           });
-
-
-
-
 
         </script>
 
@@ -289,7 +171,7 @@
               // FastClick.attach(document.body);
 
 
-              $('#toggleAdvanced').on('click', function(e){
+              $(document).on('click', '#toggleAdvanced', function(e){
                   e.preventDefault();
                   $('#advanced').toggle();
                   flagAdvanced = !flagAdvanced;
@@ -369,8 +251,12 @@
                 filter_selectors  += "[data-acousticness=\""+acousticness+"\"]";
               }
 
+              console.log(filter_selectors);
+              global_filters = filter_selectors;
+
               if(filter_selectors == ""){
-                  $(".playlist-holder li").show();
+                  $(".search_message").fadeOut();
+                  $(".playlist-holder li").fadeIn();
               }else{
                   $(".playlist-holder li"+filter_selectors).fadeIn();
               }

@@ -8,10 +8,10 @@
             @else
                 <div class="play-img"  style="background-image: url({{ URL::asset('public/images/default_playlist.jpg') }});"></div>
             @endif
-
             <div class="follow">
+            
                 @if($playlist['db'] == false)
-                    <button class="play-follow" onclick='addPlaylist("{{$playlist['id']}}")'>Add</button>
+                    <button id = "add_btn_{{$playlist['id']}}" class="play-follow" onclick='addPlaylist("{{$playlist['id']}}")'>Add</button>
                 @else
                     <button class="play-follow play-unfollow" onclick="window.location='{{url('playlist/open-playlist/'.$playlist['id'])}}'">Select</button>
                 @endif
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="play-content">
-            <h4>{{$playlist['name']}}</h4>
+            <h4 class = "wrap-elipsis">{{$playlist['name']}}</h4>
             <p>{{$playlist['tracks']['total']}} Tracks</p>
         </div>
 
@@ -45,7 +45,7 @@
 
 
     function add(id) {
-
+        var temp = "#add_btn_" + id;
         $('#main_loader').fadeIn();
                         $.ajax({
                             type: "get",
@@ -54,13 +54,13 @@
 
                                 if (data['Success'] == true) {
                                     $("#title_to_replace").replaceWith( "<h3 class='title'>Almost Done.....</html>");
-                                    window.location = ('{{url('playlist/open-playlist/')}}' + '/' + data['id']);
+                                    $(temp).html(``);
                                     $(".msg").fadeIn();
                                     $("#main_loader").fadeOut();
+                                    window.location = ('{{url('playlist/open-playlist/')}}' + '/' + data['id']);
                                 }
                                 else {
 
-                                    console.log(data);
                                     $(".msg").fadeIn();
                                     $("#main_loader").fadeOut();
                                     $('#playlist_records').fadeIn();

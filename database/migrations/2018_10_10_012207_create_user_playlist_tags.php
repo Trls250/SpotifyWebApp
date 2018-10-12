@@ -15,11 +15,12 @@ class CreateUserPlaylistTags extends Migration
     {
         Schema::create('playlist_user', function(Blueprint $table) {
 
-            $table->string('user_id', 60);
+            $table->string('user_id', 60);            
             $table->string('playlist_id', 60);
             $table->primary(['user_id', 'playlist_id']);
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('playlist_id')->references('id')->on('playlists');
+            
 
         });
     }
@@ -31,6 +32,6 @@ class CreateUserPlaylistTags extends Migration
      */
     public function down()
     {
-        Schema::drop('plalist_user');
+        Schema::drop('playlist_user');
     }
 }

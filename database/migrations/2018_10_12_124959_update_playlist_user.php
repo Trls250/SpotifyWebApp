@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnIsViewedPlaylistUsers extends Migration
+class UpdatePlaylistUser extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class AddColumnIsViewedPlaylistUsers extends Migration
      */
     public function up()
     {
-        schema::table("playlist_user", function (Blueprint $table){
-            
-           $table->boolean('is_viewed')->default(0); 
-            
-            
-            
+        Schema::table('playlist_user', function(Blueprint $table) {
+
+            $table->string('tagged_by_user_id', 60)->nullable();
+            $table->string('tagged_by_user_name', 60)->nullable();
+            $table->foreign('tagged_by_user_id')->references('id')->on('users');
+
         });
     }
 

@@ -22,6 +22,13 @@ a:focus {
 button:focus,.serch-icons:focus{
     outline: none;
 }
+
+.btn.play-follow.playlists.filter {
+    border: 1px solid #1ed760;
+    color: #1ed760;
+    background-color: transparent;
+    margin-right: 20px;
+}
 .btn:focus, .btn:active {
     box-shadow: unset;
     outline: none!Important;
@@ -540,7 +547,7 @@ ul {
     padding: 15px 80px;
     color: #fff;
     border-radius: 50px;
-    display: block;
+    display: inline;
 
 }
 .play-img:before {
@@ -785,7 +792,7 @@ ul {
     height: 35px!important;
 }
 .select2-container{
-    width: 70% !important;
+    width: 100% !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow{
     top: 4px;
@@ -814,10 +821,12 @@ ul {
 }
 .tags-user ul {
     margin-bottom: 10px;
+    margin-left: -5px;
+    margin-top: 25px;
 }
 .tags-user ul li{
     display:inline;
-    margin:0 10px;
+    margin:0 5px;
 }
 .tags-user ul li {
     background-color: #cecece;
@@ -1151,8 +1160,43 @@ ul {
 .post-row.info-post-rows {
     box-shadow: unset;
 }
+/* .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+} */
 .btn-submit:hover {
     color: #fff;
+}
+.wrap-elipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.tag-titles{
+    font-size: 16px;
+}
+.tag-titles span{
+    color:#00;
+    font-weight:bold;
 }
 .playlists-info-btns {
     margin: 20px 0;
@@ -1167,9 +1211,9 @@ ul {
     margin-bottom: 10px;
 }
 .go-btn {
-    padding: 10px 20px;
+    padding: 10px 50px;
     position: absolute;
-    top: 38px;
+    top: 82px;
     right: 0;
 }
 .select-layer {
@@ -1195,6 +1239,13 @@ ul {
 }   
 .active-notifaction{
     background-color: #deff1642;
+}
+.mobile-filter{
+    display: none;
+}
+.search_message{
+    padding-top: 10px;
+    padding-left: 5px;
 }
 /********** Media Query *******/
 
@@ -1242,9 +1293,10 @@ ul {
     .msgbox{
         width: 100%;
     }
-    .range1{
+    
+    /* .range1{
         width: 25%;
-    }
+    } */
     .popular-lists ul li{
         width: calc(100% /4 );
     }
@@ -1273,6 +1325,9 @@ ul {
 @media  (max-width: 1279px){
 }
 @media (max-width: 1151px){
+    .btn.play-follow.playlists.filter{
+        font-size: 11px;
+    }
      .popular-lists ul li:nth-child(4n):before{
         display: block;
     }
@@ -1363,6 +1418,17 @@ ul {
 
 }
 @media (max-width: 991px){
+    .desktop-filter {
+        display: none;
+    }
+    .playlists-rows {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+    .mobile-filter{
+        display: block;
+    }
     .large-modal .search-form {
         display: block;
         position: unset;

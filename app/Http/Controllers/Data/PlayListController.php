@@ -60,12 +60,13 @@ class PlayListController extends Controller {
         return view('loaders.tagged-wall')->with([
             'Status' => "200",
             'Success'=>true,
-            'Playlists'=> $playlists]);
+            'Playlists'=> $playlists,
+            'FromTag'=>TRUE]);
     }
 
     public function tagUser(Request $request){
 
-
+        $query = "";
 
         if(!isset($request->data)){
 
@@ -85,7 +86,18 @@ class PlayListController extends Controller {
                     if (!$user->playlist->contains($request->id)){
 
                         try {
-                            $user = $user->playlist()->attach($request->id);
+                            //$user = $user->playlist()->attach($request->id);
+                            $data = [
+                                'playlist_id' => $request->id,
+                                'user_id' => $x,
+                                'tagged_by_user_id' => session::get('UserInfo')['id'],
+                                'tagged_by_user_name' => session::get('UserInfo')['display_name']
+                            ];
+                            
+                            $result = DB::table('playlist_user')->insert($data);
+
+                            
+                  
                         }catch (\Exception $e) {
                             return ([
                                 'Success' => false,
@@ -281,7 +293,8 @@ class PlayListController extends Controller {
         return view('loaders.wall')->with([
             'Status' => "200",
             'Success'=>true,
-            'Playlists'=> $playlists]);
+            'Playlists'=> $playlists,
+            'FromTag'=> FALSE]);
     }
 
     /**
@@ -339,6 +352,8 @@ class PlayListController extends Controller {
                     'Success' => false
                 ]);
             else
+                $temp = session::get('WallRecordsCount') + 1;
+                session::put('WallRecordsCount', $temp);
                 return ([
                     'Success' => true,
                     'id' => end($exploded)
@@ -409,6 +424,8 @@ class PlayListController extends Controller {
     public function insertPlaylist(Request $request) {
         //the following function calculates all data, and inserts into DB so this function is just a wrapper
         if($this->refreshCalculateEveryRecord($request)["Success"]){
+            $temp = session::get('WallRecordsCount') + 1;
+                session::put('WallRecordsCount', $temp);
             return redirect('playlist/open-playlist/'.$request->id);
         }else{
             return view('errors.500');
@@ -434,7 +451,7 @@ class PlayListController extends Controller {
             } else {
                 $url = 'https://api.spotify.com/v1/playlists/' . $request->id . '/tracks?offset=' . $offset . '&limit=' . $limit;
             }
-            $return = $this->getPlayListInner($url, true, $current_iteration, $return);
+            $return = $this->getPlayListInner($url, true, $current_iteration, $return, TRUE);
 
             if ($return['Success'] == false) {
                 if ($return['Code'] == "exp_session") {
@@ -455,6 +472,7 @@ class PlayListController extends Controller {
 
         $imageToInsert = findAndGetCover(($return['ResponseData']['images']), 'playlists/'.$return['ResponseData']['id'].'.jpg');
         $repeatedArtist = $this->findMostRepeatedArtist($return['ResponseData']);
+        $repeatedGenres = $this->findMostRepeatedGenres($return['ArtistGenres']);
         $averagedValues = $this->findAveragedTrackFeatures($return['TrackFeatures'], $return['ResponseData']['tracks']);
 
         if (Playlist::where('id', '=', $request->id)->exists()) {
@@ -465,25 +483,28 @@ class PlayListController extends Controller {
 
         $playlist->id = $return['ResponseData']['id'];
         $playlist->title = $return['ResponseData']['name'];
+        $playlist->description = $return['ResponseData']['description'];
         $playlist->added_by = session::get('UserInfo')['id'];
         $playlist->added_by_name = session::get('UserInfo')['display_name'];
-        $playlist->repeated_artist = $repeatedArtist['RepeatedArtist']['name'];
-        $playlist->repeated_artist_id = $repeatedArtist['RepeatedArtist']['id'];
+        $playlist->repeated_artist = $repeatedArtist['RepeatedArtist'];
+        //$playlist->repeated_artist_id = null; //$repeatedArtist['RepeatedArtist']['id'];
         $playlist->creator_name = $return['ResponseData']['owner']['display_name'];
         $playlist->creator_id = $return['ResponseData']['owner']['id'];
-        $playlist->instrumentalness = $averagedValues['Instrumentalness'];
-        $playlist->liveness = $averagedValues['Liveness'];
-        $playlist->Loudness = $averagedValues['Loudness'];
-        $playlist->speechiness = $averagedValues['Speechiness'];
-        $playlist->tempo = $averagedValues['Tempo'];
+        $playlist->repeated_genre = $repeatedGenres['RepeatedGenres'];
+
+        $playlist->instrumentalness = $this->setMaxTo100($averagedValues['Instrumentalness']);
+        $playlist->liveness = $this->setMaxTo100($averagedValues['Liveness']);
+        $playlist->Loudness = $this->setMaxTo100($averagedValues['Loudness']);
+        $playlist->speechiness = $this->setMaxTo100($averagedValues['Speechiness']);
+        $playlist->tempo = $this->setMaxTo100($averagedValues['Tempo']);
         $playlist->followers = $return['ResponseData']['followers']['total'];
-        $playlist->danceability = $averagedValues['Danceability'];
-        $playlist->popularity = $averagedValues['Popularity'];
-        $playlist->energy = $averagedValues['Energy'];
-        $playlist->valence = $averagedValues['Valence'];
+        $playlist->danceability = $this->setMaxTo100($averagedValues['Danceability']);
+        $playlist->popularity = $this->setMaxTo100($averagedValues['Popularity']);
+        $playlist->energy = $this->setMaxTo100($averagedValues['Energy']);
+        $playlist->valence = $this->setMaxTo100($averagedValues['Valence']);
         $playlist->total_tracks = $return['TotalRecords'];
         $playlist->calculated_tracks = true;
-        $playlist->acousticness = $averagedValues['acousticness'];
+        $playlist->acousticness = $this->setMaxTo100($averagedValues['acousticness']);
         $playlist->cover = $imageToInsert['Success'];
         $playlist->save();
 
@@ -509,6 +530,14 @@ class PlayListController extends Controller {
         return ([
             'Success' => true,
             'id' => $return['ResponseData']['id']]);
+    }
+
+
+    public function setMaxTo100($value){
+        if($value > 100)
+            return 100;
+        else
+            return $value;
     }
 
 
@@ -583,7 +612,7 @@ class PlayListController extends Controller {
     /**
      *
      */
-    private function getPlayListInner($url, $commulative, $iteration = 0, $data = null) {
+    private function getPlayListInner($url, $commulative, $iteration = 0, $data = null, $artist_genre_just_once = FALSE) {
 
         $curl_return = goCurl($url, null, 'GET', False);
         if ($curl_return['Success'] == false)
@@ -594,39 +623,60 @@ class PlayListController extends Controller {
             if ($TrackFeatures['Success'] == false)
                 return ("$TrackFeatures");
             else {
-                    if (!isset($curl_return['ResponseData']['tracks'])) {
-                        if ($commulative && $iteration > 0) {
+                    $ArtistGenres = $this->getArtistGenres($curl_return['ResponseData'], $artist_genre_just_once);
 
-                            $tempMain = $data['ResponseData'];
-                            $tempTracks = array_merge($data['ResponseData']['tracks'], $curl_return['ResponseData']['items']);
-                            $tempMain['tracks'] = $tempTracks;
-                            $tempFeatures = array_merge($data['TrackFeatures'], $TrackFeatures['audio_features']);
-                            //$tempArtists = array_merge($data['ArtistGenres'], $ArtistGenres);
-                            $tempTotal = $data['TotalRecords'];
+                    if ($ArtistGenres['Success'] == false)
+                        return ([
+                            'Success' => false,
+                            'Code' => "error_artists"
+                        ]);
+                    else {
+                        if (!isset($curl_return['ResponseData']['tracks'])) {
+                            if ($commulative && $iteration > 0) {
+
+                                $tempMain = $data['ResponseData'];
+                                $tempTracks = array_merge($data['ResponseData']['tracks'], $curl_return['ResponseData']['items']);
+                                $tempMain['tracks'] = $tempTracks;
+                                $tempFeatures = array_merge($data['TrackFeatures'], $TrackFeatures['audio_features']);
+                                $tempArtists = array_merge($data['ArtistGenres'], $ArtistGenres);
+                                $tempTotal = $data['TotalRecords'];
 
 
-                            $return = [
-                                'Success' => true,
-                                'ResponseData' => $tempMain,
-                                'TrackFeatures' => $tempFeatures,
-                                //'ArtistGenres' => $tempArtists,
-                                'TotalRecords' => $tempTotal
-                            ];
-                            return $return;
+                                $return = [
+                                    'Success' => true,
+                                    'ResponseData' => $tempMain,
+                                    'TrackFeatures' => $tempFeatures,
+                                    'ArtistGenres' => $tempArtists,
+                                    'TotalRecords' => $tempTotal
+                                ];
+                                return $return;
+                            } else {
+
+                                
+                                    $total_tracks = 0;
+                                    if (isset($curl_return['ResponseData']['tracks'])) {
+                                        $total_tracks = $curl_return['ResponseData']['tracks']['total'];
+                                    }
+                                    $return = [
+                                        'Success' => true,
+                                        'TrackFeatures' => $TrackFeatures['audio_features'],
+                                        'ResponseData' => $curl_return['ResponseData'],
+                                        'ArtistGenres' => $ArtistGenres,
+                                        'TotalRecords' => $total_tracks,
+                                    ];
+
+                                    return $return;
+                                
+                            }
                         } else {
 
-                            $ArtistGenres = $this->getArtistGenres($curl_return['ResponseData']);
 
-                            if ($ArtistGenres['Success'] == false)
-                                return ([
-                                    'Success' => false,
-                                    'Code' => "error_artists"
-                                ]);
-                            else {
                                 $total_tracks = 0;
+
                                 if (isset($curl_return['ResponseData']['tracks'])) {
                                     $total_tracks = $curl_return['ResponseData']['tracks']['total'];
                                 }
+
                                 $return = [
                                     'Success' => true,
                                     'TrackFeatures' => $TrackFeatures['audio_features'],
@@ -636,33 +686,10 @@ class PlayListController extends Controller {
                                 ];
 
                                 return $return;
-                            }
+                            
+
+
                         }
-                    } else {
-
-                        $ArtistGenres = $this->getArtistGenres($curl_return['ResponseData']);
-
-                        if ($ArtistGenres['Success'] == false)
-                            return $ArtistGenres;
-                        else {
-                            $total_tracks = 0;
-
-                            if (isset($curl_return['ResponseData']['tracks'])) {
-                                $total_tracks = $curl_return['ResponseData']['tracks']['total'];
-                            }
-
-                            $return = [
-                                'Success' => true,
-                                'TrackFeatures' => $TrackFeatures['audio_features'],
-                                'ResponseData' => $curl_return['ResponseData'],
-                                'ArtistGenres' => $ArtistGenres,
-                                'TotalRecords' => $total_tracks,
-                            ];
-
-                            return $return;
-                        }
-
-
                     }
                 }
             }
@@ -674,36 +701,52 @@ class PlayListController extends Controller {
 
     public function mostFrequent($arr, $n) {
 
-        // Sort the array
-        usort($arr, array($this, 'cmp'));
-        // find the max frequency
-        // using linear traversal
-        $max_count = 1;
-        $res = $arr[0];
-        $curr_count = 1;
-        for ($i = 1; $i < $n; $i++) {
-            if ($arr[$i]['name'] == $arr[$i - 1]['name'])
-                $curr_count++;
-            else {
-                if ($curr_count > $max_count) {
-                    $max_count = $curr_count;
-                    $res = $arr[$i - 1];
-                }
-                $curr_count = 1;
-            }
-        }
+        // new array containing frequency of values of $arr 
 
-        // If last element
-        // is most frequent
-        if ($curr_count > $max_count) {
-            $max_count = $curr_count;
-            $res = $arr[$n - 1];
-        }
+        $arr_freq = array_count_values($arr); 
+            
+        // arranging the new $arr_freq in decreasing  
+        // order of occurrences 
+        arsort($arr_freq); 
+        
+        // $new_arr containing the keys of sorted array 
+        $new_arr = array_keys($arr_freq); 
+        
+        // Second most frequent element
+        if(isset ($new_arr[$n])) 
+            return $new_arr[$n];
+        else
+            return "";
 
 
+        // // Sort the array
+        // usort($arr, array($this, 'cmp'));
+        // // find the max frequency
+        // // using linear traversal
+        // $max_count = 1;
+        // $res = $arr[0];
+        // $curr_count = 1;
+        // for ($i = 1; $i < $n; $i++) {
+        //     if ($arr[$i]['name'] == $arr[$i - 1]['name'])
+        //         $curr_count++;
+        //     else {
+        //         if ($curr_count > $max_count) {
+        //             $max_count = $curr_count;
+        //             $res = $arr[$i - 1];
+        //         }
+        //         $curr_count = 1;
+        //     }
+        // }
+
+        // // If last element
+        // // is most frequent
+        // if ($curr_count > $max_count) {
+        //     $max_count = $curr_count;
+        //     $res = $arr[$n - 1];
+        // }
 
 
-        return $res;
+        // return $res;
     }
 
     public function findMostRepeatedArtist($main) {
@@ -714,42 +757,142 @@ class PlayListController extends Controller {
 
         foreach($main['tracks']['items'] as $item)
         {
-            foreach($item['track']['artists'] as $artist)
-            {
-                array_push($artists, $artist);
+            if(isset($item['track']['artists'])){
+                foreach($item['track']['artists'] as $artist)
+                {
+                    array_push($artists, $artist['name']);
 
+                }
             }
         }
+       
+        
+        $to_return = "";
+       
+        $total_artist_count = count($artists);
 
-        if (count($artists) > 1) {
+        if ( $total_artist_count > 0 ) {
+            
 
-            if (count($artists) > 2) {
-                $return = $this->mostFrequent($artists, count($artists));
+            if($total_artist_count > 5) {
 
-                if ($return == '1') {
-                    $return = $artists[0];
+                $to_return = $to_return . $this->mostFrequent($artists, 0);
+                
+                for ($i = 1; $i<5 && $i<$total_artist_count; $i++){
+                    
+                    $temp = $this->mostFrequent($artists, $i);
+                    if($temp != '')
+                        $to_return = $to_return . ", "  . $temp;
+                    
                 }
-            } else {
+                
+            
+                
+            }else {
 
-                $return = $artists[0];
+                $to_return = $to_return . $artists[0];
+
+                for ($i=1; $i<$total_artist_count ; $i++){
+
+                    $to_return = $to_return . ", "  . $artists[$i];
+
+                }
+
+
             }
 
             $return = [
                 'Success' => true,
-                'RepeatedArtist' => $return
+                'RepeatedArtist' => $to_return
             ];
 
             return $return;
+            
         } else {
             $return = [
                 'Success' => true,
-                'RepeatedArtist' => ([
-            'name' => 'none',
-            'id' => 'none'])
+                'RepeatedArtist' => "None"
             ];
 
             return $return;
         }
+    }
+    
+    
+    public function findMostRepeatedGenres($main){
+
+        
+        
+        $genres = array();
+
+        foreach($main as $item)
+        {
+            if(isset($item['genres'])) {
+                foreach($item['genres'] as $genre)
+                {
+                    array_push($genres, $genre);
+
+                }
+            }
+        }
+
+
+        $artists = $genres;
+
+        
+        $to_return = "";
+       
+        $total_artist_count = count($artists);
+
+        if ( $total_artist_count > 0 ) {
+            
+
+            if($total_artist_count > 5) {
+
+                $to_return = $to_return . $this->mostFrequent($artists, 0);
+                
+                for ($i = 1; $i<5 && $i<$total_artist_count; $i++){
+                    
+                    $temp = $this->mostFrequent($artists, $i);
+                    if($temp != '')
+                        $to_return = $to_return . ", "  . $temp;
+                    
+                }
+                
+            
+                
+            }else {
+
+                $to_return = $to_return . $artists[0];
+
+                for ($i=1; $i<$total_artist_count ; $i++){
+
+                    $to_return = $to_return . ", "  . $artists[i];
+
+                }
+
+
+            }
+
+            $return = [
+                'Success' => true,
+                'RepeatedGenres' => $to_return
+            ];
+
+            return $return;
+            
+        } else {
+            $return = [
+                'Success' => true,
+                'RepeatedGenres' => "None"
+            ];
+
+            return $return;
+        }
+        
+
+        
+        
     }
 
     public function findAveragedTrackFeatures($tracks, $main) {
@@ -834,7 +977,7 @@ class PlayListController extends Controller {
             'Valence' => round(($valence / $count)*100),
             'Speechiness' => round(($speechiness/$count)*100),
             'Tempo' => round((($tempo/$count)/200)*100),
-            'Instrumentalness' => round(($instrumentalness/$count)*1000),
+            'Instrumentalness' => round(($instrumentalness/$count)*100),
             'Liveness' => round(($liveness/$count)*100),
             'Loudness' =>  round(($loudness/$count)),
             'acousticness' => round(($acousticness/$count)*100)
@@ -886,7 +1029,7 @@ class PlayListController extends Controller {
     /**
      *
      */
-    private function getArtistGenres($playlist) {
+    private function getArtistGenres($playlist, $just_once = FALSE) {
 
 
 
@@ -955,7 +1098,11 @@ class PlayListController extends Controller {
 
 
           $start = 0;
-          $iterations = ceil($count_records/($limit+1));
+
+          if(!$just_once)
+            $iterations = ceil($count_records/($limit+1));
+          else
+            $iterations = 1;
 
           for($i = 0; $i < $iterations; $i++)
           {

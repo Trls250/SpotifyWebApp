@@ -20,8 +20,10 @@
                     <!-- <p ><img src="<?php echo URL::asset('public/images/refresh-icon.png'); ?>"/>  Refresh Playlist</p> -->
                     
                   </div>
+                  <p class="followers"><span>{{$Playlist->total_tracks}}</span> Tracks <span> - </span>
+                <span>{{$Playlist->followers}}</span> Followers</p>
                   <p>
-                      Lorem Ipsum Duumy Text Lorem Ipsum Duumy Text Lorem Ipsum Duumy TextLorem Ipsum Duumy text vLorem Ipsum Duumy Text Lorem Ipsum Duumy Text Lorem Ipsum Duumy Text Lorem Ipsum Duumy Text 
+                      {{$Playlist['description']}}
                     </p>
 
 
@@ -38,9 +40,7 @@
                   </div>
                   <div class="follow-lists">
                     <!-- <button class="play-follow recalcalc">ReCalculate</button> -->
-                    <div class="playlists-info-btns">
-                    <a href="{{ URL::to('playlist/details/'.$Playlist['id']) }}" class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('public/images/play-arrow.png'); ?>"/> Playlist Info</a>
-                    </div>
+                    
 
                   </div>
                  <!--  <div class="rewviewscontent">
@@ -49,7 +49,7 @@
                   
                   <div class="select-layer">
                   <div class="selec2-playlist">
-                    <label>Tag Users</label>
+                    <!-- <label>Tag Users</label> -->
                     
                     <div class="tags-user">
                         <ul id='append_tags'>
@@ -75,11 +75,14 @@
                             <option value="" selected disabled>Please Select Above Field</option>
                     </select> -->
                     </div>
-                     
+                    <button class="btn btn-submit go-btn">Go! </button>
                     <button class="btn btn-submit go-btn">Go! </button>
                     </div>
-
+                    <div class="playlists-info-btns">
+                    <a href="{{ URL::to('playlist/details/'.$Playlist['id']) }}" class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('public/images/play-arrow.png'); ?>"/> Playlist Info</a>
+                    </div>
                 </div>
+                
                 <div class="open-play-column2 comment-box">
                   <div class="iframe">
                     <!-- <img src="<?php echo URL::asset('public/images/iframe.png'); ?>" style="width: 100%;" /> -->

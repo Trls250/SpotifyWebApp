@@ -22,7 +22,7 @@ class SearchController extends Controller
 
         if(!isset($limit))
         {
-            $limit = 10;
+            $limit = 100;
         }
         
         if(isset($request->queryString) && $request->queryString != '')
@@ -67,7 +67,7 @@ class SearchController extends Controller
 
         if(!isset($limit))
         {
-            $limit = 10;
+            $limit = 100;
         }
         
         if(isset($request->queryString) && $request->queryString != '')

@@ -11,7 +11,7 @@
 
             <div class="follow">
                 @if($playlist['db'] == false)
-                    <button class="play-follow" onclick='addPlaylist("{{$playlist['id']}}")'>Add</button>
+                    <button id = "add_btn_{{$playlist['id']}}" class="play-follow" onclick='addPlaylist("{{$playlist['id']}}")'>Add</button>
                     </br>
                     <button class="play-follow" onClick = "window.open('{{$playlist['external_urls']['spotify']}}', '_blank')">Open in Spotify</button>
                 @else
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="play-content">
-            <h4><a href="{{$playlist['external_urls']['spotify']}}">{{$playlist['name']}}</a></h4>
+            <h4 class = "wrap-elipsis"><a href="{{$playlist['external_urls']['spotify']}}">{{$playlist['name']}}</a></h4>
             <p>{{$playlist['tracks']['total']}} Tracks</p>
         </div>
 

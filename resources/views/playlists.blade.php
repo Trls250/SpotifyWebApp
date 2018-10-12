@@ -13,24 +13,26 @@
                             <div class="playlist_records">
                             </div>
                         </ul>
-                        <div class="loader page-end-div">
-                            <div class="msg"></div>
-                            <img  id = "main_loader" class= 'center-block loader-img' src = "{{ URL::asset('public/images/loading.gif') }}"/>
-                        </div>
+                        
 
                     </div>
                 </div>
               </div>
             </div>
           </div>
+          
         </section>
+        <div class="loader page-end-div">
+                            <div class="msg"></div>
+                            <img  id = "main_loader" class= 'center-block loader-img' src = "{{ URL::asset('public/images/loading.gif') }}"/>
+                    </div>
         <!-- <div class="page-end-div"></div> -->
         <script src= "{{ URL::asset('public/js/jquery.js') }}"></script>
         <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
         <script type="text/javascript">
             $("#adding").hide();
           var offset = 0;
-          var items  = 8;
+          var items  = 30;
           var flag   = true;
           var temp = true;
 
@@ -59,9 +61,12 @@
               var pos = $(window).scrollTop() + $(window).height();
               if($('.page-end-div').length != 0){
                   if(flag && temp){
-                      if(pos >= $(".page-end-div").offset().top){
-                              getAllRecords(offset, items);
-                              offset += items;
+                      if(pos > $(".page-end-div").offset().top){
+
+           
+                          
+                             getAllRecords(offset, items);
+                             offset += items;
                       }
                   }
               }
