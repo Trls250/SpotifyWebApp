@@ -36,7 +36,7 @@
             $('.page_end_div').hide();
             var total_wall_records = {{session::get('WallRecordsCount')}};
             var offset = 0;
-            var items = 5;
+            var items = 50;
             if(items>=total_wall_records)
             {
                 $("#more_results").replaceWith("<p>No further records</p>");

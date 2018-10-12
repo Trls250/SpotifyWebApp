@@ -32,7 +32,7 @@
         <script type="text/javascript">
             $("#adding").hide();
           var offset = 0;
-          var items  = 30;
+          var items  = 50;
           var flag   = true;
           var temp = true;
 

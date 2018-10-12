@@ -93,25 +93,35 @@
                         </li>
                     </ul>
                         </div>
-                        <div class="tags">
-                          <!--<ul>
-                            <li>
-                              GENRES
-                            </li>
-                            <li>Rock</li>
-                            <li>Jazz</li>
-                            <li>Pop</li>
-                          </ul>-->
-                            <p>Most Repeated Artist:</p>
-                            <span>{{$Playlist['repeated_artist']}}</span>
-                        </div>
-                        <div class="taglists">
-                          <!--<div class="playimage" style="background-image: url('{{ URL::asset('public/images/profile.png') }}')"></div>-->
-                          <div class="playname">
-                            <p>Playlist By:</p>
-                            <span>{{$Playlist['creator_name']}}</span>
-                          </div>
-                        </div>
+                        <div class="tags tags-cus-row">
+                    <div class="tags-cus-col">
+                        <p>Top Artists:</p>
+                        <span>{{$Playlist->repeated_artist}}</span>
+                    </div>
+                    <div class="tags-cus-col">
+                        <p>Added By:</p>
+                        @if(isset($Playlist->added_by_name))
+                            <span><a href="{{url('users/get').'/'.$Playlist->added_by}}">{{$Playlist->added_by_name}}</a></span>
+                        @else
+                            <span><a href="{{url('users/get').'/'.$Playlist->added_by}}">{{$Playlist->added_by}}</a></span>
+                        @endif
+                    </div>
+                </div>
+                <div class="taglists">
+                <!--<div class="playimage" style="background-image: url('{{ URL::asset('public/images/profile.png') }}')"></div>-->
+                    <div class="playname">
+                        <p>Top Genres:</p>
+                        <span>{{$Playlist->repeated_genre}}</span>
+                    </div>
+                    <div class="playname">
+                        <p>Playlist By:</p>
+                        @if(isset($Playlist->creator_name))
+                            <span><a href="{{url('users/get').'/'.$Playlist->creator_id}}">{{$Playlist->creator_name}}</a></span>
+                        @else
+                            <span><a href="{{url('users/get').'/'.$Playlist->creator_id}}">{{$Playlist->creator_id}}</a></span>
+                        @endif
+                    </div>
+                </div>
                       </div>
                   </div>
                   <h3 class="infor">Playlist Information</h3>
