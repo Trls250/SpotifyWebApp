@@ -75,8 +75,7 @@
                             <option value="" selected disabled>Please Select Above Field</option>
                     </select> -->
                     </div>
-                    <button class="btn btn-submit go-btn">Go! </button>
-                    <button class="btn btn-submit go-btn">Go! </button>
+                    <button class="btn btn-submit go-btn" id="go-btn">Go! </button>
                     </div>
                     <div class="playlists-info-btns">
                     <a href="{{ URL::to('playlist/details/'.$Playlist['id']) }}" class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('public/images/play-arrow.png'); ?>"/> Playlist Info</a>
@@ -138,21 +137,25 @@
         <script type="text/javascript">
 
 
-            $(".go-btn").fadeOut()
+            $("#go-btn").fadeOut()
 
-            $('#e1').on("change", function(e) { 
+            $('#e1').on("change", function(e) {
+                
                if($("#e1").val() == null)
-                    $(".go-btn").fadeOut()
-                else 
-                    $(".go-btn").fadeIn()
+               {
+                   
+                    $("#go-btn").fadeOut();}
+                else {
+                    
+                    $("#go-btn").fadeIn();}
             });
 
-            $('.go-btn').on('click', function() {
+            $('#go-btn').on('click', function() {
 
                 var data_to_send = $("#e1").val();
                 var id_to_send = "{{$Playlist['id']}}";
 
-                $('.go-btn').fadeOut();
+                $('#go-btn').fadeOut();
 
                  $.ajax({
                   type: "post",
@@ -162,7 +165,7 @@
                       
                     //console.log(data);
                     $("#e1").val('').trigger('change');
-                    $(".go-btn").fadeOut();
+                    $("#go-btn").fadeOut();
                     
                     var to_append = "";
 
