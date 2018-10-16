@@ -32,6 +32,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
         <script type="text/javascript">
 
+            
+
             $("#main_loader").fadeIn();
             $('.page_end_div').hide();
             var total_wall_records = {{session::get('WallRecordsCount')}};
@@ -107,9 +109,10 @@
             getRecords();
           });
 
-          $(document).on('input', '.filter-input', function(){
+          $(document).on('change', '.filter-input', function(){
             
               $(".playlist-filter").fadeOut();
+               console.log("115");
 
               var instrumentalness = $("#filter-instrumentalness").val();
               var liveness         = $("#filter-liveness").val();
@@ -168,28 +171,40 @@
 
               if(filter_selectors == ""){
                     $(".search_message").fadeOut();
+                     console.log("174");
+                    
                   $(".playlist-filter").fadeIn();
               }else{
-                  $(".playlist-filter"+filter_selectors).fadeIn();
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence;
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy;
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness;
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability;
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity;
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo;
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness;
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness;
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness;
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness;
+                                   
+                                  // console.log(temp['valence']);
+                                   if(temp['valence'] && temp['energy'] && temp['acousticness'] && temp['danceability'] && temp['popularity'] && temp['tempo'] && temp['speechiness'] && temp['loudness'] && temp['liveness'] && temp['instrumentalness'] )
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
                   
               }
           });
           
 
-            // $(window).scroll(function() {
-            //     var pos = $(window).scrollTop() + $(window).height();
-            //     console.log(pos);
-            //     console.log($(".page_end_div").offset().top);
-            //     if($('.page_end_div').length != 0){
-            //         if(flag && temp){
-            //              if (pos  - $(".page_end_div").offset().top < 0)
-            //             {
-            //                 getRecords(offset, items);
-            //                 console.log("flag:" + flag);
-            //             }
-            //         }
-            //     }
-            // });
+          
 
           function getRecords() {
             $('.page_end_div').fadeIn();
@@ -200,6 +215,7 @@
                   type: "get",
                   url: "{{ url('playlist/getWallRecords')}}"+'?offset='+offset+'&items='+items,
                   success: function (data) {
+                       console.log("201");
                       $("#main_loader").fadeOut();
                       if(data.Status == "404"){
                           $(".page_end_div").html("Sorry, no playlists found.");
@@ -209,6 +225,7 @@
                       }
                       else if (data.Status == "204") {
                           $(".page_end_div").html("No further records");
+                           console.log("x");
                           $("#more_results").hide();
                           flag = false;
 
@@ -218,10 +235,12 @@
                             if(global_filters == ''){
                                 $(".playlist-filter").fadeIn();
                                 $(".search_message").fadeOut();
+                                 console.log("219");
                             }
                             else
                             {
                                 $(".playlist-filter").fadeOut();
+                                 console.log("224");
                                 $(".search_message").fadeIn();
                                 $(".playlist-filter"+global_filters).fadeIn();
                             }

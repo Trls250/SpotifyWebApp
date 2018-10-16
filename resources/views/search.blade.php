@@ -195,7 +195,7 @@
             $('select').niceSelect(); 
           });
 
-          $(document).on('input', '.filter-input', function(){
+          $(document).on('change', '.filter-input', function(){
               $(".playlist-holder li").fadeOut();
 
               var instrumentalness = $("#filter-instrumentalness").val();
@@ -258,7 +258,26 @@
                   $(".search_message").fadeOut();
                   $(".playlist-holder li").fadeIn();
               }else{
-                  $(".playlist-holder li"+filter_selectors).fadeIn();
+                  $(".playlist-holder li").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence;
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy;
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness;
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability;
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity;
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo;
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness;
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness;
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness;
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness;
+                                   
+                                  // console.log(temp['valence']);
+                                   if(temp['valence'] && temp['energy'] && temp['acousticness'] && temp['danceability'] && temp['popularity'] && temp['tempo'] && temp['speechiness'] && temp['loudness'] && temp['liveness'] && temp['instrumentalness'] )
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                  
               }
           });
         </script>
