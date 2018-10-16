@@ -19,6 +19,32 @@ class PlayListController extends Controller {
     /**
      *
      */
+    public function insertplaylistData($playlist_id,$user_id,$tagged_by_user_Id,$tagged_by_user_name) {
+        try {
+                            //$user = $user->playlist()->attach($request->id);
+                            $data = [
+                                'playlist_id' => $playlist_id,
+                                'user_id' => $user_id,
+                                'tagged_by_user_id' => $tagged_by_user_Id,
+                                'tagged_by_user_name' => $tagged_by_user_name
+                            ];
+                            
+                            $result = DB::table('playlist_user')->insert($data);
+
+                            
+                  
+                        }catch (\Exception $e) {
+                            return ([
+                                'Success' => false,
+                                'Error' => $e->getMessage()
+                            ]);
+                    
+                        }
+                return ([
+                    'Success'=> true
+                ]);
+        
+    }
 
     public function getTaggedPlaylists(Request $request) {
 
@@ -84,27 +110,12 @@ class PlayListController extends Controller {
                     $user = User::find($x);
 
                     if (!$user->playlist->contains($request->id)){
-
-                        try {
-                            //$user = $user->playlist()->attach($request->id);
-                            $data = [
-                                'playlist_id' => $request->id,
-                                'user_id' => $x,
-                                'tagged_by_user_id' => session::get('UserInfo')['id'],
-                                'tagged_by_user_name' => session::get('UserInfo')['display_name']
-                            ];
-                            
-                            $result = DB::table('playlist_user')->insert($data);
-
-                            
-                  
-                        }catch (\Exception $e) {
-                            return ([
-                                'Success' => false,
-                                'Error' => $e->getMessage()
-                            ]);
+                         
+                       $result = $this->insertplaylistData($request->id,$x,session::get('UserInfo')['id'],session::get('UserInfo')['display_name']);
+                        if($result['Success']==false)
+                        {
+                            return $result;
                         }
-                            
                     }
 
                     
@@ -507,7 +518,13 @@ class PlayListController extends Controller {
         $playlist->acousticness = $this->setMaxTo100($averagedValues['acousticness']);
         $playlist->cover = $imageToInsert['Success'];
         $playlist->save();
-
+         
+        //$sql="INSERT INTO `playlist_user`(`user_id`, `playlist_id`, `is_viewed`, `tagged_by_user_id`, `tagged_by_user_name`) VALUES ('".session::get('UserInfo')['id']."','".$playlist->id."', 0, '".session::get('UserInfo')['id']."','".session::get('UserInfo')['display_name']."')";
+       $result=$this->insertplaylistData($playlist->id,session::get('UserInfo')['id'],session::get('UserInfo')['id'],session::get('UserInfo')['display_name']);
+        if($result['Success']==false)
+             {
+              return $result;
+            }
         /*
 
           $this->findMostRepeatedArtist($return['ArtistGenres']);
