@@ -500,18 +500,16 @@ class PlayListController extends Controller {
         $repeatedArtist = $this->findMostRepeatedArtist($return['ResponseData']);
         $repeatedGenres = $this->findMostRepeatedGenres($return['ArtistGenres']);
         $averagedValues = $this->findAveragedTrackFeatures($return['TrackFeatures'], $return['ResponseData']['tracks']);
+        $is_new = false;
+
 
         if (Playlist::where('id', '=', $request->id)->exists()) {
             $playlist = Playlist::find($request->id);
         } else {
             $playlist = new Playlist();
             $playlist->id = $return['ResponseData']['id'];
-
-            $result=$this->insertplaylistData($playlist->id,session::get('UserInfo')['id'],session::get('UserInfo')['id'],session::get('UserInfo')['display_name'], 1);
-            if($result['Success']==false)
-                 {
-                  return $result;
-                }
+            $is_new = true;
+                
         }
 
 
@@ -540,6 +538,15 @@ class PlayListController extends Controller {
         $playlist->acousticness = $this->setMaxTo100($averagedValues['acousticness']);
         $playlist->cover = $imageToInsert['Success'];
         $playlist->save();
+
+
+        if(is_new){
+            $result=$this->insertplaylistData($playlist->id,session::get('UserInfo')['id'],session::get('UserInfo')['id'],session::get('UserInfo')['display_name'], 1);
+            if($result['Success']==false)
+                 {
+                  return $result;
+                }
+        }
          
         //$sql="INSERT INTO `playlist_user`(`user_id`, `playlist_id`, `is_viewed`, `tagged_by_user_id`, `tagged_by_user_name`) VALUES ('".session::get('UserInfo')['id']."','".$playlist->id."', 0, '".session::get('UserInfo')['id']."','".session::get('UserInfo')['display_name']."')";
 
