@@ -367,7 +367,9 @@ class PlayListController extends Controller {
             if(strpos($curl_return['Header'],'200') == false)
             {
                 return ([
-                    'Success' => false
+                    'Success' => false,
+                    'curl' => $curl_return,
+                    'url' => $url
                 ]);
             }
             else
