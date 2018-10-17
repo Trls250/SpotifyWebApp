@@ -540,7 +540,7 @@ class PlayListController extends Controller {
         $playlist->save();
 
 
-        if(is_new){
+        if($is_new){
             $result=$this->insertplaylistData($playlist->id,session::get('UserInfo')['id'],session::get('UserInfo')['id'],session::get('UserInfo')['display_name'], 1);
             if($result['Success']==false)
                  {
