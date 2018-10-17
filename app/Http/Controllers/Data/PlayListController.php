@@ -19,12 +19,13 @@ class PlayListController extends Controller {
     /**
      *
      */
-    public function insertplaylistData($playlist_id,$user_id,$tagged_by_user_Id,$tagged_by_user_name) {
+    public function insertplaylistData($playlist_id,$user_id,$tagged_by_user_Id,$tagged_by_user_name, $is_viewed = 0) {
         try {
                             //$user = $user->playlist()->attach($request->id);
                             $data = [
                                 'playlist_id' => $playlist_id,
                                 'user_id' => $user_id,
+                                'is_viewed' => $is_viewed,
                                 'tagged_by_user_id' => $tagged_by_user_Id,
                                 'tagged_by_user_name' => $tagged_by_user_name
                             ];
@@ -374,6 +375,8 @@ class PlayListController extends Controller {
             }
             else
             {
+
+
                 $temp = session::get('WallRecordsCount') + 1;
                 session::put('WallRecordsCount', $temp);
                 return ([
@@ -502,9 +505,16 @@ class PlayListController extends Controller {
             $playlist = Playlist::find($request->id);
         } else {
             $playlist = new Playlist();
+            $playlist->id = $return['ResponseData']['id'];
+
+            $result=$this->insertplaylistData($playlist->id,session::get('UserInfo')['id'],session::get('UserInfo')['id'],session::get('UserInfo')['display_name'], 1);
+            if($result['Success']==false)
+                 {
+                  return $result;
+                }
         }
 
-        $playlist->id = $return['ResponseData']['id'];
+
         $playlist->title = $return['ResponseData']['name'];
         $playlist->description = $return['ResponseData']['description'];
         $playlist->added_by = session::get('UserInfo')['id'];
@@ -532,11 +542,9 @@ class PlayListController extends Controller {
         $playlist->save();
          
         //$sql="INSERT INTO `playlist_user`(`user_id`, `playlist_id`, `is_viewed`, `tagged_by_user_id`, `tagged_by_user_name`) VALUES ('".session::get('UserInfo')['id']."','".$playlist->id."', 0, '".session::get('UserInfo')['id']."','".session::get('UserInfo')['display_name']."')";
-       $result=$this->insertplaylistData($playlist->id,session::get('UserInfo')['id'],session::get('UserInfo')['id'],session::get('UserInfo')['display_name']);
-        if($result['Success']==false)
-             {
-              return $result;
-            }
+
+
+       
         /*
 
           $this->findMostRepeatedArtist($return['ArtistGenres']);
