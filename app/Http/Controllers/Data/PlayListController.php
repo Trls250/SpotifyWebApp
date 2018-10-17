@@ -302,17 +302,22 @@ class PlayListController extends Controller {
      */
     public function addPlaylist(Request $request) {
 
+ 
+
+        $url = $request->input('url');
         //Check if URL of a Playlist is received
-        if (!isset($request->url)) {
+        if (!isset($url)) {
             $return_array = array(
                 "Success" => false,
-                "Desc" => "CAN NOT OBTAIN PLAYLIST ID FROM URL"
+                "Desc" => "CAN NOT OBTAIN PLAYLIST ID FROM URL",
+                "url" => $url
+
             );
 
             return $return_array;
         } else {
             // Grab vairiables from request
-            $playlist_id = $request->url;
+            $playlist_id = $request->input('url');
 
             //TODO: CHECK ISSET HERE
             // Grab variables from Sessions
@@ -333,12 +338,13 @@ class PlayListController extends Controller {
 
 
             $exploded = explode('/',$request->url);
+            $exploded = explode('?', end($exploded));
 
 
             /*
              * CURL Request PUT Data
              */
-            $url = "https://api.spotify.com/v1/playlists/" . end($exploded) . "/followers";
+            $url = "https://api.spotify.com/v1/playlists/" . $exploded[0] . "/followers";
 
             $body = array(
                 "public" => false
@@ -348,16 +354,20 @@ class PlayListController extends Controller {
 
             $curl_return = goCurl($url, $body, "PUT", TRUE);
             if(strpos($curl_return['Header'],'200') == false)
+            {
                 return ([
                     'Success' => false
                 ]);
+            }
             else
+            {
                 $temp = session::get('WallRecordsCount') + 1;
                 session::put('WallRecordsCount', $temp);
                 return ([
                     'Success' => true,
-                    'id' => end($exploded)
+                    'id' => $exploded[0]
                 ]);
+            }
         }
     }
 
