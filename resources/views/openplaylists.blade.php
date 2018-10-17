@@ -57,7 +57,7 @@
                             
                             <li>
                                 @if($userX->name != null && $userX->name != '')
-                                <a href="{{ url('users/get').'?id='.$userX->id}}">{{$userX->name}}</a>
+                                <a href="{{ url('users/get').'/'.$userX->id}}">{{$userX->name}}</a>
                                 @else
                                 <a href="#">{{$userX->id}}</a>
                                 @endif
@@ -75,8 +75,7 @@
                             <option value="" selected disabled>Please Select Above Field</option>
                     </select> -->
                     </div>
-                    <button class="btn btn-submit go-btn">Go! </button>
-                    <button class="btn btn-submit go-btn">Go! </button>
+                    <button class="btn btn-submit go-btn" id="go-btn">Go! </button>
                     </div>
                     <div class="playlists-info-btns">
                     <a href="{{ URL::to('playlist/details/'.$Playlist['id']) }}" class="play-follow playlists recalcalc"><img src="<?php echo URL::asset('public/images/play-arrow.png'); ?>"/> Playlist Info</a>
@@ -138,21 +137,25 @@
         <script type="text/javascript">
 
 
-            $(".go-btn").fadeOut()
+            $("#go-btn").fadeOut()
 
-            $('#e1').on("change", function(e) { 
+            $('#e1').on("change", function(e) {
+                
                if($("#e1").val() == null)
-                    $(".go-btn").fadeOut()
-                else 
-                    $(".go-btn").fadeIn()
+               {
+                   
+                    $("#go-btn").fadeOut();}
+                else {
+                    
+                    $("#go-btn").fadeIn();}
             });
 
-            $('.go-btn').on('click', function() {
+            $('#go-btn').on('click', function() {
 
                 var data_to_send = $("#e1").val();
                 var id_to_send = "{{$Playlist['id']}}";
 
-                $('.go-btn').fadeOut();
+                $('#go-btn').fadeOut();
 
                  $.ajax({
                   type: "post",
@@ -160,25 +163,26 @@
                   url: "{{ url('playlist/tag')}}" + "/{{$Playlist['id']}}" ,
                   success: function (data) {
                       
-                    console.log(data);
+                    //console.log(data);
                     $("#e1").val('').trigger('change');
-                    $(".go-btn").fadeOut();
+                    $("#go-btn").fadeOut();
                     
                     var to_append = "";
 
                     for(x in data.Users){
+                        //console.log(data.Users[x].id);
                         if(data.Users[x].name =='' || data.Users[x].name == null || data.Users[x].name == undefined){
                             to_append = to_append + `<li>
-                                <a href="{{ url('users/get')}}"`+'?id='+data.Users[x].id+`>`+data.Users[x].id+`</a>
+                                <a href="{{ url('users/get')}}`+'/'+data.Users[x].id+`">`+data.Users[x].id+`</a>
                             </li>`;
                         }else {
                              to_append = to_append + `<li>
-                                <a href="{{ url('users/get')}}"`+'?id='+data.Users[x].id+`>`+data.Users[x].name+`</a>
+                                <a href="{{ url('users/get')}}`+'/'+data.Users[x].id+`">`+data.Users[x].name+`</a>
                             </li>`;
                             
                         }
                     }
-                    
+                    //console.log(to_append);
                     $("#append_tags").append(to_append);
                   },
                   error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -202,7 +206,7 @@
                         };
                     },
                     processResults: function (data) {
-                        console.log(data);
+                        //console.log(data);
                         // parse the results into the format expected by Select2.
                         // since we are using custom formatting functions we do not need to
                         // alter the remote JSON data

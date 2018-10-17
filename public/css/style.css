@@ -1213,8 +1213,11 @@ ul {
 .go-btn {
     padding: 10px 50px;
     position: absolute;
-    top: 82px;
+    top: 60px;
     right: 0;
+}
+.go-btn:hover {
+ 	color:#fff;
 }
 .select-layer {
     position: relative;

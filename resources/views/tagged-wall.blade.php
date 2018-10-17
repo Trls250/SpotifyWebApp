@@ -8,7 +8,7 @@
             <div id ="wall_records" class="content-container">
               <div class="row">
                 <div class="col-md-12">
-                  <h3 id ="title_replace" class="title">Playlists People Tagged You In...</h3>
+                  <h3 id ="title_replace" class="title">Playlists That People Tagged You In</h3>
                 </br>
                 </div>
 
