@@ -779,6 +779,7 @@ class PlayListController extends Controller {
         $return = $this->getDetailedRecords($request->id);
 
         $commulative_return = $this->getDetailedRecords($request->id, false);
+        
 
         $csv_file_creation = $this->generateCsvFile($commulative_return, $request->id, $return['ResponseData']['name']);
 
@@ -1558,20 +1559,22 @@ class PlayListController extends Controller {
 
           }
 
-          
-          $url = 'https://api.spotify.com/v1/artists?ids='.$artist_ids;
-          $curl_return = goCurl($url, null, 'GET', false);
+          if($artist_ids != ""){
+            $url = 'https://api.spotify.com/v1/artists?ids='.$artist_ids;
+            $curl_return = goCurl($url, null, 'GET', false);
 
-        
 
-          if($curl_return['Success'] == false)
-          {
-          return $curl_return;
-          }
 
-          else
-          {
-          $ArtistGenres = array_merge($ArtistGenres, $curl_return['ResponseData']['artists']);
+            if($curl_return['Success'] == false)
+            {
+
+            return $curl_return;
+            }
+
+            else
+            {
+            $ArtistGenres = array_merge($ArtistGenres, $curl_return['ResponseData']['artists']);
+            }
           }
 
           $artist_ids = '';
