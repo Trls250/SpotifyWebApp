@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="play-content">
-            <h4 class = "wrap-elipsis"><a href="{{$playlist['external_urls']['spotify']}}">{{$playlist['name']}}</a></h4>
+            <h4 class = "wrap-elipsis">{{$playlist['name']}}</h4>
             <p>{{$playlist['tracks']['total']}} Tracks</p>
         </div>
 
