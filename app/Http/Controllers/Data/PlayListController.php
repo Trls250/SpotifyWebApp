@@ -16,9 +16,7 @@ use Session;
  */
 class PlayListController extends Controller {
 
-    /**
-     *
-     */
+
     public function insertplaylistData($playlist_id,$user_id,$tagged_by_user_Id,$tagged_by_user_name, $is_viewed = 0) {
         try {
                             //$user = $user->playlist()->attach($request->id);
@@ -777,7 +775,7 @@ class PlayListController extends Controller {
 
         $commulative_return = $this->getDetailedRecords($request->id, false);
 
-        $csv_file_creation = $this->generateCsvFile($commulative_return, $request->id);
+        $csv_file_creation = $this->generateCsvFile($commulative_return, $request->id, $return['ResponseData']['name']);
 
 
         $imageToInsert = findAndGetCover(($return['ResponseData']['images']), 'playlists/'.$return['ResponseData']['id'].'.jpg');
