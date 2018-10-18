@@ -9,7 +9,8 @@
                           data-danceability="{{ $playlist['danceability'] }}" 
                           data-energy="{{ $playlist['energy'] }}" 
                           data-valence="{{ $playlist['valence'] }}"
-                          data-acousticness="{{$playlist['acousticness']}}">
+                          data-acousticness="{{$playlist['acousticness']}}"
+                          data-rating="{{$playlist['rating']}}">
         <div class="post-row clearfix">
             @if(file_exists('public/playlists/'.$playlist->id.'.jpg'))
                 <div class="post-width post-image"  style="background-image: url({{ URL::asset('public/playlists/'.$playlist->id.'.jpg') }});">
