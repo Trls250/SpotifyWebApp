@@ -145,11 +145,15 @@
             $('#url').val("");
 
         });
+
         $('#btn_add_playlist').on('click', function(e) {
+            let url_to_send = $('#url').val();
+            console.log(url_to_send);
             e.preventDefault();
             $.ajax({
-                type: "get",
-                url: "{{url('playlist/add?url=')}}" + $('#url').val(),
+                type: "post",
+                data:  { _token: "{{ csrf_token() }}", url : url_to_send },
+                url: "{{url('playlist/add')}}",
                 success: function(data){
 
                     if(data['Success'] == true) {

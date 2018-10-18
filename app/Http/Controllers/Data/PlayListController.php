@@ -19,12 +19,13 @@ class PlayListController extends Controller {
     /**
      *
      */
-    public function insertplaylistData($playlist_id,$user_id,$tagged_by_user_Id,$tagged_by_user_name) {
+    public function insertplaylistData($playlist_id,$user_id,$tagged_by_user_Id,$tagged_by_user_name, $is_viewed = 0) {
         try {
                             //$user = $user->playlist()->attach($request->id);
                             $data = [
                                 'playlist_id' => $playlist_id,
                                 'user_id' => $user_id,
+                                'is_viewed' => $is_viewed,
                                 'tagged_by_user_id' => $tagged_by_user_Id,
                                 'tagged_by_user_name' => $tagged_by_user_name
                             ];
@@ -313,17 +314,22 @@ class PlayListController extends Controller {
      */
     public function addPlaylist(Request $request) {
 
+ 
+
+        $url = $request->input('url');
         //Check if URL of a Playlist is received
-        if (!isset($request->url)) {
+        if (!isset($url)) {
             $return_array = array(
                 "Success" => false,
-                "Desc" => "CAN NOT OBTAIN PLAYLIST ID FROM URL"
+                "Desc" => "CAN NOT OBTAIN PLAYLIST ID FROM URL",
+                "url" => $url
+
             );
 
             return $return_array;
         } else {
             // Grab vairiables from request
-            $playlist_id = $request->url;
+            $playlist_id = $request->input('url');
 
             //TODO: CHECK ISSET HERE
             // Grab variables from Sessions
@@ -344,12 +350,13 @@ class PlayListController extends Controller {
 
 
             $exploded = explode('/',$request->url);
+            $exploded = explode('?', end($exploded));
 
 
             /*
              * CURL Request PUT Data
              */
-            $url = "https://api.spotify.com/v1/playlists/" . end($exploded) . "/followers";
+            $url = "https://api.spotify.com/v1/playlists/" . $exploded[0] . "/followers";
 
             $body = array(
                 "public" => false
@@ -359,16 +366,24 @@ class PlayListController extends Controller {
 
             $curl_return = goCurl($url, $body, "PUT", TRUE);
             if(strpos($curl_return['Header'],'200') == false)
+            {
                 return ([
-                    'Success' => false
+                    'Success' => false,
+                    'curl' => $curl_return,
+                    'url' => $url
                 ]);
+            }
             else
+            {
+
+
                 $temp = session::get('WallRecordsCount') + 1;
                 session::put('WallRecordsCount', $temp);
                 return ([
                     'Success' => true,
-                    'id' => end($exploded)
+                    'id' => $exploded[0]
                 ]);
+            }
         }
     }
 
@@ -485,14 +500,19 @@ class PlayListController extends Controller {
         $repeatedArtist = $this->findMostRepeatedArtist($return['ResponseData']);
         $repeatedGenres = $this->findMostRepeatedGenres($return['ArtistGenres']);
         $averagedValues = $this->findAveragedTrackFeatures($return['TrackFeatures'], $return['ResponseData']['tracks']);
+        $is_new = false;
+
 
         if (Playlist::where('id', '=', $request->id)->exists()) {
             $playlist = Playlist::find($request->id);
         } else {
             $playlist = new Playlist();
+            $playlist->id = $return['ResponseData']['id'];
+            $is_new = true;
+                
         }
 
-        $playlist->id = $return['ResponseData']['id'];
+
         $playlist->title = $return['ResponseData']['name'];
         $playlist->description = $return['ResponseData']['description'];
         $playlist->added_by = session::get('UserInfo')['id'];
@@ -518,13 +538,20 @@ class PlayListController extends Controller {
         $playlist->acousticness = $this->setMaxTo100($averagedValues['acousticness']);
         $playlist->cover = $imageToInsert['Success'];
         $playlist->save();
+
+
+        if($is_new){
+            $result=$this->insertplaylistData($playlist->id,session::get('UserInfo')['id'],session::get('UserInfo')['id'],session::get('UserInfo')['display_name'], 1);
+            if($result['Success']==false)
+                 {
+                  return $result;
+                }
+        }
          
         //$sql="INSERT INTO `playlist_user`(`user_id`, `playlist_id`, `is_viewed`, `tagged_by_user_id`, `tagged_by_user_name`) VALUES ('".session::get('UserInfo')['id']."','".$playlist->id."', 0, '".session::get('UserInfo')['id']."','".session::get('UserInfo')['display_name']."')";
-       $result=$this->insertplaylistData($playlist->id,session::get('UserInfo')['id'],session::get('UserInfo')['id'],session::get('UserInfo')['display_name']);
-        if($result['Success']==false)
-             {
-              return $result;
-            }
+
+
+       
         /*
 
           $this->findMostRepeatedArtist($return['ArtistGenres']);

@@ -47,7 +47,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('playlist/user/getAllRecords', 'PlayListController@getAllPlaylistsRecordsforUser');
     Route::view('playlist/getWall', 'wall');
     Route::get('playlist/getWallRecords', 'PlayListController@getWallRecords');
-    Route::get('playlist/add', 'PlayListController@addPlaylist');
+    Route::post('playlist/add', 'PlayListController@addPlaylist');
     Route::get('playlist/insert/{id}', 'PlayListController@insertPlaylist');
     Route::get('playlist/insertSimple/{id}', 'PlayListController@refreshCalculateEveryRecord');
     Route::get('user/addArtist', 'Data\UserDataController@addArtist');
