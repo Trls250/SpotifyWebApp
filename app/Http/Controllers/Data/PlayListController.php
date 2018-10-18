@@ -80,7 +80,7 @@ class PlayListController extends Controller {
         }
         
     }
->>>>>>> b3f0c63aed2a30da37d7a17e00117d7551243def
+
     public function insertplaylistData($playlist_id,$user_id,$tagged_by_user_Id,$tagged_by_user_name, $is_viewed = 0) {
         try {
                             //$user = $user->playlist()->attach($request->id);
