@@ -33,20 +33,12 @@ class UserDataController extends Controller {
 
         $playlist_ratings = Playlist::where('added_by', '=', $user->id)->pluck('rating');
 
-        $temp = 0;
-        foreach ($playlist_ratings as $playlist_rating){
-            $temp += $playlist_rating;
-        }
-
-        if($temp != 0)
-            $temp = $temp/ count($playlist_ratings);
-        else
-            $temp = 0;
+    
         $Genres = Genre::all();
 
         return view('profile')->with([
             'Success' => true,
-            'AvgRating' => $temp,
+            'AvgRating' => $this->getUserAvgRating(session::get('UserInfo')['id']),
             'UserInfo' => $user,
             'TrackInfo' => $user->track,
             'ArtistInfo' => $user->artist,
@@ -57,12 +49,75 @@ class UserDataController extends Controller {
 
     public function getUsers(Request $request){
         
-        $Users = Users::all();
+        $offset = 0;
+        $limit = 2;
 
-        return view('loaders.people_loader')->with('Users', $Users);
+        if(isset($request['offset']))
+        {
+           $offset = $request['offset'];
+
+        }
+
+        if(isset($request['items']))
+        {
+            $limit = $request['items'];
+
+        }
+
+        if(User::count() == 0){
+            return ([
+                'Success'=>false,
+                'Status'=>"404",
+                'Message'=>"No records"]);
+        }
+
+
+        $users = User::skip($offset)->take($limit)->get();
+
+        foreach ($users as $key => $user) {
+            
+            $users[$key]['AvgRating'] = $this->getUserAvgRating($users[$key]->id);
+            $users[$key]['PlaylistCount'] = count(Playlist::where('added_by', '=', $users[$key]['id'])->get());
+
+        }
+
+
+
+        if($users->count() == 0)
+        {
+            return ([
+                'Success'=>false,
+                'Status'=>"204",
+                'Message'=>"No further records"]);
+        }
+
+
+        
+
+        return view('loaders.people_loader')->with([
+            'Status' => "200",
+            'Success'=>true,
+            'Users'=> $users,
+             ]);
         
     }
 
+    private function getUserAvgRating($user_id){
+
+        $playlist_ratings = Playlist::where('added_by', '=', $user_id)->pluck('rating');
+        $temp = 0;
+        foreach ($playlist_ratings as $playlist_rating){
+            $temp += $playlist_rating;
+        }
+
+        if($temp != 0)
+            $temp = $temp/ count($playlist_ratings);
+        else
+            $temp = 0;
+
+
+        return $temp;
+    }
 
     public function getUser(Request $request) {
 
@@ -76,22 +131,11 @@ class UserDataController extends Controller {
 
         $user = User::find($request->id);
 
-        $playlist_ratings = Playlist::where('added_by', '=', $user->id)->pluck('rating');
-
-        $temp = 0;
-        foreach ($playlist_ratings as $playlist_rating){
-            $temp += $playlist_rating;
-        }
-
-        if(count($playlist_ratings) > 0)
-            $temp = $temp/ count($playlist_ratings);
-        else
-            $temp = 0;
         $Genres = Genre::all();
 
         return view('profile')->with([
             'Success' => true,
-            'AvgRating' => $temp,
+            'AvgRating' => $this->getUserAvgRating($request->id),
             'UserInfo' => $user,
             'TrackInfo' => $user->track,
             'ArtistInfo' => $user->artist,

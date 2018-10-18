@@ -8,7 +8,7 @@
               <div class="row">
                 <div class="col-md-12">
                     <div class="playlists-items user-info-playlist-items">
-                        <h3 id="title_to_replace" class="title">Playlists</h3>
+                        <h3 id="title_to_replace" class="title">People</h3>
                         <ul id = "playlist_records" class="clearfix">
                             <div class="playlist_records ">
                             </div>
@@ -64,7 +64,7 @@
                       if(pos > $(".page-end-div").offset().top){
 
            
-                          
+                            $("#main_loader").show();
                              getAllRecords(offset, items);
                              offset += items;
                       }
@@ -89,6 +89,7 @@
                           $("#main_loader").hide();
                       }else {
                           $('.playlist_records').append(data);
+                          $("#main_loader").hide();
                       }
                   },
                   error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -99,52 +100,10 @@
               temp =true;
           }
           
-          function addPlaylist(id){
-        $('#playlist_records').fadeOut();
-        $(".msg").hide();
-        $("#main_loader").fadeIn();
-        $("#title_to_replace").replaceWith( "<h3 class='title'>Loading playlist.....</html>");
-        this.add(id);
-    }
-
-
-    function add(id) {
-        var temp = "#add_btn_" + id;
-        $('#main_loader').fadeIn();
-                        $.ajax({
-                            type: "get",
-                            url: "{{url('playlist/insertSimple/')}}" + '/' + id,
-                            success: function (data) {
-
-                                if (data['Success'] == true) {
-                                    $("#title_to_replace").replaceWith( "<h3 class='title'>Almost Done.....</html>");
-                                    $(temp).html(``);
-                                    $(".msg").fadeIn();
-                                    $("#main_loader").fadeOut();
-                                    window.location = ('{{url('playlist/open-playlist/')}}' + '/' + data['id']);
-                                }
-                                else {
-
-                                    $(".msg").fadeIn();
-                                    $("#main_loader").fadeOut();
-                                    $('#playlist_records').fadeIn();
-                                    $("#title_to_replace").replaceWith( "<h3 class='title'>There was an error adding last playlist to our system.....try again :(</thml>");
-                                }
-                            },
-
-                            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                                console.log("Status: " + textStatus);
-                                $('#main_loader2').fadeOut();
-                                $('#playlist_records').fadeIn();
-                                $("#title_to_replace").replaceWith("<h3 class='title'> There was an error adding last playlist to our system.....try again :(</h3>");
-
-                            },
-                        });
 
 
 
-    }
-          
+    
         </script>
     </body>
 </html>

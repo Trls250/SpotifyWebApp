@@ -14,6 +14,7 @@
                     
                         <div class="play-box">
                             <div class="">
+                                <a href="{{url('playlist/open-playlist/'.$playlist->id)}}">
                                 @if(file_exists('public/playlists/'.$playlist["id"].'.jpg'))
                                   <div class="play-img"  style="background-image: url({{ URL::asset('public/playlists/'.$playlist['id'].'.jpg') }});">
                                   </div>
@@ -21,6 +22,7 @@
                                     <div class="play-img"  style="background-image: url({{ URL::asset('public/images/default_playlist.jpg') }});">
                                     </div>
                                 @endif
+                                </a>
                             </div>
                             <div class="play-content">
                                 <h4><a href="{{url('playlist/open-playlist/'.$playlist->id)}}">{{$playlist->title}}</a></h4>

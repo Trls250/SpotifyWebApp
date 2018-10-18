@@ -10,7 +10,7 @@
             <div id ="wall_records" class="content-container">
               <div class="row ">
                 <div class="col-md-12">
-                  <h3 id ="title_replace" class="title">Wall</h3>
+                  <h3 id ="title_replace" class="title">Latest Activity</h3>
                 </div>
               </div>
             </div>
