@@ -58,64 +58,64 @@
               <div class="content-container">
                 <div class="range-row clearfix">
                     <div class="range1">
-                 <label> Instrumentalness - <output id="filter-instrumentalness"> 0 </output></label>
+                 <label> Instrumentalness - <output id="filter-instrumentalness">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-instrumentalness" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-instrumentalness"></div>
                   </div>
                   
                  <div class="range1">
-                 <label> Liveness - <output id="filter-liveness"> 0 </output></label>
+                 <label> Liveness - <output id="filter-liveness">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-liveness" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-liveness"></div>
                   </div>
                     <div class="range1">
-                 <label> Loudness - <output id="filter-loudness"> 0 </output></label>
+                 <label> Loudness - <output id="filter-loudness">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-loudness" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-loudness"></div>
                   </div>
                   
                      <div class="range1">
-                 <label> Speechiness - <output id="filter-speechiness"> 0 </output></label>
+                 <label> Speechiness - <output id="filter-speechiness">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-speechiness" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-speechiness"></div>
                   </div>
                  
                     <div class="range1">
-                 <label> BPM - <output id="filter-tempo"> 0 </output></label>
+                 <label> BPM - <output id="filter-tempo">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-tempo" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-tempo"></div>
                   </div>
                  <div class="range1">
-                 <label> Popularity - <output id="filter-popularity"> 0 </output></label>
+                 <label> Popularity - <output id="filter-popularity">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-popularity" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-popularity"></div>
                   </div>
                  
                  <div class="range1">
-                 <label> Danceability - <output id="filter-danceability"> 0 </output></label>
+                 <label> Danceability - <output id="filter-danceability">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-danceability" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-danceability"></div>
                   </div>
                     
                      <div class="range1">
-                    <label> Energy - <output id="filter-energy"> 0 </output></label>
+                    <label> Energy - <output id="filter-energy">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-energy" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-energy"></div>
                   </div>
                     
                      <div class="range1">
-                    <label> Valence - <output id="filter-valence"> 0 </output></label>
+                    <label> Valence - <output id="filter-valence">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-valence" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-valence"></div>
                   </div>
                     
                       <div class="range1">
-                    <label> Acousticness - <output id="filter-acousticness"> 0 </output></label>
+                    <label> Acousticness - <output id="filter-acousticness">  0 - 100 </output></label>
                 <input type="text" class="filter-input" id="filter-acousticness" type="range" ><span class="contentvalue rightvalue">100</span>
                 <div class="slider-range" id="filter-acousticness"></div>
                   </div>
                       <div class="range1">
-                 <label> Ratings - <output id="filter-ratings" > 0 </output></label>
+                 <label> Ratings - <output id="filter-ratings" >  0 - 5 </output></label>
                 <input type="text" class="filter-input" id="filter-ratings" type="range" ><span class="contentvalue rightvalue">5</span>
                 <div class="slider-rating" id="filter-ratings"></div>
                   </div>
