@@ -187,11 +187,11 @@
 
                     }
                     else if(data['Success'] == false)
-                        $('#modal_title').html("Playlist not found......:(");
+                        $('#modal_title').html("Playlist not found.");
 
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    $('#modal_title').html("Playlist not found");
+                    $('#modal_title').html("Cannot add playlist from my library that did not create.");
                     console.log("Status: " + textStatus);
                     $('#loaderChota').fadeOut();
                     $('#playform').fadeIn();
