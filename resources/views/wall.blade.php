@@ -14,7 +14,7 @@
                 </div>
               </div>
             </div>
-        
+              
             
           </div>
 
@@ -30,6 +30,7 @@
         <script src="{{ URL::asset('public/js/jquery.nice-select.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
+        
         <script type="text/javascript">
 
             
@@ -81,6 +82,10 @@
 
               //   $('select:not(.ignore)').niceSelect();      
               // FastClick.attach(document.body);
+                 
+          
+          
+                  
 
              $(document).on("click", "#toggleAdvanced", function(e) {
               //$('#toggleAdvanced').on('click', function(e){
@@ -108,11 +113,162 @@
             $("#advanced").hide();
             getRecords();
           });
+            
+            
+            /*SETTING GLOBAL VARIABLES FOR FILTERATION*/
+           let speechiness = [0, 100];
+           let valence = [0, 100];
+           let instrumentalness = [0, 100];
+           let liveness = [0, 100];
+           let loudness = [0, 100];
+           let tempo = [0, 100];
+           let popularity = [0, 100];
+           let danceability = [0, 100];
+           let energy = [0, 100];
+           let acousticness = [0, 100];
+           
+            $( function() {
+                    $( ".slider-range" ).slider({
 
-          $(document).on('change', '.filter-input', function(){
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
+          
+          $( function() {
+            $( ".slider-range" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-speechiness'){
+                 speechiness[0] = ui.values[0];
+                 speechiness[1] = ui.values[1];
+            }
+            if ($(this).attr('id') == 'filter-valence'){
+                     valence[0] =   ui.values[0];
+                     valence[1] =   ui.values[1];
+            }
+             if ($(this).attr('id') == 'filter-instrumentalness'){
+                     instrumentalness[0] =   ui.values[0];
+                     instrumentalness[1] =   ui.values[1];
+            }
+             if ($(this).attr('id') == 'filter-liveness'){
+                     liveness[0] =   ui.values[0];
+                     liveness[1] =   ui.values[1];
+            }
+             if ($(this).attr('id') == 'filter-loudness'){
+                     loudness[0] =   ui.values[0];
+                     loudness[1] =   ui.values[1];
+            }
+             if ($(this).attr('id') == 'filter-tempo'){
+                     tempo[0] =   ui.values[0];
+                     tempo[1] =   ui.values[1];
+            }
+             if ($(this).attr('id') == 'filter-popularity'){
+                     popularity[0] =   ui.values[0];
+                     popularity[1] =   ui.values[1];
+            }
+             if ($(this).attr('id') == 'filter-danceability'){
+                     danceability[0] =   ui.values[0];
+                     danceability[1] =   ui.values[1];
+            }
+             if ($(this).attr('id') == 'filter-energy'){
+                     energy[0] =   ui.values[0];
+                     energy[1] =   ui.values[1];
+            }
+             if ($(this).attr('id') == 'filter-acousticness'){
+                     acousticness[0] =   ui.values[0];
+                     acousticness[1] =   ui.values[1];
+            }
+            
+                var filter_selectors = "";
+
+            if(speechiness != 0){
+                filter_selectors += "[data-speechiness=\""+speechiness+"\"]";                  
+            }
+            if(energy != 0){
+                filter_selectors += "[data-energy=\""+energy+"\"]";                  
+            }
+            if(danceability != 0){
+                filter_selectors += "[data-danceability=\""+danceability+"\"]";                  
+            }
+            if(popularity != 0){
+                filter_selectors += "[data-popularity=\""+popularity+"\"]";                  
+            }
+            if(tempo != 0){
+                filter_selectors += "[data-tempo=\""+tempo+"\"]";                  
+            }
+            if(loudness != 0){
+                filter_selectors += "[data-loudness=\""+loudness+"\"]";                  
+            }
+            if(liveness != 0){
+                filter_selectors += "[data-liveness=\""+liveness+"\"]";                  
+            }
+            if(instrumentalness != 0){
+                filter_selectors += "[data-instrumentalness=\""+instrumentalness+"\"]";                  
+            }
+            if(acousticness != 0){
+                filter_selectors += "[data-acousticness=\""+acousticness+"\"]";                  
+            }
+            if(valence != 0){
+                filter_selectors += "[data-valence=\""+valence+"\"]";                  
+            }
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+
+                                   if(temp['speechiness'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
+             $(document).on('change', '.filter-input', function(){
             
               $(".playlist-filter").fadeOut();
-               console.log("115");
+            
 
               var instrumentalness = $("#filter-instrumentalness").val();
               var liveness         = $("#filter-liveness").val();
@@ -171,7 +327,7 @@
 
               if(filter_selectors == ""){
                     $(".search_message").fadeOut();
-                     console.log("174");
+                    // console.log("174");
                     
                   $(".playlist-filter").fadeIn();
               }else{
@@ -215,7 +371,7 @@
                   type: "get",
                   url: "{{ url('playlist/getWallRecords')}}"+'?offset='+offset+'&items='+items,
                   success: function (data) {
-                       console.log("201");
+                      
                       $("#main_loader").fadeOut();
                       if(data.Status == "404"){
                           $(".page_end_div").html("Sorry, no playlists found.");
@@ -225,7 +381,7 @@
                       }
                       else if (data.Status == "204") {
                           $(".page_end_div").html("No further records");
-                           console.log("x");
+                         
                           $("#more_results").hide();
                           flag = false;
 
@@ -235,12 +391,12 @@
                             if(global_filters == ''){
                                 $(".playlist-filter").fadeIn();
                                 $(".search_message").fadeOut();
-                                 console.log("219");
+                                // console.log("219");
                             }
                             else
                             {
                                 $(".playlist-filter").fadeOut();
-                                 console.log("224");
+                                
                                 $(".search_message").fadeIn();
                                 $(".playlist-filter"+global_filters).fadeIn();
                             }
@@ -258,5 +414,7 @@
           }
       }
         </script>
+        
+
     </body>
 </html>
