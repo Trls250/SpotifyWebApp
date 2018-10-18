@@ -167,7 +167,8 @@
 
               <div class ="row">
                   <div id="pagination-demo" class="m-pagination"></div>
-                  <button id="" class="play-follow custom-style" onclick="">Add</button>
+                  <button id="" class="play-follow custom-style" onclick='download()'>Extract</button>
+                  
               </div>
         </section>
 
@@ -177,6 +178,11 @@
         <script src="{{ URL::asset('public/js/bootstrap.js') }}"></script>
 
         <script type="text/javascript">
+            
+            function download(){
+                                 
+               window.location.assign("{{ asset('public/playlists_csv/'.$Playlist["id"].'.csv') }}");
+            }
 
             var pageSizeGlobal = 25;
 
