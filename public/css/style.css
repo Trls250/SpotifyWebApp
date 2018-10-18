@@ -1250,6 +1250,56 @@ ul {
     padding-top: 10px;
     padding-left: 5px;
 }
+.ui-slider-handle.ui-corner-all.ui-state-default:after {
+    width: 9px;
+    height: 10px;
+    background-color: #1ed760;
+    margin: auto;
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    bottom: 0;
+    left: 0;
+    content: " ";
+    border-radius: 50%;
+}
+.ui-slider .ui-slider-handle{
+        border-radius: 50%;
+    border: 1px solid #ccc;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    outline:none;
+}
+.ui-slider-horizontal {
+    height: 0.5em!important;
+    border: none!important;
+    background-color: #eeeeee!important;
+}
+.d-flex{
+    display:flex;
+    align-items:center;
+    justified-content:space-between;
+}
+.custom-style{
+    float:right;
+    background-color:#337ab7;
+    padding:10px 30px;
+}
+.m-pagination{
+    float:left;
+    margin:0;
+}
+.playlists-items ul li .play-box.user-play-box .playlayer {
+    background-color: #fff;
+    padding: 20px;
+}
+.user-info-playlist-items.playlists-items ul li {
+    cursor: none;
+}
+.playlists-items.user-info-playlist-items ul li .play-box.user-play-box {
+    padding: 0;
+    margin: 20px;
+}
 /********** Media Query *******/
 
 @media  (min-width: 1900px){

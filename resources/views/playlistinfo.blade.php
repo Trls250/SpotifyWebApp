@@ -167,6 +167,7 @@
 
               <div class ="row">
                   <div id="pagination-demo" class="m-pagination"></div>
+                  <button id="" class="play-follow custom-style" onclick="">Add</button>
               </div>
         </section>
 
