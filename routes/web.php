@@ -67,6 +67,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
         Route::post('rate/insert/{id}', 'Data\PlaylistRatingsController@insert');
         Route::get('playlist/comments/{id}', 'Data\CommentsController@getComments');
         Route::post('playlist/tag/{id}', 'PlayListController@tagUser');
+        Route::get('playlist/getCsv/{id}', 'PlayListController@generateCsvFile');
         
     });
 

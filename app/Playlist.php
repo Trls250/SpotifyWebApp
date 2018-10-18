@@ -103,7 +103,7 @@ class Playlist extends Model {
 
     public static function getTaggedPlaylists($user_id, $offset, $limit){
 
-        $query = "select A.*, B.is_viewed, B.tagged_by_user_id, B.tagged_by_user_name from playlists A INNER JOIN (select * from playlist_user where user_id = '".$user_id."') B on A.id = B.playlist_id ORDER BY B.is_viewed  limit ".$limit." offset ".$offset."";
+        $query = "select A.*, B.is_viewed, B.tagged_by_user_id, B.tagged_by_user_name from playlists A INNER JOIN (select * from playlist_user where user_id != tagged_by_user_id and user_id = '".$user_id."') B on A.id = B.playlist_id ORDER BY B.is_viewed  limit ".$limit." offset ".$offset."";
         $playlists = DB::select($query);
 
         return $playlists;

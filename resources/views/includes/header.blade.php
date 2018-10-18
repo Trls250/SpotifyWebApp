@@ -161,7 +161,7 @@
                         $('#playform').fadeOut();
                         $('#modal_title').html("Playlist found.....adding to system");
 
-
+                        
                         $.ajax({
                             type: "get",
                             url: "{{url('playlist/insertSimple/')}}" +'/' + data['id'],

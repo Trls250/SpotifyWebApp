@@ -137,6 +137,8 @@ class PlayListController extends Controller {
 
 
     }
+
+
     
     public function getAllPlaylistsRecords(Request $request) {
 
@@ -459,8 +461,7 @@ class PlayListController extends Controller {
         // return $this->refreshCalculateEveryRecord($request);
     }
 
-    public function refreshCalculateEveryRecord(Request $request) {
-
+    private function getDetailedRecords($playlist_id, $onlyInfo = True){
 
         $limit = 100;
 
@@ -472,10 +473,14 @@ class PlayListController extends Controller {
 
         while ($current_iteration < $iterations) {
 
-            if ($current_iteration == 0) {
-                $url = 'https://api.spotify.com/v1/playlists/' . $request->id;
-            } else {
-                $url = 'https://api.spotify.com/v1/playlists/' . $request->id . '/tracks?offset=' . $offset . '&limit=' . $limit;
+            if($onlyInfo){
+                if ($current_iteration == 0) {
+                    $url = 'https://api.spotify.com/v1/playlists/' . $playlist_id;
+                } else {
+                    $url = 'https://api.spotify.com/v1/playlists/' . $playlist_id . '/tracks?offset=' . $offset . '&limit=' . $limit;
+                }
+            }else{
+                    $url = 'https://api.spotify.com/v1/playlists/' . $playlist_id . '/tracks?offset=' . $offset . '&limit=' . $limit;
             }
             $return = $this->getPlayListInner($url, true, $current_iteration, $return, TRUE);
 
@@ -486,20 +491,299 @@ class PlayListController extends Controller {
                 return $return;                                                                         //error page goes here
             }
 
+
+            
             if ($current_iteration == 0) {
-                $iterations = ceil($return['ResponseData']['tracks']['total'] / $limit);
+                if(isset($return['ResponseData']['tracks'])){
+                    $iterations = ceil($return['ResponseData']['tracks']['total'] / $limit);
+                }else{
+                    $iterations = ceil($return['ResponseData']['total'] / $limit);
+                }
             }
 
             $offset+=$limit;
             $current_iteration++;
+
+
+            if($onlyInfo){
+                break;
+            }
         }
 
+        return $return;
+    }
+
+    // private function getDetailedRecordsCsv($playlist_id){
+
+    //     $limit = 100;
+
+    //     $iterations = 1;
+    //     $current_iteration = 0;
+    //     $offset = 0;
+    //     $return = null;
+
+
+    //     while ($current_iteration < $iterations) {
+
+    //         $url = 'https://api.spotify.com/v1/playlists/' . $playlist_id . '/tracks?offset=' . $offset . '&limit=' . $limit;
+    //         // if ($current_iteration == 0) {
+    //         //     $url = 'https://api.spotify.com/v1/playlists/' . $playlist_id;
+    //         // } else {
+    //         //     $url = 'https://api.spotify.com/v1/playlists/' . $playlist_id . '/tracks?offset=' . $offset . '&limit=' . $limit;
+    //         // }
+    //         $return = $this->getPlayListInner($url, true, $current_iteration, $return, TRUE);
+
+    //         if ($return['Success'] == false) {
+    //             if ($return['Code'] == "exp_session") {
+    //                 return view('relogin')->withErrors([$return['Desc']]);
+    //             }
+    //             return $return;                                                                         //error page goes here
+    //         }
+
+    //         if ($current_iteration == 0) {
+    //             $iterations = ceil($return['ResponseData']['total'] / $limit);
+    //         }
+
+    //         $offset+=$limit;
+    //         $current_iteration++;
+    //     }
+
+    //     return $return;
+    // }
+
+    public function generateCsvFile($Response, $playlist_id){
+
+
+        // // echo"<pre>";
+        // // print_r("hello");
+
+        // for($i=0; $i<count($response['ResponseData']['items']); $i++){
+        //     print_r($response['ResponseData']['items'][$i]['track']['name']);
+        //     echo "</br>";
+        // }
+
+
+        // //print_r($response['ResponseData']);
+        // exit();
+        // // foreach ($request['ResponseData']['items'] as $key => $value) {
+        // //     print_r($request['ResponseData']['items']['key']);
+        // // }
+
+        // exit();
+        
+
+        // if(is_file($filename)){
+        // //     unlink($filename);
+        // // }
+
+        
+        $line = [];
+
+        array_push($line, "Track No.");
+        array_push($line, "Track Name");
+        array_push($line, "Artists");
+        array_push($line, "Genres");
+        array_push($line, "Popularity");
+        array_push($line, "Valence");
+        array_push($line, "Danceability");
+        array_push($line, "Energy");
+        array_push($line, "Liveness");
+        array_push($line, "Instrumentalness");
+        array_push($line, "Loudness");
+        array_push($line, "Speechiness");
+        array_push($line, "Acousticness");
+        array_push($line, "Tempo");
+        array_push($line, "Duration_ms");
+
+        
+
+
+        try {
+
+            if (!is_dir('public/playlists_csv')) {
+                mkdir("public/playlists_csv", 0777);
+            }
+
+            $filename = 'public/playlists_csv/'.$playlist_id.'.csv';
+
+            $file = fopen($filename, 'w');
+            
+            fputcsv($file, $line);
+                
+            }catch(Exception $e){
+
+                return([
+                    'Success' => false,
+                    'Error' => e.getMessage()
+                ]);
+            }
+
+            $line = [];
+
+        for($i=0; $i<count($Response['ResponseData']['items']); $i++){
+
+            array_push($line, $i + 1);
+
+            $temp = $Response['ResponseData']['items'][$i]['track']['name'];
+
+            str_replace(',', '/', $temp);
+
+
+
+            array_push($line, $temp);
+
+            
+            $artists_temp = "";
+
+            if(count($Response['ResponseData']['items'][$i]['track']['artists']) == 0)
+                    array_push($line, 'Artists not available');
+            else{
+
+                for($j=0; $j<count($Response['ResponseData']['items'][$i]['track']['artists']); $j++)
+                {
+                    
+                     $temp = $Response['ResponseData']['items'][$i]['track']['artists'][$j]['name'];
+                     $artists_temp = $artists_temp . $temp;
+                    
+
+                    if($j<count($Response['ResponseData']['items'][$i]['track']['artists']) -1)
+                        $artists_temp = $artists_temp . '/';
+                
+                }
+            }
+
+            array_push($line, $artists_temp);
+
+            $genres_temp = "";
+
+            if(isset($Response['ArtistGenres'][$i]['genres'])){
+
+                if(count($Response['ArtistGenres'][$i]['genres']) == 0)
+                        array_push($line, '---');
+                else{
+
+                    for($j=0; $j<count($Response['ArtistGenres'][$i]['genres']); $j++){
+
+     
+                        $temp = $Response['ArtistGenres'][$i]['genres'][$j];
+                        $genres_temp = $genres_temp . $temp;
+                        
+
+                        if($j<count($Response['ArtistGenres'][$i]['genres']) -1){
+                            $genres_temp = $genres_temp . '/';
+                        }
+                        
+                    }
+
+                    array_push($line, $genres_temp);
+
+                }
+            }
+            else
+                array_push($line, 'Genres not available');
+            
+
+
+        if(isset($Response['ResponseData']['items'][$i]['track']['popularity']))
+            array_push($line, $Response['ResponseData']['items'][$i]['track']['popularity']);
+        else
+            array_push($line, '---');
+        
+
+        if(isset($Response['TrackFeatures'][$i]['valence']))
+            array_push($line, $Response['TrackFeatures'][$i]['valence']);
+        else
+            array_push($line, '---');
+
+        if(isset($Response['TrackFeatures'][$i]['danceability']))
+            array_push($line, $Response['TrackFeatures'][$i]['danceability']);
+        else
+            array_push($line, '---');
+
+        if(isset($Response['TrackFeatures'][$i]['energy']))
+            array_push($line, $Response['TrackFeatures'][$i]['energy']);
+        else
+            array_push($line, '---');
+
+        if(isset($Response['TrackFeatures'][$i]['liveness']))
+            array_push($line, $Response['TrackFeatures'][$i]['liveness']);
+        else
+            array_push($line, '---');
+
+        if(isset($Response['TrackFeatures'][$i]['instrumentalness']))
+            array_push($line, $Response['TrackFeatures'][$i]['instrumentalness']);
+        else
+            array_push($line, '---');
+
+        // if(isset($Response['TrackFeatures'][$i]['liveness']))
+        //     array_push($line, $Response['TrackFeatures'][$i]['liveness']);
+        // else
+        //     array_push($line, '---');
+
+        if(isset($Response['TrackFeatures'][$i]['loudness']))
+            array_push($line, $Response['TrackFeatures'][$i]['loudness']);
+        else
+            array_push($line, '---');
+
+        if(isset($Response['TrackFeatures'][$i]['speechiness']))
+            array_push($line, $Response['TrackFeatures'][$i]['speechiness']);
+        else
+            array_push($line, '---');
+
+
+        if(isset($Response['TrackFeatures'][$i]['acousticness']))
+            array_push($line, $Response['TrackFeatures'][$i]['acousticness']);
+        else
+            array_push($line, '---');
+
+
+        if(isset($Response['TrackFeatures'][$i]['tempo']))
+            array_push($line, $Response['TrackFeatures'][$i]['tempo']);
+        else
+            array_push($line, '---');
+
+        if(isset($Response['TrackFeatures'][$i]['duration_ms']))
+            array_push($line, $Response['TrackFeatures'][$i]['duration_ms']);
+        else
+            array_push($line, '---');
+
+
+        try{
+            fputcsv($file, $line);
+            $line = [];
+            $artists_temp = "";
+            $genres_temp = "";
+        }catch(Exception $e){
+            return([
+                    'Success' => false,
+                    'Error' => e.getMessage()
+                ]);
+        }
+    }
+
+        return([
+                    'Success' => true,
+                    'Message' => "File created/ updated."
+                ]);
+
+
+    }
+
+    public function refreshCalculateEveryRecord(Request $request) {
+
+
+        
+        $return = $this->getDetailedRecords($request->id);
+
+        $commulative_return = $this->getDetailedRecords($request->id, false);
+
+        $csv_file_creation = $this->generateCsvFile($commulative_return, $request->id);
 
 
         $imageToInsert = findAndGetCover(($return['ResponseData']['images']), 'playlists/'.$return['ResponseData']['id'].'.jpg');
-        $repeatedArtist = $this->findMostRepeatedArtist($return['ResponseData']);
-        $repeatedGenres = $this->findMostRepeatedGenres($return['ArtistGenres']);
-        $averagedValues = $this->findAveragedTrackFeatures($return['TrackFeatures'], $return['ResponseData']['tracks']);
+        $repeatedArtist = $this->findMostRepeatedArtist($commulative_return['ResponseData']);
+        $repeatedGenres = $this->findMostRepeatedGenres($commulative_return['ArtistGenres']);
+        $averagedValues = $this->findAveragedTrackFeatures($commulative_return['TrackFeatures'], $commulative_return['ResponseData']['items']);
         $is_new = false;
 
 
@@ -570,6 +854,12 @@ class PlayListController extends Controller {
           $playlist->valence = $return['Valence'];
           $playlist->calculated_tracks = true;
           $playlist->save(); */
+
+        if($csv_file_creation['Success'] == false){
+            return ([
+            'Success' => false, 
+            'Message' => "Playlist Created, Unable to create the .csv file"]);
+        }   
 
         return ([
             'Success' => true,
@@ -679,8 +969,8 @@ class PlayListController extends Controller {
                             if ($commulative && $iteration > 0) {
 
                                 $tempMain = $data['ResponseData'];
-                                $tempTracks = array_merge($data['ResponseData']['tracks'], $curl_return['ResponseData']['items']);
-                                $tempMain['tracks'] = $tempTracks;
+                                $tempTracks = array_merge($data['ResponseData']['items'], $curl_return['ResponseData']['items']);
+                                $tempMain['items'] = $tempTracks;
                                 $tempFeatures = array_merge($data['TrackFeatures'], $TrackFeatures['audio_features']);
                                 $tempArtists = array_merge($data['ArtistGenres'], $ArtistGenres);
                                 $tempTotal = $data['TotalRecords'];
@@ -738,6 +1028,91 @@ class PlayListController extends Controller {
                 }
             }
     }
+
+
+    // private function getPlayListInner2($url, $commulative, $iteration = 0, $data = null, $artist_genre_just_once = FALSE) {
+
+    //     $curl_return = goCurl($url, null, 'GET', False);
+    //     if ($curl_return['Success'] == false)
+    //         return $curl_return;
+    //     else {
+    //         $TrackFeatures = $this->getTrackAttributes($curl_return['ResponseData']);
+
+    //         if ($TrackFeatures['Success'] == false)
+    //             return ("$TrackFeatures");
+    //         else {
+    //                 $ArtistGenres = $this->getArtistGenres($curl_return['ResponseData'], $artist_genre_just_once);
+
+    //                 if ($ArtistGenres['Success'] == false)
+    //                     return ([
+    //                         'Success' => false,
+    //                         'Code' => "error_artists"
+    //                     ]);
+    //                 else {
+    //                     if (!isset($curl_return['ResponseData']['tracks'])) {
+    //                         if ($commulative && $iteration > 0) {
+
+    //                             $tempMain = $data['ResponseData'];
+    //                             $tempTracks = array_merge($data['ResponseData']['items'], $curl_return['ResponseData']['items']);
+    //                             $tempMain['items'] = $tempTracks;
+    //                             $tempFeatures = array_merge($data['TrackFeatures'], $TrackFeatures['audio_features']);
+    //                             $tempArtists = array_merge($data['ArtistGenres'], $ArtistGenres);
+    //                             $tempTotal = $data['TotalRecords'];
+
+
+    //                             $return = [
+    //                                 'Success' => true,
+    //                                 'ResponseData' => $tempMain,
+    //                                 'TrackFeatures' => $tempFeatures,
+    //                                 'ArtistGenres' => $tempArtists,
+    //                                 'TotalRecords' => $tempTotal
+    //                             ];
+    //                             return $return;
+    //                         } else {
+
+                                
+    //                                 $total_tracks = 0;
+    //                                 if (isset($curl_return['ResponseData']['tracks'])) {
+    //                                     $total_tracks = $curl_return['ResponseData']['tracks']['total'];
+    //                                 }
+    //                                 $return = [
+    //                                     'Success' => true,
+    //                                     'TrackFeatures' => $TrackFeatures['audio_features'],
+    //                                     'ResponseData' => $curl_return['ResponseData'],
+    //                                     'ArtistGenres' => $ArtistGenres,
+    //                                     'TotalRecords' => $total_tracks,
+    //                                 ];
+
+    //                                 return $return;
+                                
+    //                         }
+    //                     } else {
+
+
+    //                             $total_tracks = 0;
+
+    //                             if (isset($curl_return['ResponseData']['tracks'])) {
+    //                                 $total_tracks = $curl_return['ResponseData']['tracks']['total'];
+    //                             }
+
+    //                             $return = [
+    //                                 'Success' => true,
+    //                                 'TrackFeatures' => $TrackFeatures['audio_features'],
+    //                                 'ResponseData' => $curl_return['ResponseData'],
+    //                                 'ArtistGenres' => $ArtistGenres,
+    //                                 'TotalRecords' => $total_tracks,
+    //                             ];
+
+    //                             return $return;
+                            
+
+
+    //                     }
+    //                 }
+    //             }
+    //         }
+    // }
+
 
     public function cmp($a, $b) {
         return strcmp($a['name'], $b['name']);
@@ -799,7 +1174,7 @@ class PlayListController extends Controller {
 
         $artists = array();
 
-        foreach($main['tracks']['items'] as $item)
+        foreach($main['items'] as $item)
         {
             if(isset($item['track']['artists'])){
                 foreach($item['track']['artists'] as $artist)
@@ -965,10 +1340,10 @@ class PlayListController extends Controller {
                 $acousticness +=$track['acousticness'];
             }
 
-            if (!isset($main['tracks']))
-                foreach ($main['items'] as $playlist) {
+            if (!isset($main['tracks'])){
+                foreach ($main as $playlist) {
                     $popularity+=$playlist['track']['popularity'];
-                } else
+                }} else
                 foreach ($main['tracks']['items'] as $playlist) {
                     $popularity+=$playlist['track']['popularity'];
                 }
