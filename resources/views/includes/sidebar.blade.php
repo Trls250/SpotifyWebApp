@@ -9,12 +9,16 @@
         <li class="{{ Request::is('users/me') ? 'active' : '' }}">
             <a href='{{url('users/me')}}'>My Profile</a>
         </li>
+        <li class="{{ Request::is('people') ? 'active' : '' }}">
+            <a href='{{url('people')}}'>People</a>
+        </li>
         <li class="{{ Request::is('playlist/getTaggedWall') ? 'active' : '' }}">
             <a href='{{url('playlist/getTaggedWall')}}'>Tagged Playlists</a>
             <div class="notifaction">
                 <span id = "tagged_span_count">{{session::get('Tagged')}}</span>
             </div>
         </li>
+
     </ul>
 </div>
 

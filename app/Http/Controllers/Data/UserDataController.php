@@ -55,6 +55,14 @@ class UserDataController extends Controller {
         ]);
     }
 
+    public function getUsers(Request $request){
+        
+        $Users = Users::all();
+
+        return view('loaders.people_loader')->with('Users', $Users);
+        
+    }
+
 
     public function getUser(Request $request) {
 
