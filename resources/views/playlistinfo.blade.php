@@ -181,7 +181,7 @@
             
             function download(){
                                  
-               window.location.assign("{{ asset('public/playlists_csv/'.$Playlist["id"].'.csv') }}");
+               window.location.assign("{{ asset('public/playlists_csv/'.$Playlist["id"].'.csv')}}");
             }
 
             var pageSizeGlobal = 25;

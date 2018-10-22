@@ -724,7 +724,7 @@ class PlayListController extends Controller {
         //     array_push($line, '---');
 
         if(isset($Response['TrackFeatures'][$i]['loudness']))
-            array_push($line, $Response['TrackFeatures'][$i]['loudness']);
+            array_push($line, ($Response['TrackFeatures'][$i]['loudness'])*-1);
         else
             array_push($line, '---');
 

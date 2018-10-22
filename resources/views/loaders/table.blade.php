@@ -80,7 +80,7 @@
         @endif
 
          @if(isset($Response['TrackFeatures'][$i]['loudness']))
-        <td data-header="loudness">{{$Response['TrackFeatures'][$i]['loudness']}}</td>
+        <td data-header="loudness">{{$Response['TrackFeatures'][$i]['loudness']*-1 }}</td>
         @else
         <td data-header="loudness">---</td>
         @endif

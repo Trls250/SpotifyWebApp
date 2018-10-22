@@ -1,0 +1,29 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,"Canadian Goose","Lil Uzi Vert","rap/trap music",64,0.238,0.776,0.537,0.103,0,7.604,0.197,0.0855,153.06,218201
+2,"Hi Roller","Lil Uzi Vert","rap/trap music",64,0.147,0.8,0.562,0.243,0,7.366,0.0961,0.0307,132.081,276349
+3,"Money Longer","Lil Uzi Vert","rap/trap music",80,0.478,0.795,0.568,0.108,0,7.817,0.142,0.0541,136.173,198944
+4,"Grab the Wheel","Lil Uzi Vert","rap/trap music",63,0.296,0.748,0.48,0.139,0,6.37,0.14,0.388,137.835,295680
+5,"You Was Right","Lil Uzi Vert","rap/trap music",76,0.156,0.843,0.359,0.12,0,7.417,0.461,0.069,81.987,163944
+6,"Baby Are You Home","Lil Uzi Vert","rap/trap music",62,0.462,0.653,0.546,0.134,0,8.818,0.282,0.101,149.975,230296
+7,"Ps & Qs","Lil Uzi Vert","rap/trap music",72,0.399,0.522,0.428,0.278,2.35E-6,11.332,0.143,0.235,129.829,221538
+8,"Team Rocket","Lil Uzi Vert","rap/trap music",63,0.23,0.691,0.54,0.175,0,8.818,0.0532,0.0907,132.02,206106
+9,"Scott and Ramona","Lil Uzi Vert","rap/trap music",60,0.169,0.589,0.426,0.0995,0,7.534,0.0695,0.0411,132.886,221362
+10,"Do Yoga","Rae Sremmurd","hip hop/pop/pop rap/rap/southern hip hop/trap music",26,0.19,0.805,0.449,0.0878,2.03E-6,10.16,0.0508,0.108,132.037,238720
+11,"Do What I Want","Lil Uzi Vert","rap/trap music",74,0.398,0.681,0.701,0.208,0,6.336,0.0767,0.106,139.952,175203
+12,"Of Course We Ghetto Flowers (feat. Playboi Carti & Offset)","Lil Uzi Vert/Offset/Playboi Carti","rap/trap music",60,0.337,0.81,0.57,0.111,0,5.604,0.318,0.2,136.944,261982
+13,"Original Uzi (4 Of Us)","Lil Uzi Vert","rap/trap music",58,0.596,0.81,0.615,0.0811,0,8.376,0.284,0.0534,150.03,166766
+14,"Money Mitch","Lil Uzi Vert","rap/trap music",57,0.143,0.842,0.333,0.168,0,13.886,0.384,0.22,141.001,247092
+15,"SideLine Watching (Hold Up)","Lil Uzi Vert","rap/trap music",67,0.262,0.747,0.553,0.117,0,7.294,0.117,0.281,141.888,191033
+16,"I Can Drive","Lil Uzi Vert","rap/trap music",62,0.346,0.759,0.489,0.149,0,9.141,0.321,0.0811,138.98,153809
+17,"You're Lost","Lil Uzi Vert","rap/trap music",61,0.468,0.764,0.591,0.215,0,7.253,0.209,0.172,146.982,158694
+18,"Erase Your Social","Lil Uzi Vert","rap/trap music",76,0.718,0.705,0.609,0.234,0,5.728,0.0729,0.694,140.058,199993
+19,"Ronda (Winners)","Lil Uzi Vert","rap/trap music",63,0.422,0.701,0.585,0.114,0,7.613,0.132,0.344,119.634,216294
+20,"Seven Million (feat. Future)","Lil Uzi Vert/Future","rap/trap music",67,0.487,0.886,0.629,0.121,7.66E-6,4.404,0.306,0.051,158.002,182491
+21,"No Problem (feat. Lil Wayne & 2 Chainz)","Chance the Rapper/Lil Wayne/2 Chainz","conscious hip hop/hip hop/pop/pop rap/rap",77,0.788,0.652,0.795,0.123,0,5.192,0.174,0.156,135.018,304607
+22,"Black Beatles","Rae Sremmurd/Gucci Mane","hip hop/pop/pop rap/rap/southern hip hop/trap music",79,0.355,0.794,0.632,0.128,0,6.163,0.0649,0.142,145.926,291893
+23,Panda,Desiigner,"dwn trap/hip hop/pop/pop rap/rap/southern hip hop/trap music",77,0.259,0.576,0.777,0.366,0,5.035,0.458,0.0231,145.2,246761
+24,Digits,"Young Thug","gangster rap/hip hop/pop/pop rap/rap/trap music",70,0.294,0.769,0.632,0.116,0,4.228,0.0537,0.0325,131.932,176387
+25,OOOUUU,"Young M.A","lgbtq+ hip hop/pop rap/rap/southern hip hop/trap music",68,0.623,0.64,0.819,0.156,0,4.108,0.455,0.533,166.012,234526
+26,"No Type","Rae Sremmurd","hip hop/pop/pop rap/rap/southern hip hop/trap music",31,0.208,0.86,0.458,0.0918,0,9.748,0.153,0.0121,125.007,199448
+27,"Slow Jamz","Twista/Kanye West/Jamie Foxx","dirty south rap/gangster rap/hip hop/pop rap/r&b/rap/trap music",61,0.59,0.569,0.744,0.256,0,5.757,0.181,0.369,145.063,316053
+28,wokeuplikethis*,"Playboi Carti/Lil Uzi Vert","hip hop/pop rap/rap/southern hip hop/trap music/underground hip hop/vapor trap",78,0.478,0.785,0.62,0.15,0,6.668,0.254,0.0138,78.476,235535

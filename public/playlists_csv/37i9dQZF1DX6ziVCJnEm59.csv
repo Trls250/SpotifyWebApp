@@ -1,0 +1,105 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,Shrike,Hozier,"folk-pop/irish singer-songwriter/pop",72,0.0632,0.387,0.278,0.102,0.00527,8.454,0.0318,0.464,153.426,300707
+2,Chemicals,"Gregory Alan Isakov","acoustic pop/chamber pop/folk-pop/indie folk/indie pop/neo mellow/new americana/stomp and flutter/stomp and holler",72,0.27,0.608,0.238,0.111,0.125,13.604,0.0434,0.885,78.013,199907
+3,"People Change",Mipso,"deep new americana/folk-pop/indie folk/new americana/progressive bluegrass/stomp and holler",69,0.412,0.374,0.276,0.122,0.0123,14.945,0.0353,0.884,80.169,212853
+4,"Thousand (feat. Lisa Hannigan)","Rosie Carney/Lisa Hannigan","chamber pop/indie anthem-folk",68,0.125,0.676,0.198,0.104,0.0132,13.91,0.0333,0.943,118.004,206440
+5,"Old Friend",Darlingside,"chamber pop/deep new americana/folk-pop/indie folk/new americana/stomp and holler",69,0.374,0.412,0.241,0.114,0.392,13.477,0.0295,0.811,100.979,148200
+6,"The Only Boy Awake",Meadows,---,69,0.405,0.52,0.48,0.107,0.0344,10.288,0.0303,0.61,122.086,163294
+7,Turntable,"Dead Horses","deep new americana",68,0.673,0.603,0.575,0.12,0.00183,10.325,0.0285,0.811,95.116,196173
+8,"Portland, Maine","Donovan Woods","acoustic pop/canadian folk/canadian indie/chamber pop/deep new americana/folk-pop/indie anthem-folk/indie folk/indiecoustica/new americana/stomp and holler",70,0.172,0.608,0.342,0.109,0.243,14.166,0.0316,0.782,80.109,203893
+9,"The Trouble with Wanting","Joy Williams","acoustic pop/folk-pop",62,0.19,0.396,0.198,0.0972,0,9.096,0.031,0.912,138.624,235587
+10,"All Is Well","Austin Basham","chamber pop/folk-pop/indie anthem-folk/indie folk",27,0.263,0.34,0.419,0.141,0.00211,12.244,0.0337,0.859,99.938,256681
+11,"My Arms Were Always Around You","Peter Bradley Adams","acoustic pop/chamber pop/folk-pop/indie anthem-folk/indie folk/indiecoustica/neo mellow/new americana/stomp and holler",70,0.422,0.643,0.436,0.11,0.459,12.245,0.0273,0.724,91.485,200800
+12,"For Now","Kina Grannis","acoustic pop/folk-pop/neo mellow/pop/viral pop",72,0.329,0.397,0.249,0.115,0,10.484,0.0394,0.926,79.614,198404
+13,Arms,"The Paper Kites","australian alternative rock/chamber pop/folk-pop/indie anthem-folk/indie folk/neo mellow/stomp and holler",70,0.24,0.41,0.141,0.118,0.0898,18.564,0.0337,0.932,149.888,203560
+14,"Follow My Voice","Julie Byrne","art pop/chamber pop/folk-pop/freak folk/indie folk/indie pop",64,0.177,0.408,0.0811,0.133,4.38E-5,14.655,0.0402,0.959,111.263,242387
+15,Untamed,"Eddie Berman","chamber pop/deep new americana/indie folk/new americana",26,0.0857,0.397,0.264,0.113,0.176,11.396,0.029,0.784,90.771,238213
+16,"If We Were Vampires","Jason Isbell and the 400 Unit","alternative country/deep new americana/folk/folk-pop/indie folk/new americana/outlaw country/roots rock/stomp and holler/texas country",72,0.685,0.629,0.208,0.107,3.7E-6,16.225,0.0324,0.824,96.609,215564
+17,"Find a Way","Quiet Arrows",---,26,0.279,0.695,0.104,0.0984,0.0158,15.329,0.0411,0.935,119.91,167404
+18,"Sense of Home","Harrison Storm","chamber pop/indie anthem-folk/indie folk",72,0.0904,0.565,0.207,0.102,1.8E-6,10.926,0.032,0.892,140.068,265840
+19,"Recording 15","Shannon Lay",---,70,0.439,0.552,0.126,0.109,0.0153,18.014,0.0306,0.956,92.441,242000
+20,"Old Now","Rosemary & Garlic","chamber pop",25,0.281,0.49,0.404,0.122,0.245,13.308,0.0278,0.82,140.053,289970
+21,"Hate the Way You Love Me","John Paul White",---,64,0.248,0.45,0.206,0.119,0,13.414,0.0298,0.695,75.932,243868
+22,Bees,"The Ballroom Thieves","chamber pop/deep new americana/folk-pop/indie folk/indiecoustica/new americana/stomp and holler",25,0.437,0.483,0.13,0.131,1.01E-6,15.214,0.0346,0.761,100.208,190120
+23,"Love Brought Weight","Old Sea Brigade","acoustic pop/chamber pop/indie anthem-folk/indie folk/indiecoustica",68,0.064,0.367,0.326,0.0759,0.358,15.605,0.0344,0.699,116.659,185747
+24,"Far Too Good","John Smith","chamber pop",66,0.553,0.825,0.324,0.115,9.49E-5,11.399,0.032,0.83,97.019,219333
+25,"Sinking Ship","Wild Child","austindie/chamber pop/folk-pop/indie folk/indie pop/stomp and holler",67,0.181,0.37,0.174,0.11,0.0029,19.316,0.0377,0.95,92.75,247493
+26,"Visions Of China","The Lumineers","folk-pop/indie folk/modern rock/stomp and holler",61,0.271,0.63,0.214,0.102,2.65E-5,9.455,0.0301,0.924,124.982,201085
+27,"Never in My Wildest Dreams","Dan Auerbach","folk-pop/funk/garage rock/indie folk/indie pop/indie rock/modern blues/modern rock/new americana/stomp and holler",69,0.623,0.559,0.466,0.0933,0.0039,6.769,0.0362,0.315,117.21,176027
+28,"Waiting Around","Aisha Badru","chamber pop/indie folk",25,0.117,0.464,0.147,0.111,0.00309,15.002,0.0369,0.988,144.372,152953
+29,"Sweetest Thing","Allman Brown","acoustic pop/chamber pop/indie anthem-folk/indie folk/indiecoustica",69,0.528,0.546,0.411,0.0955,9.73E-5,9.308,0.0475,0.701,79.785,218502
+30,Sausalito,"Lydia Luce",---,64,0.24,0.347,0.183,0.126,2.94E-5,11.149,0.0338,0.826,149.681,222859
+31,"Dirty Old Town","Craig Cardiff","canadian indie/deep new americana",68,0.328,0.555,0.418,0.237,0.00119,12.7,0.0455,0.309,159.764,246453
+32,"Burning Ground","Brandon Jenner",---,64,0.149,0.541,0.39,0.158,0.00673,10.913,0.0256,0.807,97.822,235302
+33,Sister,Haux,"chamber pop/indie anthem-folk/indie folk/indie r&b/vapor soul",65,0.473,0.453,0.0287,0.101,0.000113,22.37,0.136,0.917,187.229,133600
+34,Aeroplane,"Holly Throsby","australian children's music",24,0.313,0.408,0.271,0.112,0.436,11.92,0.0314,0.788,96.078,231409
+35,"Nothing Arrived - Live from Spotify London",Villagers,"chamber pop/folk-pop/indie folk/stomp and holler",30,0.42,0.579,0.415,0.671,0.0018,11.599,0.0397,0.929,102.713,219093
+36,"I Was Just Leaving","Ryan Montbleau","acoustic pop/deep new americana/folk-pop/jam band/neo mellow/new americana",67,0.434,0.615,0.361,0.218,6.97E-6,10.441,0.0451,0.783,135.579,178615
+37,"It'll Work Itself Out","Donovan Woods","acoustic pop/canadian folk/canadian indie/chamber pop/deep new americana/folk-pop/indie anthem-folk/indie folk/indiecoustica/new americana/stomp and holler",58,0.538,0.625,0.432,0.0995,0.00304,12.19,0.0313,0.108,98.002,182806
+38,"The Night We Met","Lord Huron","folk-pop/indie folk/indie pop/stomp and holler",79,0.105,0.441,0.379,0.639,0.262,9.545,0.0449,0.968,174.118,208227
+39,"Simple Song",Passenger,"neo mellow/pop",65,0.598,0.631,0.402,0.0892,0.0114,11.125,0.0286,0.616,78,228480
+40,River,"Leon Bridges","modern blues",75,0.191,0.658,0.179,0.17,0,10.866,0.0448,0.689,128.128,238560
+41,"Back to Autumn","Tall Heights","chamber pop/folk-pop/indie anthem-folk/indie folk/indiecoustica/neo mellow/new americana/stomp and holler",69,0.341,0.478,0.588,0.069,0.00109,8.032,0.0304,0.462,110.918,199653
+42,Sunscreen,"Ira Wolf","chamber pop/indie folk/indiecoustica",64,0.197,0.582,0.151,0.0983,3.41E-5,13.845,0.0353,0.884,136.758,178173
+43,"Why Woman","Glen Hansard","folk-pop/indie folk/irish rock/irish singer-songwriter/melancholia/neo mellow",63,0.0862,0.414,0.452,0.112,0.00055,8.193,0.0326,0.156,147.2,183293
+44,"I Am the Moon","The White Buffalo",---,57,0.209,0.239,0.158,0.0945,0.313,19.589,0.0362,0.597,129.934,198227
+45,"What Am I Here For","Jade Bird",---,64,0.0932,0.394,0.0826,0.154,0.00297,12.172,0.0392,0.946,131.512,285867
+46,"Scott Street","Phoebe Bridgers","art pop/chamber pop/folk-pop/indie folk/indie pop/indie rock/modern rock/new americana/stomp and holler",66,0.482,0.509,0.417,0.0887,0.0946,9.632,0.0295,0.77,134.956,305001
+47,"Fortune - Acoustic","William Fitzsimmons","acoustic pop/chamber pop/folk-pop/indie folk/neo mellow",64,0.506,0.502,0.0548,0.108,0.0418,23.684,0.0356,0.924,78.455,228013
+48,Fall,"Lisa Hannigan","chamber pop/folk-pop/irish singer-songwriter",56,0.358,0.47,0.235,0.108,0.00534,12.509,0.0286,0.828,59.54,179827
+49,"If Not For You (Demo)","Shakey Graves","austindie/deep new americana/folk-pop/indie folk/indie pop/new americana/stomp and holler",65,0.268,0.634,0.433,0.102,0.00858,8.018,0.0256,0.864,101.791,191671
+50,"Moving in Slow Motion","The Sweet Remains","acoustic pop",63,0.241,0.525,0.353,0.0964,0,10.985,0.0322,0.596,92.001,237747
+51,"With You - A Sweet Little Love Song Demo","Valerie June","deep new americana/folk",62,0.588,0.599,0.254,0.109,0.0029,13.815,0.0349,0.965,125.447,154573
+52,"Distant Sures","The Cave Singers","acoustic pop/alternative country/deep new americana/folk/folk-pop/indie folk/neo mellow/new americana/roots rock/stomp and holler",62,0.672,0.604,0.363,0.165,0.166,11.674,0.0295,0.876,88.377,191267
+53,Vedauwoo,"Lowland Hum","alternative americana/deep new americana",62,0.12,0.643,0.213,0.211,0.00138,15.584,0.0324,0.891,137.709,159102
+54,Memory,"Kina Grannis","chamber pop/deep new americana/folk-pop/new americana",64,0.167,0.579,0.0685,0.0887,0,19.86,0.0332,0.807,109.547,216000
+55,Records,"Kelly McFarling","Genres not available",61,0.559,0.705,0.144,0.108,0.0348,14.027,0.0502,0.964,80.965,229649
+56,"I Shall Cross This River","The Black Atlantic","Genres not available",23,0.0562,0.558,0.0991,0.0981,0.0183,18.512,0.0353,0.979,119.127,201040
+57,"Making All Things New","Aaron Espe","Genres not available",26,0.47,0.787,0.343,0.11,0.0275,11.413,0.0298,0.895,100.007,159600
+58,"Concrete Jungle - Acoustic",Au/Ra,"Genres not available",26,0.571,0.589,0.467,0.0847,0,8.179,0.031,0.761,165.908,160345
+59,Sleep,"Joseph & Maia","Genres not available",62,0.153,0.558,0.0843,0.13,4.09E-6,18.398,0.0372,0.881,109.528,167000
+60,"I Am Not in Love Anymore","Liza Anne","Genres not available",63,0.381,0.541,0.619,0.112,1.24E-5,7.247,0.0299,0.261,87.828,278958
+61,"Lights Off","Charlie Cunningham","Genres not available",65,0.418,0.611,0.33,0.18,0,11.475,0.0504,0.862,150.075,232400
+62,"The Flood","Joshua Hyslop","Genres not available",66,0.261,0.577,0.447,0.116,0.0836,11.342,0.0312,0.554,81.005,261640
+63,"The Time I've Wasted","Lori McKenna","Genres not available",63,0.261,0.473,0.25,0.101,8.83E-5,11.263,0.0304,0.796,145.027,213249
+64,"Real Peach","Henry Jamison","Genres not available",28,0.328,0.579,0.559,0.0817,0.000206,7.338,0.0325,0.398,151.985,233289
+65,"I Do","Susie Suh","Genres not available",62,0.262,0.766,0.191,0.261,7.95E-6,12.606,0.0394,0.932,104.03,212017
+66,"Tears Don't Fall","Terrible Sons","Genres not available",23,0.819,0.666,0.566,0.144,0.0269,12.136,0.0309,0.467,149.441,192168
+67,"Fly - Acoustic",Meadowlark,"Genres not available",64,0.345,0.377,0.267,0.0881,0.000155,13.29,0.0354,0.941,152.207,211805
+68,Shame,"Ciaran Lavery","Genres not available",23,0.31,0.619,0.299,0.243,4.99E-5,7.744,0.0279,0.846,115.405,251960
+69,"The Only Thing","Sufjan Stevens","Genres not available",46,0.473,0.516,0.15,0.113,0.0843,19.033,0.0405,0.987,158.964,281865
+70,Dreamer,Isbells,"Genres not available",26,0.421,0.629,0.383,0.0928,0.0259,13.195,0.044,0.735,154.001,265013
+71,"All the Beds I've Made (Acoustic)","Caroline Spence","Genres not available",62,0.291,0.306,0.213,0.103,0,7.79,0.0316,0.644,89.545,213867
+72,"Sick of Losing Soulmates",dodie,"Genres not available",66,0.108,0.518,0.276,0.356,0.136,15.953,0.038,0.644,75.263,267300
+73,"Caledonia, My Love","Hiss Golden Messenger","Genres not available",64,0.198,0.555,0.144,0.0953,0.000281,16.868,0.0474,0.842,117.462,180373
+74,"Early Morning Coffee Cups","Jaimi Faulkner","Genres not available",61,0.485,0.658,0.396,0.176,0,12.753,0.0319,0.627,97.957,199853
+75,Gold,"Matt Hartke/Maggie Peake","Genres not available",62,0.34,0.641,0.415,0.0977,0,8.212,0.0294,0.69,128.091,256875
+76,"Summer Clothes (Acoustic)","Marc Scibilia","Genres not available",62,0.839,0.653,0.5,0.097,0.00315,7.339,0.0389,0.526,85.994,137853
+77,Oceans,Seafret,"Genres not available",69,0.2,0.404,0.48,0.132,8.63E-6,8.906,0.0303,0.274,129.162,216187
+78,"Falling Water","Peter Oren","Genres not available",61,0.23,0.613,0.215,0.106,0.000104,13.147,0.0538,0.813,81.258,198625
+79,"First Day Of My Life","Bright Eyes","Genres not available",72,0.383,0.468,0.201,0.0952,8.28E-5,17.024,0.0388,0.915,94.422,188800
+80,Jolene,"Ray LaMontagne","Genres not available",67,0.288,0.587,0.142,0.0953,0.000162,15.196,0.0329,0.862,119.752,250867
+81,Songbird,"Cory Chisel/Adriel Denae","Genres not available",41,0.287,0.651,0.261,0.301,0,10.019,0.0266,0.57,104.116,206523
+82,"Sounds Like Help","Austin Basham","Genres not available",35,0.137,0.623,0.444,0.119,1.63E-6,8.585,0.0276,0.652,126.014,207800
+83,"Life Is Confusing","Langhorne Slim","Genres not available",64,0.496,0.373,0.216,0.0739,0.00105,11.41,0.0326,0.955,129.03,171413
+84,"...Familiar Place","Lucy Dacus","Genres not available",62,0.0277,0.214,0.148,0.113,0.058,17.775,0.037,0.0128,46.591,175778
+85,"So Cool",Caamp,"Genres not available",64,0.56,0.58,0.469,0.193,0.0122,10.02,0.0332,0.57,152.867,179068
+86,Unknown,Tuvaband,"Genres not available",23,0.0863,0.417,0.102,0.891,0.000275,16.787,0.0368,0.959,130.994,250850
+87,Woandering,"I Am Oak","Genres not available",49,0.21,0.695,0.269,0.35,0.266,12.881,0.0273,0.926,88.045,224687
+88,"On That Day",Ásgeir,"Genres not available",56,0.302,0.603,0.194,0.115,0.012,15.252,0.0282,0.91,99.927,225850
+89,"Blood Drive","Joshua Burnside","Genres not available",61,0.39,0.655,0.396,0.103,0.155,12.673,0.0349,0.964,99.956,234327
+90,"Fall Apart Today","Schuyler Fisk","Genres not available",62,0.522,0.416,0.295,0.156,0,11.523,0.0302,0.851,108.211,203760
+91,"Something Familiar","Josienne Clarke and Ben Walker","Genres not available",60,0.278,0.491,0.0409,0.0896,1.49E-5,18.431,0.0383,0.906,131.053,145467
+92,"Call It Dreaming","Iron & Wine","Genres not available",67,0.714,0.519,0.515,0.107,5.66E-5,9.448,0.031,0.61,80.329,231760
+93,"Stay Awake",Joseph,"Genres not available",55,0.0592,0.37,0.136,0.0999,0.000263,13.528,0.0433,0.898,146.081,114582
+94,"Build Me Up From Bones","Sarah Jarosz","Genres not available",64,0.284,0.515,0.286,0.106,6.9E-5,11.776,0.0378,0.862,115.076,216173
+95,"I Know","Sammy Brue","Genres not available",62,0.445,0.644,0.523,0.093,0,7.66,0.0378,0.395,95.966,195107
+96,"Let It Breathe","Water Liars","Genres not available",60,0.3,0.5,0.151,0.111,6.54E-5,16.107,0.0348,0.893,113.969,159646
+97,Answers,"Brooke Annibale","Genres not available",60,0.265,0.495,0.161,0.105,1.33E-6,14.078,0.0301,0.765,94.286,205667
+98,"Sudden Love (Acoustic)","The Woodlands","Genres not available",23,0.286,0.719,0.325,0.125,0,12.222,0.0355,0.847,130.534,182211
+99,"Gentle on My Mind","Robert Ellis/Courtney Hartman","Genres not available",55,0.323,0.488,0.326,0.119,0.0157,12.02,0.0328,0.945,106.063,352280
+100,"Up to Me","Sera Cahoone","Genres not available",60,0.581,0.64,0.381,0.104,0.000254,11.79,0.0302,0.911,91.49,193533
+101,"We Are One","Ana Egge","Genres not available",56,0.282,0.322,0.287,0.0935,0.000597,14.051,0.0345,0.647,76.443,248403
+102,"Thunderbolt's Goodnight","Josh Ritter","Genres not available",61,0.275,0.384,0.399,0.054,0.012,12.368,0.0317,0.849,101.209,245440
+103,"Got Over","Dustbowl Revival","Genres not available",60,0.377,0.662,0.444,0.0859,1.15E-5,8.573,0.0258,0.667,134.021,286720
+104,"Stay On My Shore","Joan Shelley","Genres not available",60,0.187,0.56,0.216,0.113,0.00486,11.108,0.0281,0.961,91.221,178387
