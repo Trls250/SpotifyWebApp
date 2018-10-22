@@ -1,6 +1,6 @@
 @include('includes/header')
 {{session::get('WallRecordsCount')}}
-        <section class="main-wrapper">
+        <section class="main-wrapper search-wrapper">
           <div class="container-fluid">
 
               @include('includes/sidebar')
@@ -114,6 +114,26 @@
             $("#advanced").hide();
             getRecords();
           });
+          
+          $(document).ready(function () {
+              $('#advanced').hide();
+                $('.search-btns').on('click', function() {
+                  $('.search-form').toggle("slow");
+                });
+                $(".menu-icons").on('click', function() {
+                  $(".sidebar").animate({
+                    width: "toggle"
+                  });
+                  $(this).toggleClass("open");
+                });
+                // $('.profile-navi').hide();
+                // $('.profile-nav-top').click(function () {
+                //     $(this).next('.profile-navi').slideToggle();
+                // });
+
+
+          });
+
             
             
             /*SETTING GLOBAL VARIABLES FOR FILTERATION*/

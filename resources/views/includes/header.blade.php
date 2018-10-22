@@ -71,7 +71,11 @@
                 </div>
               </div>
             </div>
-            <div class=" mobile-row">
+              @if(Request::is('playlist/getWall') || Request::is('search'))
+                <div class=" mobile-row search-header">
+              @else
+                <div class=" mobile-row">
+              @endif
               <div class="menu-icons" id="menu-icons">
                 <span class="sr-onlys"></span>
                 <span class="sr-onlys"></span>

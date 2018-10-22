@@ -1,5 +1,5 @@
 @include('includes/header')
-        <section class="main-wrapper">
+        <section class="main-wrapper search-wrapper">
           <div class="container-fluid">
             @include('includes/sidebar')
             @include('includes/search-menu')
