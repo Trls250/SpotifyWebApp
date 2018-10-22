@@ -67,10 +67,15 @@ class User extends Authenticatable
        
        $users_temp = DB::select($query);
 
+       $new_array = [];
+
+       foreach ($users_temp as $key) {
+        if($key->id != session::get('UserInfo')['id'])
+          array_push($new_array, $key);
+       }
 
 
-
-       return $users_temp;
+       return $new_array;
 
 
     }
