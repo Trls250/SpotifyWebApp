@@ -1800,6 +1800,9 @@ ul {
     }
 }
 @media (max-width: 639px){
+    .playlists-items.user-info-playlist-items .play-content {
+        width: 100%;
+    }
     .postscontent h2 {
         font-size: 18px;
         margin-bottom: 13px;
