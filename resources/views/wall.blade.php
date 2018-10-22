@@ -605,7 +605,7 @@
                 var filter_selectors = "";
 
             if(speechiness != 0){
-                filter_selectors += "[data-liveness=\""+speechiness+"\"]";                  
+                filter_selectors += "[data-speechiness=\""+speechiness+"\"]";                  
             }
             
                     

@@ -223,8 +223,648 @@
                     });
 
                   } );
+                  $( function() {
+                    $( ".slider-liveness" ).slider({
+
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
+                  $( function() {
+                    $( ".slider-loudness" ).slider({
+
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
+                  $( function() {
+                    $( ".slider-speechiness" ).slider({
+
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
+                   $( function() {
+                    $( ".slider-valence" ).slider({
+
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
+                   $( function() {
+                    $( ".slider-acousticness" ).slider({
+
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
+                   $( function() {
+                    $( ".slider-instrumentalness" ).slider({
+
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
+                   
+                  $( function() {
+                    $( ".slider-tempo" ).slider({
+
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
+                   $( function() {
+                    $( ".slider-popularity" ).slider({
+
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
+                  $( function() {
+                    $( ".slider-danceability" ).slider({
+
+                      slide: function( event, ui ) {
+                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                      //console.log('#'+$(this).attr('id'));
+                      }
+                    });
+
+                  } );
                   
                   //  from here addition
+                  
+                  $( function() {
+            $( ".slider-danceability" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-danceability'){
+                 danceability[0] = ui.values[0];
+                 danceability[1] = ui.values[1];
+                  
+            }
+            
+            
+                var filter_selectors = "";
+
+            if(danceability != 0){
+                filter_selectors += "[data-tempo=\""+danceability+"\"]";                  
+            }
+            
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   //console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+                                   temp['rating']=parseInt($(this).attr('data-rating'), 10) >= rating[0] && parseInt($(this).attr('data-rating'), 10) <= rating[1];
+                                   
+                                   if(temp['speechiness'] && temp['rating'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
+      $( function() {
+            $( ".slider-tempo" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-tempo'){
+                 tempo[0] = ui.values[0];
+                 tempo[1] = ui.values[1];
+                  
+            }
+            
+            
+                var filter_selectors = "";
+
+            if(tempo != 0){
+                filter_selectors += "[data-tempo=\""+tempo+"\"]";                  
+            }
+            
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   //console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+                                   temp['rating']=parseInt($(this).attr('data-rating'), 10) >= rating[0] && parseInt($(this).attr('data-rating'), 10) <= rating[1];
+                                   
+                                   if(temp['speechiness'] && temp['rating'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
+      $( function() {
+            $( ".slider-popularity" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-popularity'){
+                 popularity[0] = ui.values[0];
+                 popularity[1] = ui.values[1];
+                  
+            }
+            
+            
+                var filter_selectors = "";
+
+            if(popularity != 0){
+                filter_selectors += "[data-popularity=\""+popularity+"\"]";                  
+            }
+            
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   //console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+                                   temp['rating']=parseInt($(this).attr('data-rating'), 10) >= rating[0] && parseInt($(this).attr('data-rating'), 10) <= rating[1];
+                                   
+                                   if(temp['speechiness'] && temp['rating'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
+                  $( function() {
+            $( ".slider-liveness" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-liveness'){
+                 liveness[0] = ui.values[0];
+                 liveness[1] = ui.values[1];
+                  
+            }
+            
+            
+                var filter_selectors = "";
+
+            if(liveness != 0){
+                filter_selectors += "[data-liveness=\""+liveness+"\"]";                  
+            }
+            
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   //console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+                                   temp['rating']=parseInt($(this).attr('data-rating'), 10) >= rating[0] && parseInt($(this).attr('data-rating'), 10) <= rating[1];
+                                   
+                                   if(temp['speechiness'] && temp['rating'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
+      $( function() {
+            $( ".slider-instrumentalness" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-instrumentalness'){
+                 instrumentalness[0] = ui.values[0];
+                 instrumentalness[1] = ui.values[1];
+                  
+            }
+            
+            
+                var filter_selectors = "";
+
+            if(instrumentalness != 0){
+                filter_selectors += "[data-instrumentalness=\""+instrumentalness+"\"]";                  
+            }
+            
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   //console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+                                   temp['rating']=parseInt($(this).attr('data-rating'), 10) >= rating[0] && parseInt($(this).attr('data-rating'), 10) <= rating[1];
+                                   
+                                   if(temp['speechiness'] && temp['rating'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
+                  
+                  
+                  //end
+                  $( function() {
+            $( ".slider-acousticness" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-acousticness'){
+                 acousticness[0] = ui.values[0];
+                 acousticness[1] = ui.values[1];
+                  
+            }
+            
+            
+                var filter_selectors = "";
+
+            if(acousticness != 0){
+                filter_selectors += "[data-acousticness=\""+acousticness+"\"]";                  
+            }
+            
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   //console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+                                   temp['rating']=parseInt($(this).attr('data-rating'), 10) >= rating[0] && parseInt($(this).attr('data-rating'), 10) <= rating[1];
+                                   
+                                   if(temp['speechiness'] && temp['rating'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
+      
+        $( function() {
+            $( ".slider-valence" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-valence'){
+                 valence[0] = ui.values[0];
+                 valence[1] = ui.values[1];
+                  
+            }
+            
+            
+                var filter_selectors = "";
+
+            if(valence != 0){
+                filter_selectors += "[data-valence=\""+valence+"\"]";                  
+            }
+            
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   //console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+                                   temp['rating']=parseInt($(this).attr('data-rating'), 10) >= rating[0] && parseInt($(this).attr('data-rating'), 10) <= rating[1];
+                                   
+                                   if(temp['speechiness'] && temp['rating'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
+      $( function() {
+            $( ".slider-speechiness" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-speechiness'){
+                 speechiness[0] = ui.values[0];
+                 speechiness[1] = ui.values[1];
+                  
+            }
+            
+            
+                var filter_selectors = "";
+
+            if(speechiness != 0){
+                filter_selectors += "[data-speechiness=\""+speechiness+"\"]";                  
+            }
+            
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   //console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+                                   temp['rating']=parseInt($(this).attr('data-rating'), 10) >= rating[0] && parseInt($(this).attr('data-rating'), 10) <= rating[1];
+                                   
+                                   if(temp['speechiness'] && temp['rating'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
                     $( function() {
             $( ".slider-rating" ).slider({
               range: true,
@@ -249,6 +889,74 @@
 
             if(rating != 0){
                 filter_selectors += "[data-rating=\""+rating+"\"]";                  
+            }
+            
+                    
+                    
+                    
+                    global_filters = filter_selectors;
+
+              if(filter_selectors == ""){
+                    $(".search_message").fadeOut();
+                     //console.log("174");
+                    
+                  $(".playlist-filter").fadeIn();
+              }else{
+                //  $(".playlist-filter"+filter_selectors).fadeIn();
+                  
+                  
+                  
+                  $(".playlist-filter").filter(function () {
+                      
+                                   temp=[] 
+                                   temp['valence']=parseInt($(this).attr('data-valence'), 10) >= valence[0] && parseInt($(this).attr('data-valence'), 10) <= valence[1];
+                                   temp['acousticness']=parseInt($(this).attr('data-acousticness'), 10) >= acousticness[0] && parseInt($(this).attr('data-acousticness'), 10) <= acousticness[1];
+                                   temp['instrumentalness']=parseInt($(this).attr('data-instrumentalness'), 10) >= instrumentalness[0] && parseInt($(this).attr('data-instrumentalness'), 10) <= instrumentalness[1];
+                                   temp['liveness']=parseInt($(this).attr('data-liveness'), 10) >= liveness[0] && parseInt($(this).attr('data-liveness'), 10) <= liveness[1];
+                                   temp['loudness']=parseInt($(this).attr('data-loudness'), 10) >= loudness[0] && parseInt($(this).attr('data-loudness'), 10) <= loudness[1];
+                                   temp['tempo']=parseInt($(this).attr('data-tempo'), 10) >= tempo[0] && parseInt($(this).attr('data-tempo'), 10) <= tempo[1];
+                                   temp['popularity']=parseInt($(this).attr('data-popularity'), 10) >= popularity[0] && parseInt($(this).attr('data-popularity'), 10) <= popularity[1];
+                                   temp['danceability']=parseInt($(this).attr('data-danceability'), 10) >= danceability[0] && parseInt($(this).attr('data-danceability'), 10) <= danceability[1];
+                                   //console.log(temp['danceability']);
+                                   temp['energy']=parseInt($(this).attr('data-energy'), 10) >= energy[0] && parseInt($(this).attr('data-energy'), 10) <= energy[1];
+                                   temp['speechiness']=parseInt($(this).attr('data-speechiness'), 10) >= speechiness[0] && parseInt($(this).attr('data-speechiness'), 10) <= speechiness[1];
+                                   temp['rating']=parseInt($(this).attr('data-rating'), 10) >= rating[0] && parseInt($(this).attr('data-rating'), 10) <= rating[1];
+                                   
+                                   if(temp['speechiness'] && temp['rating'] && temp['valence'] && temp['acousticness'] && temp['instrumentalness'] && temp['liveness'] && temp['loudness'] && temp['tempo'] && temp['popularity'] && temp['danceability'] && temp['energy'])
+                                    return true ;
+                                    else return false;
+                                 }).fadeIn();
+                                 
+                  
+              }
+                    
+            }
+
+          });
+      });
+      $( function() {
+            $( ".slider-loudness" ).slider({
+              range: true,
+              min: 0,
+              max: 100,
+              values: [ 0, 100 ],
+              change: function( event, ui ) {
+                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $(".playlist-filter").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-loudness'){
+                 loudness[0] = ui.values[0];
+                 loudness[1] = ui.values[1];
+                  
+            }
+            
+            
+                var filter_selectors = "";
+
+            if(loudness != 0){
+                filter_selectors += "[data-loudness=\""+loudness+"\"]";                  
             }
             
                     
