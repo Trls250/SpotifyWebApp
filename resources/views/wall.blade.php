@@ -1,5 +1,5 @@
 @include('includes/header')
-{{session::get('WallRecordsCount')}}
+
         <section class="main-wrapper search-wrapper">
           <div class="container-fluid">
 

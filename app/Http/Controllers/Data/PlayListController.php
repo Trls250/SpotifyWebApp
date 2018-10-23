@@ -557,19 +557,18 @@ class PlayListController extends Controller {
     public function generateCsvFile($Response, $playlist_id){
 
 
-        // // echo"<pre>";
-        // // print_r("hello");
+        
 
         // for($i=0; $i<count($response['ResponseData']['items']); $i++){
-        //     print_r($response['ResponseData']['items'][$i]['track']['name']);
-        //     echo "</br>";
+        
+     
         // }
 
 
-        // //print_r($response['ResponseData']);
+        
         // exit();
         // // foreach ($request['ResponseData']['items'] as $key => $value) {
-        // //     print_r($request['ResponseData']['items']['key']);
+        
         // // }
 
         // exit();
@@ -845,8 +844,8 @@ class PlayListController extends Controller {
           $this->findMostRepeatedArtist($return['ArtistGenres']);
           $this->findAveragedTrackFeatures($return['TrackFeatures'], $return['ResponseData']);
 
-          /*echo"<pre>";
-          print_r($return['TrackFeatures']);
+          /*
+          
           exit();
           $playlist = Playlist::find($request->id);
           $playlist
@@ -908,9 +907,7 @@ class PlayListController extends Controller {
                 ]);
             }
             else{
-                /*echo "<pre>";
-                print_r($playlist);
-                exit();*/
+                
                 return view('playlistinfo')->with([
                     'Playlist' => $playlist]);
             }

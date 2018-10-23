@@ -66,8 +66,8 @@ class CommentsController extends Controller {
 
 
     public function test(Request $request){
-        echo '<pre>';
-        print_r($request);
+        
+        
         exit;
         return;
     }

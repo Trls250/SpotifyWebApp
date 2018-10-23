@@ -32,7 +32,7 @@
                   url: "{{ url('/deduct')}}",
                   success: function (data) {
                      
-                     console.log(data);
+                     //console.log(data);
                      $("#tagged_span_count").html(data);
                   },
                   error: function(XMLHttpRequest, textStatus, errorThrown) {
