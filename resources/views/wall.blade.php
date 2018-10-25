@@ -1097,9 +1097,10 @@
             if(flag == true){
               temp = false;
               $("#main_loader").fadeIn();
+            
               $.ajax({
                   type: "get",
-                  url: "{{ url('playlist/getWallRecords')}}"+'?offset='+offset+'&items='+items,
+                  url: "{{ url($url)}}"+'?offset='+offset+'&items='+items,
                   success: function (data) {
                       
                       $("#main_loader").fadeOut();

@@ -59,6 +59,26 @@ class Playlist extends Model {
     public function user(){
         return $this->belongsToMany('App\User');
     }
+    
+    public static function ratedPlaylists(){
+        try{
+           
+            
+            
+            
+            $query = "select * from playlists A inner join playlist_ratings B on A.id = B.playlist_id where B.user_id = '".session::get('UserInfo')['id']."'";
+            $result = DB::select($query);
+        }catch(\Illuminate\Database\QueryException $ex){
+            return ([
+                'Success' => false,
+                'Error' => $ex->getMessage()
+            ]);
+        }
+        
+        return ([
+            'Success' => true
+        ]);
+    }
 
     public static function isNewTag($user_id){
         $query = "select * from playlist_user where user_id = '".$user_id."' and is_viewed = 0";

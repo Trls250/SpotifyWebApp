@@ -12,6 +12,7 @@
                           data-acousticness="{{$playlist['acousticness']}}"
                           data-rating="{{$playlist['rating']}}">
         <div class="post-row clearfix">
+           
             @if(file_exists('public/playlists/'.$playlist->id.'.jpg'))
                 <div class="post-width post-image"  style="background-image: url({{ URL::asset('public/playlists/'.$playlist->id.'.jpg') }});">
                 </div>

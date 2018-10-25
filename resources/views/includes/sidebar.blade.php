@@ -3,8 +3,8 @@
         <li class="{{ Request::is('playlist/getWall') ? 'active' : '' }}">
             <a href='{{url('/playlist/getWall')}}'>Latest Activity</a>
         </li>
-        <li class="{{ Request::is('playlist/getAll') ? 'active' : '' }}">
-            <a href='{{url('/playlist/getAll')}}'>My Library</a>
+        <li class="{{ Request::is('playlist/getLibrary') ? 'active' : '' }}">
+            <a href='{{url('/playlist/getLibrary')}}'>My Library</a>
         </li>
         <li class="{{ Request::is('users/me') ? 'active' : '' }}">
             <a href='{{url('users/me')}}'>My Profile</a>
@@ -12,12 +12,16 @@
         <li class="{{ Request::is('people') ? 'active' : '' }}">
             <a href='{{url('people')}}'>People</a>
         </li>
+         <li class="{{ Request::is('playlist/getAll') ? 'active' : '' }}">
+            <a href='{{url('/playlist/getAll')}}'>My Public Playlists</a>
+        </li>
         <li class="{{ Request::is('playlist/getTaggedWall') ? 'active' : '' }}">
             <a href='{{url('playlist/getTaggedWall')}}'>Tagged Playlists</a>
             <div class="notifaction">
                 <span id = "tagged_span_count">{{session::get('Tagged')}}</span>
             </div>
         </li>
+       
 
     </ul>
 </div>

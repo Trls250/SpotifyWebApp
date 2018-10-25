@@ -64,6 +64,7 @@ select {
 .playmodal .modal-body {
     padding: 25px 0 50px 0;
 }
+
 .btn-playlists {
     background-image: linear-gradient(to right, #06a13d , #18cb58);
     border-radius: 50px;
@@ -286,6 +287,12 @@ ul {
     background-repeat: no-repeat;
     background-position: left 20px center;
 }
+.sidebar-lists li:nth-child(6){
+    background-image: url('../images/tagged-playlist.png');
+    background-repeat: no-repeat;
+    background-position: left 20px center;
+}
+
 .content-container {
     padding-right: 50px;
     padding-left: 350px;

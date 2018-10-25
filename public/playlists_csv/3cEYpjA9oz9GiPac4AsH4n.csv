@@ -1,0 +1,6 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,Api,Odiseo,"progressive psytrance",5,0.586,0.78,0.51,0.119,0.792,9.955,0.0604,0.00076,135.016,376000
+2,Is,"Vlasta Marek",healing/meditation,0,0.0288,0.177,0.0327,0.0791,0.873,31.498,0.0384,0.979,137.805,730067
+3,"All I Want","LCD Soundsystem","alternative dance/art pop/brooklyn indie/dance-punk/electronic/freak folk/garage rock/indie pop/indie rock/indietronica/modern rock/neo-psychedelic/new rave",42,0.949,0.53,0.829,0.106,0.88,7.014,0.0361,0.0537,134.99,401440
+4,Endpoints,"Glenn Horiuchi Trio",---,0,0.191,0.508,0.07,0.0807,0.0726,33.178,0.0758,0.591,114.767,358760
+5,"You Are So Beautiful",Zucchero,"classic italian pop/italian pop/italian pop rock",0,0.0493,0.347,0.25,0.118,0.000345,7.657,0.0336,0.934,122.318,176093

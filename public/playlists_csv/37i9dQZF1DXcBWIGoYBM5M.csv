@@ -1,0 +1,51 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,"Without Me",Halsey,"dance pop/electropop/etherpop/indie poptimism/pop/post-teen pop",93,0.533,0.752,0.488,0.0936,9.11E-6,7.05,0.0705,0.297,136.041,201661
+2,"Taki Taki (with Selena Gomez, Ozuna & Cardi B)","DJ Snake/Selena Gomez/Ozuna/Cardi B","dance pop/edm/electronic trap/pop/tropical house",99,0.591,0.841,0.798,0.0618,3.33E-6,4.206,0.229,0.153,95.948,212500
+3,"Sunflower - Spider-Man: Into the Spider-Verse","Post Malone/Swae Lee",pop/rap,88,0.91,0.757,0.501,0.0718,0,5.593,0.0466,0.541,89.931,158053
+4,"Kiss and Make Up","Dua Lipa/BLACKPINK","dance pop/pop/post-teen pop",83,0.643,0.678,0.729,0.303,0,4.188,0.137,0.0658,99.895,189173
+5,Better,Khalid,"indie r&b/pop/rap",95,0.116,0.442,0.585,0.14,0.391,10.332,0.0964,0.0984,97.565,229413
+6,"MIA (feat. Drake)","Bad Bunny/Drake","reggaeton/trap latino",96,0.174,0.818,0.54,0.099,0.000512,6.35,0.0544,0.0143,97.064,210368
+7,"Shallow - Radio Edit","Lady Gaga/Bradley Cooper","dance pop/pop/post-teen pop",88,0.277,0.575,0.33,0.0872,0,6.557,0.031,0.416,95.801,217213
+8,"Sweet but Psycho","Ava Max",---,90,0.628,0.719,0.704,0.166,0,4.724,0.0476,0.0691,133.002,187436
+9,"Let You Love Me","Rita Ora","dance pop/edm/pop/post-teen pop/r&b/tropical house",91,0.456,0.531,0.854,0.0773,0,3.149,0.198,0.288,94.419,190000
+10,Happier,Marshmello/Bastille,"brostep/pop/progressive electro house",100,0.671,0.687,0.792,0.167,0,2.749,0.0452,0.191,100.015,214290
+11,"Suncity (feat. Empress Of)","Khalid/Empress Of","indie r&b/pop/rap",80,0.341,0.694,0.63,0.12,0.000635,6.84,0.162,0.0998,90.045,189493
+12,"This Feeling","The Chainsmokers/Kelsea Ballerini","edm/electropop/pop/tropical house",92,0.449,0.575,0.571,0.0912,0,7.906,0.0439,0.0558,105.049,197947
+13,"Checklist (with Calvin Harris) (feat. WizKid)","Normani/Calvin Harris/WizKid",r&b,55,0.762,0.89,0.624,0.0903,5.16E-6,3.966,0.103,0.0944,116.046,169814
+14,"There's No Way (feat. Julia Michaels)","Lauv/Julia Michaels","dance pop/electropop/pop/post-teen pop",88,0.374,0.755,0.625,0.157,0,7.114,0.0896,0.49,147.02,174861
+15,"Woman Like Me (feat. Nicki Minaj)","Little Mix/Nicki Minaj","dance pop/girl group/pop/post-teen pop/r&b/talent show",87,0.826,0.757,0.849,0.0878,0,3.424,0.0536,0.173,150.036,228207
+16,"ZEZE (feat. Travis Scott & Offset)","Kodak Black/Offset/Travis Scott","hip hop/pop/pop rap/rap/trap music",94,0.543,0.826,0.615,0.0965,0,7.979,0.219,0.071,98.056,225199
+17,"Ruin My Life","Zara Larsson","dance pop/edm/pop/post-teen pop/r&b/swedish electropop/swedish pop/tropical house",80,0.585,0.665,0.699,0.0969,0,5.265,0.0578,0.423,124.896,190932
+18,"Consequences - orchestra","Camila Cabello","dance pop/pop/post-teen pop",82,0.213,0.547,0.289,0.148,0,8.131,0.0348,0.645,104.851,181913
+19,"Falling Down","Lil Peep/XXXTENTACION","emo rap/lgbtq+ hip hop",97,0.273,0.669,0.574,0.146,0.00294,6.442,0.0286,0.0175,120.013,196400
+20,"Head Above Water","Avril Lavigne","canadian pop/candy pop/dance pop/pop/post-teen pop",86,0.268,0.578,0.694,0.102,0,5.351,0.0706,0.0112,129.921,220850
+21,"Saturday Nights",Khalid,"indie r&b/pop/rap",78,0.371,0.54,0.439,0.0993,1.93E-5,8.591,0.115,0.635,167.908,209547
+22,"Electricity (with Dua Lipa)","Silk City/Dua Lipa/Diplo/Mark Ronson",edm,94,0.505,0.588,0.67,0.338,3.33E-6,6.439,0.0473,0.0104,118.159,238173
+23,1999,"Charli XCX/Troye Sivan","candy pop/dance pop/edm/electropop/hip pop/indie poptimism/metropopolis/pop/post-teen pop/tropical house",83,0.659,0.739,0.742,0.229,1.39E-6,4.586,0.0329,0.0227,124.016,189000
+24,Polaroid,"Jonas Blue/Liam Payne/Lennon Stella","dance pop/edm/pop/tropical house",83,0.475,0.652,0.897,0.0722,0,4.481,0.036,0.293,114.033,193377
+25,"Always Remember Us This Way","Lady Gaga","dance pop/pop/post-teen pop",81,0.296,0.553,0.502,0.764,0,5.972,0.0409,0.299,129.976,210200
+26,Natural,"Imagine Dragons","modern rock/rock/vegas indie",94,0.213,0.448,0.612,0.08,0,6.106,0.0708,0.216,97.773,189467
+27,REMEDY,Alesso,"big room/dance pop/edm/electro house/pop/progressive electro house/tropical house",89,0.483,0.601,0.775,0.0883,0,4.612,0.0473,0.269,119.964,190295
+28,"when the party's over","Billie Eilish","dance pop/electropop/pop/post-teen pop",86,0.205,0.498,0.104,0.0895,7.86E-5,14.08,0.0621,0.979,124.001,199931
+29,"Promises (with Sam Smith)","Calvin Harris/Sam Smith/Jessie Reyez","edm/electro house/house/pop/progressive house",98,0.486,0.781,0.768,0.325,4.91E-6,5.991,0.0394,0.0119,123.07,213309
+30,"Beautiful (feat. Camila Cabello)","Bazzi/Camila Cabello","dance pop/pop/post-teen pop",94,0.249,0.638,0.717,0.105,0,4.722,0.0337,0.346,100.027,180000
+31,"Goodbye (feat. Nicki Minaj & Willy William)","Jason Derulo/David Guetta/Nicki Minaj/Willy William","dance pop/pinoy hip hop/pop/pop rap/post-teen pop",91,0.481,0.643,0.904,0.189,0,3.694,0.0739,0.0776,103.028,195419
+32,"Trust My Lonely","Alessia Cara","dance pop/pop/post-teen pop/r&b",78,0.636,0.583,0.662,0.284,1.96E-6,6.025,0.156,0.00541,150.305,199707
+33,"Be Alright","Dean Lewis","australian pop/pop",96,0.443,0.553,0.586,0.0813,0,6.319,0.0362,0.697,126.684,196373
+34,"Diamond Heart","Alan Walker/Sophia Somajo","edm/tropical house",85,0.253,0.499,0.638,0.631,0,6.145,0.0438,0.129,89.98,239835
+35,"Love Someone","Lukas Graham","danish pop",88,0.274,0.55,0.415,0.108,0,6.557,0.052,0.161,172.065,205463
+36,"All I Am","Jess Glynne","dance pop/pop/post-teen pop/r&b/tropical house",87,0.536,0.74,0.669,0.184,0,5.199,0.0373,0.0445,122.007,218868
+37,"Wake Up in the Sky","Gucci Mane/Bruno Mars/Kodak Black","dirty south rap/hip hop/pop/pop rap/rap/southern hip hop/trap music",92,0.367,0.8,0.578,0.359,0,5.144,0.0485,0.00381,143.01,204665
+38,"No One Compares To You","Jack & Jack","dance pop/pop/post-teen pop/teen pop",75,0.625,0.703,0.748,0.0642,0,6.047,0.0435,0.123,111.943,184080
+39,"My Blood","Twenty One Pilots","pop punk/rock",85,0.674,0.749,0.723,0.0977,0.022,6.609,0.0432,0.0563,108.999,229120
+40,"No Stylist","French Montana/Drake","hip hop/pop/pop rap/rap/southern hip hop/trap music",91,0.498,0.765,0.704,0.227,0,4.589,0.127,0.0215,147.055,192172
+41,"Love No More","Loud Luxury/anders","edm/tropical house",66,0.222,0.765,0.672,0.258,5.92E-5,6.251,0.0538,0.0205,121.006,168636
+42,Noticed,"Lil Mosey","trap music/vapor trap",91,0.493,0.699,0.558,0.116,0,7.622,0.0603,0.462,79.992,165000
+43,"Look What I Found","Lady Gaga","dance pop/pop/post-teen pop",77,0.447,0.849,0.493,0.133,0.000463,4.1,0.0417,0.456,97.012,175240
+44,"Drip Too Hard","Lil Baby/Gunna","pop rap/rap/trap music",91,0.399,0.9,0.653,0.528,0,6.962,0.289,0.0945,112.503,145603
+45,Celoso,"Lele Pons","viral pop",88,0.667,0.746,0.703,0.331,0,4.179,0.107,0.352,166.043,179693
+46,"Lost In Japan - Remix","Shawn Mendes/Zedd","canadian pop/dance pop/pop/post-teen pop/viral pop",85,0.377,0.694,0.852,0.334,0,5.34,0.257,0.0882,107.178,201253
+47,"You Say","Lauren Daigle","ccm/christian music",83,0.1,0.494,0.637,0.0882,0,6.381,0.0333,0.669,147.924,274693
+48,"Say My Name","David Guetta/Bebe Rexha/J Balvin","dance pop/edm/pop",85,0.79,0.703,0.66,0.192,0,5.119,0.123,0.137,95.031,198947
+49,Trip,"Ella Mai","indie r&b/pop/r&b/uk contemporary r&b/urban contemporary",85,0.387,0.717,0.605,0.138,0,5.68,0.075,0.214,81.047,217118
+50,"Mo Bamba","Sheck Wes","hip hop/pop rap/rap/southern hip hop/trap music/underground hip hop/vapor trap",88,0.319,0.738,0.629,0.163,0.00114,4.882,0.0495,0.268,146.067,180898

@@ -1,0 +1,53 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,"The Chain - Remastered","Fleetwood Mac","album rock/mellow gold/rock/soft rock",67,0.637,0.522,0.755,0.0781,6.63E-5,6.95,0.0524,0.0517,151.796,269813
+2,"Under The Bridge","Red Hot Chili Peppers","alternative rock/funk metal/permanent wave/post-grunge/rock",67,0.513,0.554,0.49,0.136,0.000534,8.046,0.0457,0.0168,84.275,265507
+3,Peaches,"The Stranglers","art rock/britpop/dance rock/glam rock/new romantic/new wave/new wave pop/post-punk/protopunk/pub rock/punk/rock/ska/uk post-punk/zolo",40,0.961,0.566,0.577,0.0758,0.00896,9.719,0.0711,0.00866,71.328,247080
+4,"Money - 2011 Remastered Version","Pink Floyd","album rock/art rock/classic rock/progressive rock/psychedelic rock/rock/symphonic rock",16,0.783,0.469,0.537,0.269,0.00201,10.421,0.152,0.0241,124.193,382834
+5,"I Put A Spell On You","Creedence Clearwater Revival","album rock/classic rock/rock/roots rock/southern rock",4,0.653,0.395,0.743,0.0975,0.176,8.153,0.0301,0.00428,103.729,271787
+6,"Brown Eyed Girl","Van Morrison","classic rock/folk/folk rock/folk-pop/mellow gold/rock/roots rock/singer-songwriter/soft rock",0,0.924,0.595,0.569,0.142,0,11.595,0.0382,0.191,74.456,186022
+7,"Master Blaster (Jammin')","Stevie Wonder","funk/motown/quiet storm/soul",10,0.971,0.838,0.547,0.177,0.00059,11.015,0.0483,0.0617,131.112,307627
+8,"Another One Bites The Dust - Remastered 2011",Queen,"glam rock/rock",80,0.754,0.933,0.528,0.163,0.312,6.472,0.161,0.112,109.967,214653
+9,"Ramble On","Led Zeppelin","album rock/classic rock/hard rock/rock",71,0.886,0.468,0.607,0.225,0.000852,11.367,0.0336,0.072,98.429,263333
+10,"Mustang Sally","Wilson Pickett","brill building pop/christmas/classic rock/classic soul/folk rock/funk/memphis soul/motown/rhythm and blues/rock-and-roll/rockabilly/soul/southern soul",59,0.688,0.725,0.327,0.214,0.326,17.714,0.0387,0.113,110.438,187760
+11,"Seven Nation Army","The White Stripes","alternative rock/blues-rock/garage rock/indie rock/modern rock/permanent wave/punk blues/rock",81,0.303,0.745,0.466,0.272,0.35,7.62,0.0864,0.00666,123.889,231920
+12,"Proud Mary","Tina Turner","disco/mellow gold/new wave pop/soft rock",54,0.367,0.397,0.499,0.111,1.55E-6,10.972,0.0685,0.0766,171.067,327400
+13,Cocaine,"Eric Clapton","album rock/blues-rock/classic rock/electric blues/mellow gold/rock/soft rock",52,0.683,0.696,0.58,0.32,0.0212,9.716,0.0265,0.0744,105.172,218107
+14,"Dancing In The Moonlight (It's Caught Me In It's Spotlight)","Thin Lizzy","album rock/art rock/blues-rock/classic rock/hard rock/metal/rock",11,0.903,0.664,0.606,0.0667,7.21E-6,9.026,0.234,0.0388,145.725,202800
+15,"All Right Now",Free,"album rock/art rock/blues-rock/british blues/classic rock/electric blues/folk rock/hard rock/mellow gold/psychedelic rock/rock/southern rock/symphonic rock",30,0.743,0.766,0.446,0.318,0.000704,13.079,0.0867,0.25,119.774,332907
+16,"Billie Jean","Michael Jackson",pop,57,0.839,0.92,0.579,0.0419,0.0538,5.519,0.0414,0.0168,117.083,294000
+17,"Come Together","The Beatles Recovered Band",tribute,26,0.217,0.433,0.376,0.128,0.00497,9.571,0.0415,0.316,169.163,257805
+18,"Sunshine Of Your Love",Cream,"album rock/art rock/blues-rock/classic rock/electric blues/folk rock/hard rock/mellow gold/psychedelic rock/rock/roots rock",30,0.784,0.684,0.481,0.118,6.57E-5,12.59,0.0384,0.475,115.078,250000
+19,"My Girl","The Temptations","christmas/classic soul/disco/funk/memphis soul/motown/soul",15,0.565,0.592,0.512,0.243,0,6.27,0.0427,0.37,104.826,176067
+20,"Fly Away","Lenny Kravitz","permanent wave/pop rock/rock",55,0.709,0.597,0.868,0.664,0,5.096,0.0527,0.0214,160.022,221893
+21,"Pretty Fly (For a White Guy)","The Offspring","alternative metal/permanent wave/pop punk/post-grunge/punk/rock/skate punk",15,0.964,0.72,0.898,0.0675,0,3.701,0.0997,0.0962,143.431,188107
+22,"Lessons In Love","Level 42","art rock/brit funk/dance rock/disco/mellow gold/new romantic/new wave/new wave pop/post-disco/soft rock/synthpop",10,0.89,0.689,0.919,0.193,0.000201,5.518,0.0448,0.0869,113.003,241600
+23,"Sultans Of Swing","Dire Straits","album rock/classic rock/mellow gold/rock/soft rock",17,0.892,0.726,0.909,0.344,0.0276,4.966,0.0289,0.145,148.3,348520
+24,"American Life",Primus,"alternative metal/alternative rock/comic/funk metal/funk rock/garage rock/grunge/hard rock/nu metal/post-grunge/rock",7,0.83,0.577,0.642,0.0551,0.572,12.851,0.0274,0.0754,90.514,270107
+25,"Town Called Malice","The Jam","britpop/dance rock/mod revival/new wave/new wave pop/punk/rock/ska",8,0.737,0.554,0.913,0.0637,0.0104,8.907,0.0753,0.00218,101.917,173000
+26,"Wishing Well",Free,"album rock/art rock/blues-rock/british blues/classic rock/electric blues/folk rock/hard rock/mellow gold/psychedelic rock/rock/southern rock/symphonic rock",42,0.619,0.475,0.728,0.429,4.51E-5,9.157,0.0622,0.049,121.593,219000
+27,"Under Pressure","Queen/David Bowie","glam rock/rock",63,0.534,0.678,0.643,0.0708,0,9.316,0.0444,0.24,113.46,237520
+28,"The Guns of Brixton","The Clash","alternative rock/classic rock/dance rock/new wave/permanent wave/punk/rock",42,0.691,0.738,0.616,0.108,0.177,9.509,0.0816,0.00565,97.398,189933
+29,"Ace of Spades",Motörhead,"album rock/alternative metal/classic rock/groove metal/hard rock/metal/nwobhm/rock/speed metal/wrestling",13,0.209,0.321,0.99,0.0924,0.00631,4.461,0.204,0.00248,140.574,166707
+30,"Walk on the Wild Side","Lou Reed","art rock/classic rock/dance rock/glam rock/new wave/permanent wave/protopunk/psychedelic rock/rock/singer-songwriter",17,0.376,0.564,0.262,0.0896,0.000204,19.746,0.105,0.652,104.5,253960
+31,Hysteria,Muse,"modern rock/permanent wave/piano rock/post-grunge/rock",69,0.455,0.412,0.92,0.11,0.0026,4.852,0.0575,0.000456,93.162,227440
+32,"My Generation","The Who","album rock/art rock/british invasion/classic rock/folk rock/hard rock/mellow gold/protopunk/psychedelic rock/rock/roots rock",39,0.751,0.39,0.781,0.115,0.00519,2.915,0.0365,0.0146,96.898,204640
+33,"Crazy Little Thing Called Love - Remastered 2011",Queen,"glam rock/rock",71,0.712,0.599,0.761,0.349,4.74E-6,6.887,0.0421,0.713,77.015,163373
+34,"Feeling Good",Muse,"modern rock/permanent wave/piano rock/post-grunge/rock",65,0.267,0.345,0.418,0.103,1.75E-5,7.787,0.0316,0.299,109.044,198800
+35,"Super Freak","Rick James","classic soul/disco/funk/hip hop/motown/post-disco/quiet storm/soul",26,0.962,0.835,0.796,0.041,0,8.313,0.0545,0.206,132.448,204289
+36,"Dazed And Confused","Led Zeppelin","album rock/classic rock/hard rock/rock",62,0.433,0.271,0.553,0.0999,0.0096,9.526,0.0472,0.044,86.762,386373
+37,"Higher Ground","Stevie Wonder","funk/motown/quiet storm/soul",16,0.779,0.703,0.846,0.114,0.000909,10.223,0.0403,0.0909,125.111,226693
+38,"Brick House",Commodores,"adult standards/christmas/classic soul/disco/funk/mellow gold/motown/quiet storm/soft rock/soul",48,0.611,0.837,0.695,0.0415,0.00241,10.445,0.0566,0.0343,107.701,214093
+39,"Stand By Me","Ben E. King","adult standards/brill building pop/christmas/motown/quiet storm/rock-and-roll/rockabilly/soul/southern soul",0,0.664,0.638,0.184,0.101,0,15.835,0.0351,0.377,119.154,179800
+40,"(Sittin' On) The Dock Of The Bay","Otis Redding","christmas/classic soul/funk/memphis soul/soul/soul blues/southern soul",51,0.598,0.486,0.312,0.0601,1.59E-6,13.522,0.0533,0.726,205.917,166827
+41,"One Nation Under A Groove",Funkadelic,"funk/jazz funk/p funk/psychedelic rock/soul",28,0.868,0.793,0.845,0.318,0.0014,8.33,0.0413,0.423,122.379,451800
+42,Jeremy,"Pearl Jam","alternative rock/grunge/permanent wave/post-grunge/rock",49,0.262,0.234,0.909,0.104,0,4.424,0.0438,0.0208,105.53,319467
+43,"Come As You Are",Nirvana,"alternative rock/grunge/permanent wave/post-grunge/rock",14,0.553,0.5,0.832,0.0924,0.00655,6.281,0.0325,8.36E-5,120.066,219027
+44,"No More Tears","Ozzy Osbourne","album rock/classic rock/hard rock/metal/rock",0,0.339,0.358,0.709,0.657,0.000199,7.608,0.034,0.00078,104.667,442827
+45,"Sweet Emotion",Aerosmith,"album rock/classic rock/hard rock/rock",72,0.491,0.38,0.76,0.104,0.0294,10.961,0.0378,0.00298,99.437,274133
+46,"The Joker","Steve Miller Band","album rock/art rock/blues-rock/classic rock/folk rock/hard rock/heartland rock/mellow gold/psychedelic rock/rock/roots rock/soft rock/southern rock",32,0.796,0.596,0.448,0.206,5.3E-6,9.616,0.0396,0.365,83.293,264504
+47,,,"christmas/classic soul/disco/funk/memphis soul/motown/soul",0,0.876,0.822,0.41,0.0374,0.0671,13.092,0.0469,0.092,120.007,202333
+48,"The Sun Goes Down (Living It Up) - 7"" Mix","Level 42","art rock/brit funk/dance rock/disco/mellow gold/new romantic/new wave/new wave pop/post-disco/soft rock/synthpop",3,0.963,0.879,0.713,0.0383,0.000276,7.693,0.0805,0.394,101.695,226467
+49,"Cosmic Girl",Jamiroquai,"acid jazz/dance pop/electronic",66,0.925,0.633,0.921,0.309,0.00102,7.719,0.0495,0.0261,119.865,244147
+50,"Killing In the Name","Rage Against The Machine","alternative metal/alternative rock/conscious hip hop/funk metal/hard rock/nu metal/post-grunge/rap metal/rock",58,0.734,0.457,0.779,0.0247,2.04E-6,6.323,0.257,0.0185,86.573,313667
+51,Californication,"Red Hot Chili Peppers","Genres not available",82,0.328,0.592,0.767,0.127,0.00165,2.788,0.027,0.0021,96.483,329733
+52,"Feel Good Inc",Gorillaz,"Genres not available",82,0.772,0.818,0.705,0.613,0.00233,6.679,0.177,0.00836,138.559,222640

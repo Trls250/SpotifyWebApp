@@ -1,0 +1,993 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,"Bohemian Rhapsody - Remastered 2011",Queen,"glam rock/rock",43,0.224,0.414,0.404,0.3,0,9.928,0.0499,0.271,71.105,354320
+2,"Sweet Child O' Mine","Guns N' Roses","glam metal/hard rock/rock",81,0.63,0.454,0.91,0.116,0.0988,7.766,0.0446,0.0852,125.116,354520
+3,"Smells Like Teen Spirit",Nirvana,"alternative rock/grunge/permanent wave/post-grunge/rock",81,0.72,0.502,0.912,0.106,0.000173,4.556,0.0564,2.55E-5,116.761,301920
+4,"Imagine - Remastered 2010","John Lennon","album rock/art rock/classic rock/folk rock/mellow gold/psychedelic rock/rock",77,0.169,0.547,0.257,0.0935,0.183,12.358,0.0252,0.907,75.752,187867
+5,"You're the Voice","John Farnham","australian pop/australian rock",61,0.644,0.369,0.762,0.579,2.8E-5,8.993,0.0464,0.22,84.957,302107
+6,"Stairway To Heaven","Led Zeppelin","album rock/classic rock/hard rock/rock",79,0.197,0.338,0.34,0.116,0.0032,12.049,0.0339,0.58,82.433,482830
+7,"Purple Rain",Prince,funk/motown,76,0.189,0.367,0.452,0.689,0.00228,10.422,0.0307,0.0353,113.066,520787
+8,"It's a Long Way to the Top (If You Wanna Rock 'N' Roll)",AC/DC,"album rock/australian rock/hard rock/rock",71,0.532,0.456,0.863,0.0553,0.0545,3.551,0.0894,0.133,135.966,301227
+9,"Thriller - Single Version","Michael Jackson",pop,61,0.846,0.777,0.817,0.714,2.9E-5,5.64,0.0464,0.0902,118.407,312413
+10,"(I Can't Get No) Satisfaction - Mono Version / Remastered 2002","The Rolling Stones","album rock/british invasion/classic rock/protopunk/rock",36,0.904,0.725,0.853,0.196,0.127,7.842,0.0353,0.0348,136.282,222813
+11,"Dancing Queen",ABBA,"europop/swedish pop",36,0.754,0.543,0.87,0.792,0.000939,6.514,0.0428,0.358,100.804,230400
+12,"Livin' On A Prayer","Bon Jovi","glam metal/rock",27,0.854,0.559,0.687,0.0896,3.59E-5,10.912,0.0311,0.0591,122.666,250307
+13,"Friday on My Mind","The Easybeats","australian rock/bubblegum pop/classic garage rock/folk rock/freakbeat/merseybeat/protopunk/psychedelic rock",7,0.733,0.418,0.882,0.111,0.000678,9.083,0.0405,0.279,94.717,162107
+14,"Like A Virgin",Madonna,"dance pop/pop/pop rock",72,0.971,0.773,0.656,0.0697,0.00323,10.88,0.0381,0.202,119.754,218627
+15,"Good Vibrations - Remastered","The Beach Boys","brill building pop/folk rock/psychedelic rock/rock",70,0.385,0.396,0.473,0.109,0.000124,7.67,0.0345,0.326,133.449,219027
+16,"Knockin' On Heaven's Door - Remastered","Bob Dylan","album rock/classic rock/folk/folk rock/folk-pop/mellow gold/rock/roots rock/singer-songwriter",71,0.229,0.513,0.396,0.11,0.177,13.061,0.0299,0.251,140.208,149880
+17,"Hotel California - Remastered",Eagles,"album rock/classic rock/folk rock/heartland rock/mellow gold/rock/soft rock",83,0.609,0.579,0.508,0.0575,0.000494,9.484,0.027,0.00574,147.125,391376
+18,"Careless Whisper","George Michael","dance rock/new wave pop/soft rock",68,0.8,0.583,0.545,0.133,0,11.698,0.0351,0.232,153.25,302600
+19,"I Still Haven't Found What I'm Looking For - Remastered 2007",U2,"irish rock/permanent wave/rock",34,0.686,0.565,0.764,0.079,0.00488,9.43,0.0351,0.0139,100.891,277480
+20,Respect,"Aretha Franklin","christmas/classic soul/jazz blues/memphis soul/soul/southern soul",74,0.965,0.805,0.558,0.0546,2.2E-5,5.226,0.041,0.164,114.95,147600
+21,"I Will Always Love You","Whitney Houston","dance pop/pop/r&b/urban contemporary",76,0.108,0.306,0.214,0.0839,5.3E-6,12.518,0.0356,0.844,66.98,271093
+22,"Somebody That I Used To Know - feat. Kimbra",Gotye/Kimbra,"australian alternative rock/australian pop",62,0.755,0.864,0.515,0.0947,7.92E-5,6.967,0.0367,0.571,129.048,244893
+23,"Smoke On The Water - Remastered 2012","Deep Purple","album rock/art rock/blues-rock/classic rock/hard rock/metal/psychedelic rock/rock",73,0.805,0.598,0.676,0.112,0.225,9.211,0.0279,0.13,114.169,340742
+24,"Better Be Home Soon","Crowded House","australian alternative rock/australian pop/australian rock/dance rock/mellow gold/permanent wave/pop rock/rock/soft rock",51,0.342,0.445,0.49,0.0964,1.47E-6,8.807,0.0264,0.301,93.61,188050
+25,"Light My Fire - Remastered","The Doors","album rock/classic rock/piano rock/psychedelic rock/rock",46,0.502,0.407,0.565,0.105,0.000142,11.487,0.0322,0.361,125.096,430453
+26,"Down Under","Men At Work","album rock/australian alternative rock/australian rock/dance rock/mellow gold/new romantic/new wave/new wave pop/rock/soft rock",76,0.891,0.746,0.79,0.0534,0.0261,4.7,0.0257,0.0485,107.231,220867
+27,"Wonderwall - Remastered",Oasis,"britpop/madchester/permanent wave/rock",81,0.469,0.378,0.896,0.194,0,4.066,0.0407,0.000452,174.302,258773
+28,"What's Going On","Marvin Gaye","classic soul/funk/motown/northern soul/quiet storm/soul",29,0.805,0.245,0.833,0.359,0,5.555,0.116,0.105,205.375,231271
+29,"Khe Sanh","Cold Chisel","australian pop/australian rock",52,0.667,0.464,0.913,0.173,0,4.215,0.18,0.141,164.092,250670
+30,"Stayin' Alive - From ""Saturday Night Fever"" Soundtrack","Bee Gees","disco/mellow gold/soft rock",23,0.955,0.706,0.563,0.152,0.00151,15.564,0.0342,0.0704,103.613,281667
+31,"Single Ladies (Put a Ring on It)",Beyoncé,"dance pop/pop/post-teen pop/r&b",72,0.272,0.426,0.584,0.188,0,5.293,0.296,0.0383,193.437,193213
+32,Wannabe,"Spice Girls","dance pop/europop/girl group/pop/pop rock",55,0.863,0.764,0.842,0.117,0,6.923,0.0326,0.0987,110.029,172720
+33,Superstition,"Stevie Wonder","funk/motown/quiet storm/soul",22,0.872,0.609,0.657,0.071,0.00221,11.496,0.0695,0.0308,100.607,266160
+34,"Can't Get You Out of My Head","Kylie Minogue","australian dance/australian pop/dance pop/electropop/eurodance/europop/new wave pop/pop/pop rock",54,0.964,0.766,0.563,0.115,0.683,7.516,0.0339,0.0263,126.007,230640
+35,"Under The Bridge","Red Hot Chili Peppers","alternative rock/funk metal/permanent wave/post-grunge/rock",83,0.458,0.559,0.345,0.141,0.000105,13.496,0.0459,0.0576,84.581,264307
+36,"You Took The Words Right Out of My Mouth (Hot Summer Night)","Meat Loaf","album rock/mellow gold/rock/soft rock",57,0.68,0.459,0.681,0.498,0,8.773,0.0794,0.254,125.02,304440
+37,"Karma Chameleon","Culture Club","dance rock/disco/europop/mellow gold/new romantic/new wave/new wave pop/soft rock/synthpop",66,0.928,0.661,0.552,0.206,0,12.385,0.0337,0.214,92.056,252760
+38,Angels,"Robbie Williams","dance pop/europop/pop",68,0.257,0.431,0.59,0.0981,1.11E-5,6.362,0.0284,0.163,150.193,265333
+39,Rhiannon,"Fleetwood Mac","album rock/mellow gold/rock/soft rock",70,0.795,0.723,0.49,0.0923,0.0946,14.745,0.0296,0.111,129.012,252773
+40,"Enter Sandman",Metallica,"alternative metal/hard rock/metal/rock/speed metal/thrash metal",38,0.604,0.577,0.828,0.0581,0.0114,8.691,0.0298,0.00213,123.257,331267
+41,"Don't Be Cruel","Elvis Presley",christmas/rock-and-roll/rockabilly,64,0.844,0.697,0.55,0.0907,3.44E-5,11.496,0.18,0.856,84.802,122893
+42,"Need You Tonight",INXS,"australian alternative rock/australian rock/dance rock/mellow gold/new romantic/new wave/new wave pop/rock/soft rock",64,0.785,0.795,0.63,0.0894,0.575,7.217,0.0841,0.0419,108.701,181107
+43,"Space Oddity - 2015 Remastered Version","David Bowie","art rock/dance rock/glam rock/new wave/permanent wave/protopunk/rock",72,0.434,0.299,0.443,0.177,0.000138,12.621,0.0346,0.0748,139.539,318813
+44,"Last Goodbye","Jeff Buckley","folk-pop/melancholia/permanent wave/rock/singer-songwriter",57,0.495,0.492,0.845,0.209,0.00121,5.686,0.0442,0.0297,86.988,275493
+45,"Girls Just Want to Have Fun","Cyndi Lauper","dance pop/dance rock/europop/mellow gold/new wave pop/permanent wave/pop rock/soft rock",69,0.746,0.707,0.788,0.308,0.000571,5.269,0.0333,0.214,120.465,238120
+46,"Another Brick in the Wall, Pt. 2","Pink Floyd","album rock/art rock/classic rock/progressive rock/psychedelic rock/rock/symphonic rock",76,0.719,0.694,0.394,0.247,0.000677,15.881,0.0428,0.0781,104.126,238747
+47,"Treaty (Radio Mix)","Yothu Yindi","australian indigenous/australian rock/didgeridoo",26,0.767,0.701,0.952,0.354,0.00121,4.891,0.0507,2.56E-5,122.288,243080
+48,"American Pie","Don McLean","folk/folk rock/mellow gold/singer-songwriter/soft rock/traditional folk",74,0.497,0.527,0.509,0.144,0,10.893,0.0628,0.6,138.317,515867
+49,"Nothing Compares 2 U","Sinéad O'Connor","folk/folk-pop/lilith/new wave pop/pop rock",71,0.161,0.511,0.574,0.105,2.33E-5,7.016,0.0273,0.0425,119.917,280040
+50,"You're So Vain","Carly Simon","adult standards/folk/folk rock/lilith/mellow gold/singer-songwriter/soft rock",74,0.647,0.659,0.678,0.0784,6.69E-6,8.18,0.0313,0.157,106.186,258411
+51,"All Along the Watchtower","Jimi Hendrix","australian alternative rock/dance rock/kiwi rock/zolo",78,0.564,0.438,0.805,0.0842,5.69E-5,6.237,0.0624,0.00255,113.253,240800
+52,"Good Riddance (Time of Your Life)","Green Day","dance rock/new wave pop/soft rock",76,0.648,0.475,0.432,0.161,0,7.844,0.0302,0.183,94.605,153467
+53,"Call Me",Blondie,"album rock/art rock/classic rock/folk rock/mellow gold/psychedelic rock/rock",63,0.777,0.551,0.628,0.151,0.000194,13.799,0.036,0.0336,142.167,212893
+54,"Uptown Funk","Mark Ronson/Bruno Mars","dance rock/new romantic/new wave/new wave pop/permanent wave/soft rock/synthpop",83,0.928,0.856,0.609,0.0344,8.15E-5,7.223,0.0824,0.00801,114.988,269667
+55,"Blame It on the Boogie","The Jacksons","art rock/classic rock/dance rock/glam rock/new wave/permanent wave/protopunk/psychedelic rock/rock/singer-songwriter",51,0.881,0.774,0.747,0.112,0,7.302,0.0928,0.0671,113.298,210373
+56,"You Can Call Me Al","Paul Simon","classic rock/folk/folk rock/folk-pop/mellow gold/rock/roots rock/singer-songwriter/soft rock",75,0.82,0.776,0.763,0.077,0.0065,8.124,0.0535,0.182,128.433,280000
+57,"Throw Your Arms Around Me","Hunters & Collectors","album rock/british invasion/classic rock/protopunk/rock",61,0.93,0.57,0.765,0.317,0.00528,5.782,0.0264,0.156,112.966,233493
+58,"Piano Man","Billy Joel","australian indigenous/australian pop/australian rock",74,0.431,0.334,0.472,0.317,3.77E-6,8.792,0.0277,0.6,179.167,336093
+59,"Working Class Man","Jimmy Barnes","australian alternative rock/australian rock/dance rock",11,0.397,0.376,0.944,0.15,3.89E-5,3.882,0.0959,0.0115,138.322,250147
+60,"The Real Slim Shady",Eminem,"glam rock/mellow gold/piano rock/rock/soft rock",67,0.787,0.947,0.655,0.0433,0,4.243,0.0609,0.0331,104.485,284800
+61,"Love Will Tear Us Apart","Joy Division","irish rock/permanent wave/rock",71,0.909,0.443,0.956,0.135,0.825,6.198,0.0511,5.24E-5,146.754,206867
+62,"Truly Madly Deeply","Savage Garden","europop/swedish pop",60,0.663,0.6,0.614,0.0911,2.38E-5,6.132,0.0375,0.315,168.068,277600
+63,"In The Air Tonight - 2015 Remastered","Phil Collins","australian pop/australian rock",77,0.298,0.446,0.239,0.0697,4.1E-6,13.945,0.0316,0.551,189.507,336453
+64,"Oops!...I Did It Again","Britney Spears","australian pop/australian rock",77,0.894,0.751,0.834,0.355,1.77E-5,5.444,0.0437,0.3,95.053,211160
+65,"My Sharona","The Knack","dirty south rap/hip hop/pop rap/rap/southern hip hop",74,0.897,0.586,0.7,0.0318,0.00125,9.558,0.0363,0.0589,147.245,295400
+66,"Losing My Religion",R.E.M.,christmas/rock-and-roll/rockabilly,26,0.801,0.671,0.849,0.0971,0,5.963,0.0283,0.0879,125.429,269000
+67,"Tiny Dancer","Elton John","alternative metal/alternative rock/funk metal/funk rock/grunge/hard rock/nu metal/post-grunge/rap metal/rap rock/rock",34,0.281,0.415,0.425,0.143,0.000407,11.082,0.0278,0.396,145.234,377093
+68,"Born in the U.S.A.","Bruce Springsteen","dance pop/pop/post-teen pop/r&b",73,0.584,0.398,0.952,0.1,7.75E-5,6.042,0.061,0.000373,122.093,278680
+69,"Let's Talk About Sex",Salt-N-Pepa,"album rock/australian rock/hard rock/rock",12,0.724,0.871,0.709,0.236,0,7.213,0.109,0.037,106.912,212747
+70,"Eagle Rock - 2011 Remaster","Daddy Cool","dance pop/pop/pop rock",60,0.674,0.618,0.776,0.0808,5.35E-5,5.16,0.0402,0.125,125.536,250067
+71,"My Happiness",Powderfinger,"australian alternative rock/australian pop/australian rock/dance rock/mellow gold/permanent wave/pop rock/rock/soft rock",25,0.505,0.447,0.809,0.363,0,5.431,0.0295,0.00193,85.885,276707
+72,"Hey Jude","Paul McCartney","album rock/mellow gold/rock/soft rock",2,0.354,0.221,0.966,0.967,0.000187,2.747,0.0962,0.0357,150.641,455560
+73,Alive,"Pearl Jam","australian pop/dance pop/europop/folk-pop/lilith/new wave pop/pop rock",77,0.595,0.284,0.875,0.402,0.000461,6.069,0.0422,0.00752,75.009,340907
+74,"Rolling in the Deep",Adele,"art rock/dance rock/glam rock/new wave/permanent wave/protopunk/rock",75,0.507,0.73,0.77,0.0473,0,5.114,0.0298,0.138,104.948,228093
+75,"Beds Are Burning - Remastered","Midnight Oil","alternative rock/canadian pop/folk-pop/lilith/new wave pop/pop rock/singer-songwriter",66,0.341,0.754,0.496,0.0871,0.000152,8.7,0.0351,0.00539,119.186,258173
+76,Creep,Radiohead,"album rock/art rock/british invasion/classic rock/folk rock/hard rock/mellow gold/protopunk/psychedelic rock/rock/roots rock",82,0.104,0.515,0.43,0.129,0.000141,9.935,0.0369,0.0102,91.841,238640
+77,"London Calling - Remastered","The Clash","album rock/classic rock/piano rock/psychedelic rock/rock",71,0.776,0.651,0.801,0.0825,0,7.34,0.0513,0.123,133.763,200480
+78,"Back for Good - Radio Mix","Take That","glam metal/rock",70,0.547,0.6,0.504,0.137,0,9.761,0.0292,0.308,78.961,242267
+79,"Great Southern Land",ICEHOUSE,"classic soul/funk/motown/northern soul/quiet storm/soul",7,0.468,0.717,0.837,0.067,0.000145,5.641,0.0278,0.244,120.142,317200
+80,Clocks,Coldplay,"album rock/classic rock/glam rock/hard rock/metal/rock",76,0.261,0.577,0.749,0.183,0.0112,7.215,0.0279,0.599,130.969,307880
+81,"I Will Survive - Rerecorded","Gloria Gaynor","album rock/mellow gold/new wave pop/rock/soft rock",62,0.576,0.673,0.752,0.112,0,7.978,0.0491,0.00309,120.041,265027
+82,"Killing Me Softly With His Song",Fugees,"australian rock",72,0.506,0.765,0.29,0.571,1.02E-6,17.117,0.139,0.0279,92.409,298773
+83,"Every Breath You Take - Remastered 2003","The Police","boy band/dance pop/europop/pop",81,0.74,0.82,0.452,0.0701,0.00294,9.796,0.0348,0.543,117.401,253250
+84,"Tears In Heaven","Eric Clapton","alternative dance/australian dance/electronic/indietronica/neo-psychedelic/new rave",74,0.422,0.695,0.336,0.701,0.00264,12.999,0.0313,0.8,79.109,280000
+85,"Girls On Film - 2010 Remastered Version","Duran Duran","alternative rock/grunge/permanent wave/post-grunge/rock",62,0.53,0.725,0.859,0.048,0.0137,6.208,0.0636,0.0173,131.697,212853
+86,"The Real Thing","Russell Morris","album rock/art rock/classic rock/dance rock/mellow gold/new wave/permanent wave/rock/soft rock",36,0.383,0.432,0.709,0.325,9.84E-5,5.201,0.0347,0.104,165.931,274800
+87,MMMBop,Hanson,"dance pop/dance rock/europop/mellow gold/new wave pop/permanent wave/pop rock/soft rock",19,0.628,0.685,0.948,0.17,0.00347,5.182,0.0457,0.00513,104.881,267947
+88,Everlong,"Foo Fighters","australian alternative rock/australian pop/australian rock/dance rock/mellow gold/permanent wave/pop rock/rock/soft rock",78,0.356,0.412,0.882,0.0805,0.00031,5.54,0.0369,5.96E-5,158.066,250547
+89,"Wake Me up Before You Go-Go",Wham!,"australian rock/garage rock/post-punk/power pop/protopunk/pub rock/punk/punk blues/uk post-punk",79,0.9,0.62,0.574,0.0607,0,11.893,0.0421,0.272,81.548,231333
+90,Rehab,"Amy Winehouse","garage rock/indie rock/modern rock/rock",36,0.732,0.434,0.872,0.396,1.83E-6,2.974,0.0702,0.0473,71.515,213760
+91,"Are You Gonna Go My Way","Lenny Kravitz",pop,75,0.777,0.619,0.67,0.331,0.0109,10.319,0.0353,0.00165,129.267,211933
+92,"My Generation - Original Mono Version","The Who","christmas/deep funk/funk/motown/quiet storm/soul",19,0.745,0.332,0.822,0.161,9.33E-5,6.558,0.0988,0.165,96.253,197320
+93,"Bitter Sweet Symphony","The Verve","alternative rock/permanent wave/pop rock/rock",33,0.524,0.389,0.889,0.463,0,6.546,0.0442,0.0415,171.121,358427
+94,"Straight Lines",Silverchair,"album rock/australian rock/hard rock/rock",59,0.16,0.538,0.641,0.11,0.00149,6.582,0.0287,0.0275,127.505,257733
+95,"You Oughta Know","Alanis Morissette","alternative metal/funk metal/funk rock/grunge/hard rock/rap rock/rock/wrestling",54,0.473,0.641,0.861,0.868,0,6.9,0.0697,0.228,105.316,249760
+96,"Billie Jean","Michael Jackson","album rock/classic rock/dance rock/heartland rock/mellow gold/new wave pop/rock/soft rock",84,0.847,0.92,0.654,0.0359,0.0158,3.051,0.0401,0.0236,117.046,293827
+97,"Thinking Out Loud","Ed Sheeran","hip pop/neo soul/pop/r&b/urban contemporary",86,0.591,0.781,0.445,0.184,0,6.061,0.0295,0.474,78.998,281560
+98,"Sweet Caroline","Neil Diamond","dance rock/new wave pop/soft rock",35,0.578,0.529,0.127,0.237,0.000109,16.066,0.0274,0.611,63.05,203573
+99,"Money For Nothing","Dire Straits","australian alternative rock/australian rock/dance rock/mellow gold/new romantic/new wave/new wave pop/rock/soft rock",33,0.679,0.666,0.667,0.074,0.0005,9.305,0.0371,0.043,134.219,510933
+100,"Song 2",Blur,"album rock/art rock/british invasion/classic rock/dance rock/folk rock/glam rock/mellow gold/protopunk/psychedelic rock/rock/roots rock",65,0.855,0.658,0.709,0.0657,0.00447,6.736,0.0904,0.00188,129.699,121880
+101,"Message To My Girl","Split Enz","britpop/madchester/permanent wave/rock",1,0.349,0.584,0.69,0.639,1.53E-5,6.401,0.0231,0.201,99.56,293027
+102,"I Knew You Were Waiting (For Me)","George Michael/Aretha Franklin","dance rock/new romantic/new wave/new wave pop/synthpop",53,0.733,0.71,0.639,0.172,0,12.839,0.045,0.23,107.947,241000
+103,"Stand By Me - Remastered","John Lennon","australian alternative rock/dance rock/kiwi rock/zolo",63,0.633,0.632,0.556,0.0779,0.0215,10.138,0.0288,0.29,104.996,211667
+104,"Take On Me",a-ha,"irish rock/permanent wave/rock",85,0.876,0.573,0.902,0.0928,0.00125,7.638,0.054,0.018,84.412,225280
+105,"Walk On the Wild Side","Lou Reed","brill building pop/christmas/classic girl group/disco/folk rock/funk/motown/quiet storm/soul",73,0.385,0.575,0.318,0.0934,0.000202,16.729,0.109,0.683,104.522,254173
+106,Gloria,"Van Morrison",pop,34,0.884,0.673,0.665,0.118,0.00553,7.473,0.0398,0.0438,131.944,319973
+107,"Angie - Remastered 2009","The Rolling Stones","alternative rock/grunge/permanent wave/post-grunge/rock",30,0.407,0.429,0.554,0.105,0.000152,6.128,0.0291,0.67,136.302,272000
+108,"Dumb Things","Paul Kelly","dub/reggae/roots reggae/ska",56,0.761,0.44,0.901,0.174,0.000232,4.931,0.0835,0.0101,153.514,150333
+109,"Blue Sky Mine - Remastered","Midnight Oil","alternative rock/permanent wave/pop rock/rock",45,0.811,0.669,0.775,0.118,0.00349,6.059,0.0275,0.0388,132.019,260160
+110,"Candle In The Wind - Remastered 2014","Elton John","album rock/mellow gold/rock/soft rock",15,0.529,0.601,0.532,0.101,2.65E-5,9.718,0.0283,0.191,124.53,228933
+111,"With Or Without You - Remastered",U2,"dance rock/new wave pop/soft rock",34,0.116,0.538,0.432,0.139,0.309,11.882,0.0295,0.000185,110.181,295520
+112,"Mamma Mia",ABBA,"alternative rock/art rock/new wave/permanent wave/rock",30,0.782,0.748,0.771,0.466,0.000333,7.01,0.0318,0.28,137.543,215110
+113,"Cheap Wine - 2011 Remastered","Cold Chisel","brill building pop/folk rock/psychedelic rock/rock",38,0.815,0.681,0.893,0.213,0,3.519,0.037,0.178,123.651,205132
+114,"The Horses - Remastered","Daryl Braithwaite","brill building pop/bubblegum pop/christmas/classic rock/folk rock/mellow gold/psychedelic rock/rock/rock-and-roll/soft rock",50,0.211,0.705,0.411,0.0604,0,9.237,0.034,0.284,94.023,255720
+115,"Hey Ya!",OutKast,"alternative rock/classic rock/dance rock/new wave/permanent wave/punk/rock",58,0.966,0.744,0.916,0.253,0,4.911,0.0563,0.0349,79.456,228004
+116,"In the Ghetto","Elvis Presley",hollywood,53,0.418,0.477,0.415,0.104,0.00356,10.592,0.0313,0.754,87.907,177573
+117,Epic,"Faith No More","dance rock/disco/europop/mellow gold/new romantic/new wave/new wave pop/rock/soft rock/synthpop",53,0.262,0.358,0.893,0.126,0.0524,7.486,0.12,0.0222,174.238,293653
+118,"Crazy In Love","Beyoncé/JAY Z","album rock/classic rock/hard rock/rock",79,0.681,0.646,0.77,0.0715,0,6.596,0.226,0.00249,99.165,236133
+119,Thunderstruck,AC/DC,"art rock/dance rock/folk rock/mellow gold/new wave/new wave pop/power pop/pub rock/rock/roots rock",82,0.257,0.501,0.889,0.217,0.0114,5.175,0.0364,0.000147,133.519,292880
+120,Holiday,Madonna,"new wave pop",63,0.946,0.854,0.796,0.151,0.00184,5.567,0.0399,0.0542,115.625,368280
+121,"Weather With You","Crowded House","dance pop/pop/pop rap",68,0.891,0.643,0.614,0.214,7.17E-6,12.878,0.0279,0.25,93.981,224467
+122,"Dreams - 2004 Remastered Edition","Fleetwood Mac","australian pop/australian rock",80,0.789,0.828,0.492,0.128,0.00428,9.744,0.0276,0.0644,120.151,257800
+123,Torn,"Natalie Imbruglia","album rock/blues-rock/classic rock/hard rock/mellow gold/rock/southern rock",72,0.599,0.559,0.928,0.696,5.56E-5,3.04,0.0355,0.0746,96.315,244813
+124,"Changes - 2015 Remastered Version","David Bowie","glam metal/rock",64,0.41,0.547,0.308,0.109,0,11.75,0.0377,0.505,114.719,217747
+125,"Ironic - 2015 Remaster","Alanis Morissette","australian dance/australian pop/europop/french pop",54,0.365,0.408,0.582,0.159,0,8.305,0.0508,0.218,114.926,230000
+126,"You Better You Bet","The Who","heartland rock/mellow gold/permanent wave/rock/singer-songwriter",8,0.57,0.579,0.762,0.064,4.42E-5,8.551,0.0433,0.492,161.95,338560
+127,"L.A. Woman","The Doors","dance pop/neo mellow/piano rock/pop/pop quebecois/pop rap/pop rock",66,0.698,0.354,0.731,0.115,0.00119,9.178,0.0381,0.0817,170.64,471160
+128,"You Give Love A Bad Name","Bon Jovi","album rock/british invasion/classic rock/protopunk/rock",26,0.805,0.559,0.825,0.363,0,10.725,0.0401,0.0771,122.821,223733
+129,"I Heard It Through The Grapevine","Marvin Gaye","album rock/glam metal/hard rock/rock/swedish hard rock",69,0.679,0.729,0.324,0.101,0,13.017,0.0393,0.195,116.855,195267
+130,"I Was Made For Lovin' You",KISS,pop,35,0.867,0.768,0.852,0.0723,7.45E-5,6.215,0.038,0.213,128.374,271240
+131,Footloose,"Kenny Loggins","art rock/dance rock/new romantic/new wave/new wave pop/permanent wave/rock/soft rock/synthpop",73,0.582,0.564,0.911,0.118,4.36E-5,5.39,0.0536,0.159,173.938,226293
+132,"Evie Pt. 1 (Let Your Hair Hang Down)","Stevie Wright","art rock/dance rock/glam rock/new wave/permanent wave/protopunk/rock",8,0.751,0.461,0.948,0.508,0.000269,4.615,0.129,0.0317,90.364,237987
+133,"Everybody (Backstreet's Back) - Extended Version","Backstreet Boys","australian alternative rock/australian rock/dance rock/mellow gold/new romantic/new wave/new wave pop/rock/soft rock",61,0.509,0.792,0.811,0.224,0.000155,5.198,0.0367,0.00602,108.054,287293
+134,"Since I Left You","The Avalanches","pop rap/rap",15,0.481,0.519,0.911,0.826,0,7.228,0.0593,0.246,102.81,260947
+135,"Come As You Are",Nirvana,"disco/europop/new wave pop/soft rock",77,0.539,0.5,0.824,0.0916,0.00161,5.846,0.0388,0.00016,120.125,218920
+136,"Roxanne - Remastered 2003","The Police","glam rock/rock",73,0.662,0.618,0.748,0.0477,4.1E-6,8.905,0.361,0.0384,134.001,191500
+137,"True Colors","Cyndi Lauper","mellow gold",69,0.262,0.386,0.145,0.1,0.000196,16.94,0.0362,0.792,171.63,226067
+138,"Fall At Your Feet","Crowded House","dance pop/electropop/hip pop/indie r&b/neo soul/pop/r&b/urban contemporary",60,0.561,0.65,0.371,0.102,0.0116,13.623,0.026,0.457,102.583,198800
+139,"(I'm) Stranded - 2004 Digital Remaster","The Saints","australian alternative rock/australian rock/dance rock",36,0.425,0.397,0.958,0.273,0,3.846,0.0437,0.0043,87.096,210547
+140,"Sex on Fire","Kings of Leon","mellow gold/soft rock",81,0.374,0.542,0.905,0.136,0.0104,5.653,0.054,0.00172,153.398,203347
+141,"Beat It - Single Version","Michael Jackson","australian indigenous/australian pop/australian rock",79,0.915,0.779,0.867,0.197,7.98E-6,3.704,0.0457,0.0491,138.858,258040
+142,"I Got You (I Feel Good)","James Brown","adult standards/bubblegum pop/disco/folk/folk rock/mellow gold/soft rock",19,0.707,0.573,0.592,0.0956,4.17E-6,6.724,0.13,0.44,144.408,167347
+143,"Everybody Hurts",R.E.M.,"east coast hip hop/hardcore hip hop/hip hop/old school hip hop/rap",31,0.178,0.303,0.319,0.114,0.0306,10.435,0.0282,0.65,188.348,320267
+144,"You Shook Me All Night Long",AC/DC,"indie rock/modern rock/permanent wave/rock/vegas indie",74,0.769,0.529,0.768,0.297,0.000685,5.51,0.0566,0.00224,127.316,210880
+145,"Love Rears Its Ugly Head","Living Colour","folk-pop/lilith/mellow gold/new wave pop/permanent wave/pop rock/rock",51,0.731,0.615,0.477,0.231,6.25E-5,8.816,0.092,0.0558,156.008,259467
+146,"Love Is A Battlefield - 2005 Digital Remaster","Pat Benatar",---,44,0.863,0.679,0.875,0.0801,0.000189,4.25,0.0556,0.0408,90.71,249533
+147,"Empire State of Mind (Part II) Broken Down","Alicia Keys","glam rock/mellow gold/piano rock/rock/soft rock",72,0.142,0.479,0.368,0.118,4.1E-5,7.784,0.0341,0.739,92.959,216480
+148,"Don't Let the Sun Go Down on Me","George Michael/Elton John","alternative metal/alternative rock/modern rock/nu metal/permanent wave/pop rock/post-grunge/rock",52,0.26,0.435,0.547,0.544,0,8.092,0.0287,0.494,135.453,346813
+149,"Original Sin",INXS,"dance rock/new romantic/new wave/new wave pop/rock/soft rock/synthpop",56,0.731,0.685,0.633,0.0935,0.000106,7.259,0.0377,0.0136,131.397,317240
+150,"Lola - Remastered","The Kinks","europop/swedish pop",58,0.935,0.468,0.839,0.151,0.461,7.39,0.0365,0.459,151.842,242027
+151,"Another One Bites The Dust - Remastered 2011",Queen,"dance rock/new romantic/new wave/new wave pop/synthpop",80,0.754,0.933,0.528,0.163,0.312,6.472,0.161,0.112,109.967,214653
+152,"No Scrubs",TLC,"album rock/classic rock/hard rock/rock",81,0.59,0.743,0.675,0.0685,0.000717,4.267,0.0953,0.0251,92.909,214400
+153,"Miss You - Remastered","The Rolling Stones","new wave pop",58,0.828,0.796,0.711,0.364,0.00381,4.755,0.0427,0.426,109.673,288667
+154,"Big Yellow Taxi","Joni Mitchell","big beat/downtempo/electronic/trip hop",68,0.97,0.611,0.47,0.581,0,9.135,0.0356,0.579,85.527,134800
+155,"The Unguarded Moment - 2002 Digital Remaster","The Church","australian indigenous/australian pop/australian rock",53,0.497,0.404,0.843,0.252,0.000111,5.793,0.0642,0.00547,135.904,254400
+156,"I Touch Myself",Divinyls,"alternative rock/neo mellow/permanent wave/pop rock/post-grunge",60,0.726,0.66,0.711,0.0647,7.47E-6,10.211,0.0334,0.181,109.328,227640
+157,"I Love Rock n' Roll","Joan Jett & The Blackhearts","art rock/dance rock/glam rock/melancholia/mellow gold/new romantic/new wave/new wave pop/soft rock",15,0.907,0.542,0.735,0.701,0,5.019,0.0481,0.322,94.589,175733
+158,"You Got It","Roy Orbison","album rock/art rock/classic rock/folk/folk rock/heartland rock/mellow gold/new wave pop/pop rock/rock/singer-songwriter/soft rock",68,0.667,0.649,0.618,0.192,1.46E-6,10.728,0.0265,0.596,114.688,210267
+159,"Where the Wild Roses Grow - 2011 Remastered Version","Nick Cave & The Bad Seeds/Kylie Minogue","alternative dance/art pop/chamber pop/dance pop/electronic/electropop/experimental pop/folk-pop/icelandic pop/metropopolis/permanent wave/pop rock/trip hop",59,0.163,0.336,0.47,0.0953,0.00332,10.541,0.0319,0.378,154.649,237080
+160,"How Deep Is Your Love","Bee Gees","album rock/classic rock/folk rock/heartland rock/mellow gold/pop rock/rock/singer-songwriter/soft rock/southern rock",16,0.648,0.624,0.19,0.231,1.41E-6,17.547,0.0288,0.268,105.021,241360
+161,Kiss,Prince,"brill building pop/classic soul/motown/soul/southern soul",75,0.742,0.898,0.271,0.0461,0.00138,12.238,0.091,0.0135,111.485,226240
+162,"Groove Is In The Heart",Deee-Lite,"heartland rock/mellow gold/permanent wave/rock/singer-songwriter",66,0.924,0.694,0.881,0.0851,0.0196,4.053,0.0701,0.0153,121.554,231787
+163,"Paradise City","Guns N' Roses","dance pop/pop/post-teen pop",77,0.475,0.273,0.952,0.142,0.0112,8.762,0.0841,0.0169,100.269,405640
+164,"When The War Is Over","Cold Chisel","adult standards/mellow gold/rock/soft rock",37,0.455,0.562,0.661,0.071,0,3.433,0.0246,0.0762,92.836,265306
+165,"We Will Rock You - Remastered",Queen,"alternative rock/grunge/permanent wave/post-grunge/rock",77,0.475,0.692,0.497,0.259,0,7.316,0.119,0.676,81.308,122067
+166,"Don't You (Forget About Me)","Simple Minds","album rock/australian rock/hard rock/rock",74,0.683,0.672,0.792,0.302,0.0605,7.033,0.0264,0.0843,111.277,260680
+167,"Whole Lotta Love","Led Zeppelin","glam rock/rock",77,0.422,0.412,0.902,0.405,0.131,11.6,0.405,0.0484,89.74,333893
+168,"Mysterious Ways",U2,"contemporary country/country/country dawn/pop rock",14,0.718,0.674,0.667,0.105,0.00561,8.004,0.0295,0.00176,99.79,243587
+169,"Man in the Mirror","Michael Jackson","alternative rock/art rock/britpop/dance rock/electronic/madchester/new romantic/new wave/new wave pop/permanent wave/post-punk/rock/synthpop/uk post-punk",64,0.265,0.794,0.798,0.114,1.15E-5,5.639,0.0366,0.43,100.338,319307
+170,"I Love The Nightlife","Alicia Bridges",disco/hi-nrg,44,0.892,0.519,0.655,0.137,0.8,5.837,0.0449,0.315,125.177,337373
+171,"Boogie Wonderland","Earth, Wind & Fire/The Emotions","dance pop/pop/pop rock",73,0.963,0.802,0.756,0.0521,0.00765,10.791,0.0349,0.0843,131.715,288293
+172,"The Boys Light Up - Remastered","Australian Crawl","australian pop/australian rock",13,0.7,0.616,0.949,0.519,5.75E-5,5.47,0.0369,0.0852,97.859,279819
+173,Hurt,"Johnny Cash","classic soul/funk/motown/northern soul/quiet storm/soul",26,0.149,0.544,0.378,0.105,0.00035,8.607,0.0264,0.719,91.078,216533
+174,"Bennie And The Jets - Remastered 2014","Elton John","conscious hip hop/gangster rap/hardcore hip hop/hip hop/old school hip hop/rap/west coast rap",6,0.739,0.669,0.671,0.521,1.18E-5,7.996,0.0524,0.249,132.588,322549
+175,"Too Funky - Single Edit","George Michael","dance pop/pop",40,0.761,0.658,0.895,0.742,0.321,8.304,0.0753,0.0218,98.275,225027
+176,"(I've Had) The Time of My Life","Bill Medley/Jennifer Warnes","candy pop/dance rock/new romantic/new wave/new wave pop/permanent wave/pop rock/power pop/rock",21,0.485,0.697,0.665,0.0796,0.00665,12.907,0.0412,0.0476,108.535,289680
+177,"Looking Out My Backdoor (Live)","Creedence Clearwater Revisited","girl group/hip hop/hip pop/old school hip hop/rap",5,0.873,0.603,0.903,0.988,0,4.993,0.0591,0.15,99.733,164600
+178,"Do You Really Want To Hurt Me","Culture Club",pop,64,0.42,0.744,0.376,0.108,0,14.996,0.0366,0.0815,100.78,262173
+179,"Dirty Deeds Done Dirt Cheap",AC/DC,"glam metal/hard rock/rock",72,0.507,0.668,0.906,0.135,0.00229,4.881,0.17,0.214,135.653,231933
+180,"(Everything I Do) I Do It For You","Bryan Adams","classic rock/rock",34,0.273,0.52,0.363,0.0609,1.13E-5,12.655,0.0286,0.0752,131.224,393640
+181,"Ego Is Not A Dirty Word - 2015 Remaster",Skyhooks,"canadian pop/dance pop/pop/pop rap/pop rock",26,0.867,0.422,0.872,0.347,1.51E-6,3.071,0.0478,0.553,150.885,176987
+182,"Nothing Else Matters",Metallica,"dance pop/dance rock/disco/europop/girl group/hi-nrg/new romantic/new wave/new wave pop/soft rock",39,0.158,0.553,0.362,0.075,6.01E-6,11.218,0.0263,0.0458,142.352,388267
+183,"Brass In Pocket",Pretenders,"album rock/classic rock/folk rock/heartland rock/mellow gold/pop rock/psychedelic rock/rock/roots rock/soft rock",55,0.815,0.766,0.655,0.243,0,6.677,0.0324,0.721,97.771,184093
+184,"Every 1's A Winner","Hot Chocolate","dance rock/new romantic/new wave/ska/ska revival",40,0.907,0.721,0.604,0.126,0.0134,6.81,0.0298,0.141,107.943,244480
+185,"Good Times","Jimmy Barnes","detroit hip hop/g funk/hip hop/rap",48,0.722,0.46,0.992,0.323,0.025,5.064,0.0732,0.09,156.417,233093
+186,"More Than Words",Extreme,"irish rock/permanent wave/rock",22,0.258,0.403,0.134,0.113,0,14.955,0.0353,0.469,182.894,334000
+187,"The Tide Is High",Blondie,"neo soul/r&b",56,0.962,0.779,0.676,0.125,0.0329,7.258,0.0259,0.0417,96.961,232733
+188,"Gimme! Gimme! Gimme! (A Man After Midnight)",ABBA,"album rock/classic rock/hard rock/metal/rock/stoner rock",30,0.53,0.744,0.495,0.177,0.00825,9.615,0.0402,0.0162,119.541,294347
+189,Hurricane,"Bob Dylan","australian alternative rock/australian pop/australian rock/dance rock/mellow gold/permanent wave/pop rock/rock/soft rock",68,0.743,0.509,0.827,0.12,0,7.715,0.079,0.0409,135.601,512733
+190,"By The Way","Red Hot Chili Peppers","alternative metal/alternative rock/funk metal/funk rock/grunge/hard rock/nu metal/post-grunge/rap metal/rap rock/rock",74,0.198,0.451,0.97,0.102,0.00355,4.938,0.107,0.0264,122.444,216933
+191,"China Girl - 2002 Remastered Version","David Bowie","australian rock",58,0.874,0.646,0.633,0.107,0.0282,10.09,0.0274,0.0155,134.357,257000
+192,"Give Me One Reason","Tracy Chapman","alternative metal/canadian pop/canadian rock/nu metal/post-grunge",71,0.602,0.608,0.419,0.108,7.58E-6,10.016,0.0331,0.602,100.22,268333
+193,"Who Are You","The Who","album rock/dance rock/mellow gold/new romantic/new wave/new wave pop/soft rock",26,0.489,0.651,0.661,0.106,0.00313,11.405,0.0511,0.265,156.371,378707
+194,Brick,"Ben Folds Five","funk/motown/quiet storm/soul",58,0.267,0.542,0.454,0.15,0.00279,10.247,0.025,0.645,96.881,271720
+195,"Constant Craving - Remastered","k.d. lang","dance pop/pop/pop rock",61,0.321,0.6,0.77,0.0967,4.79E-6,5.559,0.0302,0.0603,128.473,277240
+196,"High And Dry",Radiohead,"dance pop/pop/pop rap",73,0.352,0.418,0.383,0.0896,0.0177,11.782,0.0257,0.0718,87.773,257480
+197,Zombie,"The Cranberries","folk-pop/lilith/pop rock",40,0.313,0.309,0.649,0.367,0.00595,8.994,0.035,0.0158,166.915,306440
+198,"Son Of A Preacher Man","Dusty Springfield","adult standards/christmas/dixieland/jazz trumpet/new orleans jazz/swing/vocal jazz",64,0.761,0.367,0.472,0.0874,0,11.902,0.0689,0.195,179.686,146627
+199,"YMCA - Original Version 1978","Village People","art rock/dance rock/new romantic/new wave/new wave pop/permanent wave/pop rock/post-punk/rock/zolo",71,0.728,0.723,0.969,0.115,0,4.516,0.142,0.0643,126.653,286800
+200,"Papa Don't Preach",Madonna,"acoustic punk/alternative rock/dance rock/new wave/pop rock/post-punk/punk/rock",52,0.962,0.796,0.908,0.04,0,3.523,0.0326,0.553,121.976,269573
+201,"Morning Glory - Remastered",Oasis,"australian alternative rock/australian pop/australian rock/dance rock/new wave pop",53,0.1,0.327,0.982,0.491,4.79E-5,3.038,0.0937,0.0665,136.96,303320
+202,"Tainted Love","Soft Cell","acoustic pop/neo mellow/pop/pop rock",74,0.623,0.501,0.5,0.262,0,8.284,0.0378,0.462,144.435,153763
+203,"I See Red","Split Enz","australian alternative rock/australian pop/australian rock/dance rock/mellow gold/new romantic/new wave/new wave pop/synthpop",0,0.588,0.372,0.957,0.877,2.72E-6,4.761,0.0853,0.00171,175.59,259213
+204,"Where The Streets Have No Name - Remastered 2007",U2,"conscious hip hop/hip hop/rap",16,0.264,0.492,0.709,0.153,0.00564,9.66,0.0359,0.0113,125.799,336613
+205,"Baby Love - Mono","The Supremes","alternative rock/permanent wave/pop rock/rock",22,0.633,0.576,0.686,0.397,0,6.599,0.038,0.76,135.602,158973
+206,"Set Fire to the Rain",Adele,"australian rock",74,0.445,0.603,0.67,0.112,1.66E-6,3.882,0.0249,0.00408,107.995,242974
+207,"Even Flow","Pearl Jam","irish rock/permanent wave/rock",75,0.265,0.394,0.944,0.298,4.54E-6,6.506,0.0761,0.00178,105.338,292581
+208,"I Shot The Sheriff","The Wailers","album rock/classic rock/piano rock/psychedelic rock/rock",25,0.719,0.799,0.641,0.0704,2.22E-5,9.33,0.171,0.313,96.806,281027
+209,"It's The End Of The World As We Know It (And I Feel Fine)",R.E.M.,"electro/hip hop/old school hip hop",66,0.803,0.383,0.893,0.0251,0,8.638,0.037,0.026,205.544,246933
+210,"I'd Do Anything For Love (But I Won't Do That) - Live From The Beacon Theatre, New York, U.S.A./1995","Meat Loaf","album rock/art rock/classic rock/mellow gold/progressive rock/rock/soft rock/symphonic rock",66,0.237,0.265,0.553,0.983,0,10.198,0.0702,0.727,76.114,329400
+211,"I Want Your Sex - Pts. 1 & 2 Remastered","George Michael","gangster rap/hip hop/old school hip hop/rap",50,0.8,0.812,0.6,0.0465,0.0248,13.418,0.0538,0.00509,99.189,557293
+212,"The Ship Song - 2010 Remastered Version","Nick Cave & The Bad Seeds","album rock/mellow gold/rock/soft rock",49,0.125,0.318,0.412,0.0959,0,10.364,0.0303,0.271,142.287,314147
+213,Kokomo,"The Beach Boys","album rock/blues-rock/classic rock/electric blues/hard rock/heartland rock/mellow gold/rock/southern rock",51,0.769,0.393,0.714,0.312,2.49E-6,8.521,0.0374,0.159,115.514,166520
+214,"Daydream Believer","The Monkees","album rock/classic rock/hard rock/metal/rock",66,0.649,0.51,0.488,0.11,0,10.304,0.0304,0.256,125.683,179613
+215,"Should I Stay or Should I Go - Remastered","The Clash","art rock/dance rock/glam rock/new wave/permanent wave/protopunk/rock",79,0.816,0.742,0.833,0.384,0,6.463,0.115,0.079,113.375,188987
+216,"Summer Nights - From “Grease” Soundtrack","John Travolta/Olivia Newton-John","britpop/madchester/permanent wave/rock",52,0.571,0.733,0.743,0.158,4.18E-5,6.148,0.055,0.663,124.287,214920
+217,"Sisters Are Doin' It for Themselves - Remastered",Eurythmics,"australian pop/australian rock",44,0.961,0.656,0.908,0.18,0,5.786,0.0417,0.0215,136.22,294160
+218,"I Don't Want to Miss a Thing",Aerosmith,punk/rock,78,0.138,0.383,0.662,0.248,0,5.162,0.0333,0.165,121.154,298760
+219,"Oliver's Army","Elvis Costello & The Attractions",funk/motown,16,0.912,0.523,0.809,0.195,0,7.016,0.0302,0.134,143.223,179653
+220,"Toy Soldiers",Martika,"folk/folk-pop/heartland rock/lilith/mellow gold/new wave pop/pop rock",58,0.199,0.522,0.441,0.22,0,11.703,0.028,0.416,130.133,287533
+221,"I Gotta Feeling","The Black Eyed Peas","album rock/art rock/classic rock/progressive rock/psychedelic rock/rock/symphonic rock",37,0.61,0.743,0.766,0.509,0,6.375,0.0265,0.0873,127.96,289133
+222,"Saturday Night","Cold Chisel",christmas/rock-and-roll/rockabilly,32,0.462,0.62,0.532,0.325,0,5.936,0.0285,0.223,90.532,261569
+223,"Sweet Home Alabama","Lynyrd Skynyrd","german pop/german rock/new wave pop",41,0.886,0.597,0.605,0.118,0.000331,12.013,0.0255,0.181,97.782,281147
+224,"Bad Medicine","Bon Jovi",pop,12,0.845,0.53,0.979,0.0797,0,2.092,0.0368,0.0231,118.652,316520
+225,Chains,"Tina Arena","album rock/mellow gold/rock/soft rock",46,0.55,0.684,0.464,0.0994,0.00103,9.37,0.0298,0.267,92.132,262133
+226,"Glory Days","Bruce Springsteen","dance rock/jangle pop/new romantic/new wave/new wave pop/post-punk",63,0.978,0.574,0.96,0.121,0,4.906,0.032,0.0457,117.486,254733
+227,Apologize,OneRepublic,"irish rock/permanent wave/rock",38,0.502,0.593,0.74,0.102,2.22E-5,6.12,0.0339,0.363,118.008,208107
+228,"Jumpin' Jack Flash","The Rolling Stones","permanent wave/punk/rock/skate punk",11,0.711,0.569,0.896,0.0723,0.31,9.068,0.0634,0.0602,137.292,221747
+229,"The Final Countdown",Europe,"art rock/britpop/dance rock/glam rock/new romantic/new wave/new wave pop/post-punk/protopunk/pub rock/punk/rock/ska/uk post-punk/zolo",74,0.185,0.536,0.844,0.0608,0.00084,6.918,0.058,0.0628,117.652,310333
+230,"Black or White - Remastered Version","Michael Jackson","adult standards/brill building pop/british invasion/christmas/folk/folk rock/lounge/mellow gold/motown/soul",51,0.878,0.52,0.86,0.072,0.072,5.64,0.0817,0.117,114.999,256280
+231,Shout,"Tears For Fears","glam rock/rock",27,0.527,0.509,0.935,0.119,5.21E-5,11.081,0.0411,0.178,97.921,392676
+232,"Ashes To Ashes","David Bowie","hip pop/neo soul/pop/r&b/urban contemporary",15,0.826,0.702,0.789,0.273,1.36E-5,10.208,0.0469,0.111,120.781,264293
+233,"What You Need",INXS,"australian alternative rock/australian rock/dance rock",10,0.491,0.661,0.899,0.155,0.00494,4.586,0.106,0.0421,115.941,214387
+234,"Gold Digger","Kanye West/Jamie Foxx","art rock/dance rock/glam rock/new wave/permanent wave/protopunk/rock",38,0.625,0.646,0.696,0.0762,0,5.572,0.342,0.0192,92.88,207401
+235,"Flashdance...What a Feeling - Radio Edit","Irene Cara","dance rock/disco/europop/mellow gold/new romantic/new wave/new wave pop/rock/soft rock/synthpop",66,0.459,0.644,0.566,0.187,1.34E-6,8.941,0.033,0.00799,122.501,239053
+236,"Killer Queen - Remastered 2011",Queen,"album rock/classic rock/folk/folk rock/folk-pop/mellow gold/rock/roots rock/singer-songwriter",30,0.612,0.535,0.651,0.133,0,6.326,0.0544,0.391,117.218,179600
+237,"Wicked Game","Chris Isaak","australian pop/australian rock",69,0.29,0.667,0.548,0.0946,0.0122,7.802,0.0262,0.744,112.549,286880
+238,Milkshake,Kelis,"dance pop/hip pop/pop/r&b/urban contemporary",69,0.759,0.881,0.774,0.206,0.0346,6.068,0.0439,0.00986,112.968,182627
+239,"King Of The Mountain - Remastered","Midnight Oil","disco/funk/motown/neo soul/post-disco/quiet storm/soul/urban contemporary",41,0.76,0.455,0.948,0.174,0,3.41,0.0692,0.0307,73.916,229560
+240,"A Groovy Kind Of Love - 2016 Remastered","Phil Collins","alternative rock/classic rock/dance rock/garage rock/glam rock/new wave/permanent wave/protopunk/psychedelic rock/punk/rock",57,0.19,0.456,0.243,0.116,4.45E-6,12.19,0.0286,0.414,144.131,210347
+241,"Before Too Long","Paul Kelly","reggae fusion/uk reggae",56,0.81,0.571,0.86,0.183,0.0102,5.879,0.0287,0.00119,133.883,203187
+242,"You Make Me Feel Like Dancing - Remastered 2010","Leo Sayer","art pop/art rock/dance rock/folk-pop/lilith/new wave/new wave pop/permanent wave/piano rock/pop rock/singer-songwriter",36,0.677,0.731,0.721,0.257,0,5.21,0.0457,0.078,95.899,217467
+243,"Walk This Way",Run–D.M.C.,"folk-pop/modern rock/neo mellow",59,0.946,0.767,0.651,0.0609,3.86E-5,10.186,0.0501,0.00841,105.592,310960
+244,"Somebody Told Me","The Killers","album rock/canadian pop/classic canadian rock/heartland rock/mellow gold/rock/soft rock",73,0.729,0.502,0.972,0.0627,0.000702,3.96,0.0793,6.78E-5,138.019,197280
+245,"All I Wanna Do","Sheryl Crow","permanent wave/soft rock",26,0.931,0.82,0.528,0.257,0.0186,11.179,0.0321,0.111,120.091,272107
+246,"Sledgehammer (Peter Gabriel/Jarle G. Storløkken)","THE STAFF BAND OF THE NORWEGIAN ARMED FORCES","album rock/british invasion/classic rock/protopunk/rock",35,0.598,0.702,0.283,0.0397,0.847,14.526,0.04,0.616,97.364,279875
+247,"Your Song","Elton John",disco,35,0.289,0.551,0.27,0.0966,7.04E-6,12.808,0.0326,0.851,128.221,244227
+248,"1979 - Remastered 2012","The Smashing Pumpkins","australian alternative rock/australian rock",45,0.964,0.765,0.788,0.0513,0.588,9.896,0.0332,0.0166,126.879,266200
+249,"Rio - 2009 Remastered Version","Duran Duran/David Kershenbaum",disco/post-disco,60,0.676,0.544,0.873,0.0925,1.82E-5,7.425,0.0525,0.0415,140.902,337333
+250,"Take A Chance On Me",ABBA,"adult standards/christmas/disco/lounge/mellow gold/quiet storm/soft rock/soul/vocal jazz",29,0.924,0.687,0.68,0.274,0,7.976,0.0256,0.182,107.041,243933
+251,"Holy Grail","Hunters & Collectors","australian pop/australian rock",58,0.712,0.648,0.946,0.337,0.0071,4.214,0.0369,0.125,100.896,230067
+252,"Nights In White Satin - Single Version","The Moody Blues","celtic rock/new wave pop/scottish rock",58,0.22,0.21,0.346,0.247,0.336,12.069,0.0299,0.252,79.026,265627
+253,"Jump - 2015 Remastered Version","Van Halen","art pop/chamber pop/folk-pop/indie rock/lilith/new wave pop/permanent wave/piano rock/pop rock/singer-songwriter",78,0.796,0.572,0.835,0.0702,0.000376,6.219,0.0317,0.171,129.994,241600
+254,"Mr. Jones","Counting Crows","art rock/dance rock/hi-nrg/new romantic/new wave/new wave pop/soft rock/synthpop",62,0.73,0.571,0.836,0.182,4.09E-6,5.556,0.0371,0.193,141.608,272733
+255,"Who Made Who",AC/DC,"australian pop/australian rock",59,0.655,0.514,0.825,0.607,0.293,5.136,0.0486,0.000286,125.273,207147
+256,"Devil Inside",INXS,"disco/mellow gold/soft rock",7,0.538,0.589,0.585,0.104,0.44,7.525,0.037,0.0008,150.758,313707
+257,"Funky Town","Pseudo Echo","alternative rock/dance rock/new romantic/new wave/permanent wave/rock",35,0.873,0.667,0.713,0.228,0.000431,7.906,0.0336,0.123,128.032,294708
+258,"Give It Away","Red Hot Chili Peppers","alternative metal/nu metal/post-grunge/rap metal",72,0.776,0.666,0.936,0.153,0.086,9.919,0.0476,0.00244,91.577,282907
+259,"Lust For Life","Iggy Pop",---,13,0.778,0.2,0.943,0.139,0,8.217,0.0544,0.0125,203.243,313800
+260,1999,Prince,"album rock/blues-rock/classic rock/folk rock/mellow gold/rock/soft rock",67,0.625,0.866,0.73,0.0843,0,8.201,0.0767,0.137,118.523,379267
+261,"Like A Prayer",Madonna,"dance rock/new romantic/new wave/new wave pop/rock/soft rock/synthpop",71,0.257,0.624,0.842,0.181,2.11E-5,5.285,0.0376,0.264,111.037,342680
+262,"That's The Way Love Goes","Janet Jackson","art pop/art rock/dance rock/folk-pop/lilith/new wave/new wave pop/permanent wave/piano rock/pop rock/singer-songwriter",66,0.582,0.703,0.7,0.0718,0.471,6.789,0.0693,0.302,97.675,265107
+263,Kids,"Robbie Williams/Kylie Minogue","dance rock/new romantic/new wave/new wave pop",14,0.407,0.768,0.934,0.325,1.04E-5,4.849,0.205,0.00626,92.291,286707
+264,"I Want You Back","The Jackson 5","glam rock/rock",39,0.887,0.639,0.548,0.366,9.68E-5,13.534,0.0394,0.29,98.359,176333
+265,"Who's That Girl - Remastered Version",Eurythmics,"dance rock/new romantic/new wave/new wave pop",41,0.348,0.771,0.465,0.0716,0,10.174,0.0431,0.0884,119.547,225267
+266,"Lego House","Ed Sheeran","reggae/roots reggae",74,0.565,0.592,0.637,0.13,0,8.48,0.0992,0.562,159.701,185093
+267,"Whatta Man","Salt-N-Pepa/En Vogue","dance rock/disco/europop/mellow gold/new romantic/new wave/new wave pop/rock/soft rock/synthpop",53,0.917,0.753,0.545,0.241,4.7E-5,10.685,0.21,0.162,173.227,308360
+268,"Purple Haze","Jimi Hendrix","adult standards/disco/mellow gold/motown/quiet storm/soft rock",70,0.486,0.533,0.905,0.0698,0.578,5.27,0.0754,0.00876,108.9,170813
+269,"Dancing On The Ceiling","Lionel Richie","alternative hip hop/art pop",27,0.731,0.698,0.774,0.409,2.26E-6,8.642,0.048,0.12,133.197,270002
+270,Scar,"Missy Higgins","new wave pop",58,0.834,0.653,0.789,0.276,0,5.669,0.0522,0.378,91.787,213733
+271,"Sweetest Thing - Remastered 2007",U2,"album rock/classic rock/hard rock/rock",9,0.488,0.52,0.642,0.116,2.6E-5,9.183,0.0483,0.0325,141.707,184560
+272,"We Built This City",Starship,"alternative rock/art rock/dance rock/experimental/experimental rock/garage rock/neo-psychedelic/new romantic/new wave/new wave pop/post-punk/punk/synthpop/uk post-punk/zolo",60,0.702,0.649,0.82,0.0816,0,8.841,0.0353,0.0471,144.226,294933
+273,"Ain't Nobody","Chaka Khan","album rock/art rock/classic rock/folk rock/mellow gold/psychedelic rock/rock",70,0.816,0.799,0.878,0.14,0.000105,7.109,0.0434,0.189,104.284,280853
+274,Umbrella,"Rihanna/JAY Z","dance pop/hip pop/pop/r&b/urban contemporary",38,0.575,0.583,0.829,0.0426,0,4.603,0.134,0.00864,174.028,275987
+275,"Something So Strong","Crowded House","alternative rock/britpop/dance-punk/garage rock/indie rock/modern rock/neo-psychedelic/portland indie/punk blues/rock",45,0.682,0.573,0.886,0.0718,4.41E-5,5.206,0.0459,0.0914,119.827,173964
+276,"I'll Be Your Baby Tonight (feat. UB40)","Robert Palmer/UB40","lilith/new wave pop",50,0.973,0.526,0.766,0.0492,0.215,10.348,0.0598,0.0575,112.794,205640
+277,Vienna,Ultravox,"album rock/classic rock/folk/folk rock/folk-pop/mellow gold/rock/roots rock/singer-songwriter",3,0.456,0.583,0.614,0.109,0.234,10.312,0.0643,0.16,80.747,278227
+278,"The Long And Winding Road - 2013 Remaster","Paul McCartney/Wings","lilith/new wave pop/pop rock",2,0.293,0.424,0.342,0.956,0.000498,12.668,0.0349,0.861,123.355,268827
+279,Push,"Matchbox Twenty","australian rock",72,0.476,0.42,0.672,0.108,0,7.902,0.027,0.0067,168.019,238667
+280,"I'm So Excited","The Pointer Sisters","adult standards/brill building pop/bubblegum pop/christmas/folk rock/mellow gold/motown/rock-and-roll/rockabilly",71,0.697,0.688,0.858,0.147,0.000118,6.496,0.0348,0.103,92.253,229467
+281,"Burning Down The House (45 Version)","Talking Heads","australian alternative rock/australian pop/australian rock/dance rock/new wave pop",64,0.555,0.779,0.87,0.0399,0.0107,13.141,0.0574,0.00644,102.689,241920
+282,"The Best","Tina Turner","alaska indie/folk-pop/lilith/permanent wave/pop rock/singer-songwriter",62,0.729,0.651,0.87,0.0979,0.00815,5.149,0.0318,0.103,103.857,330253
+283,"Praise You","Fatboy Slim","album rock/art rock/classic rock/dance rock/disco/folk rock/heartland rock/mellow gold/new romantic/new wave/new wave pop/rock/soft rock",50,0.516,0.602,0.893,0.194,0.271,8.657,0.0484,0.0897,109.711,324240
+284,"Bat Out Of Hell - Live From United States/1993 / Remaster 2006","Meat Loaf","album rock/blues-rock/classic rock/hard rock/psychedelic rock/rock",28,0.344,0.235,0.889,0.707,0.000828,6.234,0.0904,0.248,171.705,673133
+285,"Never Tear Us Apart",INXS,"alternative metal/alternative rock/modern rock/permanent wave/post-grunge/rock",64,0.193,0.664,0.613,0.175,0.000128,7.56,0.0273,0.00309,96.6,184587
+286,"Manic Monday","The Bangles","alternative rock/classic rock/dance rock/new wave/permanent wave/punk/rock",50,0.83,0.682,0.616,0.164,6.81E-6,10.38,0.0293,0.372,121.63,186333
+287,"Electric Blue",ICEHOUSE,"dance rock/new romantic/new wave/new wave pop/synthpop/zolo",5,0.578,0.695,0.907,0.0894,2.13E-6,4.694,0.0367,0.0657,109.691,264160
+288,"Close To Me","The Cure","album rock/art rock/classic rock/folk rock/mellow gold/psychedelic rock/rock",67,0.965,0.724,0.523,0.0811,0.703,11.139,0.116,0.0745,185.075,203267
+289,"Confide In Me","Kylie Minogue","dance rock/disco/mellow gold/new romantic/new wave/new wave pop/soft rock",30,0.603,0.566,0.725,0.123,0.043,7.274,0.0398,0.0391,102.849,266213
+290,"I Want To Break Free - Remastered 2011",Queen,"alternative metal/alternative rock/blues-rock/funk metal/funk rock/garage rock/grunge/hard rock/modern rock/nu metal/permanent wave/post-grunge/rock",25,0.559,0.796,0.43,0.0776,0.000343,8.994,0.0325,0.0869,108.959,258000
+291,"Don't Stop - Remastered","Fleetwood Mac","alternative rock/australian alternative rock/australian rock/dance rock/dream pop/jangle pop/neo-psychedelic/new romantic/new wave/post-punk/uk post-punk",67,0.834,0.671,0.71,0.0387,1.12E-5,7.724,0.0356,0.0393,118.745,193347
+292,"Hungry Heart","Bruce Springsteen","boy band/new jack swing/pop/r&b/urban contemporary",68,0.972,0.641,0.894,0.157,0.009,7.41,0.0273,0.0857,109.823,199453
+293,"Sounds of Then (This Is Australia)",Ganggajang,"alternative rock/neo mellow/pop punk/pop rock/post-grunge/rock",55,0.923,0.7,0.526,0.138,0.0406,16.628,0.0299,0.024,130.288,233733
+294,"Karma Police",Radiohead,"album rock/british invasion/classic rock/protopunk/rock",74,0.317,0.36,0.505,0.172,9.22E-5,9.129,0.026,0.0626,74.807,264067
+295,"All I Want Is You",U2,"alternative rock/east coast hip hop/hip hop/old school hip hop/rap",20,0.4,0.239,0.442,0.0738,0.0411,11.494,0.0308,0.106,185.723,389933
+296,"Bad - 2012 Remaster","Michael Jackson","folk/folk rock/mellow gold/soft rock",56,0.394,0.787,0.889,0.0665,0.423,3.786,0.0397,0.00462,114.091,247360
+297,"My Way","Frank Sinatra","glam rock/mellow gold/piano rock/rock/soft rock",32,0.216,0.279,0.454,0.198,0,7.733,0.0316,0.395,150.661,274933
+298,"Blue Monday","New Order",---,46,0.718,0.724,0.874,0.125,0.35,6.898,0.0426,0.000999,126.355,376947
+299,Yellow,Coldplay,"alternative rock/dance rock/new romantic/new wave/permanent wave/rock",82,0.285,0.429,0.661,0.234,0.00013,7.227,0.0281,0.00239,173.365,266773
+300,"My Sweet Lord","George Harrison","new wave pop",37,0.542,0.537,0.685,0.0839,0,8.935,0.0333,0.0705,120.965,281227
+301,"Take My Breath Away",Berlin,"dance rock/europop/new romantic/new wave/new wave pop/soft rock",60,0.511,0.578,0.477,0.124,0.00031,8.119,0.0228,0.448,95.892,264213
+302,"Janie's Got A Gun - Single Version",Aerosmith,"canadian country/canadian pop/contemporary country/country/country dawn/dance pop",11,0.446,0.64,0.82,0.0999,0.000496,5.612,0.0287,0.0838,115.505,327040
+303,Mickey,"Toni Basil","alternative metal/alternative rock/pop rock/post-grunge/rock",10,0.968,0.684,0.8,0.0624,3.5E-6,10.464,0.0449,0.262,148.205,254667
+304,Teardrop,"Massive Attack","album rock/classic rock/folk rock/mellow gold/piano rock/rock/singer-songwriter/soft rock",70,0.216,0.615,0.419,0.135,0.497,8.8,0.0395,0.0173,76.997,330773
+305,"To Her Door","Paul Kelly","alternative rock/anti-folk/garage rock/indie rock/modern rock/permanent wave/rock",60,0.539,0.544,0.757,0.0534,0.000139,7.752,0.0313,0.0386,164.221,197067
+306,Iris,"The Goo Goo Dolls","europop/swedish pop",79,0.513,0.291,0.79,0.0811,5.61E-6,5.683,0.0363,0.00133,155.667,289907
+307,"Let's Stick Together - Remastered","Bryan Ferry","art rock/britpop/dance rock/new romantic/new wave/new wave pop/ska",56,0.974,0.785,0.892,0.113,0.00051,4.71,0.0356,0.0711,120.115,179160
+308,"The Boys Of Summer","Don Henley","irish rock/modern rock/neo mellow/permanent wave/pop rock/rock",31,0.859,0.516,0.776,0.21,0.00128,6.409,0.0412,0.399,177.399,288333
+309,"It's Oh So Quiet",Björk,"adult standards/album rock/brill building pop/bubblegum pop/classic rock/folk/folk rock/mellow gold/rock/soft rock",6,0.234,0.459,0.127,0.0708,0,14.191,0.0544,0.618,128.098,218773
+310,"Jack & Diane","John Mellencamp","australian dance/australian pop/dance pop/pop",25,0.625,0.811,0.41,0.0799,6.94E-6,8.214,0.0392,0.0365,103.94,254493
+311,"Nutbush City Limits","Ike & Tina Turner","glam metal/hard rock/rock",57,0.914,0.687,0.886,0.0292,0.153,5.846,0.0298,0.0891,76.523,181533
+312,"Dancing In the Dark","Bruce Springsteen","folk/folk-pop/lilith/pop rock/singer-songwriter",75,0.495,0.527,0.942,0.188,0,5.64,0.0366,0.0115,148.723,241307
+313,"Love Story","Taylor Swift","australian rock",21,0.271,0.611,0.609,0.105,1.14E-6,7.486,0.0308,0.0767,118.997,234213
+314,"Da Ya Think I'm Sexy","Rod Stewart","album rock/classic rock/glam metal/hard rock/metal/rock/sleaze rock",67,0.852,0.715,0.689,0.111,0.000192,8.065,0.029,0.0143,111.504,331333
+315,Jeremy,"Pearl Jam","neo soul",72,0.287,0.285,0.846,0.182,0,6.472,0.0438,0.0404,108.808,318227
+316,"Back In Black",AC/DC,"dance rock/new wave pop/soft rock",83,0.763,0.31,0.7,0.0828,0.00965,5.678,0.047,0.011,188.386,255493
+317,"Under Pressure - Remastered","Queen/David Bowie","album rock/blues-rock/classic rock/hard rock/metal/rock/southern rock",78,0.462,0.671,0.712,0.103,0,7.815,0.0476,0.429,113.805,248440
+318,"Not Ready to Make Nice","Dixie Chicks","australian pop/boy band/dance pop/europop/pop rock",53,0.236,0.448,0.508,0.113,8.09E-5,6.153,0.0276,0.111,83.241,238227
+319,"Bizarre Love Triangle","New Order","dance pop/pop/r&b/urban contemporary",65,0.919,0.613,0.885,0.0997,0.746,7.463,0.052,0.0804,118.506,263213
+320,"Knock On Wood","Amii Stewart","pop/post-teen pop",57,0.914,0.689,0.805,0.0683,8.23E-5,11.199,0.0429,0.0019,140.791,250520
+321,Vogue,Madonna,"adult standards/brill building pop/bubblegum pop/christmas/doo-wop/folk rock/lounge/motown/northern soul/rock-and-roll",66,0.329,0.737,0.88,0.417,0.00351,6.449,0.0433,0.00379,115.998,316813
+322,"Flame Trees","Cold Chisel","dub/reggae/roots reggae/ska",46,0.618,0.675,0.659,0.0949,0,4.421,0.0327,0.0258,120.361,264374
+323,"Sexual Healing","Marvin Gaye","album rock/art rock/classic rock/dance rock/folk/folk rock/heartland rock/mellow gold/new romantic/new wave/new wave pop/pop rock/rock/soft rock/symphonic rock",70,0.746,0.805,0.601,0.0581,0.000129,9.7,0.0579,0.119,94.382,238600
+324,"Express Yourself",N.W.A.,"australian alternative rock/australian rock",16,0.956,0.851,0.583,0.236,0,11.022,0.286,0.0506,95.048,265102
+325,"Cry Me a River","Justin Timberlake","dance pop/pop/post-teen pop",76,0.565,0.624,0.653,0.104,0,6.582,0.176,0.575,73.884,288333
+326,"Heart Of Glass - Special Mix",Blondie,"disco/funk/motown/quiet storm/soul",68,0.845,0.694,0.577,0.0853,0.00836,14.63,0.0308,0.015,114.478,275733
+327,"Push It",Salt-N-Pepa,"canadian rock/pop rock",24,0.972,0.914,0.594,0.0832,0.00318,12.478,0.0727,0.00709,127.226,272133
+328,"This Love","Maroon 5","dance pop/europop/new wave pop/swedish pop",39,0.78,0.714,0.868,0.0987,0,4.596,0.0363,0.0551,95.05,206200
+329,"Welcome To The Jungle","Guns N' Roses","alternative rock/dance pop/permanent wave/pop rock/post-grunge",77,0.332,0.446,0.954,0.297,0.395,8.069,0.0764,0.0232,123.45,272027
+330,Smooth,"Santana/Rob Thomas","alternative rock/art rock/dance rock/folk rock/new wave/permanent wave/post-punk/rock/zolo",72,0.961,0.609,0.923,0.295,4.73E-6,3.908,0.0338,0.16,115.996,294987
+331,"I'm Like A Bird","Nelly Furtado","dance pop/hip pop/neo soul/pop/r&b/urban contemporary",30,0.598,0.622,0.616,0.218,3.87E-6,5.107,0.0349,0.147,89.673,243160
+332,Venus,Bananarama,"irish rock/permanent wave/rock",12,0.91,0.722,0.961,0.278,0.61,4.812,0.0514,0.0883,126.113,229165
+333,"Learning To Fly","Tom Petty and the Heartbreakers","alternative rock/grunge/permanent wave/post-grunge/rock",25,0.949,0.651,0.766,0.362,0.00103,9.935,0.0299,0.206,116.74,242107
+334,"It Must Be Love",Madness,"album rock/art rock/classic rock/dance rock/folk/folk rock/folk-pop/heartland rock/lilith/mellow gold/new romantic/new wave/new wave pop/permanent wave/pop rock/rock/roots rock/soft rock",31,0.67,0.534,0.512,0.17,8.69E-6,7.576,0.0363,0.431,147.29,200893
+335,"Lose Yourself - From ""8 Mile"" Soundtrack",Eminem,"boy band/dance pop",81,0.0591,0.701,0.728,0.361,0.00115,4.554,0.255,0.00971,171.388,326467
+336,"Sunday Bloody Sunday - Remastered 2008",U2,"australian alternative rock/australian rock/dance rock",31,0.735,0.543,0.944,0.0373,0.000564,7.495,0.0543,0.402,101.174,279440
+337,"Smooth Operator - Remastered",Sade,christmas/rock-and-roll/rockabilly,65,0.96,0.687,0.684,0.0441,0.000808,5.181,0.032,0.0758,119.193,256147
+338,"Paranoid - 2009 Remastered Version","Black Sabbath","australian alternative rock/australian rock/dance rock/mellow gold/new romantic/new wave/new wave pop/rock/soft rock",53,0.409,0.415,0.646,0.207,0.000849,12.021,0.0699,4.22E-5,163.046,166693
+339,"Don't Dream It's Over","Crowded House","album rock/art rock/classic rock/dance rock/mellow gold/new wave/permanent wave/rock/soft rock",62,0.489,0.443,0.732,0.0675,2.09E-5,6.748,0.0408,0.0246,80.769,238363
+340,Easy,"Faith No More","australian hip hop/australian pop",57,0.375,0.506,0.554,0.112,0.000355,6.743,0.0339,0.339,124.724,186960
+341,"Alone With You - 2014 Remastered Version",Sunnyboys,"album rock/blues-rock/classic rock/country rock/folk rock/hard rock/mellow gold/power pop/rock/roots rock/soft rock/southern rock",51,0.393,0.361,0.937,0.27,0.000166,3.179,0.0463,6.19E-5,147.546,238960
+342,"How You Remind Me",Nickelback,"album rock/art rock/classic rock/folk/folk rock/mellow gold/rock/roots rock/soft rock",79,0.543,0.446,0.764,0.099,0,5.042,0.033,0.00135,172.094,223840
+343,"(I Just) Died In Your Arms","Cutting Crew","pop rock",72,0.499,0.632,0.727,0.0678,7.64E-5,11.209,0.0438,0.0119,124.919,278627
+344,"Signed, Sealed, Delivered (I'm Yours)","Stevie Wonder",---,72,0.807,0.67,0.619,0.0492,0,10.365,0.0323,0.0514,108.826,160500
+345,"Material Girl",Madonna,"dance pop/pop/post-teen pop",73,0.978,0.742,0.883,0.0964,7.51E-6,3.419,0.0329,0.333,136.506,240280
+346,Happy,"Pharrell Williams","album rock/classic rock/hard rock/mellow gold/rock/soft rock",75,0.962,0.652,0.757,0.0886,0,6.819,0.153,0.286,159.911,233305
+347,Stay,"Lisa Loeb & Nine Stories","art pop/dance pop/electropop/metropopolis/pop",23,0.336,0.677,0.592,0.107,0,6.887,0.0452,0.454,80.316,183670
+348,"What A Wonderful World","Louis Armstrong","album rock/art rock/classic rock/dance rock/folk rock/hard rock/mellow gold/new romantic/new wave/new wave pop/permanent wave/pop rock/power pop/rock/soft rock",34,0.147,0.273,0.373,0.188,0.000241,9.989,0.0341,0.848,77.591,137467
+349,"Love Shack","The B-52's","alternative rock/britpop/dance rock/electronic/garage rock/indie rock/madchester/modern rock/new wave/permanent wave/pop rock/rock",67,0.871,0.715,0.817,0.851,1.61E-6,6.227,0.0532,0.0325,133.858,321573
+350,"Blister in the Sun - 2002 Remastered Version","Violent Femmes","afropop/mande pop/mbalax/world",69,0.89,0.701,0.261,0.0821,0,19.846,0.0938,0.219,97.042,144333
+351,Tomorrow,Silverchair,"pop rock",50,0.477,0.305,0.698,0.107,0.000189,7.086,0.0337,0.000447,146.298,266200
+352,"Am I Ever Gonna See Your Face Again (live)","The Angels","album rock/blues-rock/classic rock/folk rock/mellow gold/rock/soft rock",39,0.377,0.203,0.946,0.979,4.8E-5,6.437,0.0604,0.00163,184.3,258387
+353,"Close To You","Maxi Priest","dance pop/electropop/europop/pop rock",56,0.819,0.762,0.646,0.0406,2.14E-6,8.69,0.092,0.0105,95.992,330080
+354,"I Won't Back Down","Tom Petty",celtic,63,0.963,0.766,0.47,0.242,3.81E-6,13.501,0.0322,0.0424,114.011,175733
+355,"Let's Go Crazy",Prince,"dance pop/pop",63,0.376,0.309,0.93,0.106,0.0022,6.399,0.125,0.0192,195.815,280000
+356,"That's The Way (I Like It) - Edit","KC & The Sunshine Band","permanent wave/pop rock/rock",47,0.947,0.656,0.9,0.354,0.00142,9.583,0.0354,0.0791,108.698,183667
+357,Escapade,"Janet Jackson","alternative rock/australian rock/c86/chamber pop/dream pop/jangle pop/neo-psychedelic/twee pop/uk post-punk",44,0.714,0.807,0.943,0.162,0.000306,7.585,0.048,0.0305,115.213,283933
+358,"The Honeymoon Is Over","The Cruel Sea","classic rock/folk/folk rock/folk-pop/mellow gold/rock/roots rock/singer-songwriter/soft rock",49,0.587,0.464,0.754,0.308,0.0078,7.286,0.104,0.00996,94.438,186000
+359,True,"Spandau Ballet",---,74,0.346,0.744,0.545,0.0649,0.0977,9.361,0.0297,0.506,97.409,328293
+360,"Bow River","Cold Chisel","dance pop/pop/post-teen pop",38,0.564,0.272,0.946,0.34,0,2.11,0.163,0.0581,176.6,262481
+361,"Here I Go Again",Whitesnake,"album rock/classic rock/hard rock/mellow gold/rock/soft rock",63,0.316,0.234,0.75,0.139,0.000805,7.034,0.0738,0.369,173.82,308240
+362,"Freedom! '90","George Michael","dance pop/europop/hip pop/pop/pop rap/pop rock/post-teen pop/r&b/urban contemporary",16,0.896,0.673,0.813,0.0547,2.87E-5,10.966,0.0445,0.153,91.786,390867
+363,"Beautiful Day",U2,synthpop,72,0.389,0.536,0.928,0.2,0.00134,6.492,0.0589,0.0154,136.258,248400
+364,"Santa Monica",Everclear,"album rock/dance rock/mellow gold/new romantic/new wave/new wave pop",68,0.387,0.491,0.942,0.367,0,5.333,0.132,0.156,100.446,191507
+365,ABC,"The Jackson 5","dance pop/europop/pop",49,0.952,0.572,0.786,0.11,0.00093,8.469,0.0642,0.519,188.115,174867
+366,"Life Is A Highway","Tom Cochrane","modern rock/pop punk/punk",65,0.841,0.683,0.751,0.248,8.36E-6,10.184,0.0346,0.0681,103.036,266560
+367,"Every Rose Has Its Thorn - Remastered 2003",Poison,"album rock/art rock/classic rock/dance rock/folk/folk rock/folk-pop/heartland rock/lilith/mellow gold/new romantic/new wave/new wave pop/permanent wave/pop rock/rock/roots rock/soft rock",71,0.292,0.533,0.637,0.369,1.12E-5,5.571,0.0323,0.16,140.167,260173
+368,"Distant Sun","Crowded House","album rock/classic rock/folk rock/mellow gold/piano rock/rock/singer-songwriter/soft rock",41,0.643,0.404,0.74,0.119,0.000142,7.273,0.0278,0.0083,111.47,230993
+369,"Jessie's Girl - Soundtrack Version","Rick Springfield","adult standards/brill building pop/christmas/motown/quiet storm/rock-and-roll/rockabilly/soul/southern soul",62,0.826,0.709,0.848,0.0997,0,6.333,0.0557,0.223,131.605,193107
+370,"With Arms Wide Open - New Version With Strings",Creed,"alternative rock/art rock/dance rock/folk rock/new wave/permanent wave/post-punk/rock/zolo",24,0.202,0.321,0.688,0.211,0,5.775,0.0379,0.0361,142.79,235267
+371,"November Rain","Guns N' Roses","conscious hip hop/dirty south rap/hip hop/pop rap/rap/southern hip hop",37,0.221,0.197,0.629,0.125,0.279,9.291,0.03,0.0165,79.495,537507
+372,"Wild Thing",Tone-Loc,"adult standards/country/mellow gold/nashville sound/soft rock/traditional country",12,0.801,0.949,0.668,0.0576,1.04E-5,11.935,0.208,0.000554,125.5,263573
+373,"Help Is On Its Way - 2010 Digital Remaster","Little River Band","boy band/dance pop/neo mellow/pop rock",59,0.607,0.628,0.555,0.0707,0,8.718,0.0287,0.105,106.104,247507
+374,"Avalon - 1999 Digital Remaster","Roxy Music","album rock/art rock/classic rock/dance rock/folk rock/glam rock/mellow gold/rock/soft rock/symphonic rock",59,0.86,0.759,0.563,0.144,0.619,8.643,0.0338,0.699,136.67,256840
+375,"Fools Gold - Remastered","The Stone Roses","dance rock/new romantic/new wave/new wave pop/synthpop",60,0.166,0.731,0.875,0.289,0.858,6.393,0.0459,0.000367,112.775,594453
+376,"The House Of The Rising Sun","The Animals","classic rock",70,0.299,0.316,0.484,0.0912,0.00445,9.11,0.0308,0.000334,117.363,269907
+377,"Pour Some Sugar On Me (2012)","Def Leppard","art pop/art rock/dance rock/industrial/industrial rock/new romantic/new wave/new wave pop/permanent wave/post-punk/synthpop/uk post-punk",7,0.72,0.497,0.849,0.106,0,5.352,0.0612,0.00985,169.937,261532
+378,"Born to Run","Bruce Springsteen","boy band/dance pop/hip hop/hip pop/neo soul/new jack swing/pop rap/r&b/rap/urban contemporary",71,0.606,0.27,0.944,0.116,2.05E-5,4.199,0.0975,0.00501,146.347,269920
+379,"New York, New York","Frank Sinatra/Tony Bennett","adult standards/mellow gold/new wave pop/soft rock",34,0.46,0.439,0.408,0.331,0,8.498,0.0362,0.557,108.978,210360
+380,"When Doves Cry",Prince,banjo,70,0.84,0.729,0.989,0.443,4.45E-5,4.613,0.049,0.0102,126.47,352906
+381,"Black Velvet","Alannah Myles","dance rock/new romantic/new wave/new wave pop/pub rock/punk/ska",72,0.469,0.754,0.366,0.106,9.04E-5,10.07,0.0312,0.273,91.147,287440
+382,"Heroes - 1999 Remastered Version","David Bowie","dance pop/europop/new wave pop/swedish pop",26,0.429,0.478,0.774,0.191,0.585,6.977,0.0292,0.000265,112.577,370373
+383,"Unfinished Sympathy - 2006 Digital Remaster","Massive Attack","album rock/blues-rock/classic rock/folk rock/mellow gold/rock/soft rock",56,0.698,0.588,0.889,0.514,0.133,5.608,0.0314,0.0142,114.399,312293
+384,"Fight For Your Right","Beastie Boys","contemporary country/country/country dawn/country road/neo mellow",24,0.591,0.669,0.76,0.0876,0.0115,10.301,0.0344,0.138,133.7,207400
+385,"Try Again",Aaliyah,"art pop/ectofolk/folk/folk-pop/lilith/melancholia/new wave pop/permanent wave/piano rock/pop rock/singer-songwriter",23,0.762,0.783,0.58,0.0831,0,7.398,0.298,0.0817,93.026,284360
+386,Tusk,"Fleetwood Mac","folk/folk rock/folk-pop/melancholia/mellow gold/rock",51,0.96,0.614,0.623,0.452,0.726,17.032,0.0775,0.237,180.512,210173
+387,"If You Want My Love","Cheap Trick","dance pop/dirty south rap/east coast hip hop/hip hop/hip pop/pop rap/r&b/rap",45,0.474,0.494,0.683,0.288,0,9.509,0.0323,0.0213,115.441,215720
+388,"You Ain't Seen Nothing Yet","Bachman-Turner Overdrive","art rock/dance rock/glam rock/new wave/permanent wave/protopunk/rock",19,0.795,0.465,0.731,0.065,0.0187,5.822,0.0366,0.000575,118.919,233333
+389,"What's Love Got to Do with It","Tina Turner","alternative rock/neo mellow/permanent wave/pop rock/post-grunge/rock",66,0.792,0.851,0.406,0.0853,6.41E-6,11.631,0.0661,0.219,97.84,226880
+390,"Living For The City","Stevie Wonder","album rock/art rock/classic rock/hard rock/jazz fusion/progressive rock/psychedelic rock/rock/symphonic rock",9,0.455,0.589,0.585,0.291,0,9.958,0.076,0.0915,99.298,442712
+391,"Buffalo Soldier","Bob Marley & The Wailers","electronic/lilith/new wave pop/pop rock/trip hop",36,0.749,0.932,0.462,0.0653,7.91E-6,8.664,0.284,0.137,124.122,257231
+392,"She Drives Me Crazy","Fine Young Cannibals","alternative dance/alternative rock/dance pop/lilith/new wave pop/permanent wave/pop rock/post-grunge/rock/trip hop",24,0.954,0.796,0.693,0.0408,1.77E-5,6.02,0.0413,0.164,108.8,218907
+393,"Common People",Pulp,"hip house",19,0.496,0.311,0.895,0.0824,4.09E-5,4.854,0.0416,0.00735,145.583,349553
+394,"The Way You Make Me Feel","Michael Jackson","album rock/classic rock/folk rock/mellow gold/psychedelic rock/rock/roots rock/soft rock",63,0.507,0.608,0.816,0.116,0.000554,5.926,0.11,0.0367,114.484,297400
+395,Choirgirl,"Cold Chisel","alternative rock/blues-rock/garage rock/indie rock/modern rock/punk blues/rock",35,0.778,0.655,0.804,0.133,0,2.674,0.0258,0.34,97.286,195384
+396,"I Ran","A Flock Of Seagulls","album rock/canadian pop/classic canadian rock/heartland rock/mellow gold/rock/soft rock",62,0.661,0.514,0.639,0.136,0.895,12.348,0.0358,0.000364,145.499,219933
+397,"Me, Myself & I","De La Soul","east coast hip hop/gangster rap/hip hop/pop rap/rap",23,0.796,0.908,0.686,0.645,0,15.841,0.0918,0.166,114.6,230107
+398,"Brown Sugar","The Rolling Stones","album rock/mellow gold/rock/soft rock",26,0.963,0.633,0.934,0.0592,0.00021,3.594,0.0344,0.219,128.606,228667
+399,Africa,Toto,"australian alternative rock/australian rock/dance rock/mellow gold/new romantic/new wave/new wave pop/rock/soft rock",86,0.732,0.671,0.373,0.0481,7.95E-5,18.064,0.0323,0.257,92.717,295893
+400,"Dub Be Good To Me","Beats International","dance pop/pop/post-teen pop/r&b/urban contemporary",12,0.658,0.861,0.486,0.0831,0.0948,10.017,0.0497,0.00101,95.899,321147
+401,"Boys In Town",Divinyls,"british folk/folk/folk rock/mellow gold/nasheed/rock/singer-songwriter/soft rock/traditional folk",34,0.742,0.495,0.839,0.0939,0.000469,7.8,0.0377,0.00844,158.425,171973
+402,"I'm Yours","Jason Mraz","album rock/classic rock/folk rock/heartland rock/mellow gold/pop rock/psychedelic rock/rock/roots rock/soft rock",86,0.718,0.686,0.457,0.105,0,8.322,0.0468,0.595,150.953,242187
+403,"We Can Get Together",ICEHOUSE,"indie rock/modern rock/permanent wave/rock/vegas indie",7,0.62,0.659,0.846,0.111,0.000328,6.54,0.154,0.000322,145.05,226973
+404,"People Everyday","Arrested Development","album rock/art rock/classic rock/folk rock/heartland rock/mellow gold/rock/roots rock/soft rock",44,0.874,0.839,0.508,0.0928,3.06E-5,12.359,0.219,0.0126,80.014,206893
+405,"Orange Crush",R.E.M.,"glam metal/hard rock/rock",6,0.575,0.525,0.851,0.187,0.00595,5.603,0.0541,0.000863,120.642,232667
+406,"Who Listens To The Radio","THE SPORTS","art rock/dance rock/disco/new romantic/new wave/new wave pop/soft rock/synthpop",40,0.858,0.586,0.714,0.166,0,14.721,0.0838,0.0736,140.874,195760
+407,"When Love Comes To Town","U2/B.B. King","acid jazz/dance pop/electronic",14,0.593,0.65,0.665,0.13,4.62E-6,11.259,0.0372,0.0526,115.51,254267
+408,"Roadhouse Blues","The Doors","alternative dance/big beat/breakbeat/electronic/new rave/trip hop",70,0.904,0.612,0.634,0.147,4.6E-5,8.212,0.0319,0.337,121.059,243827
+409,"The Message","Grandmaster Flash & The Furious Five","garage rock/modern rock/permanent wave/rock/sheffield indie",32,0.659,0.946,0.494,0.0894,0,13.625,0.289,0.013,100.775,194240
+410,"Invisible Touch - Remastered 2007",Genesis,"mellow gold/neo mellow/pop rock/post-grunge/rock",66,0.837,0.623,0.94,0.0472,0.00184,5.731,0.0365,0.202,131.037,210133
+411,"Baby Got Back","Sir Mix-A-Lot","chicano rap/gangster rap/hardcore hip hop/hip hop/rap/rap rock/west coast rap",25,0.616,0.933,0.664,0.0908,0,11.281,0.311,0.00471,128.467,262827
+412,"Two Out of Three Ain't Bad","Meat Loaf","irish rock/permanent wave/rock",60,0.488,0.586,0.48,0.0947,0,9.138,0.0243,0.385,79.873,324440
+413,"Bad To The Bone","George Thorogood & The Destroyers","album rock/classic rock/folk rock/heartland rock/mellow gold/new wave pop/rock/soft rock",68,0.954,0.459,0.727,0.384,0.065,11.777,0.0303,0.00614,149.229,292173
+414,Dreams,"Van Halen","alternative metal/alternative rock/modern rock/nu metal/permanent wave/post-grunge/rap metal/rock",57,0.54,0.455,0.758,0.0986,2.51E-6,11.361,0.0454,0.223,141.304,294000
+415,"Ziggy Stardust - 2012 Remastered Version","David Bowie","dance pop/hip pop/pop/r&b/urban contemporary",65,0.495,0.44,0.565,0.213,0,11.657,0.121,0.048,161.124,194440
+416,"Champagne Supernova - Remastered",Oasis,pop,67,0.122,0.294,0.825,0.354,0.0841,3.771,0.0404,0.465,150.338,451320
+417,"Age of Reason","John Farnham","britpop/c86/madchester/scottish indie",39,0.8,0.643,0.821,0.248,0.000716,9.014,0.0357,0.0268,119.976,306227
+418,"Anarchy In The UK","Sex Pistols","disco/mellow gold/soft rock",60,0.212,0.359,0.949,0.236,0.000396,7.649,0.101,0.0556,134.118,212480
+419,Cream,Prince,"alternative dance/aussietronica/australian dance/dance-punk/deep australian indie/electronic/electropop/indietronica/new rave",51,0.826,0.852,0.591,0.0468,0.421,8.668,0.0675,0.103,115.592,253373
+420,"Similar Features","Melissa Etheridge","modern rock/pop punk/post-grunge/rock",23,0.52,0.631,0.764,0.0696,0,5.766,0.0286,0.146,103.606,286800
+421,"Comfortably Numb","Pink Floyd","dance rock/disco/europop/mellow gold/motown/new romantic/new wave/new wave pop/soft rock",75,0.171,0.472,0.366,0.0837,0.308,12.595,0.0286,0.15,127.167,382297
+422,"Suspicious Minds","Elvis Presley","alternative metal/alternative rock/modern rock/permanent wave/post-grunge/rock",14,0.607,0.474,0.343,0.152,0.00704,12.138,0.0298,0.0225,114.877,263973
+423,"99 Luftballons",Nena,"adult standards/disco/funk/mellow gold/motown/quiet storm/soul",72,0.587,0.466,0.438,0.113,5.62E-6,12.858,0.0608,0.089,193.1,233000
+424,"Don't Stop 'Til You Get Enough - Single Version","Michael Jackson","contemporary country/country/country dawn/country road/pop rock",77,0.947,0.878,0.821,0.183,0.0461,9.875,0.089,0.126,118.881,365467
+425,Rosanna,Toto,"album rock/art rock/classic rock/folk/folk rock/mellow gold/soft rock",70,0.739,0.384,0.512,0.205,0.000139,13.035,0.0358,0.0213,78.442,331200
+426,"The Globe","Big Audio Dynamite","alternative metal/comedy rock/comic/post-grunge/rock",40,0.696,0.917,0.603,0.0489,0,9.541,0.13,0.172,113.951,364640
+427,"New Year's Day",U2,---,17,0.6,0.52,0.864,0.507,0.0244,4.243,0.0328,0.00253,133.465,258093
+428,"I Wanna Be Sedated - Remastered",Ramones,"australian rock/hard rock/nwobhm/rock",66,0.937,0.597,0.96,0.105,2.89E-5,3.989,0.042,0.169,163.017,149467
+429,"Golden Brown","The Stranglers","dance pop/pop/post-teen pop",54,0.599,0.562,0.383,0.138,0.124,15.474,0.0304,0.143,93.764,206760
+430,"I Just Don't Know What To Do With Myself","Dusty Springfield","britpop/madchester/permanent wave/rock",37,0.347,0.334,0.853,0.19,0,5.884,0.0877,0.51,98.303,181360
+431,"Crazy Little Thing Called Love - Remastered 2011",Queen,"album rock/mellow gold/new wave pop/rock/soft rock",71,0.712,0.599,0.761,0.349,4.74E-6,6.887,0.0421,0.713,77.015,163373
+432,Fallin',"Alicia Keys","australian alternative rock/australian hip hop/australian pop/australian rock/perth indie",75,0.482,0.653,0.609,0.233,0.00101,7.519,0.037,0.263,95.982,210200
+433,"Power And The Passion - Remastered Version","Midnight Oil","dance pop/neo mellow/pop/pop rock/post-teen pop/r&b/talent show",54,0.874,0.779,0.737,0.238,0.00593,5.568,0.0847,0.0491,153.389,339383
+434,"Fame - 1999 Remastered Version","David Bowie","alternative country/classic rock/country rock/folk/folk rock/heartland rock/mellow gold/piano rock/rock/roots rock/singer-songwriter/soft rock/traditional folk",35,0.633,0.783,0.602,0.0332,0.0105,10.228,0.0556,0.271,95.844,255133
+435,"Here Comes the Rain Again - Remastered Version",Eurythmics,"alternative metal/alternative rock/cyberpunk/industrial/industrial metal/industrial rock/nu metal/post-grunge/rock",63,0.607,0.648,0.755,0.225,0.000249,7.901,0.03,0.0141,126.341,294587
+436,"Subterranean Homesick Blues","Bob Dylan","kiwi rock/polynesian pop",56,0.751,0.576,0.727,0.324,0,9.973,0.05,0.702,173.854,141293
+437,"Forever Now","Cold Chisel",---,43,0.795,0.618,0.86,0.0965,3.03E-6,3.614,0.0308,0.0117,129.954,267029
+438,Emotions,"Mariah Carey","reggae/reggae fusion/roots reggae",63,0.942,0.741,0.752,0.0233,0.0012,7.009,0.0359,0.0411,114.851,248093
+439,"I'm Every Woman","Chaka Khan","album rock/heartland rock/mellow gold/rock",64,0.717,0.537,0.929,0.188,0.000618,4.957,0.0446,0.0145,114.785,213267
+440,"Real Wild Child (Wild One)","Iggy Pop","neo mellow/pop/pop rock",32,0.963,0.566,0.926,0.281,0.122,7.099,0.0327,0.00182,146.271,218400
+441,"Red Red Wine",UB40,---,56,0.842,0.814,0.363,0.101,0.000177,15.675,0.0644,0.00614,89.157,320933
+442,Babooshka,"Kate Bush","new romantic/synthpop",56,0.289,0.466,0.439,0.0707,1.64E-5,8.892,0.0325,0.741,107.173,209933
+443,"Little Lion Man","Mumford & Sons","disco/funk/jazz funk/motown/quiet storm/soul",67,0.453,0.525,0.503,0.091,2.47E-5,7.974,0.0272,0.0211,138.856,247000
+444,"Summer Of '69","Bryan Adams","boy band/dance pop/europop/pop",37,0.704,0.507,0.843,0.08,0,6.137,0.0379,0.0191,139.136,216053
+445,Russians,Sting,"conscious hip hop/east coast hip hop/gangster rap/hardcore hip hop/hip hop/old school hip hop/rap",45,0.149,0.445,0.422,0.22,1.37E-5,11.327,0.0329,0.477,115.567,236973
+446,"Emotional Rescue - 2009 Re-Mastered Digital Version","The Rolling Stones","reggae/roots reggae",13,0.776,0.678,0.621,0.0394,0.0973,5.478,0.0623,0.111,113.389,339400
+447,"Play That Funky Music","Wild Cherry","album rock/blues-rock/classic rock/hard rock/psychedelic rock/rock",67,0.933,0.814,0.672,0.061,0,12.068,0.0619,0.0435,109.394,300000
+448,"Berlin Chair","You Am I","pop rap",46,0.423,0.271,0.882,0.0826,0.00201,8.483,0.06,0.0404,142.92,154667
+449,Teardrops,"Womack & Womack","alternative rock/dance-punk/garage rock/indie rock/modern rock/rock/scottish rock",8,0.755,0.876,0.826,0.0952,0.0018,5.475,0.0691,0.108,133.591,300173
+450,Unforgettable,"Natalie Cole/Nat King Cole","europop/swedish pop",35,0.153,0.286,0.31,0.0988,0.000128,12.368,0.0275,0.807,86.966,208640
+451,"Town Called Malice","The Jam","alternative metal/alternative rock/grunge/modern rock/nu metal/pop rock/post-grunge/rap metal/rock",26,0.79,0.552,0.903,0.0632,0.007,9.17,0.0716,0.00306,101.672,173707
+452,"Woman - 2010 - Remaster","John Lennon","glam rock/mellow gold/piano rock/rock/soft rock",69,0.746,0.588,0.656,0.042,0.00227,6.373,0.0224,0.378,79.701,212933
+453,"Love Is in the Air","John Paul Young","album rock/classic rock/folk rock/heartland rock/mellow gold/rock/soft rock",10,0.895,0.557,0.791,0.0605,0.000264,7.201,0.0389,0.0254,122.34,210293
+454,"Total Eclipse of the Heart","Bonnie Tyler","alternative rock/pop rock/post-grunge/rock",61,0.113,0.428,0.644,0.119,0,7.582,0.0628,0.205,129.432,270547
+455,Waterfalls,TLC,"brill building pop/folk rock/psychedelic rock/rock",74,0.757,0.77,0.505,0.0777,7.4E-5,7.345,0.0828,0.311,171.798,279507
+456,"Hurts So Good","John Mellencamp","australian dance/australian pop/dance pop/electropop/eurodance/europop/new wave pop/pop/pop rock",22,0.971,0.785,0.737,0.108,9.93E-5,5.306,0.0363,0.0421,125.447,218960
+457,"Streets of Philadelphia - Single Edit","Bruce Springsteen","alternative country/country rock/folk/heartland rock/outlaw country/rock/roots rock/singer-songwriter/texas country/traditional country/traditional folk",55,0.444,0.724,0.249,0.0933,0.11,15.488,0.0321,0.341,93.667,195293
+458,"Love Is All Around - From ""Four Weddings and a Funeral"" Original Motion Picture Soundtrack","Wet Wet Wet","album rock/classic rock/hard rock/rock",24,0.596,0.438,0.673,0.208,0,7.7,0.0314,0.255,169.851,237958
+459,"Break On Through (To The Other Side)","The Doors","soft rock",71,0.789,0.421,0.751,0.17,0,9.584,0.0472,0.2,89.839,145867
+460,"Better Man - Remastered","Pearl Jam","album rock/art rock/classic rock/dance rock/folk/folk rock/folk-pop/heartland rock/lilith/mellow gold/new romantic/new wave/new wave pop/permanent wave/pop rock/rock/roots rock/soft rock",67,0.267,0.445,0.671,0.0791,1.56E-5,7.937,0.0387,0.165,125.712,268587
+461,"I Got You","Split Enz","modern rock/pop",3,0.591,0.63,0.722,0.0594,0.000541,5.546,0.0375,0.0177,125.672,209867
+462,"Wish You Were Here","Pink Floyd","album rock/art rock/classic rock/folk rock/mellow gold/rock/soft rock",77,0.375,0.481,0.262,0.832,0.0114,15.73,0.0414,0.735,122.883,334744
+463,"Faith - Remastered","George Michael","dance rock/hi-nrg/new romantic/new wave/new wave pop/synthpop",75,0.607,0.887,0.48,0.0662,3.58E-5,11.994,0.117,0.0094,95.846,193200
+464,"And She Was - 2005 Remastered Version","Talking Heads","dance pop/europop/pop",52,0.973,0.697,0.846,0.0967,0.0256,5.471,0.03,0.0059,126.467,219413
+465,"History Repeating (Featuring Miss Shirley Bassey)",Propellerheads,"australian rock",1,0.73,0.716,0.838,0.108,0.018,5.4,0.0362,0.00295,144.047,242533
+466,"Little Red Corvette",Prince,"alternative metal/alternative rock/nu metal/pop rock/post-grunge/rap metal/rap rock/rock",60,0.802,0.777,0.7,0.836,8.02E-6,11.045,0.0869,0.235,122.94,188613
+467,"Macho Man","Village People","adult standards/mellow gold/rock/soft rock",56,0.776,0.708,0.805,0.0867,0,9.103,0.0612,0.0472,133.419,321000
+468,"Wanted Dead Or Alive","Bon Jovi","dance pop/girl group/hip pop/maskandi/new jack swing/pop/r&b/urban contemporary",18,0.24,0.279,0.54,0.307,0.0488,11.46,0.0328,0.0618,149.319,308267
+469,"Personal Jesus","Depeche Mode","dance pop/hollywood/new wave pop",59,0.766,0.687,0.852,0.0596,0.00866,5.538,0.0351,0.104,129.981,225040
+470,"Highway to Hell",AC/DC,"australian alternative rock/australian rock",83,0.422,0.573,0.913,0.156,0.00173,4.793,0.132,0.0591,115.715,208400
+471,"Thank You",Dido,"album rock/classic canadian rock/classic rock/mellow gold/permanent wave/psychedelic rock/rock/roots rock/singer-songwriter",69,0.765,0.725,0.583,0.0665,0.000215,9.942,0.0424,0.3,79.984,218360
+472,"Pressure Down","John Farnham","alternative rock/dance pop/permanent wave/pop rock/post-grunge",35,0.81,0.715,0.896,0.743,0.0012,9.289,0.0483,0.229,111.798,224507
+473,"You Can't Always Get What You Want","The Rolling Stones","australian pop/australian rock",28,0.497,0.319,0.627,0.289,7.29E-5,9.611,0.0687,0.675,85.818,448720
+474,"Let's Dance - 1999 Remastered Version","David Bowie","british folk/folk/folk rock/mellow gold/nasheed/rock/singer-songwriter/soft rock/traditional folk",71,0.709,0.619,0.703,0.163,0.205,9.414,0.0525,0.00388,115.043,457133
+475,"Polyester Girl",Regurgitator,"dance pop/pop/post-teen pop/r&b",45,0.964,0.746,0.841,0.101,9.9E-5,6.189,0.0295,0.00652,107.941,210840
+476,"Top Of The World",Carpenters,"folk/folk rock/folk-pop/lilith/mellow gold/new wave pop/singer-songwriter/traditional folk",23,0.694,0.379,0.343,0.104,0,12.993,0.0385,0.806,184.301,178840
+477,"While You See A Chance","Steve Winwood",christmas/rock-and-roll/rockabilly,17,0.394,0.621,0.591,0.0579,0.00018,12.198,0.0286,0.285,128.624,309104
+478,"Weapon Of Choice (feat. Bootsy Collins) - Remastered Version","Fatboy Slim/Bootsy Collins","australian alternative rock/australian rock/dance rock/mellow gold/new romantic/new wave/new wave pop/rock/soft rock",54,0.949,0.619,0.952,0.184,0.788,4.452,0.0578,0.134,195.938,219813
+479,Rapture,Blondie,"alternative rock/funk metal/permanent wave/post-grunge/rock",51,0.96,0.724,0.704,0.466,0.00425,8.258,0.0511,0.113,107.486,299373
+480,"I Was Only 19 (A Walk in the Light Green)",Redgum,"album rock/art rock/dance rock/disco/europop/mellow gold/new romantic/new wave/new wave pop/soft rock/synthpop",50,0.368,0.652,0.545,0.0806,0,9.86,0.0474,0.142,88.032,259507
+481,One,U2,"alternative dance/australian alternative rock/indie pop/indietronica/modern rock",34,0.357,0.511,0.536,0.122,0.00265,8.661,0.0302,0.256,90.358,276187
+482,"Bridge Over Troubled Water","Simon & Garfunkel","reggae/roots reggae",69,0.264,0.149,0.206,0.115,0.000649,13.888,0.0323,0.822,79.764,293120
+483,"Pleasure And Pain",Divinyls,"album rock/art rock/blues-rock/classic rock/electric blues/folk rock/hard rock/mellow gold/psychedelic rock/rock/roots rock",49,0.774,0.652,0.766,0.23,0,8.556,0.03,0.16,135.689,232000
+484,Layla,"Eric Clapton","album rock/classic rock/folk rock/mellow gold/piano rock/rock/singer-songwriter/soft rock",70,0.636,0.558,0.524,0.94,0.000952,11.626,0.0459,0.321,93.654,289027
+485,"Golden Years - 2016 Remastered Version","David Bowie","australian alternative rock/australian rock/punk/skate punk",60,0.933,0.68,0.701,0.111,4.72E-6,10.36,0.036,0.316,108.287,243280
+486,"Boom, Boom (Let’s Go Back To My Room) (Re-Recorded / Remastered)","Paul Lekakis","album rock/classic rock/rock/roots rock/southern rock",30,0.979,0.773,0.959,0.0737,8.32E-5,4.645,0.0329,0.16,130.014,281420
+487,"Miss Independent","Kelly Clarkson","alternative metal/alternative rock/modern rock/permanent wave/post-grunge/rock",46,0.592,0.656,0.615,0.0706,0.000415,6.359,0.137,0.0769,175.943,214773
+488,Breathe,"The Prodigy",---,55,0.312,0.682,0.819,0.0389,0.881,6.116,0.0501,0.00994,130.032,334800
+489,Drive,"The Cars","electric blues/folk/folk rock/folk-pop/lilith/mellow gold/rock/roots rock/singer-songwriter/soft rock",71,0.504,0.582,0.606,0.151,0.00139,9.961,0.0289,0.124,111.441,234493
+490,"Pick You Up",Powderfinger,"album rock/classic rock/folk rock/heartland rock/mellow gold/rock/soft rock",28,0.449,0.569,0.733,0.139,0.0134,6.085,0.0272,0.00109,109.484,260627
+491,"You're The One That I Want - From “Grease”","John Travolta/Olivia Newton-John","permanent wave/pop punk/punk/rock",22,0.862,0.739,0.766,0.137,7.28E-5,6.023,0.0785,0.193,106.6,167613
+492,"It's Only Natural","Crowded House","album rock/classic rock/folk rock/hard rock/heartland rock/mellow gold/rock/soft rock/southern rock",56,0.85,0.747,0.528,0.132,0,11.915,0.0283,0.167,116.259,212373
+493,Kids,MGMT,"detroit hip hop/g funk/hip hop/rap",78,0.172,0.451,0.931,0.361,0.0049,3.871,0.0719,0.00076,122.961,302840
+494,"Opposites Attract","Paula Abdul","australian rock",55,0.933,0.783,0.842,0.0473,2.57E-6,8.838,0.054,0.0337,117.79,263779
+495,"Ace of Spades",Motörhead,"australian alternative rock/australian pop/australian rock/dance rock/mellow gold/permanent wave/pop rock/rock/soft rock",74,0.234,0.317,0.981,0.0852,0.00677,7.102,0.174,0.00242,140.079,165907
+496,"Somebody To Love - Remastered 2011",Queen,"neo mellow/pop",32,0.353,0.461,0.69,0.113,1.01E-6,6.958,0.0611,0.169,110.915,296480
+497,"Don't You Want Me - 2002 - Remaster","The Human League","album rock/classic rock/hard rock/metal/rock",23,0.961,0.734,0.744,0.181,0,8.103,0.0391,0.184,117.651,238000
+498,"Shake a Tail Feather","Ike & Tina Turner","alternative metal/alternative rock/funk metal/modern rock/nu metal/pop rock/post-grunge/rap metal/rock",20,0.892,0.56,0.887,0.85,0.00173,7.92,0.122,0.727,150.875,137600
+499,"Bye Bye Bye",*NSYNC,"dance rock/new wave/punk/reggae/ska/ska revival",70,0.879,0.614,0.928,0.0845,0.00104,4.806,0.0516,0.0408,172.656,200560
+500,"The Day You Went Away - 2007 Remastered","Wendy Matthews","dance rock/new wave pop/soft rock",31,0.257,0.402,0.301,0.093,0,9.945,0.0384,0.871,96.485,280547
+501,Howzat,Sherbet,"Genres not available",50,0.651,0.405,0.703,0.135,1.03E-5,4.717,0.0348,0.43,108.855,225560
+502,"I'm Gonna Be (500 Miles)","The Proclaimers","Genres not available",77,0.807,0.851,0.551,0.0827,0,5.177,0.0396,0.151,131.922,219467
+503,Criminal,"Fiona Apple","Genres not available",62,0.586,0.595,0.804,0.299,1.97E-5,7.911,0.0326,0.0129,89.846,341533
+504,Relax,"Frankie Goes To Hollywood","Genres not available",50,0.712,0.673,0.88,0.0299,2.86E-6,6.354,0.0412,0.313,114.905,237933
+505,Weir,"Killing Heidi","Genres not available",49,0.634,0.32,0.697,0.303,1.4E-5,6.623,0.0463,0.136,156.067,244867
+506,"Night Fever","Bee Gees","Genres not available",10,0.881,0.741,0.513,0.125,0.00619,15.715,0.0301,0.0219,109.143,209507
+507,"The Lovecats","The Cure","Genres not available",57,0.965,0.747,0.571,0.242,1.05E-6,12.9,0.086,0.48,91.838,220093
+508,"In The End","Linkin Park","Genres not available",84,0.37,0.542,0.853,0.108,0,6.407,0.0498,0.0103,105.256,216933
+509,"One Night In Bangkok - From “Chess” / Remastered 2016","Murray Head","Genres not available",58,0.801,0.957,0.457,0.0636,0.0016,9.115,0.112,0.187,108.816,193440
+510,"With A Little Help From My Friends","Joe Cocker","Genres not available",26,0.285,0.339,0.426,0.103,0.00082,11.303,0.0543,0.317,72.445,314200
+511,"Hungry Like The Wolf - 2009 Remastered Version","Duran Duran","Genres not available",72,0.685,0.691,0.812,0.299,1.16E-6,7.772,0.0558,0.0433,127.568,220627
+512,"Wuthering Heights","Kate Bush","Genres not available",66,0.52,0.481,0.392,0.124,0.0452,11.381,0.0312,0.366,124.572,269067
+513,"Wishing Well","Terence Trent D'Arby","Genres not available",36,0.767,0.861,0.512,0.104,0,9.596,0.0612,0.123,104.902,212960
+514,"We Are The Champions - Remastered 2011",Queen,"Genres not available",74,0.175,0.268,0.459,0.118,0,6.94,0.0346,0.378,64.177,179200
+515,"Life In A Northern Town","The Dream Academy","Genres not available",56,0.432,0.563,0.476,0.494,0,13.342,0.0329,0.265,121.67,259293
+516,"One Love / People Get Ready","Bob Marley & The Wailers","Genres not available",33,0.95,0.725,0.523,0.0665,0,9.593,0.324,0.0783,76.292,172933
+517,"Sweet Dreams (Are Made of This) - Remastered",Eurythmics,"Genres not available",83,0.875,0.692,0.711,0.12,0,7.498,0.0317,0.227,125.135,216933
+518,Hello,"Lionel Richie","Genres not available",67,0.0606,0.424,0.222,0.148,0,15.053,0.0391,0.646,61.651,246933
+519,"Feel Good Inc",Gorillaz,"Genres not available",82,0.772,0.818,0.705,0.613,0.00233,6.679,0.177,0.00836,138.559,222640
+520,"Bette Davis Eyes","Kim Carnes","Genres not available",75,0.596,0.675,0.649,0.0959,0,10.271,0.0319,0.0204,116.624,228000
+521,Kashmir,"Led Zeppelin","Genres not available",70,0.581,0.48,0.536,0.155,4.22E-5,11.166,0.0427,0.488,80.617,508200
+522,"Whip It",DEVO,"Genres not available",67,0.957,0.78,0.869,0.0621,0.004,7.255,0.0517,0.0744,157.902,161133
+523,"Jealous Guy - Remastered 2010","John Lennon/The Plastic Ono Band/The Flux Fiddlers","Genres not available",65,0.254,0.489,0.389,0.105,0.32,11.653,0.0284,0.877,131.366,257787
+524,Hero,"Mariah Carey","Genres not available",71,0.178,0.501,0.378,0.119,0,9.37,0.029,0.735,119.987,257733
+525,"Bohemian Like You","The Dandy Warhols","Genres not available",66,0.694,0.584,0.931,0.133,0.772,6.158,0.0344,0.00315,131.275,211707
+526,Joey,"Concrete Blonde","Genres not available",6,0.363,0.658,0.387,0.139,0.0976,17.39,0.0298,0.0196,118.691,250693
+527,"Like a Rolling Stone","Bob Dylan","Genres not available",72,0.562,0.483,0.721,0.189,0,6.836,0.032,0.729,95.261,369600
+528,"Damn I Wish I Was Your Lover","Sophie B. Hawkins","Genres not available",54,0.539,0.546,0.781,0.363,1.51E-5,9.439,0.0506,0.22,95.032,323267
+529,"Solid Rock - Remastered Version",Goanna,"Genres not available",55,0.508,0.552,0.741,0.0317,0.00133,7.388,0.0476,0.00699,148.996,275227
+530,"Unchained Melody - Single Version","The Righteous Brothers","Genres not available",65,0.297,0.349,0.326,0.665,0.00144,10.749,0.0286,0.512,98.888,215853
+531,"Science Fiction",Divinyls,"Genres not available",30,0.913,0.639,0.817,0.0843,0,7.848,0.0259,0.0111,128.746,212973
+532,"Who Will Save Your Soul",Jewel,"Genres not available",59,0.753,0.686,0.467,0.13,0.00103,9.712,0.0419,0.704,126.179,239293
+533,"Simply Irresistible","Robert Palmer","Genres not available",45,0.68,0.693,0.935,0.042,2.11E-6,8.295,0.0418,0.146,142.839,255187
+534,"Voodoo Chile","Jimi Hendrix","Genres not available",49,0.32,0.298,0.753,0.112,0.148,7.417,0.0894,0.248,164.991,899933
+535,"Best of You","Foo Fighters","Genres not available",76,0.369,0.366,0.94,0.188,9.42E-5,5.119,0.0696,0.000769,130.198,255627
+536,"Rock the Casbah - Remastered","The Clash","Genres not available",72,0.866,0.796,0.872,0.284,0,6.722,0.0573,0.287,129.894,222427
+537,"Video Killed The Radio Star","The Buggles","Genres not available",70,0.251,0.68,0.678,0.204,0.00828,11.548,0.0754,0.103,131.165,252773
+538,"Beautiful Boy (Darling Boy)","John Lennon","Genres not available",6,0.435,0.574,0.469,0.856,1.96E-6,11.53,0.0403,0.733,111.378,245693
+539,"If You Don't Know Me By Now - 2008 Remastered Version","Simply Red","Genres not available",70,0.204,0.638,0.352,0.105,0,9.266,0.0268,0.492,94.173,204000
+540,"Been Caught Stealing","Jane's Addiction","Genres not available",55,0.688,0.639,0.929,0.242,0.0501,4.762,0.212,0.00326,103.758,214707
+541,"Under The Milky Way","The Church","Genres not available",55,0.481,0.549,0.878,0.118,0.175,3.985,0.0288,0.0429,136,298427
+542,"End Of The Road","Boyz II Men","Genres not available",29,0.55,0.561,0.579,0.0673,0,6.022,0.0243,0.0343,74.822,349135
+543,"Semi-Charmed Life","Third Eye Blind","Genres not available",76,0.7,0.64,0.864,0.123,0,6.576,0.0315,0.00832,102.026,268360
+544,"Start Me Up - 2009 Re-Mastered Digital Version","The Rolling Stones","Genres not available",34,0.971,0.631,0.932,0.0918,0.137,4.142,0.0354,0.0436,122.429,213067
+545,"Sabotage - 2009 Digital Remaster","Beastie Boys","Genres not available",44,0.49,0.32,0.943,0.0984,0.192,5.789,0.126,0.00497,166.524,178293
+546,"Annie's Song","John Denver","Genres not available",65,0.447,0.325,0.308,0.441,0.00603,11.503,0.0297,0.92,147.117,178267
+547,"I'm Still Standing","Elton John","Genres not available",30,0.772,0.504,0.904,0.14,0.121,6.863,0.179,0.356,176.808,183440
+548,"(Lover) You Don't Treat Me No Good (Live)","Sonia Dada","Genres not available",37,0.941,0.768,0.496,0.758,0,12.297,0.11,0.134,115.211,245493
+549,"In Between Days","The Cure","Genres not available",0,0.767,0.531,0.802,0.23,0.0232,8.331,0.0345,0.108,142.526,179533
+550,"Love...Thy Will Be Done - Single Version",Martika,"Genres not available",53,0.514,0.721,0.372,0.102,0.00268,11.352,0.028,0.315,91.541,264960
+551,"Horror Movie - 2015 Remaster",Skyhooks,"Genres not available",32,0.239,0.67,0.764,0.149,4.79E-6,5.73,0.131,0.468,140.052,230120
+552,"All Fired Up","Pat Benatar","Genres not available",47,0.521,0.666,0.883,0.114,0.000563,9.601,0.0484,0.0826,148.06,272200
+553,"U.S. Forces","Midnight Oil","Genres not available",0,0.563,0.35,0.87,0.752,0.00161,5.615,0.0651,0.00351,148.488,248893
+554,"7 Days","Craig David","Genres not available",62,0.882,0.644,0.843,0.0947,0,6.247,0.0512,0.261,83.024,237373
+555,"I Try","Macy Gray","Genres not available",74,0.736,0.593,0.642,0.0804,0.000582,7.284,0.0299,0.313,76.403,239440
+556,"Kickstart My Heart","Mötley Crüe","Genres not available",72,0.236,0.474,0.977,0.201,0.00298,3.839,0.176,0.00111,89.494,284027
+557,"Oh, Pretty Woman","Roy Orbison","Genres not available",65,0.952,0.608,0.582,0.0854,0,9.734,0.0355,0.725,127.297,176933
+558,"Funky Cold Medina",Tone-Loc,"Genres not available",12,0.924,0.984,0.781,0.0645,1.54E-6,9.622,0.0912,0.0834,117.481,248160
+559,"Cold As Ice",Foreigner,"Genres not available",66,0.471,0.516,0.486,0.143,1.48E-6,11.81,0.0272,0.0987,132.542,200573
+560,"Mustang Sally","The Commitments/Andrew Strong","Genres not available",48,0.905,0.744,0.738,0.0652,0,10.771,0.0581,0.0111,115.077,240907
+561,"Someone Like You",Adele,"Genres not available",79,0.288,0.554,0.321,0.0996,0,8.251,0.028,0.893,135.047,285240
+562,"Radio Ga Ga - Remastered",Queen,"Genres not available",68,0.66,0.744,0.502,0.189,0.000228,7.719,0.0359,0.183,112.344,348227
+563,"Desperado - Remastered",Eagles,"Genres not available",67,0.18,0.228,0.224,0.273,0.000222,12.749,0.0311,0.946,60.3,213713
+564,"Around The World","Daft Punk","Genres not available",71,0.841,0.956,0.795,0.0906,0.889,5.311,0.15,0.00356,121.294,429533
+565,"Super Trouper",ABBA,"Genres not available",26,0.953,0.767,0.632,0.2,7.49E-6,8.288,0.028,0.436,118.35,254613
+566,"Run To Paradise",Choirboys,"Genres not available",60,0.691,0.698,0.71,0.0489,0.0828,8.569,0.0452,0.161,138.797,251587
+567,"Hello, I Love You","The Doors","Genres not available",63,0.963,0.597,0.554,0.0766,0,14.144,0.0425,0.029,117.835,133200
+568,"U Can't Touch This","MC Hammer","Genres not available",73,0.866,0.867,0.517,0.0864,0.000339,13.222,0.0875,0.00456,133.148,257360
+569,"Would I Lie To You?","Charles & Eddie","Genres not available",68,0.709,0.738,0.647,0.201,0,7.076,0.0368,0.389,101.098,204387
+570,"We're Not Gonna Take It","Twisted Sister","Genres not available",72,0.922,0.502,0.924,0.162,0,6.299,0.0503,0.0127,149.186,219667
+571,"Time After Time","Cyndi Lauper","Genres not available",74,0.324,0.724,0.436,0.0908,1.19E-6,9.321,0.0282,0.576,130.439,243067
+572,"Band On The Run - Remastered 2010","Paul McCartney/Wings","Genres not available",30,0.669,0.479,0.601,0.11,0.00142,8.806,0.0318,0.0832,124.966,313027
+573,"Handle With Care","Traveling Wilburys","Genres not available",24,0.745,0.675,0.752,0.252,0,5.949,0.0282,0.119,115.081,199587
+574,"I'm on Fire","Bruce Springsteen","Genres not available",72,0.868,0.62,0.446,0.0727,0.0299,14.451,0.0347,0.589,88.591,155880
+575,"Who Do You Think You Are","Spice Girls","Genres not available",62,0.899,0.727,0.83,0.73,0.00356,6.658,0.0376,0.0226,118.002,240707
+576,"Bring Me To Life",Evanescence,"Genres not available",37,0.297,0.312,0.946,0.288,2.93E-6,3.209,0.107,0.00749,189.892,235893
+577,"Walk Like An Egyptian","The Bangles","Genres not available",55,0.788,0.717,0.84,0.296,5.94E-6,12.781,0.104,0.00785,103.043,204933
+578,"When A Man Loves A Woman","Percy Sledge","Genres not available",67,0.206,0.516,0.15,0.122,0.0755,20.41,0.0272,0.13,97.398,173867
+579,"Don't Look Back in Anger - Remastered",Oasis,"Genres not available",74,0.326,0.327,0.938,0.148,3.79E-6,3.237,0.0645,0.0708,162.937,289560
+580,"The A Team","Ed Sheeran","Genres not available",78,0.407,0.642,0.289,0.18,0,9.918,0.0367,0.669,84.996,258373
+581,"I Send A Message",INXS,"Genres not available",5,0.666,0.816,0.508,0.0745,0.532,6.839,0.0644,0.0788,136.439,202427
+582,Sailing,"Rod Stewart","Genres not available",65,0.191,0.43,0.374,0.316,0.379,9.949,0.0292,0.372,128.56,277960
+583,"Never Ever","All Saints/Unknown","Genres not available",50,0.309,0.738,0.541,0.0492,0,5.485,0.0311,0.559,134.187,387573
+584,"Smooth Criminal - 2012 Remaster","Michael Jackson","Genres not available",57,0.595,0.853,0.981,0.306,0.468,3.947,0.0751,0.247,118.193,257760
+585,Landslide,"Fleetwood Mac","Genres not available",77,0.423,0.414,0.161,0.117,0.000223,22.32,0.0318,0.883,159.375,199493
+586,"Reckless (Don't Be So...) - Remastered","Australian Crawl","Genres not available",18,0.222,0.699,0.37,0.0591,3.27E-5,9.182,0.0369,0.195,60.197,321338
+587,"(Baby I've Got You) On My Mind",Powderfinger,"Genres not available",25,0.677,0.37,0.971,0.0954,6.06E-5,3.151,0.0871,0.00101,146.463,201067
+588,"Antmusic - Remastered","Adam & The Ants","Genres not available",0,0.635,0.695,0.806,0.37,0.00012,4.119,0.142,0.101,81.151,216960
+589,"West End Girls - 2001 Remastered Version","Pet Shop Boys","Genres not available",58,0.602,0.648,0.947,0.105,0.0567,6.617,0.0369,0.0114,113.255,245360
+590,Money,"Pink Floyd","Genres not available",74,0.783,0.469,0.537,0.269,0.00201,10.421,0.152,0.0241,124.193,382834
+591,"We Are Family","Sister Sledge","Genres not available",68,0.819,0.784,0.893,0.272,1.57E-5,5.153,0.0923,0.3,118.738,216733
+592,"Where Is The Love?","The Black Eyed Peas","Genres not available",24,0.829,0.826,0.679,0.141,0,4.086,0.192,0.115,94.062,273067
+593,"Everybody Wants To Rule The World","Tears For Fears","Genres not available",39,0.552,0.637,0.811,0.107,0.00451,11.345,0.0583,0.363,112.053,251480
+594,"Born To Be Wild",Steppenwolf,"Genres not available",73,0.53,0.438,0.71,0.221,0.537,12.412,0.0919,0.262,145.928,210373
+595,"Ray Of Light",Madonna,"Genres not available",58,0.71,0.561,0.909,0.0713,0.46,7.878,0.0312,0.00118,127.172,320693
+596,"Our Lips Are Sealed","The Go-Go's","Genres not available",48,0.964,0.62,0.819,0.0412,0,8.789,0.05,0.0162,131.223,165627
+597,"April Sun in Cuba - Remastered 2006",Dragon,"Genres not available",39,0.921,0.787,0.653,0.309,7.6E-6,10.31,0.059,0.0587,121.427,207960
+598,"Come On Eileen","Dexys Midnight Runners","Genres not available",39,0.812,0.466,0.615,0.343,0,9.102,0.0492,0.413,108.016,273720
+599,"California Love - Original Version","2Pac/Roger/Dr. Dre","Genres not available",35,0.766,0.761,0.835,0.387,1.44E-6,3.076,0.0425,0.031,91.524,284907
+600,Jailbreak,AC/DC,"Genres not available",56,0.594,0.572,0.835,0.012,0.0153,5.552,0.0787,0.00953,131.568,280960
+601,"Kids In America","Kim Wilde","Genres not available",17,0.324,0.566,0.769,0.579,0,4.973,0.0469,0.0597,159.651,204480
+602,"You're Still The One","Shania Twain","Genres not available",75,0.642,0.551,0.527,0.0867,0,7.119,0.0302,0.45,133.758,212560
+603,"Lightning Crashes",Live,"Genres not available",52,0.462,0.38,0.451,0.105,1.98E-5,9.147,0.0447,0.255,90.015,324733
+604,"We Didn't Start the Fire","Billy Joel","Genres not available",59,0.892,0.711,0.967,0.245,0,5.204,0.0474,0.0849,145.024,288400
+605,Loser,Beck,"Genres not available",70,0.789,0.66,0.627,0.385,9.64E-5,10.397,0.124,0.0341,85.44,235000
+606,Fernando,ABBA,"Genres not available",58,0.467,0.353,0.526,0.0762,2.17E-6,8.868,0.0299,0.583,110.517,255533
+607,"Shout To The Top - Full Version","The Style Council","Genres not available",13,0.843,0.719,0.932,0.0238,0.582,6.244,0.0709,0.19,143.849,254187
+608,"Chasing Cars","Snow Patrol","Genres not available",79,0.136,0.563,0.592,0.132,5.08E-5,4.571,0.0276,0.209,104.016,267933
+609,"Summer Breeze","Seals and Crofts","Genres not available",70,0.35,0.501,0.474,0.0667,0.0298,10.041,0.0386,0.611,88.609,203967
+610,Chandelier,Sia,"Genres not available",74,0.572,0.399,0.787,0.0685,6.07E-5,2.88,0.0499,0.0197,117.089,216120
+611,Patience,"Guns N' Roses","Genres not available",56,0.368,0.463,0.266,0.152,0.00028,14.307,0.0315,0.736,120.316,356293
+612,"Fast Car","Tracy Chapman","Genres not available",79,0.194,0.711,0.292,0.131,0,15.523,0.037,0.313,103.951,296800
+613,"Most People I Know","Billy Thorpe & The Aztecs","Genres not available",17,0.825,0.418,0.358,0.101,0.00157,16.094,0.0319,0.554,121.882,257027
+614,"Dr. Feelgood","Mötley Crüe","Genres not available",68,0.347,0.535,0.967,0.233,0.0204,4.082,0.068,0.000886,110.97,291307
+615,Crazy,"Gnarls Barkley","Genres not available",74,0.612,0.835,0.741,0.0826,0.0577,1.609,0.0339,0.0172,111.963,182066
+616,"Fastlove, Pt. 1","George Michael","Genres not available",63,0.551,0.735,0.64,0.345,0.00102,7.522,0.072,0.052,104.444,324667
+617,"Legs - 2008 Remastered Version","ZZ Top","Genres not available",60,0.763,0.611,0.946,0.36,0.0708,5.357,0.0378,0.00957,125.398,273907
+618,"I Knew I Loved You","Savage Garden","Genres not available",65,0.779,0.556,0.517,0.077,0.00115,8.769,0.0287,0.307,169.938,251253
+619,"I Wanna Dance with Somebody (Who Loves Me)","Whitney Houston","Genres not available",82,0.867,0.709,0.824,0.0888,0.000307,8.824,0.0453,0.207,118.814,291293
+620,"Just The Way You Are","Bruno Mars","Genres not available",80,0.434,0.637,0.843,0.0876,0,5.413,0.0432,0.0151,109.012,220733
+621,"December, 1963 (Oh What A Night!)","Frankie Valli & The Four Seasons","Genres not available",66,0.964,0.727,0.588,0.0414,5.46E-6,9.568,0.0253,0.058,104.413,201093
+622,"I Can See Clearly Now","Jimmy Cliff","Genres not available",66,0.717,0.799,0.662,0.0484,0.000505,8.585,0.0347,0.00482,120.082,196000
+623,Valerie,"Steve Winwood","Genres not available",66,0.753,0.722,0.518,0.0854,0.00453,10.78,0.0296,0.593,116.289,246667
+624,"Better Get A Lawyer","The Cruel Sea","Genres not available",40,0.85,0.45,0.659,0.272,0.0873,7.245,0.125,0.000732,86.745,180693
+625,"Get The Party Started",P!nk,"Genres not available",67,0.961,0.806,0.902,0.212,0,3.387,0.0475,0.00127,128.943,191667
+626,"Can You Feel It","The Jacksons","Genres not available",45,0.917,0.881,0.494,0.28,3.84E-5,12.163,0.0528,0.0377,125.44,227947
+627,"Mmm Mmm Mmm Mmm","Crash Test Dummies","Genres not available",59,0.37,0.58,0.575,0.0813,1.83E-5,7.72,0.0231,0.25,92.934,235173
+628,"The Look",Roxette,"Genres not available",70,0.541,0.634,0.838,0.0522,8.34E-6,5.363,0.0413,0.0531,95.011,237320
+629,"Don't Speak","No Doubt","Genres not available",66,0.582,0.499,0.761,0.137,9.38E-6,5.436,0.0367,0.274,76.118,262747
+630,"Road To Nowhere","Talking Heads","Genres not available",52,0.632,0.661,0.713,0.153,2.27E-5,7.825,0.0296,0.0361,110.364,259107
+631,"Together Again","Janet Jackson","Genres not available",68,0.496,0.873,0.591,0.104,0.0071,8.942,0.102,0.0788,123.091,301200
+632,"Pride (In The Name Of Love) - Remastered 2009",U2,"Genres not available",59,0.75,0.464,0.839,0.601,0.000326,7.106,0.0329,0.0016,105.756,228427
+633,"About A Girl - Remastered",Nirvana,"Genres not available",52,0.675,0.402,0.898,0.279,8.89E-5,6.467,0.0316,8.86E-6,132.092,168160
+634,"2000 Miles",Pretenders,"Genres not available",20,0.611,0.528,0.579,0.169,0.0448,12.347,0.0256,0.0124,99.362,219067
+635,"You Got It (The Right Stuff)","New Kids On The Block","Genres not available",47,0.862,0.789,0.687,0.0571,2.77E-6,7.441,0.0634,0.00637,111.493,250747
+636,"Forgotten Years - Remastered","Midnight Oil","Genres not available",42,0.664,0.549,0.907,0.107,1.79E-5,6.355,0.0582,0.036,152.253,263653
+637,"Jailhouse Rock","Elvis Presley","Genres not available",74,0.915,0.647,0.582,0.0715,1.93E-6,9.538,0.0755,0.41,167.396,146480
+638,"By My Side",INXS,"Genres not available",25,0.155,0.512,0.498,0.157,0.000357,7.83,0.0256,0.051,93.142,185507
+639,"Don't Stand So Close To Me - Remastered 2003","The Police","Genres not available",57,0.505,0.806,0.499,0.038,0.000729,9.524,0.0642,0.0451,140.337,242667
+640,"Chase That Feeling","Hilltop Hoods","Genres not available",31,0.511,0.6,0.887,0.136,0,4.799,0.0639,0.599,97.957,209227
+641,Centerfold,"The J. Geils Band","Genres not available",71,0.888,0.653,0.677,0.403,0,12.244,0.0396,0.249,114.37,216533
+642,"A Horse with No Name",America,"Genres not available",76,0.831,0.654,0.506,0.155,0.0155,17.18,0.0535,0.686,123.179,252240
+643,"Save Tonight","Eagle-Eye Cherry","Genres not available",68,0.583,0.547,0.693,0.113,5.46E-5,8.786,0.0353,9.24E-5,119.567,239227
+644,"We Are The World","U.S.A. For Africa","Genres not available",68,0.292,0.528,0.447,0.0745,0,15.255,0.0435,0.189,72.58,427333
+645,"Stupid Girls",P!nk,"Genres not available",56,0.581,0.686,0.883,0.0666,0.00131,5.055,0.061,0.000795,100.035,196173
+646,"I Want To Know What Love Is - Remastered",Foreigner,"Genres not available",76,0.423,0.477,0.471,0.131,1.76E-6,10.036,0.0277,0.193,81.204,304787
+647,Royals,Lorde,"Genres not available",80,0.302,0.616,0.432,0.132,0,9.546,0.133,0.106,84.778,190185
+648,"Shake It Up","The Cars","Genres not available",50,0.864,0.692,0.74,0.136,8.83E-5,7.466,0.0329,0.0723,147.274,215440
+649,"Girls And Boys",Blur,"Genres not available",70,0.901,0.693,0.875,0.0601,0,8.354,0.0315,0.00971,120.048,259387
+650,"7 Seconds (feat. Neneh Cherry)","Youssou N'Dour/Neneh Cherry","Genres not available",61,0.509,0.68,0.702,0.326,1.79E-6,9.621,0.0267,0.0838,154.198,305773
+651,"Don't Bring Me Down","Electric Light Orchestra","Genres not available",55,0.798,0.637,0.858,0.0652,0.000557,6.917,0.0338,0.133,115.696,243867
+652,"I Don't Want A Lover",Texas,"Genres not available",44,0.421,0.763,0.44,0.114,0.000457,13.11,0.0388,0.181,120.492,300440
+653,"No Rain","Blind Melon","Genres not available",75,0.566,0.389,0.476,0.255,5.09E-5,9.342,0.0316,0.619,148.117,217107
+654,SexyBack,"Justin Timberlake/Timbaland","Genres not available",77,0.964,0.967,0.583,0.0519,0,5.562,0.0789,0.0584,117,242733
+655,"This Charming Man - 2011 Remastered Version","The Smiths","Genres not available",72,0.751,0.611,0.846,0.0784,0,5.9,0.0436,0.00509,103.912,162920
+656,"Tom's Diner","Suzanne Vega/DNA","Genres not available",22,0.722,0.867,0.531,0.0429,0.0401,8.753,0.044,0.0191,99.136,227453
+657,"The Flame","Cheap Trick","Genres not available",54,0.342,0.632,0.67,0.0521,2.38E-6,8.877,0.027,0.548,97.098,338560
+658,Hello,Adele,"Genres not available",66,0.289,0.481,0.451,0.0872,0,6.095,0.0347,0.336,157.966,295493
+659,"What I Like About You","The Romantics","Genres not available",70,0.92,0.542,0.915,0.171,5.34E-5,9.637,0.0549,0.319,159.81,175400
+660,"No Aphrodisiac","The Whitlams","Genres not available",48,0.636,0.455,0.607,0.119,8.27E-6,8.27,0.039,0.355,74.52,259493
+661,"The Whole of the Moon","The Waterboys","Genres not available",56,0.597,0.538,0.852,0.602,3.95E-6,5.68,0.0321,0.071,105.664,299413
+662,3AM,"Matchbox Twenty","Genres not available",69,0.543,0.521,0.673,0.12,0,8.685,0.0284,0.00573,108.031,225947
+663,"Immigrant Song","Led Zeppelin","Genres not available",61,0.609,0.574,0.926,0.386,0.478,10.79,0.0562,0.00031,113.097,145067
+664,"I Want It All - Remastered 2011",Queen,"Genres not available",54,0.44,0.406,0.846,0.353,2.82E-6,5.626,0.062,0.0369,92.773,242093
+665,"Hold On","Wilson Phillips","Genres not available",69,0.546,0.679,0.657,0.0497,0,9.897,0.0255,0.4,97.8,266867
+666,"Mrs. Robinson","The Lemonheads","Genres not available",9,0.837,0.495,0.936,0.276,0.000709,7.196,0.0401,0.0111,107.394,224480
+667,"Cherry Cherry","Neil Diamond","Genres not available",51,0.904,0.56,0.827,0.0551,0.00285,4.157,0.0306,0.0271,84.383,163907
+668,"Eye of the Tiger",Survivor,"Genres not available",72,0.552,0.815,0.438,0.0787,0.000466,14.522,0.0346,0.216,108.965,243773
+669,"Tip Of My Tongue",Diesel,"Genres not available",52,0.82,0.663,0.726,0.0776,0.00993,8.534,0.0332,0.0149,97.933,252293
+670,"Gonna Make You Sweat (Everybody Dance Now)","C & C Music Factory","Genres not available",59,0.801,0.557,0.74,0.148,0.422,10.999,0.0879,0.0018,114.379,243693
+671,"The Scientist",Coldplay,"Genres not available",86,0.212,0.56,0.442,0.11,1.71E-5,7.224,0.0243,0.727,146.448,309600
+672,Crazy,Seal,"Genres not available",58,0.725,0.633,0.858,0.0655,0.0114,7.42,0.0473,0.208,102.559,356520
+673,"Abracadabra - 12 Inch Mix","Steve Miller Band","Genres not available",0,0.961,0.786,0.663,0.137,7.09E-5,8.441,0.0353,0.00528,127.51,308267
+674,"Sultans Of Swing","Dire Straits","Genres not available",67,0.923,0.73,0.868,0.318,0.0661,7.325,0.0288,0.0632,148.217,350400
+675,"The Boy Is Mine",Brandy/Monica,"Genres not available",68,0.761,0.704,0.707,0.318,0.00106,6.537,0.0391,0.539,93.145,294787
+676,"Let Me Entertain You","Robbie Williams","Genres not available",65,0.347,0.478,0.965,0.0854,0.00251,5.022,0.0642,0.000169,125.152,262000
+677,"The One I Love",R.E.M.,"Genres not available",64,0.559,0.488,0.841,0.346,1.21E-6,4.626,0.0358,0.000395,127.861,197800
+678,Jolene,"Dolly Parton","Genres not available",76,0.809,0.674,0.537,0.131,0,10.971,0.0363,0.566,110.578,161533
+679,"All That She Wants","Ace of Base","Genres not available",67,0.87,0.707,0.628,0.104,8.21E-5,9.684,0.0877,0.00526,187.548,211213
+680,"The Dead Heart - Remastered","Midnight Oil","Genres not available",36,0.688,0.628,0.807,0.0744,0.000111,9.792,0.0294,0.0329,136.233,311933
+681,Locomotion,"Kylie Minogue","Genres not available",46,0.873,0.672,0.881,0.0626,4.24E-5,5.281,0.0337,0.123,137.915,154507
+682,"Take It Easy - Remastered",Eagles,"Genres not available",76,0.74,0.575,0.67,0.129,4.95E-6,10.39,0.0318,0.343,139.191,211578
+683,"Rush You","Baby Animals","Genres not available",28,0.428,0.543,0.757,0.0778,5.25E-6,9.928,0.0374,0.0096,116.54,251067
+684,"Everything She Wants",Wham!,"Genres not available",63,0.962,0.9,0.459,0.165,0.00399,15.557,0.0366,0.321,115.091,302693
+685,"I'm Too Sexy","Right Said Fred","Genres not available",63,0.836,0.683,0.739,0.293,0.0122,12.831,0.0495,4.91E-5,122.113,170467
+686,"Last Nite","The Strokes","Genres not available",70,0.797,0.624,0.899,0.0975,0.000155,5.71,0.0295,0.0223,104.055,193373
+687,"Don't Go Breaking My Heart","Elton John/Kiki Dee","Genres not available",57,0.779,0.743,0.858,0.0685,1.08E-5,7.79,0.0416,0.196,131.312,271133
+688,"Love In An Elevator",Aerosmith,"Genres not available",43,0.52,0.425,0.968,0.378,0.00037,3.464,0.0756,0.0241,93.703,322227
+689,Better,"The Screaming Jets","Genres not available",27,0.439,0.389,0.932,0.415,5.22E-5,4.269,0.0677,0.013,105.141,302893
+690,Rain,Dragon,"Genres not available",50,0.571,0.59,0.45,0.0894,0.000851,12.599,0.0325,0.0519,157.026,219200
+691,"If You Could Read My Mind","Stars On 54","Genres not available",2,0.389,0.609,0.88,0.284,0,7.407,0.0742,0.0405,126.981,206773
+692,"My Girl","The Temptations","Genres not available",79,0.673,0.579,0.419,0.0981,0,10.72,0.0346,0.625,104.564,165000
+693,Babylon,"David Gray","Genres not available",62,0.256,0.737,0.543,0.103,0.01,10.403,0.0374,0.0598,112.016,265667
+694,"Greased Lightnin'","John Travolta/Jeff Conaway","Genres not available",57,0.917,0.58,0.838,0.0985,0.0344,10.467,0.1,0.132,159.937,194467
+695,"You Got Nothing I Want","Cold Chisel","Genres not available",29,0.669,0.508,0.981,0.103,0.00345,2.627,0.108,0.000458,135.638,196642
+696,"Two Tribes","Frankie Goes To Hollywood","Genres not available",37,0.189,0.538,0.627,0.367,0.0018,13.18,0.0358,0.00211,130.169,208213
+697,"All I Wanna Do Is Make Love To You",Heart,"Genres not available",65,0.8,0.626,0.746,0.0618,0,8.832,0.0282,0.16,102.896,310893
+698,"Use Somebody","Kings of Leon","Genres not available",78,0.173,0.276,0.715,0.201,0.000417,5.356,0.0432,0.00552,137.028,230760
+699,"I Say A Little Prayer","Diana King","Genres not available",39,0.538,0.69,0.889,0.0904,1.03E-5,5.074,0.0595,0.00875,125.958,211533
+700,"Living Years","Mike & The Mechanics","Genres not available",55,0.311,0.518,0.417,0.0722,0,13.268,0.0325,0.58,97.63,330267
+701,"You Get What You Give","New Radicals","Genres not available",75,0.711,0.618,0.896,0.0875,0,5.357,0.0307,0.171,113.961,300773
+702,"Unchain My Heart","Joe Cocker","Genres not available",60,0.696,0.751,0.674,0.32,0.000143,12.976,0.0425,0.0214,117.969,304293
+703,"I Don't Feel Like Dancin'","Scissor Sisters","Genres not available",50,0.792,0.713,0.917,0.301,0,3.272,0.0298,0.0201,108.042,288360
+704,"Orinoco Flow",Enya,"Genres not available",57,0.559,0.685,0.307,0.0988,0.28,17.283,0.0305,0.797,114.981,266194
+705,"Rock Your Body","Justin Timberlake","Genres not available",73,0.818,0.891,0.714,0.0521,0.000234,6.055,0.14,0.202,100.972,267267
+706,"American Woman","Lenny Kravitz","Genres not available",56,0.6,0.669,0.7,0.0782,0,7.971,0.0714,0.024,83.989,261707
+707,"Streets of Your Town","The Go-Betweens","Genres not available",42,0.78,0.618,0.737,0.3,0.00318,11.1,0.0275,0.0361,131.838,216227
+708,"Brown Eyed Girl","Van Morrison","Genres not available",80,0.907,0.491,0.583,0.407,0,10.964,0.0376,0.182,150.572,183307
+709,"Ship of Fools","World Party feat. Anthony Thistlethwaite","Genres not available",25,0.851,0.64,0.883,0.459,0.000355,4.887,0.0295,0.0645,116.276,269707
+710,Firework,"Katy Perry","Genres not available",74,0.649,0.638,0.826,0.0803,0,4.968,0.0479,0.139,124.072,227880
+711,Urgent,Foreigner,"Genres not available",57,0.962,0.855,0.803,0.0841,0.00732,5.849,0.0316,0.342,114.867,271200
+712,"Hollaback Girl","Gwen Stefani","Genres not available",72,0.882,0.918,0.918,0.0243,5.35E-6,2.218,0.0954,0.344,110.024,199907
+713,"Pop Muzik - Paralyzer 7"" Remix - Digital Exclusiv",M,"Genres not available",2,0.891,0.858,0.936,0.242,8.61E-6,7.319,0.0574,0.11,110.001,213400
+714,"Total Control","The Motels","Genres not available",43,0.636,0.758,0.287,0.0627,0.0417,15.1,0.179,0.00445,166.402,354067
+715,"Come Undone","Robbie Williams","Genres not available",55,0.255,0.375,0.57,0.354,4.37E-6,5.364,0.0283,0.0385,167.734,278440
+716,"All The Small Things",blink-182,"Genres not available",80,0.695,0.439,0.891,0.547,0,4.764,0.057,0.0122,148.599,168000
+717,"Don't Get Me Wrong - 2009 Remastered Version",Pretenders,"Genres not available",35,0.846,0.459,0.932,0.0953,0.00211,6.48,0.0417,0.152,203.684,228200
+718,"Just the Way You Are","Billy Joel","Genres not available",65,0.513,0.589,0.453,0.134,2.54E-5,8.912,0.0397,0.703,139.148,290573
+719,"Stand By Me","Ben E. King","Genres not available",80,0.605,0.65,0.306,0.0707,7.07E-6,9.443,0.0393,0.57,118.068,180056
+720,"Once In A Lifetime - 2005 Remastered Version","Talking Heads","Genres not available",68,0.871,0.644,0.919,0.622,0.134,6.289,0.0561,0.181,117.459,259907
+721,"Battle Scars","Lupe Fiasco/Guy Sebastian","Genres not available",72,0.494,0.517,0.811,0.105,0,4.526,0.286,0.186,168.269,250320
+722,"Islands In The Stream","Kenny Rogers/Dolly Parton","Genres not available",48,0.795,0.589,0.641,0.0558,0,5.533,0.0313,0.427,204.003,249880
+723,"Where's The Love",Hanson,"Genres not available",24,0.583,0.592,0.979,0.132,5.65E-6,3.932,0.0571,0.00227,115.8,252347
+724,"I'm Not In Love",10cc,"Genres not available",29,0.164,0.404,0.523,0.282,0.000498,15.7,0.0575,0.685,133.738,366640
+725,"Send Me An Angel (Re-Recorded / Remastered)","Real Life","Genres not available",22,0.616,0.663,0.788,0.166,0,7.754,0.03,0.031,127.968,236936
+726,"Blaze Of Glory - From ""Young Guns II"" Soundtrack","Jon Bon Jovi","Genres not available",67,0.37,0.553,0.611,0.0958,2.33E-5,9.967,0.0348,0.0598,78.683,335240
+727,Cars,"Gary Numan","Genres not available",64,0.809,0.542,0.578,0.0674,5.97E-5,8.755,0.0404,0.00967,128,238907
+728,"No Diggity","Blackstreet/Dr. Dre/Queen Pen","Genres not available",81,0.67,0.868,0.646,0.284,0,4.674,0.288,0.303,88.641,304600
+729,"Glory Of Love","Peter Cetera","Genres not available",72,0.312,0.518,0.585,0.31,2.43E-6,8.485,0.0279,0.0778,144.998,258120
+730,Zebra,"John Butler Trio","Genres not available",49,0.767,0.622,0.642,0.165,0.0426,6.996,0.0451,0.124,78.594,237560
+731,"I Don't Like Mondays","The Boomtown Rats","Genres not available",58,0.444,0.472,0.464,0.153,0,6.848,0.0404,0.743,141.35,259093
+732,"It Must Have Been Love",Roxette,"Genres not available",70,0.722,0.52,0.652,0.256,5.49E-5,6.655,0.0274,0.34,80.609,258787
+733,"You Can Leave Your Hat On","Joe Cocker","Genres not available",52,0.9,0.65,0.535,0.187,0,13.325,0.0282,0.118,173.8,255293
+734,"Need You Now","Lady Antebellum","Genres not available",70,0.316,0.581,0.717,0.243,0.000186,4.433,0.0318,0.0298,107.884,236440
+735,"Professional Widow - Armand's Star Trunk Funk Mix","Tori Amos","Genres not available",35,0.737,0.727,0.969,0.364,0.0017,4.493,0.0419,0.00945,128.05,227240
+736,"The Boxer","Simon & Garfunkel","Genres not available",69,0.629,0.439,0.488,0.16,0.000339,14.464,0.0615,0.702,93.017,308520
+737,"I'll Be Missing You (feat. 112)","Diddy/Faith Evans/112","Genres not available",75,0.925,0.862,0.479,0.589,0.00126,9.199,0.0646,0.0522,109.878,301520
+738,"Dancing In The Street - 2002 Remastered Version","David Bowie/Mick Jagger","Genres not available",51,0.744,0.6,0.816,0.126,0,13.64,0.0431,0.117,130.99,204787
+739,"Hey Jealousy","Gin Blossoms","Genres not available",63,0.528,0.464,0.785,0.328,1.46E-6,7.42,0.0436,0.00117,153.005,236067
+740,"Owner Of A Lonely Heart",Yes,"Genres not available",68,0.885,0.695,0.746,0.368,0.00524,8.12,0.0387,0.306,125.123,266040
+741,Missing,"Everything But The Girl","Genres not available",17,0.662,0.676,0.486,0.121,6.08E-5,10.457,0.0327,0.0812,123.555,247200
+742,Androgyny,Garbage,"Genres not available",35,0.547,0.726,0.559,0.133,0,7.428,0.0332,0.221,93.119,189688
+743,"Ice Ice Baby","Vanilla Ice","Genres not available",71,0.597,0.978,0.787,0.102,4.6E-6,2.79,0.0394,0.0023,116.006,254467
+744,"Got My Mind Set On You - Remastered 2004","George Harrison","Genres not available",66,0.963,0.767,0.854,0.485,2.03E-6,6.947,0.0426,0.465,149.206,234653
+745,"Lonely Boy","The Black Keys","Genres not available",67,0.607,0.356,0.872,0.0997,0.00975,7.837,0.068,0.00417,166.3,193653
+746,"Run To You","Bryan Adams","Genres not available",65,0.635,0.561,0.811,0.287,3.6E-5,6.157,0.0265,0.00515,126.593,233270
+747,"In Da Club","50 Cent","Genres not available",74,0.808,0.865,0.73,0.0753,0,2.813,0.373,0.283,90.096,193467
+748,"Seven Wonders (Early Version)","Fleetwood Mac","Genres not available",2,0.66,0.675,0.527,0.101,2.65E-6,9.501,0.0263,0.0448,113.881,274253
+749,"Don't Change",INXS,"Genres not available",39,0.164,0.276,0.883,0.0973,0.462,5.625,0.0446,0.000252,164.052,266027
+750,Diamonds,Rihanna,"Genres not available",67,0.387,0.555,0.709,0.113,0,4.928,0.0452,0.00118,91.982,225147
+751,"Black Hole Sun",Soundgarden,"Genres not available",78,0.16,0.354,0.825,0.0758,6.95E-5,5.325,0.0406,0.000203,105.495,318587
+752,"Just Can't Get Enough","Depeche Mode","Genres not available",48,0.933,0.773,0.558,0.0827,0.35,16.376,0.0425,0.25,127.519,215360
+753,Beautiful,"Christina Aguilera","Genres not available",73,0.0992,0.457,0.573,0.114,3.05E-6,3.866,0.0275,0.578,76.193,238560
+754,"How to Make Gravy","Paul Kelly","Genres not available",11,0.43,0.374,0.742,0.238,0,5.998,0.0351,0.0537,93.371,267307
+755,Dreams,"Gabrielle Aplin/Bastille","Genres not available",43,0.241,0.604,0.51,0.0825,0.00446,7.879,0.0328,0.409,134.953,259019
+756,"This Is How A Heart Breaks","Rob Thomas","Genres not available",55,0.665,0.605,0.913,0.0813,0,4.345,0.0376,0.00159,139.941,230960
+757,September,"Earth, Wind & Fire","Genres not available",82,0.98,0.697,0.809,0.183,0.000521,8.197,0.0302,0.114,125.941,214827
+758,Waterloo,ABBA,"Genres not available",60,0.779,0.441,0.926,0.235,3.38E-6,4.736,0.046,0.423,147.564,168827
+759,"Bust A Move","Young MC","Genres not available",66,0.743,0.946,0.772,0.0612,2.26E-6,7.537,0.121,0.0512,116.972,263914
+760,Celebration,"Kool & The Gang","Genres not available",62,0.898,0.894,0.642,0.0833,0.028,11.854,0.0589,0.13,121.654,298867
+761,"Wish You Well","Bernard Fanning","Genres not available",33,0.735,0.716,0.715,0.0804,1.93E-6,3.974,0.0802,0.202,122.722,151133
+762,"Boys Don't Cry [Single Version]","The Cure","Genres not available",62,0.689,0.465,0.841,0.109,0,5.767,0.0634,0.00486,168.743,157533
+763,"Pretty Fly (For A White Guy)","The Offspring","Genres not available",47,0.963,0.724,0.902,0.0476,1.46E-6,3.699,0.0936,0.0984,143.375,188480
+764,"Heaven Is A Place On Earth","Belinda Carlisle","Genres not available",67,0.804,0.637,0.786,0.049,2.57E-6,10.192,0.0324,0.035,122.872,247293
+765,"I'll Be There For You [Theme From FRIENDS] (45 version)","The Rembrandts","Genres not available",65,0.636,0.258,0.919,0.279,0,6.927,0.0809,0.065,93.62,187293
+766,"She Sells Sanctuary","The Cult","Genres not available",63,0.417,0.55,0.765,0.132,0.873,8.684,0.0287,4.82E-6,139.453,252533
+767,"If You Had My Love","Jennifer Lopez","Genres not available",65,0.814,0.68,0.625,0.109,5.81E-5,7,0.0353,0.0645,94.02,266000
+768,"Addicted To Love","Robert Palmer/Eric 'ET' Thorngren","Genres not available",46,0.974,0.703,0.652,0.0494,3.42E-6,10.635,0.0309,0.374,111.594,363573
+769,"Drops of Jupiter",Train,"Genres not available",78,0.499,0.468,0.64,0.154,0,5.862,0.0275,0.154,79.297,259933
+770,"She Works Hard For The Money","Donna Summer","Genres not available",57,0.986,0.765,0.639,0.0798,0.0122,12.963,0.0382,0.00669,136.495,320840
+771,"O.P.P. (Re-Recorded)","Naughty By Nature","Genres not available",8,0.667,0.776,0.968,0.204,0,4.25,0.0914,0.00147,97.765,250173
+772,"The Power Of Love","Huey Lewis & The News","Genres not available",71,0.962,0.768,0.829,0.097,2.92E-5,5.109,0.0313,0.0964,118.773,234333
+773,One,Metallica,"Genres not available",16,0.419,0.444,0.703,0.127,0.0761,9.443,0.0641,0.00112,106.228,447440
+774,"100% Pure Love","Crystal Waters","Genres not available",46,0.713,0.816,0.726,0.0544,0.00428,7.463,0.053,0.0681,120.237,278627
+775,"I Want Your Love","Transvision Vamp","Genres not available",14,0.602,0.47,0.919,0.444,0.000576,7.834,0.0626,0.0331,149.829,209867
+776,"Rollin' (Air Raid Vehicle)","Limp Bizkit","Genres not available",74,0.692,0.599,0.932,0.269,0,3.328,0.18,0.00506,96.234,213760
+777,"Summer in the City - Remastered","The Lovin' Spoonful","Genres not available",63,0.559,0.423,0.681,0.0889,0.000177,9.756,0.0397,0.0592,110.461,160307
+778,"I Want You","Savage Garden","Genres not available",59,0.615,0.628,0.871,0.392,1.64E-6,6.44,0.0363,0.0077,106.101,232067
+779,FourFiveSeconds,"Rihanna/Kanye West/Paul McCartney","Genres not available",41,0.321,0.579,0.268,0.12,0,5.65,0.0442,0.868,205.903,188238
+780,"Hungry Eyes - Remastered","Eric Carmen","Genres not available",2,0.698,0.67,0.648,0.101,0,7.677,0.0245,0.00863,110.551,230933
+781,"Work It","Missy Elliott","Genres not available",71,0.584,0.884,0.677,0.0732,0,5.603,0.283,0.0778,101.868,263227
+782,"The Joker","Steve Miller Band","Genres not available",75,0.794,0.424,0.446,0.16,3.78E-6,9.618,0.0525,0.394,165.158,264504
+783,Gloria,"Laura Branigan","Genres not available",68,0.876,0.775,0.866,0.152,0.0376,3.598,0.0295,0.135,131.34,295067
+784,"Wild, Wild West - Single Version","The Escape Club","Genres not available",24,0.951,0.781,0.706,0.145,0,10.996,0.0866,0.117,140.366,242133
+785,"Killing In the Name","Rage Against The Machine","Genres not available",58,0.734,0.457,0.779,0.0247,2.04E-6,6.323,0.257,0.0185,86.573,313667
+786,"Sign Your Name","Terence Trent D'Arby","Genres not available",7,0.81,0.89,0.537,0.0652,5.69E-6,6.792,0.0434,0.181,109.153,276427
+787,"Girl, You'll Be A Woman Soon","Urge Overkill","Genres not available",42,0.607,0.524,0.572,0.208,0.000133,13.306,0.0413,0.0627,114.182,190467
+788,"Back On The Chain Gang - 2007 Remastered Version",Pretenders,"Genres not available",62,0.814,0.598,0.901,0.178,0.0401,6.081,0.0359,0.116,153.24,231120
+789,"Call On Me - Radio Edit","Eric Prydz","Genres not available",61,0.483,0.606,0.847,0.819,0.00169,5.96,0.403,0.00553,126.257,169427
+790,"Scar Tissue","Red Hot Chili Peppers","Genres not available",76,0.547,0.595,0.717,0.108,0.00274,4.803,0.0295,0.0779,88.969,215907
+791,"Run to the Hills - 1998 Remastered Version","Iron Maiden","Genres not available",40,0.48,0.224,0.954,0.235,0.000524,4.646,0.0912,0.00788,173.191,233613
+792,"Spinning Around","Kylie Minogue","Genres not available",47,0.636,0.763,0.665,0.0803,5.86E-5,7.623,0.0559,0.308,120.055,207600
+793,"Just Like Paradise","David Lee Roth","Genres not available",54,0.376,0.611,0.853,0.671,0,4.983,0.034,0.0219,135.558,243280
+794,"California Dreamin'","The Mamas & The Papas","Genres not available",61,0.597,0.554,0.667,0.0486,0,10.226,0.0342,0.628,112.749,157960
+795,"Slave To Love","Bryan Ferry","Genres not available",57,0.806,0.651,0.695,0.084,0.00147,9.232,0.0292,0.27,147.555,259067
+796,"Sympathy For The Devil","The Rolling Stones","Genres not available",38,0.583,0.566,0.673,0.0438,1.13E-6,10.814,0.306,0.565,114.385,377747
+797,,,"Genres not available",0,0.676,0.226,0.719,0.754,0.0716,10.496,0.0556,0.0734,82.449,388238
+798,"Underneath the Radar",Underworld,"Genres not available",41,0.437,0.628,0.66,0.398,0.51,12.262,0.0437,0.00994,144.635,367453
+799,"Big Girls Don't Cry (Personal)",Fergie,"Genres not available",69,0.292,0.712,0.647,0.0955,0,4.277,0.0336,0.239,113.116,268120
+800,"Rebel Yell - 1999 - Remaster","Billy Idol","Genres not available",9,0.438,0.536,0.611,0.143,0.0362,11.372,0.0411,0.000472,166.766,287867
+801,Moonshadow,"Yusuf / Cat Stevens","Genres not available",60,0.574,0.641,0.294,0.118,5.96E-5,11.256,0.0316,0.696,130.777,172533
+802,Refugee,"Tom Petty and the Heartbreakers","Genres not available",59,0.761,0.579,0.705,0.0704,0,4.911,0.0339,0.0273,116.172,201693
+803,"Mr. Brightside","The Killers","Genres not available",80,0.234,0.33,0.936,0.0926,0,3.66,0.0917,0.00108,148.112,222587
+804,"End Of The Line","Traveling Wilburys","Genres not available",68,0.932,0.578,0.836,0.0583,1.36E-6,6.607,0.0512,0.163,167.026,209520
+805,"Knockin' On Heaven's Door","Guns N' Roses","Genres not available",28,0.362,0.486,0.744,0.112,0.00298,7.176,0.0404,0.0204,132.446,336000
+806,"The Look Of Love - Pt. 1",ABC,"Genres not available",62,0.886,0.731,0.91,0.313,0.000447,4.559,0.0918,0.11,120.991,209160
+807,"Cosmic Girl",Jamiroquai,"Genres not available",42,0.929,0.643,0.934,0.303,0.000654,6.651,0.0513,0.0348,119.838,242973
+808,"Hey Boy Hey Girl","The Chemical Brothers","Genres not available",65,0.363,0.632,0.92,0.114,0.508,4.976,0.0531,0.119,127.001,290493
+809,"I Bet You Look Good On The Dancefloor","Arctic Monkeys","Genres not available",63,0.778,0.535,0.948,0.376,0,4.19,0.0356,0.00225,103.183,173680
+810,"Only Wanna Be With You","Hootie & The Blowfish","Genres not available",67,0.513,0.49,0.873,0.118,5.19E-6,5.861,0.0355,0.107,103.272,229587
+811,"Insane in the Brain","Cypress Hill","Genres not available",73,0.767,0.897,0.612,0.0894,0.186,10.489,0.211,0.0297,102.305,208267
+812,"Angel Of Harlem",U2,"Genres not available",58,0.928,0.519,0.694,0.111,2.3E-6,10.792,0.0264,0.104,102.718,229267
+813,"The Heat Is On - From ""Beverly Hills Cop"" Soundtrack","Glenn Frey","Genres not available",51,0.962,0.647,0.852,0.0887,1.13E-5,6.9,0.0444,0.128,149.594,225507
+814,"Like a Stone",Audioslave,"Genres not available",77,0.516,0.614,0.568,0.0997,0,5.477,0.0276,0.00797,107.849,293960
+815,"All I Want for Christmas Is You","Mariah Carey","Genres not available",74,0.346,0.335,0.625,0.0708,0,7.462,0.0386,0.164,150.277,241107
+816,"Rock with You - Single Version","Michael Jackson","Genres not available",75,0.848,0.808,0.535,0.158,9.91E-5,12.521,0.0353,0.179,114.031,220627
+817,"I'm Free","The Soup Dragons/Junior Reid","Genres not available",47,0.882,0.647,0.931,0.0934,2.54E-5,6.062,0.0757,0.0876,103.251,211693
+818,"More Than A Woman","Bee Gees","Genres not available",43,0.678,0.606,0.719,0.553,9.44E-5,6.075,0.0465,0.165,106.134,196213
+819,"My People","The Presets","Genres not available",33,0.269,0.561,0.919,0.416,1.7E-5,2.403,0.0404,0.0163,126.99,266560
+820,"Closer To The Edge","Thirty Seconds To Mars","Genres not available",60,0.102,0.502,0.948,0.0809,4.54E-6,3.717,0.121,0.0099,139.979,273467
+821,"When the Going Gets Tough, The Tough Get Going","Billy Ocean","Genres not available",44,0.932,0.754,0.763,0.318,0,6.318,0.0473,0.407,122.047,248000
+822,"Learn to Fly","Foo Fighters","Genres not available",74,0.537,0.465,0.919,0.262,2.07E-5,4.025,0.0408,1.83E-5,135.997,235293
+823,"Upside Down","Diana Ross","Genres not available",55,0.866,0.877,0.843,0.0447,0.0522,8.518,0.0672,0.175,107.848,245600
+824,"This Kiss","Faith Hill","Genres not available",59,0.709,0.398,0.804,0.181,0,5.559,0.0451,0.175,186.752,194307
+825,"Baker Street","Gerry Rafferty","Genres not available",68,0.421,0.497,0.349,0.259,0.028,14,0.0297,0.0929,113.762,365627
+826,Tribute,"Tenacious D","Genres not available",61,0.422,0.365,0.767,0.0942,0.000856,6.185,0.0681,0.181,94.174,248053
+827,Saltwater,"Julian Lennon","Genres not available",23,0.126,0.466,0.216,0.107,3.77E-6,15.862,0.0267,0.577,135.84,247307
+828,"We Can't Be Beaten","Rose Tattoo","Genres not available",0,0.689,0.523,0.991,0.0736,0,2.611,0.092,0.00144,113.594,186560
+829,"Born This Way","Lady Gaga","Genres not available",67,0.494,0.587,0.828,0.331,0,5.108,0.161,0.00327,123.907,260253
+830,"Supersonic - Remastered",Oasis,"Genres not available",49,0.653,0.355,0.893,0.233,0.0189,3.921,0.0391,6.64E-5,104.02,283790
+831,"Danger Zone","Kenny Loggins","Genres not available",71,0.647,0.544,0.897,0.13,0,6.056,0.0471,0.241,157.17,215133
+832,Plans,"Birds Of Tokyo","Genres not available",44,0.273,0.61,0.601,0.327,1.03E-5,9.396,0.0269,0.0539,102.99,218880
+833,"Since U Been Gone","Kelly Clarkson","Genres not available",75,0.404,0.662,0.741,0.114,0.0303,5.406,0.0334,0.00165,131,188960
+834,"Werewolves Of London","Warren Zevon","Genres not available",60,0.878,0.749,0.614,0.0603,0.00286,10.594,0.0264,0.0372,103.868,208173
+835,Closer,"Nine Inch Nails","Genres not available",69,0.501,0.559,0.725,0.112,0.553,8.631,0.0426,0.000365,90.012,373307
+836,"Slice of Heaven","Dave Dobbyn/Herbs","Genres not available",41,0.975,0.828,0.586,0.681,0,10.777,0.0416,0.481,122.117,278987
+837,"Ignition - Remix","R. Kelly","Genres not available",69,0.802,0.778,0.549,0.0724,0,6.144,0.0473,0.0549,133.041,186040
+838,"Sweat (A La La La La Long)","Inner Circle","Genres not available",73,0.936,0.787,0.727,0.157,0,7.705,0.224,0.0124,173.025,227067
+839,"Edge of Seventeen","Stevie Nicks","Genres not available",67,0.636,0.59,0.828,0.0868,5.57E-6,6.28,0.0439,0.277,111.353,329680
+840,"You're Beautiful","James Blunt","Genres not available",79,0.454,0.675,0.479,0.088,1.76E-5,9.87,0.0278,0.633,81.998,209493
+841,"A Little Ray Of Sunshine",Axiom,"Genres not available",43,0.331,0.354,0.393,0.186,0.0779,7.784,0.0388,0.324,108.523,210653
+842,"Together In Electric Dreams - Remastered / From ""Electric Dreams"" Original Motion Picture Soundtrack","Phil Oakey/Giorgio Moroder","Genres not available",61,0.798,0.705,0.524,0.0767,1.3E-5,14.051,0.026,0.236,129.847,232667
+843,"Let's Groove","Earth, Wind & Fire","Genres not available",72,0.9,0.869,0.648,0.126,2.17E-5,8.698,0.0633,0.121,125.035,339320
+844,"As Long as You Love Me","Backstreet Boys","Genres not available",61,0.753,0.775,0.816,0.126,0,5.534,0.0281,0.164,98.219,214333
+845,"Fight The Power","Public Enemy","Genres not available",56,0.415,0.797,0.582,0.517,2.04E-6,12.97,0.255,0.00484,105.974,282640
+846,"Is This Love","Bob Marley & The Wailers","Genres not available",65,0.851,0.758,0.529,0.0533,0,10.32,0.123,0.0083,122.468,231547
+847,"Hey Joe","Jimi Hendrix","Genres not available",69,0.532,0.346,0.768,0.0244,0.38,5.695,0.0377,0.00603,169.492,210160
+848,"Forget You","CeeLo Green","Genres not available",64,0.772,0.696,0.875,0.159,0,3.682,0.0649,0.134,127.39,222733
+849,"Take Me Out","Franz Ferdinand","Genres not available",76,0.494,0.278,0.676,0.136,0.000899,8.821,0.0371,0.000423,104.545,237027
+850,S.O.S.,ABBA,"Genres not available",62,0.497,0.393,0.719,0.219,0.00432,4.773,0.0279,0.0629,124.353,201360
+851,"Father Figure - Remastered","George Michael","Genres not available",65,0.284,0.689,0.333,0.0853,3.36E-5,13.288,0.0262,0.163,101.988,336667
+852,"If You Leave","Orchestral Manoeuvres In The Dark","Genres not available",59,0.892,0.635,0.684,0.0755,0.156,11.687,0.0329,0.088,120.269,268547
+853,"Baby Did a Bad, Bad Thing","Chris Isaak","Genres not available",46,0.504,0.58,0.609,0.11,0.000423,6.921,0.0861,0.352,152.852,176000
+854,"Raspberry Beret",Prince,"Genres not available",68,0.91,0.761,0.67,0.0685,0.000426,12.759,0.0438,0.21,120.752,215173
+855,"Viva La Vida",Coldplay,"Genres not available",81,0.416,0.485,0.619,0.109,3.31E-6,7.115,0.0289,0.0941,138.017,242373
+856,"School's Out","Alice Cooper","Genres not available",65,0.347,0.294,0.745,0.676,0.125,9.138,0.0461,0.05,134.364,210107
+857,"Wild Horses","Gino Vannelli","Genres not available",36,0.727,0.534,0.875,0.0516,0.000184,5.637,0.0407,0.214,168.95,356023
+858,"Who Can It Be Now?","Men At Work","Genres not available",61,0.954,0.807,0.83,0.0842,0.000358,4.04,0.0367,0.0444,128.501,203267
+859,"American Idiot","Green Day","Genres not available",78,0.769,0.38,0.988,0.368,7.86E-5,2.042,0.0639,2.64E-5,186.113,176346
+860,"Itchycoo Park","Small Faces","Genres not available",25,0.684,0.607,0.586,0.0918,0,8.102,0.0581,0.56,128.478,168840
+861,"Who Knew",P!nk,"Genres not available",66,0.473,0.691,0.749,0.0762,0,4.567,0.0274,0.00559,140.014,208493
+862,"Sussudio - 2016 Remastered","Phil Collins","Genres not available",45,0.748,0.7,0.935,0.0512,0.0643,5.197,0.0895,0.0555,121.182,264133
+863,"Disarm - Remastered","The Smashing Pumpkins","Genres not available",36,0.218,0.527,0.418,0.139,0.775,10.204,0.0277,0.142,129.516,196920
+864,"Because the Night","Patti Smith","Genres not available",36,0.477,0.445,0.684,0.0813,0,10.149,0.0416,0.0337,123.407,201827
+865,"Bed Of Roses","Bon Jovi","Genres not available",71,0.181,0.313,0.58,0.214,0,5.61,0.0279,0.103,165.038,394400
+866,"Le Freak",CHIC,"Genres not available",69,0.933,0.867,0.746,0.123,0,7.445,0.0475,0.0453,118.616,327573
+867,"My Island Home","Christine Anu","Genres not available",31,0.52,0.317,0.464,0.0764,0,7.459,0.0366,0.855,167.731,260240
+868,"Rapper's Delight - Single Version","The Sugarhill Gang","Genres not available",62,0.819,0.917,0.692,0.0686,1.09E-5,11.665,0.244,0.185,111.782,235840
+869,"Are You Gonna Be My Girl",Jet,"Genres not available",76,0.537,0.613,0.953,0.152,0.000582,3.435,0.0855,0.00148,105.046,213800
+870,Unbelievable,EMF,"Genres not available",11,0.936,0.637,0.849,0.141,0.0386,6.855,0.0362,0.000341,104.074,209813
+871,"Kiss You All Over",Exile,"Genres not available",27,0.514,0.703,0.475,0.485,1.7E-5,9.529,0.0254,0.362,102.421,212080
+872,"Don't Leave Me This Way (with Sarah Jane Morris)","The Communards/Sarah Jane Morris","Genres not available",18,0.916,0.654,0.915,0.11,0,6.254,0.0315,0.218,131.942,260947
+873,"What's Up?","4 Non Blondes","Genres not available",80,0.497,0.561,0.555,0.114,0,9.734,0.0287,0.16,134.369,295493
+874,"Give Me The Night","George Benson","Genres not available",58,0.86,0.85,0.466,0.129,0.0234,15.673,0.0555,0.314,109.936,222627
+875,"Locked Out Of Heaven","Bruno Mars","Genres not available",79,0.867,0.726,0.698,0.309,0,4.165,0.0431,0.049,143.994,233478
+876,"Come Out and Play","The Offspring","Genres not available",11,0.898,0.514,0.884,0.0654,1.52E-6,3.765,0.151,0.0943,158.262,197800
+877,"Don't Worry Be Happy","Bobby McFerrin","Genres not available",67,0.747,0.675,0.166,0.0461,7.14E-5,22.602,0.171,0.88,68.837,294400
+878,"Can't Fight The Moonlight","LeAnn Rimes","Genres not available",65,0.626,0.628,0.834,0.051,0,6.341,0.0497,0.403,97.865,215507
+879,"Gangsta's Paradise (feat. L.V.)",Coolio/L.V.,"Genres not available",27,0.415,0.641,0.63,0.4,0,6.393,0.0521,0.0372,79.955,241933
+880,"High Voltage",AC/DC,"Genres not available",61,0.546,0.561,0.784,0.0544,0.451,4.985,0.0629,0.0282,137.153,254200
+881,"Rock DJ","Robbie Williams","Genres not available",57,0.842,0.712,0.762,0.0981,0,4.307,0.0326,0.026,103.032,260560
+882,"White Wedding - Part 1 - 2001- Remaster","Billy Idol","Genres not available",15,0.719,0.634,0.804,0.347,0.00499,6.74,0.0329,0.00363,147.335,250760
+883,"Ain't No Mountain High Enough","Jimmy Barnes","Genres not available",39,0.83,0.724,0.958,0.361,0,4.157,0.0323,0.156,129.032,143520
+884,"Your Move/Give Peace A Chance Medley","John Lennon/Jon Anderson/Chris Squire/Paul McCartney/Robert Downey Jr.","Genres not available",17,0.473,0.561,0.444,0.252,0,8.7,0.0286,0.184,133.826,251213
+885,"Your Body Is a Wonderland","John Mayer","Genres not available",77,0.687,0.647,0.729,0.134,0.0489,6.251,0.0236,0.0206,94.01,249627
+886,"Solsbury Hill - Remastered 2002","Peter Gabriel","Genres not available",49,0.474,0.676,0.647,0.391,0.000158,8.747,0.0302,0.379,102.9,260750
+887,"Back To Life (However Do You Want Me)","Soul II Soul/Caron Wheeler","Genres not available",54,0.653,0.819,0.611,0.0477,7.7E-5,7.428,0.129,0.0673,101.001,232133
+888,Dizzy,"Vic Reeves/The Wonder Stuff","Genres not available",33,0.634,0.582,0.767,0.0817,1.02E-6,11.058,0.0422,0.0303,113.647,198133
+889,Perfect,"Fairground Attraction","Genres not available",51,0.641,0.583,0.188,0.0996,0,15.928,0.0691,0.257,138.761,217173
+890,"Times Like These","Foo Fighters","Genres not available",62,0.309,0.36,0.905,0.0753,7.51E-6,3.808,0.0812,1.37E-5,144.544,267973
+891,"Boom! Shake the Room","DJ Jazzy Jeff & The Fresh Prince","Genres not available",30,0.643,0.816,0.967,0.295,0,5.315,0.145,0.0543,100.036,229307
+892,"Paradise By The Dashboard Light","Royal Philharmonic Orchestra","Genres not available",9,0.473,0.284,0.87,0.293,0.0014,6.555,0.0666,0.156,166.999,277933
+893,Amazing,"Alex Lloyd","Genres not available",40,0.454,0.497,0.778,0.071,1.32E-6,5.443,0.0366,0.00271,99.973,202133
+894,"Moving on Up","M People","Genres not available",51,0.964,0.895,0.862,0.102,0.0401,6.079,0.0365,0.0408,125.083,216040
+895,"Smalltown Boy","Bronski Beat","Genres not available",24,0.926,0.679,0.564,0.275,0.0709,11.247,0.0267,0.529,134.586,303307
+896,"Ain't No Sunshine","Bill Withers","Genres not available",77,0.514,0.479,0.416,0.118,1.72E-5,11.451,0.124,0.457,79.593,125093
+897,"The Best Thing","Boom Crash Opera","Genres not available",37,0.331,0.475,0.806,0.269,0.000749,6.693,0.0354,0.393,159.967,250427
+898,Pony,Ginuwine,"Genres not available",75,0.966,0.749,0.605,0.115,0.0381,9.359,0.086,0.00186,142.024,251733
+899,"Rock Lobster","The B-52's","Genres not available",58,0.442,0.592,0.882,0.0506,0.0155,8.315,0.0468,0.00884,92.157,409400
+900,"I Believe In A Thing Called Love","The Darkness","Genres not available",71,0.622,0.442,0.846,0.282,4.71E-6,5.214,0.0764,0.0538,128.235,217653
+901,Glycerine,Bush,"Genres not available",15,0.0827,0.447,0.337,0.0945,0.00124,11.402,0.0325,0.0365,114.422,266493
+902,"Goodbye Yellow Brick Road - Remastered 2014","Elton John","Genres not available",6,0.383,0.572,0.482,0.155,0.00255,7.681,0.0271,0.476,121.666,192827
+903,"Life In The Fast Lane - Remastered",Eagles,"Genres not available",72,0.883,0.667,0.755,0.0523,6.94E-5,7.246,0.069,0.0966,109.535,286220
+904,"Two Princes","Spin Doctors","Genres not available",74,0.836,0.543,0.912,0.0565,2.1E-6,10.71,0.0601,0.00162,103.731,256733
+905,"California Girls - Remix/Remastered","The Beach Boys","Genres not available",57,0.713,0.503,0.62,0.159,0,6.069,0.0295,0.471,116.595,160360
+906,"On A Night Like This","Kylie Minogue","Genres not available",41,0.563,0.597,0.87,0.335,0.32,6.058,0.0279,0.00378,129.947,212973
+907,"Copperhead Road","Steve Earle","Genres not available",59,0.765,0.378,0.742,0.0659,0.000125,10.002,0.0444,0.0257,163.721,270067
+908,"Rock And Roll","Led Zeppelin","Genres not available",67,0.871,0.317,0.887,0.0891,0.00258,7.292,0.0375,0.000582,169.613,220561
+909,"Kiss From A Rose",Seal,"Genres not available",74,0.223,0.583,0.532,0.306,0,7.11,0.0309,0.684,131.741,288427
+910,"Hymn To Her - 7"" Version 2009 Remastered Version",Pretenders,"Genres not available",23,0.255,0.549,0.55,0.116,0,9.355,0.0344,0.172,95.219,272920
+911,Riptide,"Vance Joy","Genres not available",80,0.51,0.484,0.731,0.151,0,6.694,0.0379,0.431,101.654,204280
+912,"Jet - Remastered 2010","Paul McCartney/Wings","Genres not available",57,0.417,0.504,0.739,0.0949,0.08,7.265,0.0316,0.0179,128.918,248360
+913,"You Spin Me Round (Like a Record)","Dead Or Alive","Genres not available",33,0.96,0.554,0.851,0.405,0.0242,10.526,0.0334,0.006,128.103,196800
+914,"Better Man","Robbie Williams","Genres not available",37,0.291,0.486,0.525,0.134,0,7.31,0.0341,0.172,156.207,204640
+915,"What About Me?","Moving Pictures","Genres not available",32,0.336,0.562,0.438,0.377,0,11.629,0.0352,0.594,127.387,211533
+916,"Shimmer - Single Version",Fuel,"Genres not available",65,0.385,0.263,0.784,0.15,0,6.514,0.054,0.00192,114.671,214040
+917,"Tonight's the Night (Gonna Be Alright) - 2009 Remastered Version","Rod Stewart","Genres not available",52,0.724,0.55,0.514,0.382,0.125,12.617,0.0523,0.336,136.542,237120
+918,Creep,TLC,"Genres not available",68,0.797,0.811,0.458,0.0526,1.41E-6,9.688,0.0402,0.0193,92.94,268533
+919,"If I Could Turn Back Time",Cher,"Genres not available",72,0.527,0.654,0.566,0.123,0,10.313,0.0268,0.244,108.293,239827
+920,"Black Betty - Edit",Spiderbait,"Genres not available",63,0.403,0.559,0.847,0.217,0.447,6.357,0.0899,2.14E-5,124.05,205973
+921,"Rockin' In The Free World","Neil Young","Genres not available",63,0.518,0.491,0.883,0.369,3.19E-5,4.986,0.0306,0.000736,131.75,281853
+922,"Just A Girl","No Doubt","Genres not available",55,0.721,0.634,0.93,0.134,0.000317,2.793,0.056,0.0944,108.012,205947
+923,"Errol - Remastered","Australian Crawl","Genres not available",40,0.806,0.617,0.774,0.26,1.59E-6,6.947,0.0429,0.0429,164.867,209901
+924,"Father And Son","Yusuf / Cat Stevens","Genres not available",74,0.453,0.495,0.343,0.101,9.45E-5,11.549,0.0355,0.61,135.882,221000
+925,Fighter,"Christina Aguilera","Genres not available",68,0.45,0.435,0.92,0.552,0.000353,1.357,0.201,0.235,188.899,245960
+926,"Drop The Pilot","Joan Armatrading","Genres not available",45,0.961,0.671,0.487,0.191,0,15.367,0.0349,0.0367,127.885,221987
+927,"Hound Dog","Elvis Presley","Genres not available",71,0.95,0.357,0.756,0.76,0.00505,8.492,0.0621,0.733,174.797,136027
+928,"Listen Like Thieves",INXS,"Genres not available",35,0.574,0.625,0.908,0.0623,0.029,4.345,0.0483,0.00118,116.228,225333
+929,Californication,"Red Hot Chili Peppers","Genres not available",82,0.328,0.592,0.767,0.127,0.00165,2.788,0.027,0.0021,96.483,329733
+930,"Everytime You Go Away","Paul Young","Genres not available",38,0.715,0.607,0.643,0.118,0.000153,11.493,0.0435,0.177,164.256,321573
+931,"Sweet Disposition","The Temper Trap","Genres not available",66,0.34,0.531,0.821,0.124,0.171,6.812,0.0439,0.0701,129.139,230800
+932,"Get Up, Stand Up","Bob Marley & The Wailers","Genres not available",51,0.756,0.779,0.498,0.0715,0,9.471,0.428,0.195,77.694,197840
+933,"Sunshine Of Your Love",Cream,"Genres not available",72,0.784,0.684,0.481,0.118,6.57E-5,12.59,0.0384,0.475,115.078,250000
+934,"Uptown Girl","Billy Joel","Genres not available",69,0.833,0.696,0.943,0.653,0,2.962,0.0431,0.0736,129.003,194867
+935,"Prisoner Of Society","The Living End","Genres not available",44,0.19,0.275,0.993,0.302,0,5.474,0.138,0.000186,148.725,229067
+936,"Bad Moon Rising","Creedence Clearwater Revival","Genres not available",70,0.942,0.641,0.774,0.0473,1.05E-5,5.916,0.0278,0.0543,89.787,141600
+937,"All My Life","Foo Fighters","Genres not available",62,0.622,0.583,0.586,0.494,0.000633,5.683,0.0518,0.000231,167.798,262733
+938,"Old Time Rock'n'Roll",Mystique,"Genres not available",2,0.932,0.796,0.889,0.117,0,5.336,0.0567,0.373,125.058,195507
+939,"I Can't Make You Love Me","Bonnie Raitt","Genres not available",64,0.113,0.588,0.149,0.236,9.65E-5,16.728,0.0319,0.846,124.689,332960
+940,"Tequila Sunrise - Remastered",Eagles,"Genres not available",62,0.731,0.632,0.397,0.106,0.0421,12.855,0.0265,0.536,110.578,173057
+941,Longview,"Green Day","Genres not available",64,0.814,0.381,0.732,0.0854,0.0101,7.594,0.0536,0.00834,142.504,233240
+942,"Can't Fight This Feeling","REO Speedwagon","Genres not available",73,0.19,0.408,0.48,0.0877,1.82E-5,11.017,0.0266,0.155,156.344,294773
+943,Stan,Eminem/Dido,"Genres not available",71,0.484,0.778,0.769,0.548,4.03E-6,4.331,0.248,0.0369,80.044,404107
+944,"Take a Long Line","The Angels","Genres not available",0,0.37,0.637,0.707,0.0893,8.93E-6,6.03,0.109,0.0033,91.379,178733
+945,"Four Seasons In One Day","Crowded House","Genres not available",46,0.492,0.517,0.261,0.0863,0.000163,17.196,0.0263,0.816,89.221,170160
+946,"Let Her Go",Passenger,"Genres not available",74,0.244,0.479,0.545,0.0963,0,7.346,0.0688,0.365,74.897,252733
+947,"Panama - 2015 Remastered Version","Van Halen","Genres not available",73,0.463,0.527,0.978,0.0744,4.75E-5,5.436,0.109,0.00124,141.169,210227
+948,Drive,Incubus,"Genres not available",76,0.666,0.645,0.792,0.119,0.0121,7.34,0.036,0.0562,90.565,232453
+949,"A Message to You Rudy","The Specials/Rico","Genres not available",42,0.969,0.906,0.453,0.104,0.00031,7.938,0.0665,0.17,102.981,173800
+950,Amazing,"George Michael","Genres not available",56,0.88,0.805,0.754,0.117,1.77E-6,6.825,0.0394,0.0884,128.429,265827
+951,"Foxey Lady","Jimi Hendrix","Genres not available",49,0.558,0.494,0.838,0.405,0.26,6.028,0.0387,0.0613,98.019,198293
+952,"Rock And Roll All Nite",KISS,"Genres not available",29,0.909,0.656,0.931,0.0543,0,5.827,0.0976,0.046,144.747,168733
+953,"The Rockafeller Skank","Fatboy Slim","Genres not available",43,0.171,0.581,0.984,0.448,0.11,5.551,0.295,0.0007,152.518,236893
+954,"If You Love Somebody Set Them Free",Sting,"Genres not available",41,0.791,0.65,0.828,0.326,0,10.568,0.0332,0.137,125.055,256227
+955,"Seven Nation Army","The White Stripes","Genres not available",76,0.324,0.737,0.463,0.255,0.447,7.828,0.0792,0.00817,123.881,231733
+956,Malibu,Hole,"Genres not available",61,0.678,0.528,0.904,0.174,0,5.854,0.0343,0.000833,122.371,230040
+957,"Burn For You",INXS,"Genres not available",10,0.346,0.796,0.746,0.0826,0.126,8.182,0.0397,0.23,115.733,297733
+958,"River Deep Mountain High","Ike & Tina Turner","Genres not available",57,0.866,0.621,0.972,0.195,0.000585,3.791,0.0724,0.468,155.115,244160
+959,Bootylicious,"Destiny's Child","Genres not available",65,0.637,0.84,0.835,0.152,1.11E-6,4.386,0.275,0.00281,103.376,207907
+960,"Hey, Little Girl",ICEHOUSE,"Genres not available",3,0.856,0.747,0.883,0.0911,0.456,5.845,0.0334,0.139,135.517,264000
+961,"All of Me","John Legend","Genres not available",85,0.331,0.422,0.264,0.132,0,7.064,0.0322,0.922,119.93,269560
+962,"The Weight (with Jimmy Barnes)","The Badloves/Jimmy Barnes","Genres not available",40,0.449,0.569,0.389,0.105,0,12.897,0.0381,0.203,73.901,267827
+963,"Rocket Man (I Think It's Going To Be A Long, Long Time)","Elton John","Genres not available",79,0.36,0.602,0.522,0.0941,1.44E-5,9.031,0.0285,0.386,136.637,281613
+964,"Steppin' Out","Joe Jackson","Genres not available",54,0.529,0.591,0.225,0.0614,0.00365,20.344,0.0382,0.0426,159.684,268200
+965,"Instant Karma! (We All Shine On) - 2010 - Remaster","John Lennon","Genres not available",54,0.14,0.624,0.931,0.0631,0.00149,9.988,0.116,0.000899,119.887,205133
+966,"Not Pretty Enough","Kasey Chambers","Genres not available",42,0.312,0.616,0.613,0.13,0,5.431,0.0337,0.56,119.838,199134
+967,Moondance,"Van Morrison","Genres not available",66,0.563,0.606,0.282,0.152,8.3E-6,12.207,0.0339,0.501,67.409,274040
+968,"Stay With Me","Sam Smith","Genres not available",29,0.186,0.479,0.419,0.11,0.000217,6.517,0.0389,0.568,85.014,172724
+969,"Lady Marmalade","Patti LaBelle","Genres not available",60,0.947,0.571,0.652,0.0598,0,11.034,0.0499,0.551,117.956,235267
+970,"Hard To Handle","The Black Crowes","Genres not available",51,0.963,0.615,0.799,0.254,0.000653,3.673,0.0458,0.00379,103.922,187600
+971,"The Gambler","Kenny Rogers","Genres not available",70,0.86,0.671,0.501,0.194,0,13.119,0.0594,0.342,87.038,214880
+972,"La Bamba","Los Lobos","Genres not available",57,0.886,0.348,0.751,0.208,0.000738,12.823,0.0494,0.0699,156.509,172733
+973,"Hot In Herre",Nelly,"Genres not available",73,0.921,0.965,0.736,0.0595,0,5.005,0.144,0.218,107.07,228227
+974,"Bullet With Butterfly Wings - Remastered 2012","The Smashing Pumpkins","Genres not available",41,0.475,0.404,0.72,0.0466,0.836,9.18,0.0626,5.59E-5,121.649,258467
+975,"Long Train Runnin'","The Doobie Brothers","Genres not available",72,0.843,0.575,0.912,0.0562,0.00211,7.275,0.0393,0.0916,117.399,207267
+976,"Walking In Memphis","Marc Cohn","Genres not available",70,0.334,0.567,0.512,0.296,0,8.831,0.0357,0.547,130.269,252613
+977,"Try A Little Tenderness","The Commitments","Genres not available",46,0.0963,0.372,0.393,0.224,1.93E-5,13.239,0.0445,0.0131,111.159,273307
+978,"Same Love - feat. Mary Lambert","Macklemore & Ryan Lewis/Mary Lambert","Genres not available",70,0.299,0.688,0.473,0.104,4.46E-5,9.059,0.167,0.716,84.958,318525
+979,"The Ballroom Blitz",Sweet,"Genres not available",50,0.849,0.622,0.755,0.048,0.000491,10.355,0.0682,0.00217,108.766,241787
+980,"Chemical Heart",Grinspoon,"Genres not available",1,0.37,0.475,0.612,0.137,0,7.255,0.0269,0.00627,153.989,278240
+981,"Buddy Holly",Weezer,"Genres not available",71,0.825,0.535,0.931,0.0887,7.26E-5,4.012,0.0451,0.00611,120.958,159587
+982,"Free Fallin'","Tom Petty","Genres not available",73,0.623,0.63,0.449,0.0622,0,13.243,0.0252,0.219,84.378,256000
+983,"I Got You Babe - LP/Single Version","Sonny & Cher","Genres not available",64,0.624,0.621,0.708,0.143,2.0E-6,9.057,0.0259,0.246,110.533,193840
+984,"Private Eyes - Remastered","Daryl Hall & John Oates","Genres not available",63,0.84,0.85,0.938,0.0582,0.000346,6.889,0.0415,0.409,120.826,217200
+985,"Catch My Disease","Ben Lee","Genres not available",56,0.917,0.756,0.73,0.139,1.24E-5,5.292,0.032,0.0224,115.977,254107
+986,"Runaway Train","Soul Asylum","Genres not available",70,0.561,0.613,0.72,0.104,0,7.957,0.0425,0.0132,117.341,265867
+987,"Super Freak","Rick James","Genres not available",70,0.961,0.832,0.797,0.0545,0,8.194,0.0487,0.246,132.431,205467
+988,"Running On Empty","Jackson Browne","Genres not available",68,0.498,0.531,0.948,0.694,0.0117,5.438,0.0568,0.006,136.891,298093
+989,"Every Little Thing She Does Is Magic - Remastered 2003","The Police","Genres not available",63,0.376,0.535,0.745,0.179,0.0792,10.123,0.0335,0.127,163.913,260573
+990,"Doo Wop (That Thing)","Ms. Lauryn Hill","Genres not available",23,0.495,0.535,0.505,0.0923,0,8.926,0.245,0.0393,99.935,320267
+991,"The Boys Are Back in Town","Thin Lizzy","Genres not available",74,0.768,0.445,0.706,0.205,0.000252,9.803,0.0461,0.234,80.823,266720
+992,Desire,U2,"Genres not available",63,0.626,0.49,0.827,0.112,0.00406,9.481,0.0482,0.000212,108.577,179360

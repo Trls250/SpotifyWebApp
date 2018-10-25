@@ -296,6 +296,8 @@ class PlayListController extends Controller {
                 'Message'=>"No records"]);
         }
 
+             
+ 
 
         $playlists = Playlist::getAll($offset, $limit);
 
@@ -313,6 +315,71 @@ class PlayListController extends Controller {
             'Playlists'=> $playlists,
             'FromTag'=> FALSE]);
     }
+    
+    public function getLibraryRecords(Request $request)
+    {
+        
+        $offset = 0;
+        $limit = 2;
+
+        if(isset($request['offset']))
+        {
+           $offset = $request['offset'];
+
+        }
+
+        if(isset($request['items']))
+        {
+            $limit = $request['items'];
+
+        }
+
+        if(Playlist::count() == 0){
+            return ([
+                'Success'=>false,
+                'Status'=>"404",
+                'Message'=>"No records"]);
+        }
+
+                
+        $playlists = DB::table('playlists')
+                    ->select('*')
+                    ->join('playlist_ratings', 'playlist_ratings.playlist_id', '=', 'playlists.id')
+                    ->where('playlist_ratings.user_id', session::get('UserInfo')['id'])
+                    ->skip($offset)->take($limit)->get();
+        
+
+       
+       
+
+        if($playlists->count() == 0)
+        {
+            return ([
+                'Success'=>false,
+                'Status'=>"204",
+                'Message'=>"No further records"]);
+        }
+
+        return view('loaders.wall_1')->with([
+            'Status' => "200",
+            'Success'=>true,
+            'Playlists'=> $playlists,
+            'FromTag'=> FALSE]);
+    }
+    
+    public function mywall(Request $request)
+    {
+        
+        return view('wall')->with ('url','playlist/getWallRecords');
+    }
+    
+     public function mylibrary(Request $request)
+    {
+        
+        return view('wall')->with ('url','playlist/getLibraryRecords');
+    }
+    
+    
 
     /**
      *

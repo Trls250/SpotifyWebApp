@@ -1,0 +1,55 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,"Otra Como Tu","Eros Ramazzotti","italian pop/mexican pop",59,0.498,0.531,0.577,0.0896,1.28E-5,9.363,0.0315,0.117,177.67,281227
+2,"Fuego en el Fuego","Eros Ramazzotti","italian pop/mexican pop",40,0.961,0.796,0.856,0.0912,0,3.851,0.0286,0.14,126.987,240893
+3,"Amarte Es Total","Eros Ramazzotti","italian pop/mexican pop",43,0.184,0.527,0.447,0.078,0.000613,7.505,0.0291,0.116,126.343,269507
+4,"A Medio Camino","Eros Ramazzotti","italian pop/mexican pop",34,0.37,0.699,0.41,0.105,0.00723,10,0.0348,0.0334,123.992,348080
+5,"Y Me Rebello (E mi ribello)","Eros Ramazzotti","italian pop/mexican pop",25,0.208,0.633,0.25,0.0684,1.56E-5,15.731,0.0317,0.748,107.807,262293
+6,"Amor En Contra","Eros Ramazzotti","italian pop/mexican pop",43,0.266,0.628,0.478,0.14,0,7.428,0.0273,0.276,125.778,265093
+7,"Ok Ya Voy - Spanish Version of ""Ok Ci Sto""","Eros Ramazzotti","italian pop/mexican pop",16,0.605,0.7,0.593,0.0636,0,13.571,0.0365,0.46,146.168,236827
+8,"Cosas De La Vida (Cose Della Vita)","Eros Ramazzotti","italian pop/mexican pop",59,0.492,0.622,0.629,0.264,0.000158,8.821,0.0276,0.0544,88.026,288987
+9,"Completamente Enamorados","Eros Ramazzotti","italian pop/mexican pop",43,0.71,0.71,0.33,0.205,0,14.683,0.0373,0.525,136.766,251867
+10,"Toma La Luna","Eros Ramazzotti","italian pop/mexican pop",43,0.893,0.878,0.544,0.0923,0.00043,10.425,0.0393,0.252,107.709,233067
+11,"Recuerdos ""Memorie""","Eros Ramazzotti","italian pop/mexican pop",27,0.278,0.657,0.417,0.213,8.53E-6,11.782,0.0291,0.273,107.058,323827
+12,"Un Fuerte No - Spanish Version Of ""Un Grosso No""","Eros Ramazzotti","italian pop/mexican pop",25,0.526,0.659,0.506,0.0994,0,9.893,0.0311,0.0335,116.032,339227
+13,Fábula,"Eros Ramazzotti","italian pop/mexican pop",32,0.268,0.624,0.348,0.118,0,12.147,0.0276,0.113,160.033,277333
+14,"Mi Amor Por Ti","Eros Ramazzotti","italian pop/mexican pop",14,0.6,0.683,0.91,0.259,0,4.706,0.0315,0.00912,124.944,254240
+15,"Quiero Saberlo","Eros Ramazzotti","italian pop/mexican pop",16,0.185,0.511,0.464,0.138,0,4.937,0.027,0.582,139.987,262453
+16,"Estrella Gemela","Eros Ramazzotti","italian pop/mexican pop",44,0.646,0.716,0.535,0.124,1.24E-5,7.825,0.0343,0.0541,142.027,279667
+17,"Un Angel No Es","Eros Ramazzotti","italian pop/mexican pop",30,0.365,0.561,0.73,0.13,0,5.601,0.038,0.161,77.927,278693
+18,"Cuanto Amor Me Das","Eros Ramazzotti/Luca Bignardi","italian pop/mexican pop",46,0.719,0.789,0.654,0.0981,0.000108,7.212,0.0267,0.1,112.024,257000
+19,"Para Mi Sera por Siempre (Per me per sempre)","Eros Ramazzotti","italian pop/mexican pop",15,0.25,0.511,0.312,0.131,0,8.069,0.0255,0.728,100.113,235080
+20,"Un Ángel Como El Sol Tú Eres","Eros Ramazzotti","italian pop/mexican pop",42,0.777,0.562,0.915,0.27,0,2.525,0.0673,0.00348,99.093,203027
+21,"Una Emocion para Siempre","Eros Ramazzotti","italian pop/mexican pop",35,0.852,0.642,0.836,0.325,3.46E-6,4.837,0.0291,0.2,119.867,232987
+22,Perfecto,"Eros Ramazzotti","italian pop/mexican pop",0,0.807,0.681,0.904,0.414,0,3.351,0.0355,0.0887,144.059,231154
+23,"Nada Sin Ti","Eros Ramazzotti","italian pop/mexican pop",39,0.491,0.684,0.475,0.0484,7.95E-6,13.463,0.0424,0.452,133.07,305400
+24,"Fantastico Amor","Eros Ramazzotti","italian pop/mexican pop",25,0.676,0.697,0.667,0.0941,0,8.529,0.0591,0.244,155.853,249893
+25,"Dimelo a Mi","Eros Ramazzotti","italian pop/mexican pop",15,0.812,0.628,0.855,0.195,0,3.522,0.0283,0.393,114.934,238640
+26,"No Estamos Solos","Eros Ramazzotti/Ricky Martin","italian pop/mexican pop",42,0.822,0.692,0.958,0.198,0,2.665,0.0541,0.022,102.037,222240
+27,"Una Historia Importante","Eros Ramazzotti","italian pop/mexican pop",24,0.204,0.577,0.526,0.0569,5.39E-6,9.198,0.037,0.191,125.197,251360
+28,"La Cosa Mas Bella","Eros Ramazzotti","italian pop/mexican pop",65,0.599,0.708,0.752,0.204,0,6.679,0.026,0.0813,110,265627
+29,"Un Segundo de Paz","Eros Ramazzotti","italian pop/mexican pop",34,0.869,0.649,0.886,0.0434,0,4.354,0.037,0.113,95.003,276920
+30,"Casi Amor (Quasi amore)","Eros Ramazzotti","italian pop/mexican pop",28,0.212,0.597,0.52,0.116,0,7.763,0.0322,0.175,145.761,304907
+31,"La Aurora","Eros Ramazzotti","italian pop/mexican pop",35,0.301,0.631,0.495,0.106,0,7.638,0.0335,0.088,132.011,335027
+32,"No Te Prometo Nada","Eros Ramazzotti","italian pop/mexican pop",23,0.166,0.596,0.346,0.109,2.6E-6,8.424,0.0524,0.809,77.986,245040
+33,"El Tiempo Entre los Dos","Eros Ramazzotti","italian pop/mexican pop",17,0.21,0.555,0.566,0.102,0,5.604,0.0299,0.406,128,266227
+34,"Donde Hay Musica - Spanish Version of ""Dove C'è Musica""","Eros Ramazzotti","italian pop/mexican pop",29,0.806,0.671,0.86,0.134,3.06E-5,7.091,0.0294,0.0477,115.032,284587
+35,"Ahora Somos","Eros Ramazzotti","italian pop/mexican pop",19,0.532,0.543,0.834,0.351,3.25E-6,4.771,0.0295,0.00638,150.649,232960
+36,"Solo Ayer","Eros Ramazzotti","italian pop/mexican pop",28,0.237,0.547,0.607,0.114,0,4.42,0.0351,0.593,76.035,248747
+37,"Hasta El Éxtasis","Eros Ramazzotti/Nicole Scherzinger","italian pop/mexican pop",31,0.633,0.683,0.898,0.204,0,3.644,0.0342,0.012,114.001,224213
+38,"Una Tormenta De Estrellas","Eros Ramazzotti","italian pop/mexican pop",16,0.435,0.654,0.788,0.0764,0,4.277,0.0278,0.0435,124.976,230920
+39,"Bajo El Mismo Cielo","Eros Ramazzotti","italian pop/mexican pop",16,0.469,0.542,0.864,0.206,0,3.213,0.0375,0.0038,136.027,218640
+40,"Pero Ella (Lei però)","Eros Ramazzotti","italian pop/mexican pop",28,0.701,0.639,0.632,0.189,1.01E-5,8.8,0.028,0.157,87.997,291560
+41,"Las Cosas Que He Visto (Cose che ho visto) - produced by Michele Canova Iorfida","Eros Ramazzotti","italian pop/mexican pop",15,0.329,0.647,0.691,0.142,1.25E-6,6.996,0.0254,0.368,94.171,251427
+42,Así,"Eros Ramazzotti/Il Volo","italian pop/mexican pop",24,0.228,0.464,0.604,0.133,0,4.833,0.0319,0.239,131.714,256467
+43,"Tu Eres (Tu Sei)","Eros Ramazzotti","italian pop/mexican pop",22,0.562,0.561,0.814,0.143,0,5.39,0.0295,0.066,155.891,239747
+44,"Ojos de Esperanza - Spanish Version of ""Occhi Di Sperenza""","Eros Ramazzotti","italian pop/mexican pop",22,0.229,0.687,0.432,0.0816,0,9.139,0.0316,0.5,124.968,196227
+45,"Amigo Mío","Eros Ramazzotti","italian pop/mexican pop",18,0.236,0.471,0.483,0.118,0,5.319,0.0267,0.535,140.15,226827
+46,"Musica Es","Eros Ramazzotti","italian pop/mexican pop",27,0.0791,0.562,0.265,0.228,8.93E-5,14.787,0.0357,0.39,124.938,660333
+47,"Baila Solo Con Tu Musica","Eros Ramazzotti","italian pop/mexican pop",17,0.508,0.645,0.92,0.0795,1.74E-6,3.424,0.0304,0.000585,117.946,229387
+48,"Fuego En El Fuego (Fuoco Nel Fuoco)","Eros Ramazzotti/Carlos Santana","italian pop/mexican pop",26,0.938,0.665,0.911,0.17,0,2.942,0.043,0.0837,126.954,242387
+49,"Uno Más","Eros Ramazzotti/Hooverphonic","italian pop/mexican pop",18,0.53,0.583,0.889,0.331,0.00114,3.069,0.04,0.00135,130.004,185400
+50,"Por Ti Me Casare","Eros Ramazzotti","italian pop/mexican pop",53,0.286,0.642,0.257,0.118,0,14.282,0.0341,0.465,125.552,242107
+51,"La Noche Son Tus Ojos","Eros Ramazzotti","Genres not available",24,0.367,0.503,0.591,0.204,0.000554,8.08,0.0389,0.332,79.538,241213
+52,"Si Bastasen un Par de Canciones","Eros Ramazzotti","Genres not available",36,0.325,0.499,0.56,0.0832,0,7.678,0.03,0.14,171.794,322267
+53,"Donde Hay Musica (Dove C'E' Musica)","Eros Ramazzotti/Steve Vai","Genres not available",16,0.6,0.574,0.935,0.311,0.00108,4.573,0.0396,0.00228,114.965,300827
+54,"Vivo Sin Ti (Beata Solitudine)","Eros Ramazzotti","Genres not available",18,0.962,0.695,0.942,0.329,0,4.086,0.0349,0.0679,104.006,247707

@@ -109,6 +109,7 @@
 
 
     function add(id) {
+      
         var temp = "#add_btn_" + id;
         $('#main_loader').fadeIn();
                         $.ajax({

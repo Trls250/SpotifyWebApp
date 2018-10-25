@@ -1,0 +1,51 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,"Misery Business",Paramore,"candy pop/emo/pixie/pop emo/pop punk",72,0.731,0.517,0.906,0.113,9.26E-6,3.677,0.0735,0.00272,172.977,211520
+2,"The Diary of Jane - Single Version","Breaking Benjamin","alternative metal/nu metal/post-grunge/rap metal/rap rock",68,0.357,0.374,0.961,0.138,0.0834,4.421,0.0851,5.53E-5,167.032,200547
+3,"Shake It","Metro Station","electropowerpop/emo/pixie/pop punk/post-teen pop",71,0.79,0.618,0.955,0.486,3.09E-6,3.836,0.0798,0.00221,150.034,179947
+4,"I'm Not Okay (I Promise)","My Chemical Romance","emo/pop punk",73,0.255,0.21,0.94,0.269,0,3.427,0.123,0.00602,179.722,186480
+5,"Miserable At Best","Mayday Parade","pop emo/pop punk/pop rock/screamo",65,0.416,0.464,0.362,0.111,0,10.652,0.0306,0.574,135.255,316987
+6,MakeDamnSure,"Taking Back Sunday","emo/modern rock/pop punk/pop rock/screamo",66,0.432,0.553,0.837,0.372,0,5.608,0.0452,0.00941,140.495,208280
+7,"Wake Me Up When September Ends","Green Day","permanent wave/pop punk/punk/rock",79,0.146,0.546,0.814,0.0972,0,5.146,0.0314,0.023,104.98,285653
+8,"Mr. Brightside","The Killers","indie rock/modern rock/permanent wave/rock/vegas indie",80,0.234,0.33,0.936,0.0926,0,3.66,0.0917,0.00108,148.112,222587
+9,"When You're Gone","Avril Lavigne","canadian pop/candy pop/dance pop/pop/post-teen pop",65,0.168,0.458,0.719,0.228,0,3.921,0.0323,0.189,142.032,240493
+10,"Sugar, We're Goin Down","Fall Out Boy","emo/modern rock/pop punk",79,0.699,0.499,0.824,0.163,0,4.741,0.0794,0.00898,161.977,229093
+11,"With Me","Sum 41","alternative metal/canadian punk/nu metal/pop punk/post-grunge/punk",41,0.101,0.168,0.852,0.174,0,4.075,0.0416,0.0105,175.337,291360
+12,"I Write Sins Not Tragedies","Panic! At The Disco","emo/modern rock/pop punk/vegas indie",64,0.672,0.566,0.815,0.12,0,4.481,0.14,0.0737,169.961,185587
+13,"Dear Maria, Count Me In","All Time Low","pop punk/post-teen pop",69,0.569,0.465,0.896,0.206,0,3.126,0.0795,0.00725,181.014,182827
+14,"In The End","Linkin Park","alternative metal/nu metal/post-grunge/rap metal",66,0.37,0.542,0.853,0.108,0,6.407,0.0498,0.0103,105.256,216933
+15,"The Kill","Thirty Seconds To Mars","modern rock/pop punk/post-grunge/rock",71,0.302,0.309,0.912,0.582,0.000271,3.881,0.0646,0.0014,183.035,231533
+16,"Bring Me To Life",Evanescence,"alternative metal/post-grunge",80,0.32,0.316,0.945,0.396,1.85E-6,3.169,0.124,0.00895,189.931,235893
+17,"Whataya Want from Me","Adam Lambert","australian pop/dance pop/idol/pop/post-teen pop",65,0.445,0.44,0.683,0.0593,0,4.732,0.0489,0.00706,185.948,227320
+18,"Whoa Oh! (Me vs Everyone)","Forever The Sickest Kids","electropowerpop/emo/pop emo/pop punk",51,0.53,0.525,0.926,0.36,0,4.112,0.0816,0.00352,143.043,204773
+19,"Miss Murder",AFI,"alternative metal/emo/modern rock/pop punk/post-grunge/punk/screamo/skate punk",71,0.725,0.309,0.875,0.113,0.00168,4.49,0.0488,0.000213,143.526,206587
+20,Smile,"Avril Lavigne","canadian pop/candy pop/dance pop/pop/post-teen pop",60,0.686,0.627,0.846,0.0758,3.97E-6,3.834,0.0457,0.0019,105.061,209453
+21,"Until The Day I Die","Story Of The Year","alternative metal/emo/nu metal/pop punk/post-grunge/post-hardcore/rap metal/rap rock/screamo",67,0.534,0.597,0.931,0.0504,0,4.591,0.0984,0.127,92.003,235200
+22,Situations,"Escape the Fate","alternative metal/emo/metalcore/pixie/pop punk/rap metal/screamo",61,0.597,0.503,0.881,0.482,0,4.502,0.0827,0.0261,101.038,187880
+23,"I Miss You",blink-182,"modern rock/pop punk/punk",71,0.623,0.659,0.778,0.0841,6.79E-6,6.423,0.0379,0.00136,110.022,227240
+24,"The Curse Of Curves","Cute Is What We Aim For","emo/pixie/pop emo/pop punk",63,0.477,0.534,0.792,0.191,0,4.512,0.0677,0.39,145.881,203627
+25,"My Immortal",Evanescence,"alternative metal/post-grunge",75,0.0776,0.186,0.29,0.13,0,9.008,0.0333,0.862,68.992,262533
+26,"The Anthem","Good Charlotte","alternative metal/pop punk/pop rock/post-grunge/punk",73,0.893,0.494,0.939,0.139,0,3.127,0.126,0.00666,177.751,175093
+27,"The Middle","Jimmy Eat World","alternative rock/modern rock/neo mellow/pop punk/pop rock/post-grunge/punk",78,0.93,0.629,0.897,0.263,0,3.401,0.0483,0.0424,161.944,168253
+28,"Thnks fr th Mmrs","Fall Out Boy","emo/modern rock/pop punk",76,0.615,0.459,0.884,0.107,0,5.005,0.0644,0.00539,154.868,203507
+29,"Love Like Woe","The Ready Set","alternative pop rock/pixie/pop emo/pop punk/post-teen pop",56,0.822,0.697,0.775,0.0737,0,4.106,0.0636,0.139,90.015,200453
+30,"Boulevard of Broken Dreams","Green Day","permanent wave/pop punk/punk/rock",71,0.506,0.49,0.679,0.0383,1.54E-5,3.68,0.0309,0.00394,167.046,261267
+31,"Face Down","The Red Jumpsuit Apparatus","emo/pop punk/pop rock/post-grunge/rap metal/screamo",74,0.465,0.545,0.932,0.127,0,2.189,0.0399,0.000665,92.956,192000
+32,Scars,"Papa Roach","alternative metal/nu metal/pop punk/post-grunge/rap metal/rap rock",64,0.471,0.384,0.921,0.168,0,3.334,0.055,0.0948,89.922,208186
+33,"Ohio Is for Lovers","Hawthorne Heights","emo/pop punk/post-hardcore/screamo",64,0.625,0.568,0.835,0.357,0,6.896,0.0687,0.0411,170.045,244480
+34,"The Bird And The Worm","The Used","emo/pop punk/post-hardcore/screamo",54,0.205,0.299,0.933,0.0723,1.21E-5,6.874,0.17,0.0742,180.092,225040
+35,"Rooftops (A Liberation Broadcast)",lostprophets,---,17,0.255,0.314,0.817,0.187,0,4.698,0.0407,5.67E-5,177.913,251333
+36,"Helena (So Long & Goodnight)","My Chemical Romance","emo/pop punk",72,0.0857,0.356,0.96,0.209,0,3.487,0.104,0.0142,125.921,204733
+37,Numb,"Linkin Park","alternative metal/nu metal/post-grunge/rap metal",83,0.243,0.496,0.863,0.639,0,4.153,0.0381,0.0046,110.018,185587
+38,Perfect,"Simple Plan","canadian punk/canadian rock/pop punk/pop rock/post-grunge",12,0.557,0.494,0.672,0.105,0,4.877,0.0405,0.0273,156.208,277027
+39,Savior,"Rise Against","alternative metal/hardcore punk/nu metal/pop punk/post-grunge/punk/rap metal",73,0.526,0.549,0.93,0.39,6.67E-5,3.468,0.0487,0.00164,112.447,242280
+40,Broken,"Seether/Amy Lee","alternative metal/nu metal/post-grunge/rap metal/rap rock",62,0.188,0.405,0.606,0.143,0.00101,2.929,0.0366,0.00897,123.777,258516
+41,"Ocean Avenue",Yellowcard,"bow pop/emo/modern rock/pop punk/pop rock/post-grunge/punk",72,0.786,0.486,0.904,0.0947,2.83E-5,3.751,0.0638,3.43E-5,173.734,198267
+42,"Move Along","The All-American Rejects","modern rock/neo mellow/pop punk/pop rock/post-grunge",68,0.628,0.529,0.922,0.26,0,3.84,0.0459,0.000198,109.847,238880
+43,Decode,Paramore,"candy pop/emo/pixie/pop emo/pop punk",60,0.277,0.282,0.866,0.101,0.0055,4.223,0.0588,0.000705,163.987,261960
+44,"American Idiot","Green Day","permanent wave/pop punk/punk/rock",78,0.769,0.38,0.988,0.368,7.86E-5,2.042,0.0639,2.64E-5,186.113,176346
+45,"Check Yes, Juliet","We The Kings","emo/neo mellow/piano rock/pop emo/pop punk/pop rock/post-teen pop",69,0.351,0.352,0.912,0.193,0,4.253,0.0725,0.00197,166.795,220147
+46,"Into Your Arms","The Maine","emo/modern alternative rock/modern rock/pop emo/pop punk/pop rock/post-teen pop",52,0.469,0.349,0.715,0.116,0,3.422,0.0344,0.102,179.883,239227
+47,"Somebody Told Me","The Killers","indie rock/modern rock/permanent wave/rock/vegas indie",71,0.767,0.5,0.975,0.104,0.000379,3.176,0.0824,0.000123,138.005,197160
+48,"Never Too Late","Three Days Grace","alternative metal/canadian metal/canadian rock/nu metal/pop punk/post-grunge/rap metal",70,0.217,0.433,0.778,0.163,0,4.68,0.0371,0.00838,149.864,209333
+49,"Welcome to the Black Parade","My Chemical Romance","emo/pop punk",77,0.236,0.217,0.905,0.222,0.00011,4.103,0.0752,0.000289,96.95,311107
+50,"Floral & Fading","Pierce The Veil","pop punk/screamo",56,0.761,0.653,0.796,0.397,0,3.765,0.0252,0.00115,99.988,209187
