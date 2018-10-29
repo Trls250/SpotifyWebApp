@@ -9,10 +9,10 @@
                 <div class="col-md-12">
                     <div class="playlists-items user-info-playlist-items">
                         <h3 id="title_to_replace" class="title">People</h3>
-                        <ul id = "playlist_records" class="clearfix">
+                        <!-- <ul id = "playlist_records" class="clearfix"> -->
                             <div class="playlist_records ">
                             </div>
-                        </ul>
+                        <!-- </ul> -->
                         
 
                     </div>

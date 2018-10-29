@@ -1318,6 +1318,89 @@ ul {
     padding: 0;
     margin: 20px;
 }
+.playlist_records .table thead {
+    background-color: #1ed760;
+    border-radius: 4px;
+    /*
+    display: inherit;
+    width: 100%;
+    max-width: 100%;*/
+}
+.playlist_records .table tbody{
+    background-color: #fff;
+}
+.playlist_records .table thead tr th,
+.playlist_records .table tbody tr td{
+    vertical-align: middle;
+}
+.playlist_records .table tbody tr td{
+    color: #999999;
+}
+.playlist_records .table thead tr th{
+    color: #fff;
+    font-weight: normal;
+    font-size: 18px;
+}
+.spotify-image-profile {
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid #cecece;
+    background-position: center;
+    margin-right: 20px;
+}
+.spotify-image-row {
+    display: flex;
+    align-items: center;
+    justify-content: sp;
+}
+.spotify-image-content h6{
+    color: #000;
+    font-family: roboto-bold;
+    font-size: 20px;
+}
+.avg-playlist-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rating-column {
+    width: 50%;
+}
+.see-play-list {
+    color: #1ed760;
+    font-family: roboto-medium;
+    font-size: 20px;
+    font-weight: 700;
+}
+.see-play-list {
+    margin: 0;
+}
+.see-play-list img {
+    max-width: 3%;
+    margin-left: 20px;
+}
+.see-play-list:hover{
+    color: #1ed760;
+}
+.playlist_records .table thead tr th:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;  
+}
+.playlist_records .table thead tr th:last-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;  
+}
+.playlist_records  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    -webkit-box-shadow: -5px 1px 34px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: -5px 1px 34px 0px rgba(0,0,0,0.08);
+    box-shadow: -5px 1px 34px 0px rgba(0,0,0,0.08);
+}
 
 /********** Media Query *******/
 
@@ -1671,6 +1754,10 @@ ul {
     }
 }
 @media  (max-width: 767px){
+    .see-play-list img {
+        max-width: 6%;
+        margin-left: 0;
+    }
     .playlists-items ul li{
         width:100%;
     }
