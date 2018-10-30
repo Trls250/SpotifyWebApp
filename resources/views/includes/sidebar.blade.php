@@ -12,7 +12,7 @@
         <li class="{{ Request::is('people') ? 'active' : '' }}">
             <a href='{{url('people')}}'>People</a>
         </li>
-         <li class="{{ Request::is('playlist/getAll') ? 'active' : '' }}">
+         <!-- <li class="{{ Request::is('playlist/getAll') ? 'active' : '' }}">
             <a href='{{url('/playlist/getAll')}}'>My Public Playlists</a>
         </li>
         <li class="{{ Request::is('playlist/getTaggedWall') ? 'active' : '' }}">
@@ -20,7 +20,7 @@
             <div class="notifaction">
                 <span id = "tagged_span_count">{{session::get('Tagged')}}</span>
             </div>
-        </li>
+        </li> -->
        
 
     </ul>

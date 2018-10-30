@@ -65,6 +65,8 @@
                             <ul class="profile-navi">
                                 <!-- <li><a href="#">Profile</a></li> -->
                                 <li><a href="{{ url('users/me') }}">My Profile</a></li>
+                                <li><a href='{{url('/playlist/getAll')}}'>My Public Playlists</a></li>
+                                <li><a href='{{url('playlist/getTaggedWall')}}'>Tagged Playlists</a></li>
                                 <li><a href="{{ url('logout') }}">Logout</a></li>
                             </ul>
                         </div>

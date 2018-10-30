@@ -1,0 +1,372 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,Wav1,Terekke,"dub techno/float house/fluxwork/lo-fi house/mandible/microhouse/outsider house",49,0.161,0.118,0.112,0.101,0.902,25.741,0.0488,0.993,77.122,262359
+2,"Love Is In The Air","Delroy Edwards","float house/fluxwork/lo-fi house/outsider house",35,0.437,0.732,0.822,0.0911,0.905,11.483,0.0844,0.62,120.153,203934
+3,"A Sea Of Love","Huerco S.","art pop/dub techno/float house/fluxwork/fourth world/mandible/microhouse/outsider house/vaporwave",42,0.125,0.141,0.116,0.107,0.872,28.718,0.041,0.848,102.494,437907
+4,"Liminal States",Patricia,"float house/fluxwork/lo-fi house/mandible/outsider house",42,0.372,0.666,0.766,0.0894,0.873,12.151,0.0377,0.498,114.938,303302
+5,X22RME,Actress,"art pop/bass music/detroit techno/dub techno/electronic/escape room/experimental pop/float house/fluxwork/fourth world/future garage/hauntology/indie r&b/indietronica/intelligent dance music/mandible/microhouse/minimal techno/ninja/outsider house/techno/vaporwave/wonky",36,0.387,0.62,0.772,0.301,3.63E-5,11.355,0.0926,0.0247,126.002,304920
+6,"Faith in Strangers","Andy Stott","ambient/art pop/bass music/chamber psych/chillwave/dark jazz/detroit techno/dub techno/electronic/escape room/experimental pop/float house/fluxwork/fourth world/future garage/indie r&b/indietronica/intelligent dance music/mandible/microhouse/minimal techno/outsider house/techno/vaporwave/wonky",48,0.164,0.657,0.692,0.11,0.894,10.121,0.0526,0.0286,136.995,389187
+7,"Axumisia V S612",Legowelt,"acid house/chicago house/detroit techno/dub techno/electro/electroclash/float house/intelligent dance music/microhouse/minimal techno/outsider house/tech house/techno",33,0.45,0.432,0.865,0.27,0.862,7.207,0.276,0.032,198.008,290732
+8,993,Blawan,"acid house/bass music/detroit techno/dub techno/electro/float house/fluxwork/future garage/mandible/microhouse/minimal dub/minimal tech house/minimal techno/outsider house/tech house/techno/uk garage",37,0.326,0.724,0.675,0.116,0.774,12.311,0.074,0.000125,129.968,363643
+9,"Andreaen Sand Dunes",Drexciya,"acid house/chicago house/detroit techno/drill and bass/dub techno/electro/float house/fluxwork/intelligent dance music/microhouse/minimal techno/outsider house/techno",36,0.496,0.649,0.617,0.116,0.754,8.965,0.0628,0.00218,132.831,376680
+10,Mercury,"Laurel Halo","ambient/art pop/bass music/chamber psych/chillwave/drone/escape room/experimental/experimental pop/fluxwork/fourth world/freak folk/gauze pop/grave wave/hauntology/indie r&b/intelligent dance music/mandible/microhouse/neo-psychedelic/noise pop/outsider house/vaporwave/witch house",34,0.115,0.403,0.326,0.123,0.9,15.732,0.0473,0.546,81.098,236564
+11,Feelin,"Florian Kupfer","lo-fi house/outsider house",28,0.721,0.692,0.943,0.0966,0.863,6.564,0.0419,0.0129,121.245,453828
+12,Regret,"Shinichi Atobe","art pop/detroit techno/dub techno/float house/fluxwork/mandible/microhouse/minimal techno/outsider house",41,0.718,0.768,0.475,0.367,0.892,18.621,0.0784,0.8,119.909,587301
+13,"Water Soaked In Forever",Khotin,"float house/fluxwork/lo-fi house/microhouse/outsider house",29,0.163,0.398,0.42,0.356,0.639,16.884,0.273,0.693,149.897,370476
+14,"Red Line II (127 Sätra C)","Varg/Yung Lean","float house/fluxwork/mandible/outsider house",31,0.0704,0.572,0.798,0.121,0.491,13.183,0.0431,0.115,129.986,500292
+15,"Taken Effect",Shed,"bass music/detroit techno/dub techno/float house/microhouse/minimal dub/minimal techno/outsider house/tech house/techno",38,0.561,0.77,0.874,0.0879,0.937,10.856,0.0765,0.0357,119.98,296006
+16,"Vaporware 01","Donato Dozzy","detroit techno/dub techno/float house/fluxwork/mandible/microhouse/minimal dub/minimal tech house/minimal techno/outsider house/tech house/techno",33,0.0373,0.362,0.603,0.407,0.983,14.474,0.0492,0.72,130.038,349951
+17,Rev8617,"Skee Mask","art pop/bass music/electronic/float house/fluxwork/future garage/intelligent dance music/mandible/microhouse/minimal techno/outsider house",43,0.0932,0.453,0.645,0.158,0.823,12.358,0.0527,0.117,134.968,224349
+18,"Motor System","Lee Gamble","bass music/fluxwork/mandible/outsider house",19,0.0601,0.715,0.906,0.129,0.559,7.942,0.0848,1.45E-5,135.018,269680
+19,OTT,"Anthony Naples","float house/outsider house",28,0.0379,0.794,0.945,0.0987,0.918,6.013,0.0552,0.000405,119.996,510620
+20,"Let Me Be Me","The Other People Place","acid house/chicago house/deep house/detroit techno/dub techno/electro/float house/fluxwork/intelligent dance music/microhouse/minimal techno/outsider house/techno",38,0.319,0.726,0.52,0.109,0.866,11.816,0.0528,0.00562,130.686,466413
+21,Life,"Galcher Lustwerk","float house/fluxwork/microhouse/outsider house",43,0.54,0.811,0.689,0.0945,0.91,10.768,0.0601,0.00216,123.027,301773
+22,"Worst Ever Contender",Rezzett,"fluxwork/outsider house",31,0.36,0.335,0.794,0.102,0.924,12.506,0.0462,0.314,152.301,346836
+23,"Some Things Can Happen Just Like This",Raime,"bass music/dub techno/fluxwork/mandible/microhouse/outsider house",29,0.153,0.624,0.198,0.0851,0.766,16.642,0.128,0.595,132.845,273705
+24,"Clear Collar","Jahiliyya Fields","outsider house",3,0.379,0.707,0.768,0.137,0.915,10.224,0.0584,0.000457,131.411,424146
+25,"Las Palmas","Dj Python","float house/fluxwork/outsider house",32,0.388,0.755,0.637,0.115,0.881,10.626,0.0332,0.000965,114.021,244000
+26,"Arpo Sunk","Call Super","bass music/float house/fluxwork/microhouse/outsider house",32,0.231,0.378,0.334,0.0657,0.446,11.066,0.0593,0.853,101.492,323362
+27,"Glassbeadgames - 8 Hours at Fabric Dub","Martyn/Four Tet","bass music/broken beat/detroit techno/drum and bass/dub techno/dubstep/electro/float house/fluxwork/future garage/intelligent dance music/microhouse/minimal tech house/minimal techno/outsider house/tech house/techno/uk garage/wonky",35,0.356,0.845,0.564,0.0753,0.714,11.955,0.102,0.0275,123.979,481690
+28,"The Shit Baby","Omar S/D Taylor","acid house/chicago house/deep house/deep soul house/detroit techno/electro/float house/minimal tech house/outsider house/tech house/techno",41,0.869,0.805,0.602,0.26,0.803,10.572,0.0606,0.0197,125.126,413315
+29,"Drain This Lord",SHXCXCHCXSH,"dub techno/float house/mandible/minimal dub/outsider house",30,0.472,0.565,0.8,0.821,0.469,8.854,0.0403,3.84E-5,130,298324
+30,Bring,Randomer,"bass music/float house/fluxwork/future garage/minimal dub/outsider house",44,0.197,0.978,0.481,0.0903,0.643,7.51,0.242,0.00785,124.998,294874
+31,Materialeyez,Xosar,"outsider house",13,0.426,0.888,0.542,0.163,0.945,11.993,0.152,0.593,106.016,246290
+32,Vanguard,"DJ Richard","float house/fluxwork/mandible/microhouse/outsider house",30,0.0396,0.724,0.934,0.0927,0.963,10.328,0.0412,1.51E-6,109.998,389909
+33,"Waters Rising","Djrum/Lola Empire","bass music/float house/fluxwork/future garage/microhouse/minimal techno/outsider house/substep/wonky",37,0.0434,0.384,0.713,0.556,0.436,11.337,0.0582,0.000336,108.106,379167
+34,Tahoe,"Dedekind Cut","ambient/art pop/drone/fluxwork/fourth world/mandible/outsider house/sound art/vaporwave",28,0.0304,0.168,0.053,0.0607,0.845,27.585,0.0477,0.908,86.397,299816
+35,"日出東方 唯我不敗",Tzusing,"chinese electronic/escape room/fluxwork/mandible/outsider house",38,0.167,0.558,0.729,0.105,0.894,10.958,0.0341,0.000694,119.965,311541
+36,Syncope,"Steve Hauschildt/GABI","ambient/art pop/chamber psych/chillwave/compositional ambient/drift/drone/dub techno/experimental pop/fluxwork/fourth world/freak folk/hauntology/intelligent dance music/mandible/microhouse/minimal techno/outsider house/sound art/vaporwave/warm drone",43,0.416,0.539,0.655,0.152,0.891,14.259,0.0346,0.44,126.003,324899
+37,"Deep into Memory",Svengalisghost,"outsider house",10,0.832,0.713,0.771,0.112,0.905,9.124,0.0509,0.0787,112.986,520400
+38,"Pop 1",GAS,"ambient/art pop/compositional ambient/dark jazz/detroit techno/drone/dub techno/electronic/experimental/fluxwork/fourth world/freak folk/intelligent dance music/mandible/microhouse/minimal techno/outsider house/sound art/warm drone",37,0.426,0.0748,0.041,0.089,0.948,18.582,0.0405,0.924,82.531,311560
+39,Curzon,"Demdike Stare","bass music/drone/dub techno/fluxwork/hauntology/intelligent dance music/mandible/microhouse/outsider house",28,0.116,0.478,0.929,0.0877,0.902,8.348,0.0759,0.00062,122.377,321707
+40,Spur,"Helena Hauff","art pop/chamber psych/detroit techno/electro/electronic/float house/fluxwork/mandible/microhouse/minimal techno/outsider house",37,0.505,0.63,0.608,0.0914,0.864,8.171,0.0317,0.0125,127.989,258799
+41,"Shadows Show Violet","Croatian Amor/Varg","fluxwork/mandible/outsider house",29,0.0412,0.253,0.508,0.354,0.906,11.672,0.0383,0.142,128.096,282966
+42,"AS Too Wrong","Amnesia Scanner","art pop/bass music/escape room/finnish electronic/fluxwork/mandible/outsider house",38,0.143,0.574,0.817,0.354,0.0202,5.805,0.0508,0.00578,102.01,254500
+43,"Seven Peaceful Deities",Surgeon,"acid house/detroit techno/dub techno/electro/intelligent dance music/mandible/microhouse/minimal dub/minimal techno/outsider house/techno",46,0.172,0.604,0.375,0.095,0.953,14.073,0.0388,0.992,104.995,138753
+44,"Calm Down","Answer Code Request","dub techno/float house/minimal dub/minimal techno/outsider house/techno",28,0.7,0.65,0.541,0.0951,0.918,9.336,0.0349,0.00572,129.971,354711
+45,Tendency,"Jan Jelinek","ambient/art pop/bass music/compositional ambient/dark jazz/drone/dub techno/electronic/electronica/float house/fluxwork/fourth world/glitch/intelligent dance music/mandible/microhouse/minimal techno/ninja/outsider house/sound art/warm drone",38,0.469,0.751,0.468,0.111,0.91,14.386,0.0481,0.593,123.014,441227
+46,"Peace of Mind (Electrosoul)","Claro Intelecto","detroit techno/dub techno/electro/float house/intelligent dance music/microhouse/minimal techno/outsider house/techno",36,0.0322,0.74,0.932,0.168,0.91,7.36,0.0402,0.372,129.999,372925
+47,"Lines Describing a Circle","Peder Mannerfelt","fluxwork/mandible/outsider house",20,0.0854,0.551,0.397,0.178,0.919,17.82,0.0335,0.396,122.064,347050
+48,"Who I Will Become","Octo Octa","bass music/float house/outsider house",36,0.158,0.659,0.779,0.148,0.849,11.893,0.0528,0.00441,117.997,367560
+49,100,"Dean Blunt","art pop/escape room/experimental pop/fluxwork/outsider house",42,0.482,0.613,0.807,0.267,0.0645,6.47,0.0246,0.000406,102.204,200907
+50,"Theme from Q",Objekt,"bass music/float house/fluxwork/future garage/outsider house",39,0.599,0.8,0.795,0.105,0.713,7.928,0.0733,0.00388,123.01,440253
+51,Terrazzo,"Visible Cloaks/Motion Graphics","bass music/float house/future garage/outsider house",41,0.117,0.247,0.221,0.24,0.911,17.644,0.0362,0.813,95.141,220800
+52,Q1.1/I,"Basic Channel","art pop/chamber psych/escape room/fluxwork/freak folk/indie r&b/mandible/outsider house",23,0.159,0.758,0.742,0.175,0.88,10.173,0.0463,0.0215,125.06,473983
+53,"Look How Hard I've Tried",Barker,"ambient/art pop/art rock/bass music/chamber psych/compositional ambient/dark jazz/dream pop/drift/drone/electronic/escape room/experimental/experimental rock/fluxwork/fourth world/freak folk/intelligent dance music/mandible/microhouse/neo-psychedelic/noise pop/noise rock/outsider house/post-rock/slow core/sound art/vaporwave/warm drone",24,0.905,0.714,0.98,0.0905,0.766,9.25,0.0469,0.581,89.99,316754
+54,Inclined,Eartheater,"outsider house",33,0.103,0.655,0.776,0.0895,0.0147,12.285,0.187,0.0239,119.954,152000
+55,Bloodline,"Steven Julien/Funkineven","acid house/chicago house/deep house/deep soul house/detroit techno/electro/float house/hip house/outsider house/techno",19,0.0666,0.747,0.726,0.108,0.889,7.136,0.0744,0.000135,129.366,323916
+56,"Waste Your Time","Willie Burns","outsider house",12,0.422,0.801,0.954,0.0827,0.861,6.647,0.0524,0.0328,126.001,306664
+57,"Breaking the Flesh","Broken English Club","fluxwork/lo-fi house/outsider house",26,0.0887,0.691,0.99,0.108,0.865,6.034,0.062,0.00532,122.017,334907
+58,"Blue Dream","Hype Williams","acid house/detroit techno/electro/minimal techno/outsider house/techno",38,0.68,0.624,0.563,0.155,0.783,9.099,0.0373,0.245,165.29,163907
+59,U,"DJ Seinfeld","acid house/chicago house/deep house/detroit techno/dub techno/electro/float house/microhouse/minimal dub/minimal tech house/minimal techno/outsider house/tech house/techno",51,0.453,0.721,0.838,0.0445,0.749,7.579,0.0428,0.0447,125.999,368000
+60,Pith,Pariah,"escape room/fluxwork/mandible/outsider house",27,0.0879,0.0989,0.122,0.108,0.758,21.726,0.0356,0.231,85.603,292151
+61,"The Workers Are on Strike","Karen Gwyer","fluxwork/mandible/outsider house",22,0.323,0.729,0.871,0.0613,0.824,8.212,0.0338,0.00364,136.014,431103
+62,"To the Disco ‘77","Move D","detroit techno/dub techno/float house/intelligent dance music/microhouse/minimal techno/outsider house/techno",39,0.504,0.728,0.728,0.112,0.877,9.659,0.0359,0.0162,120.01,419098
+63,"5th Floor","Two Dogs in a House","darkstep/dub techno/mandible/minimal dub/outsider house/techno",6,0.31,0.768,0.799,0.0707,0.944,8.723,0.0397,0.00598,118.013,326639
+64,Drain,Container,"outsider house",17,0.384,0.532,0.753,0.626,0.833,14.789,0.0659,8.64E-5,160.043,276000
+65,Gilded,"Sarah Davachi","bass music/dubstep/fluxwork/future garage/outsider house/uk garage/wonky",34,0.0307,0.242,0.18,0.0986,0.937,21.176,0.0457,0.937,68.985,210716
+66,"Speed and Violence","Silent Servant","ambient/art pop/art rock/bass music/chamber psych/chillwave/compositional ambient/dream pop/drone/electronic/escape room/experimental/experimental pop/experimental rock/fluxwork/fourth world/freak folk/hauntology/indie r&b/indietronica/intelligent dance music/mandible/microhouse/neo-psychedelic/noise pop/noise rock/outsider house/post-rock/vaporwave/wonky",27,0.358,0.577,0.829,0.25,0.893,6.908,0.0397,0.00106,115.013,384185
+67,"Laugh Taker","Ron Morelli","outsider house",17,0.327,0.771,0.851,0.0931,0.87,6.164,0.0588,2.97E-6,130.997,398475
+68,"24 Hour Flight","Marcos Cabral","ambient/art pop/chamber psych/drone/experimental pop/fluxwork/fourth world/freak folk/mandible/outsider house",7,0.343,0.69,0.706,0.147,0.596,10.618,0.0531,0.206,119.997,353893
+69,Moment,"Matt Karmil",mandible,31,0.515,0.808,0.461,0.356,0.156,12.324,0.289,0.0279,115.97,405278
+70,24x33,"Betonkust/Palmbomen II","detroit techno/mandible/minimal dub/outsider house/techno",33,0.251,0.636,0.637,0.18,0.000779,11.314,0.0636,0.0157,97.994,328267
+71,"It's Just (House of Dupree)","Leon Vynehall","outsider house",50,0.394,0.77,0.711,0.133,0.0052,9.19,0.308,0.0212,121.444,525467
+72,"Flowers in May","Kassem Mosse/Simone White","bass music/dubstep/future garage/outsider house",18,0.586,0.87,0.444,0.101,0.105,12.566,0.0949,0.16,111.005,582285
+73,"Verisone Antica","Gunnar Haslam","abstract/acid house/ambient/art pop/bass music/british experimental/dark jazz/detroit techno/drill and bass/drone/dub techno/electro/electronic/experimental/experimental rock/fluxwork/fourth world/glitch/industrial/intelligent dance music/mandible/microhouse/minimal techno/ninja/outsider house/techno/trip hop/vaporwave/wonky",14,0.0596,0.676,0.748,0.0967,0.345,10.994,0.0396,0.242,126.575,395332
+74,Closer,"Project Pablo","acid house/broken beat/chicago house/deep house/deep soul house/detroit techno/electro/float house/minimal tech house/outsider house/techno",48,0.223,0.731,0.945,0.135,0.916,7.84,0.0566,0.171,122.02,417738
+75,Mainframe,"Pye Corner Audio","alternative dance/bass music/deep house/electronic/float house/future garage/indietronica/microhouse/minimal techno/new rave/outsider house/tech house/wonky",39,0.523,0.358,0.145,0.0735,0.45,13.229,0.0377,0.989,71.837,267468
+76,"Cheek Bones","James Ferraro","art pop/escape room/fluxwork/outsider house",27,0.256,0.475,0.266,0.21,0.534,19.015,0.156,0.172,97.998,285500
+77,Blindsided,"Torn Hawk","float house/fluxwork/outsider house",8,0.21,0.391,0.781,0.149,0.712,7.139,0.0379,0.00044,92.88,402618
+78,"U-Don't No","RP Boo","bass music/float house/outsider house",23,0.147,0.518,0.57,0.103,0.0136,9.221,0.0654,0.0316,116.341,286511
+79,Basilisk,Vapauteen,"outsider house",4,0.82,0.682,0.706,0.304,0.713,5.789,0.14,0.00168,94.807,291374
+80,"Under Marble","Phase Fatale","deep soul house/outsider house",27,0.0747,0.701,0.887,0.464,0.744,8.525,0.0442,0.00285,130.004,346000
+81,"What You Think You Want","Person Of Interest","balearic/bass music/deep house/deep soul house/float house/future garage/microhouse/minimal tech house/minimal techno/tech house",18,0.311,0.865,0.787,0.0974,0.835,9.12,0.112,0.234,124.005,431574
+82,"Licking An Orchid","Yves Tumor/James K","float house/lo-fi house",56,0.628,0.67,0.528,0.102,0.00117,9.372,0.0323,0.0565,87.965,278311
+83,"Egyptian Journalists Syndicate","Vatican Shadow","fluxwork/mandible/outsider house",48,0.0358,0.701,0.697,0.19,0.864,12.525,0.0404,0.0108,130.019,420923
+84,"Inform to Resist",Hazylujah,"art pop/chamber psych/experimental pop/fluxwork/mandible",1,0.252,0.502,0.929,0.0677,0.941,5.486,0.045,0.0105,126.002,465660
+85,"Touch Absence","Lanark Artefax","fluxwork/outsider house",36,0.634,0.769,0.988,0.272,0.814,6.808,0.0609,0.00589,124.948,351542
+86,"Speechless Tape",NGLY,"outsider house",16,0.522,0.565,0.998,0.0682,0.848,3.682,0.0506,0.0118,120.002,307008
+87,Unfold,"Gábor Lázár","outsider house",18,0.186,0.808,0.483,0.0535,0.852,11.802,0.135,0.00265,128.983,244989
+88,Mazdâ,"Aisha Devi","minimal dub/outsider house",32,0.292,0.311,0.459,0.0864,0.0889,11.093,0.0723,0.782,85.025,333651
+89,"Night Drive","KWC 92","outsider house",12,0.242,0.726,0.506,0.102,0.741,17.942,0.0483,0.00897,122.011,334360
+90,"Oral Couture",JASSS,"bass music/deep house/downtempo/electronic/float house/fluxwork/future garage/intelligent dance music/lo-fi house/microhouse/outsider house/vaporwave/wonky",23,0.0358,0.614,0.806,0.0993,0.882,6.611,0.0364,0.000106,129.97,393439
+91,"Elegant, And Never Tiring","Lorenzo Senni","art pop/chamber psych/float house/fluxwork/grave wave/outsider house",31,0.177,0.281,0.716,0.372,0.833,12.042,0.0583,0.0076,160.054,346000
+92,"Juke Dat Juke Dat","DJ Rashad/DJ Gant-Man","bass music/fluxwork/outsider house",25,0.0739,0.913,0.785,0.0959,0.0176,6.429,0.222,0.000756,150.016,182333
+93,"Tape 4 Fears","Achterbahn D'Amour","dub techno/float house/microhouse/minimal tech house/minimal techno/outsider house/tech house",10,0.809,0.799,0.696,0.0555,0.916,8.124,0.0591,0.000102,119.98,422933
+94,Kata,"Kate NV","fluxwork/glitch/outsider house",25,0.739,0.799,0.646,0.102,0.016,9.123,0.0264,0.593,104.987,348571
+95,Meditation,Babyfather/Arca,"deep house/deep soul house/float house/minimal tech house/outsider house",33,0.447,0.686,0.555,0.112,0.721,9.619,0.0942,0.0912,132.878,321615
+96,"Harm Autumn",1991,"bass music/deep house/deep soul house/float house/future garage/indie jazz/minimal tech house/outsider house/tech house",12,0.183,0.268,0.207,0.103,0.958,23.559,0.0402,0.965,141.359,378240
+97,Weight,UMFANG,"outsider house",34,0.265,0.778,0.39,0.088,0.958,16.445,0.11,0.843,135.033,271237
+98,"In the Mode for Love","Steve Summers","bass music/fluxwork/future garage/minimal dubstep/outsider house/vogue",5,0.528,0.724,0.665,0.0866,0.865,9.595,0.0878,0.00522,121.032,265827
+99,"From the Valley","Route 8","bass music",48,0.929,0.802,0.88,0.0814,0.878,9.161,0.063,1.3E-5,120.968,455223
+100,"Touch me & die","Kara-Lis Coverdale","breakcore/digital hardcore/drill and bass/mandible/outsider house",35,0.802,0.474,0.185,0.131,0.366,16.389,0.0679,0.992,179.772,210000
+101,"Heal Me","Pearson Sound","art pop/bass music/electronic/float house/fluxwork/future garage/intelligent dance music/mandible/microhouse/minimal techno/outsider house",43,0.0367,0.794,0.527,0.101,0.887,11.692,0.0574,0.0239,121.011,352793
+102,Hunted,Lotic,"bass music/fluxwork/mandible/outsider house",31,0.36,0.571,0.86,0.571,0.00279,5.164,0.176,0.264,80.01,194000
+103,"This life","Tim Hecker","float house/outsider house",47,0.0362,0.0606,0.426,0.245,0.515,10.873,0.0381,0.356,62.09,522094
+104,Haunting,"Greg Beato","acid house/chicago house/deep house/detroit techno/dub techno/electro/float house/fluxwork/intelligent dance music/microhouse/minimal techno/outsider house/techno",11,0.0691,0.635,0.916,0.103,0.847,6.396,0.0585,0.001,126.539,382534
+105,"Mystery Of Love","Mr. Fingers","float house/fluxwork/microhouse/outsider house",45,0.565,0.767,0.686,0.111,0.91,10.476,0.0461,0.0681,114.07,430576
+106,Unbennant,Yør,"fluxwork/outsider house",1,0.188,0.573,0.92,0.151,0.88,9.724,0.0875,0.102,124.04,201878
+107,"Cindy Savalas","Palmbomen II","bass music/dub techno/fluxwork/mandible/microhouse/outsider house",32,0.584,0.862,0.576,0.11,0.814,5.737,0.0678,0.13,117.992,411942
+108,"Superior Race",Dopplereffekt,"outsider house",34,0.109,0.54,0.624,0.0738,0.83,12.071,0.212,0.0037,134.358,190107
+109,"Red Machine","Robert Hood","float house/fluxwork/outsider house",43,0.36,0.605,0.807,0.0877,0.728,10.032,0.0447,0.000157,128.999,336675
+110,Nativity,"Elysia Crampton","bass music/float house/fluxwork/microhouse/outsider house",23,0.548,0.537,0.931,0.429,0.927,5.338,0.0759,0.000179,86.003,145622
+111,SOTRS,"Caterina Barbieri","bass music/broken beat/detroit techno/drum and bass/dub techno/dubstep/electro/float house/fluxwork/future garage/intelligent dance music/microhouse/minimal tech house/minimal techno/outsider house/tech house/techno/uk garage/wonky",34,0.0406,0.341,0.312,0.109,0.811,14.139,0.0335,0.567,159.215,570000
+112,"Sand and Sea",Deepchord,"acid house/chicago house/deep house/deep soul house/detroit techno/electro/float house/minimal tech house/outsider house/tech house/techno",28,0.0474,0.343,0.378,0.0802,0.8,19.321,0.0436,0.0197,75.042,402005
+113,"Knights & Bishops","Ancient Methods","dub techno/float house/mandible/minimal dub/outsider house",32,0.46,0.574,0.944,0.134,0.79,8.852,0.0668,0.000246,128.008,318977
+114,Hugo,"Eric Copeland","outsider house",20,0.645,0.795,0.504,0.0944,0.911,13.656,0.0964,0.18,179.318,274756
+115,Her,Zomby,"float house/fluxwork/mandible/microhouse/outsider house",40,0.156,0.583,0.555,0.124,0.557,9.243,0.0275,0.0865,105.981,291867
+116,"The Pure and the Damned","Oneohtrix Point Never/Iggy Pop","bass music/float house/fluxwork/future garage/minimal dub/outsider house",49,0.0394,0.258,0.191,0.0831,0.805,15.52,0.0341,0.359,103.286,269462
+117,"Comeback Dust - Legowelt Remix",L.I.E.S.,"bass music/float house/fluxwork/future garage/microhouse/minimal techno/outsider house/substep/wonky",4,0.961,0.808,0.876,0.0293,0.128,8.672,0.172,0.15,125.994,396455
+118,"An Intention","Kaitlyn Aurelia Smith","ambient/art pop/drone/fluxwork/fourth world/mandible/outsider house/sound art/vaporwave",42,0.107,0.284,0.366,0.105,0.183,9.028,0.0313,0.214,131.507,240587
+119,"Beyond the Yellow-Spotted Bamboo (Substance Remix)","Rainforest Spiritual Enslavement/Substance","chinese electronic/escape room/fluxwork/mandible/outsider house",16,0.286,0.778,0.337,0.111,0.801,12.139,0.134,0.0214,120,424000
+120,"Blood Witness - Original 12"" Mix",Regis,"outsider house",27,0.138,0.76,0.951,0.278,0.829,5.999,0.0436,4.21E-5,130.984,384594
+121,"Bilocation Drift","S. English","ambient/art pop/chamber psych/chillwave/compositional ambient/drift/drone/dub techno/experimental pop/fluxwork/fourth world/freak folk/hauntology/intelligent dance music/mandible/microhouse/minimal techno/outsider house/sound art/vaporwave/warm drone",4,0.155,0.986,0.464,0.062,0.904,8.298,0.226,0.00298,115.003,287769
+122,"Roll with the Punches",Peverelist,"ambient/art pop/compositional ambient/dark jazz/detroit techno/drone/dub techno/electronic/experimental/fluxwork/fourth world/freak folk/intelligent dance music/mandible/microhouse/minimal techno/outsider house/sound art/warm drone",30,0.287,0.666,0.63,0.118,0.822,12.758,0.138,0.033,137.89,404347
+123,mirrage,Autechre,"bass music/drone/dub techno/fluxwork/hauntology/intelligent dance music/mandible/microhouse/outsider house",28,0.0351,0.233,0.276,0.247,0.954,22.511,0.0492,0.992,71.13,381600
+124,"Missing You","Larry Heard","art pop/chamber psych/detroit techno/electro/electronic/float house/fluxwork/mandible/microhouse/minimal techno/outsider house",37,0.408,0.562,0.561,0.108,0.000107,13.072,0.0301,0.015,115.987,396544
+125,"Face to Face",Daphni,"fluxwork/mandible/outsider house",47,0.946,0.812,0.491,0.0682,0.554,15.422,0.0515,0.00152,120.044,342672
+126,Axolotl,"doon kanda","art pop/bass music/escape room/finnish electronic/fluxwork/mandible/outsider house",35,0.809,0.778,0.792,0.0692,0.961,10.405,0.1,0.361,130.273,172016
+127,"World Class","DJ Sports","dub techno/float house/minimal dub/minimal techno/outsider house/techno",28,0.797,0.658,0.682,0.13,0.794,8.84,0.0565,0.00263,152.013,369789
+128,"Stairfoot Lane Bunker - Minor Science Remix","Special Request/Minor Science","acid house/detroit techno/dub techno/electro/intelligent dance music/mandible/microhouse/minimal dub/minimal techno/outsider house/techno",41,0.32,0.677,0.804,0.576,0.918,7.025,0.165,0.0167,165.003,340637
+129,Strobe,Powell,"ambient/art pop/bass music/compositional ambient/dark jazz/drone/dub techno/electronic/electronica/float house/fluxwork/fourth world/glitch/intelligent dance music/mandible/microhouse/minimal techno/ninja/outsider house/sound art/warm drone",31,0.3,0.623,0.622,0.085,0.875,18.409,0.0441,0.802,100.012,242125
+130,"Mystic Motion",Simoncino,"detroit techno/dub techno/electro/float house/intelligent dance music/microhouse/minimal techno/outsider house/techno",4,0.805,0.663,0.541,0.249,0.862,18.787,0.0396,0.0226,122.096,312000
+131,IKB,"Fort Romeau","fluxwork/mandible/outsider house",45,0.787,0.655,0.147,0.2,0.916,20.958,0.0421,0.994,134.994,129883
+132,"Fade Away (Vocal)",Baltra,"bass music/float house/outsider house",43,0.194,0.821,0.62,0.0761,0.866,11.307,0.0919,0.277,124.989,417704
+133,"Search. Reveal.",M.E.S.H.,"art pop/escape room/experimental pop/fluxwork/outsider house",21,0.248,0.556,0.683,0.069,0.107,7.06,0.218,0.00255,122.003,379851
+134,Clusters,"Carla dal Forno","bass music/float house/fluxwork/future garage/outsider house",38,0.208,0.569,0.299,0.117,0.719,11.916,0.0313,0.882,75.011,269424
+135,"Just Drift","Beta Librae","acid house/detroit techno/dub techno/german techno/intelligent dance music/microhouse/minimal techno/outsider house/techno",17,0.18,0.812,0.793,0.101,0.876,7.972,0.0385,0.0185,120.198,354743
+136,Rosite,Vereker,"ambient/art pop/fluxwork/fourth world/mandible/outsider house/vaporwave",2,0.293,0.749,0.885,0.298,0.0191,8.701,0.343,0.106,126.048,403050
+137,"Ghetto 972","TX Connect","float house/fluxwork/outsider house",6,0.434,0.696,0.893,0.111,0.553,9.567,0.063,0.449,128.915,380112
+138,Control,Shifted,"art pop/chamber psych/escape room/experimental pop/fluxwork/freak folk/mandible/outsider house",30,0.43,0.703,0.846,0.117,0.897,8.661,0.0794,0.146,127.001,426780
+139,X,"Sensate Focus","fluxwork/outsider house",2,0.734,0.807,0.742,0.0375,0.914,10.459,0.0695,0.000176,126.981,567901
+140,Jaded,Lone,"deep soul house/outsider house",42,0.0869,0.642,0.286,0.105,0.737,19.865,0.0389,0.738,94.998,289083
+141,"Workaholic Paranoid Bitch - Nina Kraviz Workaholic Remix","Marie Davidson/Nina Kraviz","mandible/outsider house",42,0.709,0.75,0.939,0.102,0.727,8.817,0.0661,2.31E-5,145.002,308233
+142,"Flash React",Batu,"art pop/experimental pop/fluxwork/future funk/hauntology/outsider house/vaporwave",20,0.236,0.739,0.686,0.107,0.876,12.282,0.066,0.00173,149.995,268520
+143,"America - Terrence Dixon Minimal Detroit Mix","Efdemin/Terrence Dixon","bass music/fluxwork/future garage/mandible/microhouse/outsider house",38,0.345,0.745,0.284,0.181,0.955,22.374,0.106,0.893,119.992,422537
+144,"I'm Interesting, Cheerful & Sociable",Errorsmith,"deep house/float house/fluxwork/future garage/lo-fi house/microhouse/outsider house",25,0.304,0.756,0.654,0.0876,0.711,10.211,0.0513,0.000251,125.998,297410
+145,Daysdays,Moomin,"fluxwork/mandible/outsider house",48,0.56,0.809,0.653,0.059,0.936,12.925,0.0659,0.0782,119.984,400350
+146,"Midnight in Peckham","Chaos In The CBD","chicago house/deep house/deep soul house/detroit techno/dub techno/float house/microhouse/minimal tech house/minimal techno/outsider house/tech house/techno",50,0.523,0.639,0.676,0.121,0.906,16.293,0.0388,0.716,118.003,420919
+147,Static,"Forest Drive West","outsider house",20,0.271,0.71,0.785,0.0931,0.925,6.455,0.0447,0.00118,127.035,490898
+148,Crisis,"Jam City","fluxwork/mandible/outsider house",18,0.319,0.354,0.425,0.091,0.593,10.168,0.0458,0.0237,82.887,255316
+149,"Beneath Two Moons",Hodge,"acousmatic/ambient/art pop/compositional ambient/dark jazz/drone/experimental/fluxwork/fourth world/freak folk/mandible/musique concrete/outsider house/sound art/warm drone",36,0.436,0.681,0.653,0.147,0.844,13.786,0.0463,0.000393,123.001,349710
+150,"What You Call a Life","Christoph De Babalon","mandible/minimal dub/outsider house",17,0.635,0.524,0.867,0.149,0.923,9.547,0.0496,0.0038,129.834,300267
+151,"UK74R1512110 - Mixed","Aleksi Perälä","ambient/art pop/art rock/bass music/chamber psych/chillwave/compositional ambient/dream pop/drone/electronic/escape room/experimental/experimental pop/experimental rock/fluxwork/fourth world/freak folk/hauntology/indie r&b/indietronica/intelligent dance music/mandible/microhouse/neo-psychedelic/noise pop/noise rock/outsider house/post-rock/vaporwave/wonky",37,0.662,0.639,0.739,0.164,0.792,10.709,0.037,0.0153,132.386,191920
+152,Spiral,Rabit,"ambient/art pop/chamber psych/drone/experimental pop/fluxwork/fourth world/freak folk/mandible/outsider house",19,0.0753,0.333,0.198,0.279,0.727,21.178,0.0972,0.711,199.85,222338
+153,Revenge,"The Maghreban/Rutendo Machiridza",mandible,29,0.37,0.521,0.711,0.368,0.0055,9.442,0.0594,0.0542,129.998,348003
+154,"River Red Gum",Acronym,"detroit techno/mandible/minimal dub/outsider house/techno",21,0.0395,0.648,0.625,0.348,0.928,15.239,0.0477,0.764,125.009,505699
+155,"Groove's No Zone","Beau Wanzer","outsider house",11,0.187,0.695,0.794,0.111,0.912,7.969,0.029,0.000732,127.635,249135
+156,"Carbon 12",Jlin,"bass music/dubstep/future garage/outsider house",32,0.392,0.727,0.567,0.0728,0.862,11.208,0.0743,0.03,157.011,302867
+157,Tar,"Lucrecia Dalt","abstract/acid house/ambient/art pop/bass music/british experimental/dark jazz/detroit techno/drill and bass/drone/dub techno/electro/electronic/experimental/experimental rock/fluxwork/fourth world/glitch/industrial/intelligent dance music/mandible/microhouse/minimal techno/ninja/outsider house/techno/trip hop/vaporwave/wonky",26,0.669,0.8,0.357,0.106,0.748,20.384,0.0308,0.561,108.981,280523
+158,"Timelapse (Walrus) - Mixed","Oliver Coates","acid house/broken beat/chicago house/deep house/deep soul house/detroit techno/electro/float house/minimal tech house/outsider house/techno",41,0.718,0.743,0.995,0.0873,0.9,5.745,0.053,0.606,120.46,123440
+159,"Megatrance 2",Voiski,"float house/fluxwork/lo-fi house/outsider house",18,0.521,0.527,0.919,0.107,0.911,9.986,0.0371,0.00205,129.995,401162
+160,"Thought Has Wings",Ssaliva,"dub techno/float house/fluxwork/lo-fi house/mandible/microhouse/outsider house",28,0.182,0.546,0.802,0.149,0.723,7.938,0.0309,0.351,128.974,169504
+161,"Black Endlessness","Delta Funktionen","art pop/dub techno/float house/fluxwork/fourth world/mandible/microhouse/outsider house/vaporwave",21,0.465,0.656,0.641,0.0923,0.48,9.308,0.0368,0.000124,123.003,511758
+162,Midwestdr660soup,Xamiga,"art pop/bass music/detroit techno/dub techno/electronic/escape room/experimental pop/float house/fluxwork/fourth world/future garage/hauntology/indie r&b/indietronica/intelligent dance music/mandible/microhouse/minimal techno/ninja/outsider house/techno/vaporwave/wonky",1,0.275,0.584,0.716,0.0848,0.153,9.463,0.0305,0.146,120.008,301227
+163,bb,"Hav Lyfe","float house/fluxwork/lo-fi house/mandible/outsider house",0,0.208,0.526,0.603,0.16,0.92,8.248,0.0334,0.112,94.604,201143
+164,"Back to Phalon",Outboxx,"acid house/chicago house/detroit techno/dub techno/electro/electroclash/float house/intelligent dance music/microhouse/minimal techno/outsider house/tech house/techno",11,0.219,0.685,0.663,0.11,0.644,9.134,0.0416,0.377,109.997,286822
+165,"Retina Dreams","808 Mate","ambient/art pop/bass music/chamber psych/chillwave/dark jazz/detroit techno/dub techno/electronic/escape room/experimental pop/float house/fluxwork/fourth world/future garage/indie r&b/indietronica/intelligent dance music/mandible/microhouse/minimal techno/outsider house/techno/vaporwave/wonky",3,0.133,0.538,0.574,0.102,0.903,16.546,0.0631,0.00147,114.59,455000
+166,"Feed the Enemy","Mutant Beat Dance/Tyler Pope/Pat Mahoney","acid house/bass music/detroit techno/dub techno/electro/float house/fluxwork/future garage/mandible/microhouse/minimal dub/minimal tech house/minimal techno/outsider house/tech house/techno/uk garage",13,0.827,0.708,0.625,0.0814,0.827,10.946,0.0367,0.00807,146.946,294943
+167,Anti-Meme,Gobby,"acid house/chicago house/detroit techno/drill and bass/dub techno/electro/float house/fluxwork/intelligent dance music/microhouse/minimal techno/outsider house/techno",14,0.638,0.576,0.733,0.455,0.023,10.435,0.28,0.12,169.451,138547
+168,"Roomland - Youandewan Remix","Gerry Read/Youandewan","ambient/art pop/bass music/chamber psych/chillwave/drone/escape room/experimental/experimental pop/fluxwork/fourth world/freak folk/gauze pop/grave wave/hauntology/indie r&b/intelligent dance music/mandible/microhouse/neo-psychedelic/noise pop/outsider house/vaporwave/witch house",16,0.27,0.763,0.597,0.292,0.902,12.577,0.0507,0.476,130.663,192827
+169,"The Melody - Henrik Schwarz Remix","Carl Craig/Francesco Tristano/Les Siècles/François-Xavier Roth/Henrik Schwarz","lo-fi house/outsider house",37,0.488,0.724,0.491,0.12,0.9,14.257,0.0389,0.15,122.963,461680
+170,"Wetsuit Women","Wanda Group","float house/fluxwork/lo-fi house/microhouse/outsider house",0,0.0564,0.436,0.69,0.387,0.144,10.53,0.338,0.418,124.127,588440
+171,...Math,"Fhloston Paradigm","art pop/detroit techno/dub techno/float house/fluxwork/mandible/microhouse/minimal techno/outsider house",7,0.0393,0.26,0.575,0.307,0.948,10.862,0.0426,0.354,91.357,270250
+172,A&E,"Inga Copeland","float house/fluxwork/mandible/outsider house",19,0.765,0.695,0.747,0.11,0.000845,7.81,0.0455,0.0291,126.972,270302
+173,"Measure 2 Measure","KMFH/Kyle Hall","bass music/detroit techno/dub techno/float house/microhouse/minimal dub/minimal techno/outsider house/tech house/techno",18,0.961,0.715,0.983,0.0723,0.837,8.902,0.0582,0.000145,119.978,402272
+174,"Time Paint",Fuewa,"detroit techno/dub techno/float house/fluxwork/mandible/microhouse/minimal dub/minimal tech house/minimal techno/outsider house/tech house/techno",1,0.158,0.39,0.666,0.0833,0.914,13.972,0.213,0.396,109.987,442000
+175,Sportex,ΔΔ,"art pop/bass music/electronic/float house/fluxwork/future garage/intelligent dance music/mandible/microhouse/minimal techno/outsider house",0,0.281,0.81,0.596,0.129,0.588,15.75,0.0898,0.000529,130.989,336448
+176,Kaksi,Ukkonen,"bass music/fluxwork/mandible/outsider house",43,0.289,0.597,0.139,0.0847,0.897,26.804,0.0435,0.248,120.003,419120
+177,"African Rhythms",Bookworms,"float house/outsider house",8,0.635,0.761,0.921,0.323,0.914,6.951,0.104,0.0571,128.039,533693
+178,"Mapping Ancient Territory with Blown off Fingers",AyGeeTee,"acid house/chicago house/deep house/detroit techno/dub techno/electro/float house/fluxwork/intelligent dance music/microhouse/minimal techno/outsider house/techno",0,0.0624,0.318,0.826,0.158,0.904,7.927,0.0872,0.793,99.881,231879
+179,"Time Castle",Inhalants,"float house/fluxwork/microhouse/outsider house",0,0.547,0.466,0.597,0.141,0.778,15.728,0.0352,0.000845,117.011,127801
+180,"Mispent Years - Original Mix",Schatrax,"fluxwork/outsider house",17,0.534,0.731,0.676,0.0455,0.941,10.917,0.0467,0.0267,125.901,293500
+181,"Samantha's Vacation","Samantha Vacation","bass music/dub techno/fluxwork/mandible/microhouse/outsider house",3,0.229,0.738,0.545,0.0707,0.911,10.866,0.0443,0.034,147.023,573188
+182,Scope,"Tuff Sherm","outsider house",6,0.42,0.825,0.818,0.0966,0.781,8.506,0.0448,0.00433,118.002,300097
+183,"To An End - Original",Erdbeerschnitzel,"float house/fluxwork/outsider house",20,0.697,0.871,0.644,0.101,0.795,6.643,0.211,0.00291,108.003,508754
+184,"Waxwork - CP Mix","DJ Harlow","bass music/float house/fluxwork/microhouse/outsider house",2,0.088,0.771,0.946,0.462,0.878,10.041,0.218,0.00148,132.857,407613
+185,"Audio Track 01","Delroy Edwards/Dean Blunt","bass music/broken beat/detroit techno/drum and bass/dub techno/dubstep/electro/float house/fluxwork/future garage/intelligent dance music/microhouse/minimal tech house/minimal techno/outsider house/tech house/techno/uk garage/wonky",29,0.428,0.319,0.585,0.265,0.887,7.911,0.0764,0.43,143.562,166636
+186,"Bank 3",Terekke,"acid house/chicago house/deep house/deep soul house/detroit techno/electro/float house/minimal tech house/outsider house/tech house/techno",37,0.271,0.904,0.646,0.0747,0.774,7.615,0.239,0.0162,113.984,501062
+187,"Cubist Camouflage","Huerco S.","dub techno/float house/mandible/minimal dub/outsider house",30,0.727,0.441,0.244,0.105,0.944,17.925,0.0343,0.978,121.329,160707
+188,N.E.W.,"Actress/London Contemporary Orchestra","outsider house",31,0.108,0.168,0.42,0.0848,0.00446,9.811,0.0338,0.894,79.244,254894
+189,"Shiba Inu Dub",Patricia,"float house/fluxwork/mandible/microhouse/outsider house",37,0.537,0.93,0.721,0.102,0.918,10.184,0.208,0.359,119.99,447097
+190,"Elements of Houz Music",Legowelt,"bass music/float house/fluxwork/future garage/minimal dub/outsider house",34,0.171,0.702,0.614,0.356,0.868,9.245,0.188,0.00477,122.008,339779
+191,"New Romantic","Andy Stott","bass music/float house/fluxwork/future garage/microhouse/minimal techno/outsider house/substep/wonky",43,0.0635,0.706,0.625,0.0816,0.687,9.941,0.0355,0.0512,99.979,339460
+192,Careless,Blawan,"ambient/art pop/drone/fluxwork/fourth world/mandible/outsider house/sound art/vaporwave",33,0.52,0.806,0.676,0.127,0.815,9.396,0.127,0.115,128.013,362143
+193,"Black Sea",Drexciya,"chinese electronic/escape room/fluxwork/mandible/outsider house",27,0.745,0.721,0.865,0.0941,0.929,7.673,0.0591,0.371,137.985,381829
+194,Moontalk,"Laurel Halo","outsider house",33,0.811,0.813,0.659,0.604,0.0936,10.892,0.0473,0.137,119.988,264612
+195,DISCOTAG,"Florian Kupfer","ambient/art pop/chamber psych/chillwave/compositional ambient/drift/drone/dub techno/experimental pop/fluxwork/fourth world/freak folk/hauntology/intelligent dance music/mandible/microhouse/minimal techno/outsider house/sound art/vaporwave/warm drone",19,0.4,0.805,0.601,0.105,0.522,12.309,0.0544,0.00241,118.999,457446
+196,"Baikal Acid",Khotin,"ambient/art pop/compositional ambient/dark jazz/detroit techno/drone/dub techno/electronic/experimental/fluxwork/fourth world/freak folk/intelligent dance music/mandible/microhouse/minimal techno/outsider house/sound art/warm drone",28,0.185,0.737,0.903,0.199,0.818,8.074,0.0443,0.0186,117.484,371815
+197,"Heat 1","Shinichi Atobe","bass music/drone/dub techno/fluxwork/hauntology/intelligent dance music/mandible/microhouse/outsider house",33,0.707,0.805,0.764,0.102,0.937,10.983,0.0796,0.459,122.008,598071
+198,Rush/Tinder,Varg,"art pop/chamber psych/detroit techno/electro/electronic/float house/fluxwork/mandible/microhouse/minimal techno/outsider house",23,0.0521,0.586,0.693,0.11,0.822,11.09,0.0347,0.000118,140.013,363429
+199,"I Come By Night",Shed,"fluxwork/mandible/outsider house",21,0.0728,0.698,0.887,0.289,0.698,11.788,0.321,7.84E-5,124.996,360272
+200,"Cassandra - Original Mix","Donato Dozzy","art pop/bass music/escape room/finnish electronic/fluxwork/mandible/outsider house",32,0.642,0.811,0.675,0.0755,0.87,11.423,0.0719,0.027,123.993,449032
+201,"Session Add","Skee Mask","Genres not available",40,0.43,0.765,0.397,0.0975,0.849,11.918,0.0529,0.0371,99.994,380108
+202,UE8,"Lee Gamble","Genres not available",15,0.357,0.492,0.546,0.0994,0.91,11.42,0.0953,0.103,179.978,210436
+203,"Mad Disrespect","Anthony Naples","Genres not available",27,0.552,0.67,0.862,0.383,0.00158,7.859,0.102,0.23,120.028,342794
+204,Sunrays,"The Other People Place","Genres not available",35,0.941,0.92,0.472,0.0657,0.83,11.698,0.224,0.166,126.033,495813
+205,"I Neva Seen","Galcher Lustwerk","Genres not available",34,0.594,0.818,0.43,0.0443,0.555,15.635,0.293,0.000961,118.011,293286
+206,Hala,Rezzett,"Genres not available",21,0.693,0.617,0.811,0.161,0.927,8.967,0.0478,0.809,121.989,525177
+207,Stammer,Raime,"Genres not available",28,0.147,0.816,0.282,0.11,0.861,16.47,0.0359,0.00533,128.994,287547
+208,"Servant Garden","Jahiliyya Fields","Genres not available",3,0.0389,0.254,0.333,0.108,0.0066,8.443,0.0367,0.00163,92.932,285987
+209,q.e.p.d,"Dj Python","Genres not available",32,0.293,0.791,0.627,0.0939,0.0843,10.84,0.117,0.0269,114.009,358886
+210,"Nervous Sex Traffic","Call Super","Genres not available",28,0.126,0.617,0.501,0.141,0.845,14.804,0.0384,0.00517,120.795,542325
+211,"Mind Rain",Martyn,"Genres not available",31,0.443,0.63,0.952,0.242,0.874,7.309,0.0523,0.0158,139.995,332306
+212,"Thank U 4 Letting Me Be Myself","Omar S","Genres not available",38,0.936,0.811,0.518,0.107,0.787,9.314,0.0591,6.81E-5,122.999,459964
+213,SHULULULU,SHXCXCHCXSH,"Genres not available",28,0.0388,0.608,0.427,0.129,0.925,12.978,0.311,0.037,128.076,484219
+214,"The Calling",Xosar,"Genres not available",11,0.597,0.642,0.657,0.0795,0.77,10.836,0.044,0.000819,124,333624
+215,"Tunnel Stalker","DJ Richard","Genres not available",26,0.469,0.551,0.797,0.112,0.872,10.024,0.112,0.000299,116.974,345188
+216,Smokin,Randomer,"Genres not available",33,0.276,0.788,0.955,0.196,0.841,7.823,0.0647,0.000398,130.98,339504
+217,"Blue Violet",Djrum,"Genres not available",35,0.135,0.41,0.629,0.13,0.877,11.352,0.0419,0.0239,130.014,520553
+218,"Das Expanded, Untitled Riff","Dedekind Cut","Genres not available",27,0.0373,0.175,0.369,0.108,0.917,15.974,0.0384,0.746,130.132,434376
+219,"4 Floors of Whores",Tzusing,"Genres not available",35,0.136,0.798,0.779,0.122,0.907,6.374,0.0642,0.0209,114.981,305705
+220,Marathon,Svengalisghost,"Genres not available",3,0.336,0.796,0.556,0.132,0.911,10.824,0.0644,0.00685,122.733,274113
+221,Saccade,"Steve Hauschildt/Julianna Barwick","Genres not available",37,0.807,0.516,0.449,0.11,0.954,15.192,0.0304,0.29,98.009,249535
+222,"Rausch 2",GAS,"Genres not available",36,0.0553,0.315,0.262,0.128,0.599,21.502,0.0396,0.168,110.061,586373
+223,"Animal Style","Demdike Stare","Genres not available",27,0.476,0.716,0.49,0.0959,0.639,10.218,0.109,0.000706,140.063,429147
+224,Qualm,"Helena Hauff","Genres not available",36,0.0711,0.158,0.172,0.0775,0.00422,14.058,0.0416,0.472,89.116,153325
+225,"Love Means Taking Action","Croatian Amor","Genres not available",24,0.0796,0.17,0.687,0.341,0.869,10.297,0.0373,0.158,169.99,270159
+226,"AS A.W.O.L","Amnesia Scanner","Genres not available",38,0.484,0.612,0.897,0.457,0.0331,4.6,0.0413,0.0738,103.987,209999
+227,knbn2,"Answer Code Request","Genres not available",23,0.653,0.605,0.687,0.105,0.914,12.47,0.0328,0.0322,134.991,227556
+228,Search,Surgeon,"Genres not available",26,0.0651,0.736,0.785,0.111,0.915,7.773,0.0807,0.174,128.003,361452
+229,"Moiré - Piano & Organ","Jan Jelinek","Genres not available",36,0.194,0.463,0.222,0.0975,0.876,18.379,0.21,0.692,175.732,414440
+230,Sunshine,"Claro Intelecto","Genres not available",30,0.162,0.66,0.763,0.186,0.9,9.136,0.0504,0.00138,95.004,362289
+231,"Sectional Healing","Peder Mannerfelt","Genres not available",20,0.177,0.554,0.83,0.34,0.876,9.991,0.0566,0.000129,131.138,296693
+232,"I'm Trying","Octo Octa","Genres not available",32,0.407,0.791,0.722,0.0856,0.148,11.121,0.144,0.62,124.988,370560
+233,"50 CENT","Dean Blunt","Genres not available",36,0.219,0.482,0.52,0.142,0.873,8.216,0.0261,0.629,85.562,155560
+234,"Secret Snake - Single Mix",Objekt,"Genres not available",34,0.0384,0.539,0.513,0.34,0.831,10.882,0.0473,0.00502,109.998,372740
+235,"Phylyps Trak","Basic Channel","Genres not available",19,0.469,0.609,0.996,0.0898,0.811,7.857,0.049,0.00466,143.906,597560
+236,Wheel,"Visible Cloaks","Genres not available",38,0.433,0.436,0.235,0.293,0.678,16.285,0.0427,0.935,120.866,215096
+237,"Cascade Effect",Barker,"Genres not available",23,0.212,0.425,0.8,0.0808,0.734,11.419,0.044,0.0595,136.016,417805
+238,Peripheral,Eartheater,"Genres not available",29,0.0358,0.276,0.49,0.0859,0.755,14.844,0.0613,0.899,120.172,184169
+239,XL,"Steven Julien","Genres not available",17,0.435,0.646,0.646,0.181,0.825,8.283,0.0379,0.0451,119.966,385539
+240,"Lost in the Clouds Again","Willie Burns","Genres not available",11,0.0787,0.643,0.912,0.0494,0.789,6.879,0.0432,1.03E-5,125.001,412853
+241,Wreck,"Broken English Club","Genres not available",21,0.843,0.674,0.993,0.09,0.685,5.16,0.053,0.000156,125.024,311519
+242,"The Throning","Hype Williams","Genres not available",33,0.608,0.617,0.958,0.409,0.885,5.154,0.293,0.0036,177.418,245453
+243,Linnaea,Pariah,"Genres not available",26,0.678,0.614,0.417,0.498,0.924,12.66,0.0327,0.835,124.996,423855
+244,"Ruff Hysteria","DJ Seinfeld","Genres not available",42,0.817,0.68,0.799,0.0546,0.721,10.274,0.0509,0.0142,119.997,360000
+245,"Why Is There a Long Line in Front of the Factory?","Karen Gwyer","Genres not available",19,0.349,0.476,0.618,0.0751,0.538,14.153,0.0637,0.472,136.054,224674
+246,Leaves,"Move D/Justin Carter","Genres not available",35,0.402,0.945,0.459,0.0891,0.555,9.606,0.157,0.00916,125.012,594714
+247,"Scream in the Night","Two Dogs in a House","Genres not available",6,0.961,0.636,0.871,0.121,0.901,6.96,0.0406,0.2,119.424,357925
+248,Insulation,Container,"Genres not available",16,0.117,0.427,0.557,0.177,0.904,11.71,0.0491,0.000507,131.079,172334
+249,"Ghosts And All","Sarah Davachi","Genres not available",28,0.0255,0.153,0.271,0.113,0.946,11.376,0.0479,0.79,135.769,512725
+250,"Invocation Of Lust","Silent Servant","Genres not available",23,0.0392,0.662,0.706,0.884,0.809,10.121,0.0504,0.0888,115.014,293392
+251,"Modern Paranoia","Ron Morelli","Genres not available",12,0.672,0.69,0.741,0.132,0.922,12.152,0.0662,0.585,114.993,328732
+252,"Loose Lips","Marcos Cabral","Genres not available",6,0.0969,0.795,0.468,0.0782,0.931,13.357,0.0603,1.97E-5,126.022,474561
+253,"I Love It","Matt Karmil","Genres not available",29,0.251,0.856,0.285,0.118,0.965,17.888,0.115,0.824,110.979,244257
+254,"Leo/ Mirjam","Betonkust/Palmbomen II","Genres not available",26,0.735,0.651,0.845,0.211,0.843,10.859,0.0302,0.00942,120.006,264947
+255,"Untitled B1","Kassem Mosse","Genres not available",18,0.622,0.759,0.487,0.103,0.918,15.076,0.076,0.00587,118.012,375507
+256,Blush,"Leon Vynehall","Genres not available",46,0.412,0.631,0.868,0.347,0.0507,6.856,0.347,0.000521,121.996,510813
+257,"Scale No Flam - Servito and Cudmore Bass Shift Mix","Gunnar Haslam/Mike Servito/Justin Cudmore","Genres not available",14,0.0691,0.797,0.936,0.0381,0.865,11.407,0.0533,9.41E-5,124.995,464640
+258,"The Black Mill Video Tape","Pye Corner Audio","Genres not available",33,0.0394,0.591,0.422,0.0814,0.923,16.877,0.0483,0.375,99.994,309335
+259,"Sky Lounge","Project Pablo","Genres not available",41,0.58,0.867,0.714,0.219,0.33,5.495,0.04,0.541,120.288,279801
+260,"Adventures In Green Foot Printing","James Ferraro","Genres not available",26,0.966,0.659,0.878,0.181,0.188,1.501,0.0281,0.678,126.934,208000
+261,"Feeling Is Law","Torn Hawk","Genres not available",6,0.655,0.63,0.397,0.189,0.846,13.107,0.0307,0.643,100.051,263834
+262,02-52-03,"RP Boo","Genres not available",21,0.386,0.743,0.955,0.443,0.887,8.395,0.0857,1.29E-5,149.929,234133
+263,"Fully Automated",Vapauteen,"Genres not available",4,0.0966,0.72,0.874,0.41,0.846,8.569,0.0392,0.00755,137.829,431308
+264,"Reverse Fall","Phase Fatale","Genres not available",25,0.034,0.709,0.873,0.11,0.874,9.224,0.0541,0.00121,129.982,440670
+265,"Down for Your Fantasy","Person Of Interest","Genres not available",8,0.708,0.707,0.809,0.103,0.811,8.347,0.111,0.00965,124.007,354029
+266,"In Sex",Hazylujah,"Genres not available",0,0.939,0.874,0.804,0.263,0.0683,8.117,0.195,0.114,124.022,419935
+267,"The Feeling When You Walk Away","Yves Tumor","Genres not available",52,0.515,0.572,0.539,0.0846,0.266,12.256,0.0275,0.576,86.048,180000
+268,"Voices Near The Hypocentre","Lanark Artefax","Genres not available",28,0.0833,0.125,0.794,0.0944,0.0462,7.395,0.176,0.61,77.799,370870
+269,"More of the Same","Vatican Shadow","Genres not available",23,0.534,0.768,0.952,0.132,0.96,11.757,0.0541,0.000225,130.003,344308
+270,"I Don't Have a Soul",NGLY,"Genres not available",8,0.472,0.8,0.612,0.152,0.836,10.051,0.0552,0.604,123.002,334024
+271,Squeeze,"Gábor Lázár","Genres not available",15,0.461,0.528,0.518,0.095,0.872,11.761,0.158,0.000801,138.775,343537
+272,"DNA ☤ ∞","Aisha Devi","Genres not available",28,0.052,0.273,0.266,0.0748,0.455,15.069,0.0417,0.841,120.797,300010
+273,"Macau Ferry Terminal","KWC 92","Genres not available",10,0.0466,0.403,0.387,0.114,0.843,19.784,0.0746,0.00216,154.568,265118
+274,Weightless,JASSS,"Genres not available",20,0.702,0.672,0.936,0.0933,0.802,8.729,0.0352,0.0591,121.992,405792
+275,"Win In The Flat World","Lorenzo Senni","Genres not available",27,0.539,0.686,0.859,0.341,0.836,9.472,0.0835,0.347,170.126,293312
+276,"Roll Up That Loud","DJ Rashad/DJ Spinn/Taso","Genres not available",25,0.274,0.582,0.566,0.669,0.105,11.039,0.23,0.00309,160.151,216008
+277,"Passagen - Convextion Remix","Achterbahn D'Amour/Convextion","Genres not available",6,0.0682,0.645,0.56,0.0953,0.883,15.057,0.0462,0.00257,119.994,352000
+278,Binasu,"Kate NV","Genres not available",19,0.663,0.634,0.698,0.133,0.131,11.224,0.0281,0.49,134.973,358222
+279,"God Hour",Babyfather/Micachu,"Genres not available",29,0.658,0.802,0.374,0.0631,0.0552,17.57,0.0594,0.0219,130.633,155780
+280,"Fabric of Space",1991,"Genres not available",11,0.57,0.581,0.721,0.138,0.882,9.622,0.0313,0.0645,89.963,243531
+281,Sweep,UMFANG,"Genres not available",27,0.336,0.205,0.277,0.107,0.895,22.108,0.0877,0.988,58.995,205751
+282,Always,"Steve Summers","Genres not available",5,0.19,0.759,0.586,0.102,0.909,15.546,0.0448,0.00101,121.021,490513
+283,"Imgs /r - Mixed","Kara-Lis Coverdale","Genres not available",27,0.0454,0.243,0.181,0.216,0.846,20.522,0.0375,0.834,63.791,172790
+284,Relaxed,"Route 8","Genres not available",42,0.102,0.815,0.752,0.112,0.904,11.881,0.0518,0.00213,121.524,422002
+285,XLB,"Pearson Sound","Genres not available",27,0.0332,0.799,0.902,0.154,0.933,8.53,0.0646,0.00065,126.001,378190
+286,"Love and Light",Lotic,"Genres not available",28,0.0436,0.203,0.451,0.0928,0.149,7.107,0.0342,0.677,147.95,258573
+287,"In Death Valley","Tim Hecker","Genres not available",44,0.181,0.122,0.609,0.319,0.894,8.563,0.047,0.295,73.662,336173
+288,Pma,"Greg Beato","Genres not available",10,0.325,0.839,0.907,0.16,0.894,8.803,0.248,0.126,123.977,523281
+289,"Can You Feel It","Mr. Fingers","Genres not available",39,0.67,0.68,0.497,0.078,0.901,12.626,0.052,0.0967,114.811,344013
+290,Ritus,Yør,"Genres not available",1,0.292,0.79,0.488,0.105,0.861,14.506,0.0549,0.0671,122.016,440684
+291,"Ultimate Lovestory Fantasy","Palmbomen II","Genres not available",28,0.334,0.854,0.648,0.327,0.887,8.16,0.145,0.792,116.964,422639
+292,"Plastiphillia 2",Dopplereffekt,"Genres not available",30,0.61,0.802,0.828,0.0856,0.698,13.378,0.0517,0.0462,128.125,138800
+293,Dancer,"Robert Hood","Genres not available",37,0.0785,0.895,0.318,0.063,0.913,7.992,0.0892,0.00298,122,422619
+294,"The Demon City","Elysia Crampton/Rabit","Genres not available",19,0.168,0.554,0.456,0.13,0.584,9.218,0.0258,0.0296,87.013,209659
+295,"Scratches on the Readable Surface","Caterina Barbieri","Genres not available",24,0.807,0.492,0.99,0.112,0.8,10.264,0.0399,0.775,119.879,356000
+296,"DC12 A1",Deepchord,"Genres not available",28,0.0821,0.807,0.571,0.1,0.953,14.037,0.0427,0.334,120.033,375509
+297,"Born of Ashes","Ancient Methods","Genres not available",27,0.335,0.525,0.739,0.195,0.449,10.485,0.0298,1.78E-5,124.007,422333
+298,Mateo,"Eric Copeland","Genres not available",18,0.296,0.936,0.436,0.126,0.67,11.505,0.111,0.00144,139.579,358391
+299,"Natalia's Song",Zomby/Reark,"Genres not available",30,0.426,0.897,0.689,0.109,0.9,10.39,0.0438,0.925,120.032,243493
+300,"Wishing for an End",L.I.E.S.,"Genres not available",3,0.413,0.705,0.472,0.0873,0.869,13.791,0.0517,0.00572,119.008,483177
+301,"Good Time","Oneohtrix Point Never","Genres not available",34,0.036,0.222,0.465,0.129,0.592,10.221,0.0408,0.0125,130.015,412004
+302,Stratus,"Kaitlyn Aurelia Smith","Genres not available",42,0.0404,0.492,0.0696,0.0635,0.972,21.54,0.0355,0.94,120.128,184587
+303,"Chile's Crimson Tide","Rainforest Spiritual Enslavement","Genres not available",15,0.0361,0.237,0.314,0.699,0.545,18.518,0.0358,0.00241,118.592,280762
+304,"Speak to Me",Regis,"Genres not available",19,0.347,0.774,0.919,0.11,0.92,7.638,0.0399,0.047,138.08,377413
+305,"How to Build Cathedrals","S. English","Genres not available",5,0.116,0.551,0.44,0.111,0.932,5.191,0.0269,0.000391,99.008,304440
+306,"Left Hand",Peverelist,"Genres not available",24,0.614,0.785,0.91,0.0641,0.857,8.691,0.0539,0.00038,130.975,356902
+307,VLetrmx,Autechre,"Genres not available",27,0.0366,0.193,0.266,0.0913,0.91,15.888,0.0455,0.928,115.909,507373
+308,"Summertime Breeze","Larry Heard","Genres not available",33,0.325,0.756,0.468,0.142,0.904,11.698,0.0455,0.00945,99.007,464067
+309,"Audio Track 02","Delroy Edwards/Dean Blunt","Genres not available",30,0.645,0.496,0.507,0.133,0.679,8.176,0.0309,0.000635,110.307,209500
+310,Bb2,Terekke,"Genres not available",30,0.183,0.839,0.713,0.113,0.907,13.504,0.137,0.422,119.978,226626
+311,"Promises Of Fertility","Huerco S.","Genres not available",29,0.425,0.26,0.284,0.11,0.841,19.656,0.0367,0.821,61.829,415933
+312,"Chaos Rain","Actress/London Contemporary Orchestra","Genres not available",30,0.106,0.134,0.376,0.127,0.592,15.769,0.0378,0.936,78.514,150249
+313,"Upper Peninsula (feat. Terekke)",Patricia/Terekke,"Genres not available",21,0.343,0.573,0.628,0.1,0.913,15.753,0.0376,0.826,110,367295
+314,"Its Midnite & You Are Lost",Legowelt,"Genres not available",32,0.0662,0.618,0.853,0.0854,0.873,7.868,0.0455,0.000944,126.99,329955
+315,Violence,"Andy Stott","Genres not available",43,0.0382,0.356,0.214,0.113,0.0161,13.215,0.0431,0.0513,139.957,397827
+316,Tasser,Blawan,"Genres not available",32,0.466,0.66,0.772,0.215,0.759,10.668,0.0547,0.000755,133.993,381493
+317,"Digital Tsunami",Drexciya,"Genres not available",25,0.174,0.75,0.667,0.124,0.858,10.493,0.0503,3.64E-5,147.438,382133
+318,Quietude,"Laurel Halo","Genres not available",30,0.199,0.347,0.751,0.111,0.874,10.954,0.0923,0.714,80.157,152018
+319,Contact,"Florian Kupfer","Genres not available",13,0.178,0.623,0.802,0.0899,0.885,9.574,0.0507,0.00158,120.269,547908
+320,Dwellberry,Khotin,"Genres not available",25,0.665,0.615,0.62,0.0889,0.231,6.511,0.0242,0.935,100.012,283200
+321,"So Good, So Right 2","Shinichi Atobe","Genres not available",33,0.871,0.813,0.391,0.0909,0.814,7.641,0.152,0.0199,115.043,481232
+322,"Music For Breakups","Varg/Morning Star","Genres not available",22,0.0734,0.0685,0.505,0.845,0.877,8.973,0.0415,0.247,77.213,432907
+323,"Outgoing Society",Shed,"Genres not available",21,0.411,0.687,0.887,0.138,0.905,12.251,0.0623,0.0879,123.076,313389
+324,Cleo,"Donato Dozzy","Genres not available",28,0.383,0.566,0.939,0.072,0.811,11.556,0.0434,2.74E-5,143.551,501561
+325,"50 Euro to Break Boost","Skee Mask","Genres not available",40,0.554,0.745,0.808,0.0791,0.856,9.566,0.051,0.000291,132.005,307315
+326,Istian,"Lee Gamble","Genres not available",16,0.469,0.688,0.393,0.108,0.74,9.389,0.0571,0.097,139.985,145967
+327,Seello,"Anthony Naples","Genres not available",19,0.578,0.794,0.596,0.071,0.816,9.193,0.109,0.142,115.001,467565
+328,"It's Your Love","The Other People Place","Genres not available",35,0.853,0.805,0.259,0.0937,0.884,14.105,0.13,0.0081,126.378,451133
+329,Template,"Galcher Lustwerk","Genres not available",34,0.553,0.796,0.328,0.0706,0.777,10.044,0.363,0.0866,104.98,314286
+330,"Sexzzy Creep",Rezzett,"Genres not available",20,0.59,0.77,0.459,0.099,0.94,12.236,0.179,0.806,122.054,378551
+331,"The Last Foundry",Raime,"Genres not available",25,0.0323,0.711,0.429,0.141,0.92,18.898,0.0504,0.0689,114.978,352164
+332,"Temple Blockers","Jahiliyya Fields","Genres not available",2,0.0392,0.172,0.0169,0.111,0.934,23.925,0.0442,0.82,173.227,167900
+333,Cuál,"Dj Python","Genres not available",23,0.38,0.543,0.831,0.172,0.924,7.082,0.0418,0.0192,120.016,413196
+334,Korals,"Call Super","Genres not available",22,0.417,0.758,0.677,0.185,0.00588,10.281,0.135,0.0185,103.993,151739
+335,U1-U8,Martyn,"Genres not available",29,0.163,0.741,0.863,0.524,0.887,10.76,0.243,0.0024,126.058,385966
+336,"On Your Way","Omar S/Diviniti","Genres not available",36,0.515,0.81,0.59,0.0714,0.597,9.865,0.0407,2.31E-5,120.007,477738
+337,"This Hmming Raverie",SHXCXCHCXSH,"Genres not available",28,0.238,0.504,0.733,0.158,0.94,7.401,0.115,0.117,129.833,307354
+338,"Sail 2 Elderon",Xosar,"Genres not available",11,0.379,0.369,0.459,0.109,0.872,17.394,0.0378,0.581,127.951,367500
+339,Pitfall,"DJ Richard","Genres not available",19,0.746,0.567,0.605,0.115,0.88,9.141,0.0322,0.00598,116.998,271648
+340,"Van Pelt",Randomer,"Genres not available",25,0.154,0.797,0.853,0.0754,0.909,7.099,0.0826,0.000454,130.03,293287
+341,"Creature, Pt. 1",Djrum,"Genres not available",35,0.0346,0.119,0.212,0.0995,0.881,18.635,0.0399,0.638,80.402,283288
+342,"46:50 (feat. Active Child)","Dedekind Cut/Active Child","Genres not available",25,0.045,0.161,0.264,0.27,0.948,13.599,0.0346,0.894,67.365,236108
+343,Esther,Tzusing,"Genres not available",32,0.627,0.718,0.766,0.0618,0.874,9.538,0.049,5.94E-5,100.004,308295
+344,"High Heel Sleaze",Svengalisghost,"Genres not available",3,0.294,0.576,0.966,0.13,0.913,7.692,0.0521,9.93E-5,120.301,347123
+345,Arpeggiare,"Steve Hauschildt","Genres not available",32,0.304,0.293,0.391,0.173,0.872,14.601,0.0348,0.92,112.027,452621
+346,"Pop 4",GAS,"Genres not available",36,0.714,0.479,0.744,0.155,0.845,15.271,0.0352,0.499,119.463,591093
+347,"Mnemosyne - Mixed","Demdike Stare","Genres not available",22,0.446,0.601,0.931,0.287,0,11.512,0.115,0.168,132.553,140000
+348,"Hyper-Intelligent Genetically Enriched Cyborg","Helena Hauff","Genres not available",35,0.501,0.736,0.902,0.11,0.793,6.993,0.0441,0.012,127.646,363782
+349,"LA Hills Burn At The Peak Of Winter","Croatian Amor","Genres not available",22,0.158,0.202,0.222,0.137,0.85,17.638,0.0365,0.777,125.095,448034
+350,"AS Another Life","Amnesia Scanner","Genres not available",36,0.186,0.338,0.639,0.198,0.174,5.412,0.0353,0.0196,88.445,204000
+351,"Ab Intus","Answer Code Request","Genres not available",22,0.341,0.667,0.855,0.0974,0.906,12.641,0.0478,0.16,129.977,305068
+352,earth-sinking-into-water,Surgeon,"Genres not available",24,0.316,0.639,0.81,0.112,0.827,10.38,0.051,0.0833,134.007,345082
+353,"Rock In The Video Age","Jan Jelinek","Genres not available",34,0.379,0.668,0.397,0.111,0.918,12.649,0.0869,0.175,119.987,483973
+354,"Eye Spy","Claro Intelecto","Genres not available",19,0.109,0.739,0.865,0.0912,0.839,8.669,0.0394,0.0013,120.014,400000
+355,"Temporary Psychosis - VIP Mix","Peder Mannerfelt","Genres not available",19,0.425,0.686,0.754,0.18,0.415,8.667,0.177,0.0165,128.924,320701
+356,Adrift,"Octo Octa","Genres not available",31,0.166,0.716,0.558,0.104,0.941,13.954,0.0499,0.655,120.02,527476
+357,"The Narcissist (feat. Inga Copeland)","Dean Blunt","Genres not available",33,0.094,0.439,0.591,0.616,0.33,8.763,0.0499,0.297,63.414,246553
+358,Ganzfeld,Objekt,"Genres not available",31,0.402,0.603,0.917,0.117,0.855,7.235,0.0757,0.0278,146.994,356086
+359,"Q Loop - Mixed","Basic Channel","Genres not available",17,0.347,0.739,0.541,0.318,0.778,20.662,0.0895,0.683,121.048,230079
+360,Screen,"Visible Cloaks","Genres not available",33,0.0392,0.165,0.177,0.108,0.0277,18.8,0.0429,0.621,68.281,201462
+361,"When Prophecy Fails",Barker,"Genres not available",22,0.497,0.311,0.792,0.0799,0.931,12.221,0.0406,0.638,145.013,223222
+362,"Not Worried",Eartheater,"Genres not available",25,0.235,0.468,0.473,0.155,0.57,14.678,0.209,0.624,118.463,152000
+363,"Queen of Ungilsan","Steven Julien/Funkineven","Genres not available",16,0.25,0.678,0.733,0.0643,0.871,7.421,0.0642,0.00743,116.999,440985
+364,"Sonny and Ricardo Give Good Advice","Willie Burns/DJ Overdose","Genres not available",11,0.78,0.745,0.872,0.127,0.614,4.549,0.0632,0.0902,126.999,337377
+365,Divinity,"Broken English Club","Genres not available",20,0.745,0.752,0.764,0.0919,0.862,6.395,0.034,0.00274,115.019,530988
+366,"Hype Williams Meets Shangaan Electro","Hype Williams","Genres not available",29,0.532,0.541,0.589,0.167,0.0125,8.527,0.0311,0.253,71.193,310587
+367,Orpheus,Pariah,"Genres not available",26,0.104,0.649,0.676,0.0842,0.811,7.164,0.046,0.000178,140.007,304175
+368,"Too Late for U and M1","DJ Seinfeld","Genres not available",41,0.57,0.691,0.927,0.0617,0.875,7.062,0.0377,0.00779,128.003,397487
+369,"Why Does Your Father Look so Nervous?","Karen Gwyer","Genres not available",15,0.436,0.794,0.93,0.0655,0.906,11.023,0.0645,0.00247,132.007,344909
+370,"Bossa #1 - The Late Night Dance Remix by Le Rubrique","Move D/Le Rubrique","Genres not available",33,0.654,0.791,0.691,0.0615,0.867,13.803,0.043,0.0329,120.003,427841
+371,"Gone Stray","Two Dogs in a House","Genres not available",6,0.54,0.746,0.636,0.117,0.881,8.525,0.0532,0.477,119.995,301727

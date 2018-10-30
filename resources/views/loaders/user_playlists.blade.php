@@ -1,5 +1,4 @@
 @foreach($Playlists as $playlist)
-@if($playlist['db'] == true)
 <li>
     <div class="play-box">
         <div class="playlayer">
@@ -27,7 +26,7 @@
     </div>
     </div>
 </li>
-@endif
+
 @endforeach
 
 
