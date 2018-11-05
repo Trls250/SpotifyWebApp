@@ -13,6 +13,6 @@ yarn-error.log
 .env
 .phpunit.result.cache
 /nbproject/private/
-/public/playlist
-/public/playlists_csv
-/public/users
+public/playlist
+public/playlists_csv
+public/users
