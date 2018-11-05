@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class playlist_other_tag extends Model
+class Playlist_Other_tag extends Model
 {
     public $timestamps = False;
     public $incrementing = false;
