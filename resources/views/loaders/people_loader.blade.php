@@ -1,155 +1,47 @@
- <div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Users
-                </th>
-                <th>
-                    Followers
-                </th>
-                <th>
-                    Playlists
-                </th>
-                <th>
-                    Avg Playlist Rating
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+@foreach($Users as $user)
             <tr>
                 <td>
                     <div class="spotify-image-row">
-                        <div class="spotify-image-profile" style="background-image: url(http://localhost/spotify/public/users/juststan.jpg)">
+                    @if(file_exists('public/users/'.$user->id.'.jpg'))
+                        <div class="spotify-image-profile" style="background-image: url({{ URL::asset('public/users/'. $user->id.'.jpg')}})">
+                    @else
+                        <div class="spotify-image-profile" style="background-image: url({{ URL::asset('public/images/default_user.png')}})">
+                    @endif
                         </div>
                         <div class="spotify-image-content">
                             <h6>
-                                Brent Hudson
+                            <a href="{{url('users/get').'/'.$user->id}}">{{ $user->name }}</a>
                             </h6>
                         </div>
                     </div>
                 </td>
                 <td>
-                    326
+                {{ $user->followers }}
                 </td>
                 <td>
-                    7 Playlists
+                {{ $user->PlaylistCount }} Playlists
                 </td>
                 <td>
+                
                     <div class="avg-playlist-rating">
                         <div class="rating-column">
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/filstar.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/filstar.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/filstar.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/empty-star.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/empty-star.png"/>
-                            </a>
+                        <?php for($i = 0; $i < 5 ; $i++){ ?>
+                        <?php if($i < (int)$user->AvgRating){ ?>
+                        <img class="rate_input" id = {{$i}} src="<?php echo URL::asset('public/images/filstar.png'); ?>">
+                        <?php }else{ ?>
+                        <img class="rate_input" id = {{$i}} src="<?php echo URL::asset('public/images/empty-star.png'); ?>">
+                        <?php } ?>
+                        <?php } ?>
                         </div>
                         <div class="rating-column">
-                            <a href="" class="see-play-list">See Playlists <img src="http://localhost/spotify/public/images/go-arrow.png"></a>
+                            <a href="{{url('playlist/getUserWall'.'/'.$user->name.'/'.$user->id)}}" class="see-play-list">See Playlists <img src="http://localhost/spotify/public/images/go-arrow.png"></a>
                         </div>
                     </div>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <div class="spotify-image-row">
-                        <div class="spotify-image-profile" style="background-image: url(http://localhost/spotify/public/users/juststan.jpg)">
-                        </div>
-                        <div class="spotify-image-content">
-                            <h6>
-                                Brent Hudson
-                            </h6>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    326
-                </td>
-                <td>
-                    7 Playlists
-                </td>
-                <td>
-                    <div class="avg-playlist-rating">
-                        <div class="rating-column">
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/filstar.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/filstar.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/filstar.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/empty-star.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/empty-star.png"/>
-                            </a>
-                        </div>
-                        <div class="rating-column">
-                            <a href="" class="see-play-list">See Playlists <img src="http://localhost/spotify/public/images/go-arrow.png"></a>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="spotify-image-row">
-                        <div class="spotify-image-profile" style="background-image: url(http://localhost/spotify/public/users/juststan.jpg)">
-                        </div>
-                        <div class="spotify-image-content">
-                            <h6>
-                                Brent Hudson
-                            </h6>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    326
-                </td>
-                <td>
-                    7 Playlists
-                </td>
-                <td>
-                    <div class="avg-playlist-rating">
-                        <div class="rating-column">
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/filstar.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/filstar.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/filstar.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/empty-star.png"/>
-                            </a>
-                            <a href="">
-                                <img src="http://localhost/spotify/public/images/empty-star.png"/>
-                            </a>
-                        </div>
-                        <div class="rating-column">
-                            <a href="" class="see-play-list">See Playlists <img src="http://localhost/spotify/public/images/go-arrow.png"></a>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
- <div class="table-responsive">
+
+@endforeach
+ <!-- <div class="table-responsive">
     <table class="table">
         <thead>
             <tr>
@@ -347,4 +239,4 @@
 
     
 
-</script>
+</script> -->

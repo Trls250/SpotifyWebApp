@@ -7,6 +7,7 @@ use App\Http\Controllers\Data\PlaylistRatingsController;
 use App\Playlist;
 use App\Comment;
 use App\User;
+use App\Other_tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -97,6 +98,7 @@ class PlayListController extends Controller {
     public function tagUser(Request $request){
 
         $query = "";
+        
 
         if(!isset($request->data)){
 
@@ -106,6 +108,7 @@ class PlayListController extends Controller {
             ]);
         }else {
 
+            $tempToAddinOthers = [];
 
             foreach ($request->input('data') as $x) {
 
@@ -122,17 +125,52 @@ class PlayListController extends Controller {
                         }
                     }
 
-                    
+
+                }else{
+                    array_push($tempToAddinOthers, $x);
                 }
             }
 
+            $other_tags_that_added = [];
+
+            foreach($tempToAddinOthers as $x){
+
+                if(Other_tag::where('name', '=', $x)->exists()){
+                    $other_tag = Other_tag::where(['name' => $x])->get();
+                    $result = Playlist::insertOtherTag($request->id, $other_tag[0]['id']);
+                    
+                }else{
+
+                    $other_tag = new Other_tag();
+                    $other_tag->name = $x;
+                    $other_tag->save();
+
+                    $result = Playlist::insertOtherTag($request->id, $other_tag['id']);
+                
+
+                }
+
+                if(!isset($result['Already'])){
+                    array_push($other_tags_that_added, $other_tag->name);
+                }
+
+                if($result['Success']==false)
+                {
+                    return $result;
+                }
+
+                
+
+            }
             
             $users = User::findMany($request->input('data'));
+            
 
             return ([
                         'Success' => true,
                         'Data' => "User tagged",
-                        'Users' => $users
+                        'Users' => $users,
+                        'Tags' => $other_tags_that_added
                     ]);
 
             
@@ -269,6 +307,65 @@ class PlayListController extends Controller {
         }
     }
 
+    public function getUserWallRecords(Request $request)
+    {
+
+        $offset = 0;
+        $limit = 2;
+        $type = 2;
+
+        if(isset($request['type'])){
+            $type = $request['type'];
+        }
+
+
+        if(isset($request['offset']))
+        {
+           $offset = $request['offset'];
+
+        }
+
+        if(isset($request['items']))
+        {
+            $limit = $request['items'];
+
+        }
+
+        if(Playlist::count() == 0){
+            return ([
+                'Success'=>false,
+                'Status'=>"404",
+                'Message'=>"No records"]);
+        }
+
+             
+ 
+
+        $playlists = Playlist::getAllofUser($offset, $limit, $request->id);
+
+        if($playlists->count() == 0)
+        {
+            return ([
+                'Success'=>false,
+                'Status'=>"204",
+                'Message'=>"No further records"]);
+        }
+
+        if($type == '2'){
+            return view('loaders.wall_compact')->with([
+                'Status' => "200",
+                'Success'=>true,
+                'Playlists'=> $playlists,
+                'FromTag'=> FALSE]);
+
+        }else{
+        return view('loaders.wall')->with([
+            'Status' => "200",
+            'Success'=>true,
+            'Playlists'=> $playlists,
+            'FromTag'=> FALSE]);
+        }
+    }
 
 
     public function getWallRecords(Request $request)
@@ -276,6 +373,11 @@ class PlayListController extends Controller {
 
         $offset = 0;
         $limit = 2;
+        $type = 2;
+
+        if(isset($request['type'])){
+            $type = $request['type'];
+        }
 
         if(isset($request['offset']))
         {
@@ -309,11 +411,20 @@ class PlayListController extends Controller {
                 'Message'=>"No further records"]);
         }
 
+        if($type == '2'){
+            return view('loaders.wall_compact')->with([
+                'Status' => "200",
+                'Success'=>true,
+                'Playlists'=> $playlists,
+                'FromTag'=> FALSE]);
+
+        }else{
         return view('loaders.wall')->with([
             'Status' => "200",
             'Success'=>true,
             'Playlists'=> $playlists,
             'FromTag'=> FALSE]);
+        }
     }
     
     public function getLibraryRecords(Request $request)
@@ -321,6 +432,11 @@ class PlayListController extends Controller {
         
         $offset = 0;
         $limit = 2;
+        $type = 2;
+
+        if(isset($request['type'])){
+            $type = $request['type'];
+        }
 
         if(isset($request['offset']))
         {
@@ -360,23 +476,45 @@ class PlayListController extends Controller {
                 'Message'=>"No further records"]);
         }
 
+
+        if($type == '2'){
+            return view('loaders.wall_compact')->with([
+                'Status' => "200",
+                'Success'=>true,
+                'Playlists'=> $playlists,
+                'FromTag'=> FALSE]);
+
+        }else{
         return view('loaders.wall_1')->with([
             'Status' => "200",
             'Success'=>true,
             'Playlists'=> $playlists,
             'FromTag'=> FALSE]);
+        }
+
+    }
+
+    public function myUserwall(Request $request){
+        return view('wall')->with ([
+            'page_heading' => 'Playlists Added By '.$request->name,
+            'url' => 'playlist/getUserWallRecords'.'/'.$request->id]);
     }
     
     public function mywall(Request $request)
     {
         
-        return view('wall')->with ('url','playlist/getWallRecords');
+        return view('wall')->with ([
+            'page_heading' => 'Latest Activity',
+            'url' => 'playlist/getWallRecords']);
     }
     
      public function mylibrary(Request $request)
     {
         
-        return view('wall')->with ('url','playlist/getLibraryRecords');
+        return view('wall')->with ([
+            'page_heading' => 'My Library',
+            'url' => 'playlist/getLibraryRecords']);
+
     }
     
     
@@ -1679,6 +1817,8 @@ class PlayListController extends Controller {
 
             $data_to_send["tots_comments"] = Playlist::find($data['Playlist']['id'])->comment()->count();
             $data_to_send["user_rating"] = $data['Playlist']->getRating(session::get('UserInfo')['id']);
+
+            $data_to_send['Tags'] = Other_tag::getForThisPlaylist($playlist_id);
 
             return view('openplaylists')->with($data_to_send);
         } else {

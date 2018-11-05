@@ -1,0 +1,51 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,"Body Talks","The Struts","glam rock/modern alternative rock/modern rock",67,0.62,0.59,0.859,0.398,0,3.227,0.164,0.0036,92.987,176634
+2,"Let Me Live / Let Me Die","Des Rocs","modern alternative rock",69,0.237,0.51,0.759,0.077,0,4.854,0.101,0.034,91.123,207142
+3,Despicable,grandson,"modern alternative rock/modern rock",67,0.367,0.576,0.782,0.467,0.00241,6.167,0.0346,0.0123,87.971,223893
+4,"You're The One","Greta Van Fleet","modern blues rock/modern hard rock/rock",65,0.649,0.559,0.803,0.259,0.00228,5.727,0.0375,0.0148,151.995,266960
+5,"Every Step That I Take (feat. Portugal The Man & Whethan)","Tom Morello/Portugal. The Man/Whethan",---,43,0.53,0.525,0.765,0.46,0,6.163,0.259,0.0115,140.233,222229
+6,"My Blood","Twenty One Pilots","pop punk/rock",75,0.674,0.749,0.723,0.0977,0.022,6.609,0.0432,0.0563,108.999,229120
+7,Pressure,Muse,"modern rock/permanent wave/piano rock/post-grunge/rock",75,0.755,0.618,0.834,0.0593,0.000181,3.692,0.0566,0.00364,136.033,235597
+8,MANTRA,"Bring Me The Horizon","melodic metalcore/metalcore/pop punk/rap metal/rock/screamo",78,0.617,0.502,0.817,0.153,0,3.508,0.0447,0.000477,90.024,233298
+9,"The Time Is Now",Atreyu,"alternative metal/groove metal/melodic metalcore/metalcore/nu metal/pop punk/post-grunge/rap metal/rap rock/screamo",66,0.396,0.481,0.944,0.278,0.000328,3.665,0.231,0.00926,165.02,199959
+10,"Forever & Ever More","Nothing But Thieves","alternative pop rock/modern alternative rock/modern rock/rock",70,0.399,0.289,0.841,0.267,0.00771,4.33,0.146,0.00582,183.17,208134
+11,"Make It Up As I Go (feat. K.Flay)","Mike Shinoda/K.Flay","alternative hip hop",67,0.576,0.538,0.728,0.161,0.0221,7.21,0.293,0.126,188.003,209707
+12,"Machine Gun (F**k The NRA)",YUNGBLUD,"british indie rock/modern alternative rock",56,0.467,0.579,0.778,0.101,0,5.933,0.164,0.0158,166.006,193372
+13,"Double Down",Slothrust,"brooklyn indie/indie punk/preverb",54,0.788,0.637,0.636,0.0706,0.00139,4.675,0.109,0.011,75.276,191432
+14,"Lavender Bones","Stand Atlantic","anthem emo/pixie/pop emo",61,0.767,0.55,0.936,0.302,2.67E-6,2.876,0.078,0.000207,158.02,204253
+15,Ghost,Badflower,"modern alternative rock/modern rock",59,0.282,0.505,0.848,0.18,0,5.173,0.0575,0.0106,140.055,259428
+16,Sold,Liily,---,55,0.461,0.451,0.865,0.232,0.0316,4.219,0.044,0.0103,172.153,211485
+17,"You'll Be Fine","Palaye Royale","modern alternative rock/vegas indie",62,0.446,0.27,0.931,0.218,0,5.016,0.232,0.0139,124.608,213395
+18,"I O U","You Me At Six","emo/modern alternative rock/modern rock/pop emo/pop punk/screamo",64,0.558,0.526,0.817,0.123,7.25E-5,7.589,0.0851,0.0552,90.727,211187
+19,"Can’t You See",FIDLAR,"garage rock/indie garage rock/modern rock/noise pop",48,0.909,0.564,0.885,0.116,0.000203,4.003,0.16,0.00961,169.999,178438
+20,"Blood / / Water",grandson,"modern alternative rock/modern rock",20,0.649,0.512,0.884,0.0763,0.00215,5.659,0.168,0.0016,154.019,216721
+21,Stronger,"The Score","modern alternative rock/modern rock",69,0.134,0.571,0.677,0.352,0,4.718,0.0373,0.0231,128.008,190000
+22,"S.O.S. (Sawed Off Shotgun)","The Glorious Sons","canadian indie/canadian rock/modern alternative rock",57,0.924,0.568,0.961,0.138,0,2.182,0.065,0.00428,148.126,195173
+23,"Secrets In The Sunset","Goodbye June","garage rock/modern alternative rock/modern blues rock/modern hard rock/modern rock",42,0.52,0.568,0.916,0.0779,0.000464,5.327,0.0943,0.115,129.981,238148
+24,Natural,"Imagine Dragons","modern rock/rock/vegas indie",94,0.213,0.448,0.612,0.08,0,6.106,0.0708,0.216,97.773,189467
+25,"White Flag",Normandie,post-screamo,61,0.15,0.343,0.91,0.0717,5.67E-5,5.734,0.0648,0.00136,163.975,225732
+26,Prayers,"Good Charlotte/Chris Lord-Alge","alternative metal/pop punk/pop rock/post-grunge/punk",62,0.257,0.365,0.867,0.0755,4.85E-6,5.683,0.0716,0.000803,183.912,230027
+27,"California Friends","The Regrettes",---,56,0.391,0.601,0.676,0.186,0,4.423,0.0926,0.00414,167.92,214186
+28,"Can't Knock The Hustle",Weezer,"alternative rock/modern rock/permanent wave/pop punk/pop rock/post-grunge/rock",65,0.802,0.621,0.972,0.0692,0.0015,2.245,0.05,0.0177,101.012,222200
+29,Halo,"Boston Manor","alternative emo/anthem emo/modern alternative rock",34,0.155,0.421,0.823,0.204,3.21E-5,3.327,0.0446,0.00078,104.973,223720
+30,"Love It If We Made It","The 1975","modern alternative rock/modern rock/nu gaze/pop/shiver pop",71,0.0577,0.479,0.727,0.0644,1.97E-5,5.369,0.0357,0.000718,180.09,253249
+31,"Hail To The Victor","Thirty Seconds To Mars","modern rock/pop punk/post-grunge/rock",61,0.44,0.57,0.723,0.2,0.000144,6.673,0.0386,0.00238,145.001,201957
+32,"High Hopes","Panic! At The Disco","emo/modern rock/pop punk/vegas indie",91,0.681,0.579,0.904,0.064,0,2.729,0.0618,0.193,82.014,190947
+33,"Do Your Worst","Rival Sons","alternative roots rock/blues-rock/garage rock/hard rock/modern alternative rock/modern blues rock/modern rock/rock",65,0.398,0.391,0.8,0.329,3.08E-6,2.761,0.0523,0.00977,83.81,210851
+34,Sometimes,"Gerry Cinnamon",---,67,0.96,0.639,0.699,0.0726,0,6.736,0.0303,0.0197,150.007,196600
+35,"The Dark",Thrice,"emo/modern rock/pop punk/post-hardcore/screamo",61,0.302,0.518,0.713,0.103,0.00768,6.031,0.0815,0.00417,140.137,229893
+36,Infra-Red,"Three Days Grace","alternative metal/canadian metal/canadian rock/nu metal/pop punk/post-grunge/rap metal",35,0.337,0.568,0.907,0.0982,0,4.641,0.0488,0.00115,112.037,230933
+37,"Hear Me Now (feat. DIAMANTE)","Bad Wolves/DIAMANTE","alternative metal",63,0.278,0.338,0.806,0.144,0,7.417,0.0767,0.00343,160.821,219760
+38,"Who Do You Trust?","Papa Roach","alternative metal/nu metal/pop punk/post-grunge/rap metal/rap rock",68,0.312,0.56,0.885,0.361,3.47E-6,5.631,0.0363,0.047,102.003,196480
+39,"Dance Macabre",Ghost,metal,18,0.727,0.619,0.696,0.38,0.00555,6.269,0.0315,1.89E-5,125.986,219720
+40,"Are You Ready",Disturbed,"alternative metal/nu metal/post-grunge",68,0.511,0.528,0.976,0.24,0,2.188,0.0803,0.000108,100.082,261705
+41,"Mind Your Manners (feat. Myles Kennedy and The Conspirators)","Slash/Myles Kennedy And The Conspirators","hard rock/post-grunge/rock",38,0.45,0.526,0.98,0.208,0.00136,3.042,0.34,1.74E-5,110.011,217828
+42,Disease,Beartooth,"columbus ohio indie/metalcore/screamo",59,0.456,0.525,0.957,0.333,3.25E-6,3.742,0.0689,0.00202,97.445,228373
+43,Aftermath,"Royal Tusk","edmonton indie/modern alternative rock/modern hard rock",55,0.431,0.437,0.934,0.317,0,3.227,0.0915,0.00166,144.135,209109
+44,"I'm Afraid of Americans","BONES (UK)",---,54,0.436,0.514,0.956,0.0627,0.0243,3.003,0.271,0.00134,174.038,195250
+45,"Be Legendary","Pop Evil","alternative metal/nu metal/post-grunge/rap metal/rap rock",58,0.364,0.547,0.944,0.195,0.0451,3.304,0.0507,4.81E-5,93.966,203274
+46,"GET UP",Shinedown,"alternative metal/nu metal/post-grunge/rap metal/rap rock",67,0.38,0.552,0.935,0.116,1.98E-6,4.096,0.0623,0.0174,74.954,245787
+47,"Black Holes (Solid Ground)","The Blue Stones","modern alternative rock/modern blues rock/modern hard rock",61,0.26,0.565,0.85,0.113,4.35E-5,4.256,0.0366,0.00555,92.01,185960
+48,"Alone In A Room","Asking Alexandria","melodic metalcore/metalcore/rap metal/screamo/trancecore",69,0.287,0.482,0.946,0.0466,0,3.231,0.0853,0.00251,135.071,245861
+49,"She's Kerosene","The Interrupters","modern ska punk/punk/ska/ska punk/skate punk",65,0.899,0.577,0.936,0.413,1.74E-5,2.924,0.078,0.043,168.879,170453
+50,"Old Flames","Coheed and Cambria","alternative metal/modern rock/pop punk/screamo",55,0.174,0.442,0.897,0.0993,0,6.161,0.11,0.127,148.844,350520

@@ -7,14 +7,63 @@
               @include('includes/search-menu')
 
      
-            <div id ="wall_records" class="content-container">
+            <div  class="content-container">
               <div class="row ">
-                <div class="col-md-12">
-                  <h3 id ="title_replace" class="title">Latest Activity</h3>
+                <div class="col-md-12 column-flex">
+                  <h3  class="title">{{$page_heading}}</h3>
+                  <div class="flex-column">
+                  <label>Compact View<input type="checkbox" id="title_replace" class="ios-switch green tinyswitch" checked /><div><div></div></div></label>
+                  </div>
                 </div>
               </div>
-            </div>
-              
+            
+            <div id ="wall_records"></div>
+            <div class="playlist_records latest-activity">
+            <div class="table-responsive">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>
+                              Name
+                          </th>
+                          <th>
+                              Popularity
+                          </th>
+                          <th>
+                              Danceability
+                          </th>
+                          <th>
+                              Energy
+                          </th>
+                          <th>
+                              Valence
+                          </th>
+                          <th>
+                              Instrumentalness
+                          </th>
+                          <th>
+                              Liveness
+                          </th>
+                          <th>
+                              Loudness
+                          </th>
+                          <th>
+                              Speechiness
+                          </th>
+                          <th>
+                              BPM
+                          </th>
+                          <th>
+                              Acousticeness
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+              </table>
+              </div>
+              </div>
+              </div>
             
           </div>
 
@@ -33,16 +82,38 @@
         
         <script type="text/javascript">
 
-            
+            /**
+             Page Type 1 = Tiled;
+             Page Type 2 = Compact;
+             */
+
+            //$("#wall_records").hide();
+            page_type = '2';
+
+            $("#title_replace").on('change', function(e){
+              e.preventDefault();
+              if(page_type == 1){
+                page_type = 2;
+                $(".table-responsive").show();
+                $("#wall_records").hide();
+              }else {
+                page_type = 1;
+                $(".table-responsive").hide();
+                $("#wall_records").show();
+              }
+              temp = false;
+              getRecords();
+            })
 
             $("#main_loader").fadeIn();
             $('.page_end_div').hide();
             var total_wall_records = {{session::get('WallRecordsCount')}};
-            var offset = 0;
-            var items = 50;
+            var offset_1 = 0;
+            var offset_2 = 0;
+            var items = 100;
             if(items>=total_wall_records)
             {
-                $("#more_results").replaceWith("<p>No further records</p>");
+                $("#more_results").replaceWith("");
             }
                 
             var flag   = true;
@@ -1097,10 +1168,17 @@
             if(flag == true){
               temp = false;
               $("#main_loader").fadeIn();
+
+                        if(page_type == 2){
+                          url = "{{ url($url)}}"+'?offset='+offset_2+'&items='+items+'&type=2'
+                        }else{
+                          url = "{{ url($url)}}"+'?offset='+offset_1+'&items='+items+'&type=1'
+
+                        }
             
               $.ajax({
                   type: "get",
-                  url: "{{ url($url)}}"+'?offset='+offset+'&items='+items,
+                  url: url,
                   success: function (data) {
                       
                       $("#main_loader").fadeOut();
@@ -1111,14 +1189,19 @@
 
                       }
                       else if (data.Status == "204") {
-                          $(".page_end_div").html("No further records");
+                          //$(".page_end_div").html("No further records");
                          
                           $("#more_results").hide();
                           flag = false;
 
                       }
                       else {
+                        if(page_type == 2){
+                          $('tbody').append(data);
+                        }else{
                           $('#wall_records').append(data);
+
+                        }
                             if(global_filters == ''){
                                 $(".playlist-filter").fadeIn();
                                 $(".search_message").fadeOut();
@@ -1140,7 +1223,12 @@
                   }
               });
 
-              offset+=items;
+              if(page_type == 2){
+                offset_2+=items;
+                        }else{
+                          offset_1+=items;
+
+                        }
               temp = true;
           }
       }

@@ -1,0 +1,28 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,"Tomorrow from Annie","Charles Strouse/Andrea McArdle/Peter Howard","broadway/show tunes",10,0.328,0.443,0.229,0.131,0.00478,13.777,0.0433,0.76,92.419,125016
+2,"Diplomat’s Son","Vampire Weekend","brooklyn indie/folk-pop/garage rock/indie folk/indie pop/indie rock/indietronica/modern rock/stomp and holler",50,0.842,0.503,0.815,0.0838,0.0513,6.967,0.338,0.209,193.93,361373
+3,"Mr Spanish Sun","Baby Loves Spanish",---,0,0.571,0.66,0.231,0.118,0,12.011,0.031,0.918,110.069,148364
+4,Hypnotize,"The Notorious B.I.G.","east coast hip hop/gangster rap/hardcore hip hop/hip hop/pop rap/rap",69,0.632,0.895,0.694,0.292,0,4.384,0.275,0.176,93.944,230000
+5,Do-Re-Mi,"Julie Andrews/Charmian Carr/Heather Menzies/Nicholas Hammond/Duane Chase/Angela Cartwright/Debbie Turner/Kym Karath","broadway/hollywood/movie tunes/show tunes",50,0.55,0.501,0.267,0.24,0,10.462,0.0493,0.827,136.856,332573
+6,"You Are My Sunshine (Version 1)","Elizabeth Mitchell","children's folk/children's music",54,0.605,0.477,0.179,0.213,0.000458,17.071,0.0356,0.908,172.046,168827
+7,"Hush Little Baby","The Kiboomers","music box",42,0.433,0.722,0.368,0.101,0.939,11.092,0.0392,0.733,95.098,104907
+8,"New York, New York - Live At The Meadowlands Arena/1986","Frank Sinatra","adult standards/christmas/easy listening/lounge",42,0.358,0.402,0.64,0.964,0,8.489,0.134,0.735,109.529,259200
+9,"I Can Sing a Rainbow","Baby Loves Spanish",---,0,0.586,0.699,0.148,0.119,0,11.487,0.0347,0.921,94.974,136647
+10,"Heads, Shoulders Knees and Toes","Baby Loves Spanish",---,0,0.783,0.541,0.599,0.104,4.98E-5,6.338,0.0345,0.302,116.519,178838
+11,"Under the Sea - From ""The Little Mermaid"" / Soundtrack Version","Samuel E. Wright","disney/movie tunes",59,0.847,0.443,0.472,0.0798,0,14.567,0.258,0.702,62.402,195147
+12,"You've Got a Friend In Me - From ""Toy Story"" / Soundtrack","Randy Newman","disney/movie tunes/singer-songwriter",67,0.532,0.681,0.335,0.285,3.39E-6,12.151,0.0336,0.793,115.883,124160
+13,"Wheels on the Bus","Wheels on the Bus",---,40,0.829,0.886,0.52,0.154,0.00033,10.805,0.0319,0.0313,112.023,229330
+14,"This Land Is Your Land","Elizabeth Mitchell","children's folk/children's music",37,0.633,0.581,0.141,0.106,9.91E-6,15.701,0.035,0.969,90.655,251920
+15,Hello,Vered,---,23,0.923,0.749,0.267,0.129,0,8.685,0.0584,0.934,109.131,91787
+16,"Twist And Shout - Remastered 2009","The Beatles","british invasion/merseybeat/psychedelic rock/rock",75,0.937,0.482,0.849,0.0414,7.74E-6,9.198,0.0452,0.641,124.631,155227
+17,"Don't Worry Baby - Remastered 2001","The Beach Boys","brill building pop/folk rock/psychedelic rock/rock",61,0.851,0.487,0.464,0.105,0.00531,9.821,0.03,0.0666,121.242,169933
+18,"God Only Knows - Remastered","The Beach Boys","brill building pop/folk rock/psychedelic rock/rock",66,0.483,0.521,0.487,0.0579,0,7.525,0.0299,0.253,117.072,173040
+19,"Good Vibrations - Remastered","The Beach Boys","brill building pop/folk rock/psychedelic rock/rock",69,0.385,0.396,0.473,0.109,0.000124,7.67,0.0345,0.326,133.449,219027
+20,"Sloop John B - Remastered","The Beach Boys","brill building pop/folk rock/psychedelic rock/rock",58,0.903,0.567,0.745,0.0873,0,5.423,0.0264,0.402,125.575,180133
+21,"Here Comes The Sun - Remastered 2009","The Beatles","british invasion/merseybeat/psychedelic rock/rock",81,0.394,0.557,0.54,0.179,0.00248,10.484,0.0347,0.0339,129.171,185733
+22,"I Will - Remastered","The Beatles","british invasion/merseybeat/psychedelic rock/rock",21,0.832,0.631,0.387,0.0822,0.000406,11.529,0.0262,0.742,103.11,105933
+23,"Down By The Bay","Raffi/Ken Whiteley","canadian children's music/children's folk/children's music",53,0.903,0.576,0.16,0.105,0,13.679,0.0718,0.593,204.58,128213
+24,"If All Of The Raindrops","Old Town School of Folk Music","children's folk/children's music/nursery",50,0.73,0.73,0.335,0.26,0,8.2,0.0802,0.679,147.794,74933
+25,"Baby Beluga","Raffi/Ken Whiteley","canadian children's music/children's folk/children's music",53,0.571,0.663,0.263,0.452,2.17E-6,13.043,0.106,0.847,137.52,160827
+26,"Three Little Birds","Elizabeth Mitchell","children's folk/children's music",40,0.825,0.789,0.278,0.0616,0,13.416,0.183,0.496,150.065,154573
+27,"Apples And Bananas","Raffi/Ken Whiteley","canadian children's music/children's folk/children's music",45,0.925,0.845,0.134,0.0916,1.98E-6,14.509,0.0608,0.732,140.252,98040

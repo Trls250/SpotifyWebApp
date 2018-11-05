@@ -64,6 +64,14 @@
                             </li>
                             
                             @endforeach
+
+                            @foreach($Tags as $tag)
+                            
+                            <li>
+                                {{$tag->name}}
+                            </li>
+                            
+                            @endforeach
               
                         </ul>
                     </div>
@@ -157,13 +165,16 @@
 
                 $('#go-btn').fadeOut();
 
+            
+
+
                  $.ajax({
                   type: "post",
                   data: { _token: "{{ csrf_token() }}", data: data_to_send, id : id_to_send },
                   url: "{{ url('playlist/tag')}}" + "/{{$Playlist['id']}}" ,
                   success: function (data) {
                       
-                    //console.log(data);
+                    console.log(data);
                     $("#e1").val('').trigger('change');
                     $("#go-btn").fadeOut();
                     
@@ -182,6 +193,12 @@
                             
                         }
                     }
+
+                    for (x in data.Tags){
+                        to_append = to_append + `<li>
+                                `+data.Tags[x]+`
+                            </li>`;
+                    }
                     //console.log(to_append);
                     $("#append_tags").append(to_append);
                   },
@@ -194,8 +211,10 @@
    
             });
             console.log("{{$Playlist['id']}}");
-            $( "#e1" ).select2({    
-                placeholder: 'Type to tag someone...',    
+            $( "#e1" ).select2({
+                tags: true,
+                tokenSeparators: [',', ' '],    
+                placeholder: 'Type to add a tag...',   
                 ajax: {
                     url: '{{url("users/getUserMatch?id=")}}' + "{{$Playlist['id']}}" + "&q=",
                     dataType: 'json',
@@ -206,7 +225,8 @@
                         };
                     },
                     processResults: function (data) {
-                        //console.log(data);
+
+                        console.log(data);
                         // parse the results into the format expected by Select2.
                         // since we are using custom formatting functions we do not need to
                         // alter the remote JSON data

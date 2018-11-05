@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Session;
 use App\User;
+use App\Artist;
 
 class SpotifyAuthController extends Controller {
 
@@ -37,16 +38,28 @@ class SpotifyAuthController extends Controller {
     public function myPostAuthCode(Request $request) {
 
         if (postAuthCode($request) == true) {
-            if (getUserProfile('me')['Success'] == true) {
+
+            $user = getUserProfile('me');
+
+            if ($user['Success'] == true) {
                 // return redirect()->route('user/update');
-                User::saveRecord();
+                $isNewUser = User::saveRecord();
                 \App\Playlist::isNewTag(Session::get('UserInfo')['id']);
                 Session::put('WallRecordsCount', \App\Playlist::count());
+
+                // if($isNewUser){
+
+
+                // }
+
+                $this->getUserTopTracksAndArtists();
+
                 return redirect('playlist/getWall');
             } else {
                 return view('home')->withErrors('Unable to log in right now.');
             }
         }
+        
     }
 
     public function checkRedirect() {
@@ -58,6 +71,58 @@ class SpotifyAuthController extends Controller {
         }
 
     }
+
+    public function getUserTopTracksAndArtists(){
+        $this_user_id = session::get('UserInfo')['id'];
+
+        if(isset($this_user_id)){
+            $url = "https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=100&offset=0";
+            $topArtists = goCurl($url, null, "GET", false);
+
+            if($topArtists['Success']){
+                foreach($topArtists['ResponseData']['items'] as $artist){
+                    User::attachArtist($artist['id'], $artist['name'], $artist['popularity'], $artist['followers']['total'], $artist['genres']);
+                }
+
+                $url = "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=100&offset=0";
+                $topTracks = goCurl($url, null, "GET", false);
+
+    
+
+                if($topTracks['Success']){
+                    foreach($topTracks['ResponseData']['items'] as $track){
+                        User::attachTrack($track['id'], $track['name'], $track['preview_url']);
+                    }
+
+                    return([
+                        'Success' => true
+                    ]);
+
+                }else
+                {
+                    return([
+                        'Success' => false,
+                        'Error' => "Error in obtaining data"
+                    ]);
+                }
+
+            }else
+            {
+                return([
+                    'Success' => false,
+                    'Error' => "Error in obtaining data"
+                ]);
+            }
+
+
+            
+
+        }
+
+
+    }
+
+    
 
     //for testing purposes
     public function setExpire() {

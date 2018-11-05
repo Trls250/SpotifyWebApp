@@ -1,0 +1,134 @@
+"Track No.","Track Name",Artists,Genres,Popularity,Valence,Danceability,Energy,Liveness,Instrumentalness,Loudness,Speechiness,Acousticness,Tempo,Duration_ms
+1,"Need U (100%) - Radio Edit","Duke Dumont/A*M*E","dance pop/deep groove house/destroy techno/disco house/edm/house/pop/progressive house/tropical house",38,0.443,0.669,0.845,0.437,0.00325,5.139,0.0546,0.00173,123.942,173687
+2,"Once Around The Block","Badly Drawn Boy","britpop/chamber pop/folk-pop/melancholia",41,0.873,0.503,0.71,0.124,0.0113,8.372,0.0429,0.692,168.123,224573
+3,"Unwind Yourself","Marva Whitney","deep funk",31,0.838,0.832,0.458,0.284,0.0015,9.07,0.218,0.115,128.696,158027
+4,"In The Wee Small Hours Of The Morning","Johnny Hartman","adult standards/cabaret/christmas/cool jazz/jazz/lounge/vocal jazz",23,0.187,0.34,0.0599,0.106,0.00572,20.855,0.0384,0.971,80.719,165326
+5,Visions,"The Breathing Effect",---,17,0.27,0.468,0.47,0.396,0.518,11.421,0.0265,0.193,146.172,429859
+6,"What Lays Beyond","Alex Mercado Trio/Scott Colley/Antonio Sánchez",---,13,0.488,0.473,0.324,0.272,0.851,13.737,0.0371,0.693,161.72,484987
+7,"Ridin Round","Kali Uchis","colombian pop/indie r&b/pop",55,0.96,0.823,0.788,0.0826,2.96E-5,5.888,0.0522,0.0073,119.981,276500
+8,"Forever (Pt. II)","Snakehips/Kaleem Taylor","dance pop/edm/electropop/indie r&b/pop/post-teen pop/tropical house",48,0.786,0.516,0.808,0.31,0,6.326,0.124,0.000767,94.946,235240
+9,Lumen,"Throwing Snow","bass music/future garage/microhouse/substep/wonky",33,0.117,0.514,0.829,0.219,0.664,7.833,0.0465,0.011,125.002,308908
+10,"Chamber Of Reflection","Mac DeMarco","edmonton indie",49,0.535,0.539,0.555,0.1,0.918,8.659,0.0714,0.28,131.213,231720
+11,Moonshiner,"Kevin Morby","art pop/chamber pop/folk-pop/freak folk/funk/indie folk/indie pop/indie rock/modern rock/neo-psychedelic/new americana/preverb/roots rock/slow core/stomp and holler",23,0.715,0.544,0.734,0.0885,0.00131,5.987,0.0346,0.308,114.877,289573
+12,"Wonder Woman","The Maghreban","float house/fluxwork/outsider house",15,0.677,0.777,0.966,0.197,0.908,6.814,0.0578,0.000322,121.048,445795
+13,"Sun Go Down","Fat Night",---,52,0.755,0.792,0.657,0.31,1.02E-5,7.181,0.0281,0.404,111.998,222321
+14,"Dang! (feat. Anderson .Paak) - Radio Edit","Mac Miller/Anderson .Paak","hip hop/pop rap/rap",45,0.53,0.78,0.731,0.0987,1.31E-6,6.333,0.305,0.0236,106.898,241118
+15,"Loving Like This",Sabella,---,20,0.23,0.494,0.522,0.0945,4.3E-5,8.012,0.0367,0.318,98.853,172595
+16,"Keri Baby","A. G. Cook/Hannah Diamond","escape room",32,0.833,0.706,0.819,0.266,7.61E-6,6.323,0.0747,0.00351,93.162,130200
+17,Francis,Houndstooth,"portland indie",30,0.48,0.531,0.829,0.0996,0.904,5.562,0.0279,0.488,134.622,291027
+18,"Wiggle Room","Drug Cabin",---,31,0.667,0.696,0.662,0.162,0.767,7.174,0.0318,0.648,97.313,153200
+19,"Life Partner","Teams/Star Slinger","chillwave/future funk/indie dream pop/vaporwave",12,0.233,0.742,0.878,0.604,0.000126,7.573,0.578,0.0219,107.967,262227
+20,"Another Day in the Sun","Jagwar Ma/Dreems","alternative dance/australian alternative rock/indietronica",16,0.0945,0.6,0.68,0.123,0.00416,7.512,0.0286,0.000372,128.973,356009
+21,"Never Been Any Reason","Head East","album rock/classic rock/country rock/hard rock/mellow gold/rock/soft rock/southern rock",48,0.921,0.519,0.453,0.133,0.00166,12.45,0.0401,0.000671,134.844,310267
+22,Dive,Village,"neurostep/vapor twitch",17,0.126,0.531,0.687,0.272,0.342,6.681,0.0403,0.0402,139.911,274299
+23,"Your Love","Mick Jenkins","conscious hip hop/drill/hip hop/indie r&b/rap/underground hip hop",48,0.639,0.652,0.454,0.14,0,5.95,0.16,0.0505,95.063,194143
+24,"Second Chance","Peter Bjorn and John","alternative dance/dance-punk/indie pop/indie rock/indietronica/modern rock/new rave/swedish alternative rock/swedish indie pop",44,0.771,0.587,0.965,0.097,0.00296,1.542,0.0885,0.0204,132.826,252853
+25,"Learning To Love - Radio Edit","LA Priest","new rave",38,0.845,0.805,0.674,0.338,0.0362,7.814,0.105,0.137,120.396,210924
+26,"New Name",Sinkane,---,2,0.523,0.481,0.652,0.381,0.00371,7.598,0.0522,0.0059,114.058,183693
+27,"Half Moon Rising","Fatima Yamaha",---,40,0.911,0.665,0.729,0.103,0.912,8.75,0.0502,0.0186,128.03,318952
+28,"Silsile Mulaqaton Ke","Udit Narayan/Alka Yagnik","chutney/desi/desi hip hop/filmi/indian pop/modern bollywood/nepali/sufi",15,0.574,0.399,0.682,0.228,0,8.006,0.137,0.416,87.057,355013
+29,"Vuli Ndlela",Brenda,---,23,0.785,0.77,0.832,0.0838,0.0516,6.794,0.0543,0.0388,105.951,265773
+30,"Love Story (Radio Edit)","Layo & Bushwacka!","big beat/breakbeat/tech house",41,0.193,0.628,0.85,0.548,0.176,7.258,0.0357,0.0438,132.023,201587
+31,"Drop That Kick - Original Mix",Moombahteam/Brainpower,---,18,0.269,0.887,0.8,0.0806,0.0101,5.829,0.131,0.000805,109.984,152421
+32,"Two Doors","Alex Mercado Trio/Scott Colley/Antonio Sánchez",---,10,0.197,0.366,0.355,0.124,0.888,15.663,0.0331,0.727,127.027,400293
+33,"Alma Do Meu Pai","DJ Firmeza",batida/fluxwork,9,0.112,0.776,0.916,0.143,0.805,5.157,0.0633,0.188,143.031,389658
+34,Falling,"Here We Go Magic","brooklyn indie/chillwave/freak folk",15,0.554,0.484,0.871,0.164,0.953,9.359,0.051,0.0167,124.958,273013
+35,Teacher,"MF Grimm","alternative hip hop",36,0.731,0.634,0.439,0.104,0,13.065,0.407,0.371,87.018,165790
+36,"Indian Food","Dumbo Gets Mad","freak folk/indie garage rock/indietronica/neo-psychedelic",52,0.629,0.561,0.896,0.124,0.685,4.903,0.0528,0.765,86.808,213786
+37,"Angels (feat. Saba)","Chance the Rapper/Saba","conscious hip hop/hip hop/pop/pop rap/rap",67,0.678,0.771,0.647,0.37,0,5.127,0.376,0.294,155.914,206240
+38,"Dancing in the Rain (feat. Donnie Trumpet, Brandon Fox & Shay Lewis)","Taylor Bennett/Donnie Trumpet/Brandon Fox/Shay Lewis","drill/lgbtq+ hip hop/underground hip hop",49,0.212,0.302,0.475,0.322,2.07E-5,11.729,0.156,0.817,83.897,236936
+39,"Next Lifetime","Erykah Badu","funk/hip hop/indie r&b/neo soul/r&b/soul/urban contemporary",59,0.341,0.64,0.427,0.0952,0.00108,11.867,0.0619,0.147,130.006,386612
+40,Clearing,Grouper,"alternative rock/ambient/art pop/art rock/chamber pop/chamber psych/chillwave/compositional ambient/dream pop/drone/experimental/experimental pop/experimental rock/folk-pop/fourth world/freak folk/indie folk/indie pop/indie rock/lo-fi/neo-psychedelic/new weird america/noise pop/noise rock/nu gaze/post-rock/preverb/shoegaze/slow core/warm drone",49,0.136,0.23,0.0432,0.105,0.932,23.066,0.042,0.991,89.582,281680
+41,"GLOWED UP","KAYTRANADA/Anderson .Paak","escape room/hip hop/indie r&b/lgbtq+ hip hop/rap",44,0.4,0.693,0.617,0.151,0.00314,10.107,0.306,0.0339,135.281,298040
+42,Tombouctou,"Inna MODJA",---,28,0.576,0.852,0.458,0.146,0.000253,9.267,0.256,0.265,105.003,199649
+43,"On Your Way Down - Remastered Version","Allen Toussaint","funk/louisiana blues/new orleans blues/soul/southern soul",31,0.661,0.778,0.524,0.0965,0.233,11.441,0.064,0.467,118.756,240867
+44,"Midnight Blue - Remastered","Kenny Burrell","bebop/contemporary post-bop/cool jazz/gypsy jazz/hard bop/jazz/jazz funk/jazz fusion/jazz guitar/soul jazz",47,0.56,0.652,0.356,0.132,0.000103,13.733,0.0419,0.546,148.822,242347
+45,"In the Same Room","Julia Holter","art pop/art rock/chamber pop/chamber psych/chillwave/dream pop/escape room/experimental/experimental pop/folk-pop/fourth world/freak folk/indie pop/indie rock/la indie/lo-fi/neo-psychedelic/new weird america/noise pop/preverb/slow core",8,0.109,0.297,0.331,0.0921,0.143,10.258,0.0278,0.469,109.188,238307
+46,"A Ring On Every Finger",Liars,"art pop/brooklyn indie/chamber psych/dance-punk/experimental/experimental rock/freak folk/garage psych/lo-fi/neo-psychedelic/noise pop/noise rock/nu gaze/post-hardcore/post-punk/post-rock",17,0.423,0.67,0.693,0.445,0.00266,10.258,0.0601,0.0121,109.974,198160
+47,"Bangs & Works","DJ Trouble",footwork,10,0.36,0.321,0.867,0.467,0.00332,7.895,0.0743,8.77E-5,159.79,180453
+48,Healer,"Mick Jenkins/Jean Deaux","conscious hip hop/drill/hip hop/indie r&b/rap/underground hip hop",50,0.0887,0.536,0.406,0.113,0,11.596,0.129,0.371,119.923,255067
+49,Gone,Snakehips/Syd,"dance pop/edm/electropop/indie r&b/pop/post-teen pop/tropical house",43,0.381,0.564,0.602,0.138,0,6.422,0.0591,0.0958,137.883,238227
+50,"Scala - Original",Agoria,"microhouse/minimal techno/tech house",54,0.303,0.722,0.619,0.183,0.499,8.533,0.0397,0.000174,124.004,502002
+51,"Chicago - Live Version","Henrik Schwarz/Dixon/Âme",---,22,0.144,0.494,0.692,0.108,0.609,9.252,0.041,0.00279,123.948,548000
+52,"Bell Bottom Blues - 40th Anniversary Version / 2010 Remastered","Derek & The Dominos",---,54,0.668,0.413,0.693,0.166,0.0553,5.936,0.0351,0.601,133.137,301720
+53,"I'd Like To","Corinne Bailey Rae","disco/funk/motown/post-disco/quiet storm/soul",42,0.54,0.631,0.731,0.116,0,8.294,0.168,0.172,85.52,248667
+54,"Snake Bite",Eliminate,"folk/folk rock/folk-pop/melancholia/mellow gold/rock",21,0.721,0.683,0.998,0.126,0.00989,1.656,0.0996,0.0995,150.009,184087
+55,Souvenir,"Milo/Hemlock Ernst","album rock/art rock/blues-rock/classic rock/folk rock/hard rock/heartland rock/mellow gold/psychedelic rock/rock/roots rock/soft rock/southern rock",49,0.824,0.644,0.489,0.123,0,8.399,0.418,0.718,75.683,225336
+56,"Wanna Tell You",Village,"alternative metal/industrial/industrial metal/industrial rock/nu metal/rap metal/rap rock/rock/wrestling",18,0.26,0.704,0.842,0.117,0.909,7.176,0.0582,0.323,134.999,312924
+57,"Make Her Say (Beat It Up)",Estelle,"avant-garde jazz/free improvisation/free jazz/japanese jazz",24,0.329,0.793,0.464,0.119,0.479,9.077,0.107,9.49E-5,99.966,158411
+58,"Wasting Time","Kids These Days","alternative rock/art pop/art rock/canterbury scene/chamber pop/country rock/dance rock/experimental/experimental rock/folk/folk rock/fourth world/lo-fi/melancholia/neo-psychedelic/new wave/no wave/post-punk/protopunk/psychedelic rock/pub rock/roots rock/singer-songwriter/slow core/traditional folk/uk post-punk",43,0.141,0.543,0.453,0.111,0.000131,10.894,0.132,0.472,81.689,318814
+59,"Full Circle",EASYFUN,"alternative rock/big beat/britpop/dance rock/electronic/garage rock/indie rock/neo-psychedelic/new wave/rock/scottish indie",24,0.471,0.718,0.66,0.0742,0.00717,5.393,0.0369,0.0111,143.002,259040
+60,Helpless,Sugar,"nu age",28,0.188,0.413,0.98,0.367,0.000297,4.397,0.0613,0.00215,124.661,185653
+61,"La Sirena",Banyan,"nu age",38,0.608,0.641,0.494,0.0719,0.84,9.663,0.127,0.048,161.627,190307
+62,Jack-Ass,Beck,---,38,0.853,0.706,0.528,0.0573,0,7.017,0.0288,0.179,106.672,240933
+63,"Fantastic Voyage - Extended",Lakeside,---,41,0.962,0.817,0.724,0.129,1.55E-6,9.003,0.0769,0.0655,114.719,369800
+64,"Anxious in Venice",Superhumanoids,"chamber psych/freak folk",27,0.155,0.508,0.645,0.0897,0.481,7.341,0.0546,0.0163,122.005,248040
+65,"Love Without Sound","White Noise",---,25,0.166,0.536,0.496,0.249,0.242,9.747,0.0608,0.303,84.682,186987
+66,Dream,"Alice Smith","chamber psych/freak folk/garage psych/indie psych-rock/preverb",33,0.45,0.625,0.543,0.0716,0,5.863,0.0456,0.0478,133.692,268640
+67,"Right Down The Line","Gerry Rafferty",---,65,0.77,0.783,0.322,0.114,0.00243,15.091,0.0343,0.213,128.226,267773
+68,"Love the One You're With","The Isley Brothers",---,37,0.714,0.755,0.861,0.143,1.42E-5,6.317,0.034,0.235,94.911,218933
+69,"Walk This World","Heather Nova","jazz double bass",31,0.48,0.467,0.584,0.103,2.16E-5,12.14,0.0326,0.0169,172.157,229107
+70,"Between The Bars","Madeleine Peyroux",afrobeat/afropop/world,44,0.095,0.459,0.257,0.112,0.0256,12.295,0.0279,0.903,104.805,221973
+71,"Dry The Rain","The Beta Band","avant-garde jazz/bebop/contemporary post-bop/cool jazz/fourth world/free improvisation/free jazz/hard bop/jazz/jazz funk/jazz fusion/jazz saxophone",25,0.753,0.593,0.626,0.218,0.166,11.287,0.0317,0.0931,150.483,366827
+72,"South Side Strut","Jerry Garcia/Howard Wales",---,33,0.699,0.385,0.784,0.167,0.878,9.471,0.0481,0.0765,110.835,344398
+73,"Richard Ramirez Died Today Of Natural Causes","Sun Kil Moon","hip hop/hip pop/neo soul/new jack swing/r&b/southern hip hop/urban contemporary",14,0.557,0.657,0.495,0.185,0.00701,7.499,0.0585,0.797,80.978,335307
+74,May-December,"Mos Def","dirty south rap/east coast hip hop/gangster rap/hardcore hip hop/hip hop/hip pop/pop rap/rap/southern hip hop",41,0.613,0.825,0.679,0.0468,0.838,7.408,0.05,0.0164,91.674,209067
+75,"Hymne A La Joie (Extrait De La 9e Symphonie - Beethoven)","The Red Army Choir","disco/funk/quiet storm",25,0.237,0.336,0.674,0.243,0.00997,8.46,0.0432,0.886,65.633,207213
+76,"Beautiful Girls","David Carbonara","disco/funk/gangster rap/hip hop/motown/new jack swing/p funk/post-disco/quiet storm/soul",18,0.152,0.163,0.208,0.0841,0.969,13.837,0.0338,0.908,76.409,138067
+77,"Should've Been, Could've Been",Moloko,"disco/funk/motown/post-disco/quiet storm/soul",24,0.204,0.772,0.331,0.0735,0.731,10.357,0.029,0.0503,84.98,337827
+78,"Somebody to Love","Jefferson Airplane","disco/electro/funk/motown/new jack swing/post-disco/quiet storm/soul/urban contemporary",68,0.654,0.504,0.578,0.321,0,9.302,0.031,0.408,132.411,174840
+79,Optimism,"Vijay Iyer Trio","ambient/art pop/art rock/cello/chamber psych/dance rock/dream pop/experimental/experimental rock/fourth world/freak folk/garage psych/lo-fi/minimal/neo-psychedelic/new weird america/no wave/noise pop/post-punk/preverb/slow core",14,0.178,0.406,0.332,0.128,0.92,14.827,0.0361,0.484,90.592,443467
+80,"Miss You","The Concretes","dancehall/dub/lovers rock/reggae/roots reggae",44,0.143,0.466,0.431,0.0894,0.58,9.539,0.0258,0.603,96.706,230907
+81,"Dark Star",POLIÇA,"indie poptimism",12,0.706,0.771,0.738,0.0984,0.392,6.713,0.0371,0.0578,109.994,300507
+82,"World of Our Own",Westlife,"bass music/chillwave/future garage/indie r&b/indietronica/microhouse/wonky",64,0.923,0.707,0.761,0.0627,0,4.635,0.0341,0.0163,97.003,211413
+83,"Rich Girl","Daryl Hall & John Oates","alternative hip hop/east coast hip hop/gangster rap/hardcore hip hop/hip hop/rap/southern hip hop",67,0.817,0.573,0.683,0.0935,0,6.644,0.176,0.461,169.519,142787
+84,"Eden's Island","Eden Ahbez","Genres not available",29,0.669,0.554,0.353,0.078,0.00312,15.68,0.0247,0.891,98.063,132387
+85,You,"Delta 5","Genres not available",28,0.578,0.814,0.718,0.0259,0.000102,5.969,0.172,0.00913,149.636,231013
+86,"Gold - Flume Re-Work","Chet Faker/Flume","Genres not available",46,0.097,0.333,0.429,0.177,0,6.913,0.0377,0.374,139.807,267232
+87,"Didn't I",Darondo,"Genres not available",54,0.644,0.377,0.387,0.108,0.427,11.688,0.029,0.89,149.126,209187
+88,Vacuform,Datassette,"Genres not available",4,0.737,0.788,0.837,0.363,0.233,9.5,0.067,0.347,100.627,250828
+89,"The Difference It Makes - Original Mix","The MFA","Genres not available",25,0.139,0.679,0.453,0.111,0.796,13.156,0.0314,5.48E-5,125.976,426640
+90,Bowsprit,Balmorhea,"Genres not available",48,0.168,0.334,0.183,0.0847,0.64,11.197,0.0369,0.416,91.668,317293
+91,"Leave A Trace - Four Tet Remix","CHVRCHES/Four Tet","Genres not available",37,0.138,0.731,0.683,0.104,0.604,10.366,0.0405,0.0587,120.025,409646
+92,"One Way","Branford Marsalis/Joey Calderazzo","Genres not available",10,0.388,0.66,0.271,0.128,0.874,10.626,0.0488,0.984,132.455,433787
+93,Aviator,Photek,"Genres not available",29,0.535,0.786,0.564,0.0737,0.869,7.748,0.0464,0.202,109.992,395803
+94,"20 Minutes","Carbon Based Lifeforms","Genres not available",26,0.0747,0.223,0.178,0.111,0.967,20.836,0.0464,0.92,136.29,460344
+95,"Written on the Sky","Max Richter","Genres not available",52,0.189,0.373,0.117,0.111,0.909,25.222,0.0511,0.992,125.288,99867
+96,Sexfaldur,amiina,"Genres not available",29,0.0767,0.386,0.124,0.0762,0.893,16.775,0.0343,0.994,78,287387
+97,"Red Guitar - Remastered 2003","David Sylvian","Genres not available",32,0.56,0.678,0.567,0.0869,0.0149,8.962,0.0496,0.755,93.913,311773
+98,Peaks,Dictaphone,"Genres not available",24,0.185,0.323,0.309,0.405,0.84,13.985,0.0304,0.327,65.686,321840
+99,"It´s Not The Worst I´ve Looked - Lali Puna Remix","Two Lone Swordsmen/Lali Puna","Genres not available",31,0.784,0.75,0.483,0.091,0.877,10.628,0.065,0.349,90.294,264147
+100,"Luchini AKA This Is It","Camp Lo","Genres not available",51,0.835,0.721,0.949,0.327,0,5.685,0.278,0.0495,83.028,240093
+101,Sk20,System,"Genres not available",24,0.384,0.757,0.26,0.113,0.883,21.943,0.0639,0.182,112.995,274112
+102,Sk20,System,"Genres not available",24,0.384,0.757,0.26,0.113,0.883,21.943,0.0639,0.182,112.995,274112
+103,"Jungle Jazz","Kool & The Gang","Genres not available",43,0.649,0.77,0.947,0.343,0.445,6.651,0.145,0.129,106.688,289827
+104,"The Only Living Boy in New York","Simon & Garfunkel","Genres not available",62,0.524,0.411,0.381,0.132,0.257,12.361,0.0286,0.13,76.963,238413
+105,"Take The Money And Run","Steve Miller Band","Genres not available",65,0.857,0.571,0.633,0.171,1.64E-6,12.942,0.0475,0.0504,98.412,170173
+106,"Fated, Faithful, Fatal","Marilyn Manson","Genres not available",32,0.819,0.734,0.774,0.111,4.05E-6,6.11,0.0448,0.00436,125.045,281427
+107,"W. A. Mozart. Menuett, KV 1, G-Dur","Aki Takase/Ayumi Paul","Genres not available",4,0.66,0.551,0.0583,0.116,0.942,24.043,0.0632,0.994,110.703,174947
+108,Andalucia,"John Cale","Genres not available",35,0.339,0.516,0.25,0.0973,0.145,17.421,0.0271,0.914,98.213,234186
+109,"Loaded - Andy Weatherall Mix","Primal Scream","Genres not available",51,0.885,0.621,0.544,0.889,0.579,14.757,0.0515,9.23E-5,91.147,421907
+110,"VI (Featuring Keith Kenniff)","Julien Neto","Genres not available",27,0.0391,0.433,0.257,0.0668,0.91,14.745,0.0367,0.842,119.978,253453
+111,"Questionable Things","Julien Neto","Genres not available",14,0.0367,0.367,0.286,0.101,0.923,19.249,0.0346,0.928,113.928,311307
+112,"Lux Aeterna",Forss,"Genres not available",28,0.153,0.547,0.539,0.0881,0.855,13.463,0.0387,0.319,121.026,370093
+113,"White Islands","DIE VERBOTEN","Genres not available",19,0.658,0.824,0.757,0.219,0.928,7.953,0.0821,0.136,170.005,537915
+114,Jindabyne,Tangents,"Genres not available",12,0.234,0.364,0.508,0.0829,0.864,16.127,0.0422,0.147,130.008,426741
+115,Melancholie,"Illuminine/Jan Swerts","Genres not available",9,0.0429,0.225,0.0522,0.105,0.935,20.053,0.0431,0.982,137.244,285500
+116,"Sleep Easy","Sam Evian","Genres not available",41,0.906,0.693,0.767,0.198,0.678,6.902,0.0233,0.0339,105.054,259140
+117,"Georgia Dust","Sun Seeker","Genres not available",33,0.61,0.742,0.519,0.0917,0.0279,7.093,0.0292,0.441,113.95,203213
+118,Brotherhood,"Kamal Abdul Alim","Genres not available",8,0.801,0.619,0.815,0.0759,0.112,7.705,0.0573,0.663,106.986,454991
+119,"Time Cafe","Darek Oleszkiewicz","Genres not available",0,0.17,0.431,0.147,0.108,0.925,20.191,0.035,0.959,91.425,460893
+120,"Fire Dance","Seun Kuti","Genres not available",8,0.856,0.771,0.905,0.315,0.374,7.76,0.0496,0.0104,106.322,490320
+121,"You've Got To Have Freedom","Pharoah Sanders","Genres not available",35,0.66,0.399,0.786,0.178,0.807,6.551,0.0388,0.0664,130.147,606160
+122,"Dialogues For Jazz Quintet And Orchestra","The Cannonball Adderley Quintet & Orchestra","Genres not available",4,0.226,0.418,0.42,0.317,0.409,13.129,0.115,0.557,127.774,718920
+123,"Can't You See (feat. The Notorious B.I.G.)","Total/The Notorious B.I.G.","Genres not available",63,0.805,0.744,0.574,0.295,1.27E-5,9.445,0.0651,0.165,86.278,281880
+124,"What Ya Want","Ruff Ryders/Eve/Nokio","Genres not available",41,0.787,0.83,0.853,0.0699,0,6.111,0.231,0.0474,91.28,261707
+125,"For Those Who Like to Groove","Ray Parker, Jr./Raydio","Genres not available",1,0.947,0.82,0.652,0.0246,0.869,10.66,0.0415,0.163,114.462,272640
+126,"Mega Medley",Zapp,"Genres not available",9,0.77,0.721,0.768,0.211,0.000105,8.158,0.131,0.2,111.935,248267
+127,"Get Down On It","Kool & The Gang","Genres not available",66,0.968,0.879,0.626,0.056,6.07E-5,6.344,0.0604,0.205,110.864,212907
+128,"The Finest","The S.O.S Band","Genres not available",33,0.824,0.875,0.603,0.0575,0.00981,11.995,0.0703,0.319,109.668,366267
+129,"Answers Me","Arthur Russell","Genres not available",39,0.201,0.691,0.157,0.17,0.666,21.504,0.157,0.00726,101.466,130640
+130,Zungguzungguguzungguzeng,Yellowman,"Genres not available",47,0.475,0.749,0.296,0.0879,0.00458,17.927,0.356,0.0713,164.707,388227
+131,"Human Contact - Speaker of the House Remix","Catey Shaw","Genres not available",32,0.399,0.792,0.808,0.423,0.325,5.069,0.0495,0.187,109.986,307636
+132,"Quitter’s Raga","Gold Panda","Genres not available",38,0.48,0.266,0.706,0.307,0.0267,7.249,0.243,0.0633,151.531,117907
+133,"Astronomy (8th Light)","Black Star/Weldon Irvine","Genres not available",45,0.803,0.888,0.739,0.0916,0,2.941,0.388,0.254,94.031,203680

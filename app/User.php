@@ -61,7 +61,7 @@ class User extends Authenticatable
     public static function searchLike($str, $id) {
 
 
-      $query = "select * from (SELECT *, IF(id is not NULL, users.id, '') as text FROM `users` where (name is Null or name = '') and id like '%".$str."%' UNION ALL select *, IF(id is not NULL, users.name, '') as text from users where name like '%".$str."%') A where A.id not in (SELECT user_id from playlist_user where playlist_id = '".$id."')";
+      $query = "(select Z.id, Z.name as text from other_tags Z where Z.name like '%".$str."%') UNION ALL (select id, name from (SELECT *, IF(id is not NULL, users.id, '') as text FROM `users` where (name is Null or name = '') and id like '%".$str."%' UNION ALL select *, IF(id is not NULL, users.name, '') as text from users where name like '%".$str."%') A where A.id not in (SELECT user_id from playlist_user where playlist_id = '".$id."'))";
 
        // $query = "select A.id, A.name, A.followers from (SELECT *, IF(id is not NULL, users.id, '') as text FROM `users` where (name is Null or name = '') and id like '%".$str."%' UNION ALL select *, IF(id is not NULL, users.name, '') as text from users where name like '%".$str."%') A inner join playlist_user B where playlist_id = '%".$id."%' and A.id != B.user_id";
        
@@ -84,9 +84,12 @@ class User extends Authenticatable
 
     public static function saveRecord(){
 
+        $isUserNew = false;
+
         if (!User::where('id', '=', session::get('UserInfo')['id'])->exists()) {
 
             $user = new User();
+            $isUserNew = true;
         }
         else{
             $user = User::where('id', '=', session::get('UserInfo')['id'])->first();
@@ -96,5 +99,101 @@ class User extends Authenticatable
         $user->followers = session::get('UserInfo')['followers']['total'];
         $user->save();
 
+        return $isUserNew;
+
     }
+
+    public static function attachTrack($id, $name, $preview){
+        if(Track::where('id', '=', $id)->exists()) {
+
+            $track = Track::find($id);
+
+        }
+        else {
+
+            $track = new Track();
+
+        }
+
+
+        $track->id = $id;
+        $track->name = $name;
+        $track->preview = $preview;
+        $track->save();
+
+
+        if(User_Track::where([
+            'user_id' => session::get('UserInfo')['id'],
+            'track_id' => $id]) ->exists()){
+
+             return ([
+                 'Success' => True,
+                 'Status' => 200
+             ]);
+
+        }
+
+        $user_track = new User_Track();
+        $user_track->track_id = $id;
+        $user_track->user_id = session::get('UserInfo')['id'];
+        $user_track->save();
+
+        return ([
+            'Success' => True,
+            'Status' => 200
+        ]);
+    }
+
+
+    public static function attachArtist($id, $name, $popularity, $followers){
+    
+
+
+
+            if(Artist::where('id', '=', $id)->exists()) {
+
+                $artist = Artist::find($id);
+
+            }
+            else {
+
+                $artist = new Artist();
+
+            }
+
+
+                $artist->id = $id;
+                $artist->name = $name;
+                $artist->popularity = $popularity;
+                $artist->followers = $followers;
+                $artist->save();
+
+
+
+            if(User_Artist::where([
+                'user_id' => session::get('UserInfo')['id'],
+                'artist_id' => $id])->exists()){
+
+                return ([
+                    'Success' => True,
+                    'Status' => 200
+                ]);
+
+            }
+
+                $user_artist = new User_Artist();
+                $user_artist->artist_id = $id;
+                $user_artist->user_id = session::get('UserInfo')['id'];
+                $user_artist->save();
+
+
+                return ([
+                    'Success' => True,
+                    'Status' => 200
+                ]);
+
+
+
+        }
+    
 }

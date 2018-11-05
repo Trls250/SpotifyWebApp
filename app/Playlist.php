@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\PlaylistRating;
 use Illuminate\Support\Facades\DB;
 use App\Comment;
+use App\Playlist_Other_tag;
 use Session;
 
 class Playlist extends Model {
@@ -14,6 +15,7 @@ class Playlist extends Model {
     protected $table = 'playlists';
     public $incrementing = false;
     protected $casts = ['id' => 'string'];
+    public $primaryKey = 'id';
     public function store(Request $request) {
         $playlist = new Playlist;
         $playlist->id = $request->id;
@@ -53,6 +55,11 @@ class Playlist extends Model {
 
     public static function getAll($offset, $items) {
         $playlists = Playlist::orderBy('updated_at', 'desc')->skip($offset)->take($items)->get();
+        return ($playlists);
+    }
+
+    public static function getAllofUser($offset, $items, $id) {
+        $playlists = Playlist::where(['added_by' => $id])->orderBy('updated_at', 'desc')->skip($offset)->take($items)->get();
         return ($playlists);
     }
 
@@ -320,6 +327,40 @@ class Playlist extends Model {
         return $comments;
     }
 
+    public static function insertOtherTag($playlist_id, $tag_id){
+
+        // $playlist = Playlist::find($playlist_id);
+        // $playlist->Other_tag()->attach($tag_id);
+
+        if(Playlist_Other_tag::where([
+            'playlist_id' => $playlist_id,
+            'other_tag_id' => $tag_id
+        ])->exists()){
+            return ([
+                'Success' => true,
+                'Already' => true
+            ]);
+        }
+
+        try{
+            $user_other_tag = new Playlist_Other_tag();
+            $user_other_tag->playlist_id = $playlist_id;
+            $user_other_tag->other_tag_id = $tag_id;
+            $user_other_tag->save();
+
+            return ([
+                'Success' => true
+            ]);
+
+        }catch(\Illuminate\Database\QueryException $ex){
+            return ([
+                'Success' => false,
+                'Error' => $ex->getMessage()
+            ]);
+        }
+
+    }
+
     public static function timeago($ptime) {
 
         $difference = time() - strtotime($ptime);
@@ -362,5 +403,9 @@ class Playlist extends Model {
         }
 
         return $rate;
+    }
+
+    public function other_tag(){
+        return $this->belongsToMany('App\other_tag');
     }
 }

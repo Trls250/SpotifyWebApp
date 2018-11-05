@@ -11,6 +11,30 @@
                         <h3 id="title_to_replace" class="title">People</h3>
                         <!-- <ul id = "playlist_records" class="clearfix"> -->
                             <div class="playlist_records ">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Users
+                                            </th>
+                                            <th>
+                                                Followers
+                                            </th>
+                                            <th>
+                                                Playlists
+                                            </th>
+                                            <th>
+                                                Avg Playlist Rating
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table_append">
+
+
+                                    </tbody>
+                                </table>
+                            </div>
                             </div>
                         <!-- </ul> -->
                         
@@ -32,7 +56,7 @@
         <script type="text/javascript">
             $("#adding").hide();
           var offset = 0;
-          var items  = 50;
+          var items  = 500;
           var flag   = true;
           var temp = true;
 
@@ -88,7 +112,7 @@
                           $(".msg").html("No more playlists.");
                           $("#main_loader").hide();
                       }else {
-                          $('.playlist_records').append(data);
+                          $('#table_append').append(data);
                           $("#main_loader").hide();
                       }
                   },
