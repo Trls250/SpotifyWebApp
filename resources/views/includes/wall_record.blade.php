@@ -18,8 +18,7 @@
                 </div>
                 <p class="followers"><span>{{$playlist->total_tracks}}</span> Tracks <span> - </span>
                 <span>{{$playlist->followers}}</span> Followers</p>
-                <!-- <p>{{!$playlist->description}}</p> -->
-                <?php echo $playlist->description ?>
+                <p>{{!$playlist->description}}</p>
                 <div class="rating">
 
                     @for($i=0; $i<ceil($playlist->rating); $i++)
