@@ -186,6 +186,7 @@ class PlayListController extends Controller {
         $offset = 0;
         $limit = 10;
 
+
         if(isset($request['offset']))
         {
             $offset = $request['offset'];
@@ -196,15 +197,21 @@ class PlayListController extends Controller {
         {
             $limit = $request['items'];
 
+            if($limit > 100){
+                $limit = 100;
+            }
+
         }
 
 
         $url = "https://api.spotify.com/v1/me/playlists?limit=".$limit."&offset=".$offset;
         $curl_return = goCurl($url, null, "GET", FALSE);
-
+        
         if ($curl_return['Success'] == false) {
-            return view('errors.500')->withErrors($curl_return['Desc']);
+            return $url;
+            return view('errors.500')->withErrors($curl_return);
         } else {
+            
             // $curl_data = json_decode($curl_return['ResponseData'], true);
 
             if(count($curl_return['ResponseData']['items']) == 0 && $offset == 0)
@@ -800,9 +807,9 @@ class PlayListController extends Controller {
         array_push($line, "Tempo");
         array_push($line, "Duration_ms");
 
-        echo "<pre>";
-        print_r($Response);
-        exit();
+        // echo "<pre>";
+        // // print_r($Response);
+        // // exit();
 
 
         try {
