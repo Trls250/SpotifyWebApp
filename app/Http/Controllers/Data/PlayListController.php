@@ -465,8 +465,6 @@ class PlayListController extends Controller {
                     ->skip($offset)->take($limit)->get();
         
 
-       
-       
 
         if($playlists->count() == 0)
         {
@@ -802,7 +800,9 @@ class PlayListController extends Controller {
         array_push($line, "Tempo");
         array_push($line, "Duration_ms");
 
-        
+        echo "<pre>";
+        print_r($Response);
+        exit();
 
 
         try {
@@ -980,7 +980,7 @@ class PlayListController extends Controller {
 
 
         
-        $return = $this->getDetailedRecords($request->id);
+        $return = $this->getDetailedRecords($request->id, True);
 
         $commulative_return = $this->getDetailedRecords($request->id, false);
         
@@ -1163,7 +1163,7 @@ class PlayListController extends Controller {
             if ($TrackFeatures['Success'] == false)
                 return ("$TrackFeatures");
             else {
-                    $ArtistGenres = $this->getArtistGenres($curl_return['ResponseData'], $artist_genre_just_once);
+                    $ArtistGenres = $this->getArtistGenres($curl_return['ResponseData'], $artist_genre_just_once = FALSE);
 
                     if ($ArtistGenres['Success'] == false)
                         return ([

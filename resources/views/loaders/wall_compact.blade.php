@@ -2,7 +2,7 @@
             <tr>
                 <td>
                     <h6 class="spotify-image-content">
-                    <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->id); ?>">{{$playlist->title}}</a>
+                    <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->playlist_id); ?>">{{$playlist->title}}</a>
                     </h6>
                 </td>
                 <td>
