@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Genre;
+use App\user_top_playlist;
 use session;
 
 
@@ -43,10 +44,96 @@ class UserDataController extends Controller {
             'TrackInfo' => $user->track,
             'ArtistInfo' => $user->artist,
             'GenreInfo' => $user->genre,
+            'PlaylistInfo' => $user->user_top_playlist,
+            'PlaylistCount' => count($user->playlist),
             'Genres' => $Genres
         ]);
     }
 
+    public function addPlaylist(Request $request){
+        $url = $request->input('playlist_id');
+        //Check if URL of a Playlist is received
+        if (!isset($url)) {
+            $return_array = array(
+                "Success" => false,
+                "Desc" => "CAN NOT OBTAIN PLAYLIST ID FROM URL",
+                "url" => $url
+
+            );
+
+            return $return_array;
+        } else {
+            // Grab vairiables from request
+            $playlist_id = $request->input('url');
+
+            //TODO: CHECK ISSET HERE
+            // Grab variables from Sessions
+
+
+            if (session::has('UserInfo')) {
+                $user_info = Session::get('UserInfo');
+                $user_id = $user_info['id'];
+            } else {
+                $return_array = array(
+                    "Success" => false,
+                    "Desc" => "CAN NOT READ Session INSTANCE : USER PROFILE INFO"
+                );
+
+                return $return_array;
+            }
+
+
+
+            $exploded = explode('/',$request->playlist_id);
+            $exploded = explode('?', end($exploded));
+
+
+            /*
+             * CURL Request PUT Data
+             */
+            $url = "https://api.spotify.com/v1/playlists/" . $exploded[0] ;
+
+
+            
+
+            $curl_return = goCurl($url, null, "GET", FALSE);
+            if ($curl_return['Success'] == false)
+                return ([
+                            'Success' => false,
+                            'curl' => $curl_return,
+                            'url' => $url
+                        ]);
+            else {
+            // if(strpos($curl_return['Header'],'200') == false)
+            // {
+            //     return ([
+            //         'Success' => false,
+            //         'curl' => $curl_return,
+            //         'url' => $url
+            //     ]);
+            // }
+            // else
+            // {
+
+                $new_user_top_playlist = new user_top_playlist();
+                $new_user_top_playlist->user_id = session::get('UserInfo')['id'];
+                $new_user_top_playlist->playlist_id = $exploded[0];
+                $new_user_top_playlist->playlist_title = $curl_return['ResponseData']['name'];
+                $new_user_top_playlist->followers = $curl_return['ResponseData']['followers']['total'];
+                $new_user_top_playlist->preview_url = $curl_return['ResponseData']['external_urls']['spotify'];
+
+                $new_user_top_playlist->save();
+
+
+                return ([
+                    'Success' => true,
+                    'status' => 200
+                ]);
+
+                
+            }
+        }
+    }
     public function getUsers(Request $request){
         
         $offset = 0;
@@ -140,6 +227,8 @@ class UserDataController extends Controller {
             'TrackInfo' => $user->track,
             'ArtistInfo' => $user->artist,
             'GenreInfo' => $user->genre,
+            'PlaylistInfo' => $user->user_top_playlist,
+            'PlaylistCount' => count($user->playlist),
             'Genres' => $Genres
         ]);
     }

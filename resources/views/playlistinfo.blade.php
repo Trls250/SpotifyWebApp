@@ -152,6 +152,7 @@
                                             <th>BPM</th>
                                             <th>Acousticness</th>
                                             <th>Length</th>
+                                            <th>Release Date</th>
                                         </tr>
                                     </thead>
                                     <tbody id="to_replace">

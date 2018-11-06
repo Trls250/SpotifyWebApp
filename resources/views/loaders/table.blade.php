@@ -111,6 +111,7 @@
         @endif
 
 
+        <td data-header="Release Year">{{$Response['ResponseData']['items'][$i]['track']['album']['release_date']}}</td>
         
 
     </tr>

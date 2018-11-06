@@ -12,6 +12,12 @@
         <li class="{{ Request::is('people') ? 'active' : '' }}">
             <a href='{{url('people')}}'>People</a>
         </li>
+        <li class="{{ Request::is('playlist/tags') ? 'active' : '' }}">
+            <a href='{{url('playlist/tags')}}'>Tags</a>
+        </li>
+        <li class="{{ Request::is('playlist/advanced-search') ? 'active' : '' }}">
+            <a href='{{url('playlist/advanced-search')}}'>Advanced Search</a>
+        </li>
          <!-- <li class="{{ Request::is('playlist/getAll') ? 'active' : '' }}">
             <a href='{{url('/playlist/getAll')}}'>My Public Playlists</a>
         </li>

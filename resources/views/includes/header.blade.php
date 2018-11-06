@@ -42,9 +42,9 @@
               </div>
               <div class="col-md-6 col-sm-8 col-xs-8">
                 <div class="addplay-lists">
-                    @if (Request::is('search') || Request::is('playlist/getWall'))
+                @if (Request::is('playlist/advanced-search') || Request::is('playlist/advanced-search'))
                         <button id='toggleAdvanced' class="btn play-follow playlists filter desktop-filter"> <i class="fas fa-filter"></i> Advanced Sort</button>
-                    @endif
+                @endif  
                     <button class="play-btn dektop-play-btn" data-toggle="modal" data-target="#playlists">
                         Add Playlist
                     </button>
@@ -88,7 +88,7 @@
                 <button class="play-btn" id ="btn_add" data-toggle="modal" data-target="#playlists">
                     Add Playlist
                 </button>
-                @if (Request::is('search') || Request::is('playlist/getWall'))
+                @if (Request::is('playlist/advanced-search') || Request::is('playlist/advanced-search'))
                         <button id='toggleAdvanced' class="btn play-follow playlists filter mobile-filter"> <i class="fas fa-filter"></i> Advanced Sort</button>
                 @endif
                 <button class="btn search-btns">

@@ -1,7 +1,11 @@
 <div class="contentwidth">
                 <div class="postscontent" >
                 @if(!$FromTag)
-                    <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->id); ?>"><h2>{{ $playlist->title }}</h2></a>
+                        @if(isset($playlist->playlist_id))
+                            <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->playlist_id); ?>"><h2>{{$playlist->title}}</h2></a>
+                        @else
+                            <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->id); ?>"><h2>{{$playlist->title}}</h2></a>
+                        @endif
                 @else
                     <a href="<?php echo URL::to('/playlist/open-tagged-playlist/'.$playlist->id); ?>"><h2>{{ $playlist->title }}</h2></a>
 

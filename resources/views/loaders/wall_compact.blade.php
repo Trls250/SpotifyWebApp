@@ -2,8 +2,12 @@
             <tr>
                 <td>
                     <h6 class="spotify-image-content">
-                    <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->playlist_id); ?>">{{$playlist->title}}</a>
-                    </h6>
+                        @if(isset($playlist->playlist_id))
+                            <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->playlist_id); ?>">{{$playlist->title}}</a>
+                        @else
+                        <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->id); ?>">{{$playlist->title}}</a>
+                        @endif
+                        </h6>
                 </td>
                 <td>
                             @if ( $playlist->popularity >= 90 )

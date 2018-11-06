@@ -13,7 +13,17 @@ class UserTopPlaylists extends Migration
      */
     public function up()
     {
-        //
+        Schema::create("user_top_playlists", function (Blueprint $table) {
+
+            $table->increments('id');
+            $table->string('user_id', 60);
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('playlist_id', 60);
+            $table->string('playlist_title', 60);
+            $table->string('preview_url', 100);
+            $table->unsignedInteger('followers');
+
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class UserTopPlaylists extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists("user_top_playlists");
     }
 }

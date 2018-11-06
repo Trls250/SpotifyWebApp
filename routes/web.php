@@ -46,6 +46,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('playlist/getAllRecords', 'PlayListController@getAllPlaylistsRecords');
     Route::get('playlist/user/getAllRecords', 'PlayListController@getAllPlaylistsRecordsforUser');
     Route::get('playlist/getWall', 'PlayListController@mywall');
+    Route::get('playlist/advanced-search', 'PlayListController@mywallwithSearch');
     Route::get('playlist/getUserWall/{name}/{id}', 'PlayListController@myUserwall');
     Route::get('playlist/getLibrary', 'PlayListController@mylibrary');
     Route::get('playlist/getWallRecords', 'PlayListController@getWallRecords');
@@ -57,9 +58,11 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('user/addArtist', 'Data\UserDataController@addArtist');
     Route::get('user/addTrack', 'Data\UserDataController@addTrack');
     Route::get('user/addGenre', 'Data\UserDataController@addGenre');
+    Route::get('user/addPlaylist', 'Data\UserDataController@addPlaylist');
     Route::get('user/tagged', 'PlayListController@getTaggedPlaylists');
     Route::get('deduct', 'PlayListController@deductTag');
     Route::get('playlist/getTaggedWallRecords', 'PlayListController@getTaggedPlaylists');
+    Route::post('playlist/advanced-search-results', 'PlayListController@advanced_search');
 
     Route::group(['middleware' => 'checkPlaylistId'], function () {
         Route::get('playlist/open-playlist/{id}','PlayListController@openPlaylist');

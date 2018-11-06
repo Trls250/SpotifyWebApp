@@ -22,6 +22,7 @@
                                 {{--<button class="follow-btn">Follow</button>--}}
                             </div>
                             <p class="followers"><span>{{ $UserInfo->followers }}</span> Followers</p>
+                            <p class="followers"><span>{{ $PlaylistCount }}</span> Added Playlists</p>
                             <div class="rating error-rating">
                                 <?php for($i = 0; $i < 5 ; $i++){ ?>
                                 <?php if($i < (int)$AvgRating){ ?>
@@ -85,6 +86,19 @@
                                     @endif
 
                                 </div>
+
+                            <div class="head-ul-fav-col">
+                                    <span>Favorite Playlists</span>
+                                <ul>
+                                    @foreach($PlaylistInfo as $playlist)
+                                        <li>{{$playlist->playlist_title}}</li>
+                                    @endforeach
+                                </ul>
+                                            @if(session::get('UserInfo')['id'] == $UserInfo->id)
+                                            <button class="play-btn dektop-play-btn" id="add_playlist" data-toggle="modal" data-target="#addPlaylist"></button>
+                                            @endif
+
+                                        </div>
                         </div>
                     </div>
                 </div>
@@ -170,6 +184,27 @@
 
     </div>
 </div>
+<div id="addPlaylist" class="modal fade large-modal " role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content playmodal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><img src={{URL::asset('public/images/close-icon.png')}}></button>
+                <h4 class="modal-title" id ="modal_title_playlist">Add favorite playlist</h4>
+            </div>
+            <div class="modal-body">
+                <div class="playform" id = "playform">
+                    <form class="search-form">
+                        <input  pattern=".{15,}" required title="15 characters minimum" type="text" id="playlist_url" class="search-playlists new-playlist-input" placeholder="Paste spotify playlist URL">
+                        <button class="btn btn-playlists add-new-playlist" id="btn_add_playlist2"><img src={{URL::asset('public/images/plus-icon.png')}}>  Add Playlist</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 <div id="playlists" class="modal fade large-modal " role="dialog">
     <div class="modal-dialog">
 
@@ -212,6 +247,14 @@
 
 
         $("#modal_title_artist").html("Add favorite artist");
+
+
+    });
+
+    $("#add_playlist").on('click', function (e) {
+
+
+        $("#modal_title_playlist").html("Add favorite playlist");
 
 
     });
@@ -274,6 +317,7 @@
 
     });
 
+
     $('#btn_add_artist').on('click', function(e) {
         e.preventDefault();
         $('#modal_title_artist').html("Adding......");
@@ -316,6 +360,31 @@
                 }
                 else if(data['Success'] == false)
                     $('#modal_title_track').html("There was an error adding this track......:(");
+
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                console.log("Status: " + textStatus); alert("Error: " + errorThrown);
+            }
+        });
+
+    });
+
+    $('#btn_add_playlist2').on('click', function(e) {
+        e.preventDefault();
+        $('#modal_title_playlist').html("Adding......");
+        $.ajax({
+            type: "get",
+            url: "{{url('user/addPlaylist?playlist_id=')}}"+$('#playlist_url').val(),
+            success: function(data){
+
+                console.log(data);
+
+                if(data['Success'] == true) {
+                    location.reload();
+
+                }
+                else if(data['Success'] == false)
+                    $('#modal_title_playlist').html("There was an error adding this playlist......:(");
 
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {

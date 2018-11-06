@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\PlaylistRating;
+use App\Playlist_Other_tag;
 use App\Http\Controllers\Data\PlaylistRatingsController;
 use App\Playlist;
 use App\Comment;
@@ -19,9 +20,171 @@ class PlayListController extends Controller {
 
 
     /**
-     *
+     * PART OF THIS END POINT NEEDS TO BE MOVED TO THE CORESPONDING MODEL 
      */
     
+
+    public function advanced_search(Request $request){
+
+        $request->validate([
+            'data.valence'=> 'required',
+            'data.speechiness' => 'required',
+            'data.valence' => 'required',
+            'data.instrumentalness' => 'required',
+            'data.liveness' => 'required',
+            'data.loudness' => 'required',
+            'data.tempo' => 'required',
+            'data.popularity' => 'required',
+            'data.danceability' => 'required',
+            'data.energy' => 'required',
+            'data.acousticness' => 'required',
+            'data.rating' => 'required',
+            'data.genres' => 'required',
+            'data.artists' => 'required',
+            'data.tags' => 'required',
+            'data.year' => 'required',
+        ]);
+        
+        $data = [];
+        $data['speechiness'][0] = (int)$request->data['speechiness'][0];
+        $data['speechiness'][1] = (int)$request->data['speechiness'][1];
+        $data['valence'][0] = (int)$request->data['valence'][0];
+        $data['valence'][1] = (int)$request->data['valence'][1];
+        $data['instrumentalness'][0] = (int)$request->data['instrumentalness'][0];
+        $data['instrumentalness'][1] = (int)$request->data['instrumentalness'][1];
+        $data['liveness'][0] = (int)$request->data['liveness'][0];
+        $data['liveness'][1] = (int)$request->data['liveness'][1];
+        $data['loudness'][0] = (int)$request->data['loudness'][0];
+        $data['loudness'][1] = (int)$request->data['loudness'][1];
+        $data['tempo'][0] = (int)$request->data['tempo'][0];
+        $data['tempo'][1] = (int)$request->data['tempo'][1];
+        $data['popularity'][0] = (int)$request->data['popularity'][0];
+        $data['popularity'][1] = (int)$request->data['popularity'][1];
+        $data['danceability'][0] = (int)$request->data['danceability'][0];
+        $data['danceability'][1] = (int)$request->data['danceability'][1];
+        $data['energy'][0] = (int)$request->data['energy'][0];
+        $data['energy'][1] = (int)$request->data['energy'][1];
+        $data['acousticness'][0] = (int)$request->data['acousticness'][0];
+        $data['acousticness'][1] = (int)$request->data['acousticness'][1];
+        $data['rating'][0] = (int)$request->data['rating'][0];
+        $data['rating'][1] = (int)$request->data['rating'][1];
+        $data['genres'] = $request->data['genres'];
+        $data['artists'] = $request->data['artists'];
+        $data['tags'] = $request->data['tags'];
+        $data['year'] = $request->data['year'];
+
+        $tags_flag = FALSE;
+        $genres_flag = FALSE;
+        $artists_flag = FALSE;
+
+
+        $sql = "";
+
+        if($data['tags'] != 'empty'){
+
+            $tags_flag = TRUE;
+
+            $tags = explode(" ",$data['tags']);
+
+            $other_tags = Other_tag::whereIn('name', $tags)->get();
+            $temp = "";
+            $count = 0;
+
+            foreach ($other_tags as $key => $value) {
+                if($key != 0){
+                    $temp = $temp . ",";
+                }
+                $temp = $temp . $value->id;
+                $count++;
+            }
+            
+            if($count)
+                $sql = "select * from playlists where id in (select playlist_id from playlist_other_tags where other_tag_id in (".$temp.")) ";
+            else
+                $sql = "select * from playlists where id < 0 ";
+
+        }else{
+
+            $sql = "select * from playlists where id > 0 ";
+
+        }
+
+        if($data["genres"] != 'empty'){
+
+ 
+            $genres = explode(" ",$data['genres']);
+
+            $sql = $sql . " and repeated_genre REGEXP '";
+
+            foreach ($genres as $key => $value) {
+                
+                $sql = $sql . $value . "|";
+            }
+            
+            $sql = rtrim($sql, "|");
+            $sql = $sql . "'";
+        }
+
+        if($data["artists"] != 'empty'){
+
+ 
+            $artists = explode(" ",$data['artists']);
+
+            $sql = $sql . " and repeated_artist REGEXP '";
+
+            foreach ($artists as $key => $value) {
+                
+                $sql = $sql . $value . "|";
+            }
+            
+            $sql = rtrim($sql, "|");
+            $sql = $sql . "'";
+        }
+
+
+        if($data["year"] != 'empty'){
+
+            $sql = $sql . " and average_release_year = '".$data["year"]."'";
+        }
+
+
+
+
+            $sql = $sql .  " and rating between ".$data['rating'][0]." and ".$data['rating'][1]." ";
+            $sql = $sql .  " and popularity between ".$data['popularity'][0]." and ".$data['popularity'][1]." ";
+            $sql = $sql .  " and danceability between ".$data['danceability'][0]." and ".$data['danceability'][1]." ";
+            $sql = $sql .  " and valence between ".$data['valence'][0]." and ".$data['valence'][1]." ";
+            $sql = $sql .  " and energy between ".$data['energy'][0]." and ".$data['energy'][1]." ";
+            $sql = $sql .  " and loudness between ".$data['loudness'][0]." and ".$data['loudness'][1]." ";
+            $sql = $sql .  " and acousticness between ".$data['acousticness'][0]." and ".$data['acousticness'][1]." ";
+            $sql = $sql .  " and liveness between ".$data['liveness'][0]." and ".$data['liveness'][1]." ";
+            $sql = $sql .  " and tempo between ".$data['tempo'][0]." and ".$data['tempo'][1]." ";
+
+            $sql = $sql . " LIMIT 500";
+
+            try{
+                $playlists = DB::select($sql);
+            }catch(Exception $e){
+                return ([
+                    'Success' => false,
+                    'Message' => $e->getMessage()
+                ]);
+            }
+            
+
+
+
+
+        return view('loaders.wall_1')->with([
+            'Status' => "200",
+            'Success'=>true,
+            'Playlists'=> $playlists,
+            'FromTag'=> FALSE
+        ]);
+
+
+
+    }
 
     public function insertplaylistData($playlist_id,$user_id,$tagged_by_user_Id,$tagged_by_user_name, $is_viewed = 0) {
         try {
@@ -473,6 +636,8 @@ class PlayListController extends Controller {
         
 
 
+      
+
         if($playlists->count() == 0)
         {
             return ([
@@ -510,6 +675,14 @@ class PlayListController extends Controller {
         
         return view('wall')->with ([
             'page_heading' => 'Latest Activity',
+            'url' => 'playlist/getWallRecords']);
+    }
+
+    public function mywallwithSearch(Request $request)
+    {
+        
+        return view('wall')->with ([
+            'page_heading' => 'Advanced Search',
             'url' => 'playlist/getWallRecords']);
     }
     
@@ -674,11 +847,16 @@ class PlayListController extends Controller {
         // return $this->refreshCalculateEveryRecord($request);
     }
 
-    private function getDetailedRecords($playlist_id, $onlyInfo = True){
+    private function getDetailedRecords($playlist_id, $onlyInfo = True, $total_pre_calculated_records = 0){
 
         $limit = 100;
 
-        $iterations = 1;
+        if($onlyInfo)
+            $iterations = 1;
+        else{
+            $iterations = ceil($total_pre_calculated_records/$limit);
+        } 
+        
         $current_iteration = 0;
         $offset = 0;
         $return = null;
@@ -706,13 +884,13 @@ class PlayListController extends Controller {
 
 
             
-            if ($current_iteration == 0) {
-                if(isset($return['ResponseData']['tracks'])){
-                    $iterations = ceil($return['ResponseData']['tracks']['total'] / $limit);
-                }else{
-                    $iterations = ceil($return['ResponseData']['total'] / $limit);
-                }
-            }
+            // if ($current_iteration == 0) {
+            //     if(isset($return['ResponseData']['tracks'])){
+            //         $iterations = ceil($return['ResponseData']['tracks']['total'] / $limit);
+            //     }else{
+            //         $iterations = ceil($return['ResponseData']['total'] / $limit);
+            //     }
+            // }
 
             $offset+=$limit;
             $current_iteration++;
@@ -806,6 +984,7 @@ class PlayListController extends Controller {
         array_push($line, "Acousticness");
         array_push($line, "Tempo");
         array_push($line, "Duration_ms");
+        array_push($line, "Release Date");
 
         // echo "<pre>";
         // // print_r($Response);
@@ -961,6 +1140,8 @@ class PlayListController extends Controller {
         else
             array_push($line, '---');
 
+        array_push($line,$Response['ResponseData']['items'][$i]['track']['album']['release_date']);
+
 
         try{
             fputcsv($file, $line);
@@ -989,11 +1170,13 @@ class PlayListController extends Controller {
         
         $return = $this->getDetailedRecords($request->id, True);
 
-        $commulative_return = $this->getDetailedRecords($request->id, false);
+
+        $commulative_return = $this->getDetailedRecords($request->id, false, $return['TotalRecords']);
         
 
         $csv_file_creation = $this->generateCsvFile($commulative_return, $request->id, $return['ResponseData']['name']);
 
+        
 
         $imageToInsert = findAndGetCover(($return['ResponseData']['images']), 'playlists/'.$return['ResponseData']['id'].'.jpg');
         $repeatedArtist = $this->findMostRepeatedArtist($commulative_return['ResponseData']);
@@ -1010,6 +1193,7 @@ class PlayListController extends Controller {
             $is_new = true;
                 
         }
+
 
 
         $playlist->title = $return['ResponseData']['name'];

@@ -58,6 +58,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Playlist');
     }
 
+    public function user_top_playlist() {
+        return $this->hasMany('App\user_top_playlist');
+    }
+
     public static function searchLike($str, $id) {
 
 
