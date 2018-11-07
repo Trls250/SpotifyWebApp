@@ -35,7 +35,7 @@ Route::get('test', 'Data\UserDataController@test');
 
 Route::group(['middleware' => 'checkAuth'], function () {
 
-
+    Route::get('stats', 'Data\SearchController@getStats');
     Route::post('comment/add-new', 'Data\CommentsController@addComment');
     Route::get('user/update', 'Data\UserDataController@update');
     Route::get('logout', "Auth\SpotifyAuthController@setExpire");
@@ -55,6 +55,8 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::post('playlist/add', 'PlayListController@addPlaylist');
     Route::get('playlist/insert/{id}', 'PlayListController@insertPlaylist');
     Route::get('playlist/insertSimple/{id}', 'PlayListController@refreshCalculateEveryRecord');
+    Route::get('playlist/tags', 'PlayListController@tagsWall');
+    Route::get('playlist/tags/{tag_id}', 'PlayListController@tagsWallSpecific');
     Route::get('user/addArtist', 'Data\UserDataController@addArtist');
     Route::get('user/addTrack', 'Data\UserDataController@addTrack');
     Route::get('user/addGenre', 'Data\UserDataController@addGenre');

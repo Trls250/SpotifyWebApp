@@ -292,6 +292,11 @@ ul {
     background-repeat: no-repeat;
     background-position: left 20px center;
 }
+.sidebar-lists li:nth-child(7){
+    background-image: url('../images/tagged-playlist.png');
+    background-repeat: no-repeat;
+    background-position: left 20px center;
+}
 
 .content-container {
     padding-right: 50px;

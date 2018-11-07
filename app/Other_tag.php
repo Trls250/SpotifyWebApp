@@ -18,7 +18,7 @@ class other_tag extends Model
     }
 
     public function playlist(){
-        return $this->hasMany('App\Playlist');
+        return $this->belongsToMany('App\Playlist', 'playlist_other_tags');
     }
 
 }

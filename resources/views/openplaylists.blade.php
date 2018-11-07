@@ -23,7 +23,7 @@
                   <p class="followers"><span>{{$Playlist->total_tracks}}</span> Tracks <span> - </span>
                 <span>{{$Playlist->followers}}</span> Followers</p>
                   <p>
-                      {{$Playlist['description']}}
+                    <?php echo $Playlist['description'] ?>
                     </p>
 
 

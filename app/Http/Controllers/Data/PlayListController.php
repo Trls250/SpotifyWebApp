@@ -19,6 +19,98 @@ use Session;
 class PlayListController extends Controller {
 
 
+
+    public function tagsWallSpecific(Request $request){
+
+        
+        $other_tag = Other_tag::find($request->tag_id);
+
+
+        if(!isset($other_tag)){
+            return "No tag with this id was found. Are you sure you were redirected automatically?";
+        }else{
+
+
+            $playlists = $other_tag->playlist()->get();
+            $playlists_temp = [];
+
+
+            foreach ($playlists as $key => $value) {
+                $playlists_temp[$value->id]['object'] = $value;
+            }
+
+            return view('top_tags')->with([
+             'Playlists' => $playlists_temp,
+             'Tags' => Null,
+             'Title' => "Playlists with Tag : ".$other_tag->name
+            ]);
+
+        }
+        
+
+    }
+
+
+
+    public function tagsWall(Request $request){
+
+        $collection = Playlist_Other_tag::groupBy('other_tag_id')
+            ->selectRaw('other_tag_id, count(other_tag_id)')
+            ->orderBy('count(other_tag_id)', 'DESC')
+            ->take(10)
+            ->get();
+
+        $tempTagIds = [];
+
+
+        foreach ($collection as $key => $value) {
+            array_push($tempTagIds, $value->other_tag_id);
+        }
+
+
+        $playlist_ids  = Playlist_Other_tag::whereIn('other_tag_id',$tempTagIds)->get();
+
+        $tempPlaylistIds  = [];
+
+        $playlists = [];
+
+        foreach ($playlist_ids as $key => $value) {
+            $playlists[$value->playlist_id] = []; 
+            array_push($tempPlaylistIds, $value->playlist_id);
+            // array_push($tempPlaylistIds, [$value->playlist_id, $value->other_tag_id]);
+        }
+
+        $playlistCollection = Playlist::whereIn('id', $tempPlaylistIds)->get();
+
+        foreach ($playlist_ids as $key => $value) {
+            $playlists[$value->playlist_id][] = $value->other_tag_id;
+            $plalists[$value->playlist_id]['object'] = []; 
+        }
+        
+
+        $tags = [];
+
+        $tagsCollection = Other_tag::whereIn('id', $tempTagIds)->get();
+
+        foreach ($tagsCollection as $key => $value) {
+            $tags[$value->id] = $value->name;
+        }
+
+        foreach ($playlistCollection as $key => $value) {
+                    
+            $playlists[$value->id]['object'] = $value;
+
+        } 
+
+        return view('top_tags')->with([
+             'Playlists' => $playlists,
+             'Tags' => $tags,
+             'Title' => "Top Tags"
+        ]);
+
+    }
+
+
     /**
      * PART OF THIS END POINT NEEDS TO BE MOVED TO THE CORESPONDING MODEL 
      */
@@ -1180,6 +1272,7 @@ class PlayListController extends Controller {
 
         $imageToInsert = findAndGetCover(($return['ResponseData']['images']), 'playlists/'.$return['ResponseData']['id'].'.jpg');
         $repeatedArtist = $this->findMostRepeatedArtist($commulative_return['ResponseData']);
+        $averageYear = $this->findMostAverageYear($commulative_return['ResponseData']);
         $repeatedGenres = $this->findMostRepeatedGenres($commulative_return['ArtistGenres']);
         $averagedValues = $this->findAveragedTrackFeatures($commulative_return['TrackFeatures'], $commulative_return['ResponseData']['items']);
         $is_new = false;
@@ -1220,6 +1313,7 @@ class PlayListController extends Controller {
         $playlist->calculated_tracks = true;
         $playlist->acousticness = $this->setMaxTo100($averagedValues['acousticness']);
         $playlist->cover = $imageToInsert['Success'];
+        $playlist->average_release_year = ceil($averageYear/$return['TotalRecords']);
         $playlist->save();
 
 
@@ -1840,6 +1934,21 @@ class PlayListController extends Controller {
             $curl_return['ResponseData']['Success'] = true;
             return $curl_return['ResponseData'];
         }
+    }
+
+
+    private function findMostAverageYear($playlist) {
+        
+        $added_years = 0;
+
+
+        foreach ($playlist['items'] as $key => $value) {
+            $temp = explode('-', $value['track']['album']['release_date'])[0];
+            $added_years+=$temp;
+        }
+
+        
+        return $added_years;
     }
 
     /**
