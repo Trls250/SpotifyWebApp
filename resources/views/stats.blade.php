@@ -16,8 +16,7 @@
             
             <div id ="wall_records">
             <div class="playlist_records latest-activity">
-
-              Popular Users
+                <p class="popular-user">Popular Users</p>
               <div class="table-responsive">
 
 
@@ -88,7 +87,7 @@
               </div>
                 
 
-              New Playlists
+              <p class="popular-user">New Playlists</p>
               <table class="table">
                   <thead>
                       <tr>
@@ -184,7 +183,7 @@
 
               <div class="table-responsive">
 
-              Top Rated Playlists
+              <p class="popular-user">Top Rated Playlists</p>
               <table class="table">
                   <thead>
                       <tr>

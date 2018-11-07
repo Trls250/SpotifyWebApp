@@ -110,16 +110,18 @@
                 <div class="slider-rating" id="filter-ratings"></div>
                   </div>
                 
-                  <form id = "search-form">
-                    <input id="form-genres" type="text"  name="form-genres" placeholder="Genres">
-                    <input id="form-tags" type="text"  name="form-tags" placeholder="Tags">
-                    <input id="form-artists" type="text"  name="form-artists" placeholder="Artists">
-                    <input id="form-year" type="year"  name="form-year" placeholder="Years">
-                  </form>
-                  <button id= "search-form-submit" type="submit" value="Submit">Submit</button>
+                  
+                  
 
                 </div>
                 <p class ="search_message">Search filters applied, loaded results will be pre-filterized</p> 
+                <form id = "search-form" action="" class="search-formss">
+                    <input id="form-genres" class="form-control" type="text"  name="form-genres" placeholder="Genres">
+                    <input id="form-tags" type="text" class="form-control" name="form-tags" placeholder="Tags">
+                    <input id="form-artists" type="text" class="form-control" name="form-artists" placeholder="Artists">
+                    <input id="form-year" type="year" class="form-control" name="form-year" placeholder="Years">
+                    <button id= "search-form-submit" type="submit" value="Submit">Submit</button>
+                  </form>
               </div>
             </div>
 

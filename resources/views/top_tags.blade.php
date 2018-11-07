@@ -1,10 +1,11 @@
 @include('includes/header')
 <meta name="csrf-token" content="{{ csrf_token() }}" />
+
         <section class="main-wrapper search-wrapper">
           <div class="container-fluid">
 
               @include('includes/sidebar')
-     
+              @include('includes/tags');
             <div  class="content-container">
               <div class="row ">
                 <div class="col-md-12 column-flex">
