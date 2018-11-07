@@ -89,13 +89,17 @@
                         <p>Top Artists:</p>
                         <span>{{$playlist->repeated_artist}}</span>
                     </div>
-                    <div class="tags-cus-col">
+                    <div class="tags-cus-col1">
                         <p>Added By:</p>
                         @if(isset($playlist->added_by_name))
                             <span><a href="{{url('users/get').'/'.$playlist->added_by}}">{{$playlist->added_by_name}}</a></span>
                         @else
                             <span><a href="{{url('users/get').'/'.$playlist->added_by}}">{{$playlist->added_by}}</a></span>
                         @endif
+                    </div>
+                    <div class="tags-cus-col">
+                        <p>Average:</p>
+                        <span>{{$playlist->repeated_artist}}</span>
                     </div>
                 </div>
                 <div class="taglists">

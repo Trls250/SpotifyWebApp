@@ -1136,7 +1136,10 @@ ul {
     justify-content: space-between;
 }
 .tags-cus-col {
-    width: 49%;
+    width: 35%;
+}
+.tags-cus-col1{
+    width: 20%;
 }
 .iframe iframe {
     width: 100%;
@@ -1896,6 +1899,10 @@ box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px rgba(8, 80, 172,1);
     }
 }
 @media  (max-width: 767px){
+    .tags-cus-col1,.tags-cus-col{
+        width: 100%;
+        margin-bottom: 10px;
+    }
     .search-formss{
         flex-direction: column;
     }
