@@ -290,7 +290,7 @@
 
     $('#btn_add_genre').on('click', function(e) {
         e.preventDefault();
-        $('#modal_title_genre').html("Adding...........");
+        $('#modal_title_genre').html("Adding...");
         var e = document.getElementById("genre_select");
         var strUser = e.options[e.selectedIndex].text;
 
@@ -307,7 +307,7 @@
 
                 }
                 else if(data['Success'] == false)
-                    $('#modal_title_genre').html("There was an error adding this genre......:(");
+                    $('#modal_title_genre').html("There was an error adding this genre...:(");
 
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -320,7 +320,7 @@
 
     $('#btn_add_artist').on('click', function(e) {
         e.preventDefault();
-        $('#modal_title_artist').html("Adding......");
+        $('#modal_title_artist').html("Adding...");
         $.ajax({
             type: "get",
             url: "{{url('user/addArtist?artist_id=')}}"+$('#artist_url').val(),
@@ -333,7 +333,7 @@
 
                 }
                 else if(data['Success'] == false)
-                    $('#modal_title_artist').html("There was an error adding this artist......:(");
+                    $('#modal_title_artist').html("There was an error adding this artist...:(");
 
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -346,7 +346,7 @@
 
     $('#btn_add_track').on('click', function(e) {
         e.preventDefault();
-        $('#modal_title_track').html("Adding......");
+        $('#modal_title_track').html("Adding...");
         $.ajax({
             type: "get",
             url: "{{url('user/addTrack?track_id=')}}"+$('#track_url').val(),
@@ -359,7 +359,7 @@
 
                 }
                 else if(data['Success'] == false)
-                    $('#modal_title_track').html("There was an error adding this track......:(");
+                    $('#modal_title_track').html("There was an error adding this track...:(");
 
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -371,7 +371,7 @@
 
     $('#btn_add_playlist2').on('click', function(e) {
         e.preventDefault();
-        $('#modal_title_playlist').html("Adding......");
+        $('#modal_title_playlist').html("Adding...");
         $.ajax({
             type: "get",
             url: "{{url('user/addPlaylist?playlist_id=')}}"+$('#playlist_url').val(),
@@ -384,7 +384,7 @@
 
                 }
                 else if(data['Success'] == false)
-                    $('#modal_title_playlist').html("There was an error adding this playlist......:(");
+                    $('#modal_title_playlist').html("There was an error adding this playlist...:(");
 
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {

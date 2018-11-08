@@ -76,12 +76,13 @@
                         </ul>
                     </div>
                     
-                    
+                    @if(session::get('UserInfo')['id'] == $Playlist->creator_id)
                     <select id="e1" name="select" class="js-data-example-ajax"></select>
                     <!-- <select class="itemName form-control" id="e1" style="width:500px" name="itemName"></select> -->
                     <!-- <select id="e1" name="select" class="select2">
                             <option value="" selected disabled>Please Select Above Field</option>
                     </select> -->
+                    @endif
                     </div>
                     <button class="btn btn-submit go-btn" id="go-btn">Go! </button>
                     </div>
