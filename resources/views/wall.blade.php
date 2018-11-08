@@ -12,7 +12,9 @@
                 <div class="col-md-12 column-flex">
                   <h3  class="title">{{$page_heading}}</h3>
                   <div class="flex-column">
+                  @if(!Route::is('advanced-search'))
                   <label>Compact View<input type="checkbox" id="title_replace" checked = 'FALSE' class="ios-switch green tinyswitch" checked /><div><div></div></div></label>
+                  @endif
                   </div>
                 </div>
               </div>
