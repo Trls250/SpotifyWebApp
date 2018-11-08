@@ -76,7 +76,7 @@
                         </ul>
                     </div>
                     
-                    @if(session::get('UserInfo')['id'] == $Playlist->creator_id)
+                    @if(session::get('UserInfo')['id'] == $Playlist->added_by)
                     <select id="e1" name="select" class="js-data-example-ajax"></select>
                     <!-- <select class="itemName form-control" id="e1" style="width:500px" name="itemName"></select> -->
                     <!-- <select id="e1" name="select" class="select2">
