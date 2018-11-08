@@ -5,7 +5,9 @@
           <div class="container-fluid">
 
               @include('includes/sidebar')
-              @include('includes/tags');
+              @if($Tags != null)
+                @include('includes/tags', ['Tags' => $Tags]);
+              @endif
             <div  class="content-container">
               <div class="row ">
                 <div class="col-md-12 column-flex">
