@@ -365,6 +365,7 @@ class PlayListController extends Controller {
 
             $tempToAddinOthers = [];
 
+
             foreach ($request->input('data') as $x) {
 
                 if(User::where('id', '=', $x)->exists())
@@ -388,26 +389,28 @@ class PlayListController extends Controller {
 
             $other_tags_that_added = [];
 
+
             foreach($tempToAddinOthers as $x){
 
-                if(Other_tag::where('name', '=', $x)->exists()){
-                    $other_tag = Other_tag::where(['name' => $x])->get();
+                if(Other_tag::where('id', '=', $x)->exists()){
+                    $other_tag = Other_tag::where('id', '=', $x)->get();
+                    $temp = $other_tag[0]->name;
                     $result = Playlist::insertOtherTag($request->id, $other_tag[0]['id']);
                     
                 }else{
 
                     $other_tag = new Other_tag();
                     $other_tag->name = $x;
+                    $temp = $x;
                     $other_tag->save();
 
                     $result = Playlist::insertOtherTag($request->id, $other_tag['id']);
                 
 
                 }
+                
+                array_push($other_tags_that_added, $temp);
 
-                if(!isset($result['Already'])){
-                    array_push($other_tags_that_added, $other_tag->name);
-                }
 
                 if($result['Success']==false)
                 {
