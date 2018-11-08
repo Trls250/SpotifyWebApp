@@ -58,6 +58,9 @@
                           <th>
                               Acousticeness
                           </th>
+                          <th>
+                              Average Release Year
+                          </th>
                       </tr>
                   </thead>
                   <tbody>

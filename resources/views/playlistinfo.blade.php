@@ -105,6 +105,10 @@
                         @else
                             <span><a href="{{url('users/get').'/'.$Playlist->added_by}}">{{$Playlist->added_by}}</a></span>
                         @endif
+                        <div class="tags-cus-col">
+                        <p>Average Release Year:</p>
+                        <span>{{$Playlist->average_release_year}}</span>
+                    </div>
                     </div>
                 </div>
                 <div class="taglists">
@@ -120,6 +124,7 @@
                         @else
                             <span><a href="{{url('users/get').'/'.$Playlist->creator_id}}">{{$Playlist->creator_id}}</a></span>
                         @endif
+                        
                     </div>
                 </div>
                       </div>

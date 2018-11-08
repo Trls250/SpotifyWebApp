@@ -44,5 +44,8 @@
                 <td>
                 <span>{{ number_format($playlist->acousticness,0)}}%</span>
                 </td>
+                <td>
+                <span>{{ $playlist->average_release_year,0}}</span>
+                </td>
             </tr>
 @endforeach
