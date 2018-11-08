@@ -1944,7 +1944,7 @@ class PlayListController extends Controller {
 
         foreach ($playlist['items'] as $key => $value) {
             $temp = explode('-', $value['track']['album']['release_date'])[0];
-            $added_years+=int($temp);
+            $added_years+=(int)$temp;
         }
 
         
