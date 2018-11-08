@@ -98,8 +98,8 @@
                         @endif
                     </div>
                     <div class="tags-cus-col">
-                        <p>Average:</p>
-                        <span>{{$playlist->repeated_artist}}</span>
+                        <p>Average Release Year:</p>
+                        <span>{{$playlist->average_release_year}}</span>
                     </div>
                 </div>
                 <div class="taglists">
