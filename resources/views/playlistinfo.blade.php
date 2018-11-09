@@ -105,19 +105,20 @@
                         @else
                             <span><a href="{{url('users/get').'/'.$Playlist->added_by}}">{{$Playlist->added_by}}</a></span>
                         @endif
-                        <div class="tags-cus-col">
+                        
+                    </div>
+                    <div class="tags-cus-col">
                         <p>Average Release Year:</p>
                         <span>{{$Playlist->average_release_year}}</span>
-                    </div>
                     </div>
                 </div>
                 <div class="taglists">
                 <!--<div class="playimage" style="background-image: url('{{ URL::asset('public/images/profile.png') }}')"></div>-->
-                    <div class="playname">
+                    <div class="tags-cus-col">
                         <p>Top Genres:</p>
                         <span>{{$Playlist->repeated_genre}}</span>
                     </div>
-                    <div class="playname">
+                    <div class="tags-cus-col">
                         <p>Playlist By:</p>
                         @if(isset($Playlist->creator_name))
                             <span><a href="{{url('users/get').'/'.$Playlist->creator_id}}">{{$Playlist->creator_name}}</a></span>

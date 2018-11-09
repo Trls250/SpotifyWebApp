@@ -57,7 +57,15 @@
             </div> -->
             <div id = 'advanced' class="rangesliders">
               <div class="content-container">
+                <form id = "search-form" action="" class="search-formss">
+                    <input id="form-genres" class="form-control" type="text"  name="form-genres" placeholder="Genres">
+                    <input id="form-tags" type="text" class="form-control" name="form-tags" placeholder="Tags">
+                    <input id="form-artists" type="text" class="form-control" name="form-artists" placeholder="Artists">
+                    <input id="form-year" type="year" class="form-control" name="form-year" placeholder="Years">
+                    <button id= "search-form-submit" type="submit" value="Submit">Submit</button>
+                  </form>
                 <div class="range-row clearfix">
+                  <div class="range-column">
                     <div class="range1">
                      <label> Instrumentalness - <output id="filter-instrumentalness">  0 - 100 </output></label>
                     <div class="slider slider-instrumentalness" id="filter-instrumentalness"></div>
@@ -110,21 +118,17 @@
                 <div class="slider-rating" id="filter-ratings"></div>
                   </div>
                 
-                  
-                  
+                  </div>
+                  <div class="range-column">
 
-                </div>
+                
                 <div class="chart">
                   <canvas id="myChart"></canvas>
                 </div>
+                </div>
+              </div>  
                 <p class ="search_message">Search filters applied, loaded results will be pre-filterized</p> 
-                <form id = "search-form" action="" class="search-formss">
-                    <input id="form-genres" class="form-control" type="text"  name="form-genres" placeholder="Genres">
-                    <input id="form-tags" type="text" class="form-control" name="form-tags" placeholder="Tags">
-                    <input id="form-artists" type="text" class="form-control" name="form-artists" placeholder="Artists">
-                    <input id="form-year" type="year" class="form-control" name="form-year" placeholder="Years">
-                    <button id= "search-form-submit" type="submit" value="Submit">Submit</button>
-                  </form>
+                
               </div>
             </div>
 
