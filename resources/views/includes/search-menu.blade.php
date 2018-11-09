@@ -59,8 +59,8 @@
               <div class="content-container">
                 <div class="range-row clearfix">
                     <div class="range1">
-                 <label> Instrumentalness - <output id="filter-instrumentalness">  0 - 100 </output></label>
-                <div class="slider slider-instrumentalness" id="filter-instrumentalness"></div>
+                     <label> Instrumentalness - <output id="filter-instrumentalness">  0 - 100 </output></label>
+                    <div class="slider slider-instrumentalness" id="filter-instrumentalness"></div>
                   </div>
                   
                  <div class="range1">
@@ -114,6 +114,9 @@
                   
 
                 </div>
+                <div class="chart">
+                  <canvas id="myChart" width="200" height="200"></canvas>
+                </div>
                 <p class ="search_message">Search filters applied, loaded results will be pre-filterized</p> 
                 <form id = "search-form" action="" class="search-formss">
                     <input id="form-genres" class="form-control" type="text"  name="form-genres" placeholder="Genres">
@@ -131,3 +134,16 @@
             $('.search_message').hide();
             </script>
             @endif
+            <script>
+          var ctx = document.getElementById("myChart").getContext('2d');
+          var myRadarChart = new Chart(ctx, {
+              type: 'radar',
+              data:  {
+                labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+                datasets: [{
+                    data: [20, 10, 4, 2]
+                }]
+            }
+
+          });
+        </script>

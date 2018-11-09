@@ -104,11 +104,11 @@
                 </div>
                 <div class="taglists">
                 <!--<div class="playimage" style="background-image: url('{{ URL::asset('public/images/profile.png') }}')"></div>-->
-                    <div class="playname">
+                    <div class="tags-cus-col">
                         <p>Top Genres:</p>
                         <span>{{$playlist->repeated_genre}}</span>
                     </div>
-                    <div class="playname">
+                    <div class="tags-cus-col">
                         <p>Playlist By:</p>
                         @if(isset($playlist->creator_name))
                             <span><a href="{{url('users/get').'/'.$playlist->creator_id}}">{{$playlist->creator_name}}</a></span>

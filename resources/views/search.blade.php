@@ -63,6 +63,7 @@
         
         <script src="{{ URL::asset('public/js/jquery.nice-select.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
         <script type="text/javascript">
             var results_start = 100;
@@ -1138,6 +1139,8 @@
 
           });
       });
+      
         </script>
+        
     </body>
 </html>
