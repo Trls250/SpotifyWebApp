@@ -447,6 +447,30 @@
             }
 
           });
+
+
+          var ctx = document.getElementById("myChart").getContext('2d');
+          var myRadarChart = new Chart(ctx, {
+              title: 'Visualization',
+              type: 'radar',
+              data:  {
+                labels: ['Instrumentalness', 'Liveness', 'Loudness', 'Speechiness', 'BPM', 'Popularity', 'Danceability', 'Energy', 'Valence', 'Acousticness', 'Rating'],
+                datasets: [{
+                    label: "Visualization Lower",
+                    data: [instrumentalness[0], liveness[0], loudness[0], speechiness[0], tempo[0], popularity[0], danceability[0], energy[0], valence[0], acousticness[0], rating[0]*20],
+                },{
+                    label: "Visualization Upper",
+                    data: [instrumentalness[1], liveness[1], loudness[1], speechiness[1], tempo[1], popularity[1], danceability[1], energy[1], valence[1], acousticness[1], rating[1]*20],
+                }]
+            }
+
+          });
+
+          function updateConfigByMutating(dataset1, dataset2) {
+            myRadarChart.data.datasets = [dataset1, dataset2];
+
+          myRadarChart.update();
+      }
      
 
      function searchFunction(){
@@ -468,7 +492,17 @@
         'artists' : $('#form-artists').val(),
         'tags' : $('#form-tags').val(),
         'year' : $("#form-year").val()
-       }
+       };
+       dataset1 = {
+         label : "Visualization Lower",
+         data: [instrumentalness[0], liveness[0], loudness[0], speechiness[0], tempo[0], popularity[0], danceability[0], energy[0], valence[0], acousticness[0], rating[0]*20]
+       };
+       dataset2 = {
+         label : "Visualization Upper",
+         data: [instrumentalness[1], liveness[1], loudness[1], speechiness[1], tempo[1], popularity[1], danceability[1], energy[1], valence[1], acousticness[1], rating[1]*20]
+       };
+
+       updateConfigByMutating(dataset1, dataset2);
        
        if(data.genres == undefined || data.genres == ''){
          data.genres = 'empty';

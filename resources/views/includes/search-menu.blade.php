@@ -115,7 +115,7 @@
 
                 </div>
                 <div class="chart">
-                  <canvas id="myChart" width="200" height="200"></canvas>
+                  <canvas id="myChart"></canvas>
                 </div>
                 <p class ="search_message">Search filters applied, loaded results will be pre-filterized</p> 
                 <form id = "search-form" action="" class="search-formss">
@@ -130,20 +130,12 @@
 
  
           
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
             <script>
             $('.search_message').hide();
             </script>
             @endif
             <script>
-          var ctx = document.getElementById("myChart").getContext('2d');
-          var myRadarChart = new Chart(ctx, {
-              type: 'radar',
-              data:  {
-                labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
-                datasets: [{
-                    data: [20, 10, 4, 2]
-                }]
-            }
-
-          });
+          
         </script>
