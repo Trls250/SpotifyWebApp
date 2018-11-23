@@ -68,7 +68,7 @@
                         </li>
                         <li>
                             Loudness<br/>
-                            <span>{{ number_format($playlist->loudness,0)}}%</span>
+                            <span>{{ $playlist->loudness }} dB</span>
                         </li>
                         <li>
                             Speechiness<br/>
@@ -76,7 +76,7 @@
                         </li>
                         <li>
                             BPM<br/>
-                            <span>{{ number_format($playlist->tempo,0)}}%</span>
+                            <span>{{ number_format($playlist->tempo,0)}}</span>
                         </li>
                         <li>
                             Acousticeness<br/>

@@ -193,17 +193,17 @@ class Playlist extends Model {
                     $playlists[$key]["liveness"] = 100;
                 }
 
-                if($playlists[$key]["loudness"] > 100){
-                    $playlists[$key]["loudness"] = 100;
-                }
+//                if($playlists[$key]["loudness"] > 100){
+//                    $playlists[$key]["loudness"] = 100;
+//                }
 
                 if($playlists[$key]["speechiness"] > 100){
                     $playlists[$key]["speechiness"] = 100;
                 }
 
-                if($playlists[$key]["tempo"] > 100){
-                    $playlists[$key]["tempo"] = 100;
-                }
+//                if($playlists[$key]["tempo"] > 100){
+//                    $playlists[$key]["tempo"] = 100;
+//                }
 
                 if($playlists[$key]["popularity"] > 100){
                     $playlists[$key]["popularity"] = 100;

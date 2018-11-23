@@ -182,6 +182,7 @@
                       $("#filter-valence").val('0');
                       $("#filter-acousticness").val('0');
                       $("#filter-rating").val('0');
+                      $("#filter-year").val('0');
                       $(".range1 output").html('0');
                       $(".playlist-holder li").show();
                   }
@@ -227,6 +228,7 @@
             
             
             /*SETTING GLOBAL VARIABLES FOR FILTERATION*/
+           let date = 20<?php date('y')?>;
            let speechiness = [0, 100];
            let valence = [0, 100];
            let instrumentalness = [0, 100];
@@ -237,6 +239,7 @@
            let danceability = [0, 100];
            let energy = [0, 100];
            let acousticness = [0, 100];
+           let year = [1900, date];
            let rating =[0,5];
            
             $( function() {
@@ -259,16 +262,16 @@
                     });
 
                   } );
-                  $( function() {
-                    $( ".slider-loudness" ).slider({
-
-                      slide: function( event, ui ) {
-                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
-                      }
-                    });
-
-                  } );
+//                  $( function() {
+//                    $( ".slider-loudness" ).slider({
+//
+//                      slide: function( event, ui ) {
+//                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+//                      //console.log('#'+$(this).attr('id'));
+//                      }
+//                    });
+//
+//                  } );
                   $( function() {
                     $( ".slider-speechiness" ).slider({
 
@@ -319,16 +322,16 @@
                     });
 
                   } );
-                  $( function() {
-                    $( ".slider-tempo" ).slider({
-
-                      slide: function( event, ui ) {
-                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
-                      }
-                    });
-
-                  } );
+//                  $( function() {
+//                    $( ".slider-tempo" ).slider({
+//
+//                      slide: function( event, ui ) {
+//                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+//                      //console.log('#'+$(this).attr('id'));
+//                      }
+//                    });
+//
+//                  } );
                    $( function() {
                     $( ".slider-popularity" ).slider({
 
@@ -369,10 +372,78 @@
             searchFunction();
             
             }
+            
 
           });
+          $( ".slider-loudness" ).slider({
+              range: true,
+              min: -60,
+              max: 5,
+              values: [ -60, 150 ],
+              slide: function( event, ui ) {
+                  $( "#filter-loudness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $("#wall_records").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-loudness'){
+                 loudness[0] = ui.values[0];
+                 loudness[1] = ui.values[1];
+            }
+           
+            searchFunction();
+            
+            }
+            
 
+          });
+           $( ".slider-tempo" ).slider({
+              range: true,
+              min: 0,
+              max: 250,
+              values: [ 0, 250 ],
+              slide: function( event, ui ) {
+                  $( "#filter-tempo" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $("#wall_records").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-tempo'){
+                 tempo[0] = ui.values[0];
+                 tempo[1] = ui.values[1];
+            }
+           
+            searchFunction();
+            
+            }
+            
 
+          });
+          
+          $( ".slider-year" ).slider({
+              
+              range: true,
+              min: 1900,
+              max: 2018,
+              values: [ 1900, 2018 ],
+              slide: function( event, ui ) {
+                  $( "#filter-year" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  $("#wall_records").fadeOut();
+       
+                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
+                    
+            if ($(this).attr('id') == 'filter-year'){
+                 year[0] = ui.values[0];
+                 year[1] = ui.values[1];
+            }
+           
+            searchFunction();
+            
+            }
+            
+
+          });
+          
               $( ".slider" ).slider({
               range: true,
               min: 0,
@@ -388,11 +459,15 @@
                  rating[0] = ui.values[0];
                  rating[1] = ui.values[1];
             }
-            if ($(this).attr('id') == 'filter-tempo'){
-                 tempo[0] = ui.values[0];
-                 tempo[1] = ui.values[1];
-                  
-            }
+//            if ($(this).attr('id') == 'filter-year'){
+//                 year[0] = ui.values[0];
+//                 year[1] = ui.values[1];
+//            }
+//            if ($(this).attr('id') == 'filter-tempo'){
+//                 tempo[0] = ui.values[0];
+//                 tempo[1] = ui.values[1];
+//                  
+//            }
             if ($(this).attr('id') == 'filter-popularity'){
                  popularity[0] = ui.values[0];
                  popularity[1] = ui.values[1];
@@ -424,11 +499,7 @@
                  instrumentalness[1] = ui.values[1];
                   
             }
-            if ($(this).attr('id') == 'filter-loudness'){
-                 loudness[0] = ui.values[0];
-                 loudness[1] = ui.values[1];
-                  
-            }
+            
             if ($(this).attr('id') == 'filter-danceability'){
                  danceability[0] = ui.values[0];
                  danceability[1] = ui.values[1];
@@ -488,10 +559,10 @@
         'energy' : energy,
         'acousticness' : acousticness,
         'rating' : rating,
+        'year'  :  year,
         'genres' : $('#form-genres').val(),
         'artists' : $('#form-artists').val(),
-        'tags' : $('#form-tags').val(),
-        'year' : $("#form-year").val()
+        'tags' : $('#form-tags').val()
        };
        dataset1 = {
          label : "Visualization Lower",
@@ -499,7 +570,7 @@
        };
        dataset2 = {
          label : "Visualization Upper",
-         data: [instrumentalness[1], liveness[1], loudness[1], speechiness[1], tempo[1], popularity[1], danceability[1], energy[1], valence[1], acousticness[1], rating[1]*20]
+         data: [instrumentalness[1], liveness[1], loudness[1], speechiness[1], tempo[1], popularity[1], danceability[1], energy[1], valence[1], acousticness[1],rating[1]*20]
        };
 
        updateConfigByMutating(dataset1, dataset2);
@@ -513,9 +584,7 @@
        if(data.tags == undefined || data.tags == ''){
          data.tags = 'empty';
        }
-       if(data.year == undefined || data.year == ''){
-         data.year = 'empty';
-       }
+       
 
        $.ajax({
 
@@ -535,6 +604,7 @@
             console.log(textStatus);
             console.log("errorThrown");
             console.log(errorThrown);
+             console.log(data);
             // alert("Status: " + textStatus); alert("Error: " + errorThrown);
 
         }

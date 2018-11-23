@@ -1,7 +1,22 @@
 <div class="sidebar">
     <ul class="sidebar-lists">
+        <li class="">
+            <a href=''>Home</a>
+        </li>
         <li class="{{ Request::is('playlist/getWall') ? 'active' : '' }}">
             <a href='{{url('/playlist/getWall')}}'>Latest Activity</a>
+        </li>
+        <li class="{{ Request::is('stats') ? 'active' : '' }}">
+            <a href='{{url('stats')}}'>Statistics</a>
+        </li>
+        <li class="{{ Request::is('playlist/advanced-search') ? 'active' : '' }}">
+            <a href='{{url('playlist/advanced-search')}}'>Advanced Search</a>
+        </li>
+        <li class="{{ Request::is('people') ? 'active' : '' }}">
+            <a href='{{url('people')}}'>People</a>
+        </li>
+        <li class="{{ Request::is('playlist/tags')||Request::is('playlist/tags/*') ? 'active' : '' }}">
+            <a href='{{url('playlist/tags')}}'>Tags</a>
         </li>
         <li class="{{ Request::is('playlist/getLibrary') ? 'active' : '' }}">
             <a href='{{url('/playlist/getLibrary')}}'>My Library</a>
@@ -9,7 +24,7 @@
         <li class="{{ Request::is('users/me') ? 'active' : '' }}">
             <a href='{{url('users/me')}}'>My Profile</a>
         </li>
-        <li class="{{ Request::is('people') ? 'active' : '' }}">
+<!--        <li class="{{ Request::is('people') ? 'active' : '' }}">
             <a href='{{url('people')}}'>People</a>
         </li>
         <li class="{{ Request::is('playlist/tags')||Request::is('playlist/tags/*') ? 'active' : '' }}">
@@ -20,7 +35,7 @@
         </li>
         <li class="{{ Request::is('stats') ? 'active' : '' }}">
             <a href='{{url('stats')}}'>Statistics</a>
-        </li>
+        </li>-->
          <!-- <li class="{{ Request::is('playlist/getAll') ? 'active' : '' }}">
             <a href='{{url('/playlist/getAll')}}'>My Public Playlists</a>
         </li>

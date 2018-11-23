@@ -35,7 +35,7 @@
                         <p class="followers"><span>{{$Playlist['followers']}}</span> Followers</p>
                         <div class="rating">
 
-                            @for($i=0; $i<ceil($Playlist['rating']); $i++)
+                            @for($i=0; $i< ceil($Playlist['rating']); $i++)
                                 <img src= {{ URL::asset('public/images/filstar.png') }}>
                             @endfor
                             @for($i=0; $i<5 - ceil($Playlist['rating']); $i++)
@@ -77,7 +77,7 @@
                         </li>
                         <li>
                             Loudness<br/>
-                            <span>{{ number_format($Playlist->loudness,0)}}%</span>
+                            <span>{{ $Playlist->loudness}} db</span>
                         </li>
                         <li>
                             Speechiness<br/>
@@ -85,7 +85,7 @@
                         </li>
                         <li>
                             BPM<br/>
-                            <span>{{ number_format($Playlist->tempo,0)}}%</span>
+                            <span>{{ $Playlist->tempo}}</span>
                         </li>
                         <li>
                             Acousticeness<br/>

@@ -160,10 +160,12 @@ class PlayListController extends Controller {
         $data['acousticness'][1] = (int)$request->data['acousticness'][1];
         $data['rating'][0] = (int)$request->data['rating'][0];
         $data['rating'][1] = (int)$request->data['rating'][1];
+        $data['year'][0] = (int)$request->data['year'][0];
+        $data['year'][1] = (int)$request->data['year'][1];
         $data['genres'] = $request->data['genres'];
         $data['artists'] = $request->data['artists'];
         $data['tags'] = $request->data['tags'];
-        $data['year'] = $request->data['year'];
+       
 
         $tags_flag = FALSE;
         $genres_flag = FALSE;
@@ -234,10 +236,10 @@ class PlayListController extends Controller {
         }
 
 
-        if($data["year"] != 'empty'){
-
-            $sql = $sql . " and average_release_year = '".$data["year"]."'";
-        }
+//        if($data["year"] != 'empty'){
+//
+//            $sql = $sql . " and average_release_year = '".$data["year"]."'";
+//        }
 
 
 
@@ -251,6 +253,7 @@ class PlayListController extends Controller {
             $sql = $sql .  " and acousticness between ".$data['acousticness'][0]." and ".$data['acousticness'][1]." ";
             $sql = $sql .  " and liveness between ".$data['liveness'][0]." and ".$data['liveness'][1]." ";
             $sql = $sql .  " and tempo between ".$data['tempo'][0]." and ".$data['tempo'][1]." ";
+            $sql = $sql .  " and average_release_year between ".$data['year'][0]." and ".$data['year'][1]." ";
 
             $sql = $sql . " LIMIT 500";
 
@@ -1209,7 +1212,7 @@ class PlayListController extends Controller {
         //     array_push($line, '---');
 
         if(isset($Response['TrackFeatures'][$i]['loudness']))
-            array_push($line, ($Response['TrackFeatures'][$i]['loudness'])*-1);
+            array_push($line, ($Response['TrackFeatures'][$i]['loudness']));
         else
             array_push($line, '---');
 
@@ -1304,9 +1307,9 @@ class PlayListController extends Controller {
 
         $playlist->instrumentalness = $this->setMaxTo100($averagedValues['Instrumentalness']);
         $playlist->liveness = $this->setMaxTo100($averagedValues['Liveness']);
-        $playlist->Loudness = $this->setMaxTo100($averagedValues['Loudness']);
+        $playlist->Loudness = $averagedValues['Loudness'];
         $playlist->speechiness = $this->setMaxTo100($averagedValues['Speechiness']);
-        $playlist->tempo = $this->setMaxTo100($averagedValues['Tempo']);
+        $playlist->tempo = $averagedValues['Tempo'];
         $playlist->followers = $return['ResponseData']['followers']['total'];
         $playlist->danceability = $this->setMaxTo100($averagedValues['Danceability']);
         $playlist->popularity = $this->setMaxTo100($averagedValues['Popularity']);
@@ -1830,7 +1833,7 @@ class PlayListController extends Controller {
                 $tempo+=$track['tempo'];
                 $instrumentalness+=$track['instrumentalness'];
                 $liveness+=$track['liveness'];
-                $loudness-=($track['loudness']);
+                $loudness+=($track['loudness']);
                 $acousticness +=$track['acousticness'];
             }
 
@@ -1852,7 +1855,7 @@ class PlayListController extends Controller {
                 $acousticness +=$track['acousticness'];
                 $instrumentalness+=$track['instrumentalness'];
                 $liveness+=$track['liveness'];
-                $loudness-=$track['loudness'];
+                $loudness+=$track['loudness'];
             }
 
             foreach ($main['tracks']['items'] as $playlist) {
@@ -1870,8 +1873,8 @@ class PlayListController extends Controller {
             $valence = 0;
         if($speechiness<0)
             $speechiness = 0;
-        if($loudness<0)
-            $loudness = 0;
+//        if($loudness<0)
+//            $loudness = 0;
         if($instrumentalness<0)
             $instrumentalness = 0;
         if($liveness<0)
@@ -1880,7 +1883,7 @@ class PlayListController extends Controller {
             $tempo = 0;
         if($acousticness<0)
             $acousticness = 0;
-
+        
         
         $return = [
             'Success' => true,
@@ -1889,7 +1892,7 @@ class PlayListController extends Controller {
             'Popularity' => round(($popularity / $count)),
             'Valence' => round(($valence / $count)*100),
             'Speechiness' => round(($speechiness/$count)*100),
-            'Tempo' => round((($tempo/$count)/200)*100),
+            'Tempo' => round((($tempo/$count))),
             'Instrumentalness' => round(($instrumentalness/$count)*100),
             'Liveness' => round(($liveness/$count)*100),
             'Loudness' =>  round(($loudness/$count)),
@@ -1899,13 +1902,6 @@ class PlayListController extends Controller {
         return $return;
     }
 
-    /**
-     * Limit and offset query parameters on spotify api are broken.
-     * A common issue that is found over internet right now.
-     * Solution implemented: As maximum ids requested to Spotify API
-     * are 50, and Playlist's minimum record received is 100,
-     * I am dividing received records into two dynamic equal chunks.
-     */
     private function getTrackAttributes($playlist) {
         $track_ids = "";
         $toAppend = "";

@@ -61,8 +61,6 @@
                     <input id="form-genres" class="form-control" type="text"  name="form-genres" placeholder="Genres">
                     <input id="form-tags" type="text" class="form-control" name="form-tags" placeholder="Tags">
                     <input id="form-artists" type="text" class="form-control" name="form-artists" placeholder="Artists">
-                    <input id="form-year" type="year" class="form-control" name="form-year" placeholder="Years">
-                    <button id= "search-form-submit" type="submit" value="Submit">Submit</button>
                   </form>
                 <div class="range-row clearfix">
                   <div class="range-column">
@@ -76,8 +74,8 @@
                 <div class="slider slider-liveness" id="filter-liveness"></div>
                   </div>
                     <div class="range1">
-                 <label> Loudness - <output id="filter-loudness">  0 - 100 </output></label>
-                <div class="slider slider-loudness" id="filter-loudness"></div>
+                 <label> Loudness - <output id="filter-loudness">  -60 - 5 </output></label>
+                <div class="slider-loudness" id="filter-loudness"></div>
                   </div>
                   
                      <div class="range1">
@@ -86,8 +84,8 @@
                   </div>
                  
                     <div class="range1">
-                 <label> BPM - <output id="filter-tempo">  0 - 100 </output></label>
-                <div class="slider slider-tempo" id="filter-tempo"></div>
+                 <label> BPM - <output id="filter-tempo">  0 - 250 </output></label>
+                <div class="slider-tempo" id="filter-tempo"></div>
                   </div>
                  <div class="range1">
                  <label> Popularity - <output id="filter-popularity">  0 - 100 </output></label>
@@ -117,7 +115,12 @@
                  <label> Ratings - <output id="filter-ratings" >  0 - 5 </output></label>
                 <div class="slider-rating" id="filter-ratings"></div>
                   </div>
-                
+                      
+                      <div class="range1">
+                 <label> Year - <output id="filter-year" >  1900 - 20{{date('y')}} </output></label>
+                <div class="slider-year" id="filter-year"></div>
+                  </div>
+                <button id= "search-form-submit" type="submit" value="Submit">Submit</button>
                   </div>
                   <div class="range-column">
 

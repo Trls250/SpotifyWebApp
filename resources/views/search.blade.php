@@ -191,18 +191,19 @@
           $(document).ready(function() {
             $('select').niceSelect(); 
           });
-
+            let date = 20<?php date('y') ?>;
            let speechiness = [0, 100];
            let valence = [0, 100];
            let instrumentalness = [0, 100];
            let liveness = [0, 100];
-           let loudness = [0, 100];
-           let tempo = [0, 100];
+           let loudness = [-60, 5];
+           let tempo = [0, 250];
            let popularity = [0, 100];
            let danceability = [0, 100];
            let energy = [0, 100];
            let acousticness = [0, 100];
            let rating =[0,5];
+           let rating =[1990,date];
            
             $( function() {
                     $( ".slider-range" ).slider({
