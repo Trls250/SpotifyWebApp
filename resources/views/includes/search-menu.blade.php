@@ -56,7 +56,13 @@
               <!-- <div class="searchbar">
             </div> -->
             <div id = 'advanced' class="rangesliders">
+                
               <div class="content-container">
+                 <select>
+                      <option>a</option>
+                      <option>b</option>
+                      <option>a</option>
+                  </select>
                 <form id = "search-form" action="" class="search-formss">
                     <input id="form-genres" class="form-control" type="text"  name="form-genres" placeholder="Genres">
                     <input id="form-tags" type="text" class="form-control" name="form-tags" placeholder="Tags">
