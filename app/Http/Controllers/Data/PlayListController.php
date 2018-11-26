@@ -165,6 +165,7 @@ class PlayListController extends Controller {
         $data['genres'] = $request->data['genres'];
         $data['artists'] = $request->data['artists'];
         $data['tags'] = $request->data['tags'];
+        $data['type'] = $request->data['type'];
        
 
         $tags_flag = FALSE;
@@ -267,15 +268,22 @@ class PlayListController extends Controller {
             }
             
 
+        
+  
+        if($data['type'] == 2){
+            return view('loaders.wall_compact')->with([
+                'Status' => "200",
+                'Success'=>true,
+                'Playlists'=> $playlists,
+                'FromTag'=> FALSE]);
 
-
-
+        }else{
         return view('loaders.wall_1')->with([
             'Status' => "200",
             'Success'=>true,
             'Playlists'=> $playlists,
-            'FromTag'=> FALSE
-        ]);
+            'FromTag'=> FALSE]);
+        }
 
 
 

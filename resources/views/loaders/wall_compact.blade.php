@@ -33,13 +33,13 @@
                 <span>{{ number_format($playlist->liveness,0)}}%</span>                    
                 </td>
                 <td>
-                <span>{{ number_format($playlist->loudness,0)}}%</span>
+                <span>{{ number_format($playlist->loudness,0)}}dB</span>
                 </td>
                 <td>
                 <span>{{ number_format($playlist->speechiness,0)}}%</span>
                 </td>
                 <td>
-                <span>{{ number_format($playlist->tempo,0)}}%</span>
+                <span>{{ number_format($playlist->tempo,0)}}</span>
                 </td>
                 <td>
                 <span>{{ number_format($playlist->acousticness,0)}}%</span>

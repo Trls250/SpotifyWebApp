@@ -36,6 +36,9 @@
                             <th>
                             Avg Playlist Rating
                             </th>
+                            <th>
+                            User's Playlists
+                            </th>
                             </tr>
                             </thead>
                             <tbody id="table_append_pop_users">
@@ -64,7 +67,7 @@
                                   </td>
                                   <td>
                                   
-                                      <div class="avg-playlist-rating">
+                                      <div class="avg-playlist-rating" style="justify-content: center;">
                                           <div class="rating-column">
                                           <?php for($i = 0; $i < 5 ; $i++){ ?>
                                           <?php if($i < (int)$user->AvgRating){ ?>
@@ -74,10 +77,15 @@
                                           <?php } ?>
                                           <?php } ?>
                                           </div>
-                                          <div class="rating-column">
+<!--                                          <div class="rating-column">
+                                              <a href="{{url('playlist/getUserWall'.'/'.$user->name.'/'.$user->id)}}" class="see-play-list">See Playlists <img src="http://localhost/spotify/public/images/go-arrow.png"></a>
+                                          </div>-->
+                                      </div>
+                                  </td>
+                                  <td>
+                                      <div class="rating-column" style="width: auto;">
                                               <a href="{{url('playlist/getUserWall'.'/'.$user->name.'/'.$user->id)}}" class="see-play-list">See Playlists <img src="http://localhost/spotify/public/images/go-arrow.png"></a>
                                           </div>
-                                      </div>
                                   </td>
                               </tr>
 

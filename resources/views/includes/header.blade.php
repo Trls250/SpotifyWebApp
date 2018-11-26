@@ -193,7 +193,7 @@
 
                     }
                     else if(data['Success'] == false)
-                        $('#modal_title').html("Playlist not found.");
+                        $('#modal_title').html("Could not fetch playlist from the specified url.");
 
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {

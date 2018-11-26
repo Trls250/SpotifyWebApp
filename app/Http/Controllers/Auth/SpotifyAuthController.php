@@ -76,7 +76,7 @@ class SpotifyAuthController extends Controller {
         $this_user_id = session::get('UserInfo')['id'];
 
         if(isset($this_user_id)){
-            $url = "https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=100&offset=0";
+            $url = "https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10&offset=0";
             $topArtists = goCurl($url, null, "GET", false);
 
             if($topArtists['Success']){
@@ -84,7 +84,7 @@ class SpotifyAuthController extends Controller {
                     User::attachArtist($artist['id'], $artist['name'], $artist['popularity'], $artist['followers']['total'], $artist['genres']);
                 }
 
-                $url = "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=100&offset=0";
+                $url = "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=10&offset=0";
                 $topTracks = goCurl($url, null, "GET", false);
 
     
