@@ -18,14 +18,15 @@
                                             <th>
                                                 Users
                                             </th>
-                                            <th>
+                                            <th style="text-align: center">
                                                 Followers
                                             </th>
-                                            <th>
-                                                Playlists
-                                            </th>
-                                            <th>
+                                            
+                                            <th style="text-align: center">
                                                 Avg Playlist Rating
+                                            </th>
+                                            <th style="text-align: center">
+                                            User's Playlists
                                             </th>
                                         </tr>
                                     </thead>

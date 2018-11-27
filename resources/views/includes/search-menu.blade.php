@@ -60,7 +60,7 @@
     <div class="content-container">
         <h3 class="title" style="margin-left: 15px;">Moods</h3>
         <select id="dropdown">
-            <option disabled selected>Select a mood</option>
+            <option disabled selected>Select a Mood...</option>
             <option value="1">Chill</option>
             <option value="2">Positive-Energy</option>
             <option value="3">Hits</option>

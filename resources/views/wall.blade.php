@@ -84,10 +84,13 @@
         <script src="{{ URL::asset('public/js/jquery.nice-select.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>   
-        
+         
+         <!--<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>--> 
         <script type="text/javascript">
        
-                   
+//                   $(document).ready( function () {
+//    $('#sorting').DataTable();
+//} );
             /**
              Page Type 1 = Tiled;
              Page Type 2 = Compact;

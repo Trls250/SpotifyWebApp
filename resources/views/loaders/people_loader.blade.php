@@ -15,16 +15,12 @@
                         </div>
                     </div>
                 </td>
-                <td>
+                <td style="text-align: center">
                 {{ $user->followers }}
                 </td>
-                <td>
-                {{ $user->PlaylistCount }} Playlists
-                </td>
-                <td>
-                
+                <td style="text-align: center">
                     <div class="avg-playlist-rating">
-                        <div class="rating-column">
+                        <div class="rating-column" style="margin: auto;">
                         <?php for($i = 0; $i < 5 ; $i++){ ?>
                         <?php if($i < (int)$user->AvgRating){ ?>
                         <img class="rate_input" id = {{$i}} src="<?php echo URL::asset('public/images/filstar.png'); ?>">
@@ -33,10 +29,14 @@
                         <?php } ?>
                         <?php } ?>
                         </div>
-                        <div class="rating-column">
-                            <a href="{{url('playlist/getUserWall'.'/'.$user->name.'/'.$user->id)}}" class="see-play-list">See Playlists <img src="http://localhost/spotify/public/images/go-arrow.png"></a>
                         </div>
-                    </div>
+                </td>
+                <td style="text-align: center">
+                
+                    
+                        <div class="rating-column" style="margin: auto;">
+                            <a href="{{url('playlist/getUserWall'.'/'.$user->name.'/'.$user->id)}}" class="see-play-list">See Playlists </a>
+                        </div>
                 </td>
             </tr>
 
