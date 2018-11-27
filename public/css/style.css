@@ -263,9 +263,9 @@ ul {
     position: relative;
 }
 .sidebar-lists li:first-child{
-    background-image: url('../images/wall.png');
+    background-image: url('../images/home.png');
     background-repeat: no-repeat;
-    background-position: left 20px center;
+    background-position: left 15px center;
     
 }
 .sidebar-lists li:nth-child(2){
