@@ -88,9 +88,9 @@
          <!--<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>--> 
         <script type="text/javascript">
        
-//                   $(document).ready( function () {
-//    $('#sorting').DataTable();
-//} );
+//                $(document).ready( function () {
+//                    $('#sorting').DataTable();
+//                } );
             /**
              Page Type 1 = Tiled;
              Page Type 2 = Compact;

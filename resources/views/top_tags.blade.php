@@ -108,11 +108,11 @@
                                       </ul>
                                   </div>
                                   <div class="tags tags-cus-row">
-                                      <div class="tags-cus-col">
+                                      <div class="tags-cus-col top-tagss">
                                           <p>Top Artists:</p>
                                           <span>{{$playlist['object']->repeated_artist}}</span>
                                       </div>
-                                      <div class="tags-cus-col">
+                                      <div class="tags-cus-col  top-tagss">
                                           <p>Added By:</p>
                                           @if(isset($playlist['object']->added_by_name))
                                               <span><a href="{{url('users/get').'/'.$playlist['object']->added_by}}">{{$playlist['object']->added_by_name}}</a></span>
@@ -123,11 +123,11 @@
                                   </div>
                                   <div class="taglists">
                                   <!--<div class="playimage" style="background-image: url('{{ URL::asset('public/images/profile.png') }}')"></div>-->
-                                      <div class="playname">
+                                      <div class="playname top-tagss">
                                           <p>Top Genres:</p>
                                           <span>{{$playlist['object']->repeated_genre}}</span>
                                       </div>
-                                      <div class="playname">
+                                      <div class="playname top-tagss">
                                           <p>Playlist By:</p>
                                           @if(isset($playlist['object']->creator_name))
                                               <span><a href="{{url('users/get').'/'.$playlist['object']->creator_id}}">{{$playlist['object']->creator_name}}</a></span>
