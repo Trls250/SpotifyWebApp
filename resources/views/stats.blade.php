@@ -30,7 +30,9 @@
                             <th>
                             Followers
                             </th>
-                            
+                            <th>
+                            Playlists
+                            </th>
                             <th>
                             Avg Playlist Rating
                             </th>
@@ -60,7 +62,9 @@
                                   <td>
                                   {{ $user->followers }}
                                   </td>
-                                  
+                                  <td>
+                                  {{ $user->PlaylistCount }} Playlists
+                                  </td>
                                   <td>
                                   
                                       <div class="avg-playlist-rating" style="justify-content: center;">
@@ -80,7 +84,7 @@
                                   </td>
                                   <td>
                                       <div class="rating-column" style="width: auto;">
-                                              <a href="{{url('playlist/getUserWall'.'/'.$user->name.'/'.$user->id)}}" class="see-play-list">See Playlists </a>
+                                              <a href="{{url('playlist/getUserWall'.'/'.$user->name.'/'.$user->id)}}" class="see-play-list">See Playlists <img src="http://localhost/spotify/public/images/go-arrow.png"></a>
                                           </div>
                                   </td>
                               </tr>
