@@ -57,6 +57,23 @@ class Playlist extends Model {
         $playlists = Playlist::orderBy('updated_at', 'desc')->skip($offset)->take($items)->get();
         return ($playlists);
     }
+    public static function getAllForTable($offset, $items) {
+        try{
+
+            $query = "select title as Name, popularity as Popularity, danceability as Danceability, energy as Energy, valence as Valence, instrumentalness as Instrumentalness, liveness as Liveness, loudness as Loudness, speechiness as Speechiness, tempo as BPM, acousticness as Acousticness, average_release_year as `Average Release Year` from playlists order by updated_at desc limit ".$offset.", ".$items;
+            $result = DB::select($query);
+        }catch(\Illuminate\Database\QueryException $ex){
+            return ([
+                'Success' => false,
+                'Error' => $ex->getMessage()
+            ]);
+        }
+        
+        return ([
+            'Success' => true,
+            'Data' => $result
+        ]);
+    }
 
     public static function getAllofUser($offset, $items, $id) {
         $playlists = Playlist::where(['added_by' => $id])->orderBy('updated_at', 'desc')->skip($offset)->take($items)->get();

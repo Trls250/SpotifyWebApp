@@ -84,13 +84,10 @@
         <script src="{{ URL::asset('public/js/jquery.nice-select.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>   
-         
-         <!--<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>--> 
+        <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
         <script type="text/javascript">
        
-//                $(document).ready( function () {
-//                    $('#sorting').DataTable();
-//                } );
+               
             /**
              Page Type 1 = Tiled;
              Page Type 2 = Compact;
@@ -104,6 +101,8 @@
             
             
             page_type = '1';
+            is_table_loaded_first_time = false;
+            table = null;
             $('input[type=checkbox]').removeAttr('checked');
             $(".table-responsive").hide();
             $("#toggleAdvanced").hide();
@@ -111,6 +110,39 @@
               e.preventDefault();
               if(page_type == 1){
                 page_type = 2;
+
+
+                if(!is_table_loaded_first_time){
+
+                    is_table_loaded_first_time = true;
+                    table = $('#sorting').DataTable({
+                    'responsive' : true,
+                    'paging' : false,
+                    'searching': false,
+                     "bInfo" : false,
+                    'ajax':{
+                      url: whichUrl(),
+
+                    },
+                    columns: [
+                      { data: 'Name' },
+                      { data: 'Popularity' },
+                      { data: 'Danceability' },
+                      { data: 'Energy' },
+                      { data: 'Valence' },
+                      { data: 'Instrumentalness' },
+                      { data: 'Liveness' },
+                      { data: 'Loudness' },
+                      { data: 'Speechiness' },
+                      { data: 'BPM' },
+                      { data: 'Acousticness' },
+                      { data: 'Average Release Year'}
+                      ]
+                   });
+
+                    offset_2 += items;
+                }
+
                 $(".table-responsive").show();
                 $("#wall_records").hide();
               }else {
@@ -123,7 +155,7 @@
               if(if_is_advanced_search){
                   searchFunction();
               }else{
-                  getRecords();
+                 // getRecords();
               }
               
             })
@@ -133,15 +165,21 @@
             var total_wall_records = {{session::get('WallRecordsCount')}};
             var offset_1 = 0;
             var offset_2 = 0;
-            var items = 200;
+            var items = 2;
+
             if(items>=total_wall_records)
             {
                 $("#more_results").replaceWith("");
             }
+
+
+
+           
                 
             var flag   = true;
             var temp = true;
             var global_filters = 0;
+
 
             var flagAdvanced = false;
             $(document).ready(function () {
@@ -229,6 +267,14 @@
 
           });
 
+          function whichUrl(){
+            if(page_type == 2){
+                         return  "{{ url($url)}}"+'?offset='+offset_2+'&items='+items+'&type=2'
+                        }else{
+                          return "{{ url($url)}}"+'?offset='+offset_1+'&items='+items+'&type=1'
+
+                        }
+          }
 
           $("#search-form").on("submit", function (e) {
             e.preventDefault();
@@ -615,7 +661,7 @@
             
             
             if(page_type == 2){
-                          $('tbody').html(data);
+                          table.rows.add(data.data).draw();
                           $('tbody').fadeIn();
                         }else{
                           $("#wall_records").html(data);
@@ -642,7 +688,22 @@
 
      }
             
-          function getRecords() {
+          function getRecords () {
+
+            // if(page_type == 2)
+            // {
+            //   temp = false;
+            //   console.log("here");
+            //   offset_2+=items;
+            //  // table.ajax.url( whichUrl() ).load();
+            //   temp = true;
+
+              
+            //   console.log(offset_2);
+            //   console.log("here2");
+            //   return;
+            // }
+
             $('.page_end_div').fadeIn();
             if(flag == true){
               temp = false;
@@ -676,7 +737,8 @@
                       }
                       else {
                         if(page_type == 2){
-                          $('tbody').append(data);
+                          //$('tbody').append(data);
+                          table.rows.add(data.data).draw();
                         }else{
                           $('#wall_records').append(data);
 

@@ -676,10 +676,20 @@ class PlayListController extends Controller {
 
              
  
+        if($type == '1')
+        {
+            $playlists = Playlist::getAll($offset, $limit);
+            $count = $playlists->count();
+        }
+        else 
+        {
+            $playlists = Playlist::getAllForTable($offset, $limit)['Data'];
+            $count = sizeof($playlists);
+        }
 
-        $playlists = Playlist::getAll($offset, $limit);
 
-        if($playlists->count() == 0)
+
+        if($count == 0)
         {
             return ([
                 'Success'=>false,
@@ -688,11 +698,7 @@ class PlayListController extends Controller {
         }
 
         if($type == '2'){
-            return view('loaders.wall_compact')->with([
-                'Status' => "200",
-                'Success'=>true,
-                'Playlists'=> $playlists,
-                'FromTag'=> FALSE]);
+            return ['data' => $playlists];
 
         }else{
         return view('loaders.wall')->with([
