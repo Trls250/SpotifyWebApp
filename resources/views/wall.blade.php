@@ -661,11 +661,11 @@
             
             
             if(page_type == 2){
-                          table.rows.add(data.data).draw();
+                table.rows.add(data.data).draw();
                           $('tbody').fadeIn();
                         }else{
                           $("#wall_records").html(data);
-            $("#wall_records").fadeIn();
+                          $("#wall_records").fadeIn();
 
                         }
             
