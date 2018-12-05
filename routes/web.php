@@ -65,6 +65,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('deduct', 'PlayListController@deductTag');
     Route::get('playlist/getTaggedWallRecords', 'PlayListController@getTaggedPlaylists');
     Route::post('playlist/advanced-search-results', 'PlayListController@advanced_search');
+    Route::get('playlist/stats-result', 'Data\SearchController@getStats');
 
     Route::group(['middleware' => 'checkPlaylistId'], function () {
         Route::get('playlist/open-playlist/{id}','PlayListController@openPlaylist');

@@ -193,16 +193,29 @@ class PlayListController extends Controller {
                 $count++;
             }
             
-            if($count)
-                $sql = "select * from playlists where id in (select playlist_id from playlist_other_tags where other_tag_id in (".$temp.")) ";
-            else
-                $sql = "select * from playlists where id < 0 ";
+            if($count ){
+                if($data['type']==1){
+                 $sql = "select * from playlists where id in (select playlist_id from playlist_other_tags where other_tag_id in (".$temp.")) ";}
+                  else {
+                     $sql = "select title as Name, popularity as Popularity, danceability as Danceability, energy as Energy, valence as Valence, instrumentalness as Instrumentalness, liveness as Liveness, loudness as Loudness, speechiness as Speechiness, tempo as BPM, acousticness as Acousticness, average_release_year as `Average Release Year` from playlist_other_tags where other_tag_id in (".$temp.")";
+                  }
+                }
+               
+            else if($data['type']==1){
+            $sql = "select * from playlists where id < 0 ";}
+            else{
+                    $sql =  "select title as Name, popularity as Popularity, danceability as Danceability, energy as Energy, valence as Valence, instrumentalness as Instrumentalness, liveness as Liveness, loudness as Loudness, speechiness as Speechiness, tempo as BPM, acousticness as Acousticness, average_release_year as `Average Release Year` from playlists where id < 0";
+                }
 
-        }else{
+            }else if($data['type']==1){
+                $sql = "select * from playlists where id > 0 ";
+            }
+            else{
+                $sql = "select title as Name, popularity as Popularity, danceability as Danceability, energy as Energy, valence as Valence, instrumentalness as Instrumentalness, liveness as Liveness, loudness as Loudness, speechiness as Speechiness, tempo as BPM, acousticness as Acousticness, average_release_year as `Average Release Year` from playlists where id > 0";
+                }
+            
 
-            $sql = "select * from playlists where id > 0 ";
-
-        }
+        
 
         if($data["genres"] != 'empty'){
 
@@ -237,16 +250,10 @@ class PlayListController extends Controller {
         }
 
 
-//        if($data["year"] != 'empty'){
-//
-//            $sql = $sql . " and average_release_year = '".$data["year"]."'";
-//        }
-
-
-
-
             $sql = $sql .  " and rating between ".$data['rating'][0]." and ".$data['rating'][1]." ";
             $sql = $sql .  " and popularity between ".$data['popularity'][0]." and ".$data['popularity'][1]." ";
+            $sql = $sql .  " and instrumentalness between ".$data['instrumentalness'][0]." and ".$data['instrumentalness'][1]." ";
+            $sql = $sql .  " and speechiness between ".$data['speechiness'][0]." and ".$data['speechiness'][1]." ";
             $sql = $sql .  " and danceability between ".$data['danceability'][0]." and ".$data['danceability'][1]." ";
             $sql = $sql .  " and valence between ".$data['valence'][0]." and ".$data['valence'][1]." ";
             $sql = $sql .  " and energy between ".$data['energy'][0]." and ".$data['energy'][1]." ";
@@ -267,11 +274,8 @@ class PlayListController extends Controller {
                 ]);
             }
             
-
-        
-  
         if($data['type'] == 2){
-            return view('loaders.wall_compact')->with([
+            return ([
                 'Status' => "200",
                 'Success'=>true,
                 'Playlists'=> $playlists,
@@ -284,9 +288,6 @@ class PlayListController extends Controller {
             'Playlists'=> $playlists,
             'FromTag'=> FALSE]);
         }
-
-
-
     }
 
     public function insertplaylistData($playlist_id,$user_id,$tagged_by_user_Id,$tagged_by_user_name, $is_viewed = 0) {
@@ -333,7 +334,6 @@ class PlayListController extends Controller {
             $limit = $request['items'];
 
         }
-
         $playlists = Playlist::getTaggedPlaylists(session::get('UserInfo')['id'], $offset, $limit);
 
         if(Playlist::count() == 0){

@@ -8,7 +8,7 @@
             <div  class="content-container">
               <div class="row ">
                 <div class="col-md-12 column-flex">
-                  <h3  class="title">{{$Title}}</h3>
+
                   <div class="flex-column">
                   </div>
                 </div>
@@ -21,7 +21,7 @@
 
 
               <div class="table-responsive">
-                <table class="table">
+                <table class="table" id="users">
                     <thead>
                         <tr>
                             <th>
@@ -39,266 +39,45 @@
                             </th>
                             </tr>
                             </thead>
-                            <tbody id="table_append_pop_users">
-                            @foreach($Users as $user)
-                              <tr>
-                                  <td>
-                                      <div class="spotify-image-row">
-                                      @if(file_exists('public/users/'.$user->id.'.jpg'))
-                                          <div class="spotify-image-profile" style="background-image: url({{ URL::asset('public/users/'. $user->id.'.jpg')}})">
-                                      @else
-                                          <div class="spotify-image-profile" style="background-image: url({{ URL::asset('public/images/default_user.png')}})">
-                                      @endif
-                                          </div>
-                                          <div class="spotify-image-content">
-                                              <h6>
-                                              <a href="{{url('users/get').'/'.$user->id}}">{{ $user->name }}</a>
-                                              </h6>
-                                          </div>
-                                      </div>
-                                  </td>
-                                  <td>
-                                  {{ $user->followers }}
-                                  </td>
-                                  
-                                  <td>
-                                  
-                                      <div class="avg-playlist-rating" style="justify-content: center;">
-                                          <div class="rating-column">
-                                          <?php for($i = 0; $i < 5 ; $i++){ ?>
-                                          <?php if($i < (int)$user->AvgRating){ ?>
-                                          <img class="rate_input" id = {{$i}} src="<?php echo URL::asset('public/images/filstar.png'); ?>">
-                                          <?php }else{ ?>
-                                          <img class="rate_input" id = {{$i}} src="<?php echo URL::asset('public/images/empty-star.png'); ?>">
-                                          <?php } ?>
-                                          <?php } ?>
-                                          </div>
-<!--                                          <div class="rating-column">
-                                              <a href="{{url('playlist/getUserWall'.'/'.$user->name.'/'.$user->id)}}" class="see-play-list">See Playlists <img src="http://localhost/spotify/public/images/go-arrow.png"></a>
-                                          </div>-->
-                                      </div>
-                                  </td>
-                                  <td>
-                                      <div class="rating-column" style="width: auto;">
-                                              <a href="{{url('playlist/getUserWall'.'/'.$user->name.'/'.$user->id)}}" class="see-play-list">See Playlists </a>
-                                          </div>
-                                  </td>
-                              </tr>
-
-                        @endforeach
+                            <tbody>
+                                
                   </tbody>
                 </table>
               </div>
                 
 
-              <p class="popular-user">New Playlists</p>
-              <table class="table">
-                  <thead>
-                      <tr>
-                          <th>
-                              Name
-                          </th>
-                          <th>
-                              Popularity
-                          </th>
-                          <th>
-                              Danceability
-                          </th>
-                          <th>
-                              Energy
-                          </th>
-                          <th>
-                              Valence
-                          </th>
-                          <th>
-                              Instrumentalness
-                          </th>
-                          <th>
-                              Liveness
-                          </th>
-                          <th>
-                              Loudness
-                          </th>
-                          <th>
-                              Speechiness
-                          </th>
-                          <th>
-                              BPM
-                          </th>
-                          <th>
-                              Acousticeness
-                          </th>
-                      </tr>
-                  </thead>
-                  <tbody id = "table_append_new_playlists">
-
-                    @foreach($PlaylistsNew as $playlist)
-                    <tr>
-                        <td>
-                            <h6 class="spotify-image-content">
-                                @if(isset($playlist->playlist_id))
-                                    <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->playlist_id); ?>">{{$playlist->title}}</a>
-                                @else
-                                <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->id); ?>">{{$playlist->title}}</a>
-                                @endif
-                                </h6>
-                        </td>
-                        <td>
-                                    @if ( $playlist->popularity >= 90 )
-                                    <span> It's a Hit! </span>
-                                    @else
-                                    <span>{{ number_format($playlist->popularity,0) }}%</span>
-                                    @endif
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->danceability,0)}}%</span>
-
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->energy,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->valence,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->instrumentalness,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->liveness,0)}}%</span>                    
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->loudness,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->speechiness,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->tempo,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->acousticness,0)}}%</span>
-                        </td>
-                    </tr>
-                    @endforeach
-
-                  </tbody>
-              </table>
-              </div>
-
-              <div class="table-responsive">
-
-              <p class="popular-user">Top Rated Playlists</p>
-              <table class="table">
-                  <thead>
-                      <tr>
-                          <th>
-                              Name
-                          </th>
-                          <th>
-                              Popularity
-                          </th>
-                          <th>
-                              Danceability
-                          </th>
-                          <th>
-                              Energy
-                          </th>
-                          <th>
-                              Valence
-                          </th>
-                          <th>
-                              Instrumentalness
-                          </th>
-                          <th>
-                              Liveness
-                          </th>
-                          <th>
-                              Loudness
-                          </th>
-                          <th>
-                              Speechiness
-                          </th>
-                          <th>
-                              BPM
-                          </th>
-                          <th>
-                              Acousticeness
-                          </th>
-                      </tr>
-                  </thead>
-                  <tbody id="table_append_top_playlists">
-
-                    @foreach($PlaylistsTop as $playlist)
-                    <tr>
-                        <td>
-                            <h6 class="spotify-image-content">
-                                @if(isset($playlist->playlist_id))
-                                    <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->playlist_id); ?>">{{$playlist->title}}</a>
-                                @else
-                                <a href="<?php echo URL::to('/playlist/open-playlist/'.$playlist->id); ?>">{{$playlist->title}}</a>
-                                @endif
-                                </h6>
-                        </td>
-                        <td>
-                                    @if ( $playlist->popularity >= 90 )
-                                    <span> It's a Hit! </span>
-                                    @else
-                                    <span>{{ number_format($playlist->popularity,0) }}%</span>
-                                    @endif
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->danceability,0)}}%</span>
-
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->energy,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->valence,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->instrumentalness,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->liveness,0)}}%</span>                    
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->loudness,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->speechiness,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->tempo,0)}}%</span>
-                        </td>
-                        <td>
-                        <span>{{ number_format($playlist->acousticness,0)}}%</span>
-                        </td>
-                    </tr>
-                    @endforeach
-
-
-                  </tbody>
-              </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              
         </section>
 
 
         <script src="{{ URL::asset('public/js/jquery.nice-select.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>   
-        
+        <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
         <script type="text/javascript">
-
-
+            
+        
+            //temp= {{json_encode($Users,true)}};
             $('input[type=checkbox]').removeAttr('checked');
-
-
-
+            $(document).ready( function () {
+                table = $('#users').DataTable({
+                    'responsive' : true,
+                    'paging' : false,
+                    'searching': false,
+                    'destroy': true,
+                    "bInfo" : false,
+                    'ajax':{
+                      url: "{{url('playlist/stats-result')}}"
+                    },
+                    columns: [
+                      { data: data },
+                      { data: 'Followers' },
+                      { data: 'Avg Playlist Rating' },
+                      { data: 'Users Playlists' }
+                      
+                      ]
+                   });
+                   });
 
             $(document).ready(function () {
                 $(function() {
@@ -353,6 +132,8 @@
 
 
           });
+          
+         
 
 
             });

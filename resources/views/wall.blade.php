@@ -97,7 +97,7 @@
             
             if_is_advanced_search = <?php if (Route::is('advanced-search')){ echo '1'; }else{ echo '0'; } ?>;
             
-            
+            is_anything_changed= false;
             
             
             page_type = '1';
@@ -112,14 +112,15 @@
                 page_type = 2;
 
 
-                if(!is_table_loaded_first_time){
+                if(!is_table_loaded_first_time && is_anything_changed == false){
 
                     is_table_loaded_first_time = true;
                     table = $('#sorting').DataTable({
                     'responsive' : true,
                     'paging' : false,
                     'searching': false,
-                     "bInfo" : false,
+                    'destroy': true,
+                    "bInfo" : false,
                     'ajax':{
                       url: whichUrl(),
 
@@ -141,6 +142,33 @@
                    });
 
                     offset_2 += items;
+                }else if(is_anything_changed){
+                    
+                    is_table_loaded_first_time = true;
+                    table = $('#sorting').DataTable({
+                    'responsive' : true,
+                    'paging' : false,
+                    'searching': false,
+                    'destroy': true,
+                     "bInfo" : false,
+                    columns: [
+                      { data: 'Name' },
+                      { data: 'Popularity' },
+                      { data: 'Danceability' },
+                      { data: 'Energy' },
+                      { data: 'Valence' },
+                      { data: 'Instrumentalness' },
+                      { data: 'Liveness' },
+                      { data: 'Loudness' },
+                      { data: 'Speechiness' },
+                      { data: 'BPM' },
+                      { data: 'Acousticness' },
+                      { data: 'Average Release Year'}
+                      ]
+                   });
+                   
+                    offset_2 += items;
+                    
                 }
 
                 $(".table-responsive").show();
@@ -159,23 +187,17 @@
               }
               
             })
-
             $("#main_loader").fadeIn();
             $('.page_end_div').hide();
             var total_wall_records = {{session::get('WallRecordsCount')}};
             var offset_1 = 0;
             var offset_2 = 0;
-            var items = 2;
+            var items = 100;
 
             if(items>=total_wall_records)
             {
                 $("#more_results").replaceWith("");
-            }
-
-
-
-           
-                
+            } 
             var flag   = true;
             var temp = true;
             var global_filters = 0;
@@ -184,19 +206,13 @@
             var flagAdvanced = false;
             $(document).ready(function () {
                 $(function() {
-                // var output = document.querySelectorAll('output')[0];
                 $(document).on('input', 'input[type="range"]', function(e) {
-                        // console.log($(this).prev());
                         $(this).parents('.range1').find('label output').html(e.currentTarget.value);
-                        // output.innerHTML = e.currentTarget.value;
                 });
                 $('input[type=range]').rangeslider({
                     polyfill: false
                 });
                 });
-                // $('#toggle-search').on('click', function() {
-                //   $('#searchBar').toggle("slow");
-                // });
                 $('.profile-navi').hide();
 
                 $("#search1").select2({
@@ -211,16 +227,7 @@
                   width: "100%",
                   allowClear: true,
                 });
-
-              //   $('select:not(.ignore)').niceSelect();      
-              // FastClick.attach(document.body);
-                 
-          
-          
-                  
-
-             $(document).on("click", "#toggleAdvanced", function(e) {
-              //$('#toggleAdvanced').on('click', function(e){
+                $(document).on("click", "#toggleAdvanced", function(e) {
                   e.preventDefault();
                   $('#advanced').toggle();
                   flagAdvanced = !flagAdvanced;
@@ -259,26 +266,20 @@
                   });
                   $(this).toggleClass("open");
                 });
-                // $('.profile-navi').hide();
-                // $('.profile-nav-top').click(function () {
-                //     $(this).next('.profile-navi').slideToggle();
-                // });
-
 
           });
 
           function whichUrl(){
+
             if(page_type == 2){
-                         return  "{{ url($url)}}"+'?offset='+offset_2+'&items='+items+'&type=2'
-                        }else{
-                          return "{{ url($url)}}"+'?offset='+offset_1+'&items='+items+'&type=1'
-
-                        }
+                          return  "{{url($url)}}"+'?offset='+offset_2+'&items='+items+'&type=2'
+              }else{
+                          return "{{url($url)}}"+'?offset='+offset_1+'&items='+items+'&type=1'
+                  }
           }
-
           $("#search-form").on("submit", function (e) {
             e.preventDefault();
-            alert(e);
+           // alert(e);
           });
 
           $("#search-form-submit").on("click", function (e) {
@@ -286,17 +287,14 @@
             searchFunction();
           });
           
-
-            
-            
             /*SETTING GLOBAL VARIABLES FOR FILTERATION*/
            let date = (new Date()).getFullYear();
            let speechiness = [0, 100];
            let valence = [0, 100];
            let instrumentalness = [0, 100];
            let liveness = [0, 100];
-           let loudness = [0, 100];
-           let tempo = [0, 100];
+           let loudness = [-60, 5];
+           let tempo = [0, 250];
            let popularity = [0, 100];
            let danceability = [0, 100];
            let energy = [0, 100];
@@ -309,7 +307,6 @@
 
                       slide: function( event, ui ) {
                         $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
                       }
                     });
 
@@ -319,27 +316,16 @@
 
                       slide: function( event, ui ) {
                         $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
                       }
                     });
 
                   } );
-//                  $( function() {
-//                    $( ".slider-loudness" ).slider({
-//
-//                      slide: function( event, ui ) {
-//                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-//                      //console.log('#'+$(this).attr('id'));
-//                      }
-//                    });
-//
-//                  } );
+//                  
                   $( function() {
                     $( ".slider-speechiness" ).slider({
 
                       slide: function( event, ui ) {
                         $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
                       }
                     });
 
@@ -349,7 +335,6 @@
 
                       slide: function( event, ui ) {
                         $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
                       }
                     });
 
@@ -359,7 +344,6 @@
 
                       slide: function( event, ui ) {
                         $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
                       }
                     });
 
@@ -369,7 +353,6 @@
 
                       slide: function( event, ui ) {
                         $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
                       }
                     });
 
@@ -379,27 +362,16 @@
 
                       slide: function( event, ui ) {
                         $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
                       }
                     });
 
                   } );
-//                  $( function() {
-//                    $( ".slider-tempo" ).slider({
-//
-//                      slide: function( event, ui ) {
-//                        $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-//                      //console.log('#'+$(this).attr('id'));
-//                      }
-//                    });
-//
-//                  } );
+//                
                    $( function() {
                     $( ".slider-popularity" ).slider({
 
                       slide: function( event, ui ) {
                         $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
                       }
                     });
 
@@ -409,7 +381,6 @@
 
                       slide: function( event, ui ) {
                         $('#'+ $(this).attr('id') ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                      //console.log('#'+$(this).attr('id'));
                       }
                     });
 
@@ -421,10 +392,7 @@
               max: 5,
               values: [ 0, 5 ],
               change: function( event, ui ) {
-                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                   $("#wall_records").fadeOut();
-       
-                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
                     
             if ($(this).attr('id') == 'filter-ratings'){
                  rating[0] = ui.values[0];
@@ -435,51 +403,36 @@
             
             }
             
-            
           });
           $( ".slider-loudness" ).slider({
               range: true,
               min: -60,
               max: 5,
               values: [ -60, 5 ],
-              slide: function( event, ui ) {
+              change: function( event, ui ) {
                   $( "#filter-loudness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                   $("#wall_records").fadeOut();
-       
-                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
-                    
             if ($(this).attr('id') == 'filter-loudness'){
                  loudness[0] = ui.values[0];
                  loudness[1] = ui.values[1];
             }
-           
             searchFunction();
-            
             }
-            
-
           });
            $( ".slider-tempo" ).slider({
               range: true,
               min: 0,
               max: 250,
               values: [ 0, 250 ],
-              slide: function( event, ui ) {
+              change: function( event, ui ) {
                   $( "#filter-tempo" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                   $("#wall_records").fadeOut();
-       
-                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
-                    
             if ($(this).attr('id') == 'filter-tempo'){
                  tempo[0] = ui.values[0];
                  tempo[1] = ui.values[1];
             }
-           
             searchFunction();
-            
             }
-            
-
           });
           
           $( ".slider-year" ).slider({
@@ -488,11 +441,10 @@
               min: 1900,
               max: (new Date()).getFullYear(),
               values: [ 1900, (new Date()).getFullYear() ],
-              slide: function( event, ui ) {
+              change: function( event, ui ) {
                   $( "#filter-year" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                   $("#wall_records").fadeOut();
        
-                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
                     
             if ($(this).attr('id') == 'filter-year'){
                  year[0] = ui.values[0];
@@ -503,7 +455,6 @@
             
             }
             
-
           });
           
               $( ".slider" ).slider({
@@ -512,24 +463,13 @@
               max: 100,
               values: [ 0, 100 ],
               change: function( event, ui ) {
-                 // $( "#filter-liveness" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                   $("#wall_records").fadeOut();
        
-                // console.log(ui.values[ 0 ] + " - " + ui.values[ 1 ] )
                     
             if ($(this).attr('id') == 'filter-ratings'){
                  rating[0] = ui.values[0];
                  rating[1] = ui.values[1];
             }
-//            if ($(this).attr('id') == 'filter-year'){
-//                 year[0] = ui.values[0];
-//                 year[1] = ui.values[1];
-//            }
-//            if ($(this).attr('id') == 'filter-tempo'){
-//                 tempo[0] = ui.values[0];
-//                 tempo[1] = ui.values[1];
-//                  
-//            }
             if ($(this).attr('id') == 'filter-popularity'){
                  popularity[0] = ui.values[0];
                  popularity[1] = ui.values[1];
@@ -540,7 +480,6 @@
                  liveness[1] = ui.values[1];
                   
             }
-
             if ($(this).attr('id') == 'filter-speechiness'){
                  speechiness[0] = ui.values[0];
                  speechiness[1] = ui.values[1];
@@ -561,7 +500,6 @@
                  instrumentalness[1] = ui.values[1];
                   
             }
-            
             if ($(this).attr('id') == 'filter-danceability'){
                  danceability[0] = ui.values[0];
                  danceability[1] = ui.values[1];
@@ -572,11 +510,7 @@
                  energy[1] = ui.values[1];
                   
             }
-
-
-            searchFunction();
-            
-                    
+            searchFunction();   
             }
 
           });
@@ -607,8 +541,10 @@
      
 
      function searchFunction(){
+         //console.log("search function");
+         
 
-       
+       is_anything_changed=true;
        data = {
         'speechiness' : speechiness,
         'valence' : valence,
@@ -654,23 +590,20 @@
         url: "{{url('playlist/advanced-search-results')}}",
         type: "POST",
         data: {_token: "{{ csrf_token() }}", data: data},
-
+        
         success: function (data) {
-
-            
-            
-            
+           // console.log(data.Playlists);
             if(page_type == 2){
-                table.rows.add(data.data).draw();
-                          $('tbody').fadeIn();
+                
+                table.clear().draw();
+                table.rows.add(data.Playlists); // Add new data
+                table.columns.adjust().draw();
+                //table.rows.add(data.Playlists).draw();
                         }else{
                           $("#wall_records").html(data);
                           $("#wall_records").fadeIn();
 
                         }
-            
-
-
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
 
@@ -679,8 +612,6 @@
             console.log("errorThrown");
             console.log(errorThrown);
             console.log(data);
-            // alert("Status: " + textStatus); alert("Error: " + errorThrown);
-
         }
 
         });
@@ -689,33 +620,16 @@
      }
             
           function getRecords () {
-
-            // if(page_type == 2)
-            // {
-            //   temp = false;
-            //   console.log("here");
-            //   offset_2+=items;
-            //  // table.ajax.url( whichUrl() ).load();
-            //   temp = true;
-
-              
-            //   console.log(offset_2);
-            //   console.log("here2");
-            //   return;
-            // }
-
             $('.page_end_div').fadeIn();
             if(flag == true){
               temp = false;
-              $("#main_loader").fadeIn();
+            $("#main_loader").fadeIn();
+                if(page_type == 2){
+                  url = "{{ url($url)}}"+'?offset='+offset_2+'&items='+items+'&type=2'
+                }else{
+                  url = "{{ url($url)}}"+'?offset='+offset_1+'&items='+items+'&type=1'
 
-                        if(page_type == 2){
-                          url = "{{ url($url)}}"+'?offset='+offset_2+'&items='+items+'&type=2'
-                        }else{
-                          url = "{{ url($url)}}"+'?offset='+offset_1+'&items='+items+'&type=1'
-
-                        }
-            
+                }
               $.ajax({
                   type: "get",
                   url: url,

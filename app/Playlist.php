@@ -86,10 +86,6 @@ class Playlist extends Model {
     
     public static function ratedPlaylists(){
         try{
-           
-            
-            
-            
             $query = "select * from playlists A inner join playlist_ratings B on A.id = B.playlist_id where B.user_id = '".session::get('UserInfo')['id']."'";
             $result = DB::select($query);
         }catch(\Illuminate\Database\QueryException $ex){
@@ -181,13 +177,6 @@ class Playlist extends Model {
 
 
     }
-
-
-        
-
-
-    
-
     public static function removeDecimalFromFilters($playlists){
 
         if(!empty($playlists)){
@@ -331,7 +320,7 @@ class Playlist extends Model {
 
                 $comments[] = [
                     'id'                => $comment->id,
-                    'user_id'                => $comment->user_id,
+                    'user_id'           => $comment->user_id,
                     'userName'          => $comment->user_name,
                     'track_id'          => $comment->track_id,
                     'userProfileImage'  => $image,
