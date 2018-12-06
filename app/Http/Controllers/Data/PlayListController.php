@@ -761,7 +761,7 @@ class PlayListController extends Controller {
 
 
         if($type == '2'){
-            $sql = "select title as Name, popularity as Popularity, danceability as Danceability, energy as Energy, valence as Valence, instrumentalness as Instrumentalness, liveness as Liveness, loudness as Loudness, speechiness as Speechiness, tempo as BPM, acousticness as Acousticness, average_release_year as `Average Release Year` from playlists as p inner join playlist_ratings as pr on pr.playlist_id = p.id where pr.user_id='318wfvy3lc9rkc2lesgzilrcg'";
+            $sql = 'select title as Name, popularity as Popularity, danceability as Danceability, energy as Energy, valence as Valence, instrumentalness as Instrumentalness, liveness as Liveness, loudness as Loudness, speechiness as Speechiness, tempo as BPM, acousticness as Acousticness, average_release_year as `Average Release Year` from playlists as p inner join playlist_ratings as pr on pr.playlist_id = p.id where pr.user_id="' . session::get('UserInfo')['id'] . '"';
         $playlists = DB::select($sql);
             return ['data' => $playlists];
 
