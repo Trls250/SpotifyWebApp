@@ -15,8 +15,8 @@ class SearchController extends Controller
         
         
 
-        $playlists = Playlist::orderBy('created_at', 'DESC')->take(10)->get();
-        $playlistsTop = Playlist::orderBy('rating', 'DESC')->take(10)->get();
+//        $playlists = Playlist::orderBy('created_at', 'DESC')->take(10)->get();
+//        $playlistsTop = Playlist::orderBy('rating', 'DESC')->take(10)->get();
         //$users = User::orderBy('followers', 'DESC')->take(10)->get(); 
         $sql = "select A.name as Users, A.followers as Followers, round(SUM( B.rating )/count(B.rating)) as AvgPlaylistRating, A.name as UsersPlaylists from users A inner join playlists B on A.id = B.added_by group by A.id  ";
         $users = DB::select($sql);

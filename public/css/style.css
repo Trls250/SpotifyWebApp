@@ -269,40 +269,26 @@ ul {
     
 }
 .sidebar-lists li:nth-child(2){
-    background-image: url('../images/wall.png');
-    background-repeat: no-repeat;
-    background-position: left 20px center;
-}
-.sidebar-lists li:nth-child(3){
     background-image: url('../images/statistics.png');
     background-repeat: no-repeat;
     background-position: left 20px center;
 }
-.sidebar-lists li:nth-child(4){
+.sidebar-lists li:nth-child(3){
     background-image: url('../images/advance seach.png');
     background-repeat: no-repeat;
     background-position: left 20px center;
 }
-.sidebar-lists li:nth-child(5){
-    background-image: url('../images/people-items.png');
-    background-repeat: no-repeat;
-    background-position: left 20px center;
-}
-.sidebar-lists li:nth-child(6){
-    background-image: url('../images/tagged-playlist.png');
-    background-repeat: no-repeat;
-    background-position: left 20px center;
-}
-.sidebar-lists li:nth-child(7){
+.sidebar-lists li:nth-child(4){
     background-image: url('../images/play.png');
     background-repeat: no-repeat;
     background-position: left 20px center;
 }
-.sidebar-lists li:nth-child(8){
+.sidebar-lists li:nth-child(5){
     background-image: url('../images/myplay.png');
     background-repeat: no-repeat;
     background-position: left 20px center;
 }
+
 .content-container .nice-select {
     float: none;
     border: 1px solid #ccc;
@@ -381,7 +367,7 @@ ul {
 .post-image {
     width: 100%;
     padding: 0;
-    background-position: center top;
+    background-position: center left;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom-left-radius: 15px;
@@ -1184,7 +1170,7 @@ ul {
 }
 .user-rows .post-image {
     border-radius: 8%;
-    width: 23.px;
+    width: 23px;
     height: 208px;
     background-size: cover;
     width: 223px;
@@ -1213,8 +1199,8 @@ ul {
 /* .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-}
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text 
+}*/
 
 /* Tooltip text */
 .tooltip .tooltiptext {
@@ -1233,7 +1219,7 @@ ul {
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
     visibility: visible;
-} */
+} 
 .btn-submit:hover {
     color: #fff;
 }

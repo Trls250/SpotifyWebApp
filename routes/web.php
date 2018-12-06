@@ -48,7 +48,7 @@ Route::group(['middleware' => 'checkAuth'], function () {
     Route::get('playlist/getWall', 'PlayListController@mywall');
     Route::get('playlist/advanced-search', 'PlayListController@mywallwithSearch')->name('advanced-search');
     Route::get('playlist/getUserWall/{name}/{id}', 'PlayListController@myUserwall');
-    Route::get('playlist/getLibrary', 'PlayListController@mylibrary');
+    Route::get('playlist/getLibrary', 'PlayListController@mylibrary')->name('library-records');
     Route::get('playlist/getWallRecords', 'PlayListController@getWallRecords');
     Route::get('playlist/getUserWallRecords/{id}', 'PlayListController@getUserWallRecords');
     Route::get('playlist/getLibraryRecords', 'PlayListController@getLibraryRecords');

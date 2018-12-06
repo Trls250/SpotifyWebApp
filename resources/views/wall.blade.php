@@ -85,6 +85,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>   
         <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
+        <script src="http://cdn.datatables.net/responsive/1.0.0/js/dataTables.responsive.js"></script> 
         <script type="text/javascript">
        
                
@@ -96,10 +97,10 @@
             //$("#wall_records").hide();
             
             if_is_advanced_search = <?php if (Route::is('advanced-search')){ echo '1'; }else{ echo '0'; } ?>;
+            if_is_my_library = <?php if (Route::is('library-records')){ echo '1'; }else{ echo '0'; } ?>;
             
             is_anything_changed= false;
-            
-            
+
             page_type = '1';
             is_table_loaded_first_time = false;
             table = null;
@@ -112,7 +113,8 @@
                 page_type = 2;
 
 
-                if(!is_table_loaded_first_time && is_anything_changed == false){
+                if(!is_table_loaded_first_time && is_anything_changed == false ){
+                    
 
                     is_table_loaded_first_time = true;
                     table = $('#sorting').DataTable({
@@ -366,7 +368,7 @@
                     });
 
                   } );
-//                
+                
                    $( function() {
                     $( ".slider-popularity" ).slider({
 
