@@ -16,6 +16,7 @@
             
             <div id ="wall_records">
             <div class="playlist_records latest-activity">
+                <h3 class="title">Statistics</h3>
                 <p class="popular-user">Popular Users</p>
               <div class="table-responsive">
 
@@ -30,13 +31,12 @@
                             <th>
                             Followers
                             </th>
-                            
                             <th>
                             Avg Playlist Rating
                             </th>
-                            <th>
+<!--                            <th>
                             User's Playlists
-                            </th>
+                            </th>-->
                             </tr>
                             </thead>
                             <tbody>
@@ -44,7 +44,96 @@
                   </tbody>
                 </table>
               </div>
-                
+                  
+                  
+              <p class="popular-user">New Playlists</p>
+              <table class="table" id="playlists-stats">
+                  <thead>
+                      <tr>
+                          <th>
+                              Name
+                          </th>
+                          <th>
+                              Popularity
+                          </th>
+                          <th>
+                              Danceability
+                          </th>
+                          <th>
+                              Energy
+                          </th>
+                          <th>
+                              Valence
+                          </th>
+                          <th>
+                              Instrumentalness
+                          </th>
+                          <th>
+                              Liveness
+                          </th>
+                          <th>
+                              Loudness
+                          </th>
+                          <th>
+                              Speechiness
+                          </th>
+                          <th>
+                              BPM
+                          </th>
+                          <th>
+                              Acousticeness
+                          </th>
+                          <th>
+                              Average Release Year
+                          </th>
+                      </tr>
+                  </thead>
+                  
+              </table>
+               <p class="popular-user">Top Rated Playlists</p>
+                  <table class="table" id="playlists-rated">
+                  <thead>
+                      <tr>
+                          <th>
+                              Name
+                          </th>
+                          <th>
+                              Popularity
+                          </th>
+                          <th>
+                              Danceability
+                          </th>
+                          <th>
+                              Energy
+                          </th>
+                          <th>
+                              Valence
+                          </th>
+                          <th>
+                              Instrumentalness
+                          </th>
+                          <th>
+                              Liveness
+                          </th>
+                          <th>
+                              Loudness
+                          </th>
+                          <th>
+                              Speechiness
+                          </th>
+                          <th>
+                              BPM
+                          </th>
+                          <th>
+                              Acousticeness
+                          </th>
+                          <th>
+                              Average Release Year
+                          </th>
+                      </tr>
+                  </thead>
+
+                  </table>
 
               
         </section>
@@ -56,10 +145,10 @@
         <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
         <script type="text/javascript">
             
-        
-            //temp= {{json_encode($Users,true)}};
+
             $('input[type=checkbox]').removeAttr('checked');
             $(document).ready( function () {
+//                
                 table = $('#users').DataTable({
                     'responsive' : true,
                     'paging' : false,
@@ -70,14 +159,65 @@
                       url: "{{url('playlist/stats-result')}}"
                     },
                     columns: [
-                      { data: data },
+                      { data: 'Users' },
                       { data: 'Followers' },
-                      { data: 'Avg Playlist Rating' },
-                      { data: 'Users Playlists' }
+                      { data: 'AvgPlaylistRating' }
+//                      { data: 'UsersPlaylists' }
                       
                       ]
                    });
+
+                table123 = $('#playlists-stats').DataTable({
+                    'responsive' : true,
+                    'paging' : false,
+                    'searching': false,
+                    'destroy': true,
+                    "bInfo" : false,
+                    'ajax':{
+                      url: "{{url('playlist/stats-result-playlist')}}"
+                    },
+                    columns: [
+                      { data: 'Name' },
+                      { data: 'Popularity' },
+                      { data: 'Danceability' },
+                      { data: 'Energy' },
+                      { data: 'Valence' },
+                      { data: 'Instrumentalness' },
+                      { data: 'Liveness' },
+                      { data: 'Loudness' },
+                      { data: 'Speechiness' },
+                      { data: 'BPM' },
+                      { data: 'Acousticness' },
+                      { data: 'Average Release Year'}
+                      ]
                    });
+                   
+                   table12 = $('#playlists-rated').DataTable({
+                    'responsive' : true,
+                    'paging' : false,
+                    'searching': false,
+                    'destroy': true,
+                    "bInfo" : false,
+                    'ajax':{
+                      url: "{{url('playlist/stats-result-playlist-rated')}}"
+                    },
+                    columns: [
+                      { data: 'Name' },
+                      { data: 'Popularity' },
+                      { data: 'Danceability' },
+                      { data: 'Energy' },
+                      { data: 'Valence' },
+                      { data: 'Instrumentalness' },
+                      { data: 'Liveness' },
+                      { data: 'Loudness' },
+                      { data: 'Speechiness' },
+                      { data: 'BPM' },
+                      { data: 'Acousticness' },
+                      { data: 'Average Release Year'}
+                      ]
+                   });
+
+                   });   
 
             $(document).ready(function () {
                 $(function() {

@@ -17,17 +17,50 @@ class SearchController extends Controller
 
         $playlists = Playlist::orderBy('created_at', 'DESC')->take(10)->get();
         $playlistsTop = Playlist::orderBy('rating', 'DESC')->take(10)->get();
-        $users = User::orderBy('followers', 'DESC')->take(10)->get(); 
-//        $sql = "SELECT * FROM users ORDER BY followers DESC LIMIT 0, 10";
-//        $users = DB::select($sql);
+        //$users = User::orderBy('followers', 'DESC')->take(10)->get(); 
+        $sql = "select A.name as Users, A.followers as Followers, round(SUM( B.rating )/count(B.rating)) as AvgPlaylistRating, A.name as UsersPlaylists from users A inner join playlists B on A.id = B.added_by group by A.id  ";
+        $users = DB::select($sql);
 
-        return ([
+        return [
             //'Title' => 'Statistics',
             
-            'data', $users 
+            'data' => $users 
 //            'PlaylistsNew' => $playlists,
 //            'PlaylistsTop' => $playlistsTop
-        ]);
+        ];
+
+    }
+    public function getStatsPlaylists(Request $request){
+        
+       
+        //$users = User::orderBy('followers', 'DESC')->take(10)->get(); 
+        $sql = "select title as Name, popularity as Popularity, danceability as Danceability, energy as Energy, valence as Valence, instrumentalness as Instrumentalness, liveness as Liveness, loudness as Loudness, speechiness as Speechiness, tempo as BPM, acousticness as Acousticness, average_release_year as `Average Release Year` from playlists order by updated_at desc limit 10 ";
+        $users = DB::select($sql);
+
+        return [
+            //'Title' => 'Statistics',
+            
+            'data' => $users 
+//            'PlaylistsNew' => $playlists,
+//            'PlaylistsTop' => $playlistsTop
+        ];
+
+    }
+    public function getStatsPlaylistsRated(Request $request){
+        
+        $playlists = Playlist::orderBy('created_at', 'DESC')->take(10)->get();
+        $playlistsTop = Playlist::orderBy('rating', 'DESC')->take(10)->get();
+        //$users = User::orderBy('followers', 'DESC')->take(10)->get(); 
+        $sql = "select title as Name, popularity as Popularity, danceability as Danceability, energy as Energy, valence as Valence, instrumentalness as Instrumentalness, liveness as Liveness, loudness as Loudness, speechiness as Speechiness, tempo as BPM, acousticness as Acousticness, average_release_year as `Average Release Year` from playlists order by rating desc limit 10 ";
+        $users = DB::select($sql);
+
+        return [
+            //'Title' => 'Statistics',
+            
+            'data' => $users 
+//            'PlaylistsNew' => $playlists,
+//            'PlaylistsTop' => $playlistsTop
+        ];
 
     }
     public function getSearchResults(Request $request)

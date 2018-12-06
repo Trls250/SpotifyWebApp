@@ -1408,9 +1408,9 @@ ul {
     font-size: 20px;
     font-weight: 700;
 }
-.playlist_records.latest-activity .table thead tr th:not(:first-child) {
+/*.playlist_records.latest-activity .table thead tr th:not(:first-child) {
     text-align: center;
-}
+}*/
 .popular-user {
     font-size: 16px;
     color: #000;
@@ -1486,9 +1486,9 @@ ul {
     margin-left: 33px;
     margin-top: 20px;
 }
-.latest-activity .table tr td{
+/*.latest-activity .table tr td{
     text-align: center;
-}
+}*/
 .latest-activity .table tr td:first-child{
     text-align: left;
 }
