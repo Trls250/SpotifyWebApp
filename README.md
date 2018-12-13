@@ -1,5 +1,5 @@
 # SpotifyWebApp
-Configure PHP and install Composer.
+Configure PHP and install Composer.\n
 Run "composer install" inside the root folder
 Change .env.example to .env
 Run "php artisan key:generate"
